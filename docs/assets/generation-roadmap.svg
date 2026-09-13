@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="620" viewBox="0 0 1080 620" role="img" aria-labelledby="title desc">
+<title id="title">Predator: live assurance, active research, gated replication</title>
+<desc id="desc">Gen1–2 is the live locked-profile foundation. Gen3 investigates adaptive AI–quantum reasoning depth and scaling. Gen4 is a roadmap gated on reviewed Gen3 evidence and profile-level replication. This diagram contains no measured research result or quantum-advantage claim.</desc>
+<defs>
+<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#17151e"/><stop offset="1" stop-color="#0b0d14"/></linearGradient>
+<linearGradient id="line"><stop stop-color="#37d39b"/><stop offset=".52" stop-color="#b599ff"/><stop offset="1" stop-color="#65dce7"/></linearGradient>
+</defs>
+<rect width="1080" height="620" rx="20" fill="url(#bg)"/>
+<rect x="1" y="1" width="1078" height="618" rx="19" fill="none" stroke="#383141"/>
+<g font-family="Arial,Helvetica,sans-serif">
+<text x="36" y="43" font-size="14" font-weight="700" letter-spacing="2.4" fill="#b6c0d2">AETHER AI / PREDATOR GENERATIONS</text>
+<text x="36" y="89" font-size="32" font-weight="700" fill="#f2f4fa">Live assurance. A deeper research frontier.</text>
+<text x="36" y="121" font-size="17" fill="#b6c0d2">Keep the live product distinct from the next capability we are trying to prove.</text>
+<path d="M36 150H1044" stroke="url(#line)" stroke-width="3"/>
+
+<rect x="36" y="179" width="322" height="241" rx="14" fill="#122820" stroke="#286348"/>
+<rect x="54" y="198" width="140" height="27" rx="13.5" fill="#224d3a"/>
+<text x="68" y="217" font-size="12" font-weight="700" letter-spacing="1" fill="#a0f6ca">LIVE FOUNDATION</text>
+<text x="54" y="267" font-size="34" font-weight="700" fill="#f2f4fa">GEN 1–2</text>
+<text x="54" y="302" font-size="20" font-weight="700" fill="#a0f6ca">Locked assurance</text>
+<text x="54" y="338" font-size="17" fill="#d2ded7">Predator CI / Aether Actions</text>
+<text x="54" y="366" font-size="17" fill="#d2ded7">Server-side checks + replay</text>
+<text x="54" y="394" font-size="17" fill="#d2ded7">Aether-controlled profiles</text>
+
+<rect x="379" y="179" width="322" height="241" rx="14" fill="#211c34" stroke="#594576"/>
+<rect x="397" y="198" width="149" height="27" rx="13.5" fill="#44315f"/>
+<text x="411" y="217" font-size="12" font-weight="700" letter-spacing="1" fill="#e2d4ff">ACTIVE RESEARCH</text>
+<text x="397" y="267" font-size="34" font-weight="700" fill="#f2f4fa">GEN 3</text>
+<text x="397" y="302" font-size="20" font-weight="700" fill="#d6beff">Adaptive AI ↔ Q depth</text>
+<text x="397" y="338" font-size="17" fill="#ddd6ed">Reason → compile → verify</text>
+<text x="397" y="366" font-size="17" fill="#ddd6ed">Recompile the next residual</text>
+<text x="397" y="394" font-size="17" fill="#ddd6ed">Test lift, scaling and limits</text>
+
+<rect x="722" y="179" width="322" height="241" rx="14" fill="#142630" stroke="#356471"/>
+<rect x="740" y="198" width="142" height="27" rx="13.5" fill="#244752"/>
+<text x="754" y="217" font-size="12" font-weight="700" letter-spacing="1" fill="#aff3f9">GATED ROADMAP</text>
+<text x="740" y="267" font-size="34" font-weight="700" fill="#f2f4fa">GEN 4</text>
+<text x="740" y="302" font-size="20" font-weight="700" fill="#aff3f9">Replicate → promote</text>
+<text x="740" y="338" font-size="17" fill="#d2e2e8">Compare last locked profiles</text>
+<text x="740" y="366" font-size="17" fill="#d2e2e8">Review each measured gain</text>
+<text x="740" y="394" font-size="17" fill="#d2e2e8">Return through existing Actions</text>
+
+<path d="M357 271h18m-5-5 5 5-5 5M700 271h18m-5-5 5 5-5 5" fill="none" stroke="#b6c0d2" stroke-width="2"/>
+<rect x="36" y="448" width="1008" height="85" rx="12" fill="#191c28" stroke="#383141"/>
+<text x="57" y="478" font-size="12" font-weight="700" letter-spacing="1.5" fill="#b6c0d2">GEN 3 RESEARCH TARGET · NOT AN EXECUTED-DEPTH CLAIM</text>
+<text x="57" y="511" font-size="22" font-weight="700" fill="#eee7ff">AI → Q1 → verify → AI → recompile → Q2 → verify → AI → Q3 → …</text>
+<circle cx="44" cy="572" r="5" fill="#ff7953"/>
+<text x="59" y="578" font-size="17" font-weight="700" fill="#ffd1bf">Quantum advantage is not established. Gen4 must earn its transfer.</text>
+</g>
+</svg>
