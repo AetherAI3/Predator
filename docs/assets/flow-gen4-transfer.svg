@@ -1,23 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="840" height="226" viewBox="0 0 840 226" role="img" aria-labelledby="title desc">
-<title id="title">Gen4 · Gated research-to-product transfer</title><desc id="desc">If Gen3 earns qualifying evidence, freeze the method, compare against last locked profiles, verify each gain through replay and independent review, then release a versioned profile or a new locked profile through existing Actions. Research continues in parallel.</desc>
+<title id="title">Gen4 · From research to product</title><desc id="desc">Future upgrade, conditional on reviewed Gen3 evidence: keep the method fixed, compare against previous profiles, independently verify the benefit, and release approved updates through Aether Actions.</desc>
 <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#161924"/><stop offset="1" stop-color="#0c1019"/></linearGradient></defs>
 <rect x=".5" y=".5" width="839" height="225" rx="16" fill="url(#bg)" stroke="#30394a"/>
 <rect x="22" y="23" width="4" height="17" rx="2" fill="#9feaf3"/>
 <g font-family="Arial,Helvetica,sans-serif">
-<text x="36" y="37" font-size="13" font-weight="700" letter-spacing="1.5" fill="#9feaf3">GATED ROADMAP · CONDITIONAL ON GEN3 EVIDENCE</text>
+<text x="36" y="37" font-size="13" font-weight="700" letter-spacing="1.5" fill="#9feaf3">FUTURE UPGRADE · REQUIRES GEN3 EVIDENCE</text>
 <rect x="22" y="58" width="254" height="110" rx="11" fill="#172b36" stroke="#9feaf3" stroke-opacity=".27"/>
-<text x="38" y="90" font-size="22" font-weight="700" fill="#f2f5fa">Review Gen3</text>
-<text x="38" y="120" font-size="16" fill="#c7d1e1">Qualifying evidence only</text>
-<text x="38" y="145" font-size="16" fill="#c7d1e1">Freeze the method</text>
+<text x="38" y="90" font-size="22" font-weight="700" fill="#f2f5fa">Review the research</text>
+<text x="38" y="120" font-size="16" fill="#c7d1e1">Check the claimed benefit</text>
+<text x="38" y="145" font-size="16" fill="#c7d1e1">Keep the method fixed</text>
 <path d="M280 112h10m-4-4 4 4-4 4" fill="none" stroke="#9feaf3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="293" y="58" width="254" height="110" rx="11" fill="#172b36" stroke="#9feaf3" stroke-opacity=".27"/>
-<text x="309" y="90" font-size="22" font-weight="700" fill="#f2f5fa">Replicate the gain</text>
-<text x="309" y="120" font-size="16" fill="#c7d1e1">Compare last locked profiles</text>
+<text x="309" y="90" font-size="22" font-weight="700" fill="#f2f5fa">Reproduce the gain</text>
+<text x="309" y="120" font-size="16" fill="#c7d1e1">Compare previous profiles</text>
 <text x="309" y="145" font-size="16" fill="#c7d1e1">Replay + independent review</text>
 <path d="M551 112h10m-4-4 4 4-4 4" fill="none" stroke="#9feaf3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="564" y="58" width="254" height="110" rx="11" fill="#172b36" stroke="#9feaf3" stroke-opacity=".27"/>
 <text x="580" y="90" font-size="22" font-weight="700" fill="#f2f5fa">Upgrade Actions</text>
-<text x="580" y="120" font-size="16" fill="#c7d1e1">Validated profile versions</text>
-<text x="580" y="145" font-size="16" fill="#c7d1e1">Or a new locked profile</text>
-<text x="22" y="201" font-size="15" fill="#aebbd0">Research continues in parallel. Each profile must earn its own promotion.</text>
+<text x="580" y="120" font-size="16" fill="#c7d1e1">Release verified updates</text>
+<text x="580" y="145" font-size="16" fill="#c7d1e1">Or create a new profile</text>
+<text x="22" y="201" font-size="15" fill="#aebbd0">Research continues. Each profile must show its own verified improvement.</text>
 </g></svg>
