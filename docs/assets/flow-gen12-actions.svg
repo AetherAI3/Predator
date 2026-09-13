@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="226" viewBox="0 0 840 226" role="img" aria-labelledby="title desc">
+<title id="title">Gen1–2 · Live assurance workflow</title><desc id="desc">Connect a repository, choose a locked action and pass eligibility; approve UVT usage; Aether servers run checks and permitted fixes; receive a source-bound assurance result and replay.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#161924"/><stop offset="1" stop-color="#0c1019"/></linearGradient></defs>
+<rect x=".5" y=".5" width="839" height="225" rx="16" fill="url(#bg)" stroke="#30394a"/>
+<rect x="22" y="23" width="4" height="17" rx="2" fill="#92e8bd"/>
+<g font-family="Arial,Helvetica,sans-serif">
+<text x="36" y="37" font-size="13" font-weight="700" letter-spacing="1.5" fill="#92e8bd">LIVE PRODUCT · LOCKED PROFILES</text>
+<rect x="22" y="58" width="254" height="110" rx="11" fill="#142922" stroke="#92e8bd" stroke-opacity=".27"/>
+<text x="38" y="90" font-size="22" font-weight="700" fill="#f2f5fa">Connect + qualify</text>
+<text x="38" y="120" font-size="16" fill="#c7d1e1">Repository + locked action</text>
+<text x="38" y="145" font-size="16" fill="#c7d1e1">Eligibility precheck</text>
+<path d="M280 112h10m-4-4 4 4-4 4" fill="none" stroke="#92e8bd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="293" y="58" width="254" height="110" rx="11" fill="#142922" stroke="#92e8bd" stroke-opacity=".27"/>
+<text x="309" y="90" font-size="22" font-weight="700" fill="#f2f5fa">Approve + execute</text>
+<text x="309" y="120" font-size="16" fill="#c7d1e1">UVT quote / approval</text>
+<text x="309" y="145" font-size="16" fill="#c7d1e1">Server checks + allowed fixes</text>
+<path d="M551 112h10m-4-4 4 4-4 4" fill="none" stroke="#92e8bd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="564" y="58" width="254" height="110" rx="11" fill="#142922" stroke="#92e8bd" stroke-opacity=".27"/>
+<text x="580" y="90" font-size="22" font-weight="700" fill="#f2f5fa">Verify + replay</text>
+<text x="580" y="120" font-size="16" fill="#c7d1e1">Covered checks + source</text>
+<text x="580" y="145" font-size="16" fill="#c7d1e1">Assurance result + replay</text>
+<text x="22" y="201" font-size="15" fill="#aebbd0">Customers select the action. Aether controls execution and verification.</text>
+</g></svg>

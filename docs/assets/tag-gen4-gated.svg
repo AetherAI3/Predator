@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="204" height="32" viewBox="0 0 204 32" role="img" aria-labelledby="title desc">
+<title id="title">GEN 4 · GATED ROADMAP</title><desc id="desc">Static editorial label, not an automated verification status.</desc>
+<rect x=".5" y=".5" width="203" height="31" rx="9" fill="#11151e" stroke="#9feaf3" stroke-opacity=".45"/>
+<path d="M74 1H195Q203 1 203 9V23Q203 31 195 31H74Z" fill="#18343d"/>
+<circle cx="13" cy="16" r="3" fill="#9feaf3"/>
+<g font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" letter-spacing=".5"><text x="23" y="20" fill="#d3dbe8">GEN 4</text><text x="85" y="20" fill="#9feaf3">GATED ROADMAP</text></g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="199" height="32" viewBox="0 0 199 32" role="img" aria-labelledby="title desc">
+<title id="title">RESEARCH CLI · PRIVATE</title><desc id="desc">Static editorial label, not an automated verification status.</desc>
+<rect x=".5" y=".5" width="198" height="31" rx="9" fill="#11151e" stroke="#ffbea3" stroke-opacity=".45"/>
+<path d="M128 1H190Q198 1 198 9V23Q198 31 190 31H128Z" fill="#3a271f"/>
+<circle cx="13" cy="16" r="3" fill="#ffbea3"/>
+<g font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" letter-spacing=".5"><text x="23" y="20" fill="#d3dbe8">RESEARCH CLI</text><text x="139" y="20" fill="#ffbea3">PRIVATE</text></g>
+</svg>

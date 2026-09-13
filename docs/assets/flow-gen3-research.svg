@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="226" viewBox="0 0 840 226" role="img" aria-labelledby="title desc">
+<title id="title">Gen3 · Adaptive AI–quantum research</title><desc id="desc">Research target only: frontier AI compiles the first residual for Q1; native verification feeds evidence back to AI; recompilation builds dependent Q2 and later Q3 interventions. No executed depth or advantage is asserted.</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#161924"/><stop offset="1" stop-color="#0c1019"/></linearGradient></defs>
+<rect x=".5" y=".5" width="839" height="225" rx="16" fill="url(#bg)" stroke="#30394a"/>
+<rect x="22" y="23" width="4" height="17" rx="2" fill="#d3b5ff"/>
+<g font-family="Arial,Helvetica,sans-serif">
+<text x="36" y="37" font-size="13" font-weight="700" letter-spacing="1.5" fill="#d3b5ff">ACTIVE RESEARCH · TARGET, NOT EXECUTION EVIDENCE</text>
+<rect x="22" y="58" width="254" height="110" rx="11" fill="#251f35" stroke="#d3b5ff" stroke-opacity=".27"/>
+<text x="38" y="90" font-size="22" font-weight="700" fill="#f2f5fa">AI → Q1 → verify</text>
+<text x="38" y="120" font-size="16" fill="#c7d1e1">Compile the first residual</text>
+<text x="38" y="145" font-size="16" fill="#c7d1e1">Return native evidence to AI</text>
+<path d="M280 112h10m-4-4 4 4-4 4" fill="none" stroke="#d3b5ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="293" y="58" width="254" height="110" rx="11" fill="#251f35" stroke="#d3b5ff" stroke-opacity=".27"/>
+<text x="309" y="90" font-size="22" font-weight="700" fill="#f2f5fa">AI → Q2 → verify</text>
+<text x="309" y="120" font-size="16" fill="#c7d1e1">Recompile the updated state</text>
+<text x="309" y="145" font-size="16" fill="#c7d1e1">Require causal dependence</text>
+<path d="M551 112h10m-4-4 4 4-4 4" fill="none" stroke="#d3b5ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="564" y="58" width="254" height="110" rx="11" fill="#251f35" stroke="#d3b5ff" stroke-opacity=".27"/>
+<text x="580" y="90" font-size="22" font-weight="700" fill="#f2f5fa">AI → Q3 → …</text>
+<text x="580" y="120" font-size="16" fill="#c7d1e1">Continue under fixed rules</text>
+<text x="580" y="145" font-size="16" fill="#c7d1e1">Study lift, limits + falloff</text>
+<text x="22" y="201" font-size="15" fill="#aebbd0">New verified evidence informs the next intervention. Quantum advantage is not established.</text>
+</g></svg>
