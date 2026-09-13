@@ -8,13 +8,18 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/GEN_1--2-LIVE_ASSURANCE-27B879?style=flat-square&amp;labelColor=17151E" alt="Gen1–2: live assurance">
-  <img src="https://img.shields.io/badge/GEN_3-ACTIVE_RESEARCH-A78BFA?style=flat-square&amp;labelColor=17151E" alt="Gen3: active research">
-  <img src="https://img.shields.io/badge/GEN_4-GATED_ROADMAP-5BD5E5?style=flat-square&amp;labelColor=17151E" alt="Gen4: gated roadmap">
-  <img src="https://img.shields.io/badge/RESEARCH_CLI-PRIVATE-FF7953?style=flat-square&amp;labelColor=17151E" alt="Research CLI: private">
+  <img src="docs/assets/predator-console.png" alt="Original Predator operator console. Illustrative session—not a customer console or a Gen3 result." width="100%"><br>
+  <sub>Private operator console · Illustrative session, labels and counters—not research evidence.</sub>
 </p>
 
-**Predator is Aether AI’s security reasoning and assurance program.** Gen1–2 established the locked assurance profiles delivered through **Predator CI / Aether Actions**. Gen3 advances the private research frontier: adaptive compilation, frontier-AI reasoning, and genuinely dependent AI → quantum → AI chains. Gen4 is the gated path for replicating qualifying findings back into the existing product.
+<p align="center">
+  <a href="#gen12--live-assurance"><img src="docs/assets/tag-gen12-live.svg" height="32" alt="Gen1–2: live assurance"></a>
+  <a href="#gen3--push-the-reasoning-frontier"><img src="docs/assets/tag-gen3-research.svg" height="32" alt="Gen3: active research"></a><br>
+  <a href="#gen4--replicate-the-gain-upgrade-the-profiles"><img src="docs/assets/tag-gen4-gated.svg" height="32" alt="Gen4: gated roadmap"></a>
+  <a href="#operator-controlled-by-design"><img src="docs/assets/tag-private-cli.svg" height="32" alt="Research CLI: private"></a>
+</p>
+
+**Live assurance. Deeper research. Evidence-led upgrades.** Predator brings Aether AI’s frontier reasoning, adaptive compilation and verification together: locked profiles through **Predator CI / Aether Actions** today, private AI–quantum depth research in Gen3, and gated profile replication in Gen4.
 
 <p align="center">
   <a href="https://aethersystems.net/actions"><img src="docs/assets/button-actions.svg" alt="Open Aether Actions — the existing hosted product" width="270" height="64"></a>
@@ -23,64 +28,56 @@
 </p>
 
 > [!IMPORTANT]
-> **Quantum advantage is Gen3’s research objective—not an established result.** Gen4 remains conditional on evidence and independent review. The live assurance product, historical hardware pilot, development replays, and future research milestones are distinct.
+> **Quantum advantage is a research objective—not an established result.** Gen3 research, the historical hardware pilot and the live assurance product remain distinct. Gen4 requires qualifying evidence and independent review.
 
 ## One program. Four generations.
 
+<a id="gen12--the-product-already-exists"></a>
+
+### Gen1–2 · Live assurance
+
+**Locked profiles. Aether-controlled execution. Results you can review.** Gen1–2 established the frontier-AI and quantum-assisted Crucible foundation behind the assurance profiles already delivered through Predator CI / Aether Actions.
+
 <p align="center">
-  <img src="docs/assets/generation-roadmap.svg" alt="Predator roadmap: Gen1–2 live locked assurance; Gen3 active AI–quantum depth and scaling research; Gen4 gated replication and profile upgrades. Arrows show research goals, not achieved results." width="100%">
+  <img src="docs/assets/flow-gen12-actions.svg" alt="Live product flow: connect a repository, choose a locked Predator Action and pass its eligibility precheck; approve the UVT quote; Aether servers run checks and permitted fixes; receive a source-bound assurance result and replay." width="100%">
 </p>
 
-| Generation | Focus | Public posture |
-| :--- | :--- | :--- |
-| **Gen1–2 · Foundation** | Frontier-AI and quantum-assisted Crucible work; locked cross-repository assurance profiles and hosted replay. | **Live product foundation.** Historical runs do not establish quantum advantage. |
-| **Gen3 · Research frontier** | Adaptive compilation and recompilation; deeper AI → Q → AI reasoning; study of depth-dependent lift, saturation, and scaling behaviour. | **Active private research.** Advantage and scaling laws remain hypotheses to test. |
-| **Gen4 · Research to product** | Reproduce qualifying Gen3 gains on Cloud, Agent, Atlas, CLI and open-source assurance workloads. | **Gated on Gen3.** Promote individually validated profile upgrades—or a new locked profile—through existing Actions. |
-
-### Gen1–2 · The product already exists
-
-**Predator Actions is not waiting for Gen3 to become a product.** Its customer journey is already the delivery path:
-
-```text
-Connect a repository → choose a locked Predator Action → eligibility precheck
-→ UVT quote / approval → Aether-controlled server execution
-→ checks and permitted fixes → scope-bound assurance result + replay
-```
-
-The customer selects an approved action, not a research algorithm. Aether controls the profile version, execution policy, verification and remediation boundaries. An assurance stamp describes the checks and source revision covered; it is not a guarantee that all defects have been eliminated.
+Customers choose an approved action; Aether controls the profile, execution and remediation boundaries. The assurance stamp identifies the checks and source revision covered—not a guarantee that every defect has been eliminated.
 
 ### Gen3 · Push the reasoning frontier
 
-**The thesis: adaptive compilation may bridge frontier AI and quantum computation.** Push AI reasoning to its observed limit under a defined budget; compile the unresolved structure into a bounded quantum intervention; verify the result; return admissible evidence to AI; and recompile the next residual.
+**Adaptive compilation is the bridge we are investigating.** Frontier AI tackles the source; the compiler turns unresolved structure into a quantum intervention; native verification returns evidence to AI; the recompiler builds the next intervention from that updated state.
 
-```text
-Code → frontier AI → adaptive compiler → Q1 → native verification → AI
-     → adaptive recompiler → Q2 → native verification → AI → Q3 → …
-```
+<p align="center">
+  <img src="docs/assets/flow-gen3-research.svg" alt="Research target, not an executed-depth claim: frontier AI compiles a residual for Q1, native verification feeds evidence back to AI, and adaptive recompilation builds dependent Q2 and later Q3 interventions." width="100%">
+</p>
 
-*This is the research target, not a claim that every depicted stage has executed.*
+The question: **can deeper, causally connected AI–quantum chains produce more verified progress than strong, comparably resourced AI-only and classical alternatives?** We study sustained lift, diminishing returns and falloff—not an assumed exponential curve. More circuits or loops do not establish advantage.
 
-The program explores complex **C++ systems, database/query workloads, and stateful binary-processing code**. Specific benchmark identities, hidden corpora, mutation designs and campaign internals are intentionally omitted here.
-
-The question is not simply whether another quantum call runs. It is whether additional, causally connected interventions produce **more verified progress than strong, comparably resourced AI-only and classical alternatives**. Gen3 studies sustained lift, diminishing returns, plateaus and falloff without assuming exponential growth. More qubits, deeper circuits or more loops do not establish advantage.
+Research spans **complex C++ systems, database/query workloads and stateful binary-processing code**. Benchmark identities, hidden corpora and campaign internals remain private.
 
 ### Gen4 · Replicate the gain. Upgrade the profiles.
 
-**If Gen3 earns advantage-level evidence, Gen4 attempts to reproduce that advantage on the workloads Predator already serves.** It does not create a customer-facing quantum backend.
+**Prove it in research. Reproduce it in the product.** If Gen3 earns advantage-level evidence, Gen4 attempts to replicate that benefit against the last locked assurance profiles while deeper research continues in parallel.
 
-```text
-Reviewed Gen3 evidence → freeze the qualifying engine / method
-                      ├─ continue deeper research and independent replication
-                      └─ compare with the last locked assurance profiles
-                         → verify profile-level lift → independent replay / review
-                         → versioned profile upgrade → Aether Actions rollout
-```
+<p align="center">
+  <img src="docs/assets/flow-gen4-transfer.svg" alt="Gated roadmap: review qualifying Gen3 evidence and freeze the method; compare against the last locked profiles with replay and independent review; promote validated versions or a new locked profile through existing Aether Actions. Research continues in parallel." width="100%">
+</p>
 
-Cloud, Agent, Atlas, CLI and open-source profile families are the intended transfer targets. **Each profile must earn its own promotion.** A result on one benchmark does not automatically improve every profile. Where the validated capability needs a different contract, a new locked profile is preferable to silently changing an existing one.
+Cloud, Agent, Atlas, CLI and open-source profile families are the intended targets. **Each profile earns its own promotion**—a benchmark result is not a blanket upgrade. A new assurance contract becomes a new locked profile, not a silent change to an existing one.
 
-Public updates should show the old-versus-new result, the covered source and profile version, relevant costs and limits, and a publication-safe replay of the evidence. Customer code, private tests, credentials and unrestricted execution controls stay private.
+Public updates should pair old-versus-new results with source/profile versions, costs, limits and publication-safe replay. Customer code, private tests, credentials and research controls stay private. **No customer-facing quantum backend is introduced.**
 
-**[Generation guidance, evidence gates and rollout policy →](docs/research/generations.md)**
+**[Research guidance, evidence gates and rollout policy →](docs/research/generations.md)**
+
+<details>
+<summary><strong>View the full generation map</strong></summary>
+
+<p align="center">
+  <img src="docs/assets/generation-roadmap.svg" alt="Gen1–2: live locked assurance. Gen3: active AI–quantum depth and scaling research. Gen4: gated replication and profile upgrades. Arrows show research goals, not achieved results." width="100%">
+</p>
+
+</details>
 
 ## Operator-controlled by design
 
@@ -89,11 +86,6 @@ Public updates should show the old-versus-new result, the covered source and pro
 | Eligible repositories run locked Predator Actions on Aether servers, with UVT accounting and result/replay access. | Aether operators control the research CLI, models, compilers, loops and any separately authorized hardware work. | Contract-led analysis of authorized code and infrastructure, with explicit scope and reviewed findings. |
 
 **Connecting a repository does not grant Predator CLI access, arbitrary loop execution, profile-internal controls, or QPU access.** Contract discussions do not imply self-service access to the private research engine.
-
-<p align="center">
-  <img src="docs/assets/predator-console.png" alt="Original Predator operator terminal; illustrative session, not a customer execution console or a Gen3 result" width="100%"><br>
-  <sub>Original operator-console image. Session values, labels and counters are illustrative; this is not a Gen3 evidence display.</sub>
-</p>
 
 <details>
 <summary><strong>🟣 Published hardware note · IBM Fez compiler-quality pilot</strong></summary>
