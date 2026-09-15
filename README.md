@@ -20,7 +20,8 @@
   <a href="#research-loop"><strong>Completed chain</strong></a> &nbsp; · &nbsp;
   <a href="#recorded-quantum-selection"><strong>Quantum data</strong></a> &nbsp; · &nbsp;
   <a href="#next-objective-quantum-advantage"><strong>What follows</strong></a> &nbsp; · &nbsp;
-  <a href="#start-here"><strong>Use Predator</strong></a>
+  <a href="#start-here"><strong>Use Predator</strong></a> &nbsp; · &nbsp;
+  <a href="#want-to-join-the-research"><strong>Join the research</strong></a>
 </p>
 
 <a name="predator-program"></a>
@@ -137,6 +138,18 @@ One six-variable fixture, two related cases, four circuits at **1,024 shots each
 [Measurement note and uncertainty →](docs/research/ibm-fez-pilot.md) · [Full-precision data →](docs/research/ibm-pilot.json)
 
 </details>
+
+## Want to join the research?
+
+We’re looking for developers and skilled contributors to help advance **Aether’s AI + Quantum research program**. Work includes improving the research CLI, developing and debugging repair chains, and strengthening the tools and experiments behind the program.
+
+Applications are reviewed by Aether. Selected applicants receive access to the relevant research repositories and approved work areas after approval.
+
+**This is a research and development opportunity, not a red-teaming or security engagement.**
+
+**[Apply to join the research →](https://aethersystems.net/contact?intent=general&product=site_wide&cta=footer_updates_contact)**
+
+Tell us about your skills, relevant projects, and the research you’d like to contribute to.
 
 ## Start here
 
