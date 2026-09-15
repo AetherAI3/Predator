@@ -6,6 +6,8 @@
 
 Gen3 has its first completed dependent-repair win in the Aether Predator program: **Q3 closed all 24 evaluated CharLS cases, preserving 16 prior passes and adding eight.** Native feedback from Q2 became the evidence parent for a separately prepared Q3 repair. C3 is banked. Gen3 continues toward its objective: **demonstrating quantum advantage under credible comparisons.**
 
+**Reading the labels:** C marks a saved evidence checkpoint; Q marks an intervention using the preceding evidence. Native validation runs checks on the software itself. Protected cases are the campaign’s private evaluation cases. A residual is the repair obligation that remains after a check fails. “Banked” means the result and linked evidence are retained.
+
 ![Completed CharLS case: C2 has 16 prior passes and eight residual failures; C3 has all 24 passing, with zero prior passes lost.](../assets/readme-gen3-win.svg)
 
 ## What was solved
@@ -20,7 +22,7 @@ Controlled faults make the expected behavior and dependencies explicit. The resu
 
 ## The completed chain
 
-![C0 to C3: Q1 reaches a continuation, Q2 exposes FRAGMENTDATA failure and banks C2, then Q3 closes the residual and banks C3. Only C2 and C3 have comparable protected counts here.](../assets/flow-gen3-research.svg)
+![C0 to C3: Q1 reaches a continuation, Q2 exposes FRAGMENTDATA failure and banks C2, then Q3 closes the residual and banks C3. Only C2 and C3 have comparable protected counts here.](../assets/gen3-charls-q3-completed-d5da033514a9.svg)
 
 | Stage | Recorded transition | Comparable protected utility |
 | :--- | :--- | :--- |
@@ -51,7 +53,7 @@ This is a measured C2→C3 improvement. The public record supplies no comparable
 
 ## The actual quantum-selection record
 
-Q1 and Q2 used **Aer simulation**. For Q2, the recovered certificate records **2,048 samples** with bit order `[t17, t42]`:
+Q1 and Q2 used **Aer simulation**, which simulates quantum circuits on classical computers. A **QUBO** models yes/no repair choices and their costs; **energy** is the modeled cost to minimize. For Q2, the recovered certificate records **2,048 samples** with bit order `[t17, t42]`:
 
 | State | Samples | Feasible? | Frozen energy | Decision |
 | :--- | ---: | :--- | ---: | :--- |

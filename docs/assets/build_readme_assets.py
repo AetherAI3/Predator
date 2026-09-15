@@ -1,5 +1,6 @@
 """Build public result SVGs from approved summary JSONs; no experiment calls."""
 import json
+import hashlib
 from html import escape
 from pathlib import Path
 
@@ -137,6 +138,12 @@ def chain():
     return "\n".join(a + ["</svg>"])
 
 
+def completed_chain_filename():
+    """Different content gets a different URL; avoid a reused image cache key."""
+    fingerprint = hashlib.sha256(chain().encode("utf-8")).hexdigest()[:12]
+    return f"gen3-charls-q3-completed-{fingerprint}.svg"
+
+
 def selection():
     q = Q3["quantum"]
     a = start(1280, 620, "Recorded Q2 quantum-selection data · Aer simulation", "2048 samples: 00 635 rejected; 01 291 feasible and selected at energy one quarter; 10 324 feasible at energy two; 11 798 rejected. Lowest feasible sampled energy selected, not most frequent state. 615 feasible, 1433 rejected, regret zero. Exact classical selection agreed. This is Q2 simulation data, not a Q3 hardware result.")
@@ -186,6 +193,7 @@ if __name__ == "__main__":
     assert sum(s["count"] for s in Q3["quantum"]["samples"]) == 2048
     outputs = {"readme-hero.svg": hero(), "readme-hardware-data.svg": hardware(),
                "readme-gen3-win.svg": win(), "flow-gen3-research.svg": chain(), "readme-q2-selection.svg": selection(),
+               completed_chain_filename(): chain(),
                "readme-start-actions.svg": entry_card(), "readme-start-q3.svg": entry_card(research=True),
                "tag-actions-profiles.svg": badge("ACTIONS", "LOCKED PROFILES", GREEN),
                "tag-gen3-private.svg": badge("GEN 3", "RESEARCH CONTINUES", PURPLE),

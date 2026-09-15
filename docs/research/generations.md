@@ -2,6 +2,8 @@
 
 ### Live assurance → private depth research → gated profile replication
 
+Predator combines **adaptive compilation, advanced frontier-AI reasoning, and quantum-depth research** to advance **software analysis, vulnerability analysis, threat modeling, and resolution modeling**. The program investigates software failures, models possible consequences and evaluates changes against the behavior that must be preserved. Quantum depth refers to successive dependent quantum-method interventions; each campaign must identify whether those methods ran in simulation or on quantum hardware.
+
 [← Predator overview](../../README.md) · [Completed Q3 result](charls-q3.md) · [Aether Actions](https://aethersystems.net/actions) · [Separate hardware pilot](ibm-fez-pilot.md)
 
 > **Research posture:** Gen1–2 established the live assurance foundation. Gen3 explicitly pursues quantum advantage and investigates deeper AI–quantum reasoning chains. Gen4 is conditional: transfer qualifying findings into independently validated, locked Predator assurance profiles. No quantum-advantage result or Gen4 release is claimed by this roadmap.

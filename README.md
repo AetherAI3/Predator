@@ -15,6 +15,7 @@
 </p>
 
 <p align="center">
+  <a href="#predator-program"><strong>The program</strong></a> &nbsp; · &nbsp;
   <a href="#first-gen3-win"><strong>Q3 result</strong></a> &nbsp; · &nbsp;
   <a href="#research-loop"><strong>Completed chain</strong></a> &nbsp; · &nbsp;
   <a href="#recorded-quantum-selection"><strong>Quantum data</strong></a> &nbsp; · &nbsp;
@@ -22,15 +23,28 @@
   <a href="#start-here"><strong>Use Predator</strong></a>
 </p>
 
-**Predator’s first Gen3 repair win is banked. Q3 reached 24/24.**
+<a name="predator-program"></a>
 
-Aether AI’s research loop carried evidence through **C0 → Q1 → C1 → Q2 → C2 → Q3 → C3**. On the controlled CharLS benchmark, the final repair closed all eight remaining cases while preserving every prior pass. **Gen3 continues toward its objective: proving quantum advantage under credible, matched comparisons.**
+**Predator combines adaptive compilation, advanced frontier-AI reasoning, and quantum-depth research to advance software analysis, vulnerability analysis, threat modeling, and resolution modeling.**
 
-Predator combines AI-assisted source reasoning, adaptive compilation and native software verification. This public repository contains the showcase and selected research records; the research engine remains private. Supported customer checks run through **Predator CI / Aether Actions**.
+The program investigates how software can fail, how risks connect, and which changes can resolve them while preserving required behavior. It turns reasoning into candidate changes, tests those changes on the software itself, and carries the resulting evidence into the next round. **Quantum depth** here means successive, dependent quantum-method interventions in that reasoning process; it does not mean every round runs on a quantum processor.
+
+**The first Gen3 repair win is complete. Q3 reached 24/24.**
+
+Aether AI’s research loop carried evidence through **C0 → Q1 → C1 → Q2 → C2 → Q3 → C3**. **C** marks a saved evidence checkpoint; **Q** marks an intervention that uses the preceding evidence. On the controlled CharLS benchmark, the final repair closed all eight remaining cases while preserving every prior pass. **Gen3 continues toward its objective: proving quantum advantage under credible, matched comparisons.**
+
+CharLS is one repair case within the broader Predator program. This public repository contains the showcase and selected research records; the research engine remains private. Supported customer checks run through **Predator CI / Aether Actions**.
+
+<p align="center">
+  <img src="docs/assets/predator-console.png" width="100%" alt="Owner-supplied image of the private Predator operator console. The pictured session and counters are illustrative, not research measurements."><br>
+  <sub>Predator operator console · Illustrative session and counters; the measured Q3 result follows below.</sub>
+</p>
 
 ## First Gen3 win
 
 **CharLS · completed September 14, 2026 · producer-verified native PASS · C3 banked**
+
+**Native PASS** means the checks passed on the software itself. **Protected cases** are the campaign’s private evaluation cases. **C3 banked** means the result and its linked evidence were saved and verified by the execution lane.
 
 <p align="center">
   <a href="docs/research/charls-q3.md"><img src="docs/assets/readme-gen3-win.svg" width="100%" alt="First Gen3 repair win: C2 16 of 24 passing becomes C3 24 of 24. Blue marks 16 preserved passes; purple marks 8 newly passing cases. Zero prior passes lost. The case is complete; the quantum-advantage objective remains open."></a>
@@ -38,9 +52,9 @@ Predator combines AI-assisted source reasoning, adaptive compilation and native 
 
 | Protected result | Before · C2 | After · C3 | Change |
 | :--- | ---: | ---: | :--- |
-| Cases passing | 16/24 · 66.7% | **24/24 · 100%** | **+8 passes · +33.3 pp** |
+| Cases passing | 16/24 · 66.7% | **24/24 · 100%** | **+8 passes · +33.3 percentage points** |
 | Prior passes retained | 16 | **16/16** | **0 prior passes lost** |
-| Residual cases failing | 8 | **0** | **All eight closed** |
+| Remaining cases failing | 8 | **0** | **All eight closed** |
 
 **What was fixed?** A fragment-copy defect on real CharLS C++ source with deliberately introduced faults. After copying a fragment, the destination advanced one byte too little, causing the next fragment to overwrite the previous fragment’s last byte. Q3’s repair advanced by the full fragment length. **24/24 counts deterministic private test cases, not vulnerabilities or CVEs.**
 
@@ -52,10 +66,10 @@ Supporting validation: **516/516 stock tests, including 17/17 compliance**, sani
 
 <a name="how-the-research-works"></a>
 
-**The dependent chain has now completed this case.** Each intervention used the preceding evidence. Q2’s failure became C2; Q3 continued from that parent and produced C3.
+**The dependent chain has now completed this case.** Each intervention used the preceding evidence. Q2 left eight cases failing—the remaining repair obligation, or **residual**. That failure and the resulting source were recorded in C2. Q3 repaired that source and produced C3.
 
 <p align="center">
-  <a href="docs/research/charls-q3.md#the-completed-chain"><img src="docs/assets/flow-gen3-research.svg" width="100%" alt="Completed chain: C0 frozen problem; Q1 reaches the continuation and banks C1; Q2 exposes FRAGMENTDATA failure and banks C2 at 16/24; Q3 repairs fragment advancement and banks C3 at 24/24. No comparable C0 or C1 scores are supplied. Follow-up objective: demonstrate quantum advantage."></a>
+  <a href="docs/research/charls-q3.md#the-completed-chain"><img src="docs/assets/gen3-charls-q3-completed-d5da033514a9.svg" width="100%" alt="Completed chain: C0 frozen problem; Q1 reaches the continuation and banks C1; Q2 exposes FRAGMENTDATA failure and banks C2 at 16/24; Q3 repairs fragment advancement and banks C3 at 24/24. No comparable C0 or C1 scores are supplied. Follow-up objective: demonstrate quantum advantage."></a>
 </p>
 
 | Intervention | What it added | Banked evidence |
@@ -64,7 +78,7 @@ Supporting validation: **516/516 stock tests, including 17/17 compliance**, sani
 | **Q2** | Selected the frozen continuation repair; gates A/B passed and C failed `FRAGMENTDATA` | **C2** · **16/24**, residual retained |
 | **Q3** | Applied **C2-H1**, a new repair prepared from C2 on Q2’s result tree | **C3** · **24/24**, prior passes preserved |
 
-**What changed at Q3 was the repair candidate and its parent binding.** It retained the compiler and decoder semantics and had one candidate. This is a successful dependent repair, with the failure preserved as `CHARLS_Q2_EXECUTED_NATIVE_FAIL`; it is not evidence that Q3 introduced a stronger optimizer.
+**Q3 introduced a new repair for the exact source produced by Q2, with its evidence linked to C2.** Its catalog contained one candidate. The optimization compiler and decoder—the rules that encode and select a repair—kept their earlier semantics. Q3 succeeded by closing the remaining software obligation; a stronger optimizer was not demonstrated. The earlier result remains `CHARLS_Q2_EXECUTED_NATIVE_FAIL`.
 
 **C = evidence checkpoint carried into later reasoning. Q = intervention.** Reasoning-chain depth differs from circuit depth. Comparable protected scores are supplied only for **C2 → C3**, so the chart does not invent earlier scores.
 
@@ -74,13 +88,15 @@ The producer reports recovered replay/lineage verification, signed native bindin
 
 **Q2 · Aer simulation · 2,048 samples · exact frozen objective**
 
+A **QUBO** models yes/no repair choices and their costs. Its **energy** is the modeled cost to minimize, not electrical energy or a guarantee that the code works. **Aer** simulates quantum circuits on classical computers. The selected repair still has to pass native software tests.
+
 <p align="center">
   <a href="docs/research/charls-q3.md#the-actual-quantum-selection-record"><img src="docs/assets/readme-q2-selection.svg" width="100%" alt="Q2 Aer counts: 00 has 635 rejected samples, 01 has 291 selected samples at energy one quarter, 10 has 324 feasible samples at energy two, and 11 has 798 rejected samples. 615 feasible out of 2048; regret zero; exact classical selection agreed."></a>
 </p>
 
-The selected state **`01`** was the unique feasible optimum at **energy 1/4, regret 0**. The policy chose the lowest feasible sampled energy, not the most frequent sample. Exact classical selection agreed and reached the same native failure. That directs attention to the residual and repair space, rather than unsupported sampler tuning.
+The selected state **`01`** was the unique feasible optimum at **energy 1/4, regret 0**: no better valid choice existed under that frozen model. The policy chose the lowest feasible sampled energy, not the most frequent sample. Exact classical selection agreed and reached the same native failure. The remaining question concerned the repair space and its modeled costs; these data do not implicate sampling.
 
-Q1/Q2 used simulation. Q3’s singleton supplies no optimizer comparison, and this summary supplies no Q3 histogram. **The CharLS result establishes neither QPU execution nor quantum advantage.** Its source-directed repair gain is real within the evaluated contract. [Counts, graph scope and comparison limits →](docs/research/charls-q3.md#the-actual-quantum-selection-record)
+Q1/Q2 used simulation. Q3’s one-candidate catalog supplies no optimizer comparison, and this summary supplies no Q3 histogram. **The CharLS result establishes neither execution on a quantum processor nor quantum advantage.** It establishes the completed dependent repair and measured gain described above. [Counts, graph scope and comparison limits →](docs/research/charls-q3.md#the-actual-quantum-selection-record)
 
 ## Next objective: quantum advantage
 
@@ -163,16 +179,6 @@ A **locked profile** is a fixed, versioned set of checks and execution rules. Re
 **Customers use approved Actions. Aether operates the private research engine.** This public repository is not an installable research CLI. Connecting a repository does not expose arbitrary research loops, private model settings or quantum hardware controls. Engagements require an agreed, authorized scope.
 
 The CharLS summary publishes approved aggregate outcomes and fingerprints. Private inputs, patches, raw receipts, trust material and execution infrastructure remain private. [Public disclosure and replay scope →](docs/research/generations.md#7-public-disclosure-boundary)
-
-<details>
-<summary><strong>View the private operator console · illustrative</strong></summary>
-
-<p align="center">
-  <img src="docs/assets/predator-console.png" width="100%" alt="Owner-supplied image of the private Predator operator console. The pictured session and counters are illustrative, not research measurements."><br>
-  <sub>Private operator console · Illustrative session, not a research measurement.</sub>
-</p>
-
-</details>
 
 <details>
 <summary><strong>Explore the tools behind the research</strong></summary>
