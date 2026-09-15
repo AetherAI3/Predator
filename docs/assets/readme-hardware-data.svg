@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800" role="img" aria-labelledby="title description">
+<title id="title">IBM Fez: published compiler measurements</title><desc id="description">Author-reported pilot, September 6, 2026. Ordinary compilation in blue, joint5 in purple. Native two-qubit gates decreased 144 to 103 per circuit. Total-variation distance decreased in both related cases. Expected energy increased, which is worse for the minimization objective. One fixture, four circuits, one job; no independent confirmation or quantum advantage established.</desc>
+<rect x="1" y="1" width="1278" height="798" rx="18" fill="#070d17" stroke="#2a3b51"/>
+<text x="48" y="48" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#67dcb4" >IBM FEZ / PUBLISHED HARDWARE PILOT</text>
+<text x="1232" y="48" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#adbbce" text-anchor="end">06 SEP 2026</text>
+<text x="48" y="117" font-family="Helvetica,Arial,sans-serif" font-size="46" font-weight="700" fill="#f2f6ff" >Fewer gates. Closer output.</text>
+<text x="48" y="158" font-family="Helvetica,Arial,sans-serif" font-size="23" font-weight="400" fill="#adbbce" >Two related cases from one six-variable fixture.</text>
+<text x="48" y="244" font-family="Helvetica,Arial,sans-serif" font-size="76" font-weight="700" fill="#32c7eb" >144</text>
+<text x="215" y="241" font-family="Helvetica,Arial,sans-serif" font-size="53" font-weight="400" fill="#adbbce" >→</text>
+<text x="301" y="244" font-family="Helvetica,Arial,sans-serif" font-size="76" font-weight="700" fill="#b48aff" >103</text>
+<text x="510" y="240" font-family="Helvetica,Arial,sans-serif" font-size="54" font-weight="700" fill="#b48aff" >−28.5%</text>
+<text x="50" y="285" font-family="Helvetica,Arial,sans-serif" font-size="22" font-weight="400" fill="#adbbce" >Native two-qubit gates per circuit</text>
+<text x="930" y="207" font-family="Helvetica,Arial,sans-serif" font-size="28" font-weight="700" fill="#f2f6ff" >4 circuits</text>
+<text x="930" y="244" font-family="Helvetica,Arial,sans-serif" font-size="22" font-weight="400" fill="#adbbce" >1,024 shots each</text>
+<text x="930" y="279" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="400" fill="#adbbce" >3 s billed QPU time</text>
+<path d="M48 313H1232" stroke="#293b53"/>
+<text x="48" y="358" font-family="Helvetica,Arial,sans-serif" font-size="27" font-weight="700" fill="#f2f6ff" >Output agreement</text>
+<text x="1232" y="356" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="400" fill="#adbbce" text-anchor="end">TV distance ↓ Lower is closer to ideal</text>
+<path d="M350 400V610" stroke="#28364b"/>
+<text x="350" y="389" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="400" fill="#adbbce" text-anchor="middle">0.0</text>
+<path d="M488 400V610" stroke="#28364b"/>
+<text x="488" y="389" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="400" fill="#adbbce" text-anchor="middle">0.1</text>
+<path d="M626 400V610" stroke="#28364b"/>
+<text x="626" y="389" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="400" fill="#adbbce" text-anchor="middle">0.2</text>
+<path d="M764 400V610" stroke="#28364b"/>
+<text x="764" y="389" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="400" fill="#adbbce" text-anchor="middle">0.3</text>
+<path d="M902 400V610" stroke="#28364b"/>
+<text x="902" y="389" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="400" fill="#adbbce" text-anchor="middle">0.4</text>
+<path d="M1040 400V610" stroke="#28364b"/>
+<text x="1040" y="389" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="400" fill="#adbbce" text-anchor="middle">0.5</text>
+<text x="48" y="439" font-family="Helvetica,Arial,sans-serif" font-size="24" font-weight="700" fill="#f2f6ff" >Vulnerable case</text>
+<text x="245" y="431" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#32c7eb" >Ordinary</text>
+<rect x="350" y="410" width="545.341081" height="28" rx="4" fill="#32c7eb"/>
+<text x="910.3410806445719" y="432" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#f2f6ff" >0.395175</text>
+<text x="245" y="470" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#b48aff" >joint5</text>
+<rect x="350" y="449" width="436.801255" height="28" rx="4" fill="#b48aff"/>
+<text x="801.8012552761777" y="471" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#f2f6ff" >0.316523</text>
+<text x="48" y="562" font-family="Helvetica,Arial,sans-serif" font-size="24" font-weight="700" fill="#f2f6ff" >Fixed case</text>
+<text x="245" y="554" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#32c7eb" >Ordinary</text>
+<rect x="350" y="533" width="557.324844" height="28" rx="4" fill="#32c7eb"/>
+<text x="922.3248441061738" y="555" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#f2f6ff" >0.403859</text>
+<text x="245" y="593" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#b48aff" >joint5</text>
+<rect x="350" y="572" width="424.981835" height="28" rx="4" fill="#b48aff"/>
+<text x="789.9818351727481" y="594" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#f2f6ff" >0.307958</text>
+<path d="M48 638H1232" stroke="#293b53"/>
+<text x="48" y="678" font-family="Helvetica,Arial,sans-serif" font-size="25" font-weight="700" fill="#efc479" >Important tradeoff: expected energy increased in both cases.</text>
+<text x="48" y="714" font-family="Helvetica,Arial,sans-serif" font-size="22" font-weight="400" fill="#f2f6ff" >Fewer gates and closer output did not improve minimization.</text>
+<text x="48" y="763" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="400" fill="#adbbce" >Author-reported public extract · One hardware job · No independent confirmation · No quantum advantage established</text>
+</svg>
