@@ -1,7 +1,7 @@
 {
-  "schema": "PREDATOR_PUBLIC_README_CONSISTENCY_V2",
-  "base_commit": "e32bce3d761d86479909c1b0eaa84a720ac38fde",
-  "base_tree": "05deee9077bc7bbf767efc95eb116f8629ff1808",
+  "schema": "PREDATOR_PUBLIC_README_CONSISTENCY_V3",
+  "base_commit": "0eba2497aef8c7852644f45a17ef8d1dcb391b97",
+  "base_tree": "a5ad61fc836e99b7289dfe230a361117685550c6",
   "scope": "Owner-approved public Q3 summary, README, showcase, figures and roadmap; no research execution",
   "checks": {
     "q3_leads_before_separate_ibm_pilot": "PASS",
@@ -42,10 +42,18 @@
     "ibm_source_measurements_and_brand_unchanged": "PASS",
     "ibm_values_and_adverse_energy_outcome_retained": "PASS",
     "ibm_acquisition_denominators_and_rounded_reduction": "PASS",
-    "all_twelve_generated_svgs_safe_and_accessible": "PASS",
+    "all_thirteen_generated_svgs_safe_and_accessible": "PASS",
     "result_tile_count_and_colors_match_metrics": "PASS",
     "q2_count_bars_share_correct_scale": "PASS",
-    "all_twelve_svgs_rebuild_identically": "PASS"
+    "all_thirteen_svgs_rebuild_identically": "PASS",
+    "chain_url_has_correct_content_fingerprint": "PASS",
+    "versioned_chain_matches_verified_completed_source": "PASS",
+    "all_reader_surfaces_use_versioned_chain_url": "PASS",
+    "program_mission_consistent_on_primary_surfaces": "PASS",
+    "readme_defines_terms_before_data": "PASS",
+    "console_visible_once_near_readme_front": "PASS",
+    "console_front_in_showcase_with_caption": "PASS",
+    "q3_data_and_checkpoint_fingerprints_unchanged": "PASS"
   },
   "gfm_parser": "Pandoc; structural approximation, not GitHub production renderer",
   "svg_visual_review": "PASS_NON_BROWSER_RENDER",
@@ -54,22 +62,13 @@
   "private_signatures_independently_reverified": false,
   "new_native_or_quantum_execution": "NONE",
   "artifact_sha256": {
-    "README.md": "a8e4b9df60ad21ce95816eef94656ea2beca3c62235857e6bbcae17836dd933c",
-    "docs/assets/SOURCES.md": "ef6b0868cf23b036299b2e4ad82cc81c7493455195fbbef4bba44a2a7b24435f",
-    "docs/assets/build_readme_assets.py": "5425d4ab0b6a1ca78ee926f9d38e5866c6ad1add0bc911c554704af4e1d1a456",
-    "docs/assets/flow-gen3-research.svg": "d5da033514a9d01d5381130818286bf5eae0ce7e3b38f570a1b8a1d24787ae47",
-    "docs/assets/readme-gen3-win.svg": "855e14855b0bf4c687f799229fbc974fecc09bee57762db0c6f4a7807e73c6f0",
-    "docs/assets/readme-q2-selection.svg": "e071003e9fbb40370ce4de7f3aaa4577fa6d78108a559ec710ed96b398918a3b",
-    "docs/assets/readme-start-actions.svg": "315d2817302f98f9e7cf6d79239e0596aa468b02c6870084d9d59e986c390e54",
-    "docs/assets/readme-start-q3.svg": "7d21fc6ee2d5867849d8e0c5a3b0c1afb092644c4d2cb8a4151ebce4b2b0d714",
-    "docs/assets/tag-gen3-private.svg": "e40a9e7f07d4a7045d02942324bee99a4f7169d22412db3c5659b35f5ec4bc79",
-    "docs/assets/tag-gen3-win.svg": "c8e63ab101d1b9e8acd8b1a48eb4f1f49a95048f38eb308586772010b345aae4",
-    "docs/assets/tag-q3-utility.svg": "c47b27e2c65fe53f7910866af9e28263004808b089abf7f274cfde2ebbd0f760",
-    "docs/index.html": "3b126dab6cfa86879e40e3625884efe2d963dd86d04beb75df36ec91e113fb0a",
-    "docs/q3-showcase.css": "ec15ae54d1d5f2ba2be8f18093d2fe70aa63e52fe7891e8815832ee45b13c376",
-    "docs/research/charls-q3.html": "d6a6c3ac2311078a039afb1e8d7a69dbd81db14077134f908c04d7ad2949d89a",
-    "docs/research/charls-q3.json": "1923c6c98904de8799a94a9b151fe7517aba1cd0c43503815884f5af6897afb6",
-    "docs/research/charls-q3.md": "8cd250e53528b9272effc5138c41c1d51239bcd757eb76c3c2a495480dae3e96",
-    "docs/research/generations.md": "32b203f23f52152e857e40f89423922fffe7ee228d0b4f20c63fda27af85608b"
+    "README.md": "8aed23d8e9527dc6a273e8475c8abe193dee93c271970f0568b80fcff0715311",
+    "docs/assets/SOURCES.md": "4d79aef0bad71d873c8df1829df226da1fb48df90482d8429ac36689df3721a1",
+    "docs/assets/build_readme_assets.py": "fa4860c9486a8eaf783ab0db1bb0bb741e7fee37ebda02ad7b987df7fbd8dec7",
+    "docs/assets/gen3-charls-q3-completed-d5da033514a9.svg": "d5da033514a9d01d5381130818286bf5eae0ce7e3b38f570a1b8a1d24787ae47",
+    "docs/index.html": "b0df03ef152dca7f30541ef849fcec619deb097cb9555d219474932ed077c8c2",
+    "docs/research/charls-q3.html": "26e0cae93223a6e71790f411454359fabf08e1e50a5c3bce614c02a250eae7aa",
+    "docs/research/charls-q3.md": "6156314c38f8358ea5e6e71c1749c7e4af3fd2a93ec83a9d963cb83f95aa87cd",
+    "docs/research/generations.md": "fc625c2ba41a6fc2d0df4d7651be9d43a1afe136710f96e01d2920f1518063fe"
   }
 }

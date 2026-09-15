@@ -3,6 +3,7 @@
 <p><a href="../index.html">← Predator overview</a> · <a href="charls-q3.json">Public result data</a> · <a href="https://github.com/AetherAI3/predator-cli/blob/main/docs/research/generations.md">Research objective</a></p>
 <p><strong>Completed September 14, 2026. Published September 15, 2026.</strong></p>
 <p>Gen3 has its first completed dependent-repair win in the Aether Predator program: <strong>Q3 closed all 24 evaluated CharLS cases, preserving 16 prior passes and adding eight.</strong> Native feedback from Q2 became the evidence parent for a separately prepared Q3 repair. C3 is banked. Gen3 continues toward its objective: <strong>demonstrating quantum advantage under credible comparisons.</strong></p>
+<p><strong>Reading the labels:</strong> C marks a saved evidence checkpoint; Q marks an intervention using the preceding evidence. Native validation runs checks on the software itself. Protected cases are the campaign’s private evaluation cases. A residual is the repair obligation that remains after a check fails. “Banked” means the result and linked evidence are retained.</p>
 <p><img src="../assets/readme-gen3-win.svg" alt="Completed CharLS case: C2 has 16 prior passes and eight residual failures; C3 has all 24 passing, with zero prior passes lost." /></p>
 <h2 id="what-was-solved">What was solved</h2>
 <p>The benchmark used real CharLS C++ source with deliberately introduced faults. <strong>24/24 means 24 deterministic private campaign test cases pass.</strong> It does not mean 24 vulnerabilities, a newly discovered production CVE or an established exploit severity.</p>
@@ -10,7 +11,7 @@
 <p>We classify that mechanism as consistent with <a href="https://cwe.mitre.org/data/definitions/193.html">MITRE CWE-193: Off-by-one Error</a>. This connects the controlled defect to a documented software-weakness class; it does not establish exploitability or severity for this benchmark.</p>
 <p>Controlled faults make the expected behavior and dependencies explicit. The result establishes successful repair and preservation under that contract; discovery and transfer to unseen faults require separate evidence.</p>
 <h2 id="the-completed-chain">The completed chain</h2>
-<p><img src="../assets/flow-gen3-research.svg" alt="C0 to C3: Q1 reaches a continuation, Q2 exposes FRAGMENTDATA failure and banks C2, then Q3 closes the residual and banks C3. Only C2 and C3 have comparable protected counts here." /></p>
+<p><img src="../assets/gen3-charls-q3-completed-d5da033514a9.svg" alt="C0 to C3: Q1 reaches a continuation, Q2 exposes FRAGMENTDATA failure and banks C2, then Q3 closes the residual and banks C3. Only C2 and C3 have comparable protected counts here." /></p>
 <table>
 <thead>
 <tr class="header">
@@ -78,7 +79,7 @@
 <p><strong>Supporting validation:</strong> 516/516 stock tests, including 17/17 compliance; sanitizer PASS; 10,000 fuzz executions. The compliance cases are included in the stock total. Fuzz executions are additional validation activity, not additional protected cases. Zero regressions describes the evaluated obligations, not a guarantee about every possible input.</p>
 <p>This is a measured C2→C3 improvement. The public record supplies no comparable C0 or C1 count, so it does not support a four-point utility curve or an accelerating-gain claim.</p>
 <h2 id="the-actual-quantum-selection-record">The actual quantum-selection record</h2>
-<p>Q1 and Q2 used <strong>Aer simulation</strong>. For Q2, the recovered certificate records <strong>2,048 samples</strong> with bit order <code>[t17, t42]</code>:</p>
+<p>Q1 and Q2 used <strong>Aer simulation</strong>, which simulates quantum circuits on classical computers. A <strong>QUBO</strong> models yes/no repair choices and their costs; <strong>energy</strong> is the modeled cost to minimize. For Q2, the recovered certificate records <strong>2,048 samples</strong> with bit order <code>[t17, t42]</code>:</p>
 <table>
 <thead>
 <tr class="header">
