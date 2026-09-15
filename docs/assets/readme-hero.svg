@@ -1,1 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="300" viewBox="0 0 1280 300" role="img" aria-labelledby="title desc"><title id="title">PREDATOR by Aether AI</title><desc id="desc">Reason deeply. Prove the result. Authorized security research and adaptive compilation.</desc><defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#17151e"/><stop offset="1" stop-color="#0b0d14"/></linearGradient><linearGradient id="accent"><stop stop-color="#ff7047"/><stop offset=".6" stop-color="#ce8cdf"/><stop offset="1" stop-color="#65dce7"/></linearGradient></defs><rect width="1280" height="300" rx="16" fill="url(#bg)"/><rect x="1" y="1" width="1278" height="298" rx="15" fill="none" stroke="#383141"/><path d="M36 42H1244" stroke="#302b39"/><rect x="36" y="40" width="180" height="3" fill="url(#accent)"/><text x="49" y="169" fill="#ff7953" font-family="Arial,sans-serif" font-size="132" font-weight="900" letter-spacing="-6">PREDATOR</text><text x="57" y="226" fill="#eef0f8" font-family="Arial,sans-serif" font-size="31" font-weight="700" letter-spacing="-.7">Reason deeply. Prove the result.</text><text x="57" y="266" fill="#a9b3c5" font-family="Arial,sans-serif" font-size="18">AI investigation · Adaptive compilation · Verified evidence</text><path d="M929 94h263m-263 18h197m-197 18h232" stroke="#49405f" stroke-width="2"/><text x="931" y="185" fill="#c7b2fb" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="2">AUTHORIZED RESEARCH</text><text x="931" y="216" fill="#a9b3c5" font-family="Arial,sans-serif" font-size="17">Built by Aether AI</text><path d="M931 258h261" stroke="url(#accent)" stroke-width="3"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="350" viewBox="0 0 1280 350" role="img" aria-labelledby="title description">
+<title id="title">Predator by Aether AI</title><desc id="description">Brand graphic: reason deeply, prove the result. AI reasoning, adaptive compilation and software verification. This is not a research measurement.</desc>
+<rect x="1" y="1" width="1278" height="348" rx="18" fill="#070d17" stroke="#2a3b51"/>
+<path d="M48 42H650" stroke="#32c7eb" stroke-width="3"/>
+<path d="M650 42H1232" stroke="#b48aff" stroke-width="3"/>
+<text x="49" y="86" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#adbbce" letter-spacing="2">AETHER AI / SECURITY RESEARCH</text>
+<text x="42" y="201" font-family="Helvetica,Arial,sans-serif" font-size="128" font-weight="900" fill="#f2f6ff" letter-spacing="-6">PREDATOR</text>
+<text x="50" y="261" font-family="Helvetica,Arial,sans-serif" font-size="34" font-weight="700" fill="#32c7eb" >Reason deeply. Prove the result.</text>
+<text x="50" y="308" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="400" fill="#adbbce" >AI reasoning · Adaptive compilation · Software verification</text>
+<rect x="945" y="99" width="287" height="57" rx="9" fill="#101b2b" stroke="#283b53"/>
+<text x="962" y="136" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#32c7eb" >01</text>
+<text x="1011" y="135" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#f2f6ff" letter-spacing="2">REASON</text>
+<rect x="945" y="173" width="287" height="57" rx="9" fill="#101b2b" stroke="#283b53"/>
+<text x="962" y="210" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#b48aff" >02</text>
+<text x="1011" y="209" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#f2f6ff" letter-spacing="2">COMPILE</text>
+<rect x="945" y="247" width="287" height="57" rx="9" fill="#101b2b" stroke="#283b53"/>
+<text x="962" y="284" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#67dcb4" >03</text>
+<text x="1011" y="283" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#f2f6ff" letter-spacing="2">VERIFY</text>
+</svg>

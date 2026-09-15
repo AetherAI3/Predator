@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="254" height="32" viewBox="0 0 254 32" role="img" aria-labelledby="title description">
+<title id="title">ACTIONS: LOCKED PROFILES</title><desc id="description">Static editorial label, not a live CI, deployment or scientific-validation status.</desc>
+<rect x="1" y="1" width="252" height="30" rx="18" fill="#070d17" stroke="#2a3b51"/>
+<circle cx="14" cy="16" r="3" fill="#67dcb4"/>
+<text x="25" y="20" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#adbbce" >ACTIONS</text>
+<text x="96" y="20" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#67dcb4" >LOCKED PROFILES</text>
+</svg>

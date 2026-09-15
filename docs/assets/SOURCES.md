@@ -1,6 +1,6 @@
 # README visual sources
 
-- **predator-console.png** — original Predator engagement terminal image supplied by Aether AI. Preserved byte for byte; Git blob `bda259be2c83e711796f5d2b7dac124a1c8e8765`. The pictured session and counters are illustrative. Repositioned directly beneath the hero in the README; no pixel edits.
+- **predator-console.png** — original Predator engagement terminal image supplied by Aether AI. Preserved byte for byte; Git blob `bda259be2c83e711796f5d2b7dac124a1c8e8765`. The pictured session and counters are illustrative. The September 15 README places this unchanged image in an expandable operator-console section.
 - **aether-website-mark.svg** — original Aether logo extracted from the owner-supplied capture of the [defense-stack page](https://aethersystems.net/defense-stack#defense-stack). The SVG namespace was added for standalone display.
 - **defense-stack-attack-path.svg** — the same page’s inline campaign illustration, adapted for a static README with a dark background and readable node/edge contrast. It illustrates the broader operator-led service, not the restricted CLI surface or a measured incident.
 - **nano-hex.png** — the original [Nano website asset](https://aethersystems.net/assets/brand/nano-hex.png), preserved without pixel changes. Git blob `b64bdaf656ce6f94d14bd1d084119ab28f17eaea`.
@@ -10,3 +10,12 @@
 - **flow-gen12-actions.svg**, **flow-gen3-research.svg**, **flow-gen4-transfer.svg** — matching static workflow cards replacing the README’s text diagrams. Gen1–2 depicts the existing locked-action journey; Gen3 is explicitly a research target; Gen4 is explicitly conditional. Each includes accessible title/description text. No scripts, external images or embedded fonts.
 
 Original website capture and README adaptation: September 9, 2026. The console-first polish preserves the original terminal, hero and historical hardware assets. Website marketing benchmarks and illustrative counters are not combined with the separate [September 6 IBM Fez compiler pilot](../research/ibm-fez-pilot.md).
+
+## September 15 public README revision
+
+- **readme-hero.svg** — updated Aether typography and cyan/purple/green geometry. The existing **aether-website-mark.svg** remains unchanged. The hero is a brand graphic, not a scientific measurement.
+- **readme-hardware-data.svg** — original vector chart generated from the existing public [ibm-pilot.json](../research/ibm-pilot.json). Cyan denotes ordinary compilation; purple denotes joint5. All four TV-distance bars share the same 0–0.5 axis. Gate counts and acquisition size come from that public record. The expected-energy regression, one-job scope and absence of independent confirmation remain visible inside the standalone figure.
+- **tag-actions-profiles.svg**, **tag-gen3-private.svg**, **tag-hardware-pilot.svg** — local editorial badges. They do not report live CI, current deployment health or independent scientific validation. The existing **tag-gen4-gated.svg** remains unchanged.
+- **build_readme_assets.py** — standard-library generator for the updated hero, hardware chart and three badges. Run `python3 docs/assets/build_readme_assets.py` from the repository root. It reads the existing public numerical record; it does not execute circuits, query hardware or alter research data.
+
+This revision preserves the console, original Aether mark, public numerical data and measurement note byte for byte. The earlier console-first placement described above is historical. The public README now leads with the purpose, access routes and bounded hardware evidence; the console is supporting illustration.
