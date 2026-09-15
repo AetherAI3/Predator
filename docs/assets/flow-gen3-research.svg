@@ -1,23 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="840" height="226" viewBox="0 0 840 226" role="img" aria-labelledby="title desc">
-<title id="title">Gen3 · AI–quantum research loop</title><desc id="desc">Research goal, not a completed run: AI and Q1 propose solutions, software tests check them, and verified results guide AI, Q2 and later steps. Quantum advantage is not established.</desc>
-<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#161924"/><stop offset="1" stop-color="#0c1019"/></linearGradient></defs>
-<rect x=".5" y=".5" width="839" height="225" rx="16" fill="url(#bg)" stroke="#30394a"/>
-<rect x="22" y="23" width="4" height="17" rx="2" fill="#d3b5ff"/>
-<g font-family="Arial,Helvetica,sans-serif">
-<text x="36" y="37" font-size="13" font-weight="700" letter-spacing="1.5" fill="#d3b5ff">RESEARCH GOAL · NOT A COMPLETED RUN</text>
-<rect x="22" y="58" width="254" height="110" rx="11" fill="#251f35" stroke="#d3b5ff" stroke-opacity=".27"/>
-<text x="38" y="90" font-size="22" font-weight="700" fill="#f2f5fa">AI → Q1 → test</text>
-<text x="38" y="120" font-size="16" fill="#c7d1e1">Search for possible fixes</text>
-<text x="38" y="145" font-size="16" fill="#c7d1e1">Check them on real code</text>
-<path d="M280 112h10m-4-4 4 4-4 4" fill="none" stroke="#d3b5ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-<rect x="293" y="58" width="254" height="110" rx="11" fill="#251f35" stroke="#d3b5ff" stroke-opacity=".27"/>
-<text x="309" y="90" font-size="22" font-weight="700" fill="#f2f5fa">AI → Q2 → test</text>
-<text x="309" y="120" font-size="16" fill="#c7d1e1">Use the previous evidence</text>
-<text x="309" y="145" font-size="16" fill="#c7d1e1">Update the search</text>
-<path d="M551 112h10m-4-4 4 4-4 4" fill="none" stroke="#d3b5ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-<rect x="564" y="58" width="254" height="110" rx="11" fill="#251f35" stroke="#d3b5ff" stroke-opacity=".27"/>
-<text x="580" y="90" font-size="22" font-weight="700" fill="#f2f5fa">AI → Q3 → …</text>
-<text x="580" y="120" font-size="16" fill="#c7d1e1">Repeat while useful</text>
-<text x="580" y="145" font-size="16" fill="#c7d1e1">Measure gains and limits</text>
-<text x="22" y="201" font-size="15" fill="#aebbd0">Each step builds on verified results. Quantum advantage is not established.</text>
-</g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="970" viewBox="0 0 1280 970" role="img" aria-labelledby="title description">
+<title id="title">The completed Gen3 chain, followed by the next objective</title><desc id="description">C0 frozen problem, Q1, C1 continuation reached, Q2 native failure, C2 16 of 24, Q3 residual-directed repair, C3 24 of 24. C0 and C1 have no comparable protected count here. The Q2 failure is retained. Q3 is a new C2-directed singleton repair, with unchanged compiler and decoder semantics. The case is complete; the program continues toward quantum advantage.</desc>
+<rect x="1" y="1" width="1278" height="968" rx="18" fill="#070d17" stroke="#2a3b51"/>
+<text x="48" y="52" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#67dcb4" letter-spacing="1">THE LOOP HAS A COMPLETED RESULT</text>
+<text x="48" y="108" font-family="Helvetica,Arial,sans-serif" font-size="40" font-weight="700" fill="#f2f6ff" >Evidence → intervention → new evidence</text>
+<text x="48" y="145" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="400" fill="#adbbce" >C = banked checkpoint carried into reasoning     Q = dependent intervention</text>
+<path d="M150 242V758" stroke="#496481" stroke-width="3"/>
+<path d="M150 242H270" stroke="#adbbce" stroke-width="2"/>
+<circle cx="150" cy="242" r="7" fill="#adbbce"/>
+<rect x="270" y="184" width="962" height="116" rx="12" fill="#0f1928" stroke="#293e57"/>
+<text x="294" y="240" font-family="Helvetica,Arial,sans-serif" font-size="36" font-weight="800" fill="#adbbce" >C0</text>
+<text x="390" y="228" font-family="Helvetica,Arial,sans-serif" font-size="29" font-weight="700" fill="#f2f6ff" >Frozen problem</text>
+<text x="390" y="269" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="400" fill="#adbbce" >Controlled source + committed evaluation contract</text>
+<text x="1199" y="233" font-family="Helvetica,Arial,sans-serif" font-size="37" font-weight="700" fill="#adbbce" text-anchor="end">—</text>
+<text x="1199" y="271" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="400" fill="#adbbce" text-anchor="end">No comparable count</text>
+<path d="M150 414H270" stroke="#32c7eb" stroke-width="2"/>
+<circle cx="150" cy="414" r="7" fill="#32c7eb"/>
+<rect x="270" y="356" width="962" height="116" rx="12" fill="#0f1928" stroke="#293e57"/>
+<text x="294" y="412" font-family="Helvetica,Arial,sans-serif" font-size="36" font-weight="800" fill="#32c7eb" >C1</text>
+<text x="390" y="400" font-family="Helvetica,Arial,sans-serif" font-size="29" font-weight="700" fill="#f2f6ff" >Continuation reached</text>
+<text x="390" y="441" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="400" fill="#adbbce" >Q1 exposes the next obligation; stage-two options released</text>
+<text x="1199" y="405" font-family="Helvetica,Arial,sans-serif" font-size="37" font-weight="700" fill="#32c7eb" text-anchor="end">—</text>
+<text x="1199" y="443" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="400" fill="#adbbce" text-anchor="end">No comparable count</text>
+<path d="M150 586H270" stroke="#32c7eb" stroke-width="2"/>
+<circle cx="150" cy="586" r="7" fill="#32c7eb"/>
+<rect x="270" y="528" width="962" height="116" rx="12" fill="#0f1928" stroke="#293e57"/>
+<text x="294" y="584" font-family="Helvetica,Arial,sans-serif" font-size="36" font-weight="800" fill="#32c7eb" >C2</text>
+<text x="390" y="572" font-family="Helvetica,Arial,sans-serif" font-size="29" font-weight="700" fill="#f2f6ff" >Residual isolated</text>
+<text x="390" y="613" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="400" fill="#adbbce" >Q2: gates A/B pass; gate C fails FRAGMENTDATA</text>
+<text x="1199" y="577" font-family="Helvetica,Arial,sans-serif" font-size="37" font-weight="700" fill="#32c7eb" text-anchor="end">16/24</text>
+<text x="1199" y="615" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="400" fill="#adbbce" text-anchor="end">Native FAIL retained</text>
+<path d="M150 758H270" stroke="#b48aff" stroke-width="2"/>
+<circle cx="150" cy="758" r="7" fill="#b48aff"/>
+<rect x="270" y="700" width="962" height="116" rx="12" fill="#101627" stroke="#b48aff"/>
+<text x="294" y="756" font-family="Helvetica,Arial,sans-serif" font-size="36" font-weight="800" fill="#b48aff" >C3</text>
+<text x="390" y="744" font-family="Helvetica,Arial,sans-serif" font-size="29" font-weight="700" fill="#f2f6ff" >Residual closed</text>
+<text x="390" y="785" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="400" fill="#adbbce" >Q3: new C2-H1 repair; 16 preserved + 8 newly passing</text>
+<text x="1199" y="749" font-family="Helvetica,Arial,sans-serif" font-size="37" font-weight="700" fill="#b48aff" text-anchor="end">24/24</text>
+<text x="1199" y="787" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="400" fill="#adbbce" text-anchor="end">Native PASS · banked</text>
+<rect x="48" y="306" width="204" height="44" rx="8" fill="#151f32" stroke="#32c7eb"/>
+<text x="66" y="335" font-family="Helvetica,Arial,sans-serif" font-size="25" font-weight="700" fill="#32c7eb" >Q1</text>
+<text x="281" y="334" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#32c7eb" >Reach continuation</text>
+<path d="M145 349l5 5 5-5" fill="none" stroke="#32c7eb" stroke-width="2"/>
+<rect x="48" y="478" width="204" height="44" rx="8" fill="#151f32" stroke="#32c7eb"/>
+<text x="66" y="507" font-family="Helvetica,Arial,sans-serif" font-size="25" font-weight="700" fill="#32c7eb" >Q2</text>
+<text x="281" y="506" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#32c7eb" >Select + test</text>
+<path d="M145 521l5 5 5-5" fill="none" stroke="#32c7eb" stroke-width="2"/>
+<rect x="48" y="650" width="204" height="44" rx="8" fill="#151f32" stroke="#b48aff"/>
+<text x="66" y="679" font-family="Helvetica,Arial,sans-serif" font-size="25" font-weight="700" fill="#b48aff" >Q3</text>
+<text x="281" y="678" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#b48aff" >Repair from C2</text>
+<path d="M145 693l5 5 5-5" fill="none" stroke="#b48aff" stroke-width="2"/>
+<path d="M48 854H1232" stroke="#2c405d"/>
+<text x="48" y="891" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#b48aff" letter-spacing="1">FOLLOW-UP / GEN3 CONTINUES</text>
+<text x="48" y="930" font-family="Helvetica,Arial,sans-serif" font-size="24" font-weight="700" fill="#f2f6ff" >Demonstrate quantum advantage through matched comparisons and replication.</text>
+</svg>

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CharLS Q3 — First Gen3 repair win · Aether AI</title><meta name="description" content="Completed CharLS Q3 case: 24/24 protected cases, 16 preserved, eight new passes. Public measurement note, lineage fingerprints and ongoing quantum-advantage objective."><link rel="stylesheet" href="../styles.css"></head><body><a class="skip" href="#main">Skip to content</a><main id="main" class="measurement shell"><h1 id="charls-q3--the-first-gen3-repair-win">CharLS Q3 — the first Gen3 repair win</h1>
+<p><a href="../index.html">← Predator overview</a> · <a href="charls-q3.json">Public result data</a> · <a href="https://github.com/AetherAI3/predator-cli/blob/main/docs/research/generations.md">Research objective</a></p>
+<p><strong>Completed September 14, 2026. Published September 15, 2026.</strong></p>
+<p>Gen3 has its first completed dependent-repair win in the Aether Predator program: <strong>Q3 closed all 24 evaluated CharLS cases, preserving 16 prior passes and adding eight.</strong> Native feedback from Q2 became the evidence parent for a separately prepared Q3 repair. C3 is banked. Gen3 continues toward its objective: <strong>demonstrating quantum advantage under credible comparisons.</strong></p>
+<p><img src="../assets/readme-gen3-win.svg" alt="Completed CharLS case: C2 has 16 prior passes and eight residual failures; C3 has all 24 passing, with zero prior passes lost." /></p>
+<h2 id="what-was-solved">What was solved</h2>
+<p>The benchmark used real CharLS C++ source with deliberately introduced faults. <strong>24/24 means 24 deterministic private campaign test cases pass.</strong> It does not mean 24 vulnerabilities, a newly discovered production CVE or an established exploit severity.</p>
+<p>The final repair concerned fragment concatenation. <code>mapping_table_entry::copy</code> copied each fragment in full but advanced the destination by <code>data_fragment.size() − 1</code>. The next fragment began one byte too early, overwriting the preceding fragment’s last byte and leaving part of the destination unwritten. Q3 candidate <strong>C2-H1</strong> advanced by the complete fragment length. This explains the repaired behavior; it does not settle every possible reason Q2’s candidate generation or objective left the obligation open.</p>
+<p>We classify that mechanism as consistent with <a href="https://cwe.mitre.org/data/definitions/193.html">MITRE CWE-193: Off-by-one Error</a>. This connects the controlled defect to a documented software-weakness class; it does not establish exploitability or severity for this benchmark.</p>
+<p>Controlled faults make the expected behavior and dependencies explicit. The result establishes successful repair and preservation under that contract; discovery and transfer to unseen faults require separate evidence.</p>
+<h2 id="the-completed-chain">The completed chain</h2>
+<p><img src="../assets/flow-gen3-research.svg" alt="C0 to C3: Q1 reaches a continuation, Q2 exposes FRAGMENTDATA failure and banks C2, then Q3 closes the residual and banks C3. Only C2 and C3 have comparable protected counts here." /></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Stage</th>
+<th style="text-align: left;">Recorded transition</th>
+<th style="text-align: left;">Comparable protected utility</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>C0 → Q1 → C1</strong></td>
+<td style="text-align: left;">Q1’s native transition reached a deeper continuation; committed stage-two options were released</td>
+<td style="text-align: left;">Not supplied for C0/C1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>C1 → Q2 → C2</strong></td>
+<td style="text-align: left;">Q2 selected the frozen continuation repair; gates A/B passed, C failed <code>FRAGMENTDATA</code></td>
+<td style="text-align: left;"><strong>16/24</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>C2 → Q3 → C3</strong></td>
+<td style="text-align: left;">A new C2-directed fragment repair closed the residual while retaining the prior passes</td>
+<td style="text-align: left;"><strong>24/24</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>C labels an evidence checkpoint carried into later reasoning; Q labels an intervention.</strong> Chain depth counts dependent interventions. It is separate from circuit depth, graph treewidth and the number of operational attempts.</p>
+<p>Q3 changed the <strong>candidate patch and its parent binding</strong>. C2-H1 was prepared from C2 on Q2’s result tree; it was not the unused stage-two option released at C1. Q3 retained the optimization arithmetic and decoder semantics and used a <strong>one-candidate catalog</strong>. The improvement demonstrates that the dependent repair worked, not that a stronger optimizer was introduced.</p>
+<p>Historical Q2 remains <code>CHARLS_Q2_EXECUTED_NATIVE_FAIL</code>. Its policy linkage is verified; its broader cause classification remains unresolved. A successful later repair does not rewrite a failed earlier experiment.</p>
+<h2 id="the-measured-lift">The measured lift</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Primary measure</th>
+<th style="text-align: right;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Protected cases passing at C2</td>
+<td style="text-align: right;">16/24 · 66.7%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Protected cases passing at C3</td>
+<td style="text-align: right;"><strong>24/24 · 100%</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">New protected passes</td>
+<td style="text-align: right;"><strong>+8</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Prior protected passes preserved</td>
+<td style="text-align: right;"><strong>16/16</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Prior protected passes lost</td>
+<td style="text-align: right;"><strong>0</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Absolute pass-rate lift</td>
+<td style="text-align: right;"><strong>+33.3 percentage points</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Supporting validation:</strong> 516/516 stock tests, including 17/17 compliance; sanitizer PASS; 10,000 fuzz executions. The compliance cases are included in the stock total. Fuzz executions are additional validation activity, not additional protected cases. Zero regressions describes the evaluated obligations, not a guarantee about every possible input.</p>
+<p>This is a measured C2→C3 improvement. The public record supplies no comparable C0 or C1 count, so it does not support a four-point utility curve or an accelerating-gain claim.</p>
+<h2 id="the-actual-quantum-selection-record">The actual quantum-selection record</h2>
+<p>Q1 and Q2 used <strong>Aer simulation</strong>. For Q2, the recovered certificate records <strong>2,048 samples</strong> with bit order <code>[t17, t42]</code>:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">State</th>
+<th style="text-align: right;">Samples</th>
+<th style="text-align: left;">Feasible?</th>
+<th style="text-align: right;">Frozen energy</th>
+<th style="text-align: left;">Decision</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>00</code></td>
+<td style="text-align: right;">635</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: left;">Rejected</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>01</code></td>
+<td style="text-align: right;">291</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;"><strong>1/4</strong></td>
+<td style="text-align: left;"><strong>Selected: t42</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>10</code></td>
+<td style="text-align: right;">324</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Feasible alternative</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>11</code></td>
+<td style="text-align: right;">798</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: left;">Rejected</td>
+</tr>
+</tbody>
+</table>
+<p>There were <strong>615 feasible samples and 1,433 rejected samples</strong>. The policy selected the lowest exact energy among feasible sampled states, not the most frequent state. <code>01</code> was the unique feasible optimum; the feasible energy gap was 7/4 and regret was zero. Exact classical selection agreed and its own native replay reached the same failed C gate. Resource parity was not asserted.</p>
+<p>These data support correct execution of that frozen objective. They do not support sampler tuning as the explanation for Q2’s residual. Q3’s singleton catalog supplies no optimizer comparison; its raw sample histogram is not supplied in this public summary. The older <a href="ibm-fez-pilot.html">IBM Fez hardware pilot</a> is a separate experiment, not hardware evidence for this CharLS chain.</p>
+<p>For the documented logical option encoding, Q2 has two vertices joined by one edge (treewidth <strong>1</strong>); Q3 has one vertex and no pairwise edge (treewidth <strong>0</strong>). A bag containing both Q2 vertices, and a singleton bag for Q3, attain these widths; Q2’s edge supplies its matching lower bound. These are source-derived graph facts, not new receipt measurements or a measure of CharLS program complexity. No inference about quantum advantage follows from a large source program.</p>
+<h2 id="what-is-established-and-what-follows">What is established, and what follows</h2>
+<p><strong>Established:</strong> AI-assisted source reasoning, QUBO selection and native feedback formed a dependent repair chain that closed the remaining obligation on real C++ source while preserving the evaluated prior passes. This is Aether’s first Gen3 repair milestone, not a priority claim about the wider research field.</p>
+<p><strong>Next objective:</strong> demonstrate an attributable quantum advantage over strong AI-only and classical alternatives, with prospectively matched information access, native-query budgets, total resource accounting, uncertainty and independent replication. The source change, the selector’s contribution and the full system’s contribution need to be distinguished.</p>
+<p>Before protected Q3, development already reported <strong>516/516 public tests passing and 68 source/include files matching pinned upstream</strong>. That inherited outcome knowledge limits novelty and blindness claims. A future transfer test must distinguish learning a reusable repair rule from restoring known upstream behavior. No matched Q3 advantage comparison, unseen-task transfer or quantum-hardware advantage is established here.</p>
+<p>The case is complete; the program remains active. <strong>No Q4 was started by the closeout, and this report launches no experiment.</strong></p>
+<h2 id="evidence-replay-and-operational-reconciliation">Evidence, replay and operational reconciliation</h2>
+<p>This public note is an approved summary of the recovered ATLAS certificate, source contracts and completed execution-lane closeout. The producer reports successful Ed25519 signature verification and C2, candidate, tree, verifier, corpus and instrumentation bindings. It reports banking <strong>17 C3 objects</strong>, each read back with complete SHA-256 verification. This editorial review did not independently reverify the private signed bytes.</p>
+<p>The native outcome is <strong>PASS</strong> and C3 is <strong>BANKED</strong>. The hosted ActionRun remains <strong>failed/lost</strong>: its completion endpoint returned HTTP 422 when five-field hosted check rows were compared with signed three-field rows. The orchestration failure and the authenticated native outcome are retained separately. Earlier failures and the owner-authorized retry remain in the history; banking caused no further native execution. Both failed and successful native outcomes count in the research record.</p>
+<p><strong>What readers can reproduce here:</strong> the public arithmetic and figures, using <a href="charls-q3.json">charls-q3.json</a> and <code>python3 docs/assets/build_readme_assets.py</code>. The completed chain’s replay and lineage verification are producer-reported from the recovered private bundle. This repository alone does <strong>not</strong> provide independent end-to-end campaign reproduction: private inputs, patch bytes, raw receipts and trust material are not distributed here. Complete attempt exposure and cost totals are also not supplied.</p>
+<details>
+<summary><strong>Published checkpoint and durability fingerprints · SHA-256</strong></summary>
+
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Identity</th>
+<th style="text-align: left;">Full digest</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">C0</td>
+<td style="text-align: left;"><code>ade2df97519110fd91f656b1dcac4d0d830f475609e49c1aa1932edba74cf5c4</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C1</td>
+<td style="text-align: left;"><code>679d8a6ba1ecb7ecf49776588cb57bdd8f5b629812321a231c3623d2b4f7cf58</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C2</td>
+<td style="text-align: left;"><code>b80540199b4f2f27b0ea7f028b5bcb529a9dcdb1c59cfb7d36fd3e5f9b513851</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C3</td>
+<td style="text-align: left;"><code>31dcab98677b6aa9008a1eed107a9d895e57fbc80dab0a1d5e0dcefefe786790</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">C3 durability receipt</td>
+<td style="text-align: left;"><code>2eae45c6c2ac2f104f1b657dd3480f8b0407ae7b92151c2dcbd84c9f644179d5</code></td>
+</tr>
+</tbody>
+</table>
+<p>Fingerprints identify the retained records. Hashes alone do not make unpublished evidence independently verifiable.</p>
+</details>
+</main></body></html>

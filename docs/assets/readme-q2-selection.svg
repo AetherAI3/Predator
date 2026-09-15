@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="620" viewBox="0 0 1280 620" role="img" aria-labelledby="title description">
+<title id="title">Recorded Q2 quantum-selection data · Aer simulation</title><desc id="description">2048 samples: 00 635 rejected; 01 291 feasible and selected at energy one quarter; 10 324 feasible at energy two; 11 798 rejected. Lowest feasible sampled energy selected, not most frequent state. 615 feasible, 1433 rejected, regret zero. Exact classical selection agreed. This is Q2 simulation data, not a Q3 hardware result.</desc>
+<rect x="1" y="1" width="1278" height="618" rx="18" fill="#070d17" stroke="#2a3b51"/>
+<text x="48" y="52" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#32c7eb" >QUANTUM SELECTION / Q2 · AER SIMULATION</text>
+<text x="48" y="112" font-family="Helvetica,Arial,sans-serif" font-size="43" font-weight="700" fill="#f2f6ff" >The frozen optimum was selected.</text>
+<text x="48" y="150" font-family="Helvetica,Arial,sans-serif" font-size="22" font-weight="400" fill="#adbbce" >2,048 recorded samples · bit order [t17, t42] · lower feasible energy wins</text>
+<text x="1123" y="201" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#adbbce" text-anchor="middle">DECISION / ENERGY</text>
+<text x="49" y="247" font-family="Helvetica,Arial,sans-serif" font-size="29" font-weight="700" fill="#adbbce" >00</text>
+<rect x="155" y="218" width="720" height="36" rx="5" fill="#142035" stroke="#142035"/>
+<rect x="155" y="218" width="508.00000000000006" height="36" rx="5" fill="#586c87" stroke="#586c87"/>
+<text x="915" y="246" font-family="Helvetica,Arial,sans-serif" font-size="27" font-weight="700" fill="#f2f6ff" >635</text>
+<text x="1020" y="246" font-family="Helvetica,Arial,sans-serif" font-size="23" font-weight="700" fill="#adbbce" >Rejected</text>
+<text x="49" y="310" font-family="Helvetica,Arial,sans-serif" font-size="29" font-weight="700" fill="#b48aff" >01</text>
+<rect x="155" y="281" width="720" height="36" rx="5" fill="#142035" stroke="#142035"/>
+<rect x="155" y="281" width="232.79999999999998" height="36" rx="5" fill="#b48aff" stroke="#b48aff"/>
+<text x="915" y="309" font-family="Helvetica,Arial,sans-serif" font-size="27" font-weight="700" fill="#f2f6ff" >291</text>
+<text x="1020" y="309" font-family="Helvetica,Arial,sans-serif" font-size="23" font-weight="700" fill="#b48aff" >Selected · 1/4</text>
+<text x="49" y="373" font-family="Helvetica,Arial,sans-serif" font-size="29" font-weight="700" fill="#32c7eb" >10</text>
+<rect x="155" y="344" width="720" height="36" rx="5" fill="#142035" stroke="#142035"/>
+<rect x="155" y="344" width="259.2" height="36" rx="5" fill="#32c7eb" stroke="#32c7eb"/>
+<text x="915" y="372" font-family="Helvetica,Arial,sans-serif" font-size="27" font-weight="700" fill="#f2f6ff" >324</text>
+<text x="1020" y="372" font-family="Helvetica,Arial,sans-serif" font-size="23" font-weight="700" fill="#32c7eb" >Feasible · 2</text>
+<text x="49" y="436" font-family="Helvetica,Arial,sans-serif" font-size="29" font-weight="700" fill="#adbbce" >11</text>
+<rect x="155" y="407" width="720" height="36" rx="5" fill="#142035" stroke="#142035"/>
+<rect x="155" y="407" width="638.4000000000001" height="36" rx="5" fill="#586c87" stroke="#586c87"/>
+<text x="915" y="435" font-family="Helvetica,Arial,sans-serif" font-size="27" font-weight="700" fill="#f2f6ff" >798</text>
+<text x="1020" y="435" font-family="Helvetica,Arial,sans-serif" font-size="23" font-weight="700" fill="#adbbce" >Rejected</text>
+<path d="M48 486H1232" stroke="#293e57"/>
+<text x="48" y="530" font-family="Helvetica,Arial,sans-serif" font-size="29" font-weight="700" fill="#32c7eb" >615 feasible</text>
+<text x="384" y="530" font-family="Helvetica,Arial,sans-serif" font-size="29" font-weight="700" fill="#adbbce" >1,433 rejected</text>
+<text x="803" y="530" font-family="Helvetica,Arial,sans-serif" font-size="29" font-weight="700" fill="#b48aff" >Regret 0</text>
+<text x="48" y="584" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="400" fill="#adbbce" >Exact classical selection agreed · Q2 native FAIL preserved · Q3 repaired the remaining obligation</text>
+</svg>

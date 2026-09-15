@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://aethersystems.net/"><img src="docs/assets/aether-website-mark.svg" width="46" height="46" alt="Aether AI"></a><br>
-  <strong>AETHER AI · SOFTWARE ANALYSIS &amp; SECURITY RESEARCH</strong>
+  <strong>AETHER AI · PREDATOR · SOFTWARE ANALYSIS &amp; SECURITY RESEARCH</strong>
 </p>
 
 <p align="center">
@@ -8,58 +8,104 @@
 </p>
 
 <p align="center">
-  <a href="#start-here"><img src="docs/assets/tag-actions-profiles.svg" height="32" alt="Aether Actions: locked profiles"></a>
-  <a href="#research-loop"><img src="docs/assets/tag-gen3-private.svg" height="32" alt="Gen3: private research"></a><br>
-  <a href="#published-quantum-data"><img src="docs/assets/tag-hardware-pilot.svg" height="32" alt="Hardware: published compiler pilot"></a>
-  <a href="#generation-map"><img src="docs/assets/tag-gen4-gated.svg" height="32" alt="Gen4: conditional roadmap"></a>
+  <a href="#first-gen3-win"><img src="docs/assets/tag-gen3-win.svg" height="32" alt="Gen3 milestone: Q3 native PASS"></a>
+  <a href="#first-gen3-win"><img src="docs/assets/tag-q3-utility.svg" height="32" alt="Protected cases: 24 of 24 passing"></a><br>
+  <a href="#next-objective-quantum-advantage"><img src="docs/assets/tag-gen3-private.svg" height="32" alt="Gen3 program: research continues"></a>
+  <a href="#published-quantum-data"><img src="docs/assets/tag-hardware-pilot.svg" height="32" alt="Separate hardware experiment: published IBM pilot"></a>
 </p>
 
 <p align="center">
-  <a href="#start-here"><strong>Start here</strong></a> &nbsp; · &nbsp;
-  <a href="#published-quantum-data"><strong>Quantum data</strong></a> &nbsp; · &nbsp;
-  <a href="#research-loop"><strong>Research loop</strong></a> &nbsp; · &nbsp;
-  <a href="#access-and-scope"><strong>Access</strong></a>
+  <a href="#first-gen3-win"><strong>Q3 result</strong></a> &nbsp; · &nbsp;
+  <a href="#research-loop"><strong>Completed chain</strong></a> &nbsp; · &nbsp;
+  <a href="#recorded-quantum-selection"><strong>Quantum data</strong></a> &nbsp; · &nbsp;
+  <a href="#next-objective-quantum-advantage"><strong>What follows</strong></a> &nbsp; · &nbsp;
+  <a href="#start-here"><strong>Use Predator</strong></a>
 </p>
 
-**Understand the code. Model the problem. Check the result.**
+**Predator’s first Gen3 repair win is banked. Q3 reached 24/24.**
 
-Predator is Aether AI’s software analysis and security research program. It brings together **AI-assisted investigation, adaptive compilation and verification on real software**. Supported customer checks run through **Predator CI / Aether Actions**; the research CLI and backend remain private.
+Aether AI’s research loop carried evidence through **C0 → Q1 → C1 → Q2 → C2 → Q3 → C3**. On the controlled CharLS benchmark, the final repair closed all eight remaining cases while preserving every prior pass. **Gen3 continues toward its objective: proving quantum advantage under credible, matched comparisons.**
 
-This public repository contains the showcase, research guidance and selected measurement notes. It is not an installable distribution of the research engine.
+Predator combines AI-assisted source reasoning, adaptive compilation and native software verification. This public repository contains the showcase and selected research records; the research engine remains private. Supported customer checks run through **Predator CI / Aether Actions**.
 
-## Start here
+## First Gen3 win
 
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>Use supported checks</h3>
-      <p>Connect a repository, choose a supported action and review the permitted scope before approving usage.</p>
-      <p><a href="https://aethersystems.net/actions"><strong>Explore Aether Actions →</strong></a></p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>Explore the research</h3>
-      <p>See the published hardware measurements, the reasoning-loop hypothesis and the evidence needed for future upgrades.</p>
-      <p><a href="docs/research/generations.md"><strong>Read the research roadmap →</strong></a></p>
-    </td>
-  </tr>
-</table>
-
-**Check coverage first.** Predator Security requires an approved assurance profile. The [current product page](https://aethersystems.net/actions) lists AetherCloud backend coverage; customer-specific profiles are private preview. Hosted Build &amp; Test is a separate Actions service.
+**CharLS · completed September 14, 2026 · producer-verified native PASS · C3 banked**
 
 <p align="center">
-  <a href="https://aetherai3.github.io/predator-cli/">Visual showcase</a> &nbsp; · &nbsp;
-  <a href="https://aethersystems.net/defense-stack">Aether defense stack</a> &nbsp; · &nbsp;
-  <a href="https://aethersystems.net/contact?intent=general&amp;product=aether_predator_cli&amp;cta=research_readme">Discuss an authorized engagement</a>
+  <a href="docs/research/charls-q3.md"><img src="docs/assets/readme-gen3-win.svg" width="100%" alt="First Gen3 repair win: C2 16 of 24 passing becomes C3 24 of 24. Blue marks 16 preserved passes; purple marks 8 newly passing cases. Zero prior passes lost. The case is complete; the quantum-advantage objective remains open."></a>
 </p>
+
+| Protected result | Before · C2 | After · C3 | Change |
+| :--- | ---: | ---: | :--- |
+| Cases passing | 16/24 · 66.7% | **24/24 · 100%** | **+8 passes · +33.3 pp** |
+| Prior passes retained | 16 | **16/16** | **0 prior passes lost** |
+| Residual cases failing | 8 | **0** | **All eight closed** |
+
+**What was fixed?** A fragment-copy defect on real CharLS C++ source with deliberately introduced faults. After copying a fragment, the destination advanced one byte too little, causing the next fragment to overwrite the previous fragment’s last byte. Q3’s repair advanced by the full fragment length. **24/24 counts deterministic private test cases, not vulnerabilities or CVEs.**
+
+Supporting validation: **516/516 stock tests, including 17/17 compliance**, sanitizer PASS and 10,000 fuzz executions. These support the result; they are not extra protected cases.
+
+**[Read the concise result →](docs/research/charls-q3.md)** &nbsp; · &nbsp; **[Public data and fingerprints →](docs/research/charls-q3.json)** &nbsp; · &nbsp; **[Visual showcase →](https://aetherai3.github.io/predator-cli/)**
+
+## Research loop
+
+<a name="how-the-research-works"></a>
+
+**The dependent chain has now completed this case.** Each intervention used the preceding evidence. Q2’s failure became C2; Q3 continued from that parent and produced C3.
+
+<p align="center">
+  <a href="docs/research/charls-q3.md#the-completed-chain"><img src="docs/assets/flow-gen3-research.svg" width="100%" alt="Completed chain: C0 frozen problem; Q1 reaches the continuation and banks C1; Q2 exposes FRAGMENTDATA failure and banks C2 at 16/24; Q3 repairs fragment advancement and banks C3 at 24/24. No comparable C0 or C1 scores are supplied. Follow-up objective: demonstrate quantum advantage."></a>
+</p>
+
+| Intervention | What it added | Banked evidence |
+| :--- | :--- | :--- |
+| **Q1** | Reached a deeper continuation and released the committed stage-two options | **C1** · next obligation exposed |
+| **Q2** | Selected the frozen continuation repair; gates A/B passed and C failed `FRAGMENTDATA` | **C2** · **16/24**, residual retained |
+| **Q3** | Applied **C2-H1**, a new repair prepared from C2 on Q2’s result tree | **C3** · **24/24**, prior passes preserved |
+
+**What changed at Q3 was the repair candidate and its parent binding.** It retained the compiler and decoder semantics and had one candidate. This is a successful dependent repair, with the failure preserved as `CHARLS_Q2_EXECUTED_NATIVE_FAIL`; it is not evidence that Q3 introduced a stronger optimizer.
+
+**C = evidence checkpoint carried into later reasoning. Q = intervention.** Reasoning-chain depth differs from circuit depth. Comparable protected scores are supplied only for **C2 → C3**, so the chart does not invent earlier scores.
+
+The producer reports recovered replay/lineage verification, signed native bindings and full-hash readback of **17 C3 objects**. Readers can rebuild the published figures from the public JSON. Independent end-to-end campaign reproduction requires the retained private material; this summary does not distribute it. [Evidence and replay scope →](docs/research/charls-q3.md#evidence-replay-and-operational-reconciliation)
+
+## Recorded quantum selection
+
+**Q2 · Aer simulation · 2,048 samples · exact frozen objective**
+
+<p align="center">
+  <a href="docs/research/charls-q3.md#the-actual-quantum-selection-record"><img src="docs/assets/readme-q2-selection.svg" width="100%" alt="Q2 Aer counts: 00 has 635 rejected samples, 01 has 291 selected samples at energy one quarter, 10 has 324 feasible samples at energy two, and 11 has 798 rejected samples. 615 feasible out of 2048; regret zero; exact classical selection agreed."></a>
+</p>
+
+The selected state **`01`** was the unique feasible optimum at **energy 1/4, regret 0**. The policy chose the lowest feasible sampled energy, not the most frequent sample. Exact classical selection agreed and reached the same native failure. That directs attention to the residual and repair space, rather than unsupported sampler tuning.
+
+Q1/Q2 used simulation. Q3’s singleton supplies no optimizer comparison, and this summary supplies no Q3 histogram. **The CharLS result establishes neither QPU execution nor quantum advantage.** Its source-directed repair gain is real within the evaluated contract. [Counts, graph scope and comparison limits →](docs/research/charls-q3.md#the-actual-quantum-selection-record)
+
+## Next objective: quantum advantage
+
+> [!IMPORTANT]
+> **First Gen3 win achieved. Gen3 research continues.** The next question is whether quantum participation produces an attributable advantage over strong AI-only and classical alternatives. Completing this case does not complete the program or automatically start Q4.
+
+| Established milestone | Evidence still needed for the objective |
+| :--- | :--- |
+| **Dependent repair** · C2 feedback supported a successful Q3 repair | Transfer to fresh tasks with inherited knowledge disclosed |
+| **Native utility** · +8 passes, 16 preserved, 0 lost | Prospective AI-only and classical comparisons on the same acceptance contract |
+| **Banked chain** · recorded parent bindings and C3 durability | Matched information and query access, total cost accounting, uncertainty and independent replication |
+
+Before protected Q3, public development already passed 516/516 tests and the resulting source matched pinned upstream across 68 source/include files. That limits novelty and blindness claims. Future comparisons must separate known-source restoration, better candidate generation and the quantum selector’s contribution. [Research and release roadmap →](docs/research/generations.md)
 
 ## Published quantum data
 
-**IBM Fez · September 6, 2026 · author-reported compiler pilot**
+**Separate hardware experiment · IBM Fez · September 6, 2026**
 
-The **joint5** compiler reduced native two-qubit gates from **144 to 103 per circuit — 28.5% fewer gates**. The measured output also moved closer to the fixed ideal distribution in both related test cases.
+The earlier **joint5 compiler pilot** reduced native two-qubit gates **144 → 103 per circuit (28.5%)** and improved agreement with a fixed ideal output in two related cases. Expected energy increased in both, so minimization worsened. This pilot is separate from CharLS Q3.
+
+<details>
+<summary><strong>Explore the IBM hardware measurements and their limits</strong></summary>
 
 <p align="center">
-  <a href="docs/research/ibm-fez-pilot.md"><img src="docs/assets/readme-hardware-data.svg" width="100%" alt="Published IBM Fez pilot. Ordinary compilation in blue and joint5 in purple: 144 to 103 native two-qubit gates. Output-distribution distance decreased in both cases. Expected energy increased, which is worse for the objective. One fixture, four circuits, one hardware job; no independent confirmation."></a>
+  <a href="docs/research/ibm-fez-pilot.md"><img src="docs/assets/readme-hardware-data.svg" width="100%" alt="IBM Fez author-reported pilot: 144 to 103 two-qubit gates per circuit. Output distance improved in both cases; expected-energy minimization worsened. One hardware job, no independent confirmation or quantum advantage."></a>
 </p>
 
 | Published measure | Ordinary | joint5 | Interpretation |
@@ -70,33 +116,26 @@ The **joint5** compiler reduced native two-qubit gates from **144 to 103 per cir
 | Expected energy · vulnerable case | −2.345352 | −2.013768 | Higher; minimization worsened ↑ |
 | Expected energy · fixed case | −2.366837 | −1.954590 | Higher; minimization worsened ↑ |
 
-**What that means:** fewer gates and better agreement with the fixed ideal output in this acquisition. **It did not improve the optimization objective.** Output distance is total-variation distance; lower is better. Expected energy is the objective score being minimized.
+One six-variable fixture, two related cases, four circuits at **1,024 shots each**, one hardware job and **3 seconds of billed QPU time**. Billed QPU time is not end-to-end runtime. Output distance is total-variation distance. The author-reported acquisition is not independently confirmed and establishes no quantum advantage.
 
-**Scope:** one six-variable fixture, two related cases, four circuits at **1,024 shots each**, one hardware job and **3 seconds of recorded billed QPU time**. That billed time is not end-to-end runtime. The cases are not independent confirmations. This pilot is separate from Gen3 depth trials and establishes no quantum advantage.
+[Measurement note and uncertainty →](docs/research/ibm-fez-pilot.md) · [Full-precision data →](docs/research/ibm-pilot.json)
 
-**[Measurement note and uncertainty →](docs/research/ibm-fez-pilot.md)** &nbsp; · &nbsp; **[Full-precision public data →](docs/research/ibm-pilot.json)**
+</details>
 
-## Research loop
+## Start here
 
-<a name="how-the-research-works"></a>
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <a href="https://aethersystems.net/actions"><img src="docs/assets/readme-start-actions.svg" width="100%" alt="Explore Aether Actions: connect a repository, review the permitted scope and approve usage."></a>
+    </td>
+    <td width="50%" valign="top">
+      <a href="docs/research/charls-q3.md"><img src="docs/assets/readme-start-q3.svg" width="100%" alt="Explore the first Gen3 Q3 result: 24 of 24 cases passing, eight new passes and zero prior passes lost. Read the completed chain and the ongoing quantum-advantage objective."></a>
+    </td>
+  </tr>
+</table>
 
-**Can verified feedback make the next round of reasoning more useful?** That is the Gen3 question.
-
-| Step | What it does |
-| :--- | :--- |
-| **Reason about the code** | AI examines behavior, traces connected risks and proposes repair hypotheses. |
-| **Compile the unresolved choice** | Express suitable decisions and constraints as a QUBO: yes/no choices with interaction costs. |
-| **Compare and check** | Classical or quantum methods propose candidates; tests on the original software determine their outcomes. |
-| **Carry evidence forward** | Use the verified result and remaining obligations to prepare the next intervention. Preserve negative results. |
-
-<p align="center">
-  <a href="docs/research/generations.md"><img src="docs/assets/flow-gen3-research.svg" width="100%" alt="Conceptual Gen3 research loop, not an execution record: AI, Q1 and software checks feed evidence into AI, Q2 and later interventions under the registered stop rule."></a>
-</p>
-
-**Reasoning-chain depth counts dependent interventions; circuit depth measures a different thing.** The research plan calls for competitive AI-only and classical comparisons, declared budgets and native acceptance criteria. Simulation and hardware evidence are recorded separately. More rounds, lower surrogate energy or a changed graph do not establish an advantage on their own.
-
-> [!NOTE]
-> **Quantum advantage remains a research goal.** The published hardware pilot measures compiler behavior. It does not establish deeper software reasoning, a Gen3 advantage or a completed Gen4 upgrade.
+**Check coverage first.** Predator Security requires an approved assurance profile. The [current product page](https://aethersystems.net/actions) lists AetherCloud backend coverage; customer-specific profiles are private preview. Hosted Build &amp; Test is a separate Actions service.
 
 ## Generation map
 
@@ -108,31 +147,29 @@ The **joint5** compiler reduced native two-qubit gates from **144 to 103 per cir
 <a name="gen4--replicate-the-gain-upgrade-the-profiles"></a>
 <a name="gen4--from-research-to-product"></a>
 
-| Generation | Role in the program | What a reader should expect |
+| Generation | Current role | Next threshold |
 | :--- | :--- | :--- |
-| **Gen1–2 · Assurance foundation** | The foundation behind locked Predator Actions profiles | Supported checks, approved usage and scoped evidence |
-| **Gen3 · Private research** | Study dependent AI–quantum reasoning and its limits | Prospectively defined comparisons; results bounded by their evidence |
-| **Gen4 · Conditional transfer** | Reproduce qualifying findings against earlier profile versions | Independent review and a separate release decision for each profile |
+| **Gen1–2 · Assurance foundation** | Locked Predator Actions profiles and scoped evidence | Independently qualify each profile update |
+| **Gen3 · Active research** | **First dependent-repair win: Q3 24/24** | Demonstrate quantum advantage with credible comparisons |
+| **Gen4 · Conditional transfer** | Replicate qualifying research on assurance workloads | Independent review and a separate profile release decision |
 
-A **locked profile** is a fixed, versioned set of checks and execution rules. Repository eligibility is checked before the customer approves **UVT usage — Aether’s usage credits**. Results identify the code version and checks covered. Passing a profile does not mean every defect has been found.
-
-**Each upgrade must earn its own release.** Gen4 depends on qualifying, independently reviewed Gen3 evidence and successful profile-level replication. Read the [generation and release guidance](docs/research/generations.md) for the comparison, preservation and stopping rules.
+A **locked profile** is a fixed, versioned set of checks and execution rules. Repository eligibility is checked before the customer approves **UVT usage — Aether’s usage credits**. Passing a profile does not mean every defect has been found. Gen3’s first win does not automatically qualify Gen4 or change a production profile.
 
 ## Access and scope
 
 <a name="operator-controlled-by-design"></a>
 <a name="access-and-safety"></a>
 
-**Customers use approved Actions. Aether operates the private research engine.** Connecting a repository does not expose the research CLI, arbitrary loops, internal model settings or quantum hardware controls. Engagements require an agreed, authorized scope.
+**Customers use approved Actions. Aether operates the private research engine.** This public repository is not an installable research CLI. Connecting a repository does not expose arbitrary research loops, private model settings or quantum hardware controls. Engagements require an agreed, authorized scope.
 
-Public replay provides approved evidence for inspection; it does not grant research-execution access. This repository publishes selected summaries, not customer code, current private benchmark details or raw acquisition bundles.
+The CharLS summary publishes approved aggregate outcomes and fingerprints. Private inputs, patches, raw receipts, trust material and execution infrastructure remain private. [Public disclosure and replay scope →](docs/research/generations.md#7-public-disclosure-boundary)
 
 <details>
 <summary><strong>View the private operator console · illustrative</strong></summary>
 
 <p align="center">
-  <img src="docs/assets/predator-console.png" width="100%" alt="Owner-supplied image of the private Predator operator console. Its session and counters are illustrative, not research measurements."><br>
-  <sub>Private operator console · The pictured session is illustrative, not a research result.</sub>
+  <img src="docs/assets/predator-console.png" width="100%" alt="Owner-supplied image of the private Predator operator console. The pictured session and counters are illustrative, not research measurements."><br>
+  <sub>Private operator console · Illustrative session, not a research measurement.</sub>
 </p>
 
 </details>
@@ -150,14 +187,16 @@ Public replay provides approved evidence for inspection; it does not grant resea
 
 | Resource | What is available |
 | :--- | :--- |
-| [IBM Fez measurement note](docs/research/ibm-fez-pilot.md) | Setup, both outcomes, sampling uncertainty and limitations |
-| [Public numerical record](docs/research/ibm-pilot.json) | Full-precision values and retained-artifact fingerprints |
-| [Research and release roadmap](docs/research/generations.md) | Generation boundaries, comparisons and promotion criteria |
+| **[Completed Q3 result](docs/research/charls-q3.md)** | Mechanism, completed chain, lift, provenance and limits |
+| **[Q3 public data](docs/research/charls-q3.json)** | Counts, Q2 samples, stage identities and reproducibility scope |
+| [IBM Fez measurement note](docs/research/ibm-fez-pilot.md) | Separate hardware pilot, both outcomes and uncertainty |
+| [IBM public numerical record](docs/research/ibm-pilot.json) | Full-precision measurements and retained-artifact fingerprints |
+| [Research and release roadmap](docs/research/generations.md) | Ongoing advantage objective and promotion criteria |
 | [Visual showcase](https://aetherai3.github.io/predator-cli/) | Designed public overview |
-| [README consistency review](docs/readme-consistency-review.md) | Claim, link, rendering-structure and disclosure checks for this revision |
+| [README consistency review](docs/readme-consistency-review.md) | Claim, link, rendering-structure and disclosure checks |
 
 ---
 
-<p align="center"><strong>Reason deeply. Prove the result. Promote only what survives.</strong></p>
+<p align="center"><strong>First Gen3 win banked. The pursuit of quantum advantage continues.</strong></p>
 
 <p align="center"><sub>Public overview and selected research notes · Proprietary research CLI and backend<br>© 2026 Aether AI LLC. All rights reserved. IBM is identified as the hardware provider; no affiliation or endorsement is implied.<br>Badges are editorial labels, not live CI or validation indicators. <a href="docs/assets/SOURCES.md">Visual sources</a>.</sub></p>

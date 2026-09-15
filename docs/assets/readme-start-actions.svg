@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="365" viewBox="0 0 620 365" role="img" aria-labelledby="title description">
+<title id="title">Explore Aether Actions</title><desc id="description">Supported Actions: connect a repository, review scope and approve an action.</desc>
+<rect x="1" y="1" width="618" height="363" rx="18" fill="#070d17" stroke="#2a3b51"/>
+<path d="M30 23H590" stroke="#32c7eb" stroke-width="2"/>
+<text x="30" y="63" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#32c7eb" letter-spacing="1">SUPPORTED CHECKS</text>
+<text x="30" y="118" font-family="Helvetica,Arial,sans-serif" font-size="32" font-weight="700" fill="#f2f6ff" >Explore Aether Actions</text>
+<text x="30" y="156" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="400" fill="#adbbce" >Connect a repo. Review scope. Approve usage.</text>
+<rect x="30" y="190" width="177" height="87" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="44" y="228" font-family="Helvetica,Arial,sans-serif" font-size="31" font-weight="700" fill="#32c7eb" >Repo</text>
+<text x="44" y="256" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#adbbce" >CONNECT</text>
+<rect x="220" y="190" width="177" height="87" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="234" y="228" font-family="Helvetica,Arial,sans-serif" font-size="31" font-weight="700" fill="#b48aff" >Scope</text>
+<text x="234" y="256" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#adbbce" >REVIEW</text>
+<rect x="410" y="190" width="177" height="87" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="424" y="228" font-family="Helvetica,Arial,sans-serif" font-size="31" font-weight="700" fill="#67dcb4" >Action</text>
+<text x="424" y="256" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#adbbce" >APPROVE</text>
+<rect x="30" y="304" width="560" height="39" rx="18" fill="#18223a" stroke="#425478"/>
+<text x="50" y="330" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#f2f6ff" >Explore supported Actions →</text>
+</svg>
