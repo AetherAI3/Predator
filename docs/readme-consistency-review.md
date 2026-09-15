@@ -1,49 +1,33 @@
-# Public README consistency review
+# Public Q3 milestone — consistency review
 
-Date: 2026-09-15. Repository: `AetherAI3/predator-cli`. Reviewed base: `6ec943838e0a5254c88e9dc8e8975c89f1b1e782`.
+**September 15, 2026 · 42 bounded checks passed.**
 
-Scope: the public README, its new or updated vector assets, the linked public research notes and the product/access descriptions they support. This is a documentation review. It is not an independent scientific replication, a runtime qualification or a production deployment.
+This correction replaces the obsolete Gen3 objective-only presentation with Aether Predator’s completed CharLS Q3 case and a separately labeled follow-up objective. It covers the public README, showcase, result note, data, diagrams and generation guidance. The existing IBM pilot stays a separate, unchanged measurement record.
 
-## Findings and resolutions
+Base: `e32bce3d761d86479909c1b0eaa84a720ac38fde`. [Machine-readable checks and artifact hashes](readme-consistency-checks.json).
 
-| Area | Resolution |
-| --- | --- |
-| Repository purpose | States that this repository holds the showcase and selected public notes. It does not provide an installable research CLI. |
-| Product coverage | Ties Predator Security to approved assurance profiles. The public Actions page lists AetherCloud backend coverage and customer-specific profiles in private preview; Hosted Build & Test is identified separately. |
-| Product versus research | Distinguishes approved Actions, private Gen3 research and conditional Gen4 transfer. Roadmap arrows do not represent completed experiments or achieved advantage. |
-| Published quantum evidence | Brings the existing September 6 IBM Fez pilot into the main reading flow. It is explicitly hardware evidence, author-reported and separate from Gen3 depth trials. |
-| Measurement arithmetic | Uses the existing public JSON for 144→103 gates, 28.5% rounded reduction, four TV distances and four expected energies. The numerical record and original measurement note are unchanged. |
-| Unfavorable result | States prominently that expected energy increased in both cases, so minimization worsened despite the gate and output-agreement improvements. |
-| Sample and time denominators | Four circuits at 1,024 shots each; one job and one fixture. Three seconds refers to recorded billed QPU time, not total wall-clock time. Related cases are not independent confirmations. |
-| Quantum and transfer claims | No independent confirmation, improved optimization, Gen3 advantage or completed Gen4 upgrade is inferred from the pilot. |
-| Graphical semantics | Cyan is ordinary compilation and purple is joint5. All TV-distance bars use the same 0–0.5 scale. Scope and negative result remain visible in the standalone chart. |
-| Badges | Local editorial labels describe product/research scope. They do not impersonate CI, live deployment or scientific verification badges. |
-| Illustration versus evidence | The unchanged console image is in an expandable section with an explicit illustrative-session caption. Its counters are not used as measurements. |
-| Public disclosure | Uses the numerical data and research boundaries already present in this public repository. No private campaign record or implementation is imported. |
-| Access | Repository connection and evidence inspection do not grant access to private research controls or hardware. Customer actions require supported coverage and usage approval. |
-| Navigation | New navigation uses section anchors; older named section destinations are retained. Local README links are checked against the complete repository tree and new assets. |
-| GitHub HTML | Uses paragraphs, links, images, tables and details/summary. No inline styles, scripts, classes, embedded SVG markup or external-font dependencies are needed in the README. |
-| Branding and provenance | Preserves the existing Aether mark and console bytes. Documents the updated hero, new badges and public-data chart in the visual source record. |
+## What the checks establish
 
-## Verification status
+| Area | Reviewed result |
+| :--- | :--- |
+| **Milestone placement** | Q3 leads the README and showcase. The completed chain is followed by the ongoing quantum-advantage objective. |
+| **Protected utility** | 16/24→24/24; eight new passes, 16 preserved, zero prior passes lost; +33.3 percentage points. Aggregate values match the reviewed closeout. |
+| **Meaning and scope** | Counts are controlled test cases, not vulnerabilities. Supporting stock/compliance, sanitizer and fuzz activity are distinguished from protected utility. No invented C0/C1 score. |
+| **Mechanism** | New C2-H1 candidate prepared from C2 on Q2’s result tree; singleton catalog and unchanged compiler/decoder semantics. |
+| **Q2 selection data** | All four Aer counts and their total/feasibility accounting match the recovered certificate summary. Frozen energies, feasible gap, zero regret and classical agreement are consistent. |
+| **Outcome history** | Q2 native FAIL and unresolved cause remain intact. Native Q3 PASS/C3 banked are distinguished from failed/lost hosted completion. Earlier failures and the authorized retry are retained; no automatic Q4. |
+| **Claim calibration** | Gen3 remains active; advantage remains unestablished. Inherited 516/516 development knowledge and upstream correspondence are disclosed. Logical QUBO width is not source-program complexity. |
+| **Reproduction** | Public arithmetic and figures are rebuildable. Producer-reported private signature/lineage/replay verification is distinguished from independent public campaign reproduction. |
+| **Publication boundary** | Approved aggregate outcomes and fingerprints only. Scan found no private execution/account IDs, storage locations, host paths, credentials or raw proof materials in the revised public content. |
+| **README structure** | Local links, images and applicable fragments resolve; old generation/access anchors remain. HTML uses GitHub-supported elements; images have meaningful alt text. |
+| **Showcase** | Links target the actual Actions and Q3 destinations. Current Q3 stats replace IBM-only research-card stats. Responsive, print and reduced-motion rules are present. |
+| **Figures** | All twelve generated SVGs parse, have accessible titles/descriptions and contain no scripts or external assets. The result’s 16 blue/eight purple tiles and Q2’s common-scale count bars match the JSON. Rebuilding reproduces identical bytes. |
+| **Preserved evidence** | IBM JSON, measurement note, hardware chart, Aether mark, brand hero and shared base stylesheet match the previous public Git blobs. |
 
-Final consistency and structural validation: **PASS — 26 checks**. [Machine-readable check record](readme-consistency-checks.json).
+## Review limits
 
-Checks cover section destinations, older anchors, local links and images, GitHub-compatible HTML, descriptive image alternatives, disclosure boundaries, generation/access wording, all eight published numeric measurements, acquisition denominators, the gate-reduction calculation, the negative expected-energy result, shared chart scale, SVG accessibility metadata and deterministic rebuilding. The original numerical record, measurement note, generation guide, Aether mark and showcase source match their original Git blob hashes.
+The SVGs were rendered and visually inspected with a non-browser renderer, including the result, completed chain, Q2 distribution, badges and entry cards. Markdown was converted through Pandoc for structural checks. This is not a verification of GitHub’s production renderer, mobile browser layout or the live Pages deployment; those remain unverified here.
 
-The hero, hardware chart and three new badges were rendered with a non-browser SVG renderer and visually inspected. The common-scale chart and the negative expected-energy result are legible in that rendering.
+No private signatures were independently reverified during this editorial pass. No circuit, native campaign, protected evaluator, provider or production service was executed. These documentation checks are not experiment outcomes or repository CI status.
 
-The README is parsed as GitHub-flavored Markdown with Pandoc for structural checks. That is not GitHub's production renderer or a browser-layout certification. GitHub's actual responsive rendering remains unverified in this session.
-
-The Actions, defense-stack and contact pages were retrieved through public web access. The linked Nano, Unlimited-Context-LLM and PROTOCOL-C repository identities were verified through GitHub. The showcase URL is retained, but its live availability remains **UNVERIFIED**: the web fetch returned an internal error and the connector does not expose the Pages metadata endpoint. This is not treated as proof that the showcase is down. No endpoint or credential workaround was attempted.
-
-## Sources and rebuilding
-
-- [Full-precision public pilot record](research/ibm-pilot.json)
-- [Pilot measurement note and uncertainty](research/ibm-fez-pilot.md)
-- [Generation and public-disclosure guidance](research/generations.md)
-- [Current Actions product description](https://aethersystems.net/actions)
-- [GitHub markup and sanitization](https://github.com/github/markup)
-- [Visual sources](assets/SOURCES.md)
-
-Run `python3 docs/assets/build_readme_assets.py` from the repository root to regenerate the five SVGs. The script reads the public pilot JSON and contains no network, circuit or native-test execution. No experimental result was generated or changed by this README revision.
+The changed public figure at [flow-gen3-research.svg](assets/flow-gen3-research.svg) is intentionally a **completed case record** now. The follow-up remains **demonstrate quantum advantage**, not “Gen3 completed.”

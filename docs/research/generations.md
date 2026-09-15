@@ -2,9 +2,11 @@
 
 ### Live assurance → private depth research → gated profile replication
 
-[← Predator overview](../../README.md) · [Aether Actions](https://aethersystems.net/actions) · [Published hardware pilot](ibm-fez-pilot.md)
+[← Predator overview](../../README.md) · [Completed Q3 result](charls-q3.md) · [Aether Actions](https://aethersystems.net/actions) · [Separate hardware pilot](ibm-fez-pilot.md)
 
 > **Research posture:** Gen1–2 established the live assurance foundation. Gen3 explicitly pursues quantum advantage and investigates deeper AI–quantum reasoning chains. Gen4 is conditional: transfer qualifying findings into independently validated, locked Predator assurance profiles. No quantum-advantage result or Gen4 release is claimed by this roadmap.
+
+**Completed milestone, active program:** CharLS Q3 is Aether Predator’s first Gen3 dependent-repair win. The completed C0→Q1→C1→Q2→C2→Q3→C3 case reached **24/24 protected cases**, up from 16/24 at C2, with 16 prior passes preserved and eight gained. The producer reports native signature/lineage verification and durable C3 banking. This is a program milestone, not completion of Gen3 or a quantum-advantage result. The [public result note](charls-q3.md) distinguishes the recovered private replay from what readers can reproduce here.
 
 ## 1. Preserve the foundation
 
@@ -26,19 +28,19 @@ Research CLI access, arbitrary loops, model-panel configuration, circuit setting
 
 **Objective:** establish whether adaptive AI → quantum → AI recompilation can produce a verified advantage over competitive alternatives, and determine how useful progress changes with additional dependent interventions and resources.
 
-C means frontier-AI reasoning, including the existing Serena / Arbiter process—not a renamed brute-force baseline. Conventional solvers remain necessary challengers rather than substitutes for the primary AI-only comparison.
+In the completed case, C0–C3 label banked evidence checkpoints carried into frontier-AI reasoning, including the existing Serena / Arbiter process. They are not scores for a brute-force baseline. Conventional solvers remain necessary challengers alongside the primary AI-only comparison.
 
-The intended loop is:
+The completed CharLS chain now instantiates the loop through Q3; broader research continues under separately registered contracts:
 
 ```text
 C0 → Q1 → native verification → AQRC → C1
    → adaptive recompilation → Q2 → native verification → C2
-   → adaptive recompilation → Q3 → … → the registered stopping condition
+   → residual-directed Q3 → native PASS → C3 banked
 ```
 
-The compiler should preserve relevant obligations, constraints and provenance while changing the representation of the unresolved problem. The bridge should carry verified information forward instead of replacing it with unsupported model assertions.
+The compiler should preserve relevant obligations, constraints and provenance while changing the representation of the unresolved problem. The bridge should carry verified information forward instead of replacing it with unsupported model assertions. In the completed Q3 case, the candidate and its parent binding changed; the compiler and decoder arithmetic remained unchanged and the catalog contained one candidate. The next research objective is attributable quantum advantage, not an automatic Q4.
 
-Research targets include complex C++ systems, database/query processing and stateful binary-processing workloads. This public guide deliberately omits benchmark identities, hidden inputs, fault construction, private model configurations and campaign infrastructure.
+Research targets include complex C++ systems, database/query processing and stateful binary-processing workloads. The owner-approved CharLS case summary publishes its identity, aggregate outcome, concise mechanism and selected fingerprints. Hidden inputs, patch bytes, private model configurations and campaign infrastructure remain private.
 
 ### Three distinctions that stay explicit
 
@@ -75,7 +77,7 @@ For development, a small, budgeted compile portfolio may compare alternative rep
 
 Keep native verdicts separate from model confidence and surrogate energy. In particular, failing one candidate does not justify excluding an entire unsampled region without an additional valid argument.
 
-**A fix starts a new versioned development attempt.** Do not repair a confirmatory run after seeing its result, retry the same depth secretly or move its budget/holdout. Preserve the original evidence, then qualify the revision prospectively. A continuation beyond a frozen depth or budget requires a new authorized protocol; it does not silently extend an old seal.
+**A compiler fix starts a new versioned development attempt.** Do not repair a confirmatory run after seeing its result, retry the same depth secretly or move its budget/holdout. A residual-directed continuation from an authenticated C2 is Q3, prospectively bound to that parent; it does not replace Q2. Preserve the original evidence, then qualify any revision prospectively. A continuation beyond a frozen depth or budget requires a new authorized protocol; it does not silently extend an old seal.
 
 ## 4. What can cross from Gen3 into Gen4
 
@@ -91,7 +93,7 @@ Qualifying Gen3 evidence
           └─ Gen4: reproduce the effect on existing assurance workloads
 ```
 
-No public “first,” universal advantage, guaranteed scaling or completed-transfer claim follows from a roadmap.
+No scientific priority, universal advantage, guaranteed scaling or completed-transfer claim follows from a roadmap. “First Gen3 repair win” identifies the completed milestone within Aether Predator’s program, not a first in the wider research field.
 
 ## 5. Gen4: reproduce against the last locked profiles
 
@@ -123,6 +125,8 @@ The public message after a successful transfer is an **upgrade to the existing a
 
 ## 7. Public disclosure boundary
 
-This repository contains overview material, selected research notes and visual assets. Publish generation goals, bounded results, relevant uncertainty and approved replay examples. Keep current benchmark identities, hidden corpora, mutation/decoder details, private infrastructure, account identifiers and research execution controls out of public changes.
+This repository contains overview material, selected research notes and visual assets. Publish generation goals, bounded results, relevant uncertainty and approved replay examples. The owner has approved publication of the completed CharLS Q3 case identity, aggregate outcomes, concise fragment-advance mechanism, recorded Q2 selection summary and checkpoint/durability fingerprints. This narrow approval does not authorize publication of other benchmark identities, hidden corpora, patch bytes, raw signed receipts, trust material, private infrastructure, account identifiers or research execution controls.
+
+The Q3 figures and arithmetic are reproducible from the public JSON. Independent end-to-end reproduction of the private campaign is not enabled by this repository alone; the recovery, signature and lineage verification remain producer-reported from retained private materials. Historical Q2 remains `CHARLS_Q2_EXECUTED_NATIVE_FAIL`, Q3 is native PASS/C3 banked, and the separate hosted completion failure is preserved. Gen3 remains active with quantum advantage unestablished.
 
 When a gate has not passed, say so. When a result is negative or fails to transfer, preserve it. **Reason deeply. Prove the result. Promote only what survives.**

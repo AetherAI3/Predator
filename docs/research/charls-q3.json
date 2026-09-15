@@ -1,0 +1,150 @@
+{
+  "schema": "predator.public-gen3-charls-q3.v1",
+  "published": "2026-09-15",
+  "campaign_closed": "2026-09-14",
+  "milestone": "First Gen3 dependent-repair win in the Aether Predator program",
+  "program_status": "ACTIVE",
+  "program_objective": "Demonstrate quantum advantage under credible, prospectively matched comparisons",
+  "quantum_advantage": "NOT_ESTABLISHED",
+  "evidence_class": "PRODUCER_VERIFIED_CLOSEOUT_PUBLIC_SUMMARY",
+  "verification_scope": "Outcome and signature verification are reported by the execution lane's completed closeout. This analysis reviewed source contracts and that closeout; it did not independently reverify the private signed bytes.",
+  "target": "Controlled fault benchmark on real CharLS C++ source",
+  "unit": "Deterministic private campaign test case; not a vulnerability count",
+  "metrics": {
+    "protected_total": 24,
+    "c2_pass": 16,
+    "c3_pass": 24,
+    "gained": 8,
+    "lost": 0,
+    "preserved": 16,
+    "stock_pass": 516,
+    "stock_total": 516,
+    "compliance_pass": 17,
+    "compliance_total": 17,
+    "fuzz_executions": 10000,
+    "durable_objects": 17
+  },
+  "outcomes": {
+    "native": "PASS",
+    "hosted": "failed/lost",
+    "c3": "BANKED",
+    "historical_q2": "CHARLS_Q2_EXECUTED_NATIVE_FAIL",
+    "q2_policy_linkage": "VERIFIED",
+    "q2_cause": "UNRESOLVED",
+    "q4": "NOT_STARTED"
+  },
+  "stages": [
+    {
+      "id": "C0",
+      "title": "Frozen problem",
+      "detail": "Deliberately modified CharLS source and a committed evaluation contract.",
+      "measurement": "Comparable protected count not established here"
+    },
+    {
+      "id": "C1",
+      "title": "Continuation reached",
+      "detail": "Q1's native transition exposed the next obligation; committed stage-two options were released.",
+      "measurement": "Comparable protected count not established here"
+    },
+    {
+      "id": "C2",
+      "title": "Residual isolated",
+      "detail": "Q2 passed gates A/B and reached C, which failed FRAGMENTDATA.",
+      "measurement": "16/24 protected cases passing"
+    },
+    {
+      "id": "C3",
+      "title": "Residual closed",
+      "detail": "Q3 repaired fragment advancement; the prior passes survived and all residual cases passed.",
+      "measurement": "24/24 protected cases passing"
+    }
+  ],
+  "quantum": {
+    "evidence_class": "RECORDED_AER_SIMULATION",
+    "bit_order": [
+      "t17",
+      "t42"
+    ],
+    "shots": 2048,
+    "samples": [
+      {
+        "bits": "00",
+        "count": 635,
+        "feasible": false,
+        "reason": "No repair; exactly-one constraint violated"
+      },
+      {
+        "bits": "01",
+        "count": 291,
+        "feasible": true,
+        "option": "t42",
+        "energy": "1/4",
+        "selected": true
+      },
+      {
+        "bits": "10",
+        "count": 324,
+        "feasible": true,
+        "option": "t17",
+        "energy": "2",
+        "selected": false
+      },
+      {
+        "bits": "11",
+        "count": 798,
+        "feasible": false,
+        "reason": "Exactly-one, conflict and resource-cap constraints violated"
+      }
+    ],
+    "feasible_shots": 615,
+    "rejected_shots": 1433,
+    "selected_bits": "01",
+    "selected_energy": "1/4",
+    "next_feasible_energy": "2",
+    "gap": "7/4",
+    "regret": "0",
+    "selection_policy": "Lowest exact energy among feasible sampled states",
+    "classical_control": "Same frozen QUBO; same selected bundle and own native C-gate failure; resource parity not asserted",
+    "q3_sample_histogram": "NOT_REVIEWED",
+    "qpu_execution": "NOT_ESTABLISHED",
+    "scope": "Q2 selection data transcribed from the recovered source certificate; no new sampling in this report. Q1 is recorded as Aer but its histogram is not supplied here."
+  },
+  "q3_change": {
+    "candidate": "C2-H1",
+    "provenance": "Prepared from the authenticated C2 residual on the Q2 result tree",
+    "catalog_size": 1,
+    "compiler_and_decoder_semantics": "UNCHANGED",
+    "mechanism": "Advance the destination by the full fragment length after copying each fragment",
+    "inherited_development_knowledge": "Before protected Q3: public 516/516 development pass and 68 source/include files matching pinned upstream"
+  },
+  "logical_qubo_graphs": {
+    "evidence_class": "SOURCE_DERIVED_ANALYSIS_NOT_NEW_RECEIPT_MEASUREMENT",
+    "q2": {
+      "vertices": 2,
+      "edges": 1,
+      "treewidth": 1
+    },
+    "q3": {
+      "vertices": 1,
+      "edges": 0,
+      "treewidth": 0
+    },
+    "scope": "Documented logical option encoding; not source-program complexity, circuit depth or entanglement"
+  },
+  "identities": {
+    "c0": "ade2df97519110fd91f656b1dcac4d0d830f475609e49c1aa1932edba74cf5c4",
+    "c1": "679d8a6ba1ecb7ecf49776588cb57bdd8f5b629812321a231c3623d2b4f7cf58",
+    "c2": "b80540199b4f2f27b0ea7f028b5bcb529a9dcdb1c59cfb7d36fd3e5f9b513851",
+    "c3": "31dcab98677b6aa9008a1eed107a9d895e57fbc80dab0a1d5e0dcefefe786790",
+    "durability_receipt": "2eae45c6c2ac2f104f1b657dd3480f8b0407ae7b92151c2dcbd84c9f644179d5"
+  },
+  "reproducibility": {
+    "public": "Rebuild published figures and check arithmetic from this JSON",
+    "private": "Producer reports recovered lineage/replay, signature and binding verification, and full-hash readback of 17 C3 objects",
+    "independent_public_end_to_end_reproduction": "NOT_ENABLED_BY_THIS_SUMMARY_ALONE",
+    "protected_material": "Private inputs, patches, trust material and raw receipts are not distributed here"
+  },
+  "execution_history": "Earlier failed attempts and owner-authorized retry remain recorded; banking did not execute again; no automatic Q4",
+  "hosted_reconciliation": "Hosted completion returned HTTP 422 comparing five-field hosted check rows with signed three-field rows; failed/lost orchestration status is retained separately from native PASS",
+  "comparison_status": "Q2 exact classical control agreed; no matched Q3 end-to-end advantage comparison is supplied"
+}
