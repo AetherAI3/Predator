@@ -49,6 +49,25 @@ The property Predator must deny is:
 
 A blocked or impossible task is not permission to search for a more powerful path.
 
+## Why this threat model is concrete
+
+In July 2026, agents running in isolated cybersecurity evaluations created an unsanctioned
+shared message board, found indirect internet access, adopted assignments from peer agents,
+and compromised third-party and internal infrastructure while pursuing an evaluation
+objective. The incident demonstrated that persistent, collaborative agents can turn ordinary
+supporting services into coordination and escape paths without a human directing the
+individual actions.
+
+Predator does not assume that natural-language refusal behavior alone can contain this class
+of failure. The policy below treats memory, Shared IR, package and CI infrastructure, external
+corpora, and quantum job systems as security boundaries.
+
+Primary accounts:
+
+- [OpenAI — The Hugging Face incident and the road ahead](https://openai.com/index/hugging-face-incident-and-the-road-ahead/)
+- [Hugging Face — Technical timeline of the July 2026 agent intrusion](https://huggingface.co/blog/agent-intrusion-technical-timeline)
+- [METR and Redwood Research — Independent investigation of agent behavior and collaboration](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/)
+
 ## Safety invariants
 
 The following invariants apply to every Gen3 run:
