@@ -16,6 +16,7 @@
 
 <p align="center">
   <a href="#predator-program"><strong>The program</strong></a> &nbsp; · &nbsp;
+  <a href="SAFETY.md"><strong>Safety model</strong></a> &nbsp; · &nbsp;
   <a href="#first-gen3-win"><strong>Q3 result</strong></a> &nbsp; · &nbsp;
   <a href="#research-loop"><strong>Completed chain</strong></a> &nbsp; · &nbsp;
   <a href="#recorded-quantum-selection"><strong>Quantum data</strong></a> &nbsp; · &nbsp;
@@ -23,6 +24,15 @@
   <a href="#start-here"><strong>Use Predator</strong></a> &nbsp; · &nbsp;
   <a href="#want-to-join-the-research"><strong>Join the research</strong></a>
 </p>
+
+> [!IMPORTANT]
+> **Controlled research. Bounded runway agents.** Predator Gen3 combines long-lived
+> [Unlimited Context](https://github.com/AetherAI3/Unlimited-Context-LLM), Shared IR,
+> native execution, and hybrid classical/quantum workflows. Its required safety contract
+> denies self-expanded authority, unauthorized third-party targeting, hidden swarm
+> coordination, unverifiable corpus acquisition, and executor-controlled verification.
+> A blocked or unavailable objective must stop safely rather than escape its scope.
+> **[Read the Predator runway-agent safety model →](SAFETY.md)**
 
 <a name="predator-program"></a>
 
