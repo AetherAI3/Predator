@@ -85,6 +85,7 @@ Supporting validation: **516/516 stock tests, including 17/17 compliance**, sani
 
 | Intervention | What it added | Banked evidence |
 | :--- | :--- | :--- |
+| **[When shared state becomes authority](docs/papers/when-shared-state-becomes-authority.md)** | Short analysis of the OpenAI–Hugging Face incident and the five rules behind Predator's Gen3 safety model |
 | **Q1** | Reached a deeper continuation and released the committed stage-two options | **C1** · next obligation exposed |
 | **Q2** | Selected the frozen continuation repair; gates A/B passed and C failed `FRAGMENTDATA` | **C2** · **16/24**, residual retained |
 | **Q3** | Applied **C2-H1**, a new repair prepared from C2 on Q2’s result tree | **C3** · **24/24**, prior passes preserved |
