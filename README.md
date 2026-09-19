@@ -18,6 +18,7 @@
   <a href="#predator-program"><strong>The program</strong></a> &nbsp; · &nbsp;
   <a href="SAFETY.md"><strong>Safety model</strong></a> &nbsp; · &nbsp;
   <a href="#first-gen3-win"><strong>Q3 result</strong></a> &nbsp; · &nbsp;
+  <a href="#gen3-experiment-1-the-ratchet-test"><strong>GEN3 experiment #1</strong></a> &nbsp; · &nbsp;
   <a href="#research-loop"><strong>Completed chain</strong></a> &nbsp; · &nbsp;
   <a href="#recorded-quantum-selection"><strong>Quantum data</strong></a> &nbsp; · &nbsp;
   <a href="#next-objective-quantum-advantage"><strong>What follows</strong></a> &nbsp; · &nbsp;
@@ -42,7 +43,9 @@ The program investigates how software can fail, how risks connect, and which cha
 
 **The first Gen3 repair win is complete. Q3 reached 24/24.**
 
-Aether AI’s research loop carried evidence through **C0 → Q1 → C1 → Q2 → C2 → Q3 → C3**. **C** marks a saved evidence checkpoint; **Q** marks an intervention that uses the preceding evidence. On the controlled CharLS benchmark, the final repair closed all eight remaining cases while preserving every prior pass. **Gen3 continues toward its objective: proving quantum advantage under credible, matched comparisons.**
+Aether AI’s research loop carried evidence through **C0 → Q1 → C1 → Q2 → C2 → Q3 → C3**. **C** marks a saved evidence checkpoint; **Q** marks an intervention that uses the preceding evidence. On the controlled CharLS benchmark, the final repair closed all eight remaining cases while preserving every prior pass.
+
+**The next result is banked too.** In GEN3’s exploratory QPACK experiment, the Predator feedback variant found **5/8 controlled faults**, compared with **2/8** for its no-feedback AI + quantum-method control. That is **+37.5 percentage points**. The program studies whether verified feedback improves the full system, then tests which components account for that improvement. Quantum advantage remains unestablished.
 
 CharLS is one repair case within the broader Predator program. This public repository contains the showcase and selected research records; the research engine remains private. Supported customer checks run through **Predator CI / Aether Actions**.
 
@@ -73,6 +76,41 @@ Supporting validation: **516/516 stock tests, including 17/17 compliance**, sani
 
 **[Read the concise result →](docs/research/charls-q3.md)** &nbsp; · &nbsp; **[Public data and fingerprints →](docs/research/charls-q3.json)** &nbsp; · &nbsp; **[Visual showcase →](https://aetherai3.github.io/predator-cli/)**
 
+## GEN3 experiment #1: the ratchet test
+
+**Completed exploratory campaign · September 19, 2026 · 96 scheduled episodes · QAOA/MPS simulation**
+
+**Does verified evidence help the system find the next fault?** Predator’s `AI_Q_d2` loop ran **AI formulation → QUBO optimization → native feedback → AI reformulation → optimization → native check**. The `d1` control made both searches before receiving either check. Both received two searches and two checks; feedback timing was the contrast.
+
+![GEN3 findings: AI_Q d1 2/8, Predator d2 5/8, AI_C d1 2/8, AI_C d2 3/8 scheduled with one missing, Fixed-Q d1 0/8 scheduled with two missing, Fixed-Q d2 0/8. Incomplete rows have no complete rate.](docs/assets/gen3-qpack-findings.svg)
+
+| Candidate | Controlled faults found | Evidence coverage |
+| :--- | ---: | :--- |
+| AI + quantum-method search · `AI_Q_d1` | **2/8 · 25.0%** | Complete |
+| **Predator feedback loop · `AI_Q_d2`** | **5/8 · 62.5%** | Complete; one pristine-control check unsupported |
+| Same AI + classical search · `AI_C_d1` | **2/8 · 25.0%** | Complete |
+| Same AI + classical feedback · `AI_C_d2` | **3/8 scheduled** | **Incomplete: one missing fault episode** |
+| Fixed-formulation quantum baseline · `FIXED_Q_d1` | **0/8 scheduled** | **Incomplete: two missing fault episodes** |
+| Fixed-formulation quantum feedback · `FIXED_Q_d2` | **0/8 · 0%** | Complete |
+
+Predator’s observed finding rate was **2.5× its no-feedback control** and **62.5 percentage points above Fixed-Q d2**. On the paired cases, feedback **gained four and lost one**; this is a net gain of three, not improvement on every case. Within Predator’s own episodes, **three findings first appeared at stage two**.
+
+[**See every paired outcome →**](docs/assets/gen3-qpack-paired-outcomes.svg)
+
+![Two recorded Predator trajectories: E002 moves from a refuted candidate to a verified finding after feedback. E095 retains a verified stage-one finding even though its second candidate is refuted. Each formulation has its own energy scale.](docs/assets/gen3-qpack-ratchet.svg)
+
+**What this establishes:** an encouraging, reproducibly tabulated result on eight matched controlled-fault/pristine pairs in nghttp3’s QPACK bookkeeping. These are deliberately introduced faults, **not newly discovered vulnerabilities or CVEs**. The mechanisms were previously exposed during DEV. Both AI arms used the same frozen Gemini revision; the classical arm used a qualified enumeration/local-search/semantic-beam portfolio.
+
+**What remains open:** the adaptive classical row is incomplete, so classical ratchet lift and the cross-arm interaction remain **unset**. The quantum routine ran as **Aer MPS simulation on classical hardware**. It retained the AI starting assignment in **30/31 recorded Predator selection stages**, so this run does not isolate a quantum-selector benefit. It establishes neither statistical significance nor a scaling law.
+
+All **96 episodes reached a terminal state**: 93 had observed outcomes, including two method failures; three were operationally missing. Pristine controls recorded **47 refuted, one unsupported, zero confirmed findings**—not proof of perfect specificity. The public export also preserves four `INCONSISTENT` native/reference checks on controlled-fault traces. Missing episodes were not selectively retried.
+
+Known aggregate **model/API charges were $1.5261**; conservative exposure was **$1.7473 against the $20 cap**, including historical qualification attempts. These are not total compute or research costs. The campaign is closed; original QPACK EVAL remains separately deferred.
+
+**Banked evidence:** the measured source was `ngtcp2/nghttp3` at `e30d4ed49dfb4a6a58e2987b53106d5c10b0c12e`, specifically `lib/nghttp3_qpack.c`. Atlas PR #159 is merged and preserves 13 original artifacts as evidence-only, without fact, routing or claim promotion. Experiment #2 is separately preregistered and **has not run**.
+
+**[Full result, limits and provenance →](docs/research/gen3-qpack-experiment1.md)** · **[96-episode public evidence →](docs/research/gen3-qpack-experiment1.json)** · **[Rebuild the graphs locally →](docs/assets/build_gen3_qpack_assets.py)**
+
 ## Research loop
 
 <a name="how-the-research-works"></a>
@@ -85,7 +123,6 @@ Supporting validation: **516/516 stock tests, including 17/17 compliance**, sani
 
 | Intervention | What it added | Banked evidence |
 | :--- | :--- | :--- |
-| **[When shared state becomes authority](docs/papers/when-shared-state-becomes-authority.md)** | Short analysis of the OpenAI–Hugging Face incident and the five rules behind Predator's Gen3 safety model |
 | **Q1** | Reached a deeper continuation and released the committed stage-two options | **C1** · next obligation exposed |
 | **Q2** | Selected the frozen continuation repair; gates A/B passed and C failed `FRAGMENTDATA` | **C2** · **16/24**, residual retained |
 | **Q3** | Applied **C2-H1**, a new repair prepared from C2 on Q2’s result tree | **C3** · **24/24**, prior passes preserved |
@@ -113,12 +150,13 @@ Q1/Q2 used simulation. Q3’s one-candidate catalog supplies no optimizer compar
 ## Next objective: quantum advantage
 
 > [!IMPORTANT]
-> **First Gen3 win achieved. Gen3 research continues.** The next question is whether quantum participation produces an attributable advantage over strong AI-only and classical alternatives. Completing this case does not complete the program or automatically start Q4.
+> **CharLS repair and the exploratory QPACK feedback result are banked.** Next: replicate the full-system gain with complete AI-only and classical comparisons, then isolate the optimizer’s contribution. Neither result establishes quantum advantage or automatically authorizes another execution.
 
 | Established milestone | Evidence still needed for the objective |
 | :--- | :--- |
 | **Dependent repair** · C2 feedback supported a successful Q3 repair | Transfer to fresh tasks with inherited knowledge disclosed |
 | **Native utility** · +8 passes, 16 preserved, 0 lost | Prospective AI-only and classical comparisons on the same acceptance contract |
+| **Exploratory feedback lift** · QPACK 2/8 → 5/8 | Complete classical and AI-only comparisons; a new registered replication |
 | **Banked chain** · recorded parent bindings and C3 durability | Matched information and query access, total cost accounting, uncertainty and independent replication |
 
 Before protected Q3, public development already passed 516/516 tests and the resulting source matched pinned upstream across 68 source/include files. That limits novelty and blindness claims. Future comparisons must separate known-source restoration, better candidate generation and the quantum selector’s contribution. [Research and release roadmap →](docs/research/generations.md)
@@ -190,7 +228,7 @@ Tell us about your skills, relevant projects, and the research you’d like to c
 | Generation | Current role | Next threshold |
 | :--- | :--- | :--- |
 | **Gen1–2 · Assurance foundation** | Locked Predator Actions profiles and scoped evidence | Independently qualify each profile update |
-| **Gen3 · Active research** | **First dependent-repair win: Q3 24/24** | Demonstrate quantum advantage with credible comparisons |
+| **Gen3 · Active research** | **CharLS Q3 24/24; exploratory QPACK feedback lift 2/8 → 5/8** | Replicate system benefit; isolate the optimizer contribution |
 | **Gen4 · Conditional transfer** | Replicate qualifying research on assurance workloads | Independent review and a separate profile release decision |
 
 A **locked profile** is a fixed, versioned set of checks and execution rules. Repository eligibility is checked before the customer approves **UVT usage — Aether’s usage credits**. Passing a profile does not mean every defect has been found. Gen3’s first win does not automatically qualify Gen4 or change a production profile.
@@ -202,7 +240,7 @@ A **locked profile** is a fixed, versioned set of checks and execution rules. Re
 
 **Customers use approved Actions. Aether operates the private research engine.** This public repository is not an installable research CLI. Connecting a repository does not expose arbitrary research loops, private model settings or quantum hardware controls. Engagements require an agreed, authorized scope.
 
-The CharLS summary publishes approved aggregate outcomes and fingerprints. Private inputs, patches, raw receipts, trust material and execution infrastructure remain private. [Public disclosure and replay scope →](docs/research/generations.md#7-public-disclosure-boundary)
+The CharLS and QPACK summaries publish approved aggregate outcomes and fingerprints. QPACK also includes sanitized stage/check records for the measured episodes. Private inputs, patches, raw receipts, trust material and execution infrastructure remain private. [Public disclosure and replay scope →](docs/research/generations.md#7-public-disclosure-boundary)
 
 <details>
 <summary><strong>Explore the tools behind the research</strong></summary>
@@ -217,8 +255,11 @@ The CharLS summary publishes approved aggregate outcomes and fingerprints. Priva
 
 | Resource | What is available |
 | :--- | :--- |
+| **[When shared state becomes authority](docs/papers/when-shared-state-becomes-authority.md)** | Short analysis of the OpenAI–Hugging Face incident and the five rules behind Predator's Gen3 safety model |
 | **[Completed Q3 result](docs/research/charls-q3.md)** | Mechanism, completed chain, lift, provenance and limits |
 | **[Q3 public data](docs/research/charls-q3.json)** | Counts, Q2 samples, stage identities and reproducibility scope |
+| **[GEN3 experiment #1](docs/research/gen3-qpack-experiment1.md)** | Six comparison rows, paired gains and losses, trajectory graph, costs and limits |
+| **[QPACK public evidence](docs/research/gen3-qpack-experiment1.json)** | 96 sanitized episode records, stage/check fingerprints and preserved missingness |
 | [IBM Fez measurement note](docs/research/ibm-fez-pilot.md) | Separate hardware pilot, both outcomes and uncertainty |
 | [IBM public numerical record](docs/research/ibm-pilot.json) | Full-precision measurements and retained-artifact fingerprints |
 | [Research and release roadmap](docs/research/generations.md) | Ongoing advantage objective and promotion criteria |
@@ -227,6 +268,6 @@ The CharLS summary publishes approved aggregate outcomes and fingerprints. Priva
 
 ---
 
-<p align="center"><strong>First Gen3 win banked. The pursuit of quantum advantage continues.</strong></p>
+<p align="center"><strong>Repair banked. Feedback measured. Replication comes next.</strong></p>
 
 <p align="center"><sub>Public overview and selected research notes · Proprietary research CLI and backend<br>© 2026 Aether AI LLC. All rights reserved. IBM is identified as the hardware provider; no affiliation or endorsement is implied.<br>Badges are editorial labels, not live CI or validation indicators. <a href="docs/assets/SOURCES.md">Visual sources</a>.</sub></p>
