@@ -34,3 +34,10 @@ The public README and showcase now lead with **Aether Predator’s first Gen3 de
 The reader-clarity sweep also restores the full Predator program description and explains C/Q, native validation, protected cases, residuals, QUBO energy and simulator scope. The owner’s screenshot showed an earlier diagram although the merged source already contained the completed one; the distinct image URL addresses that observed source/render mismatch without relying on cache invalidation.
 
 The original Aether mark, IBM numerical record, IBM measurement note and hardware figure are preserved. The IBM study remains a separately labeled experiment; its QPU measurements are not attributed to the simulated CharLS selections.
+
+
+## GEN3 QPACK experiment #1
+
+`gen3-qpack-findings.svg`, `gen3-qpack-paired-outcomes.svg` and `gen3-qpack-ratchet.svg` are generated with matplotlib 3.10.8 by `build_gen3_qpack_assets.py` from `../research/gen3-qpack-experiment1.json`. Source: owner-authorized public projection of the campaign banked at private qpack-t0 commit `255f84deec985b5be06b9b618c28adc23d8d8cff`.
+
+The first figure shows aggregate counts; the heatmap shows actual pair identities; the trajectory graph shows E002 and E095 with real stage/check fingerprints. Missing cells, paired regressions, unsupported control evidence and local-energy comparability limits remain visible. These are producer-reported exploratory native outcomes, not a superposition image, physical quantum result, independent replication or new-CVE claim. Full reproduction and disclosure limits are in the [research note](../research/gen3-qpack-experiment1.md).

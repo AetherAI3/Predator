@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="950.4pt" height="633.6pt" viewBox="0 0 950.4 633.6" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>gen3-qpack-ratchet</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>gen3-qpack-ratchet</dc:title>
+    <dc:description>Two actual trajectories: E002 refuted then verified, E095 verified then refuted with first-stage finding retained. AI reformulation uses native feedback. Stage energies belong to distinct formulations.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Predator public figure builder</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 633.6 
+L 950.4 633.6 
+L 950.4 0 
+L 0 0 
+z
+" style="fill: #070d17"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 42.768 337.0752 
+L 394.416 337.0752 
+Q 405.8208 337.0752 405.8208 329.472 
+L 405.8208 196.416 
+Q 405.8208 188.8128 394.416 188.8128 
+L 42.768 188.8128 
+Q 31.3632 188.8128 31.3632 196.416 
+L 31.3632 329.472 
+Q 31.3632 337.0752 42.768 337.0752 
+z
+" clip-path="url(#p641c0d2cda)" style="fill: #101b2b; stroke: #adbbce; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 551.232 337.0752 
+L 902.88 337.0752 
+Q 914.2848 337.0752 914.2848 329.472 
+L 914.2848 196.416 
+Q 914.2848 188.8128 902.88 188.8128 
+L 551.232 188.8128 
+Q 539.8272 188.8128 539.8272 196.416 
+L 539.8272 329.472 
+Q 539.8272 337.0752 551.232 337.0752 
+z
+" clip-path="url(#p641c0d2cda)" style="fill: #101b2b; stroke: #67dcb4; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 42.768 520.8192 
+L 394.416 520.8192 
+Q 405.8208 520.8192 405.8208 513.216 
+L 405.8208 380.16 
+Q 405.8208 372.5568 394.416 372.5568 
+L 42.768 372.5568 
+Q 31.3632 372.5568 31.3632 380.16 
+L 31.3632 513.216 
+Q 31.3632 520.8192 42.768 520.8192 
+z
+" clip-path="url(#p641c0d2cda)" style="fill: #101b2b; stroke: #67dcb4; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 551.232 520.8192 
+L 902.88 520.8192 
+Q 914.2848 520.8192 914.2848 513.216 
+L 914.2848 380.16 
+Q 914.2848 372.5568 902.88 372.5568 
+L 551.232 372.5568 
+Q 539.8272 372.5568 539.8272 380.16 
+L 539.8272 513.216 
+Q 539.8272 520.8192 551.232 520.8192 
+z
+" clip-path="url(#p641c0d2cda)" style="fill: #101b2b; stroke: #adbbce; stroke-width: 1.2; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #32c7eb" x="42.768" y="38.016" transform="rotate(-0 42.768 38.016)">AETHER AI  /  PREDATOR GEN3  /  EXPERIMENT #1</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 25px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #f2f6ff" x="42.768" y="79.2" transform="rotate(-0 42.768 79.2)">The ratchet, as recorded</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #adbbce" x="42.768" y="109.6128" transform="rotate(-0 42.768 109.6128)">Predator AI_Q d2 · Two real trajectories · Fingerprints link to the public episode export</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #f2f6ff" x="42.768" y="171.072" transform="rotate(-0 42.768 171.072)">E002  /  P01 / S1 · A new verified finding at stage two</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #adbbce" x="56.0736" y="220.4928" transform="rotate(-0 56.0736 220.4928)">STAGE 1 / REFUTED</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #f2f6ff" transform="translate(56.0736 251.534438)">AI formulation → QAOA/MPS → native check</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #f2f6ff" transform="translate(56.0736 266.151547)">Formulation 928ccfb834dc…</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #f2f6ff" transform="translate(56.0736 280.768656)">Native receipt 1cfb718602b5…</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #f2f6ff" transform="translate(56.0736 295.385766)">Local objective energy: -17</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #67dcb4" x="564.5376" y="220.4928" transform="rotate(-0 564.5376 220.4928)">STAGE 2 / VERIFIED FINDING</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #f2f6ff" transform="translate(564.5376 251.534438)">AI formulation → QAOA/MPS → native check</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #f2f6ff" transform="translate(564.5376 266.151547)">Formulation 78924c548e17…</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #f2f6ff" transform="translate(564.5376 280.768656)">Native receipt e5098984b263…</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #f2f6ff" transform="translate(564.5376 295.385766)">Local objective energy: -17</text>
+   </g>
+   <g id="patch_6">
+    <path d="M 420.17727 266.112 
+Q 475.200462 266.112 527.987586 266.112 
+" style="fill: none; stroke: #b48aff; stroke-width: 2; stroke-linecap: round"/>
+    <path d="M 523.187586 263.712 
+L 527.987586 266.112 
+L 523.187586 268.512 
+" style="fill: none; stroke: #b48aff; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #b48aff" transform="translate(434.450781 231.592469)">Native feedback</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #b48aff" transform="translate(436.775 242.790281)">AI reformulates</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #f2f6ff" x="42.768" y="354.816" transform="rotate(-0 42.768 354.816)">E095  /  P08 / S4 · Stage-one evidence survives a refuted second candidate</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #67dcb4" x="56.0736" y="404.2368" transform="rotate(-0 56.0736 404.2368)">STAGE 1 / VERIFIED FINDING</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #f2f6ff" transform="translate(56.0736 435.278437)">AI formulation → QAOA/MPS → native check</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #f2f6ff" transform="translate(56.0736 449.895547)">Formulation 201859e25d1b…</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #f2f6ff" transform="translate(56.0736 464.512656)">Native receipt 8bed9974678f…</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #f2f6ff" transform="translate(56.0736 479.129766)">Local objective energy: -17</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #adbbce" x="564.5376" y="404.2368" transform="rotate(-0 564.5376 404.2368)">STAGE 2 / REFUTED</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #f2f6ff" transform="translate(564.5376 435.278437)">AI formulation → QAOA/MPS → native check</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #f2f6ff" transform="translate(564.5376 449.895547)">Formulation 01de057c7258…</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #f2f6ff" transform="translate(564.5376 464.512656)">Native receipt bf20cf716806…</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #f2f6ff" transform="translate(564.5376 479.129766)">Local objective energy: -16</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 420.17727 449.856 
+Q 475.200462 449.856 527.987586 449.856 
+" style="fill: none; stroke: #b48aff; stroke-width: 2; stroke-linecap: round"/>
+    <path d="M 523.187586 447.456 
+L 527.987586 449.856 
+L 523.187586 452.256 
+" style="fill: none; stroke: #b48aff; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #b48aff" transform="translate(434.450781 415.336469)">Native feedback</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #b48aff" transform="translate(436.775 426.534281)">AI reformulates</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #efc479" x="42.768" y="573.408" transform="rotate(-0 42.768 573.408)">Each stage has its own objective: these energies do not measure convergence on a shared landscape.</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #adbbce" x="42.768" y="605.088" transform="rotate(-0 42.768 605.088)">Evidence graph, not a superposition image. MPS simulation; selector contribution is not isolated by this study.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p641c0d2cda">
+   <rect x="0" y="0" width="950.4" height="633.6"/>
+  </clipPath>
+ </defs>
+</svg>
