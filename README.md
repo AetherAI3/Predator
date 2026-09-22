@@ -49,11 +49,6 @@ Aether AI’s research loop carried evidence through **C0 → Q1 → C1 → Q2 �
 
 CharLS is one repair case within the broader Predator program. This public repository contains the showcase and selected research records; the research engine remains private. Supported customer checks run through **Predator CI / Aether Actions**.
 
-<p align="center">
-  <img src="docs/assets/predator-console.png" width="100%" alt="Owner-supplied image of the private Predator operator console. The pictured session and counters are illustrative, not research measurements."><br>
-  <sub>Predator operator console · Illustrative session and counters; the measured Q3 result follows below.</sub>
-</p>
-
 ## First Gen3 win
 
 **CharLS · completed September 14, 2026 · producer-verified native PASS · C3 banked**
