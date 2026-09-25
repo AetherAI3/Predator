@@ -1,268 +1,88 @@
 <p align="center">
   <a href="https://aethersystems.net/"><img src="docs/assets/aether-website-mark.svg" width="46" height="46" alt="Aether AI"></a><br>
-  <strong>AETHER AI · PREDATOR · SOFTWARE ANALYSIS &amp; SECURITY RESEARCH</strong>
+  <strong>AETHER AI · PREDATOR</strong>
 </p>
 
 <p align="center">
-  <img src="docs/assets/readme-hero.svg" width="100%" alt="Predator by Aether AI — Reason deeply. Prove the result. AI reasoning, adaptive compilation and software verification.">
+  <img src="docs/assets/readme-hero.svg" width="100%" alt="Predator by Aether AI — Map the chain. Fix the risk. Prove the result.">
 </p>
 
-<p align="center">
-  <a href="#first-gen3-win"><img src="docs/assets/tag-gen3-win.svg" height="32" alt="Gen3 milestone: Q3 native PASS"></a>
-  <a href="#first-gen3-win"><img src="docs/assets/tag-q3-utility.svg" height="32" alt="Protected cases: 24 of 24 passing"></a><br>
-  <a href="#next-objective-quantum-advantage"><img src="docs/assets/tag-gen3-private.svg" height="32" alt="Gen3 program: research continues"></a>
-  <a href="#published-quantum-data"><img src="docs/assets/tag-hardware-pilot.svg" height="32" alt="Separate hardware experiment: published IBM pilot"></a>
-</p>
+# Predator
 
-<p align="center">
-  <a href="#predator-program"><strong>The program</strong></a> &nbsp; · &nbsp;
-  <a href="SAFETY.md"><strong>Safety model</strong></a> &nbsp; · &nbsp;
-  <a href="#first-gen3-win"><strong>Q3 result</strong></a> &nbsp; · &nbsp;
-  <a href="#gen3-experiment-1-the-ratchet-test"><strong>GEN3 experiment #1</strong></a> &nbsp; · &nbsp;
-  <a href="#research-loop"><strong>Completed chain</strong></a> &nbsp; · &nbsp;
-  <a href="#recorded-quantum-selection"><strong>Quantum data</strong></a> &nbsp; · &nbsp;
-  <a href="#next-objective-quantum-advantage"><strong>What follows</strong></a> &nbsp; · &nbsp;
-  <a href="#start-here"><strong>Use Predator</strong></a> &nbsp; · &nbsp;
-  <a href="#want-to-join-the-research"><strong>Join the research</strong></a>
-</p>
+**Understand the path. Fix what matters. Show the evidence.**
 
-> [!IMPORTANT]
-> **Controlled research. Bounded runway agents.** Predator Gen3 combines long-lived
-> [Unlimited Context](https://github.com/AetherAI3/Unlimited-Context-LLM), Shared IR,
-> native execution, and hybrid classical/quantum workflows. Its required safety contract
-> denies self-expanded authority, unauthorized third-party targeting, hidden swarm
-> coordination, unverifiable corpus acquisition, and executor-controlled verification.
-> A blocked or unavailable objective must stop safely rather than escape its scope.
-> **[Read the Predator runway-agent safety model →](SAFETY.md)**
+Predator is Aether AI's family of security tools and services. Its private CLI is the operator console: it directs a router to the right kind of analysis for the job. A focused code fix, a repository check, deep software research, and a live red-team engagement have different scopes and use different methods. Predator can draw on more than one quantum approach; no single research result proves every service.
 
-<a name="predator-program"></a>
+This public repository explains the work and shares selected research records. It does not contain the private engines or give access to run an engagement.
 
-**Predator combines adaptive compilation, advanced frontier-AI reasoning, and quantum-depth research to advance software analysis, vulnerability analysis, threat modeling, and resolution modeling.**
+## Attack-chain coverage
 
-The program investigates how software can fail, how risks connect, and which changes can resolve them while preserving required behavior. It turns reasoning into candidate changes, tests those changes on the software itself, and carries the resulting evidence into the next round. **Quantum depth** here means successive, dependent quantum-method interventions in that reasoning process; it does not mean every round runs on a quantum processor.
+The [Predator Red Team overview](https://aethersystems.net/defense-stack) lists **359 modeled chains** across the MITRE ATT&CK Enterprise tactics, plus an Aether category for attacks on AI workflows. The chain library helps plan an assessment; it does not mean 359 findings in a customer system.
 
-**The first Gen3 repair win is complete. Q3 reached 24/24.**
-
-Aether AI’s research loop carried evidence through **C0 → Q1 → C1 → Q2 → C2 → Q3 → C3**. **C** marks a saved evidence checkpoint; **Q** marks an intervention that uses the preceding evidence. On the controlled CharLS benchmark, the final repair closed all eight remaining cases while preserving every prior pass.
-
-**The next result is banked too.** In GEN3’s exploratory QPACK experiment, the Predator feedback variant found **5/8 controlled faults**, compared with **2/8** for its no-feedback AI + quantum-method control. That is **+37.5 percentage points**. The program studies whether verified feedback improves the full system, then tests which components account for that improvement. Quantum advantage remains unestablished.
-
-CharLS is one repair case within the broader Predator program. This public repository contains the showcase and selected research records; the research engine remains private. Supported customer checks run through **Predator CI / Aether Actions**.
-
-## First Gen3 win
-
-**CharLS · completed September 14, 2026 · producer-verified native PASS · C3 banked**
-
-**Native PASS** means the checks passed on the software itself. **Protected cases** are the campaign’s private evaluation cases. **C3 banked** means the result and its linked evidence were saved and verified by the execution lane.
-
-<p align="center">
-  <a href="docs/research/charls-q3.md"><img src="docs/assets/readme-gen3-win.svg" width="100%" alt="First Gen3 repair win: C2 16 of 24 passing becomes C3 24 of 24. Blue marks 16 preserved passes; purple marks 8 newly passing cases. Zero prior passes lost. The case is complete; the quantum-advantage objective remains open."></a>
-</p>
-
-| Protected result | Before · C2 | After · C3 | Change |
-| :--- | ---: | ---: | :--- |
-| Cases passing | 16/24 · 66.7% | **24/24 · 100%** | **+8 passes · +33.3 percentage points** |
-| Prior passes retained | 16 | **16/16** | **0 prior passes lost** |
-| Remaining cases failing | 8 | **0** | **All eight closed** |
-
-**What was fixed?** A fragment-copy defect on real CharLS C++ source with deliberately introduced faults. After copying a fragment, the destination advanced one byte too little, causing the next fragment to overwrite the previous fragment’s last byte. Q3’s repair advanced by the full fragment length. **24/24 counts deterministic private test cases, not vulnerabilities or CVEs.**
-
-Supporting validation: **516/516 stock tests, including 17/17 compliance**, sanitizer PASS and 10,000 fuzz executions. These support the result; they are not extra protected cases.
-
-**[Read the concise result →](docs/research/charls-q3.md)** &nbsp; · &nbsp; **[Public data and fingerprints →](docs/research/charls-q3.json)** &nbsp; · &nbsp; **[Visual showcase →](https://aetherai3.github.io/predator-cli/)**
-
-## GEN3 experiment #1: the ratchet test
-
-**Completed exploratory campaign · September 19, 2026 · 96 scheduled episodes · QAOA/MPS simulation**
-
-**Does verified evidence help the system find the next fault?** Predator’s `AI_Q_d2` loop ran **AI formulation → QUBO optimization → native feedback → AI reformulation → optimization → native check**. The `d1` control made both searches before receiving either check. Both received two searches and two checks; feedback timing was the contrast.
-
-![GEN3 findings: AI_Q d1 2/8, Predator d2 5/8, AI_C d1 2/8, AI_C d2 3/8 scheduled with one missing, Fixed-Q d1 0/8 scheduled with two missing, Fixed-Q d2 0/8. Incomplete rows have no complete rate.](docs/assets/gen3-qpack-findings.svg)
-
-| Candidate | Controlled faults found | Evidence coverage |
-| :--- | ---: | :--- |
-| AI + quantum-method search · `AI_Q_d1` | **2/8 · 25.0%** | Complete |
-| **Predator feedback loop · `AI_Q_d2`** | **5/8 · 62.5%** | Complete; one pristine-control check unsupported |
-| Same AI + classical search · `AI_C_d1` | **2/8 · 25.0%** | Complete |
-| Same AI + classical feedback · `AI_C_d2` | **3/8 scheduled** | **Incomplete: one missing fault episode** |
-| Fixed-formulation quantum baseline · `FIXED_Q_d1` | **0/8 scheduled** | **Incomplete: two missing fault episodes** |
-| Fixed-formulation quantum feedback · `FIXED_Q_d2` | **0/8 · 0%** | Complete |
-
-Predator’s observed finding rate was **2.5× its no-feedback control** and **62.5 percentage points above Fixed-Q d2**. On the paired cases, feedback **gained four and lost one**; this is a net gain of three, not improvement on every case. Within Predator’s own episodes, **three findings first appeared at stage two**.
-
-[**See every paired outcome →**](docs/assets/gen3-qpack-paired-outcomes.svg)
-
-![Two recorded Predator trajectories: E002 moves from a refuted candidate to a verified finding after feedback. E095 retains a verified stage-one finding even though its second candidate is refuted. Each formulation has its own energy scale.](docs/assets/gen3-qpack-ratchet.svg)
-
-**What this establishes:** an encouraging, reproducibly tabulated result on eight matched controlled-fault/pristine pairs in nghttp3’s QPACK bookkeeping. These are deliberately introduced faults, **not newly discovered vulnerabilities or CVEs**. The mechanisms were previously exposed during DEV. Both AI arms used the same frozen Gemini revision; the classical arm used a qualified enumeration/local-search/semantic-beam portfolio.
-
-**What remains open:** the adaptive classical row is incomplete, so classical ratchet lift and the cross-arm interaction remain **unset**. The quantum routine ran as **Aer MPS simulation on classical hardware**. It retained the AI starting assignment in **30/31 recorded Predator selection stages**, so this run does not isolate a quantum-selector benefit. It establishes neither statistical significance nor a scaling law.
-
-All **96 episodes reached a terminal state**: 93 had observed outcomes, including two method failures; three were operationally missing. Pristine controls recorded **47 refuted, one unsupported, zero confirmed findings**—not proof of perfect specificity. The public export also preserves four `INCONSISTENT` native/reference checks on controlled-fault traces. Missing episodes were not selectively retried.
-
-Known aggregate **model/API charges were $1.5261**; conservative exposure was **$1.7473 against the $20 cap**, including historical qualification attempts. These are not total compute or research costs. The campaign is closed; original QPACK EVAL remains separately deferred.
-
-**Banked evidence:** the measured source was `ngtcp2/nghttp3` at `e30d4ed49dfb4a6a58e2987b53106d5c10b0c12e`, specifically `lib/nghttp3_qpack.c`. Atlas PR #159 is merged and preserves 13 original artifacts as evidence-only, without fact, routing or claim promotion. Experiment #2 is separately preregistered and **has not run**.
-
-**[Full result, limits and provenance →](docs/research/gen3-qpack-experiment1.md)** · **[96-episode public evidence →](docs/research/gen3-qpack-experiment1.json)** · **[Rebuild the graphs locally →](docs/assets/build_gen3_qpack_assets.py)**
-
-## Research loop
-
-<a name="how-the-research-works"></a>
-
-**The dependent chain has now completed this case.** Each intervention used the preceding evidence. Q2 left eight cases failing—the remaining repair obligation, or **residual**. That failure and the resulting source were recorded in C2. Q3 repaired that source and produced C3.
-
-<p align="center">
-  <a href="docs/research/charls-q3.md#the-completed-chain"><img src="docs/assets/gen3-charls-q3-completed-d5da033514a9.svg" width="100%" alt="Completed chain: C0 frozen problem; Q1 reaches the continuation and banks C1; Q2 exposes FRAGMENTDATA failure and banks C2 at 16/24; Q3 repairs fragment advancement and banks C3 at 24/24. No comparable C0 or C1 scores are supplied. Follow-up objective: demonstrate quantum advantage."></a>
-</p>
-
-| Intervention | What it added | Banked evidence |
-| :--- | :--- | :--- |
-| **Q1** | Reached a deeper continuation and released the committed stage-two options | **C1** · next obligation exposed |
-| **Q2** | Selected the frozen continuation repair; gates A/B passed and C failed `FRAGMENTDATA` | **C2** · **16/24**, residual retained |
-| **Q3** | Applied **C2-H1**, a new repair prepared from C2 on Q2’s result tree | **C3** · **24/24**, prior passes preserved |
-
-**Q3 introduced a new repair for the exact source produced by Q2, with its evidence linked to C2.** Its catalog contained one candidate. The optimization compiler and decoder—the rules that encode and select a repair—kept their earlier semantics. Q3 succeeded by closing the remaining software obligation; a stronger optimizer was not demonstrated. The earlier result remains `CHARLS_Q2_EXECUTED_NATIVE_FAIL`.
-
-**C = evidence checkpoint carried into later reasoning. Q = intervention.** Reasoning-chain depth differs from circuit depth. Comparable protected scores are supplied only for **C2 → C3**, so the chart does not invent earlier scores.
-
-The producer reports recovered replay/lineage verification, signed native bindings and full-hash readback of **17 C3 objects**. Readers can rebuild the published figures from the public JSON. Independent end-to-end campaign reproduction requires the retained private material; this summary does not distribute it. [Evidence and replay scope →](docs/research/charls-q3.md#evidence-replay-and-operational-reconciliation)
-
-## Recorded quantum selection
-
-**Q2 · Aer simulation · 2,048 samples · exact frozen objective**
-
-A **QUBO** models yes/no repair choices and their costs. Its **energy** is the modeled cost to minimize, not electrical energy or a guarantee that the code works. **Aer** simulates quantum circuits on classical computers. The selected repair still has to pass native software tests.
-
-<p align="center">
-  <a href="docs/research/charls-q3.md#the-actual-quantum-selection-record"><img src="docs/assets/readme-q2-selection.svg" width="100%" alt="Q2 Aer counts: 00 has 635 rejected samples, 01 has 291 selected samples at energy one quarter, 10 has 324 feasible samples at energy two, and 11 has 798 rejected samples. 615 feasible out of 2048; regret zero; exact classical selection agreed."></a>
-</p>
-
-The selected state **`01`** was the unique feasible optimum at **energy 1/4, regret 0**: no better valid choice existed under that frozen model. The policy chose the lowest feasible sampled energy, not the most frequent sample. Exact classical selection agreed and reached the same native failure. The remaining question concerned the repair space and its modeled costs; these data do not implicate sampling.
-
-Q1/Q2 used simulation. Q3’s one-candidate catalog supplies no optimizer comparison, and this summary supplies no Q3 histogram. **The CharLS result establishes neither execution on a quantum processor nor quantum advantage.** It establishes the completed dependent repair and measured gain described above. [Counts, graph scope and comparison limits →](docs/research/charls-q3.md#the-actual-quantum-selection-record)
-
-## Next objective: quantum advantage
-
-> [!IMPORTANT]
-> **CharLS repair and the exploratory QPACK feedback result are banked.** Next: replicate the full-system gain with complete AI-only and classical comparisons, then isolate the optimizer’s contribution. Neither result establishes quantum advantage or automatically authorizes another execution.
-
-| Established milestone | Evidence still needed for the objective |
+| Part of a chain | What Predator maps |
 | :--- | :--- |
-| **Dependent repair** · C2 feedback supported a successful Q3 repair | Transfer to fresh tasks with inherited knowledge disclosed |
-| **Native utility** · +8 passes, 16 preserved, 0 lost | Prospective AI-only and classical comparisons on the same acceptance contract |
-| **Exploratory feedback lift** · QPACK 2/8 → 5/8 | Complete classical and AI-only comparisons; a new registered replication |
-| **Banked chain** · recorded parent bindings and C3 durability | Matched information and query access, total cost accounting, uncertainty and independent replication |
+| **Find a way in** | Reconnaissance, resource development, and initial access |
+| **Establish access** | Execution, persistence, privilege escalation, and defense evasion |
+| **Move through a system** | Credential access, discovery, and lateral movement |
+| **Reach an objective** | Collection, command and control, exfiltration, and impact |
+| **Assess AI workflows** | Prompt, retrieval, context, tool-use, and model-behavior attacks; this is Aether's extension, not an ATT&CK tactic |
 
-Before protected Q3, public development already passed 516/516 tests and the resulting source matched pinned upstream across 68 source/include files. That limits novelty and blindness claims. Future comparisons must separate known-source restoration, better candidate generation and the quantum selector’s contribution. [Research and release roadmap →](docs/research/generations.md)
+The actual coverage in any job depends on the assets and methods the owner authorizes. A possible chain becomes a finding only when the relevant behavior is checked and supported by evidence.
 
-## Published quantum data
+## The CLI, Crucible, and the research loop
 
-**Separate hardware experiment · IBM Fez · September 6, 2026**
+The Predator CLI is the **operator console and router**. For deep software analysis, it directs work through Crucible. Crucible starts with a *frozen corpus*: a named source revision, a defined problem, and checks that cannot be quietly changed to make a result look better. It investigates bugs and vulnerabilities, compares known vulnerable code with the fixes that resolved it, and searches for zero-day vulnerabilities and deeper chains.
 
-The earlier **joint5 compiler pilot** reduced native two-qubit gates **144 → 103 per circuit (28.5%)** and improved agreement with a fixed ideal output in two related cases. Expected energy increased in both, so minimization worsened. This pilot is separate from CharLS Q3.
+The compounding loop is easy to describe even when the work behind it is complex:
 
-<details>
-<summary><strong>Explore the IBM hardware measurements and their limits</strong></summary>
+**Frontier model → ATT&CK chain hypotheses → Q1 search → Jev candidate triage → native check → frozen classical comparison → Q2 search → new evidence → repeat.**
 
-<p align="center">
-  <a href="docs/research/ibm-fez-pilot.md"><img src="docs/assets/readme-hardware-data.svg" width="100%" alt="IBM Fez author-reported pilot: 144 to 103 two-qubit gates per circuit. Output distance improved in both cases; expected-energy minimization worsened. One hardware job, no independent confirmation or quantum advantage."></a>
-</p>
+[Jev](https://docs.typesafe.ai/introduction) is TypeSafe AI's decision model. It can help route or score candidates; it does not verify a vulnerability. A native check records what happened, including a failed attempt. That evidence becomes the next starting point, so later searches can push a known chain deeper or test a new path. In the published Gen3 work, the saved checkpoints and interventions are written **C0 → Q1 → C1 → Q2 → C2 → Q3 → C3**. A Q step is a quantum-method intervention; it does not necessarily run on a quantum processor.
 
-| Published measure | Ordinary | joint5 | Interpretation |
-| :--- | ---: | ---: | :--- |
-| Native two-qubit gates, each circuit | 144 | **103** | **28.5% fewer** |
-| Output distance · vulnerable case | 0.395175 | **0.316523** | Closer to ideal ↓ |
-| Output distance · fixed case | 0.403859 | **0.307958** | Closer to ideal ↓ |
-| Expected energy · vulnerable case | −2.345352 | −2.013768 | Higher; minimization worsened ↑ |
-| Expected energy · fixed case | −2.366837 | −1.954590 | Higher; minimization worsened ↑ |
+**We have not published a fresh, previously undiscovered CVE finding.** Zero-day discovery is an active research lane, not a claim about the public results below. We are continuing matched classical and quantum research to test whether the quantum component provides an advantage.
 
-One six-variable fixture, two related cases, four circuits at **1,024 shots each**, one hardware job and **3 seconds of billed QPU time**. Billed QPU time is not end-to-end runtime. Output distance is total-variation distance. The author-reported acquisition is not independently confirmed and establishes no quantum advantage.
+The public record is promising but narrow. In one controlled CharLS repair case, the final step moved from **16/24 to 24/24** protected tests, keeping all earlier passes. In an exploratory QPACK study, the feedback variant found **5/8 controlled faults**, versus **2/8** for its no-feedback control. These were controlled faults, not new customer vulnerabilities or CVEs. Neither result proves quantum advantage or a measured Jev contribution. [Read the CharLS result](docs/research/charls-q3.md) and [the QPACK study](docs/research/gen3-qpack-experiment1.md).
 
-[Measurement note and uncertainty →](docs/research/ibm-fez-pilot.md) · [Full-precision data →](docs/research/ibm-pilot.json)
+## Live Predator Red Team
 
-</details>
+A live engagement is a separate, operator-led path. With the owner's permission, the team uses open-source intelligence (OSINT), network reconnaissance, and adversary tactics, techniques, and procedures (TTPs) to build and test plausible paths through the agreed environment. Findings are reviewed and handed over with evidence and remediation guidance.
 
-## Want to join the research?
+This lane uses a **different quantum approach** from Crucible's software research. Aether describes its live-engagement method as a **patent-pending fractal model run on IBM Quantum hardware**. The [Red Team page](https://aethersystems.net/defense-stack) describes the hardware-assisted selection and engagement scope. The separate [public IBM Fez pilot](docs/research/ibm-fez-pilot.md) in this repository is a compiler experiment; it is not evidence that a customer engagement or Crucible's CharLS result used that pilot.
 
-We’re looking for developers and skilled contributors to help advance **Aether’s AI + Quantum research program**. Work includes improving the research CLI, developing and debugging repair chains, and strengthening the tools and experiments behind the program.
+Live testing needs a bounded contract and a longer approval process. The owner and operator agree on targets, permitted methods, timing, contacts, and stop conditions before work begins. The [published process](https://aethersystems.net/defense-stack) allows **2–4 weeks of scoping before testing**.
 
-Applications are reviewed by Aether. Selected applicants receive access to the relevant research repositories and approved work areas after approval.
+## Ways to work with Aether
 
-**This is a research and development opportunity, not a red-teaming or security engagement.**
-
-**[Apply to join the research →](https://aethersystems.net/contact?intent=general&product=site_wide&cta=footer_updates_contact)**
-
-Tell us about your skills, relevant projects, and the research you’d like to contribute to.
-
-## Start here
-
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <a href="https://aethersystems.net/actions"><img src="docs/assets/readme-start-actions.svg" width="100%" alt="Explore Aether Actions: connect a repository, review the permitted scope and approve usage."></a>
-    </td>
-    <td width="50%" valign="top">
-      <a href="docs/research/charls-q3.md"><img src="docs/assets/readme-start-q3.svg" width="100%" alt="Explore the first Gen3 Q3 result: 24 of 24 cases passing, eight new passes and zero prior passes lost. Read the completed chain and the ongoing quantum-advantage objective."></a>
-    </td>
-  </tr>
-</table>
-
-**Check coverage first.** Predator Security requires an approved assurance profile. The [current product page](https://aethersystems.net/actions) lists AetherCloud backend coverage; customer-specific profiles are private preview. Hosted Build &amp; Test is a separate Actions service.
-
-## Generation map
-
-<a name="from-todays-product-to-tomorrows-research"></a>
-<a name="gen12--live-assurance"></a>
-<a name="gen12--the-product-already-exists"></a>
-<a name="gen3--push-the-reasoning-frontier"></a>
-<a name="gen3--deeper-software-analysis"></a>
-<a name="gen4--replicate-the-gain-upgrade-the-profiles"></a>
-<a name="gen4--from-research-to-product"></a>
-
-| Generation | Current role | Next threshold |
+| Path | When it fits | Public terms |
 | :--- | :--- | :--- |
-| **Gen1–2 · Assurance foundation** | Locked Predator Actions profiles and scoped evidence | Independently qualify each profile update |
-| **Gen3 · Active research** | **CharLS Q3 24/24; exploratory QPACK feedback lift 2/8 → 5/8** | Replicate system benefit; isolate the optimizer contribution |
-| **Gen4 · Conditional transfer** | Replicate qualifying research on assurance workloads | Independent review and a separate profile release decision |
+| **Predator Strikes** | A known CVE fix, focused discovery, bug fix, CI/build repair, or another clear repository task | The [AetherAI3 profile](https://github.com/AetherAI3#predator-strikes) lists **$199 Known CVE Fix**, **$299 Predator Discovery**, and **$499 Deep Discovery** for one authorized repo. Broader work is [quoted by scope](https://aethersystems.net/strikes/). |
+| **Predator CI** | A repeatable security check for an eligible repository and exact commit | The profile lists **$39/month per qualified repo plus hosted usage credits**, in private preview. Aether works with each team to [qualify an assurance profile](https://aethersystems.net/actions/design-partner). |
+| **Predator Red Team** | An authorized assessment of a live environment | The [Red Team page](https://aethersystems.net/defense-stack) lists **$4,500** for one scoped assessment, **$8,500/month** for up to four, and custom enterprise terms. |
 
-A **locked profile** is a fixed, versioned set of checks and execution rules. Repository eligibility is checked before the customer approves **UVT usage — Aether’s usage credits**. Passing a profile does not mean every defect has been found. Gen3’s first win does not automatically qualify Gen4 or change a production profile.
+A Strike is a focused contract with a clear handoff, not an automatic red-team authorization. The [current Strikes page](https://aethersystems.net/strikes/) also offers broader development and repair work; its listed amounts are starting deposits toward a quoted total. Scope, price, schedule, and what can be verified are agreed before payment.
 
-## Access and scope
+### Join the early Gen3 and Predator CI conversation
 
-<a name="operator-controlled-by-design"></a>
-<a name="access-and-safety"></a>
+We are looking for a small number of teams interested in how Predator CI develops. You would work directly with Aether to identify one useful repository surface, discuss the checks that matter, and understand what a qualified profile could cover. We will explain what ran, what passed, and what remains outside the check. There is no need to operate the research CLI yourself.
 
-**Customers use approved Actions. Aether operates the private research engine.** This public repository is not an installable research CLI. Connecting a repository does not expose arbitrary research loops, private model settings or quantum hardware controls. Engagements require an agreed, authorized scope.
+[Talk with Aether about a Predator CI profile →](https://aethersystems.net/actions/design-partner)
 
-The CharLS and QPACK summaries publish approved aggregate outcomes and fingerprints. QPACK also includes sanitized stage/check records for the measured episodes. Private inputs, patches, raw receipts, trust material and execution infrastructure remain private. [Public disclosure and replay scope →](docs/research/generations.md#7-public-disclosure-boundary)
+## Developers: join the research program
 
-<details>
-<summary><strong>Explore the tools behind the research</strong></summary>
+We also welcome developers who want to help advance the research itself. Work can include the CLI, repair chains, verification tools, and careful classical/quantum comparisons. Tell us what you have built and which part of the program interests you.
 
-**Serena / Arbiter** develop and challenge proposals. **Joint5, AQRC, Atlas and Crucible** support compilation, verification and the return of evidence to later reasoning.
+Aether reviews applications and grants access to relevant private work areas only after approval. This is a development and research opportunity, separate from a customer red-team engagement.
 
-[Nano](https://github.com/AetherAI3/Nano) supplies structured workflow rules. [Unlimited Context](https://github.com/AetherAI3/Unlimited-Context-LLM) retains context. [Aether Protocol](https://github.com/AetherAI3/PROTOCOL-C) provides signed records that help detect changes to evidence. Signatures establish integrity within their trust assumptions; they do not independently prove a scientific claim.
-
-</details>
+[Apply to join the research →](https://aethersystems.net/contact?intent=general&product=site_wide&cta=footer_updates_contact)
 
 ## Read the evidence
 
-| Resource | What is available |
-| :--- | :--- |
-| **[When shared state becomes authority](docs/papers/when-shared-state-becomes-authority.md)** | Short analysis of the OpenAI–Hugging Face incident and the five rules behind Predator's Gen3 safety model |
-| **[Completed Q3 result](docs/research/charls-q3.md)** | Mechanism, completed chain, lift, provenance and limits |
-| **[Q3 public data](docs/research/charls-q3.json)** | Counts, Q2 samples, stage identities and reproducibility scope |
-| **[GEN3 experiment #1](docs/research/gen3-qpack-experiment1.md)** | Six comparison rows, paired gains and losses, trajectory graph, costs and limits |
-| **[QPACK public evidence](docs/research/gen3-qpack-experiment1.json)** | 96 sanitized episode records, stage/check fingerprints and preserved missingness |
-| [IBM Fez measurement note](docs/research/ibm-fez-pilot.md) | Separate hardware pilot, both outcomes and uncertainty |
-| [IBM public numerical record](docs/research/ibm-pilot.json) | Full-precision measurements and retained-artifact fingerprints |
-| [Research and release roadmap](docs/research/generations.md) | Ongoing advantage objective and promotion criteria |
-| [Visual showcase](https://aetherai3.github.io/predator-cli/) | Designed public overview |
-| [README consistency review](docs/readme-consistency-review.md) | Claim, link, rendering-structure and disclosure checks |
+- [CharLS Q3 result](docs/research/charls-q3.md) and [public data](docs/research/charls-q3.json): the completed dependent repair and its limits.
+- [Gen3 QPACK study](docs/research/gen3-qpack-experiment1.md) and [episode data](docs/research/gen3-qpack-experiment1.json): feedback results, comparisons, and missingness.
+- [IBM Fez pilot](docs/research/ibm-fez-pilot.md): a separate hardware measurement with mixed outcomes.
+- [Research roadmap](docs/research/generations.md): what must be shown before research moves into a customer profile.
+- [Safety model](SAFETY.md): the boundaries required for long-running research agents.
 
----
+Predator research runs only within an approved scope. A model suggestion, a mapped chain, and a passing repository profile are different kinds of evidence; none is a guarantee that every vulnerability has been found.
 
-<p align="center"><strong>Repair banked. Feedback measured. Replication comes next.</strong></p>
-
-<p align="center"><sub>Public overview and selected research notes · Proprietary research CLI and backend<br>© 2026 Aether AI LLC. All rights reserved. IBM is identified as the hardware provider; no affiliation or endorsement is implied.<br>Badges are editorial labels, not live CI or validation indicators. <a href="docs/assets/SOURCES.md">Visual sources</a>.</sub></p>
+<p align="center"><sub>Public overview and selected research notes · Private operator engines<br>© 2026 Aether AI LLC. All rights reserved. IBM is identified as a hardware provider; no affiliation or endorsement is implied. <a href="docs/assets/SOURCES.md">Visual sources</a>.</sub></p>
