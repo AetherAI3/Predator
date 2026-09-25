@@ -7,6 +7,12 @@
   <img src="docs/assets/readme-hero.svg" width="100%" alt="Predator by Aether AI — Map the chain. Fix the risk. Prove the result.">
 </p>
 
+<p align="center">
+  <a href="#attack-chain-coverage"><img src="docs/assets/badge-attack-chains.svg" height="32" alt="359 modeled attack chains"></a>
+  <a href="#live-predator-red-team"><img src="docs/assets/badge-scoped-work.svg" height="32" alt="Scope before testing"></a>
+  <a href="#the-cli-crucible-and-the-research-loop"><img src="docs/assets/badge-gen3-research.svg" height="32" alt="Gen3 research is active"></a>
+</p>
+
 # Predator
 
 **Understand the path. Fix what matters. Show the evidence.**
@@ -31,6 +37,10 @@ The actual coverage in any job depends on the assets and methods the owner autho
 
 ## The CLI, Crucible, and the research loop
 
+<p align="center">
+  <a href="docs/research/generations.md"><img src="docs/assets/card-crucible.svg" width="620" alt="CLI and Crucible: freeze the source, follow the evidence, and use each result to search deeper."></a>
+</p>
+
 The Predator CLI is the **operator console and router**. For deep software analysis, it directs work through Crucible. Crucible starts with a *frozen corpus*: a named source revision, a defined problem, and checks that cannot be quietly changed to make a result look better. It investigates bugs and vulnerabilities, compares known vulnerable code with the fixes that resolved it, and searches for zero-day vulnerabilities and deeper chains.
 
 The compounding loop is easy to describe even when the work behind it is complex:
@@ -41,9 +51,25 @@ The compounding loop is easy to describe even when the work behind it is complex
 
 **We have not published a fresh, previously undiscovered CVE finding.** Zero-day discovery is an active research lane, not a claim about the public results below. We are continuing matched classical and quantum research to test whether the quantum component provides an advantage.
 
-The public record is promising but narrow. In one controlled CharLS repair case, the final step moved from **16/24 to 24/24** protected tests, keeping all earlier passes. In an exploratory QPACK study, the feedback variant found **5/8 controlled faults**, versus **2/8** for its no-feedback control. These were controlled faults, not new customer vulnerabilities or CVEs. Neither result proves quantum advantage or a measured Jev contribution. [Read the CharLS result](docs/research/charls-q3.md) and [the QPACK study](docs/research/gen3-qpack-experiment1.md).
+### What the public research found
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="docs/research/charls-q3.md"><img src="docs/assets/readme-start-q3.svg" width="100%" alt="CharLS Q3: 24 of 24 protected tests passed, eight new passes, and no earlier passes lost."></a></td>
+    <td width="50%" valign="top"><a href="docs/research/gen3-qpack-experiment1.md"><img src="docs/assets/card-qpack.svg" width="100%" alt="QPACK controlled-fault study: feedback found five of eight faults, compared with two of eight without feedback."></a></td>
+  </tr>
+</table>
+
+- **CharLS repair:** Q2 left eight protected tests failing. Q3 used that failure as its next input and moved from **16/24 to 24/24**, keeping all earlier passes. These are test cases in a controlled repair, not CVEs. [Read the result →](docs/research/charls-q3.md)
+- **QPACK feedback study:** The feedback variant found **5/8 controlled faults**; the no-feedback AI + quantum-method control found **2/8**. This small, exploratory result suggests that carrying verified feedback forward helped on these cases. It does not isolate a quantum-selector benefit. [Read the study and limits →](docs/research/gen3-qpack-experiment1.md)
+
+Neither result proves quantum advantage or a measured Jev contribution. The faults were deliberately introduced, not new customer vulnerabilities.
 
 ## Live Predator Red Team
+
+<p align="center">
+  <a href="https://aethersystems.net/defense-stack"><img src="docs/assets/card-red-team.svg" width="620" alt="Predator Red Team: authorized OSINT, TTPs, and network reconnaissance with scope agreed before live testing."></a>
+</p>
 
 A live engagement is a separate, operator-led path. With the owner's permission, the team uses open-source intelligence (OSINT), network reconnaissance, and adversary tactics, techniques, and procedures (TTPs) to build and test plausible paths through the agreed environment. Findings are reviewed and handed over with evidence and remediation guidance.
 
@@ -52,6 +78,13 @@ This lane uses a **different quantum approach** from Crucible's software researc
 Live testing needs a bounded contract and a longer approval process. The owner and operator agree on targets, permitted methods, timing, contacts, and stop conditions before work begins. The [published process](https://aethersystems.net/defense-stack) allows **2–4 weeks of scoping before testing**.
 
 ## Ways to work with Aether
+
+<table>
+  <tr>
+    <td width="50%" valign="top"><a href="https://aethersystems.net/strikes/"><img src="docs/assets/card-strikes.svg" width="100%" alt="Predator Strikes: a focused CVE fix, discovery task, or repository repair with a clear handoff."></a></td>
+    <td width="50%" valign="top"><a href="https://aethersystems.net/actions/design-partner"><img src="docs/assets/card-ci.svg" width="100%" alt="Predator CI: qualify a scoped profile and check one exact repository commit."></a></td>
+  </tr>
+</table>
 
 | Path | When it fits | Public terms |
 | :--- | :--- | :--- |
