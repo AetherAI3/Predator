@@ -1,6 +1,6 @@
 # README visual sources
 
-- **predator-console.png** — original Predator engagement terminal image supplied by Aether AI. Preserved byte for byte; Git blob `bda259be2c83e711796f5d2b7dac124a1c8e8765`. The pictured session and counters are illustrative. The current README and showcase place this unchanged image near the opening with a visible illustration caption.
+- **predator-console.png** — original Predator engagement terminal image supplied by Aether AI. Preserved byte for byte; Git blob `bda259be2c83e711796f5d2b7dac124a1c8e8765`. The pictured session and counters are illustrative. An earlier README and the showcase placed this image near the opening with an illustration caption.
 - **aether-website-mark.svg** — original Aether logo extracted from the owner-supplied capture of the [defense-stack page](https://aethersystems.net/defense-stack#defense-stack). The SVG namespace was added for standalone display.
 - **defense-stack-attack-path.svg** — the same page’s inline campaign illustration, adapted for a static README with a dark background and readable node/edge contrast. It illustrates the broader operator-led service, not the restricted CLI surface or a measured incident.
 - **nano-hex.png** — the original [Nano website asset](https://aethersystems.net/assets/brand/nano-hex.png), preserved without pixel changes. Git blob `b64bdaf656ce6f94d14bd1d084119ab28f17eaea`.
@@ -22,7 +22,7 @@ That initial revision preserved the console, original Aether mark, IBM public nu
 
 ## September 15 Q3 milestone correction
 
-The public README and showcase now lead with **Aether Predator’s first Gen3 dependent-repair win: CharLS Q3 24/24**, followed by the continuing quantum-advantage objective. The source is the owner-approved [aggregate Q3 record](../research/charls-q3.json) and its [public evidence note](../research/charls-q3.md). The note distinguishes the producer’s private signature/replay verification from public arithmetic and figure reproduction.
+At this revision, the public README and showcase led with **Aether Predator’s first Gen3 dependent-repair win: CharLS Q3 24/24**, followed by the continuing quantum-advantage objective. The source is the owner-approved [aggregate Q3 record](../research/charls-q3.json) and its [public evidence note](../research/charls-q3.md). The note distinguishes the producer’s private signature/replay verification from public arithmetic and figure reproduction.
 
 - **readme-gen3-win.svg** — exact aggregate tile count: 16 cyan/blue preserved passes and eight violet new passes. Tile positions are illustrative; they do not expose private case identifiers. Counts represent tests, not vulnerabilities.
 - **gen3-charls-q3-completed-d5da033514a9.svg** — the completed C0→Q1→C1→Q2→C2→Q3→C3 record, with Q2’s native failure preserved and only the supplied C2/C3 scores. It ends with the continuing program objective. This case is complete; Gen3 is active. The filename includes the first twelve hex characters of the figure’s SHA-256. Every current reader-facing reference uses this content-versioned path instead of the former shared image URL.
@@ -41,3 +41,7 @@ The original Aether mark, IBM numerical record, IBM measurement note and hardwar
 `gen3-qpack-findings.svg`, `gen3-qpack-paired-outcomes.svg` and `gen3-qpack-ratchet.svg` are generated with matplotlib 3.10.8 by `build_gen3_qpack_assets.py` from `../research/gen3-qpack-experiment1.json`. Source: owner-authorized public projection of the campaign banked at private qpack-t0 commit `255f84deec985b5be06b9b618c28adc23d8d8cff`.
 
 The first figure shows aggregate counts; the heatmap shows actual pair identities; the trajectory graph shows E002 and E095 with real stage/check fingerprints. Missing cells, paired regressions, unsupported control evidence and local-energy comparability limits remain visible. These are producer-reported exploratory native outcomes, not a superposition image, physical quantum result, independent replication or new-CVE claim. Full reproduction and disclosure limits are in the [research note](../research/gen3-qpack-experiment1.md).
+
+## September 25 service and research cards
+
+**card-crucible.svg**, **card-strikes.svg**, **card-ci.svg**, and **card-red-team.svg** are local editorial navigation cards for the public README. **card-qpack.svg** is a summary card using the already published exploratory 5/8 and 2/8 controlled-fault counts; it links to the full result and limits. **badge-attack-chains.svg**, **badge-scoped-work.svg**, and **badge-gen3-research.svg** are static labels, not live status checks. All new assets are self-contained SVGs with accessible title and description text; they include no external media, scripts, or private research data.
