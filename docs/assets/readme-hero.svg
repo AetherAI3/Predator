@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="350" viewBox="0 0 1280 350" role="img" aria-labelledby="title description">
-<title id="title">Predator by Aether AI</title><desc id="description">Brand graphic: reason deeply, prove the result. AI reasoning, adaptive compilation and software verification. This is not a research measurement.</desc>
+<title id="title">Predator by Aether AI</title><desc id="description">Brand graphic: map the chain, fix the risk, prove the result. ATT&amp;CK coverage, focused repairs, and authorized red-team work. This is not a research measurement.</desc>
 <rect x="1" y="1" width="1278" height="348" rx="18" fill="#070d17" stroke="#2a3b51"/>
 <path d="M48 42H650" stroke="#32c7eb" stroke-width="3"/>
 <path d="M650 42H1232" stroke="#b48aff" stroke-width="3"/>
-<text x="49" y="86" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#adbbce" letter-spacing="2">AETHER AI / SECURITY RESEARCH</text>
+<text x="49" y="86" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#adbbce" letter-spacing="2">AETHER AI / SECURITY SERVICES &amp; RESEARCH</text>
 <text x="42" y="201" font-family="Helvetica,Arial,sans-serif" font-size="128" font-weight="900" fill="#f2f6ff" letter-spacing="-6">PREDATOR</text>
-<text x="50" y="261" font-family="Helvetica,Arial,sans-serif" font-size="34" font-weight="700" fill="#32c7eb" >Reason deeply. Prove the result.</text>
-<text x="50" y="308" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="400" fill="#adbbce" >AI reasoning · Adaptive compilation · Software verification</text>
+<text x="50" y="261" font-family="Helvetica,Arial,sans-serif" font-size="34" font-weight="700" fill="#32c7eb" >Map the chain. Fix the risk. Prove the result.</text>
+<text x="50" y="308" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="400" fill="#adbbce" >ATT&amp;CK coverage · Focused repairs · Authorized red team</text>
 <rect x="945" y="99" width="287" height="57" rx="9" fill="#101b2b" stroke="#283b53"/>
 <text x="962" y="136" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#32c7eb" >01</text>
-<text x="1011" y="135" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#f2f6ff" letter-spacing="2">REASON</text>
+<text x="1011" y="135" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#f2f6ff" letter-spacing="2">MAP</text>
 <rect x="945" y="173" width="287" height="57" rx="9" fill="#101b2b" stroke="#283b53"/>
 <text x="962" y="210" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#b48aff" >02</text>
-<text x="1011" y="209" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#f2f6ff" letter-spacing="2">COMPILE</text>
+<text x="1011" y="209" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#f2f6ff" letter-spacing="2">REPAIR</text>
 <rect x="945" y="247" width="287" height="57" rx="9" fill="#101b2b" stroke="#283b53"/>
 <text x="962" y="284" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#67dcb4" >03</text>
 <text x="1011" y="283" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#f2f6ff" letter-spacing="2">VERIFY</text>

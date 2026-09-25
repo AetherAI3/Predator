@@ -1,29 +1,73 @@
 <p align="center">
   <a href="https://aethersystems.net/"><img src="docs/assets/aether-website-mark.svg" width="46" height="46" alt="Aether AI"></a><br>
-  <strong>AETHER AI · PREDATOR · SOFTWARE ANALYSIS &amp; SECURITY RESEARCH</strong>
+  <strong>AETHER AI · PREDATOR · SECURITY COVERAGE, REPAIR &amp; RESEARCH</strong>
 </p>
 
 <p align="center">
-  <img src="docs/assets/readme-hero.svg" width="100%" alt="Predator by Aether AI — Reason deeply. Prove the result. AI reasoning, adaptive compilation and software verification.">
+  <img src="docs/assets/readme-hero.svg" width="100%" alt="Predator by Aether AI — Map the chain. Fix the risk. Prove the result. ATT&CK coverage, focused repairs, and authorized red-team work.">
 </p>
+
+<p align="center">
+  <a href="#mitre-chain-buckets-and-coverage"><strong>ATT&amp;CK coverage</strong></a> &nbsp; · &nbsp;
+  <a href="#the-compounding-loop"><strong>The loop</strong></a> &nbsp; · &nbsp;
+  <a href="#choose-the-right-predator-service"><strong>Services</strong></a> &nbsp; · &nbsp;
+  <a href="#predator-red-team-engagements"><strong>Red team</strong></a> &nbsp; · &nbsp;
+  <a href="#predator-code-and-research"><strong>Code &amp; research</strong></a> &nbsp; · &nbsp;
+  <a href="#first-gen3-win"><strong>Q3 result</strong></a> &nbsp; · &nbsp;
+  <a href="#start-here"><strong>Start here</strong></a>
+</p>
+
+# Predator: follow the chain, verify the fix
+
+Predator connects attack-path modeling, focused software repair, repository checks, and authorized red-team work. The service begins with the question a customer needs answered: **which path matters, what evidence supports it, and what change closes it?** The public research below shows how parts of that reasoning are tested; it is not a report of customer findings.
+
+## MITRE chain buckets and coverage
+
+The [Predator Red Team overview](https://aethersystems.net/defense-stack) describes **359 modeled attack chains** spanning the **14 MITRE ATT&CK Enterprise tactics**, from reconnaissance to impact, and a separate Aether AI-injection area. Those are **15 coverage areas** in the page's detailed breakdown. The chains are a planning and mapping library, not 359 validated findings, a promise to test every technique in each engagement, or proof that any customer environment is fully covered.
+
+| Chain bucket | ATT&CK tactics and related coverage | Question it helps answer |
+| :--- | :--- | :--- |
+| **Prepare and enter** | Reconnaissance, Resource Development, Initial Access | What is exposed, and how could an adversary gain a foothold? |
+| **Run and persist** | Execution, Persistence, Privilege Escalation, Defense Evasion | What could run after entry, gain authority, or survive? |
+| **Find and move** | Credential Access, Discovery, Lateral Movement | What could unlock or connect the next system? |
+| **Reach the objective** | Collection, Command and Control, Exfiltration, Impact | What could be taken, changed, disrupted, or controlled? |
+| **AI-specific extension** | Prompt, context, retrieval, tool-use, and model-behavior attacks | Where could an AI workflow add another route? This is Aether's extension, not an Enterprise ATT&CK tactic. |
+
+Coverage for a customer is set by the **authorized assets, techniques, time window, and acceptance checks** in that customer's scope. A mapped chain becomes a finding only after the relevant behavior is validated and documented.
+
+## The compounding loop
+
+The compounding design connects these stages:
+
+**Frontier model → MITRE chain swarm → Q1 quantum-method search → Jev triage → native check → frozen classical baseline → Q2 quantum-method search → Jev triage → native check → next evidence checkpoint → repeat.**
+
+The frontier model proposes vulnerability or repair hypotheses; the swarm connects them to plausible ATT&CK paths. A bounded search prioritizes candidates. [Jev, TypeSafe AI's decision model](https://docs.typesafe.ai/introduction), supplies typed choices or scores for candidate triage; it is **a model, not the verifier**. Native checks record what happened, including failed candidates. The objective and inputs are frozen for a classical comparison before Q2 uses retained successes and residual failures to search deeper or branch to new paths. Reviewed evidence decides what is banked for the next round. Each round can push a known chain deeper or suggest a new one to test. **A suggestion is not a discovery until it survives validation.** Quantum advantage has not been established.
+
+This describes the **software-analysis compounding design**. The [CharLS completed chain](docs/research/charls-q3.md) and [QPACK feedback experiment](docs/research/gen3-qpack-experiment1.md) show measured parts of the feedback cycle and their limits; they do not establish a measured Jev contribution. A Strike, CI check, or red-team engagement does not automatically run this whole sequence or use live quantum hardware.
+
+## Choose the right Predator service
+
+| Path | Best fit | Public terms and access |
+| :--- | :--- | :--- |
+| **Predator Strikes** | A known CVE fix, focused discovery, bug fix, fast repository repair, CI/build blocker, or a scoped code review. | The [AetherAI3 profile](https://github.com/AetherAI3#predator-strikes) lists **Known CVE Fix $199**, **Predator Discovery $299**, and **Deep Discovery $499** for one authorized repo. The [current Strikes page](https://aethersystems.net/strikes/) offers broader development and repair work with quoted scope, fee, and schedule; its displayed amounts are **starting deposits**, not full project prices. |
+| **Predator CI / Aether Actions** | A repeatable security check on an eligible repository and exact commit. | The public profile lists **$39/month per qualified repo plus hosted UVT usage**, in **private preview**. This is a recurring listing, not a $39 one-time setup fee. Aether must author and qualify the [assurance profile](https://aethersystems.net/actions/design-partner); availability is not self-serve. |
+| **Predator Red Team** | Authorized OSINT, network, and live-target assessment of a defined environment. | [Operator-led engagement](https://aethersystems.net/defense-stack), with a separate contract and **2–4 weeks of scoping before testing**. The page lists **$4,500** for one scoped assessment, **$8,500/month** for up to four engagements, and custom enterprise terms. |
+
+**Strikes are focused contracts.** They can cover vulnerability fixes, bug fixes, rapid repository repairs, and defined security review work. A scope and total price are agreed before payment; a discovery tier does not guarantee a finding, and a patch is delivered when feasible within the agreed work. [Discuss a Strike →](https://aethersystems.net/strikes/)
+
+## Predator Red Team engagements
+
+The live-target Predator engagement engine is a **separate private track** from the Gen3 code-analysis research shown in this repository, with a different quantum-assisted approach. Its operator starts with authorized open-source intelligence (OSINT), builds hypotheses from adversary tactics, techniques, and procedures (TTPs), and maps possible routes across the ATT&CK chain. Network and live-target work happens only under the signed scope. The handoff includes evidence for validated paths, prioritized findings, and a remediation plan.
+
+These are bounded contracts with a longer approval process. The owner and operator agree on targets, permitted methods, timing, contacts, and stop conditions before testing. A Strike purchase or CI connection does not authorize a red-team campaign. [Request a Predator briefing →](https://aethersystems.net/defense-stack)
+
+## Predator code and research
 
 <p align="center">
   <a href="#first-gen3-win"><img src="docs/assets/tag-gen3-win.svg" height="32" alt="Gen3 milestone: Q3 native PASS"></a>
   <a href="#first-gen3-win"><img src="docs/assets/tag-q3-utility.svg" height="32" alt="Protected cases: 24 of 24 passing"></a><br>
   <a href="#next-objective-quantum-advantage"><img src="docs/assets/tag-gen3-private.svg" height="32" alt="Gen3 program: research continues"></a>
   <a href="#published-quantum-data"><img src="docs/assets/tag-hardware-pilot.svg" height="32" alt="Separate hardware experiment: published IBM pilot"></a>
-</p>
-
-<p align="center">
-  <a href="#predator-program"><strong>The program</strong></a> &nbsp; · &nbsp;
-  <a href="SAFETY.md"><strong>Safety model</strong></a> &nbsp; · &nbsp;
-  <a href="#first-gen3-win"><strong>Q3 result</strong></a> &nbsp; · &nbsp;
-  <a href="#gen3-experiment-1-the-ratchet-test"><strong>GEN3 experiment #1</strong></a> &nbsp; · &nbsp;
-  <a href="#research-loop"><strong>Completed chain</strong></a> &nbsp; · &nbsp;
-  <a href="#recorded-quantum-selection"><strong>Quantum data</strong></a> &nbsp; · &nbsp;
-  <a href="#next-objective-quantum-advantage"><strong>What follows</strong></a> &nbsp; · &nbsp;
-  <a href="#start-here"><strong>Use Predator</strong></a> &nbsp; · &nbsp;
-  <a href="#want-to-join-the-research"><strong>Join the research</strong></a>
 </p>
 
 > [!IMPORTANT]
