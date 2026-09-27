@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <a href="#attack-chain-coverage"><img src="docs/assets/badge-attack-chains.svg" height="32" alt="359 modeled attack chains"></a>
+  <a href="#attack-chain-coverage"><img src="docs/assets/badge-attack-chains.svg" height="32" alt="396 modeled Gen3 attack chains"></a>
   <a href="#live-predator-red-team"><img src="docs/assets/badge-scoped-work.svg" height="32" alt="Scope before testing"></a>
   <a href="#the-cli-crucible-and-the-research-loop"><img src="docs/assets/badge-gen3-research.svg" height="32" alt="Gen3 research is active"></a>
 </p>
@@ -23,17 +23,21 @@ This public repository explains the work and shares selected research records. I
 
 ## Attack-chain coverage
 
-The [Predator Red Team overview](https://aethersystems.net/defense-stack) lists **359 modeled chains** across the MITRE ATT&CK Enterprise tactics, plus an Aether category for attacks on AI workflows. The chain library helps plan an assessment; it does not mean 359 findings in a customer system.
+The audited Gen3 research registry contains **396 unique modeled attack chains** across **17 internal selector buckets** as of September 26, 2026. Fifteen buckets align with the current [MITRE ATT&CK Enterprise tactics](https://attack.mitre.org/tactics/enterprise/); the other two cover AI attacks and [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) risks. The 17 buckets are Predator routing categories, not 17 MITRE tactics. This is a model-library count, not the inventory exposed by every CLI build or a count of findings in a customer system.
 
 | Part of a chain | What Predator maps |
 | :--- | :--- |
 | **Find a way in** | Reconnaissance, resource development, and initial access |
-| **Establish access** | Execution, persistence, privilege escalation, and defense evasion |
+| **Establish access** | Execution, persistence, privilege escalation, Stealth (the current ATT&CK name for TA0005), and defense impairment |
 | **Move through a system** | Credential access, discovery, and lateral movement |
 | **Reach an objective** | Collection, command and control, exfiltration, and impact |
-| **Assess AI workflows** | Prompt, retrieval, context, tool-use, and model-behavior attacks; this is Aether's extension, not an ATT&CK tactic |
+| **Assess AI workflows** | Prompt, retrieval, context, tool-use, and model-behavior attacks, plus MCP risks; these are separate from the Enterprise tactic buckets |
 
 The actual coverage in any job depends on the assets and methods the owner authorizes. A possible chain becomes a finding only when the relevant behavior is checked and supported by evidence.
+
+### CVE research catalog
+
+The separate private CVE catalog implementation supports importing CVE JSON 5.x records from the [official CVE List](https://github.com/CVEProject/cvelistV5), retaining the source record, and projecting searchable descriptions, affected products, references, problem types, and scoring data. It also supports separate NVD, CISA KEV, and FIRST EPSS enrichment. Catalog coverage and freshness depend on completed imports and refreshes; no verified live database total is published here. A CVE record is research context, not proof that an assessed asset is vulnerable.
 
 ## The CLI, Crucible, and the research loop
 
