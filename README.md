@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <a href="#attack-chain-coverage"><img src="docs/assets/badge-attack-chains.svg" height="32" alt="396 modeled Gen3 attack chains"></a>
+  <a href="#attack-chain-coverage"><img src="docs/assets/badge-attack-chains.svg" height="32" alt="416 modeled Gen3 attack chains"></a>
   <a href="#live-predator-red-team"><img src="docs/assets/badge-scoped-work.svg" height="32" alt="Scope before testing"></a>
   <a href="#the-cli-crucible-and-the-research-loop"><img src="docs/assets/badge-gen3-research.svg" height="32" alt="Gen3 research is active"></a>
 </p>
@@ -23,7 +23,9 @@ This public repository explains the work and shares selected research records. I
 
 ## Attack-chain coverage
 
-The audited Gen3 research registry contains **396 unique modeled attack chains** across **17 internal selector buckets** as of September 26, 2026. Fifteen buckets align with the current [MITRE ATT&CK Enterprise tactics](https://attack.mitre.org/tactics/enterprise/); the other two cover AI attacks and [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) risks. The 17 buckets are Predator routing categories, not 17 MITRE tactics. This is a model-library count, not the inventory exposed by every CLI build or a count of findings in a customer system.
+The Gen3 research registry contains **416 unique modeled attack chains** across **18 internal selector buckets** as of September 30, 2026. Fifteen buckets align with the current [MITRE ATT&CK Enterprise tactics](https://attack.mitre.org/tactics/enterprise/); the other three route AI attacks, [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) risks, and memory-safety primitives. The 18 buckets are Predator routing categories, not 18 MITRE tactics. This is a model-library count, not the inventory exposed by every CLI build or a count of findings in a customer system.
+
+The latest five chain models span initial access, persistence, execution, collection, and exfiltration, with step-scoped links to publicly documented [Cisco IOS XE](https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-iosxe-webui-privesc-j22SaA4z), [PAN-OS](https://security.paloaltonetworks.com/CVE-2024-3400), and [MOVEit](https://content.govdelivery.com/accounts/USDHSCISA/bulletins/35ecb08) CVEs. These are research hypotheses, not findings against an assessed asset.
 
 | Part of a chain | What Predator maps |
 | :--- | :--- |
@@ -33,11 +35,11 @@ The audited Gen3 research registry contains **396 unique modeled attack chains**
 | **Reach an objective** | Collection, command and control, exfiltration, and impact |
 | **Assess AI workflows** | Prompt, retrieval, context, tool-use, and model-behavior attacks, plus MCP risks; these are separate from the Enterprise tactic buckets |
 
-The actual coverage in any job depends on the assets and methods the owner authorizes. A possible chain becomes a finding only when the relevant behavior is checked and supported by evidence.
+The memory-safety bucket covers CAPEC/CWE-aligned code primitives that may contribute to different attack paths; it is not an extra ATT&CK tactic. The actual coverage in any job depends on the assets and methods the owner authorizes. A possible chain becomes a finding only when the relevant behavior is checked and supported by evidence.
 
 ### CVE research catalog
 
-The separate private CVE catalog implementation supports importing CVE JSON 5.x records from the [official CVE List](https://github.com/CVEProject/cvelistV5), retaining the source record, and projecting searchable descriptions, affected products, references, problem types, and scoring data. It also supports separate NVD, CISA KEV, and FIRST EPSS enrichment. Catalog coverage and freshness depend on completed imports and refreshes; no verified live database total is published here. A CVE record is research context, not proof that an assessed asset is vulnerable.
+The separate private CVE catalog implementation supports importing CVE JSON 5.x records from the [official CVE List](https://github.com/CVEProject/cvelistV5), retaining the source record, and projecting searchable descriptions, affected products, references, problem types, and scoring data. It also supports separate NVD, CISA KEV, and FIRST EPSS enrichment. Static chain anchors are keyed by CVE ID for research joins; current enrichment comes from completed refreshes, not from a chain definition. Catalog coverage and freshness depend on completed imports and refreshes; no verified live database total is published here. A CVE record is research context, not proof that an assessed asset is vulnerable.
 
 ## The CLI, Crucible, and the research loop
 
