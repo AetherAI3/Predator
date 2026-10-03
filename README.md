@@ -17,10 +17,39 @@
 
 **Understand the path. Fix what matters. Show the evidence.**
 
-Predator is Aether AI's family of security tools and services. Its private CLI is the operator console: research, use scoped tools, work in a visible browser, and continue a task with the selected Aether model. Persistent worktrees and Unlimited Context keep the source, notes, and evidence connected across sessions. The router directs source analysis through Crucible and keeps live assessments under their own agreed scope.
+Predator is Aether AI's family of security tools and services. Its private CLI brings research, scoped tools, visible browser work, and the selected Aether model into one operator workspace. Persistent worktrees and Unlimited Context keep source, notes, and evidence connected across sessions.
 
 This public repository explains the work and shares selected research records. It does not contain the private engines or give access to run an engagement.
 
+[Watch the Nmap demo](#network-enumeration-with-nmap) · [Operator workspace](#the-operator-workspace) · [Crucible research](#the-cli-crucible-and-the-research-loop) · [Services](#ways-to-work-with-aether) · [Evidence](#read-the-evidence)
+
+## Network enumeration with Nmap
+
+**All 12 sections completed · HTB Academy · October 3, 2026**
+
+Predator guided the owner through Hack The Box Academy's **Network Enumeration with Nmap** module. GLM-5.3 proposed bounded steps, reviewed saved scan outputs, and helped resolve rejected answers through fresh evidence. The owner ran the commands in an owned Ubuntu VM over the Academy VPN and submitted the answers.
+
+![Predator and GLM-5.3 reviewing Nmap evidence through the completed HTB Academy module](docs/media/predator-vpn-scan-preview.gif)
+
+*Sanitized evidence replay assembled from saved scans, model responses, and owner-provided Academy screenshots.*
+
+| Stage | What the record shows |
+| :--- | :--- |
+| **Enumeration and reporting** | Full TCP scan, saved reports, hostname evidence, and service/version review. |
+| **NSE checks** | Script-output review and a fresh HTTP check after an earlier answer was rejected. |
+| **Easy, Medium, and Hard labs** | Separate Academy targets, bounded steps, and reviewed results through the three IDS/IPS exercises. |
+| **Module completion** | Owner-confirmed accepted answers and an Academy completion screenshot covering all 12 sections. |
+
+The replay withholds target addresses, VPN material, and exercise flags. It is assembled evidence; the VM execution and Academy submissions were performed by the owner. [Read the completion record and roles →](docs/research/htb-academy-nmap.md)
+
+<details>
+<summary><strong>Watch the earlier Pwnbox console preview</strong></summary>
+
+![Predator preflighting an owned HTB Pwnbox and reviewing a guest terminal result](docs/media/predator-pwnbox-ttl-preview.gif)
+
+The earlier timed Pwnbox session demonstrated attachment, observation, reviewed input, human takeover, resume, and cleanup. This short preview shows the guest-terminal TTL lesson check. The later VPN-based module completion used the owner's Ubuntu VM.
+
+</details>
 
 ## The operator workspace
 
@@ -38,7 +67,7 @@ The private Predator CLI brings research, tools, browser work, and supported CTF
 
 Watch the selected model navigate, read, and interact with an owned browser. Predator RC connects that browser and CLI activity to a remote viewing surface through an encrypted relay; the local noVNC surface stays on the host. Human takeover lets the operator sign in or make a sensitive choice, then hand back the same session with fresh page evidence.
 
-The CTF path supports an attached user-owned Pwnbox console with observed guest state and reviewed actions. Live validation has demonstrated attachment, observation, a reviewed click, takeover, resume, and cleanup. Complete challenge-solving and additional guest providers require their own validation.
+The CTF path supports an attached user-owned Pwnbox console with observed guest state and reviewed actions. Live validation demonstrated attachment, observation, reviewed input, takeover, resume, and cleanup. The [Nmap milestone](#network-enumeration-with-nmap) adds completed Academy training with model guidance and owner-operated VM execution. Additional guest providers require their own validation.
 
 RC is in a controlled private preview. The production viewer and relay have been exercised in an owner canary; the complete sign-in, mission selection, and controller hand-back journey remains under validation.
 
@@ -47,6 +76,30 @@ RC is in a controlled private preview. The production viewer and relay have been
 Each model run has an isolated Git worktree, pinned source revision, artifacts, and attribution. Switching models starts a distinct run and preserves the earlier work. Restart checks verify the task, worktree, and memory-pool identity.
 
 Unlimited Context preserves research beyond one chat window. A named pool can be reused across CLI sessions, while relevant source-backed notes are recalled into a bounded model context. Each model branch retains its own notes and evidence. Browser and guest control require a fresh session check after interruption.
+
+## The CLI, Crucible, and the research loop
+
+<p align="center">
+  <a href="docs/research/generations.md"><img src="docs/assets/card-crucible.svg" width="620" alt="CLI and Crucible: freeze the source, follow the evidence, and use each result to search deeper."></a>
+</p>
+
+The Predator CLI is the **operator console and router**. For deep software analysis, it directs work through Crucible. Crucible starts with a *frozen corpus*: a named source revision, a defined problem, and checks that cannot be quietly changed to make a result look better. It investigates bugs and vulnerabilities, compares known vulnerable code with the fixes that resolved it, and searches for zero-day vulnerabilities and deeper chains.
+
+### Research mode: start with a chain, follow the CVEs
+
+Research mode connects a selected MITRE-aligned or other Gen3 chain model with relevant CVE records. The chosen Aether model builds source-cited hypotheses, retains counterexamples, and asks deeper questions. Unlimited Context and pinned checkpoints preserve the investigation across bounded stages.
+
+The output can propose **an extension to an existing chain or a new chain model**, with sources, unresolved prerequisites, and a review trail. Deep-cycle integration retrieves shortlisted full CVE cards before ranking and records what was actually reviewed; live use depends on pinned catalog-snapshot access. Source review and appropriate native validation are required before promoting a proposed edge into the canonical registry.
+
+Crucible supplies the deeper source-analysis method: freeze the problem, generate candidates, compare selection methods, check behavior, and carry evidence forward. Local C/Q research uses Qiskit Aer simulation with an exact classical comparison. Signed research-worker custody binds stages to source and artifacts; live signed acceptance and variable-depth custody remain under validation. Selection quality and quantum advantage are evaluated separately from hypothesis validity.
+
+### The compounding loop
+
+**Pinned source and chain → model hypotheses → candidate selection → evidence review → native check where admitted → frozen classical comparison → next research stage.**
+
+[Jev](https://docs.typesafe.ai/introduction) is TypeSafe AI's decision model. It is an optional routing or triage aid when configured; each run must record whether it was used. It does not verify a vulnerability. A native check records what happened, including a failed attempt. That evidence becomes the next starting point, so later searches can push a known chain deeper or test a new path. In the published Gen3 work, the saved checkpoints and interventions are written **C0 → Q1 → C1 → Q2 → C2 → Q3 → C3**. A Q step is a quantum-method intervention; it does not necessarily run on a quantum processor.
+
+**We have not published a fresh, previously undiscovered CVE finding.** Zero-day discovery is an active research lane, not a claim about the public results below. We are continuing matched classical and quantum research to test whether the quantum component provides an advantage.
 
 ## Attack-chain coverage
 
@@ -68,33 +121,7 @@ The memory-safety bucket covers CAPEC/CWE-aligned code primitives that may contr
 
 The separate private CVE catalog implementation supports importing CVE JSON 5.x records from the [official CVE List](https://github.com/CVEProject/cvelistV5), retaining the source record, and projecting searchable descriptions, affected products, references, problem types, and scoring data. It also supports separate NVD, CISA KEV, and FIRST EPSS enrichment. Static chain anchors are keyed by CVE ID for research joins; current enrichment comes from completed refreshes, not from a chain definition. Catalog coverage and freshness depend on completed imports and refreshes; no verified live database total is published here. A CVE record is research context, not proof that an assessed asset is vulnerable.
 
-## The CLI, Crucible, and the research loop
-
-<p align="center">
-  <a href="docs/research/generations.md"><img src="docs/assets/card-crucible.svg" width="620" alt="CLI and Crucible: freeze the source, follow the evidence, and use each result to search deeper."></a>
-</p>
-
-The Predator CLI is the **operator console and router**. For deep software analysis, it directs work through Crucible. Crucible starts with a *frozen corpus*: a named source revision, a defined problem, and checks that cannot be quietly changed to make a result look better. It investigates bugs and vulnerabilities, compares known vulnerable code with the fixes that resolved it, and searches for zero-day vulnerabilities and deeper chains.
-
-### Research mode: start with a chain, follow the CVEs
-
-Research mode connects a selected MITRE-aligned or other Gen3 chain model with relevant CVE records. The chosen Aether model builds source-cited hypotheses, retains counterexamples, and asks deeper questions. Unlimited Context and pinned checkpoints preserve the investigation across bounded stages.
-
-The output can propose **an extension to an existing chain or a new chain model**, with sources, unresolved prerequisites, and a review trail. Deep-cycle integration retrieves shortlisted full CVE cards before ranking and records what was actually reviewed; live use depends on pinned catalog-snapshot access. Source review and appropriate native validation are required before promoting a proposed edge into the canonical registry.
-
-Crucible supplies the deeper source-analysis method: freeze the problem, generate candidates, compare selection methods, check behavior, and carry evidence forward. Local C/Q research uses Qiskit Aer simulation with an exact classical comparison. Signed research-worker custody binds stages to source and artifacts; live signed acceptance and variable-depth custody remain under validation. Selection quality and quantum advantage are evaluated separately from hypothesis validity.
-
-### The compounding loop
-
-The compounding loop is easy to describe even when the work behind it is complex:
-
-**Pinned source and chain → model hypotheses → candidate selection → evidence review → native check where admitted → frozen classical comparison → next research stage.**
-
-[Jev](https://docs.typesafe.ai/introduction) is TypeSafe AI's decision model. It is an optional routing or triage aid when configured; each run must record whether it was used. It does not verify a vulnerability. A native check records what happened, including a failed attempt. That evidence becomes the next starting point, so later searches can push a known chain deeper or test a new path. In the published Gen3 work, the saved checkpoints and interventions are written **C0 → Q1 → C1 → Q2 → C2 → Q3 → C3**. A Q step is a quantum-method intervention; it does not necessarily run on a quantum processor.
-
-**We have not published a fresh, previously undiscovered CVE finding.** Zero-day discovery is an active research lane, not a claim about the public results below. We are continuing matched classical and quantum research to test whether the quantum component provides an advantage.
-
-### What the public research found
+## What the public research found
 
 <table>
   <tr>
@@ -153,6 +180,7 @@ Aether reviews applications and grants access to relevant private work areas onl
 
 ## Read the evidence
 
+- [HTB Academy Nmap completion](docs/research/htb-academy-nmap.md): all 12 sections, the sanitized replays, and the model/owner roles.
 - [CharLS Q3 result](docs/research/charls-q3.md) and [public data](docs/research/charls-q3.json): the completed dependent repair and its limits.
 - [Gen3 QPACK study](docs/research/gen3-qpack-experiment1.md) and [episode data](docs/research/gen3-qpack-experiment1.json): feedback results, comparisons, and missingness.
 - [IBM Fez pilot](docs/research/ibm-fez-pilot.md): a separate hardware measurement with mixed outcomes.

@@ -45,3 +45,10 @@ The first figure shows aggregate counts; the heatmap shows actual pair identitie
 ## September 25 service and research cards
 
 **card-crucible.svg**, **card-strikes.svg**, **card-ci.svg**, and **card-red-team.svg** are local editorial navigation cards for the public README. **card-qpack.svg** is a summary card using the already published exploratory 5/8 and 2/8 controlled-fault counts; it links to the full result and limits. **badge-attack-chains.svg**, **badge-scoped-work.svg**, and **badge-gen3-research.svg** are static labels, not live status checks. All new assets are self-contained SVGs with accessible title and description text; they include no external media, scripts, or private research data.
+
+## October 3 HTB Academy Nmap milestone
+
+- **../media/predator-vpn-scan-preview.gif** — the existing sanitized 27-frame Predator M evidence replay, preserved byte for byte; Git blob `ae2937e7895a55895efd19bab0abaeff475e4b37`. It summarizes saved Academy scans, GLM-5.3 reviews, and owner-confirmed completion of all 12 sections. Target addresses, VPN material, and exercise flags are withheld. It is assembled evidence, not a continuous desktop recording.
+- **../media/predator-pwnbox-ttl-preview.gif** — the existing sanitized four-frame Pwnbox console preview, preserved byte for byte; Git blob `c0ef63583404a2e36c6825c6cdb55715867b5fe3`. It shows preflight, observation, reviewed guest input, and a TTL lesson result; the VPN module completion is a separate continuation.
+
+Both assets come from Predator M revision `b02492146d7f7cf5eb1ee3c8b27362dfedbaba2a`. The [public completion note](../research/htb-academy-nmap.md) records model/owner roles and evidence limits. Neither replay is a quantum-hardware receipt or a customer assessment.
