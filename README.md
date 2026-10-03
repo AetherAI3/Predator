@@ -17,13 +17,40 @@
 
 **Understand the path. Fix what matters. Show the evidence.**
 
-Predator is Aether AI's family of security tools and services. Its private CLI is the operator console: it directs a router to the right kind of analysis for the job. A focused code fix, a repository check, deep software research, and a live red-team engagement have different scopes and use different methods. Predator can draw on more than one quantum approach; no single research result proves every service.
+Predator is Aether AI's family of security tools and services. Its private CLI is the operator console: research, use scoped tools, work in a visible browser, and continue a task with the selected Aether model. Persistent worktrees and Unlimited Context keep the source, notes, and evidence connected across sessions. The router directs source analysis through Crucible and keeps live assessments under their own agreed scope.
 
 This public repository explains the work and shares selected research records. It does not contain the private engines or give access to run an engagement.
 
+
+## The operator workspace
+
+The private Predator CLI brings research, tools, browser work, and supported CTF guest consoles into one conversation. Choose an available Aether model, inspect its actions, and follow the evidence as the task progresses.
+
+| Workflow | What the operator gets |
+| :--- | :--- |
+| **Predator RC and browser viewing** | A visible browser, an encrypted Aether RC browser-and-activity view, and human takeover and hand-back. |
+| **Web missions and CTF training** | Source-cited web research and reviewed actions in a supported, user-owned noVNC guest console, including HTB Pwnbox. |
+| **Model worktrees and sessions** | A separate Git worktree and stable identity for each model run, with pinned source, artifacts, and restart checks. |
+| **Unlimited Context** | Named memory pools with bounded recall of relevant sources, notes, counterexamples, and unresolved questions. |
+| **Research and Crucible** | Chain- and CVE-grounded investigation, candidate selection, evidence review, and proposals for deeper or new chain models. |
+
+### Predator RC, browser views, and CTF work
+
+Watch the selected model navigate, read, and interact with an owned browser. Predator RC connects that browser and CLI activity to a remote viewing surface through an encrypted relay; the local noVNC surface stays on the host. Human takeover lets the operator sign in or make a sensitive choice, then hand back the same session with fresh page evidence.
+
+The CTF path supports an attached user-owned Pwnbox console with observed guest state and reviewed actions. Live validation has demonstrated attachment, observation, a reviewed click, takeover, resume, and cleanup. Complete challenge-solving and additional guest providers require their own validation.
+
+RC is in a controlled private preview. The production viewer and relay have been exercised in an owner canary; the complete sign-in, mission selection, and controller hand-back journey remains under validation.
+
+### Clean worktrees and Unlimited Context
+
+Each model run has an isolated Git worktree, pinned source revision, artifacts, and attribution. Switching models starts a distinct run and preserves the earlier work. Restart checks verify the task, worktree, and memory-pool identity.
+
+Unlimited Context preserves research beyond one chat window. A named pool can be reused across CLI sessions, while relevant source-backed notes are recalled into a bounded model context. Each model branch retains its own notes and evidence. Browser and guest control require a fresh session check after interruption.
+
 ## Attack-chain coverage
 
-The Gen3 research registry contains **416 unique modeled attack chains** across **18 internal selector buckets** as of September 30, 2026. Fifteen buckets align with the current [MITRE ATT&CK Enterprise tactics](https://attack.mitre.org/tactics/enterprise/); the other three route AI attacks, [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) risks, and memory-safety primitives. The 18 buckets are Predator routing categories, not 18 MITRE tactics. This is a model-library count, not the inventory exposed by every CLI build or a count of findings in a customer system.
+The Gen3 research registry contains **416 unique modeled attack chains** across **18 internal selector buckets** as of October 3, 2026. Fifteen buckets align with the current [MITRE ATT&CK Enterprise tactics](https://attack.mitre.org/tactics/enterprise/); the other three route AI attacks, [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) risks, and memory-safety primitives. The 18 buckets are Predator routing categories, not 18 MITRE tactics. This is a model-library count, not the inventory exposed by every CLI build or a count of findings in a customer system.
 
 The latest five chain models span initial access, persistence, execution, collection, and exfiltration, with step-scoped links to publicly documented [Cisco IOS XE](https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-iosxe-webui-privesc-j22SaA4z), [PAN-OS](https://security.paloaltonetworks.com/CVE-2024-3400), and [MOVEit](https://content.govdelivery.com/accounts/USDHSCISA/bulletins/35ecb08) CVEs. These are research hypotheses, not findings against an assessed asset.
 
@@ -49,11 +76,21 @@ The separate private CVE catalog implementation supports importing CVE JSON 5.x 
 
 The Predator CLI is the **operator console and router**. For deep software analysis, it directs work through Crucible. Crucible starts with a *frozen corpus*: a named source revision, a defined problem, and checks that cannot be quietly changed to make a result look better. It investigates bugs and vulnerabilities, compares known vulnerable code with the fixes that resolved it, and searches for zero-day vulnerabilities and deeper chains.
 
+### Research mode: start with a chain, follow the CVEs
+
+Research mode connects a selected MITRE-aligned or other Gen3 chain model with relevant CVE records. The chosen Aether model builds source-cited hypotheses, retains counterexamples, and asks deeper questions. Unlimited Context and pinned checkpoints preserve the investigation across bounded stages.
+
+The output can propose **an extension to an existing chain or a new chain model**, with sources, unresolved prerequisites, and a review trail. Deep-cycle integration retrieves shortlisted full CVE cards before ranking and records what was actually reviewed; live use depends on pinned catalog-snapshot access. Source review and appropriate native validation are required before promoting a proposed edge into the canonical registry.
+
+Crucible supplies the deeper source-analysis method: freeze the problem, generate candidates, compare selection methods, check behavior, and carry evidence forward. Local C/Q research uses Qiskit Aer simulation with an exact classical comparison. Signed research-worker custody binds stages to source and artifacts; live signed acceptance and variable-depth custody remain under validation. Selection quality and quantum advantage are evaluated separately from hypothesis validity.
+
+### The compounding loop
+
 The compounding loop is easy to describe even when the work behind it is complex:
 
-**Frontier model → ATT&CK chain hypotheses → Q1 search → Jev candidate triage → native check → frozen classical comparison → Q2 search → new evidence → repeat.**
+**Pinned source and chain → model hypotheses → candidate selection → evidence review → native check where admitted → frozen classical comparison → next research stage.**
 
-[Jev](https://docs.typesafe.ai/introduction) is TypeSafe AI's decision model. It can help route or score candidates; it does not verify a vulnerability. A native check records what happened, including a failed attempt. That evidence becomes the next starting point, so later searches can push a known chain deeper or test a new path. In the published Gen3 work, the saved checkpoints and interventions are written **C0 → Q1 → C1 → Q2 → C2 → Q3 → C3**. A Q step is a quantum-method intervention; it does not necessarily run on a quantum processor.
+[Jev](https://docs.typesafe.ai/introduction) is TypeSafe AI's decision model. It is an optional routing or triage aid when configured; each run must record whether it was used. It does not verify a vulnerability. A native check records what happened, including a failed attempt. That evidence becomes the next starting point, so later searches can push a known chain deeper or test a new path. In the published Gen3 work, the saved checkpoints and interventions are written **C0 → Q1 → C1 → Q2 → C2 → Q3 → C3**. A Q step is a quantum-method intervention; it does not necessarily run on a quantum processor.
 
 **We have not published a fresh, previously undiscovered CVE finding.** Zero-day discovery is an active research lane, not a claim about the public results below. We are continuing matched classical and quantum research to test whether the quantum component provides an advantage.
 
