@@ -27,9 +27,9 @@ This public repository explains the work and shares selected research records. I
 
 **All 12 sections completed · HTB Academy · October 3, 2026**
 
-Predator guided the owner through Hack The Box Academy's **Network Enumeration with Nmap** module. GLM-5.3 proposed bounded steps, reviewed saved scan outputs, and helped resolve rejected answers through fresh evidence. The owner ran the commands in an owned Ubuntu VM over the Academy VPN and submitted the answers.
+Predator ran the Nmap enumeration **autonomously through GLM-5.3** in an owned Ubuntu VM over the Academy VPN. The owner provided plain-language prompts such as “go” and supplied the HTB exercise questions. GLM-5.3 planned and executed the VM commands, reviewed the outputs, and revisited rejected candidates. The owner typed the resulting answers into Academy.
 
-![Predator and GLM-5.3 reviewing Nmap evidence through the completed HTB Academy module](docs/media/predator-vpn-scan-preview.gif)
+![Predator running autonomous Nmap enumeration through GLM-5.3 for the completed HTB Academy module](docs/media/predator-vpn-scan-preview.gif)
 
 *Sanitized evidence replay assembled from saved scans, model responses, and owner-provided Academy screenshots.*
 
@@ -40,7 +40,7 @@ Predator guided the owner through Hack The Box Academy's **Network Enumeration w
 | **Easy, Medium, and Hard labs** | Separate Academy targets, bounded steps, and reviewed results through the three IDS/IPS exercises. |
 | **Module completion** | Owner-confirmed accepted answers and an Academy completion screenshot covering all 12 sections. |
 
-The replay withholds target addresses, VPN material, and exercise flags. It is assembled evidence; the VM execution and Academy submissions were performed by the owner. [Read the completion record and roles →](docs/research/htb-academy-nmap.md)
+The replay withholds target addresses, VPN material, and exercise flags. It shows the evidence from autonomous VM enumeration with GLM-5.3; Academy answer entry was performed by the owner. [Read the completion record and roles →](docs/research/htb-academy-nmap.md)
 
 <details>
 <summary><strong>Watch the earlier Pwnbox console preview</strong></summary>
@@ -67,7 +67,7 @@ The private Predator CLI brings research, tools, browser work, and supported CTF
 
 Watch the selected model navigate, read, and interact with an owned browser. Predator RC connects that browser and CLI activity to a remote viewing surface through an encrypted relay; the local noVNC surface stays on the host. Human takeover lets the operator sign in or make a sensitive choice, then hand back the same session with fresh page evidence.
 
-The CTF path supports an attached user-owned Pwnbox console with observed guest state and reviewed actions. Live validation demonstrated attachment, observation, reviewed input, takeover, resume, and cleanup. The [Nmap milestone](#network-enumeration-with-nmap) adds completed Academy training with model guidance and owner-operated VM execution. Additional guest providers require their own validation.
+The CTF path supports an attached user-owned Pwnbox console with observed guest state and reviewed actions. Live validation demonstrated attachment, observation, reviewed input, takeover, resume, and cleanup. The [Nmap milestone](#network-enumeration-with-nmap) adds completed Academy training with autonomous GLM-5.3 command execution and human answer entry. Additional guest providers require their own validation.
 
 RC is in a controlled private preview. The production viewer and relay have been exercised in an owner canary; the complete sign-in, mission selection, and controller hand-back journey remains under validation.
 
