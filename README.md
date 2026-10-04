@@ -94,6 +94,10 @@ The [Red Team page](https://aethersystems.net/defense-stack) describes IBM Quant
 
 [Research roadmap →](docs/research/generations.md) · [Published results →](#what-the-public-research-found) · [joint5 hardware pilot →](#joint5-compiler-the-ibm-fez-hardware-result)
 
+**Predator runs fanout through CodePro.** CodePro brings together **context retrieval** and the **System-2 shared intermediate representation (IR)**. Retrieval supplies relevant context to the workers; shared IR gives their source analysis a common structured representation for consolidation. The fanout feeds worker results back into the evidence-driven research loop, within the run's admitted scope and budget.
+
+Implementation and evaluation material live in AETHER-CLOUD's [System-2 orchestration](https://github.com/AetherAI3/AETHER-CLOUD/tree/main/lib/orchestrator/system2), [native compiler](https://github.com/AetherAI3/AETHER-CLOUD/tree/main/native), and [benchmarks](https://github.com/AetherAI3/AETHER-CLOUD/tree/main/bench) (repository access required).
+
 ### What happens in one cycle
 
 ```mermaid
@@ -230,6 +234,7 @@ The private **Predator CLI** brings the research loop, tools, persistent evidenc
 | Workflow | What the operator gets |
 | :--- | :--- |
 | **Research, Crucible, and Drive** | Chain/CVE cross-references, candidate selection, evidence review, and admitted validation stages. |
+| **CodePro fanout** | Context retrieval and System-2 shared IR support parallel worker analysis and consolidation into the research evidence trail. |
 | **Clean model worktrees** | An isolated Git worktree and stable run identity for each model, with pinned source, artifacts, and restart checks. |
 | **Unlimited Context** | Reusable memory pools that recall relevant sources, notes, counterexamples, and unresolved questions across sessions. |
 | **Predator RC and browser/VNC views** | A visible browser, encrypted remote browser-and-activity viewing, and human takeover and hand-back. |
