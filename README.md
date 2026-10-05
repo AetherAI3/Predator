@@ -173,7 +173,7 @@ RC is in controlled private preview. The production viewer and relay have been e
 
 ## Hack The Box: modules and demos
 
-Training records across HTB Academy, Satellite Exploitation, and AI/ML Exploitation. Each guide explains the completion evidence and the Predator work that was saved.
+Training records across HTB Academy, Satellite Exploitation, AI/ML Exploitation, and individual machines. Each guide explains the completion evidence and the Predator work that was saved.
 
 <a id="network-enumeration-with-nmap"></a>
 
@@ -182,6 +182,7 @@ Training records across HTB Academy, Satellite Exploitation, and AI/ML Exploitat
 | **Satellite Exploitation** | **9/9 labs completed** · October 5, 2026 | [Certificate, lab list, and replays](docs/htb/satellite-exploitation/README.md) |
 | **AI and ML Exploitation** | **1/17 labs HTB-accepted** · in progress | [Lab status and three replays](docs/htb/ai-ml-exploitation/README.md) |
 | **Academy: Network Enumeration with Nmap** | **12/12 sections completed** · October 3, 2026 | [Completion record and two replays](docs/htb/academy/README.md) |
+| **Machine: BlockSynergy** | **User and root challenge files read** · October 5, 2026; owner confirmed | [Machine record and sanitized replay](docs/htb/machines/blocksynergy/README.md) |
 
 For Academy, **Predator through GLM-5.3 ran the VM commands autonomously**. The owner supplied plain-language prompts and exercise questions, then entered the resulting answers in Academy. Execution roles for the other tracks are described in their guides.
 

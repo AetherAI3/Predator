@@ -65,6 +65,15 @@
       "replay_not_continuous_recording": true
     },
     {
+      "path": "machines/blocksynergy/predator-replay.gif",
+      "description": "sanitized BlockSynergy machine evidence replay",
+      "sha256": "3efdcb8bb008dfdd2d6f9be136c7fcf2bd2869c7da8685b4606b99602564809d",
+      "bytes": 142677,
+      "kind": "replay",
+      "frames": 6,
+      "replay_not_continuous_recording": true
+    },
+    {
       "path": "../media/predator-vpn-scan-preview.gif",
       "description": "existing sanitized Academy Nmap replay",
       "sha256": "09bf4cbb51995a05f110915dbbbdb2e7b33ad267bab87b042b9c48514bfeea9d",
