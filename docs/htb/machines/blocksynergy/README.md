@@ -16,24 +16,13 @@ The [six-frame GIF](predator-replay.gif) is a **sanitized replay assembled from 
 
 The live root verification showed effective UID 0. The development service was restored and returned HTTP 200 after cleanup. The custom application and restore behavior were **not assigned a CVE**; a generic MITRE chain is research context, not a verified product vulnerability.
 
-## Later workflow review: diagnosis and repair
+## BlockSynergy attack-chain Crucible replay
 
-After the machine was completed, a separate **offline** CodePro/Crucible review ran two seven-role DSV4 Flash passes with GLM 5.3 reviews. Source checks rejected several worker suggestions, including the claim that the seven roles run sequentially. Further broad model loops would not have verified those claims, so the review stopped for source and test checks. This work did not participate in the BlockSynergy solve or generate the GIF above.
+After completion, the saved machine evidence was replayed **offline** through the existing seven-role Crucible lane: DSV4 Flash proposed chain claims, and GLM 5.3 reviewed the unresolved set. An independent source check then separated supported matches from false leads. This replay neither contacted the machine nor contributed to the original solve or GIF.
 
-The source review established three constraints:
+The concrete retrieval failure was a vocabulary mismatch. The saved query `authorized_keys` returned no catalog results, although the frozen bank contained **P14, SSH Authorized Key Injection**, retrievable by its exact MITRE code `T1098.004`. The broad `SUID` query also returned **PX10**, whose PATH-hijack prerequisite was absent from the case. **MS02** describes the observed check/use race at the primitive level, while **E01** is only a broad SUID detection chain. Neither supplies a product CVE or a complete machine-specific route.
 
-- Crucible already launches its seven required roles concurrently. Collecting their results in a different order alone does not shorten the current path, which needs the complete seven-role receipt.
-- The production stage signs one requested model ID and binding reference for its slot. Each role receives the same sealed CodePro problem and is checked against that step's model ID. A local model-name change cannot safely create DSV4 Flash workers under a GLM 5.3 stage.
-- Drive follows a preplanned stage sequence after each passing native check. A decision to stop after sufficient evidence, or to run another repair round for unresolved evidence, needs an admitted continuation decision rather than an unbounded local loop.
-
-**Proposed fix:**
-
-1. Version the Cloud-signed stage contract to bind an exact model, spending cap, and receipt to each existing role. Keep older single-model plans valid.
-2. Give the DSV4 Flash roles distinct, source-pinned chain questions while preserving one common problem digest. Pass independently verified claims to GLM 5.3 for synthesis; retain unresolved claims as labeled leads.
-3. After native verification, stop when the signed acceptance condition is met. Continue for a recorded evidence gap only if Cloud issues a bounded child step with a parent proof, fresh assignment and call ID, and available budget. Halt on ambiguous spend without a local retry.
-4. Compare the old and new routes on the same pinned cases. Require all seven role receipts, exact model IDs, independent native verification, and unchanged result quality; measure time to a verified result, settled cost, and false or duplicate claim rates.
-
-The scoped local suite passed **36 tests**; one Atlas interoperability test could not run without its separate source checkout. The mixed-model route and continuation gate are **proposed, not implemented or benchmarked**. No speedup or cost saving is claimed.
+**Repair:** Predator's existing read-only chain search now folds separators and simple plurals when matching a query to chain-title words. This makes `authorized_keys` find P14 without changing the frozen chain bank or widening exact MITRE-code matching. The case regression and negative controls pass **13 scoped catalog tests**. The replay rejected the suggestion to launch a deeper search solely because the first query missed: the relevant P14 entry was already present. This establishes retrieval correctness for the saved case; no latency or cost improvement has been measured.
 
 The full trace and challenge answers remain in the private Predator task record. This page records the outcome and attribution without publishing an active-machine solution.
 
