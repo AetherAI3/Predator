@@ -18,6 +18,7 @@ ITEMS = [
     ("ai-ml-exploitation/prometheon-replay.gif", "saved Prometheon Predator replay"),
     ("ai-ml-exploitation/lost-in-hyperspace-replay.gif", "saved Lost in Hyperspace Predator replay"),
     ("ai-ml-exploitation/spin-glass-brain-replay.gif", "corrected Spin Glass Brain Predator replay"),
+    ("machines/blocksynergy/predator-replay.gif", "sanitized BlockSynergy machine evidence replay"),
     ("../media/predator-vpn-scan-preview.gif", "existing sanitized Academy Nmap replay"),
     ("../media/predator-pwnbox-ttl-preview.gif", "existing sanitized Pwnbox workflow preview"),
 ]
