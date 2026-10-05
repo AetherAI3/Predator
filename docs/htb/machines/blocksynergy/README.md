@@ -16,6 +16,10 @@ The [six-frame GIF](predator-replay.gif) is a **sanitized replay assembled from 
 
 The live root verification showed effective UID 0. The development service was restored and returned HTTP 200 after cleanup. The custom application and restore behavior were **not assigned a CVE**; a generic MITRE chain is research context, not a verified product vulnerability.
 
+## Later workflow review
+
+After the machine was completed, a separate **offline** CodePro/Crucible repair review examined Predator's model routing and latency. Two seven-role DSV4 Flash research passes and GLM 5.3 reviews produced proposals; a source audit refuted several claims and left others unresolved. No mixed-model Drive dispatch, CodePro repair, or measured speedup resulted from that review. It did not participate in the BlockSynergy solve or generate the GIF above.
+
 The full trace and challenge answers remain in the private Predator task record. This page records the outcome and attribution without publishing an active-machine solution.
 
 [All machines →](../README.md) · [All HTB work →](../../README.md)
