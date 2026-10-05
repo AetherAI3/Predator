@@ -203,6 +203,10 @@ The Satellite certificate and account activity support nine completed labs; the 
 
 **[Browse all HTB modules, certificates, and replays →](docs/htb/)**
 
+### Disposable pwnbox for autonomous missions
+
+Predator can spawn a disposable Linux pwnbox for an authorized CTF or HTB mission when a hosted Pwnbox is unavailable. After an operator confirms the VM, Predator can investigate through reviewed terminal actions. The operator can take over or stop it, and the disk is removed on stop or expiry.
+
 ## Developers: join the research program
 
 Help advance the CLI, repair chains, verification tools, or careful classical/quantum comparisons. Tell us what you have built and which part of the program interests you. Private research access is granted after review.
