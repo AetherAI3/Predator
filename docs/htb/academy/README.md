@@ -2,10 +2,22 @@
 
 ## Network Enumeration with Nmap
 
-**Completed 3 October 2026 · 12/12 sections**, according to the owner's Academy completion screenshot. Predator with GLM 5.3 performed the owned-VM command work; the owner entered the resulting answers in Academy.
+**Completed October 3, 2026 · 12/12 sections**, according to the owner's Academy completion screenshot.
 
-The existing [public completion record](../../research/htb-academy-nmap.md) explains the model and owner roles, accepted exercises, and evidence limits. Its [27-frame sanitized Nmap replay](../../media/predator-vpn-scan-preview.gif) is assembled from saved scans, model responses, and owner-provided Academy screenshots. The earlier [Pwnbox console preview](../../media/predator-pwnbox-ttl-preview.gif) records a separate workflow check.
+Predator worked in an owned Ubuntu VM connected to the Academy lab. The [completion record](../../research/htb-academy-nmap.md) covers enumeration reports, service review, exercise feedback, and the Easy, Medium, and Hard labs.
 
-Those two GIFs already live in the public repository's media folder, so this page links them instead of copying them.
+| Who | Role in this example |
+| :--- | :--- |
+| **Predator through GLM-5.3** | Planned and ran the VM commands autonomously, interpreted outputs, and revised candidates after exercise feedback |
+| **Owner** | Supplied plain-language prompts and exercise questions, then typed the resulting answers into Academy |
 
-[All HTB work →](../README.md)
+## Watch the replays
+
+| Replay | What you will see |
+| :--- | :--- |
+| **[Nmap module replay](../../media/predator-vpn-scan-preview.gif)** | 27 frames assembled from saved scans, model responses, and owner-provided Academy screenshots |
+| [Earlier Pwnbox console preview](../../media/predator-pwnbox-ttl-preview.gif) | A separate workflow check covering guest-console interaction |
+
+Both previews are sanitized evidence replays. Target addresses, VPN material, and exercise flags are withheld. The full completion record explains their provenance and limits.
+
+[Read the completion record →](../../research/htb-academy-nmap.md) · [All HTB modules and demos →](../README.md)
