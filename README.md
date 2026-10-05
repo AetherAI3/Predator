@@ -276,7 +276,7 @@ This is one recorded training example of Predator operating an owned VM. **Preda
 
 The retained record covers enumeration reports, service review, exercise feedback, the Easy/Medium/Hard labs, and owner-confirmed completion of all 12 sections. Target addresses, VPN material, and exercise flags are withheld. The replay is an assembled record rather than a continuous desktop recording.
 
-[Read the completion record and model/owner roles →](docs/research/htb-academy-nmap.md)
+[Read the completion record and model/owner roles →](docs/research/htb-academy-nmap.md) · [Browse all HTB tracks, certificate, and replays →](docs/htb/README.md)
 
 <details>
 <summary><strong>Watch the earlier Pwnbox console preview</strong></summary>
@@ -298,6 +298,7 @@ Aether reviews applications and grants access to relevant private work areas onl
 ## Read the evidence
 
 - [HTB Academy Nmap completion](docs/research/htb-academy-nmap.md): all 12 sections, the sanitized replays, and the model/owner roles.
+- [HTB showcase](docs/htb/README.md): Satellite Exploitation certificate and replays, AI/ML track progress, and Academy records.
 - [CharLS Q3 result](docs/research/charls-q3.md) and [public data](docs/research/charls-q3.json): the completed dependent repair and its limits.
 - [Gen3 QPACK study](docs/research/gen3-qpack-experiment1.md) and [episode data](docs/research/gen3-qpack-experiment1.json): feedback results, comparisons, and missingness.
 - [joint5 IBM Fez compiler pilot](docs/research/ibm-fez-pilot.md) and [public data](docs/research/ibm-pilot.json): gate reduction, output agreement, and the expected-energy regression.

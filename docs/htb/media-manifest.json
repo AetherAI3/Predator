@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "updated": "2026-10-05",
+  "satellite_certificate_reference": "https://labs.hackthebox.com/achievement/track/4038252/99",
+  "assets": [
+    {
+      "path": "satellite-exploitation/certificate.png",
+      "description": "owner-supplied HTB track certificate",
+      "sha256": "d807bc0edd888be09865711a43896ae5d773b3ed37eece9baa4963d3275b5bb4",
+      "bytes": 267462,
+      "kind": "certificate"
+    },
+    {
+      "path": "satellite-exploitation/combined-replay.gif",
+      "description": "replay of four saved Predator lab records and certificate",
+      "sha256": "3e49378fcf379afaa854630ee3475532f00742283fca20166daa9794fd702d91",
+      "bytes": 2874198,
+      "kind": "replay",
+      "frames": 46,
+      "replay_not_continuous_recording": true
+    },
+    {
+      "path": "satellite-exploitation/baby-frame-replay.gif",
+      "description": "original saved Baby Frame replay",
+      "sha256": "106c01bc9c90deb1f72e8963b5ffe1125b0d8d6913566704309cd23b00942ae4",
+      "bytes": 2520103,
+      "kind": "replay",
+      "frames": 36,
+      "replay_not_continuous_recording": true
+    },
+    {
+      "path": "satellite-exploitation/no-errors-replay.gif",
+      "description": "original saved No Errors replay",
+      "sha256": "eaa8c4cae625da0a592c0c7ffa88dd798c12321ac9341332d3777ed66578aba5",
+      "bytes": 160751,
+      "kind": "replay",
+      "frames": 4,
+      "replay_not_continuous_recording": true
+    },
+    {
+      "path": "ai-ml-exploitation/prometheon-replay.gif",
+      "description": "saved Prometheon Predator replay",
+      "sha256": "774fb605a9817c1a6d88baea78c39d66fcdc1f31240b5e2ffce1ef3191d7584d",
+      "bytes": 286479,
+      "kind": "replay",
+      "frames": 9,
+      "replay_not_continuous_recording": true
+    },
+    {
+      "path": "ai-ml-exploitation/lost-in-hyperspace-replay.gif",
+      "description": "saved Lost in Hyperspace Predator replay",
+      "sha256": "f78d4361e58d4e49f1cb64a7e8bae19c09b95eea10d8be25c0530f625cbd8ecd",
+      "bytes": 242508,
+      "kind": "replay",
+      "frames": 8,
+      "replay_not_continuous_recording": true
+    },
+    {
+      "path": "ai-ml-exploitation/spin-glass-brain-replay.gif",
+      "description": "corrected Spin Glass Brain Predator replay",
+      "sha256": "fcb316339062c5412292da41aa86a4d7c360fcd767a5fb31b74046cb0be48c75",
+      "bytes": 397221,
+      "kind": "replay",
+      "frames": 9,
+      "replay_not_continuous_recording": true
+    },
+    {
+      "path": "../media/predator-vpn-scan-preview.gif",
+      "description": "existing sanitized Academy Nmap replay",
+      "sha256": "09bf4cbb51995a05f110915dbbbdb2e7b33ad267bab87b042b9c48514bfeea9d",
+      "bytes": 757077,
+      "kind": "replay",
+      "frames": 27,
+      "replay_not_continuous_recording": true
+    },
+    {
+      "path": "../media/predator-pwnbox-ttl-preview.gif",
+      "description": "existing sanitized Pwnbox workflow preview",
+      "sha256": "ae736357fa533b56c60c86655b40f98a5ce9a529cb07fe5fb4b489d73ac1f7f2",
+      "bytes": 124969,
+      "kind": "replay",
+      "frames": 4,
+      "replay_not_continuous_recording": true
+    }
+  ]
+}
