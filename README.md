@@ -23,7 +23,7 @@ Teams can commission a focused repository mission, qualify a repeatable security
 
 This repository is the **public showcase**: research notes, selected results, and training demos. The Predator CLI and operator engines are private; access is reviewed separately.
 
-[Services](#ways-to-work-with-aether) · [Crucible](#crucible-adaptive-modeling-and-quantum-depth) · [Research sources](#research-sources) · [Results](#what-the-public-research-found) · [Workspace](#the-operator-workspace) · [HTB modules](#hack-the-box-modules-and-demos) · [Docs](docs/README.md) · [Community](#join-the-community)
+[Services](#ways-to-work-with-aether) · [Features](#predator-features) · [P-BOX](#p-box) · [Training evidence](#hack-the-box-training-and-evidence) · [Crucible](#crucible-adaptive-modeling-and-quantum-depth) · [Research sources](#research-sources) · [Results](#what-the-public-research-found) · [Docs](docs/README.md) · [Community](#join-the-community)
 
 > **[Read the safety model →](SAFETY.md)** Human-approved scope and budgets bound each run. Memory, model suggestions, and quantum results supply evidence; authority comes from the approved mission. The guide distinguishes required policy from controls proven in code.
 
@@ -46,6 +46,114 @@ This repository is the **public showcase**: research notes, selected results, an
 <a id="live-predator-red-team"></a>
 
 A mission begins with an agreed surface, acceptance checks, and handoff. Live assessments also require approved targets, methods, timing, contacts, and stop conditions. Current pricing and engagement terms are on the linked service pages. Broader engineering work starts with a [project inquiry](https://aethersystems.net/contact).
+
+<a id="the-operator-workspace"></a>
+
+## Predator features
+
+The private **Predator CLI** brings research, tools, persistent evidence, and supported browser/VM workflows into one conversation. Operators choose an available Aether model and keep its actions attached to the source, artifacts, and approved scope.
+
+| Capability | What it does |
+| :--- | :--- |
+| **Research, Crucible, and Drive** | Cross-reference chains and CVEs, review candidates, and run admitted validation stages. |
+| **CodePro fanout** | Retrieve context for parallel workers and consolidate analysis through shared IR. |
+| **Clean model worktrees** | Give each model run an isolated Git worktree, pinned source, stable identity, and attributed artifacts. |
+| **Unlimited Context** | Retrieve relevant sources, notes, counterexamples, and unresolved questions across sessions and models. |
+| **Predator RC** | View browser and CLI activity remotely through an encrypted relay, with human takeover and hand-back. |
+| **[P-BOX](#p-box)** | Spawn a disposable Linux pwnbox for a confirmed mission, with live viewing, operator control, and automatic cleanup. |
+| **Guest consoles** | Work through supported Pwnbox/noVNC sessions or an owned VM in an authorized training lab. |
+
+<a id="clean-worktrees-and-unlimited-context"></a>
+
+**[Unlimited Context (UCL)](https://github.com/AetherAI3/Unlimited-Context-LLM)** is Aether's open-source context engine. Named memory pools carry source-backed evidence across sessions; each model branch retains its own notes. “Unlimited” describes retrieval reach: relevant slices enter the model's native attention window. Restart checks verify task, worktree, and memory-pool identity.
+
+<a id="predator-rc-browser-views-and-ctf-work"></a>
+
+<details>
+<summary><strong>Browser, RC, and guest-session status</strong></summary>
+
+Supported Pwnbox/noVNC sessions have recorded attachment, observation, reviewed input, human takeover, resume, and cleanup. An owned Ubuntu VM supplied the Academy workflow below. Other CTF, Sherlock, VM, and VPN environments need their own scope and validation.
+
+RC is in controlled private preview. The production viewer and relay have been exercised in an owner canary; the complete sign-in, mission selection, and controller hand-back journey remains under validation. Browser and guest sessions require a fresh check after interruption.
+
+</details>
+
+<a id="p-box"></a>
+<a id="disposable-pwnbox-for-autonomous-missions"></a>
+
+## [P-BOX] Predator's disposable Linux VM
+
+**Give Predator a goal, confirm the VM, and follow along as it works.**
+
+P-BOX is Predator's own disposable Linux pwnbox. Predator can spawn one for an authorized CTF or HTB mission when a hosted Pwnbox is unavailable, giving the mission a guest environment you can watch and control.
+
+| What you can do | How it works |
+| :--- | :--- |
+| **Confirm and start** | You confirm the VM before Predator begins work within the approved mission. |
+| **Work toward longer goals** | Predator can carry out work autonomously through reviewed terminal actions, interpret fresh guest observations, and choose the next step. |
+| **Watch, take over, and resume** | Watch the guest live, take control yourself, hand it back to Predator, or stop the mission. |
+| **Clean up automatically** | The VM's disk is removed when you stop it or its lease expires. |
+
+*The recording below includes challenge spoilers and visible lab command history.*
+
+<p align="center">
+  <a href="docs/htb/machines/ghostlink/README.md"><img src="docs/htb/machines/ghostlink/Ghostlink-VM-Predator-final-replay.gif" width="960" alt="P-BOX in action: full-screen recording of Predator's disposable VPS3 pwnbox during an authorized Ghostlink lab."></a><br>
+  <sub>P-BOX in action · 670 recorded guest frames · <a href="docs/htb/machines/ghostlink/README.md">Ghostlink evidence and execution roles</a></sub>
+</p>
+
+<details>
+<summary><strong>What the live checks and replay show</strong></summary>
+
+A live VPS3 validation reached a seeded test flag through a reviewed `sonnet` command. A fresh observation from inside the guest confirmed the result. The checks also passed live viewing, operator takeover and resume, lease fencing against stale control, and VM/disk teardown.
+
+The Ghostlink recording shows P-BOX in use with both Predator and operator contributions. Its [machine guide](docs/htb/machines/ghostlink/README.md) explains the roles and the final challenge-file observations, which were captured separately after the recorder stopped. The [Academy example](docs/htb/academy/README.md) records longer autonomous command work in an owned Ubuntu VM.
+
+</details>
+
+<a id="hack-the-box-modules-and-demos"></a>
+
+## Hack The Box: training and evidence
+
+**HTB is a test and training ground for Predator's agent and VM workflows.** These examples show what ran, who did the work, and which results were recorded.
+
+<a id="network-enumeration-with-nmap"></a>
+
+<table>
+  <tr>
+    <th width="50%">Academy · autonomous VM work</th>
+    <th width="50%">Pwnbox · reviewed console check</th>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="docs/htb/academy/README.md"><img src="docs/media/predator-vpn-scan-preview.gif" width="100%" alt="Sanitized evidence replay of Predator and GLM-5.3 running Academy Nmap commands autonomously in an owned Ubuntu VM."></a></td>
+    <td width="50%" valign="top"><a href="docs/htb/academy/README.md"><img src="docs/media/predator-pwnbox-ttl-preview.gif" width="100%" alt="Sanitized evidence replay of an earlier Pwnbox guest-console attachment and reviewed terminal exercise."></a></td>
+  </tr>
+</table>
+
+For Academy, **Predator through GLM-5.3 ran the VM commands autonomously**. The owner supplied plain-language prompts and exercise questions, then entered the resulting answers in Academy. The second GIF shows a separate reviewed Pwnbox console check. Both are assembled evidence replays; their [guide](docs/htb/academy/README.md) explains the saved records and execution roles.
+
+<details>
+<summary><strong>HTB results, certificates, and more replays</strong></summary>
+
+| Module or track | Recorded progress | Open the guide |
+| :--- | :--- | :--- |
+| **Satellite Exploitation** | **9/9 labs completed** · October 5, 2026 | [Certificate, lab list, and replays](docs/htb/satellite-exploitation/README.md) |
+| **AI and ML Exploitation** | **1/17 labs HTB-accepted** · in progress | [Lab status and three replays](docs/htb/ai-ml-exploitation/README.md) |
+| **Academy: Network Enumeration with Nmap** | **12/12 sections completed** · October 3, 2026 | [Completion record and two replays](docs/htb/academy/README.md) |
+| **Machine: BlockSynergy** | **User and root challenge files read** · October 5, 2026; owner confirmed | [Machine record and sanitized replay](docs/htb/machines/blocksynergy/README.md) |
+| **Machine: Ghostlink** | **User and root challenge files read** · October 5, 2026; HTB submission unobserved | [Machine record and full-screen pwnbox replay](docs/htb/machines/ghostlink/README.md) |
+
+*The Satellite replay below includes challenge spoilers.*
+
+<p align="center">
+  <a href="docs/htb/satellite-exploitation/README.md"><img src="docs/htb/satellite-exploitation/combined-replay.gif" width="640" alt="Satellite evidence replay covering four saved Predator lab records and the owner-supplied completion certificate."></a><br>
+  <sub>Satellite Exploitation · <a href="docs/htb/satellite-exploitation/README.md">certificate, lab list, and replays</a></sub>
+</p>
+
+The Satellite certificate and account activity support nine completed labs; the replay covers four saved lab records. AI/ML counts only HTB-accepted results toward completion. Each guide describes the Predator and operator contributions for its examples.
+
+</details>
+
+**[Browse all HTB modules, certificates, and replays →](docs/htb/README.md)**
 
 <a id="the-cli-crucible-and-the-research-loop"></a>
 
@@ -143,75 +251,6 @@ Lower total-variation distance means closer agreement with the ideal output dist
 
 [Measurements and uncertainty →](docs/research/ibm-fez-pilot.md) · [Full-precision data →](docs/research/ibm-pilot.json)
 
-## The operator workspace
-
-The private **Predator CLI** brings research, tools, persistent evidence, and supported browser/VM workflows into one conversation. Operators choose an available Aether model and keep its actions attached to the source, artifacts, and approved scope.
-
-| Capability | What it does |
-| :--- | :--- |
-| **Research, Crucible, and Drive** | Cross-reference chains and CVEs, review candidates, and run admitted validation stages. |
-| **CodePro fanout** | Retrieve context for parallel workers and consolidate analysis through shared IR. |
-| **Clean model worktrees** | Give each model run an isolated Git worktree, pinned source, stable identity, and attributed artifacts. |
-| **Unlimited Context** | Retrieve relevant sources, notes, counterexamples, and unresolved questions across sessions and models. |
-| **Predator RC** | View browser and CLI activity remotely through an encrypted relay, with human takeover and hand-back. |
-| **HTB and VM workflows** | Work through supported Pwnbox/noVNC consoles or an owned VM in an authorized training lab. |
-
-<a id="clean-worktrees-and-unlimited-context"></a>
-
-**[Unlimited Context (UCL)](https://github.com/AetherAI3/Unlimited-Context-LLM)** is Aether's open-source context engine. Named memory pools carry source-backed evidence across sessions; each model branch retains its own notes. “Unlimited” describes retrieval reach: relevant slices enter the model's native attention window. Restart checks verify task, worktree, and memory-pool identity.
-
-<a id="predator-rc-browser-views-and-ctf-work"></a>
-
-<details>
-<summary><strong>Browser, RC, and guest-session status</strong></summary>
-
-Supported Pwnbox/noVNC sessions have recorded attachment, observation, reviewed input, human takeover, resume, and cleanup. An owned Ubuntu VM supplied the Academy workflow below. Other CTF, Sherlock, VM, and VPN environments need their own scope and validation.
-
-RC is in controlled private preview. The production viewer and relay have been exercised in an owner canary; the complete sign-in, mission selection, and controller hand-back journey remains under validation. Browser and guest sessions require a fresh check after interruption.
-
-</details>
-
-## Hack The Box: modules and demos
-
-Training records across HTB Academy, Satellite Exploitation, AI/ML Exploitation, and individual machines. Each guide explains the completion evidence and the Predator work that was saved.
-
-<a id="network-enumeration-with-nmap"></a>
-
-| Module or track | Recorded progress | Open the guide |
-| :--- | :--- | :--- |
-| **Satellite Exploitation** | **9/9 labs completed** · October 5, 2026 | [Certificate, lab list, and replays](docs/htb/satellite-exploitation/README.md) |
-| **AI and ML Exploitation** | **1/17 labs HTB-accepted** · in progress | [Lab status and three replays](docs/htb/ai-ml-exploitation/README.md) |
-| **Academy: Network Enumeration with Nmap** | **12/12 sections completed** · October 3, 2026 | [Completion record and two replays](docs/htb/academy/README.md) |
-| **Machine: BlockSynergy** | **User and root challenge files read** · October 5, 2026; owner confirmed | [Machine record and sanitized replay](docs/htb/machines/blocksynergy/README.md) |
-| **Machine: Ghostlink** | **User and root challenge files read** · October 5, 2026; HTB submission unobserved | [Machine record and full-screen pwnbox replay](docs/htb/machines/ghostlink/README.md) |
-
-For Academy, **Predator through GLM-5.3 ran the VM commands autonomously**. The owner supplied plain-language prompts and exercise questions, then entered the resulting answers in Academy. Execution roles for the other tracks are described in their guides.
-
-The GIFs below show saved training evidence. The Satellite replay and Ghostlink's full pwnbox recording include challenge spoilers. Ghostlink's GIF keeps the complete VM view and visible terminal history; only blank white browser-loading frames were removed.
-
-<table>
-  <tr>
-    <th width="50%">Academy · autonomous VM enumeration</th>
-    <th width="50%">Satellite · recorded lab work</th>
-  </tr>
-  <tr>
-    <td width="50%" valign="top"><a href="docs/htb/academy/README.md"><img src="docs/media/predator-vpn-scan-preview.gif" width="100%" alt="Sanitized evidence replay of Predator and GLM-5.3 performing Academy Nmap enumeration autonomously."></a></td>
-    <td width="50%" valign="top"><a href="docs/htb/satellite-exploitation/README.md"><img src="docs/htb/satellite-exploitation/combined-replay.gif" width="100%" alt="Satellite evidence replay covering four saved Predator lab records and the owner-supplied completion certificate."></a></td>
-  </tr>
-</table>
-
-<p align="center"><a href="docs/htb/machines/ghostlink/README.md"><img src="docs/htb/machines/ghostlink/Ghostlink-VM-Predator-final-replay.gif" width="960" alt="Full-screen recording of Predator's VPS3 pwnbox during Ghostlink, with blank browser-loading frames removed."></a><br><sub>Ghostlink · 670 recorded pwnbox frames · <a href="docs/htb/machines/ghostlink/README.md">evidence and execution roles</a></sub></p>
-
-The Satellite certificate and account activity support nine completed labs; the replay covers four saved lab records. AI/ML counts only HTB-accepted results toward completion.
-
-**[Browse all HTB modules, certificates, and replays →](https://github.com/AetherAI3/Predator/tree/main/docs/htb)**
-
-### Disposable pwnbox for autonomous missions
-
-Predator can spawn a disposable Linux pwnbox for an authorized CTF or HTB mission when a hosted Pwnbox is unavailable. After an operator confirms the VM, Predator can investigate through reviewed terminal actions. The operator can take over or stop it, and the disk is removed on stop or expiry.
-
-A live VPS3 validation reached a seeded test flag through a reviewed `sonnet` command, with the result cited to a fresh guest observation. Watch, takeover, resume, lease fencing, and teardown checks passed.
-
 ## Join the community
 
 Ask about the published studies, suggest a public demo, or share feedback in [GitHub Discussions](https://github.com/AetherAI3/Predator/discussions). Use [issues](https://github.com/AetherAI3/Predator/issues/new/choose) for concrete documentation corrections.
@@ -228,7 +267,8 @@ Help advance the CLI, repair chains, verification tools, or careful classical/qu
 
 | Start with | Then explore |
 | :--- | :--- |
-| **[HTB showcase guide](docs/htb/README.md)** | Tracks, machines, certificate, completion records, and replay index |
+| **[P-BOX feature showcase](#p-box)** | Disposable Linux VM, autonomous goal work, operator control, and recorded guest session |
+| **[HTB training evidence](docs/htb/README.md)** | Tracks, machines, certificate, completion records, and replay index |
 | **[CharLS Q3](docs/research/charls-q3.md)** | [Public data](docs/research/charls-q3.json) and the completed dependent repair |
 | **[QPACK study](docs/research/gen3-qpack-experiment1.md)** | [Episode data](docs/research/gen3-qpack-experiment1.json), comparisons, and missing outcomes |
 | **[joint5 IBM Fez pilot](docs/research/ibm-fez-pilot.md)** | [Public data](docs/research/ibm-pilot.json), uncertainty, and the energy regression |
