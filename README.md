@@ -42,16 +42,16 @@ P-BOX is Predator's disposable Linux pwnbox for authorized CTF and HTB missions.
 *The recording below includes challenge spoilers and visible lab command history.*
 
 <p align="center">
-  <a href="docs/htb/machines/ghostlink/README.md"><img src="docs/htb/machines/ghostlink/Ghostlink-VM-Predator-final-replay.gif" width="960" alt="P-BOX in action: full-screen recording of Predator's disposable VPS3 pwnbox during an authorized Ghostlink lab."></a><br>
-  <sub>P-BOX in action · 670 recorded guest frames · <a href="docs/htb/machines/ghostlink/README.md">Ghostlink evidence and execution roles</a></sub>
+  <a href="docs/htb/machines/ghostlink/README.md"><img src="docs/htb/machines/ghostlink/Ghostlink-VM-Predator-final-replay.gif" width="960" alt="P-BOX in action: guest recording from Predator's GLM-5.3 Ghostlink mission, with blank browser-loading frames removed."></a><br>
+  <sub>P-BOX in action · Predator / GLM-5.3 · 670 recorded guest frames · <a href="docs/htb/machines/ghostlink/README.md">Ghostlink evidence and execution roles</a></sub>
 </p>
 
 <details>
-<summary><strong>What the live checks and replay show</strong></summary>
+<summary><strong>About this GLM-5.3 replay</strong></summary>
 
-A live VPS3 validation reached a seeded test flag through a reviewed `sonnet` command. A fresh observation from inside the guest confirmed the result. The same run passed live viewing, operator takeover and resume, checks against stale control, and VM/disk cleanup.
+The featured GIF comes from **Predator's GLM-5.3 Ghostlink mission in P-BOX**. It contains 670 recorded guest frames at 1600 × 920, with blank browser-loading frames removed. The [frame provenance](docs/htb/machines/ghostlink/replay-provenance.json) records the retained source-frame hashes and GIF hash.
 
-The Ghostlink recording shows P-BOX in use with both Predator and operator contributions. Its [machine guide](docs/htb/machines/ghostlink/README.md) explains the roles and the final challenge-file observations, which were captured separately after the recorder stopped. The [Academy example](docs/htb/academy/README.md) records longer autonomous command work in an owned Ubuntu VM.
+The [machine guide](docs/htb/machines/ghostlink/README.md) records GLM-5.3's research and the operator's later actions. The screen recorder stopped before the final user and root challenge-file reads; those observations are documented separately.
 
 </details>
 
@@ -295,6 +295,11 @@ Ask about the published studies, suggest a public demo, or share feedback in [Gi
 ## Developers: join the research program
 
 Help build the CLI, repair chains, verification tools, or classical/quantum comparisons. Tell us what you have built and where you want to contribute. Private research access is reviewed separately.
+
+<p align="center">
+  <img src="docs/assets/predator-cli-console-preview.png" width="800" alt="Predator CLI console preview with red Predator branding, a mission label, and context indicators."><br>
+  <sub>Predator CLI console preview · illustrative layout and counters</sub>
+</p>
 
 [Apply to join →](https://aethersystems.net/contact?intent=general&product=site_wide&cta=footer_updates_contact)
 
