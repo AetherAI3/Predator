@@ -31,7 +31,7 @@ Most GIFs are **assembled evidence replays** made from saved records. Ghostlink 
 | [Baby Frame](satellite-exploitation/baby-frame-replay.gif) · [No Errors](satellite-exploitation/no-errors-replay.gif) | The two individual Satellite source replays |
 | [Prometheon](ai-ml-exploitation/prometheon-replay.gif) · [Lost in Hyperspace](ai-ml-exploitation/lost-in-hyperspace-replay.gif) · [Spin Glass Brain](ai-ml-exploitation/spin-glass-brain-replay.gif) | Three AI/ML examples; the track guide distinguishes recovered candidates from HTB acceptance |
 | [BlockSynergy](machines/blocksynergy/predator-replay.gif) | Sanitized machine replay of GLM chain research and operator-verified user/root access |
-| [Ghostlink](machines/ghostlink/predator-pwnbox-replay.gif) | 670-frame full-screen VPS3 pwnbox recording with blank browser loads removed; contains challenge spoilers |
+| [Ghostlink](machines/ghostlink/Ghostlink-VM-Predator-final-replay.gif) | 670-frame full-screen VPS3 pwnbox recording with blank browser loads removed; contains challenge spoilers |
 | **[Academy Nmap](../media/predator-vpn-scan-preview.gif)** | Sanitized autonomous GLM-5.3 VM command work |
 | [Earlier Pwnbox preview](../media/predator-pwnbox-ttl-preview.gif) | Console attachment and a reviewed guest-terminal exercise |
 

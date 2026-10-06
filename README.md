@@ -200,7 +200,7 @@ The GIFs below show saved training evidence. The Satellite replay and Ghostlink'
   </tr>
 </table>
 
-<p align="center"><a href="docs/htb/machines/ghostlink/README.md"><img src="docs/htb/machines/ghostlink/predator-pwnbox-replay.gif" width="960" alt="Full-screen recording of Predator's VPS3 pwnbox during Ghostlink, with blank browser-loading frames removed."></a><br><sub>Ghostlink · 670 recorded pwnbox frames · <a href="docs/htb/machines/ghostlink/README.md">evidence and execution roles</a></sub></p>
+<p align="center"><a href="docs/htb/machines/ghostlink/README.md"><img src="docs/htb/machines/ghostlink/Ghostlink-VM-Predator-final-replay.gif" width="960" alt="Full-screen recording of Predator's VPS3 pwnbox during Ghostlink, with blank browser-loading frames removed."></a><br><sub>Ghostlink · 670 recorded pwnbox frames · <a href="docs/htb/machines/ghostlink/README.md">evidence and execution roles</a></sub></p>
 
 The Satellite certificate and account activity support nine completed labs; the replay covers four saved lab records. AI/ML counts only HTB-accepted results toward completion.
 
