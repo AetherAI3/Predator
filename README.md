@@ -183,10 +183,11 @@ Training records across HTB Academy, Satellite Exploitation, AI/ML Exploitation,
 | **AI and ML Exploitation** | **1/17 labs HTB-accepted** · in progress | [Lab status and three replays](docs/htb/ai-ml-exploitation/README.md) |
 | **Academy: Network Enumeration with Nmap** | **12/12 sections completed** · October 3, 2026 | [Completion record and two replays](docs/htb/academy/README.md) |
 | **Machine: BlockSynergy** | **User and root challenge files read** · October 5, 2026; owner confirmed | [Machine record and sanitized replay](docs/htb/machines/blocksynergy/README.md) |
+| **Machine: Ghostlink** | **User and root challenge files read** · October 5, 2026; HTB submission unobserved | [Machine record and full-screen pwnbox replay](docs/htb/machines/ghostlink/README.md) |
 
 For Academy, **Predator through GLM-5.3 ran the VM commands autonomously**. The owner supplied plain-language prompts and exercise questions, then entered the resulting answers in Academy. Execution roles for the other tracks are described in their guides.
 
-The two GIFs below are **evidence replays assembled from saved records**. The Satellite replay includes challenge spoilers.
+The GIFs below are **evidence replays assembled from saved records**. The Satellite replay includes challenge spoilers. Ghostlink's public replay keeps the full pwnbox view while obscuring sensitive terminal content.
 
 <table>
   <tr>
@@ -198,6 +199,8 @@ The two GIFs below are **evidence replays assembled from saved records**. The Sa
     <td width="50%" valign="top"><a href="docs/htb/satellite-exploitation/README.md"><img src="docs/htb/satellite-exploitation/combined-replay.gif" width="100%" alt="Satellite evidence replay covering four saved Predator lab records and the owner-supplied completion certificate."></a></td>
   </tr>
 </table>
+
+<p align="center"><a href="docs/htb/machines/ghostlink/README.md"><img src="docs/htb/machines/ghostlink/predator-pwnbox-replay.gif" width="960" alt="Sanitized full-screen replay of Predator's VPS3 pwnbox during the Ghostlink training mission."></a><br><sub>Ghostlink · full-screen VPS3 pwnbox replay · <a href="docs/htb/machines/ghostlink/README.md">evidence and execution roles</a></sub></p>
 
 The Satellite certificate and account activity support nine completed labs; the replay covers four saved lab records. AI/ML counts only HTB-accepted results toward completion.
 
@@ -219,7 +222,7 @@ Help advance the CLI, repair chains, verification tools, or careful classical/qu
 
 | Start with | Then explore |
 | :--- | :--- |
-| **[HTB showcase guide](docs/htb/README.md)** | All three tracks, certificate, completion records, and replay index |
+| **[HTB showcase guide](docs/htb/README.md)** | Tracks, machines, certificate, completion records, and replay index |
 | **[CharLS Q3](docs/research/charls-q3.md)** | [Public data](docs/research/charls-q3.json) and the completed dependent repair |
 | **[QPACK study](docs/research/gen3-qpack-experiment1.md)** | [Episode data](docs/research/gen3-qpack-experiment1.json), comparisons, and missing outcomes |
 | **[joint5 IBM Fez pilot](docs/research/ibm-fez-pilot.md)** | [Public data](docs/research/ibm-pilot.json), uncertainty, and the energy regression |

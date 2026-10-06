@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-05",
+  "updated": "2026-10-06",
   "satellite_certificate_reference": "https://labs.hackthebox.com/achievement/track/4038252/99",
   "assets": [
     {
@@ -71,6 +71,15 @@
       "bytes": 142677,
       "kind": "replay",
       "frames": 6,
+      "replay_not_continuous_recording": true
+    },
+    {
+      "path": "machines/ghostlink/predator-pwnbox-replay.gif",
+      "description": "sanitized full-screen Ghostlink VPS3 pwnbox replay",
+      "sha256": "29b38d7d4589443cef10fc59de247285ca4be7bec963edea23a7372be4e10c97",
+      "bytes": 269125,
+      "kind": "replay",
+      "frames": 10,
       "replay_not_continuous_recording": true
     },
     {

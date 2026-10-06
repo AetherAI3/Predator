@@ -19,6 +19,7 @@ Start with [Academy](academy/README.md) for an example of Predator working in an
 | Machine | Recorded result | What you will find |
 | :--- | :--- | :--- |
 | **[BlockSynergy](machines/blocksynergy/README.md)** | **User and root challenge files read** · October 5, 2026; owner confirmed | Execution roles and a sanitized six-frame replay |
+| **[Ghostlink](machines/ghostlink/README.md)** | **User and root challenge files read** · October 5, 2026; HTB submission unobserved | Full-screen VPS3 pwnbox replay and execution-role notes |
 
 ## Choose a replay
 
@@ -30,6 +31,7 @@ The GIFs are **assembled evidence replays** made from saved records. Some contai
 | [Baby Frame](satellite-exploitation/baby-frame-replay.gif) · [No Errors](satellite-exploitation/no-errors-replay.gif) | The two individual Satellite source replays |
 | [Prometheon](ai-ml-exploitation/prometheon-replay.gif) · [Lost in Hyperspace](ai-ml-exploitation/lost-in-hyperspace-replay.gif) · [Spin Glass Brain](ai-ml-exploitation/spin-glass-brain-replay.gif) | Three AI/ML examples; the track guide distinguishes recovered candidates from HTB acceptance |
 | [BlockSynergy](machines/blocksynergy/predator-replay.gif) | Sanitized machine replay of GLM chain research and operator-verified user/root access |
+| [Ghostlink](machines/ghostlink/predator-pwnbox-replay.gif) | Sanitized full-screen VPS3 pwnbox replay; the guide separates model work from operator verification |
 | **[Academy Nmap](../media/predator-vpn-scan-preview.gif)** | Sanitized autonomous GLM-5.3 VM command work |
 | [Earlier Pwnbox preview](../media/predator-pwnbox-ttl-preview.gif) | Console attachment and a reviewed guest-terminal exercise |
 
@@ -37,7 +39,7 @@ The GIFs are **assembled evidence replays** made from saved records. Some contai
 
 **Completion** comes from the recorded HTB acceptance, owner-provided activity, or certificate described on each page. **Saved Predator work** shows the execution evidence retained for that lab. The model and operator roles vary by example.
 
-The Satellite [achievement](https://labs.hackthebox.com/achievement/track/4038252/99) and [certificate](satellite-exploitation/certificate.png) support completion of nine labs; the saved Predator record covers four. In AI/ML, a recovered candidate counts toward completion only once HTB acceptance is recorded. The Academy record attributes VM command execution to Predator/GLM-5.3 and answer entry to the owner. The BlockSynergy page distinguishes GLM research from operator execution and records the owner's confirmation without claiming an observed HTB account submission.
+The Satellite [achievement](https://labs.hackthebox.com/achievement/track/4038252/99) and [certificate](satellite-exploitation/certificate.png) support completion of nine labs; the saved Predator record covers four. In AI/ML, a recovered candidate counts toward completion only once HTB acceptance is recorded. The Academy record attributes VM command execution to Predator/GLM-5.3 and answer entry to the owner. The BlockSynergy and Ghostlink pages distinguish GLM research from operator execution. Ghostlink's live flag reads are recorded without claiming an observed HTB account submission.
 
 <details>
 <summary><strong>Updating this collection</strong></summary>

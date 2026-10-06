@@ -1,0 +1,81 @@
+{
+  "type": "sanitized-replay-from-live-pwnbox-captures",
+  "dimensions": [
+    1600,
+    920
+  ],
+  "frames": [
+    {
+      "source_frame": "0001-shell.png",
+      "source_sha256": "24e15556674551c372c9257e0a72a6362cbe7916151da7a7c4eb1eb3667cfee3",
+      "source_time_utc": "2026-10-05T21:20:27.151642+00:00",
+      "source_vm": "ec0f1c55bd03417c",
+      "caption": "HTB Ghostlink / Hard Windows"
+    },
+    {
+      "source_frame": "0094-shell.png",
+      "source_sha256": "2bfe3a2a878a0d56cd543b82462cb44cf9e9afeb24ccdc138de5e88c60be3baa",
+      "source_time_utc": "2026-10-05T21:37:21.055417+00:00",
+      "source_vm": "06d9b68ae484485f",
+      "caption": "Live Linux workspace"
+    },
+    {
+      "source_frame": "0199-shell.png",
+      "source_sha256": "c404ee0d73392bb5716a87c610a874f7057cd7c45f3fcb654557ee77c0457bd3",
+      "source_time_utc": "2026-10-05T21:56:28.741221+00:00",
+      "source_vm": "f501fd3c47a749a3",
+      "caption": "GLM 5.3 assisted reconnaissance"
+    },
+    {
+      "source_frame": "0282-shell.png",
+      "source_sha256": "346700367da7fc01c6e419b0fdb7e5710a7c55d28fe32339d178dd0d52755b87",
+      "source_time_utc": "2026-10-05T22:11:34.099002+00:00",
+      "source_vm": "f501fd3c47a749a3",
+      "caption": "Reviewed terminal activity"
+    },
+    {
+      "source_frame": "0364-shell.png",
+      "source_sha256": "8c842ad8d3f571cf8164e4ff5f7f7b544d5aad57b1568387bf949d712aa17848",
+      "source_time_utc": "2026-10-05T22:32:32.847539+00:00",
+      "source_vm": "f501fd3c47a749a3",
+      "caption": "Gogs access and live execution"
+    },
+    {
+      "source_frame": "0448-shell.png",
+      "source_sha256": "7261228417b48637d8da1a8773be516cecb26c39827ddfe8ef20ea447bba1537",
+      "source_time_utc": "2026-10-05T22:48:52.729119+00:00",
+      "source_vm": "f501fd3c47a749a3",
+      "caption": "Local account reached"
+    },
+    {
+      "source_frame": "0533-shell.png",
+      "source_sha256": "a6d30081aef020878396745fb6fdc4502ed709e0cff73e9e7d8816c4733942d1",
+      "source_time_utc": "2026-10-05T23:05:25.254331+00:00",
+      "source_vm": "868afb6a48664c44",
+      "caption": "Published lead validated live"
+    },
+    {
+      "source_frame": "0616-shell.png",
+      "source_sha256": "3b63f445637e4774801881b15a53e6d6e7bdf1f0f70f069d932620d2f56e08ef",
+      "source_time_utc": "2026-10-05T23:21:34.354856+00:00",
+      "source_vm": "868afb6a48664c44",
+      "caption": "Administrator read verified"
+    },
+    {
+      "source_frame": "0699-shell.png",
+      "source_sha256": "8ed5a599d706863f9d35c78b745136d013b4fb08fef0acf44b76b3a3b74b79ae",
+      "source_time_utc": "2026-10-06T00:16:15.706843+00:00",
+      "source_vm": "0b9ab5558c784a39",
+      "caption": "Execution roles kept distinct"
+    },
+    {
+      "source_frame": "0782-shell.png",
+      "source_sha256": "4aec77f44cd539c22e0a9157ae3c5a863d3d8475639ed58421780797c6a80cd3",
+      "source_time_utc": "2026-10-06T00:32:58.982303+00:00",
+      "source_vm": "0b9ab5558c784a39",
+      "caption": "Actual pwnbox frames"
+    }
+  ],
+  "gif_sha256": "29b38d7d4589443cef10fc59de247285ca4be7bec963edea23a7372be4e10c97",
+  "note": "The terminal and target identifiers are obscured. The recorder stopped before final flag verification; captions describing that result derive from the separate live receipt, not depicted pixels."
+}
