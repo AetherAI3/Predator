@@ -56,3 +56,7 @@ Both assets come from Predator M revision `b02492146d7f7cf5eb1ee3c8b27362dfedbab
 ## October 5 social preview
 
 **social-preview.svg** and **social-preview.png** are local brand assets for repository sharing and the public site's Open Graph previews. They follow the existing README hero's typography and cyan/purple/green palette. The PNG is a 1280 × 640 raster export of the SVG using Sharp. These assets describe the public showcase; they contain no research measurements, completion claims, or private data.
+
+## October 6 developer console preview
+
+- **predator-cli-console-preview.png** — owner-supplied Predator CLI console illustration, displayed beneath the research-program invitation. Preserved byte for byte at 976 × 676; SHA-256 `6307584a636f3e1e18195b3e0ecfdf2f6fbcdfc22a9ef3b59714e11f84c23d81`. The pictured counters, qubit label, and sample engagement are illustrative; the current registry snapshot and published scientific records remain the sources for measured claims.
