@@ -1,0 +1,37 @@
+name: Documentation or evidence correction
+description: Report a broken link, unclear explanation, or inaccurate public record.
+title: "[docs] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Help us improve the public Predator showcase. For sensitive concerns, follow SECURITY.md. Keep private data and live target details out of this report.
+  - type: input
+    id: location
+    attributes:
+      label: Page or file
+      description: Link to the public page or give its repository path.
+      placeholder: docs/htb/README.md
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What needs correcting?
+      description: Explain what a reader sees and why it is unclear, incorrect, or broken.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_change
+    attributes:
+      label: Suggested correction
+      description: Describe the smallest useful change.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public evidence
+      description: Link supporting sources for factual corrections, if available.
+    validations:
+      required: false

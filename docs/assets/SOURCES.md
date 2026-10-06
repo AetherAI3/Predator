@@ -52,3 +52,7 @@ The first figure shows aggregate counts; the heatmap shows actual pair identitie
 - **../media/predator-pwnbox-ttl-preview.gif** — the existing sanitized four-frame Pwnbox console preview, preserved byte for byte; Git blob `c0ef63583404a2e36c6825c6cdb55715867b5fe3`. It shows preflight, observation, reviewed guest input, and a TTL lesson result; the VPN module completion is a separate continuation.
 
 Both assets come from Predator M revision `b02492146d7f7cf5eb1ee3c8b27362dfedbaba2a`. The [public completion note](../research/htb-academy-nmap.md) records model/owner roles and evidence limits. Neither replay is a quantum-hardware receipt or a customer assessment.
+
+## October 5 social preview
+
+**social-preview.svg** and **social-preview.png** are local brand assets for repository sharing and the public site's Open Graph previews. They follow the existing README hero's typography and cyan/purple/green palette. The PNG is a 1280 × 640 raster export of the SVG using Sharp. These assets describe the public showcase; they contain no research measurements, completion claims, or private data.
