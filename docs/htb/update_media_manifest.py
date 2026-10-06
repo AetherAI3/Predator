@@ -19,6 +19,7 @@ ITEMS = [
     ("ai-ml-exploitation/lost-in-hyperspace-replay.gif", "saved Lost in Hyperspace Predator replay"),
     ("ai-ml-exploitation/spin-glass-brain-replay.gif", "corrected Spin Glass Brain Predator replay"),
     ("machines/blocksynergy/predator-replay.gif", "sanitized BlockSynergy machine evidence replay"),
+    ("machines/ghostlink/predator-pwnbox-replay.gif", "sanitized full-screen Ghostlink VPS3 pwnbox replay"),
     ("../media/predator-vpn-scan-preview.gif", "existing sanitized Academy Nmap replay"),
     ("../media/predator-pwnbox-ttl-preview.gif", "existing sanitized Pwnbox workflow preview"),
 ]
@@ -44,7 +45,7 @@ def main() -> None:
         assets.append(item)
     payload = {
         "version": 1,
-        "updated": "2026-10-05",
+        "updated": "2026-10-06",
         "satellite_certificate_reference": "https://labs.hackthebox.com/achievement/track/4038252/99",
         "assets": assets,
     }
