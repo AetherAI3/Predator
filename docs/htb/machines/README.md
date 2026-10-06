@@ -5,8 +5,8 @@ Predator machine records are grouped here separately from HTB tracks and Academy
 | Machine | Platform | Recorded result | Replay |
 | --- | --- | --- | --- |
 | [BlockSynergy](blocksynergy/README.md) | Insane · Linux | User and root challenge files read in the authorized lab; owner confirmed the result | [Sanitized Predator replay](blocksynergy/predator-replay.gif) |
-| [Ghostlink](ghostlink/README.md) | Hard · Windows | User and root challenge files read live; HTB submission unobserved | [Full-screen pwnbox replay](ghostlink/predator-pwnbox-replay.gif) |
+| [Ghostlink](ghostlink/README.md) | Hard · Windows | User and root challenge files read live; HTB submission unobserved | [Full-screen pwnbox recording](ghostlink/predator-pwnbox-replay.gif) |
 
-The public records omit live endpoints, credentials, flag values, and operational exploit details. Each replay is assembled from saved evidence; the Ghostlink public GIF uses actual full-screen captures with the sensitive terminal content obscured.
+BlockSynergy's public replay is sanitized. Ghostlink's full-screen recording shows temporary lab addresses and terminal commands and contains challenge spoilers; blank browser-loading frames were removed to prevent flashing. The Ghostlink recorder stopped before the final flag reads. Credentials, flag values, and private task bundles are not included in the public prose.
 
 [All HTB work →](../README.md)

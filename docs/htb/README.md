@@ -19,11 +19,11 @@ Start with [Academy](academy/README.md) for an example of Predator working in an
 | Machine | Recorded result | What you will find |
 | :--- | :--- | :--- |
 | **[BlockSynergy](machines/blocksynergy/README.md)** | **User and root challenge files read** · October 5, 2026; owner confirmed | Execution roles and a sanitized six-frame replay |
-| **[Ghostlink](machines/ghostlink/README.md)** | **User and root challenge files read** · October 5, 2026; HTB submission unobserved | Full-screen VPS3 pwnbox replay and execution-role notes |
+| **[Ghostlink](machines/ghostlink/README.md)** | **User and root challenge files read** · October 5, 2026; HTB submission unobserved | Full-screen VPS3 pwnbox recording and execution-role notes |
 
 ## Choose a replay
 
-The GIFs are **assembled evidence replays** made from saved records. Some contain challenge answers; each track page explains the available evidence and execution roles.
+Most GIFs are **assembled evidence replays** made from saved records. Ghostlink is a screen recording with blank browser loads omitted. Some media contains challenge spoilers; each guide explains the available evidence and execution roles.
 
 | Replay | What it covers |
 | :--- | :--- |
@@ -31,7 +31,7 @@ The GIFs are **assembled evidence replays** made from saved records. Some contai
 | [Baby Frame](satellite-exploitation/baby-frame-replay.gif) · [No Errors](satellite-exploitation/no-errors-replay.gif) | The two individual Satellite source replays |
 | [Prometheon](ai-ml-exploitation/prometheon-replay.gif) · [Lost in Hyperspace](ai-ml-exploitation/lost-in-hyperspace-replay.gif) · [Spin Glass Brain](ai-ml-exploitation/spin-glass-brain-replay.gif) | Three AI/ML examples; the track guide distinguishes recovered candidates from HTB acceptance |
 | [BlockSynergy](machines/blocksynergy/predator-replay.gif) | Sanitized machine replay of GLM chain research and operator-verified user/root access |
-| [Ghostlink](machines/ghostlink/predator-pwnbox-replay.gif) | Sanitized full-screen VPS3 pwnbox replay; the guide separates model work from operator verification |
+| [Ghostlink](machines/ghostlink/predator-pwnbox-replay.gif) | 670-frame full-screen VPS3 pwnbox recording with blank browser loads removed; contains challenge spoilers |
 | **[Academy Nmap](../media/predator-vpn-scan-preview.gif)** | Sanitized autonomous GLM-5.3 VM command work |
 | [Earlier Pwnbox preview](../media/predator-pwnbox-ttl-preview.gif) | Console attachment and a reviewed guest-terminal exercise |
 
@@ -46,7 +46,7 @@ The Satellite [achievement](https://labs.hackthebox.com/achievement/track/403825
 
 Add results to the relevant track or machine page with the date, execution roles, and acceptance evidence. Update the progress tables here and the [main README](../../README.md#hack-the-box-modules-and-demos). Link reviewed replays in the index above.
 
-The [media manifest](media-manifest.json) records each asset's SHA-256 hash, byte size, and GIF frame count. Refresh it with `update_media_manifest.py` when media changes. Keep challenge archives, live endpoints, credentials, VPN material, and private task bundles outside the public collection.
+The [media manifest](media-manifest.json) records each asset's SHA-256 hash, byte size, and GIF frame count. Refresh it with `update_media_manifest.py` when media changes. Keep challenge archives, credentials, VPN material, and private task bundles outside the public collection. Disclose temporary lab addresses and command history when a published replay contains them.
 
 </details>
 
