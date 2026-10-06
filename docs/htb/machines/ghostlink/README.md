@@ -1,6 +1,6 @@
 # Ghostlink
 
-**HTB machine · Hard · Windows.** The user and root challenge files were read from the live, authorized lab machine on October 5, 2026. An HTB account submission was not observed.
+**HTB machine · Hard · Windows.** The user and root challenge files were read from the live, authorized lab machine on October 5, 2026.
 
 ![Full-screen Predator pwnbox recording, with blank white frames removed](Ghostlink-VM-Predator-final-replay.gif)
 
