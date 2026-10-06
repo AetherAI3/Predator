@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title description">
+<title id="title">Predator by Aether AI — public research and HTB demos</title>
+<desc id="description">AI security research, software repair, quantum optimization, and Hack The Box training records. A brand graphic with no research measurements.</desc>
+<rect width="1280" height="640" fill="#070d17"/>
+<rect x="24" y="24" width="1232" height="592" rx="22" fill="#070d17" stroke="#2a3b51"/>
+<path d="M64 72H640" stroke="#32c7eb" stroke-width="3"/>
+<path d="M640 72H1216" stroke="#b48aff" stroke-width="3"/>
+<text x="64" y="133" font-family="Helvetica,Arial,sans-serif" font-size="22" font-weight="700" fill="#adbbce" letter-spacing="3">AETHER AI / PUBLIC SHOWCASE</text>
+<text x="56" y="304" font-family="Helvetica,Arial,sans-serif" font-size="148" font-weight="900" fill="#f2f6ff" letter-spacing="-6">PREDATOR</text>
+<text x="64" y="385" font-family="Helvetica,Arial,sans-serif" font-size="42" font-weight="700" fill="#32c7eb">AI security research.</text>
+<text x="64" y="446" font-family="Helvetica,Arial,sans-serif" font-size="42" font-weight="700" fill="#f2f6ff">Evidence you can inspect.</text>
+<text x="64" y="517" font-family="Helvetica,Arial,sans-serif" font-size="25" fill="#adbbce">Software repair · Quantum optimization · Hack The Box demos</text>
+<text x="64" y="571" font-family="Helvetica,Arial,sans-serif" font-size="20" fill="#adbbce">github.com/AetherAI3/Predator</text>
+<rect x="1000" y="201" width="216" height="76" rx="12" fill="#101b2b" stroke="#283b53"/>
+<text x="1031" y="250" font-family="Helvetica,Arial,sans-serif" font-size="23" font-weight="700" fill="#32c7eb" letter-spacing="2">RESEARCH</text>
+<rect x="1000" y="294" width="216" height="76" rx="12" fill="#101b2b" stroke="#283b53"/>
+<text x="1031" y="343" font-family="Helvetica,Arial,sans-serif" font-size="23" font-weight="700" fill="#b48aff" letter-spacing="2">REPAIR</text>
+<rect x="1000" y="387" width="216" height="76" rx="12" fill="#101b2b" stroke="#283b53"/>
+<text x="1031" y="436" font-family="Helvetica,Arial,sans-serif" font-size="23" font-weight="700" fill="#67dcb4" letter-spacing="2">HTB DEMOS</text>
+</svg>

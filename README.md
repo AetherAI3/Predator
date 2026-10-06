@@ -15,7 +15,7 @@
 
 # Predator
 
-**Understand the path. Fix what matters. Show the evidence.**
+**AI security research, software repair, and authorized training workflows.**
 
 Predator is Aether's security research and repair program. It combines **frontier-AI reasoning, adaptive compilation, and hybrid classical/quantum search** to investigate software, model threat paths, and check candidate repairs.
 
@@ -23,7 +23,7 @@ Teams can commission a focused repository mission, qualify a repeatable security
 
 This repository is the **public showcase**: research notes, selected results, and training demos. The Predator CLI and operator engines are private; access is reviewed separately.
 
-[Services](#ways-to-work-with-aether) · [Crucible](#crucible-adaptive-modeling-and-quantum-depth) · [Research sources](#research-sources) · [Results](#what-the-public-research-found) · [Workspace](#the-operator-workspace) · [HTB modules](#hack-the-box-modules-and-demos) · [Docs](#read-the-evidence)
+[Services](#ways-to-work-with-aether) · [Crucible](#crucible-adaptive-modeling-and-quantum-depth) · [Research sources](#research-sources) · [Results](#what-the-public-research-found) · [Workspace](#the-operator-workspace) · [HTB modules](#hack-the-box-modules-and-demos) · [Docs](docs/README.md) · [Community](#join-the-community)
 
 > **[Read the safety model →](SAFETY.md)** Human-approved scope and budgets bound each run. Memory, model suggestions, and quantum results supply evidence; authority comes from the approved mission. The guide distinguishes required policy from controls proven in code.
 
@@ -204,13 +204,19 @@ The GIFs below show saved training evidence. The Satellite replay and Ghostlink'
 
 The Satellite certificate and account activity support nine completed labs; the replay covers four saved lab records. AI/ML counts only HTB-accepted results toward completion.
 
-**[Browse all HTB modules, certificates, and replays →](docs/htb/)**
+**[Browse all HTB modules, certificates, and replays →](https://github.com/AetherAI3/Predator/tree/main/docs/htb)**
 
 ### Disposable pwnbox for autonomous missions
 
 Predator can spawn a disposable Linux pwnbox for an authorized CTF or HTB mission when a hosted Pwnbox is unavailable. After an operator confirms the VM, Predator can investigate through reviewed terminal actions. The operator can take over or stop it, and the disk is removed on stop or expiry.
 
 A live VPS3 validation reached a seeded test flag through a reviewed `sonnet` command, with the result cited to a fresh guest observation. Watch, takeover, resume, lease fencing, and teardown checks passed.
+
+## Join the community
+
+Ask about the published studies, suggest a public demo, or share feedback in [GitHub Discussions](https://github.com/AetherAI3/Predator/discussions). Use [issues](https://github.com/AetherAI3/Predator/issues/new/choose) for concrete documentation corrections.
+
+[Contributing guide](CONTRIBUTING.md) · [Community guidelines](CODE_OF_CONDUCT.md) · [Security reporting](SECURITY.md)
 
 ## Developers: join the research program
 

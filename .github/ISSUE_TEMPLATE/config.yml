@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Questions and demo ideas
+    url: https://github.com/AetherAI3/Predator/discussions
+    about: Discuss published research, training demos, and what would help you understand the project.
+  - name: Sensitive security or privacy report
+    url: https://github.com/AetherAI3/Predator/blob/main/SECURITY.md
+    about: Use the private reporting route described in the security policy.

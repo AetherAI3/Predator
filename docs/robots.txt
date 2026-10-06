@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aetherai3.github.io/Predator/sitemap.xml
