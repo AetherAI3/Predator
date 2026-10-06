@@ -2,9 +2,9 @@
 
 **HTB machine · Hard · Windows.** The user and root challenge files were read from the live, authorized lab machine on October 5, 2026. An HTB account submission was not observed.
 
-![Sanitized full-screen Predator pwnbox replay](predator-pwnbox-replay.gif)
+![Full-screen Predator pwnbox recording, with blank white frames removed](predator-pwnbox-replay.gif)
 
-The [ten-frame replay](predator-pwnbox-replay.gif) uses actual 1600 × 920 captures of Predator's disposable VPS3 pwnbox. It retains the full interface while obscuring the terminal, target address, and guest identifier. No credentials, flag values, or exploit commands appear in the public version. The [frame provenance](replay-provenance.json) records the selected source hashes and the GIF hash.
+The [670-frame GIF](predator-pwnbox-replay.gif) is the actual full-screen recording of Predator's disposable VPS3 pwnbox at 1600 × 920. It is the cleaned version of 783 saved frames: 113 near-white browser-loading frames were omitted to stop flashing. The terminal is visible. **It includes temporary lab addresses, command history, and challenge spoilers.** The [frame provenance](replay-provenance.json) records every included source-frame hash, the omitted blank frames, and the GIF hash.
 
 ## Execution roles and evidence
 
@@ -15,6 +15,6 @@ The [ten-frame replay](predator-pwnbox-replay.gif) uses actual 1600 × 920 captu
 
 The live user observation reported `uid=1001(nvirelli)` before reading `user.txt`. The root observation authenticated to the Windows host as Administrator and read `root.txt` from its administrative share. The flag values and credentials remain in the private task receipt. The certificate-relay escalation described by the published lead was **not independently replayed** here.
 
-The recorder stopped before those final flag reads. The GIF's later captions describe separately saved live observations; they are not depicted as VM footage. Detailed terminal and tool traces, including operational details, stay private.
+The recorder stopped before those final flag reads, so the GIF does not depict the flags or Administrator verification. The live flag observations are described from the separate private receipt. Challenge files, credentials, and the complete tool trace remain outside this public repository.
 
 [All machines →](../README.md) · [All HTB work →](../../README.md)

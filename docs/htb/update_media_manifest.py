@@ -19,7 +19,7 @@ ITEMS = [
     ("ai-ml-exploitation/lost-in-hyperspace-replay.gif", "saved Lost in Hyperspace Predator replay"),
     ("ai-ml-exploitation/spin-glass-brain-replay.gif", "corrected Spin Glass Brain Predator replay"),
     ("machines/blocksynergy/predator-replay.gif", "sanitized BlockSynergy machine evidence replay"),
-    ("machines/ghostlink/predator-pwnbox-replay.gif", "sanitized full-screen Ghostlink VPS3 pwnbox replay"),
+    ("machines/ghostlink/predator-pwnbox-replay.gif", "cleaned full-screen Ghostlink VPS3 pwnbox recording"),
     ("../media/predator-vpn-scan-preview.gif", "existing sanitized Academy Nmap replay"),
     ("../media/predator-pwnbox-ttl-preview.gif", "existing sanitized Pwnbox workflow preview"),
 ]

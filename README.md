@@ -187,7 +187,7 @@ Training records across HTB Academy, Satellite Exploitation, AI/ML Exploitation,
 
 For Academy, **Predator through GLM-5.3 ran the VM commands autonomously**. The owner supplied plain-language prompts and exercise questions, then entered the resulting answers in Academy. Execution roles for the other tracks are described in their guides.
 
-The GIFs below are **evidence replays assembled from saved records**. The Satellite replay includes challenge spoilers. Ghostlink's public replay keeps the full pwnbox view while obscuring sensitive terminal content.
+The GIFs below show saved training evidence. The Satellite replay and Ghostlink's full pwnbox recording include challenge spoilers. Ghostlink's GIF keeps the complete VM view and visible terminal history; only blank white browser-loading frames were removed.
 
 <table>
   <tr>
@@ -200,7 +200,7 @@ The GIFs below are **evidence replays assembled from saved records**. The Satell
   </tr>
 </table>
 
-<p align="center"><a href="docs/htb/machines/ghostlink/README.md"><img src="docs/htb/machines/ghostlink/predator-pwnbox-replay.gif" width="960" alt="Sanitized full-screen replay of Predator's VPS3 pwnbox during the Ghostlink training mission."></a><br><sub>Ghostlink · full-screen VPS3 pwnbox replay · <a href="docs/htb/machines/ghostlink/README.md">evidence and execution roles</a></sub></p>
+<p align="center"><a href="docs/htb/machines/ghostlink/README.md"><img src="docs/htb/machines/ghostlink/predator-pwnbox-replay.gif" width="960" alt="Full-screen recording of Predator's VPS3 pwnbox during Ghostlink, with blank browser-loading frames removed."></a><br><sub>Ghostlink · 670 recorded pwnbox frames · <a href="docs/htb/machines/ghostlink/README.md">evidence and execution roles</a></sub></p>
 
 The Satellite certificate and account activity support nine completed labs; the replay covers four saved lab records. AI/ML counts only HTB-accepted results toward completion.
 
