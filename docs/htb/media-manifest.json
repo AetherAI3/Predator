@@ -74,7 +74,7 @@
       "replay_not_continuous_recording": true
     },
     {
-      "path": "machines/ghostlink/predator-pwnbox-replay.gif",
+      "path": "machines/ghostlink/Ghostlink-VM-Predator-final-replay.gif",
       "description": "cleaned full-screen Ghostlink VPS3 pwnbox recording",
       "sha256": "ebbac7a7a5e9d2c0dc20b1bfb3807d9c75eed821d76ebf6ef8e28fbf34b3d05a",
       "bytes": 17809463,

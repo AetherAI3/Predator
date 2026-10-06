@@ -2,9 +2,9 @@
 
 **HTB machine · Hard · Windows.** The user and root challenge files were read from the live, authorized lab machine on October 5, 2026. An HTB account submission was not observed.
 
-![Full-screen Predator pwnbox recording, with blank white frames removed](predator-pwnbox-replay.gif)
+![Full-screen Predator pwnbox recording, with blank white frames removed](Ghostlink-VM-Predator-final-replay.gif)
 
-The [670-frame GIF](predator-pwnbox-replay.gif) is the actual full-screen recording of Predator's disposable VPS3 pwnbox at 1600 × 920. It is the cleaned version of 783 saved frames: 113 near-white browser-loading frames were omitted to stop flashing. The terminal is visible. **It includes temporary lab addresses, command history, and challenge spoilers.** The [frame provenance](replay-provenance.json) records every included source-frame hash, the omitted blank frames, and the GIF hash.
+The [670-frame GIF](Ghostlink-VM-Predator-final-replay.gif) is the actual full-screen recording of Predator's disposable VPS3 pwnbox at 1600 × 920. It is the cleaned version of 783 saved frames: 113 near-white browser-loading frames were omitted to stop flashing. The terminal is visible. **It includes temporary lab addresses, command history, and challenge spoilers.** The [frame provenance](replay-provenance.json) records every included source-frame hash, the omitted blank frames, and the GIF hash.
 
 ## Execution roles and evidence
 
