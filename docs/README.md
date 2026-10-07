@@ -2,7 +2,7 @@
 
 Start with the [Predator overview](../README.md), browse the [HTB demo collection](htb/README.md), or inspect a published research result below.
 
-The [redacted P-BOX replay](pbox-vercel-ai-sdk-showcase.md) shows a local Vercel AI SDK security test while withholding the terminal and finding details.
+The [redacted P-BOX replay](pbox-vercel-ai-sdk-showcase.md) shows the actual terminal during a local Vercel AI SDK security test while blurring private commands and finding details.
 
 This is the public documentation and evidence repository for Aether's AI security research and software repair program. The CLI and operator engines have a separate reviewed access path.
 

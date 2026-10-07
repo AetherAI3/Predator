@@ -60,8 +60,8 @@ The [machine guide](docs/htb/machines/ghostlink/README.md) records GLM-5.3's res
 Predator's VPS3 P-BOX also supported a **local security test of the Vercel AI SDK**. The public replay shows the disposable Linux desktop and a verified local result. It uses synthetic values; no Vercel production account or service was accessed.
 
 <p align="center">
-  <a href="docs/pbox-vercel-ai-sdk-showcase.md"><img src="docs/media/predator-pbox-vercel-ai-sdk-public.gif" width="960" alt="Redacted Predator P-BOX replay of local Vercel AI SDK security research. Commands and output are replaced; the final frame says synthetic secrets saved with values redacted."></a><br>
-  <sub>Actual guest frames · rebuilt viewer · terminal fully replaced · <a href="docs/pbox-vercel-ai-sdk-showcase.md">provenance and disclosure limits</a></sub>
+  <a href="docs/pbox-vercel-ai-sdk-showcase.md"><img src="docs/media/predator-pbox-vercel-ai-sdk-public.gif" width="960" alt="Redacted Predator P-BOX replay of local Vercel AI SDK security research. Actual terminal execution remains visible; private commands and finding-specific output are blurred, while synthetic saved values remain redacted."></a><br>
+  <sub>Five actual guest captures · seven replay frames · selective FFmpeg blur · <a href="docs/pbox-vercel-ai-sdk-showcase.md">provenance and disclosure limits</a></sub>
 </p>
 
 <a id="hack-the-box-modules-and-demos"></a>
