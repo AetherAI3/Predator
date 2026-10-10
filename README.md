@@ -21,12 +21,16 @@ Predator brings AI reasoning, persistent context, and reviewed tool use into sec
 
 This is the **public feature showcase and evidence collection**. The CLI and operator engines are private, with [reviewed research access](#developers-join-the-research-program).
 
-[P-BOX](#p-box) · [Gen3 Private Security](#gen3-private-security) · [OSS](#oss) · [HTB demos](#hack-the-box-training-and-evidence) · [MITRE chains](#mitre-attck-chain-library) · [CVE catalog](#cve-research-catalog) · [Crucible](#crucible-adaptive-quantum-threat-modeling) · [Results](#banked-scientific-results) · [Features](#predator-features) · [Work with Aether](#ways-to-work-with-aether) · [Docs](docs/README.md)
+[P-BOX / HTB training](#p-box-htb-training) · [Gen3 Private Security](#gen3-private-security) · [Gen3 OSS](#gen3-oss) · [MITRE chains](#mitre-attck-chain-library) · [CVE catalog](#cve-research-catalog) · [Crucible](#crucible-adaptive-quantum-threat-modeling) · [Results](#banked-scientific-results) · [Features](#predator-features) · [Work with Aether](#ways-to-work-with-aether) · [Docs](docs/README.md)
+
+<a id="p-box-htb-training"></a>
+
+## P-BOX / HTB training
 
 <a id="p-box"></a>
 <a id="disposable-pwnbox-for-autonomous-missions"></a>
 
-## [P-BOX] Predator's disposable Linux VM
+### [P-BOX] Predator's disposable Linux VM
 
 **Give Predator a goal, confirm the VM, and follow along as it works.**
 
@@ -54,6 +58,48 @@ The featured GIF comes from **Predator's GLM-5.3 Ghostlink mission in P-BOX**. I
 The [machine guide](docs/htb/machines/ghostlink/README.md) records GLM-5.3's research and the operator's later actions. The screen recorder stopped before the final user and root challenge-file reads; those observations are documented separately.
 
 </details>
+
+<a id="hack-the-box-modules-and-demos"></a>
+
+### Hack The Box: training and evidence
+
+**HTB is a test and training ground for Predator's agent and VM workflows.** These two examples show autonomous VM command work and saved lab research, with completion records and execution roles in their guides.
+
+<a id="network-enumeration-with-nmap"></a>
+
+*The Satellite replay includes challenge spoilers. Both GIFs are assembled evidence replays.*
+
+<table>
+  <tr>
+    <th width="50%">Nmap course · autonomous VM work</th>
+    <th width="50%">Satellite Exploitation · recorded lab work</th>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="docs/htb/academy/README.md"><img src="docs/media/predator-vpn-scan-preview.gif" width="100%" alt="Sanitized evidence replay of Predator and GLM-5.3 running Academy Nmap commands autonomously in an owned Ubuntu VM."></a></td>
+    <td width="50%" valign="top"><a href="docs/htb/satellite-exploitation/README.md"><img src="docs/htb/satellite-exploitation/combined-replay.gif" width="100%" alt="Satellite Exploitation replay covering four saved Predator lab records and the owner-supplied completion certificate."></a></td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><strong>12/12 Academy sections completed.</strong> Predator through GLM-5.3 ran the VM commands autonomously. The owner supplied prompts and exercise questions, then entered the answers.<br><a href="docs/htb/academy/README.md">Course record and replays →</a></td>
+    <td width="50%" valign="top"><strong>9/9 labs completed.</strong> The certificate and account activity support completion; the replay covers four saved lab records.<br><a href="docs/htb/satellite-exploitation/README.md">Certificate, lab list, and replays →</a></td>
+  </tr>
+</table>
+
+<details>
+<summary><strong>More HTB records and replay notes</strong></summary>
+
+| Module or track | Recorded progress | Open the guide |
+| :--- | :--- | :--- |
+| **Academy: Network Enumeration with Nmap** | **12/12 sections completed** · October 3, 2026 | [Completion record and two replays](docs/htb/academy/README.md) |
+| **Satellite Exploitation** | **9/9 labs completed** · October 5, 2026 | [Certificate, lab list, and replays](docs/htb/satellite-exploitation/README.md) |
+| **AI and ML Exploitation** | **1/17 labs HTB-accepted** · in progress | [Lab status and three replays](docs/htb/ai-ml-exploitation/README.md) |
+| **Machine: BlockSynergy** | **User and root challenge files read** · October 5, 2026; owner confirmed | [Machine record and sanitized replay](docs/htb/machines/blocksynergy/README.md) |
+| **Machine: Ghostlink** | **User and root challenge files read** · October 5, 2026; HTB submission unobserved | [Machine record and full-screen pwnbox replay](docs/htb/machines/ghostlink/README.md) |
+
+The [earlier Pwnbox console preview](docs/media/predator-pwnbox-ttl-preview.gif) shows a separate reviewed guest-session check. AI/ML counts only HTB-accepted results toward completion. The machine guides distinguish Predator research from operator execution and explain what their recordings contain.
+
+</details>
+
+**[Browse all HTB modules, certificates, and replays →](docs/htb/README.md)**
 
 <a id="gen3-private-security"></a>
 
@@ -118,9 +164,9 @@ Predator began an owner-controlled GitLab Duo research sprint on **October 9, 20
 
 </details>
 
-<a id="oss"></a>
+<a id="gen3-oss"></a>
 
-## OSS
+## Gen3 OSS
 
 CharLS and QPACK are open-source test cases with deliberately introduced faults. Their published results and limits are detailed in [Banked scientific results](#banked-scientific-results).
 
@@ -128,48 +174,6 @@ CharLS and QPACK are open-source test cases with deliberately introduced faults.
 | :--- | :--- | :--- |
 | **CharLS Q3 repair** | 16/24 → 24/24 protected passes, with earlier passes retained. | [Study and data](docs/research/charls-q3.md) |
 | **QPACK feedback study** | 5/8 controlled faults found with feedback, versus 2/8 without it in an exploratory campaign. | [Study and data](docs/research/gen3-qpack-experiment1.md) |
-
-<a id="hack-the-box-modules-and-demos"></a>
-
-## Hack The Box: training and evidence
-
-**HTB is a test and training ground for Predator's agent and VM workflows.** These two examples show autonomous VM command work and saved lab research, with completion records and execution roles in their guides.
-
-<a id="network-enumeration-with-nmap"></a>
-
-*The Satellite replay includes challenge spoilers. Both GIFs are assembled evidence replays.*
-
-<table>
-  <tr>
-    <th width="50%">Nmap course · autonomous VM work</th>
-    <th width="50%">Satellite Exploitation · recorded lab work</th>
-  </tr>
-  <tr>
-    <td width="50%" valign="top"><a href="docs/htb/academy/README.md"><img src="docs/media/predator-vpn-scan-preview.gif" width="100%" alt="Sanitized evidence replay of Predator and GLM-5.3 running Academy Nmap commands autonomously in an owned Ubuntu VM."></a></td>
-    <td width="50%" valign="top"><a href="docs/htb/satellite-exploitation/README.md"><img src="docs/htb/satellite-exploitation/combined-replay.gif" width="100%" alt="Satellite Exploitation replay covering four saved Predator lab records and the owner-supplied completion certificate."></a></td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top"><strong>12/12 Academy sections completed.</strong> Predator through GLM-5.3 ran the VM commands autonomously. The owner supplied prompts and exercise questions, then entered the answers.<br><a href="docs/htb/academy/README.md">Course record and replays →</a></td>
-    <td width="50%" valign="top"><strong>9/9 labs completed.</strong> The certificate and account activity support completion; the replay covers four saved lab records.<br><a href="docs/htb/satellite-exploitation/README.md">Certificate, lab list, and replays →</a></td>
-  </tr>
-</table>
-
-<details>
-<summary><strong>More HTB records and replay notes</strong></summary>
-
-| Module or track | Recorded progress | Open the guide |
-| :--- | :--- | :--- |
-| **Academy: Network Enumeration with Nmap** | **12/12 sections completed** · October 3, 2026 | [Completion record and two replays](docs/htb/academy/README.md) |
-| **Satellite Exploitation** | **9/9 labs completed** · October 5, 2026 | [Certificate, lab list, and replays](docs/htb/satellite-exploitation/README.md) |
-| **AI and ML Exploitation** | **1/17 labs HTB-accepted** · in progress | [Lab status and three replays](docs/htb/ai-ml-exploitation/README.md) |
-| **Machine: BlockSynergy** | **User and root challenge files read** · October 5, 2026; owner confirmed | [Machine record and sanitized replay](docs/htb/machines/blocksynergy/README.md) |
-| **Machine: Ghostlink** | **User and root challenge files read** · October 5, 2026; HTB submission unobserved | [Machine record and full-screen pwnbox replay](docs/htb/machines/ghostlink/README.md) |
-
-The [earlier Pwnbox console preview](docs/media/predator-pwnbox-ttl-preview.gif) shows a separate reviewed guest-session check. AI/ML counts only HTB-accepted results toward completion. The machine guides distinguish Predator research from operator execution and explain what their recordings contain.
-
-</details>
-
-**[Browse all HTB modules, certificates, and replays →](docs/htb/README.md)**
 
 <a id="research-sources"></a>
 <a id="attack-chain-coverage"></a>
