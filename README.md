@@ -115,8 +115,7 @@ Three scoped case studies, with their validation and disclosure status kept sepa
 | **Gemini CLI** | [Sanitized Crucible sprint graphic](docs/assets/gemini-cli-crucible-sprint.svg) | Three private Google Cloud VRP reports under triage; no assigned severity or reward. |
 | **GitLab Duo** | [Private-research tactic map](docs/assets/gitlab-duo-crucible-private.svg) | Owner-controlled local validation; no vulnerability report filed. |
 
-<details>
-<summary><strong>Vercel AI SDK · redacted local P-BOX replay</strong></summary>
+### Vercel AI SDK: redacted local P-BOX replay
 
 Predator's VPS3 P-BOX also supported a **local security test of the Vercel AI SDK**. The public replay shows the disposable Linux desktop and a verified local result. It uses synthetic values; no Vercel production account or service was accessed.
 
@@ -125,10 +124,7 @@ Predator's VPS3 P-BOX also supported a **local security test of the Vercel AI SD
   <sub>Five actual guest captures · seven replay frames · selective FFmpeg blur · <a href="docs/pbox-vercel-ai-sdk-showcase.md">provenance and disclosure limits</a></sub>
 </p>
 
-</details>
-
-<details>
-<summary><strong>Gemini CLI · private Crucible sprint</strong></summary>
+### Gemini CLI: private Crucible sprint
 
 On **October 9, 2026**, Predator's manual research workflow ran a deep Gemini CLI Crucible sprint across the **C1 → Q173 checkpoint span**. Three separate reports were filed privately with Google Cloud VRP during the day. They remain under triage; no severity or reward has been assigned.
 
@@ -137,8 +133,7 @@ On **October 9, 2026**, Predator's manual research workflow ran a deep Gemini CL
   <sub>Public taxonomy only: Defense Evasion → Execution → Credential Access → Exfiltration. No reproduction details or credential material.</sub>
 </p>
 
-<details>
-<summary><strong>Sanitized research energy</strong></summary>
+#### Sanitized research energy
 
 <p align="center">
   <img src="docs/assets/gemini-cli-crucible-energy-public.svg" width="960" alt="Two sanitized views of one caller-calibrated research model: generic additive terms and a conditional model comparison. The values are not measured vulnerability severity.">
@@ -146,12 +141,7 @@ On **October 9, 2026**, Predator's manual research workflow ran a deep Gemini CL
 
 The two views show **one caller-calibrated model checkpoint**, with private attack-condition labels removed. Its weights are research bookkeeping; they do not independently verify a finding, measure exploit probability, establish quantum advantage, or set a Google bounty tier. Validation evidence remains in the private reports while triage is pending.
 
-</details>
-
-</details>
-
-<details>
-<summary><strong>GitLab Duo · private Crucible research</strong></summary>
+### GitLab Duo: private Crucible research
 
 Predator began an owner-controlled GitLab Duo research sprint on **October 9, 2026** and extended its manual Crucible record across the **C1 → Q48 checkpoint span**; the final isolated validation was recorded on **October 10 UTC**. The local result maps at the [MITRE ATT&CK](https://attack.mitre.org/tactics/) tactic level to **Execution → Credential Access → Exfiltration**. This is a research map of an owned test, not a claim about an attack on another user.
 
@@ -162,13 +152,22 @@ Predator began an owner-controlled GitLab Duo research sprint on **October 9, 20
   <sub>Owner-controlled validation · tactic names only · no reproduction steps, secrets, or third-party data</sub>
 </p>
 
-</details>
-
 <a id="gen3-oss"></a>
 
 ## Gen3 OSS
 
 CharLS and QPACK are open-source test cases with deliberately introduced faults. Their published results and limits are detailed in [Banked scientific results](#banked-scientific-results).
+
+<table>
+  <tr>
+    <th width="50%">CharLS Q3 repair</th>
+    <th width="50%">QPACK feedback study</th>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="docs/research/charls-q3.md"><img src="docs/assets/readme-start-q3.svg" width="100%" alt="CharLS Q3: 24 of 24 protected tests passed, eight new passes, and no earlier passes lost."></a></td>
+    <td width="50%" valign="top"><a href="docs/research/gen3-qpack-experiment1.md"><img src="docs/assets/card-qpack.svg" width="100%" alt="QPACK: five of eight controlled faults found with feedback, versus two of eight without feedback."></a></td>
+  </tr>
+</table>
 
 | Test case | Recorded result | Evidence |
 | :--- | :--- | :--- |
