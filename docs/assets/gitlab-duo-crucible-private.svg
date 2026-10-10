@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440" role="img" aria-labelledby="title description">
+  <title id="title">GitLab Duo private Crucible research — Predator by Aether AI</title>
+  <desc id="description">Research started October 9, 2026 and continued through the manual C1 to Q48 checkpoint span. Owner-controlled local validation mapped to Execution, Credential Access, and Exfiltration tactics. Technical findings remain private and unreported.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111d"/>
+      <stop offset="1" stop-color="#171625"/>
+    </linearGradient>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fc6d26"/>
+      <stop offset="1" stop-color="#aa83ff"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="1278" height="438" rx="22" fill="url(#bg)" stroke="#35435b" stroke-width="2"/>
+  <path d="M38 27H1242" stroke="url(#rule)" stroke-width="3"/>
+
+  <rect x="48" y="54" width="52" height="52" rx="12" fill="#2c2028" stroke="#a65d45"/>
+  <text x="57" y="91" font-family="Arial,Helvetica,sans-serif" font-size="35" font-weight="800" fill="#ff9e69">Æ</text>
+  <text x="116" y="75" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="800" letter-spacing="2" fill="#e8f2fb">AETHER AI</text>
+  <text x="116" y="99" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" letter-spacing="2" fill="#8ea6bd">PREDATOR RESEARCH</text>
+  <text x="1232" y="84" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" letter-spacing="1.5" fill="#a9bdd0">09 OCT 2026 · START</text>
+
+  <text x="50" y="174" font-family="Arial,Helvetica,sans-serif" font-size="57" font-weight="800" letter-spacing="-2" fill="#f4f8ff">GitLab Duo</text>
+  <text x="50" y="236" font-family="Arial,Helvetica,sans-serif" font-size="55" font-weight="800" letter-spacing="-2" fill="#ff9e69">Crucible research</text>
+  <text x="53" y="274" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="#aec2d3">Owner-controlled lab · manual research · private findings</text>
+
+  <rect x="865" y="118" width="365" height="169" rx="16" fill="#172039" stroke="#465371"/>
+  <text x="890" y="197" font-family="Arial,Helvetica,sans-serif" font-size="76" font-weight="800" fill="#b394ff">Q48</text>
+  <text x="1056" y="176" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="800" fill="#f4f8ff">PRIVATE</text>
+  <text x="1056" y="204" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#a9bdd0">Not reported</text>
+  <path d="M891 226H1204" stroke="#3a536c"/>
+  <text x="891" y="257" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="800" letter-spacing="1" fill="#f8aa7e">C1 → Q48</text>
+  <text x="1016" y="257" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#a9bdd0">checkpoint span</text>
+
+  <path d="M50 302H1230" stroke="#35445b"/>
+  <text x="50" y="334" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="800" letter-spacing="2" fill="#97adc1">MITRE ATT&amp;CK TACTIC MAP · OWNED LAB</text>
+  <text x="50" y="374" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#e9f1fb">Execution</text>
+  <text x="235" y="372" font-family="Arial,Helvetica,sans-serif" font-size="23" fill="#ff9e69">→</text>
+  <text x="295" y="374" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#e9f1fb">Credential Access</text>
+  <text x="650" y="372" font-family="Arial,Helvetica,sans-serif" font-size="23" fill="#ff9e69">→</text>
+  <text x="710" y="374" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#e9f1fb">Exfiltration</text>
+  <text x="50" y="412" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#8fa7ba">Tactic names only · no exploit steps, secrets, third-party data, assigned severity, or bounty claim</text>
+</svg>
