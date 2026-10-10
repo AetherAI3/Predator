@@ -21,12 +21,16 @@ Predator brings AI reasoning, persistent context, and reviewed tool use into sec
 
 This is the **public feature showcase and evidence collection**. The CLI and operator engines are private, with [reviewed research access](#developers-join-the-research-program).
 
-[P-BOX](#p-box) · [HTB demos](#hack-the-box-training-and-evidence) · [MITRE chains](#mitre-attck-chain-library) · [CVE catalog](#cve-research-catalog) · [Crucible](#crucible-adaptive-quantum-threat-modeling) · [Results](#banked-scientific-results) · [Features](#predator-features) · [Work with Aether](#ways-to-work-with-aether) · [Docs](docs/README.md)
+[P-BOX / HTB training](#p-box-htb-training) · [Gen3 Private Security](#gen3-private-security) · [Gen3 OSS](#gen3-oss) · [MITRE chains](#mitre-attck-chain-library) · [CVE catalog](#cve-research-catalog) · [Crucible](#crucible-adaptive-quantum-threat-modeling) · [Results](#banked-scientific-results) · [Features](#predator-features) · [Work with Aether](#ways-to-work-with-aether) · [Docs](docs/README.md)
+
+<a id="p-box-htb-training"></a>
+
+## P-BOX / HTB training
 
 <a id="p-box"></a>
 <a id="disposable-pwnbox-for-autonomous-missions"></a>
 
-## [P-BOX] Predator's disposable Linux VM
+### [P-BOX] Predator's disposable Linux VM
 
 **Give Predator a goal, confirm the VM, and follow along as it works.**
 
@@ -55,49 +59,9 @@ The [machine guide](docs/htb/machines/ghostlink/README.md) records GLM-5.3's res
 
 </details>
 
-### Vercel AI SDK: redacted local research replay
-
-Predator's VPS3 P-BOX also supported a **local security test of the Vercel AI SDK**. The public replay shows the disposable Linux desktop and a verified local result. It uses synthetic values; no Vercel production account or service was accessed.
-
-<p align="center">
-  <a href="docs/pbox-vercel-ai-sdk-showcase.md"><img src="docs/media/predator-pbox-vercel-ai-sdk-public.gif" width="960" alt="Redacted Predator P-BOX replay of local Vercel AI SDK security research. Actual terminal execution remains visible; private commands and finding-specific output are blurred, while synthetic saved values remain redacted."></a><br>
-  <sub>Five actual guest captures · seven replay frames · selective FFmpeg blur · <a href="docs/pbox-vercel-ai-sdk-showcase.md">provenance and disclosure limits</a></sub>
-</p>
-
-### Gemini CLI: private Crucible sprint
-
-On **October 9, 2026**, Predator's manual research workflow ran a deep Gemini CLI Crucible sprint across the **C1 → Q173 checkpoint span**. Three separate reports were filed privately with Google Cloud VRP during the day. They remain under triage; no severity or reward has been assigned.
-
-<p align="center">
-  <img src="docs/assets/gemini-cli-crucible-sprint.svg" width="960" alt="Aether AI Predator Gemini CLI Crucible sprint, October 9, 2026: three private filings, C1 to Q173 checkpoint span, and a high-level MITRE ATT&amp;CK tactic map."><br>
-  <sub>Public taxonomy only: Defense Evasion → Execution → Credential Access → Exfiltration. No reproduction details or credential material.</sub>
-</p>
-
-<details>
-<summary><strong>Sanitized research energy</strong></summary>
-
-<p align="center">
-  <img src="docs/assets/gemini-cli-crucible-energy-public.svg" width="960" alt="Two sanitized views of one caller-calibrated research model: generic additive terms and a conditional model comparison. The values are not measured vulnerability severity.">
-</p>
-
-The two views show **one caller-calibrated model checkpoint**, with private attack-condition labels removed. Its weights are research bookkeeping; they do not independently verify a finding, measure exploit probability, establish quantum advantage, or set a Google bounty tier. Validation evidence remains in the private reports while triage is pending.
-
-</details>
-
-### GitLab Duo: private Crucible research
-
-Predator began an owner-controlled GitLab Duo research sprint on **October 9, 2026** and extended its manual Crucible record across the **C1 → Q48 checkpoint span**; the final isolated validation was recorded on **October 10 UTC**. The local result maps at the [MITRE ATT&CK](https://attack.mitre.org/tactics/) tactic level to **Execution → Credential Access → Exfiltration**. This is a research map of an owned test, not a claim about an attack on another user.
-
-**Private findings: technical details have not been disclosed and no vulnerability report has been filed.** No severity or bounty has been assigned. The saved evidence does not establish zero-click execution or a sandbox escape.
-
-<p align="center">
-  <img src="docs/assets/gitlab-duo-crucible-private.svg" width="960" alt="Aether AI Predator GitLab Duo private Crucible research, begun October 9, 2026. Manual C1 to Q48 checkpoint span and owner-controlled lab tactic map: Execution, Credential Access, Exfiltration. Not reported or technically disclosed."><br>
-  <sub>Owner-controlled validation · tactic names only · no reproduction steps, secrets, or third-party data</sub>
-</p>
-
 <a id="hack-the-box-modules-and-demos"></a>
 
-## Hack The Box: training and evidence
+### Hack The Box: training and evidence
 
 **HTB is a test and training ground for Predator's agent and VM workflows.** These two examples show autonomous VM command work and saved lab research, with completion records and execution roles in their guides.
 
@@ -136,6 +100,80 @@ The [earlier Pwnbox console preview](docs/media/predator-pwnbox-ttl-preview.gif)
 </details>
 
 **[Browse all HTB modules, certificates, and replays →](docs/htb/README.md)**
+
+<a id="gen3-private-security"></a>
+
+## Gen3 Private Security
+
+Gen3 groups Predator's research workflow and saved evidence. The label does not imply measured quantum advantage.
+
+Three scoped case studies, with their validation and disclosure status kept separate:
+
+| Target | Public evidence | Status |
+| :--- | :--- | :--- |
+| **Vercel AI SDK** | [Redacted local P-BOX replay](docs/pbox-vercel-ai-sdk-showcase.md) | Verified local result with synthetic values; no production access. |
+| **Gemini CLI** | [Sanitized Crucible sprint graphic](docs/assets/gemini-cli-crucible-sprint.svg) | Three private Google Cloud VRP reports under triage; no assigned severity or reward. |
+| **GitLab Duo** | [Private-research tactic map](docs/assets/gitlab-duo-crucible-private.svg) | Owner-controlled local validation; no vulnerability report filed. |
+
+<details>
+<summary><strong>Vercel AI SDK · redacted local P-BOX replay</strong></summary>
+
+Predator's VPS3 P-BOX also supported a **local security test of the Vercel AI SDK**. The public replay shows the disposable Linux desktop and a verified local result. It uses synthetic values; no Vercel production account or service was accessed.
+
+<p align="center">
+  <a href="docs/pbox-vercel-ai-sdk-showcase.md"><img src="docs/media/predator-pbox-vercel-ai-sdk-public.gif" width="960" alt="Redacted Predator P-BOX replay of local Vercel AI SDK security research. Actual terminal execution remains visible; private commands and finding-specific output are blurred, while synthetic saved values remain redacted."></a><br>
+  <sub>Five actual guest captures · seven replay frames · selective FFmpeg blur · <a href="docs/pbox-vercel-ai-sdk-showcase.md">provenance and disclosure limits</a></sub>
+</p>
+
+</details>
+
+<details>
+<summary><strong>Gemini CLI · private Crucible sprint</strong></summary>
+
+On **October 9, 2026**, Predator's manual research workflow ran a deep Gemini CLI Crucible sprint across the **C1 → Q173 checkpoint span**. Three separate reports were filed privately with Google Cloud VRP during the day. They remain under triage; no severity or reward has been assigned.
+
+<p align="center">
+  <img src="docs/assets/gemini-cli-crucible-sprint.svg" width="960" alt="Aether AI Predator Gemini CLI Crucible sprint, October 9, 2026: three private filings, C1 to Q173 checkpoint span, and a high-level MITRE ATT&amp;CK tactic map."><br>
+  <sub>Public taxonomy only: Defense Evasion → Execution → Credential Access → Exfiltration. No reproduction details or credential material.</sub>
+</p>
+
+<details>
+<summary><strong>Sanitized research energy</strong></summary>
+
+<p align="center">
+  <img src="docs/assets/gemini-cli-crucible-energy-public.svg" width="960" alt="Two sanitized views of one caller-calibrated research model: generic additive terms and a conditional model comparison. The values are not measured vulnerability severity.">
+</p>
+
+The two views show **one caller-calibrated model checkpoint**, with private attack-condition labels removed. Its weights are research bookkeeping; they do not independently verify a finding, measure exploit probability, establish quantum advantage, or set a Google bounty tier. Validation evidence remains in the private reports while triage is pending.
+
+</details>
+
+</details>
+
+<details>
+<summary><strong>GitLab Duo · private Crucible research</strong></summary>
+
+Predator began an owner-controlled GitLab Duo research sprint on **October 9, 2026** and extended its manual Crucible record across the **C1 → Q48 checkpoint span**; the final isolated validation was recorded on **October 10 UTC**. The local result maps at the [MITRE ATT&CK](https://attack.mitre.org/tactics/) tactic level to **Execution → Credential Access → Exfiltration**. This is a research map of an owned test, not a claim about an attack on another user.
+
+**Private findings: technical details have not been disclosed and no vulnerability report has been filed.** No severity or bounty has been assigned. The saved evidence does not establish zero-click execution or a sandbox escape.
+
+<p align="center">
+  <img src="docs/assets/gitlab-duo-crucible-private.svg" width="960" alt="Aether AI Predator GitLab Duo private Crucible research, begun October 9, 2026. Manual C1 to Q48 checkpoint span and owner-controlled lab tactic map: Execution, Credential Access, Exfiltration. Not reported or technically disclosed."><br>
+  <sub>Owner-controlled validation · tactic names only · no reproduction steps, secrets, or third-party data</sub>
+</p>
+
+</details>
+
+<a id="gen3-oss"></a>
+
+## Gen3 OSS
+
+CharLS and QPACK are open-source test cases with deliberately introduced faults. Their published results and limits are detailed in [Banked scientific results](#banked-scientific-results).
+
+| Test case | Recorded result | Evidence |
+| :--- | :--- | :--- |
+| **CharLS Q3 repair** | 16/24 → 24/24 protected passes, with earlier passes retained. | [Study and data](docs/research/charls-q3.md) |
+| **QPACK feedback study** | 5/8 controlled faults found with feedback, versus 2/8 without it in an exploratory campaign. | [Study and data](docs/research/gen3-qpack-experiment1.md) |
 
 <a id="research-sources"></a>
 <a id="attack-chain-coverage"></a>
