@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1080" viewBox="0 0 1600 1080" role="img" aria-labelledby="title desc">
+<title id="title">Predator ATT&amp;CK and Aether research buckets</title>
+<desc id="desc">A public catalog overview: 424 modeled chains in 18 Predator routing buckets; 15 MITRE ATT&amp;CK Enterprise tactic labels; three Aether research areas for AI injection, MCP Top 10, and memory-safety primitives. GX Gemini CLI, GLX GitLab Duo, and AX Anthropic SDK are named as case families only. No exploit details are shown.</desc>
+<defs>
+<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset=".56" stop-color="#0b1830"/><stop offset="1" stop-color="#100c22"/></linearGradient>
+<linearGradient id="topLine"><stop stop-color="#2dd4ef"/><stop offset=".52" stop-color="#8877f8"/><stop offset="1" stop-color="#58e6ba"/></linearGradient>
+<radialGradient id="glow"><stop stop-color="#20bde0" stop-opacity=".16"/><stop offset="1" stop-color="#20bde0" stop-opacity="0"/></radialGradient>
+<filter id="shadow" x="-.2" y="-.3" width="1.4" height="1.6"><feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#010611" flood-opacity=".36"/></filter>
+</defs>
+<rect width="1600" height="1080" fill="url(#bg)"/>
+<circle cx="1200" cy="120" r="470" fill="url(#glow)"/>
+<path d="M0 2H1600" stroke="url(#topLine)" stroke-width="4"/>
+<g opacity=".10" stroke="#75a4ca"><path d="M0 278H1600M0 1017H1600"/><path d="M968 285V885"/></g>
+<rect x="54" y="40" width="54" height="54" rx="14" fill="#102f45" stroke="#3ad6eb" stroke-opacity=".55"/>
+<text x="81" y="77" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="800" fill="#81e9fa">Æ</text>
+<text x="126" y="62" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="800" letter-spacing="3" fill="#8de8f6">AETHER AI  /  PREDATOR</text>
+<text x="54" y="139" font-family="Arial,Helvetica,sans-serif" font-size="43" font-weight="800" fill="#f5f8ff">Attack-chain research map</text>
+<text x="56" y="177" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="#a9bbd0">MITRE Enterprise tactics and Aether research buckets, shown as separate catalog lenses.</text>
+<rect x="54" y="205" width="476" height="93" rx="16" fill="#102038" fill-opacity=".90" stroke="#80e7f5" stroke-opacity=".30"/>
+<text x="76" y="262" font-family="Arial,Helvetica,sans-serif" font-size="47" font-weight="800" fill="#80e7f5">424</text>
+<text x="179" y="258" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" letter-spacing="1.5" fill="#c7d4e7">MODELED CHAINS</text>
+<rect x="550" y="205" width="476" height="93" rx="16" fill="#102038" fill-opacity=".90" stroke="#b7a2ff" stroke-opacity=".30"/>
+<text x="572" y="262" font-family="Arial,Helvetica,sans-serif" font-size="47" font-weight="800" fill="#b7a2ff">15</text>
+<text x="675" y="258" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" letter-spacing="1.5" fill="#c7d4e7">MITRE ENTERPRISE TACTICS</text>
+<rect x="1046" y="205" width="476" height="93" rx="16" fill="#102038" fill-opacity=".90" stroke="#8cf0c9" stroke-opacity=".30"/>
+<text x="1068" y="262" font-family="Arial,Helvetica,sans-serif" font-size="47" font-weight="800" fill="#8cf0c9">18</text>
+<text x="1171" y="258" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" letter-spacing="1.5" fill="#c7d4e7">PREDATOR ROUTING BUCKETS</text>
+<text x="54" y="351" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="800" letter-spacing="3" fill="#7ce4f4">MITRE ATT&amp;CK  /  ENTERPRISE</text>
+<text x="54" y="380" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#91a8c0">Current tactic names and IDs · matrix order, not an attack sequence</text>
+<text x="1004" y="351" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="800" letter-spacing="3" fill="#b49eff">AETHER  /  CUSTOM AREAS</text>
+<text x="1004" y="380" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#91a8c0">Additional lenses for modern research surfaces</text>
+<rect x="54" y="403" width="291" height="81" rx="13" fill="#111e34" stroke="#38516a" stroke-opacity=".75" filter="url(#shadow)"/>
+<path d="M55 423V464" stroke="#73dff0" stroke-width="3" stroke-linecap="round"/>
+<text x="73" y="431" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#73dff0">TA0043</text>
+<text x="73" y="462" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#f0f5fc">Reconnaissance</text>
+<rect x="360" y="403" width="291" height="81" rx="13" fill="#111e34" stroke="#38516a" stroke-opacity=".75" filter="url(#shadow)"/>
+<path d="M361 423V464" stroke="#a9a0f8" stroke-width="3" stroke-linecap="round"/>
+<text x="379" y="431" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#a9a0f8">TA0042</text>
+<text x="379" y="462" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#f0f5fc">Resource Development</text>
+<rect x="666" y="403" width="291" height="81" rx="13" fill="#111e34" stroke="#38516a" stroke-opacity=".75" filter="url(#shadow)"/>
+<path d="M667 423V464" stroke="#70dbc0" stroke-width="3" stroke-linecap="round"/>
+<text x="685" y="431" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#70dbc0">TA0001</text>
+<text x="685" y="462" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#f0f5fc">Initial Access</text>
+<rect x="54" y="497" width="291" height="81" rx="13" fill="#111e34" stroke="#38516a" stroke-opacity=".75" filter="url(#shadow)"/>
+<path d="M55 517V558" stroke="#73dff0" stroke-width="3" stroke-linecap="round"/>
+<text x="73" y="525" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#73dff0">TA0002</text>
+<text x="73" y="556" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#f0f5fc">Execution</text>
+<rect x="360" y="497" width="291" height="81" rx="13" fill="#111e34" stroke="#38516a" stroke-opacity=".75" filter="url(#shadow)"/>
+<path d="M361 517V558" stroke="#a9a0f8" stroke-width="3" stroke-linecap="round"/>
+<text x="379" y="525" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#a9a0f8">TA0003</text>
+<text x="379" y="556" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#f0f5fc">Persistence</text>
+<rect x="666" y="497" width="291" height="81" rx="13" fill="#111e34" stroke="#38516a" stroke-opacity=".75" filter="url(#shadow)"/>
+<path d="M667 517V558" stroke="#70dbc0" stroke-width="3" stroke-linecap="round"/>
+<text x="685" y="525" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#70dbc0">TA0004</text>
+<text x="685" y="556" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#f0f5fc">Privilege Escalation</text>
+<rect x="54" y="591" width="291" height="81" rx="13" fill="#111e34" stroke="#38516a" stroke-opacity=".75" filter="url(#shadow)"/>
+<path d="M55 611V652" stroke="#73dff0" stroke-width="3" stroke-linecap="round"/>
+<text x="73" y="619" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#73dff0">TA0005</text>
+<text x="73" y="650" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#f0f5fc">Stealth</text>
+<rect x="360" y="591" width="291" height="81" rx="13" fill="#111e34" stroke="#38516a" stroke-opacity=".75" filter="url(#shadow)"/>
+<path d="M361 611V652" stroke="#a9a0f8" stroke-width="3" stroke-linecap="round"/>
+<text x="379" y="619" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#a9a0f8">TA0112</text>
+<text x="379" y="650" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#f0f5fc">Defense Impairment</text>
+<rect x="666" y="591" width="291" height="81" rx="13" fill="#111e34" stroke="#38516a" stroke-opacity=".75" filter="url(#shadow)"/>
+<path d="M667 611V652" stroke="#70dbc0" stroke-width="3" stroke-linecap="round"/>
+<text x="685" y="619" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#70dbc0">TA0006</text>
+<text x="685" y="650" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#f0f5fc">Credential Access</text>
+<rect x="54" y="685" width="291" height="81" rx="13" fill="#111e34" stroke="#38516a" stroke-opacity=".75" filter="url(#shadow)"/>
+<path d="M55 705V746" stroke="#73dff0" stroke-width="3" stroke-linecap="round"/>
+<text x="73" y="713" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#73dff0">TA0007</text>
+<text x="73" y="744" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#f0f5fc">Discovery</text>
+<rect x="360" y="685" width="291" height="81" rx="13" fill="#111e34" stroke="#38516a" stroke-opacity=".75" filter="url(#shadow)"/>
+<path d="M361 705V746" stroke="#a9a0f8" stroke-width="3" stroke-linecap="round"/>
+<text x="379" y="713" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#a9a0f8">TA0008</text>
+<text x="379" y="744" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#f0f5fc">Lateral Movement</text>
+<rect x="666" y="685" width="291" height="81" rx="13" fill="#111e34" stroke="#38516a" stroke-opacity=".75" filter="url(#shadow)"/>
+<path d="M667 705V746" stroke="#70dbc0" stroke-width="3" stroke-linecap="round"/>
+<text x="685" y="713" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#70dbc0">TA0009</text>
+<text x="685" y="744" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#f0f5fc">Collection</text>
+<rect x="54" y="779" width="291" height="81" rx="13" fill="#111e34" stroke="#38516a" stroke-opacity=".75" filter="url(#shadow)"/>
+<path d="M55 799V840" stroke="#73dff0" stroke-width="3" stroke-linecap="round"/>
+<text x="73" y="807" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#73dff0">TA0011</text>
+<text x="73" y="838" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#f0f5fc">Command and Control</text>
+<rect x="360" y="779" width="291" height="81" rx="13" fill="#111e34" stroke="#38516a" stroke-opacity=".75" filter="url(#shadow)"/>
+<path d="M361 799V840" stroke="#a9a0f8" stroke-width="3" stroke-linecap="round"/>
+<text x="379" y="807" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#a9a0f8">TA0010</text>
+<text x="379" y="838" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#f0f5fc">Exfiltration</text>
+<rect x="666" y="779" width="291" height="81" rx="13" fill="#111e34" stroke="#38516a" stroke-opacity=".75" filter="url(#shadow)"/>
+<path d="M667 799V840" stroke="#70dbc0" stroke-width="3" stroke-linecap="round"/>
+<text x="685" y="807" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.4" fill="#70dbc0">TA0040</text>
+<text x="685" y="838" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#f0f5fc">Impact</text>
+<rect x="1004" y="403" width="542" height="141" rx="17" fill="#161c38" stroke="#70b9ff" stroke-opacity=".40" filter="url(#shadow)"/>
+<rect x="1023" y="422" width="44" height="44" rx="11" fill="#70b9ff" fill-opacity=".15" stroke="#70b9ff" stroke-opacity=".55"/>
+<text x="1045" y="451" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="800" fill="#70b9ff">01</text>
+<text x="1083" y="454" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="800" fill="#f3f5ff">AI Injection</text>
+<text x="1024" y="508" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="#acbdd3">Prompts / context / retrieved content</text>
+<rect x="1004" y="560" width="542" height="141" rx="17" fill="#161c38" stroke="#a78bfa" stroke-opacity=".40" filter="url(#shadow)"/>
+<rect x="1023" y="579" width="44" height="44" rx="11" fill="#a78bfa" fill-opacity=".15" stroke="#a78bfa" stroke-opacity=".55"/>
+<text x="1045" y="608" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="800" fill="#a78bfa">02</text>
+<text x="1083" y="611" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="800" fill="#f3f5ff">MCP Top 10</text>
+<text x="1024" y="665" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="#acbdd3">Tools / permissions / connectors</text>
+<rect x="1004" y="717" width="542" height="141" rx="17" fill="#161c38" stroke="#6ee7c2" stroke-opacity=".40" filter="url(#shadow)"/>
+<rect x="1023" y="736" width="44" height="44" rx="11" fill="#6ee7c2" fill-opacity=".15" stroke="#6ee7c2" stroke-opacity=".55"/>
+<text x="1045" y="765" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="800" fill="#6ee7c2">03</text>
+<text x="1083" y="768" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="800" fill="#f3f5ff">Memory-Safety Primitives</text>
+<text x="1024" y="822" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="#acbdd3">Native-code weakness building blocks</text>
+<rect x="54" y="885" width="1492" height="132" rx="17" fill="#0d2633" stroke="#55b6ce" stroke-opacity=".43"/>
+<text x="77" y="916" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="800" letter-spacing="2.4" fill="#85ddec">PRIVATE CASE FAMILIES  /  PUBLIC LABELS ONLY</text>
+<rect x="77" y="934" width="430" height="37" rx="9" fill="#173c4a"/>
+<text x="94" y="960" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#d6faff">GX  ·  GEMINI CLI</text>
+<rect x="521" y="934" width="430" height="37" rx="9" fill="#30294d"/>
+<text x="538" y="960" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#e6ddff">GLX  ·  GITLAB DUO</text>
+<rect x="965" y="934" width="558" height="37" rx="9" fill="#403027"/>
+<text x="982" y="960" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#ffe1c7">AX  ·  ANTHROPIC SDK</text>
+<text x="77" y="1001" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#a6bdd0">Case-family labels only · no chain transitions, payloads, or report details shown.</text>
+<text x="56" y="1052" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#91a8c0">Registry snapshot: V16 · 10 Oct 2026. Predator selector labels are not a one-to-one copy of the MITRE matrix.</text>
+</svg>

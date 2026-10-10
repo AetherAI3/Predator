@@ -8,7 +8,7 @@ from html import escape
 from pathlib import Path
 
 
-OUT = Path(__file__).with_name("attack-buckets-v15.svg")
+OUT = Path(__file__).with_name("attack-buckets-v16.svg")
 
 # MITRE ATT&CK Enterprise tactic names and IDs, checked October 10, 2026.
 TACTICS = [
@@ -36,19 +36,19 @@ CUSTOM = [
 ]
 
 parts = [
-    '<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050" role="img" aria-labelledby="title desc">',
+    '<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1080" viewBox="0 0 1600 1080" role="img" aria-labelledby="title desc">',
     '<title id="title">Predator ATT&amp;CK and Aether research buckets</title>',
-    '<desc id="desc">A public catalog overview: 421 modeled chains in 18 Predator routing buckets; all 15 current MITRE ATT&amp;CK Enterprise tactics; three Aether research areas for AI injection, MCP Top 10, and memory-safety primitives. GX Gemini CLI and GLX GitLab Duo are named as private case families only. No exploit details are shown.</desc>',
+    '<desc id="desc">A public catalog overview: 424 modeled chains in 18 Predator routing buckets; 15 MITRE ATT&amp;CK Enterprise tactic labels; three Aether research areas for AI injection, MCP Top 10, and memory-safety primitives. GX Gemini CLI, GLX GitLab Duo, and AX Anthropic SDK are named as case families only. No exploit details are shown.</desc>',
     '<defs>',
     '<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset=".56" stop-color="#0b1830"/><stop offset="1" stop-color="#100c22"/></linearGradient>',
     '<linearGradient id="topLine"><stop stop-color="#2dd4ef"/><stop offset=".52" stop-color="#8877f8"/><stop offset="1" stop-color="#58e6ba"/></linearGradient>',
     '<radialGradient id="glow"><stop stop-color="#20bde0" stop-opacity=".16"/><stop offset="1" stop-color="#20bde0" stop-opacity="0"/></radialGradient>',
     '<filter id="shadow" x="-.2" y="-.3" width="1.4" height="1.6"><feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#010611" flood-opacity=".36"/></filter>',
     '</defs>',
-    '<rect width="1600" height="1050" fill="url(#bg)"/>',
+    '<rect width="1600" height="1080" fill="url(#bg)"/>',
     '<circle cx="1200" cy="120" r="470" fill="url(#glow)"/>',
     '<path d="M0 2H1600" stroke="url(#topLine)" stroke-width="4"/>',
-    '<g opacity=".10" stroke="#75a4ca"><path d="M0 278H1600M0 909H1600"/><path d="M968 285V908"/></g>',
+    '<g opacity=".10" stroke="#75a4ca"><path d="M0 278H1600M0 1017H1600"/><path d="M968 285V885"/></g>',
     '<rect x="54" y="40" width="54" height="54" rx="14" fill="#102f45" stroke="#3ad6eb" stroke-opacity=".55"/>',
     '<text x="81" y="77" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="32" font-weight="800" fill="#81e9fa">Æ</text>',
     '<text x="126" y="62" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="800" letter-spacing="3" fill="#8de8f6">AETHER AI  /  PREDATOR</text>',
@@ -57,7 +57,7 @@ parts = [
 ]
 
 for x, value, label, color in [
-    (54, "421", "MODELED CHAINS", "#80e7f5"),
+    (54, "424", "MODELED CHAINS", "#80e7f5"),
     (550, "15", "MITRE ENTERPRISE TACTICS", "#b7a2ff"),
     (1046, "18", "PREDATOR ROUTING BUCKETS", "#8cf0c9"),
 ]:
@@ -96,14 +96,16 @@ for idx, (num, name, sub, color) in enumerate(CUSTOM):
     ])
 
 parts.extend([
-    '<rect x="54" y="885" width="1492" height="104" rx="17" fill="#0d2633" stroke="#55b6ce" stroke-opacity=".43"/>',
+    '<rect x="54" y="885" width="1492" height="132" rx="17" fill="#0d2633" stroke="#55b6ce" stroke-opacity=".43"/>',
     '<text x="77" y="916" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="800" letter-spacing="2.4" fill="#85ddec">PRIVATE CASE FAMILIES  /  PUBLIC LABELS ONLY</text>',
     '<rect x="77" y="934" width="430" height="37" rx="9" fill="#173c4a"/>',
     '<text x="94" y="960" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#d6faff">GX  ·  GEMINI CLI</text>',
     '<rect x="521" y="934" width="430" height="37" rx="9" fill="#30294d"/>',
     '<text x="538" y="960" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#e6ddff">GLX  ·  GITLAB DUO</text>',
-    '<text x="966" y="960" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#a6bdd0">No chain transitions, payloads, or report details shown.</text>',
-    '<text x="56" y="1022" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#91a8c0">Registry snapshot: V15 · 10 Oct 2026. Predator selector labels are not a one-to-one copy of the MITRE matrix.</text>',
+    '<rect x="965" y="934" width="558" height="37" rx="9" fill="#403027"/>',
+    '<text x="982" y="960" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#ffe1c7">AX  ·  ANTHROPIC SDK</text>',
+    '<text x="77" y="1001" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#a6bdd0">Case-family labels only · no chain transitions, payloads, or report details shown.</text>',
+    '<text x="56" y="1052" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#91a8c0">Registry snapshot: V16 · 10 Oct 2026. Predator selector labels are not a one-to-one copy of the MITRE matrix.</text>',
     '</svg>',
 ])
 
