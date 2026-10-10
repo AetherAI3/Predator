@@ -1,5 +1,10 @@
 # README visual sources
 
+## October 10 ATT&CK and Aether research-bucket map
+
+- **attack-buckets-v15.svg** is a self-contained editorial catalog map built by `build_attack_buckets.py`. Its 15 tactic names and IDs follow the [current MITRE ATT&CK Enterprise tactics](https://attack.mitre.org/tactics/) as checked October 10, 2026. The 421 modeled chains and 18 Predator routing buckets are from the pinned private V15 registry snapshot. The three Aether areas summarize its custom research selectors. GX Gemini CLI and GLX GitLab Duo are public names only; the map contains no private chain transitions, payloads, report details, or credential material. Its cards do not imply a verified attack sequence, measured severity, or a one-to-one mapping between Predator selectors and MITRE tactics.
+- **badge-attack-chains.svg** was refreshed to the same V15 chain count. The badge is a dated registry label, not a live status indicator.
+
 - **predator-console.png** — original Predator engagement terminal image supplied by Aether AI. Preserved byte for byte; Git blob `bda259be2c83e711796f5d2b7dac124a1c8e8765`. The pictured session and counters are illustrative. An earlier README and the showcase placed this image near the opening with an illustration caption.
 - **aether-website-mark.svg** — original Aether logo extracted from the owner-supplied capture of the [defense-stack page](https://aethersystems.net/defense-stack#defense-stack). The SVG namespace was added for standalone display.
 - **defense-stack-attack-path.svg** — the same page’s inline campaign illustration, adapted for a static README with a dark background and readable node/edge contrast. It illustrates the broader operator-led service, not the restricted CLI surface or a measured incident.

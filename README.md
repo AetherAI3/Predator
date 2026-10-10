@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <a href="#attack-chain-coverage"><img src="docs/assets/badge-attack-chains.svg" height="32" alt="416 modeled Gen3 attack chains"></a>
+  <a href="#attack-chain-coverage"><img src="docs/assets/badge-attack-chains.svg" height="32" alt="421 modeled Gen3 attack chains"></a>
   <a href="#live-predator-red-team"><img src="docs/assets/badge-scoped-work.svg" height="32" alt="Scope before testing"></a>
   <a href="#the-cli-crucible-and-the-research-loop"><img src="docs/assets/badge-gen3-research.svg" height="32" alt="Gen3 research is active"></a>
 </p>
@@ -179,9 +179,14 @@ CharLS and QPACK are open-source test cases with deliberately introduced faults.
 
 ## MITRE ATT&CK chain library
 
-**416 modeled chains · 18 routing categories · October 3, 2026 registry snapshot**
+**421 modeled chains · 18 routing buckets · October 10, 2026 V15 registry snapshot**
 
-Predator's chain library connects steps, prerequisites, and source references into models of how weaknesses can combine. It brings together [MITRE ATT&CK](https://attack.mitre.org/tactics/enterprise/) with AI, [MCP](https://owasp.org/www-project-mcp-top-10/), and memory-safety categories.
+Predator's chain library connects steps, prerequisites, and source references into models of how weaknesses can combine. The map shows the [15 current MITRE ATT&CK Enterprise tactics](https://attack.mitre.org/tactics/) alongside Aether's AI injection, [MCP](https://owasp.org/www-project-mcp-top-10/), and memory-safety research areas. Predator's routing labels are maintained separately from MITRE's tactic names.
+
+<p align="center">
+  <img src="docs/assets/attack-buckets-v15.svg" width="960" alt="Predator research map: 421 modeled chains, 15 current MITRE ATT&CK Enterprise tactics, 18 routing buckets, and separate Aether areas for AI injection, MCP Top 10, and memory-safety primitives. GX Gemini CLI and GLX GitLab Duo are named only as private case families."><br>
+  <sub><a href="docs/assets/attack-buckets-v15.svg">Open the full-size research map</a> · GX and GLX are public case-family labels; no exploit steps are shown.</sub>
+</p>
 
 | What a chain contains | Why it helps |
 | :--- | :--- |
