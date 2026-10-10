@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="478" viewBox="0 0 1280 478" role="img" aria-labelledby="title description">
+  <title id="title">Sanitized research energy for one Crucible checkpoint</title>
+  <desc id="description">Two views of a caller-calibrated research model. The four generic additive terms are minus 1.11, minus 1.12, minus 1.13, and minus 2.21, totaling minus 5.57. Holding three context terms fixed gives minus 3.36 without the candidate and minus 5.57 with the candidate. These are bookkeeping weights, not measured severity, exploit probability, or quantum advantage.</desc>
+  <rect x="1" y="1" width="1278" height="476" rx="20" fill="#08111d" stroke="#2b4057" stroke-width="2"/>
+  <path d="M38 25H1242" stroke="#b48aff" stroke-width="3"/>
+  <rect x="44" y="46" width="32" height="32" rx="7" fill="#102a3a" stroke="#2f7893"/>
+  <text x="49" y="71" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="800" fill="#55d6ec">Æ</text>
+  <text x="91" y="69" font-family="Arial,Helvetica,sans-serif" font-size="14" font-weight="800" letter-spacing="2" fill="#79dcf0">AETHER AI / PREDATOR</text>
+  <text x="44" y="115" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="800" fill="#f0f6ff">One checkpoint, two model views</text>
+  <text x="44" y="145" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#aabed0">Sanitized, caller-calibrated Crucible bookkeeping · 09 OCT 2026</text>
+
+  <path d="M640 175V405" stroke="#30455d"/>
+  <text x="50" y="196" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="800" fill="#e9f1fb">ADDITIVE DECOMPOSITION</text>
+  <text x="50" y="229" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#98aec2">Generic terms; labels omit private attack conditions</text>
+  <text x="50" y="271" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#c5d4e2">Context A</text>
+  <rect x="184" y="253" width="127" height="20" rx="5" fill="#51cce6"/>
+  <text x="326" y="270" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#e9f1fb">−1.11</text>
+  <text x="50" y="309" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#c5d4e2">Context B</text>
+  <rect x="184" y="291" width="128" height="20" rx="5" fill="#51cce6"/>
+  <text x="326" y="308" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#e9f1fb">−1.12</text>
+  <text x="50" y="347" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#c5d4e2">Context C</text>
+  <rect x="184" y="329" width="129" height="20" rx="5" fill="#51cce6"/>
+  <text x="326" y="346" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#e9f1fb">−1.13</text>
+  <text x="50" y="385" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#c5d4e2">Candidate</text>
+  <rect x="184" y="367" width="252" height="20" rx="5" fill="#b48aff"/>
+  <text x="450" y="384" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700" fill="#e9f1fb">−2.21</text>
+
+  <text x="680" y="196" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="800" fill="#e9f1fb">CONDITIONAL MODEL VIEW</text>
+  <text x="680" y="229" font-family="Arial,Helvetica,sans-serif" font-size="14" fill="#98aec2">Same fixed context, candidate toggled in the model</text>
+  <text x="680" y="278" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#c5d4e2">Context only</text>
+  <rect x="830" y="257" width="218" height="27" rx="6" fill="#51cce6"/>
+  <text x="1040" y="278" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#08111d">−3.36</text>
+  <text x="680" y="345" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#c5d4e2">With candidate</text>
+  <rect x="830" y="324" width="362" height="27" rx="6" fill="#b48aff"/>
+  <text x="1183" y="345" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="800" fill="#08111d">−5.57</text>
+  <text x="831" y="384" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" fill="#bda5ff">Δ model energy = −2.21</text>
+
+  <path d="M44 416H1236" stroke="#30455d"/>
+  <text x="44" y="446" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#aabed0">Caller-chosen weights. Not execution proof, Google severity, exploit probability, a solver benchmark, or quantum advantage.</text>
+</svg>

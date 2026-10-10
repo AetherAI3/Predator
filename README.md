@@ -64,6 +64,26 @@ Predator's VPS3 P-BOX also supported a **local security test of the Vercel AI SD
   <sub>Five actual guest captures · seven replay frames · selective FFmpeg blur · <a href="docs/pbox-vercel-ai-sdk-showcase.md">provenance and disclosure limits</a></sub>
 </p>
 
+### Gemini CLI: private Crucible sprint
+
+On **October 9, 2026**, Predator's manual research workflow ran a deep Gemini CLI Crucible sprint across the **C1 → Q173 checkpoint span**. Three separate reports were filed privately with Google Cloud VRP during the day. They remain under triage; no severity or reward has been assigned.
+
+<p align="center">
+  <img src="docs/assets/gemini-cli-crucible-sprint.svg" width="960" alt="Aether AI Predator Gemini CLI Crucible sprint, October 9, 2026: three private filings, C1 to Q173 checkpoint span, and a high-level MITRE ATT&amp;CK tactic map."><br>
+  <sub>Public taxonomy only: Defense Evasion → Execution → Credential Access → Exfiltration. No reproduction details or credential material.</sub>
+</p>
+
+<details>
+<summary><strong>Sanitized research energy</strong></summary>
+
+<p align="center">
+  <img src="docs/assets/gemini-cli-crucible-energy-public.svg" width="960" alt="Two sanitized views of one caller-calibrated research model: generic additive terms and a conditional model comparison. The values are not measured vulnerability severity.">
+</p>
+
+The two views show **one caller-calibrated model checkpoint**, with private attack-condition labels removed. Its weights are research bookkeeping; they do not independently verify a finding, measure exploit probability, establish quantum advantage, or set a Google bounty tier. Validation evidence remains in the private reports while triage is pending.
+
+</details>
+
 <a id="hack-the-box-modules-and-demos"></a>
 
 ## Hack The Box: training and evidence

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440" role="img" aria-labelledby="title description">
+  <title id="title">Gemini CLI Crucible sprint — Predator by Aether AI</title>
+  <desc id="description">October 9, 2026. Three private Google Cloud VRP filings. Manual research checkpoint span C1 to Q173. High-level MITRE ATT&amp;CK tactic map: Defense Evasion, Execution, Credential Access, Exfiltration. Triage pending; no exploit details are shown.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111d"/>
+      <stop offset="1" stop-color="#101628"/>
+    </linearGradient>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#33c8e9"/>
+      <stop offset="1" stop-color="#aa83ff"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="1278" height="438" rx="22" fill="url(#bg)" stroke="#2b4057" stroke-width="2"/>
+  <path d="M38 27H1242" stroke="url(#rule)" stroke-width="3"/>
+
+  <rect x="48" y="54" width="52" height="52" rx="12" fill="#102a3a" stroke="#2f7893"/>
+  <text x="57" y="91" font-family="Arial,Helvetica,sans-serif" font-size="35" font-weight="800" fill="#55d6ec">Æ</text>
+  <text x="116" y="75" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="800" letter-spacing="2" fill="#e8f2fb">AETHER AI</text>
+  <text x="116" y="99" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" letter-spacing="2" fill="#8ea6bd">PREDATOR RESEARCH</text>
+  <text x="1232" y="84" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" letter-spacing="1.5" fill="#a9bdd0">09 OCT 2026</text>
+
+  <text x="50" y="174" font-family="Arial,Helvetica,sans-serif" font-size="57" font-weight="800" letter-spacing="-2" fill="#f4f8ff">Gemini CLI</text>
+  <text x="50" y="236" font-family="Arial,Helvetica,sans-serif" font-size="55" font-weight="800" letter-spacing="-2" fill="#59d0e9">Crucible sprint</text>
+  <text x="53" y="274" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="#aec2d3">Manual research · owner-controlled validation · private triage</text>
+
+  <rect x="865" y="118" width="365" height="169" rx="16" fill="#132037" stroke="#35506d"/>
+  <text x="890" y="197" font-family="Arial,Helvetica,sans-serif" font-size="83" font-weight="800" fill="#b394ff">03</text>
+  <text x="1009" y="178" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="800" fill="#f4f8ff">PRIVATE FILINGS</text>
+  <text x="1009" y="207" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#a9bdd0">Google Cloud VRP</text>
+  <path d="M891 226H1204" stroke="#3a536c"/>
+  <text x="891" y="257" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="800" letter-spacing="1" fill="#75ddcb">C1 → Q173</text>
+  <text x="1016" y="257" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#a9bdd0">checkpoint span</text>
+
+  <path d="M50 302H1230" stroke="#2d425a"/>
+  <text x="50" y="334" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="800" letter-spacing="2" fill="#97adc1">MITRE ATT&amp;CK TACTIC MAP</text>
+  <text x="50" y="374" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#e9f1fb">Defense Evasion</text>
+  <text x="272" y="372" font-family="Arial,Helvetica,sans-serif" font-size="23" fill="#55d6ec">→</text>
+  <text x="323" y="374" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#e9f1fb">Execution</text>
+  <text x="470" y="372" font-family="Arial,Helvetica,sans-serif" font-size="23" fill="#55d6ec">→</text>
+  <text x="520" y="374" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#e9f1fb">Credential Access</text>
+  <text x="788" y="372" font-family="Arial,Helvetica,sans-serif" font-size="23" fill="#55d6ec">→</text>
+  <text x="838" y="374" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="700" fill="#e9f1fb">Exfiltration</text>
+  <text x="50" y="412" font-family="Arial,Helvetica,sans-serif" font-size="16" fill="#8fa7ba">Tactic names only · no exploit steps, secrets, assigned severity, or claim of an unrelated victim</text>
+</svg>
