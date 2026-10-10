@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="480" viewBox="0 0 1280 480" role="img" aria-labelledby="title description">
+  <title id="title">Anthropic SDK private Crucible research — Predator by Aether AI</title>
+  <desc id="description">Three conditional owner-controlled local research paths, AX001 through AX003, banked October 10, 2026. Parallel MITRE ATT&amp;CK tactic lenses are Collection, Credential Access, and Execution. A deployed writer route and Claude-selected action remain unobserved. No report, real secret, or assigned severity is claimed.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111d"/>
+      <stop offset="1" stop-color="#1b1724"/>
+    </linearGradient>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e8ad82"/>
+      <stop offset="1" stop-color="#aa83ff"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="1278" height="478" rx="22" fill="url(#bg)" stroke="#41415c" stroke-width="2"/>
+  <path d="M38 27H1242" stroke="url(#rule)" stroke-width="3"/>
+
+  <rect x="48" y="54" width="52" height="52" rx="12" fill="#30252b" stroke="#ab785c"/>
+  <text x="57" y="91" font-family="Arial,Helvetica,sans-serif" font-size="35" font-weight="800" fill="#eab48b">Æ</text>
+  <text x="116" y="75" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="800" letter-spacing="2" fill="#e8f2fb">AETHER AI</text>
+  <text x="116" y="99" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700" letter-spacing="2" fill="#8ea6bd">PREDATOR RESEARCH</text>
+  <text x="1232" y="84" text-anchor="end" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" letter-spacing="1.5" fill="#a9bdd0">10 OCT 2026 · BANKED</text>
+
+  <text x="50" y="174" font-family="Arial,Helvetica,sans-serif" font-size="57" font-weight="800" letter-spacing="-2" fill="#f4f8ff">Anthropic SDK</text>
+  <text x="50" y="236" font-family="Arial,Helvetica,sans-serif" font-size="55" font-weight="800" letter-spacing="-2" fill="#eab48b">Crucible research</text>
+  <text x="53" y="274" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="#aec2d3">Three conditional local outcomes · one shared boundary</text>
+
+  <rect x="865" y="118" width="365" height="169" rx="16" fill="#1b2038" stroke="#575373"/>
+  <text x="890" y="197" font-family="Arial,Helvetica,sans-serif" font-size="83" font-weight="800" fill="#b394ff">03</text>
+  <text x="1010" y="178" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="800" fill="#f4f8ff">AX PATHS</text>
+  <text x="1010" y="207" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#a9bdd0">Owner fixtures only</text>
+  <path d="M891 226H1204" stroke="#4a4c6e"/>
+  <text x="891" y="257" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="800" letter-spacing="1" fill="#eab48b">AX001–AX003</text>
+  <text x="1040" y="257" font-family="Arial,Helvetica,sans-serif" font-size="13" fill="#a9bdd0">conditional research</text>
+
+  <path d="M50 302H1230" stroke="#35445b"/>
+  <text x="50" y="332" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="800" letter-spacing="2" fill="#97adc1">MITRE ATT&amp;CK TACTIC LENSES · PARALLEL LOCAL PATHS</text>
+
+  <rect x="50" y="350" width="370" height="76" rx="11" fill="#182037" stroke="#6dbcd0" stroke-opacity=".6"/>
+  <text x="70" y="382" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#e9f1fb">Collection</text>
+  <text x="70" y="408" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.5" fill="#8acddd">AX001 · LOCAL FIXTURE</text>
+
+  <rect x="455" y="350" width="370" height="76" rx="11" fill="#1c2038" stroke="#aa83ff" stroke-opacity=".6"/>
+  <text x="475" y="382" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#e9f1fb">Credential Access</text>
+  <text x="475" y="408" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.5" fill="#c4acff">AX002 · SYNTHETIC ONLY</text>
+
+  <rect x="860" y="350" width="370" height="76" rx="11" fill="#242033" stroke="#eab48b" stroke-opacity=".6"/>
+  <text x="880" y="382" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#e9f1fb">Execution</text>
+  <text x="880" y="408" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="1.5" fill="#eab48b">AX003 · HARMLESS MARKER</text>
+
+  <text x="50" y="460" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#8fa7ba">No deployed route, Claude-selected action, real secret, filed report, or assigned severity</text>
+</svg>
