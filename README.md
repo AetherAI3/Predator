@@ -21,7 +21,7 @@ Predator brings AI reasoning, persistent context, and reviewed tool use into sec
 
 This is the **public feature showcase and evidence collection**. The CLI and operator engines are private, with [reviewed research access](#developers-join-the-research-program).
 
-[P-BOX](#p-box) · [Gen3 research](#gen3-research-evidence) · [HTB demos](#hack-the-box-training-and-evidence) · [MITRE chains](#mitre-attck-chain-library) · [CVE catalog](#cve-research-catalog) · [Crucible](#crucible-adaptive-quantum-threat-modeling) · [Results](#banked-scientific-results) · [Features](#predator-features) · [Work with Aether](#ways-to-work-with-aether) · [Docs](docs/README.md)
+[P-BOX](#p-box) · [Gen3 Private Security](#gen3-private-security) · [OSS](#oss) · [HTB demos](#hack-the-box-training-and-evidence) · [MITRE chains](#mitre-attck-chain-library) · [CVE catalog](#cve-research-catalog) · [Crucible](#crucible-adaptive-quantum-threat-modeling) · [Results](#banked-scientific-results) · [Features](#predator-features) · [Work with Aether](#ways-to-work-with-aether) · [Docs](docs/README.md)
 
 <a id="p-box"></a>
 <a id="disposable-pwnbox-for-autonomous-missions"></a>
@@ -55,13 +55,11 @@ The [machine guide](docs/htb/machines/ghostlink/README.md) records GLM-5.3's res
 
 </details>
 
-<a id="gen3-research-evidence"></a>
+<a id="gen3-private-security"></a>
 
-## Gen3: research evidence
+## Gen3 Private Security
 
 Gen3 groups Predator's research workflow and saved evidence. The label does not imply measured quantum advantage.
-
-### Security research
 
 Three scoped case studies, with their validation and disclosure status kept separate:
 
@@ -120,7 +118,9 @@ Predator began an owner-controlled GitLab Duo research sprint on **October 9, 20
 
 </details>
 
-### OSS: controlled fault studies
+<a id="oss"></a>
+
+## OSS
 
 CharLS and QPACK are open-source test cases with deliberately introduced faults. Their published results and limits are detailed in [Banked scientific results](#banked-scientific-results).
 
