@@ -17,11 +17,11 @@
 
 **AI security research, software repair, and authorized VM workflows.**
 
-Predator brings AI reasoning, persistent context, and reviewed tool use into security research and software repair. Its research engine combines **adaptive compilation and hybrid classical/quantum search** to model threat paths and test candidate repairs.
+Predator brings AI reasoning, persistent context, and reviewed tool use into security research and software repair. Its research engine, **Crucible**, works like a lockpick: it holds verified evidence steady, fans out many small candidate chains, tests each one against the real software, and keeps only what sets. Candidate choices are compiled into **hybrid classical/quantum search**; the software itself decides what counts.
 
 This is the **public feature showcase and evidence collection**. The CLI and operator engines are private, with [reviewed research access](#developers-join-the-research-program).
 
-[P-BOX / HTB training](#p-box-htb-training) · [Gen3 Private Security](#gen3-private-security) · [Gen3 OSS](#gen3-oss) · [MITRE chains](#mitre-attck-chain-library) · [CVE catalog](#cve-research-catalog) · [Crucible](#crucible-adaptive-quantum-threat-modeling) · [Results](#banked-scientific-results) · [Features](#predator-features) · [Work with Aether](#ways-to-work-with-aether) · [Docs](docs/README.md)
+[P-BOX / HTB training](#p-box-htb-training) · [Gen3 Private Security](#gen3-private-security) · [Crucible](#crucible-adaptive-quantum-threat-modeling) · [MITRE chains](#mitre-attck-chain-library) · [CVE catalog](#cve-research-catalog) · [CodePro & System-2](#codepro-and-system-2) · [joint5 & IBM Fez](#joint5-compiler-the-ibm-fez-hardware-result) · [Results](#banked-scientific-results) · [Work with Aether](#ways-to-work-with-aether) · [Docs](docs/README.md)
 
 <a id="p-box-htb-training"></a>
 
@@ -105,9 +105,9 @@ The [earlier Pwnbox console preview](docs/media/predator-pwnbox-ttl-preview.gif)
 
 ## Gen3 Private Security
 
-Gen3 groups Predator's research workflow and saved evidence. The label does not imply measured quantum advantage.
+**Gen3** is the name for Predator's current research workflow and the evidence it leaves behind. It describes a method, not a measured quantum advantage.
 
-Four scoped case studies, with their validation and disclosure status kept separate:
+Four scoped case studies from October 2026, each with its validation and disclosure status kept separate. Each one was run through the Crucible loop described in the next section:
 
 | Target | Public evidence | Status |
 | :--- | :--- | :--- |
@@ -164,74 +164,6 @@ The saved evidence does not establish a deployed lower-trust writer route, Claud
   <sub>Owner-controlled fixtures · parallel tactic lenses · no reproduction steps, secrets, or third-party data</sub>
 </p>
 
-<a id="gen3-oss"></a>
-
-## Gen3 OSS
-
-CharLS and QPACK are open-source test cases with deliberately introduced faults. Their published results and limits are detailed in [Banked scientific results](#banked-scientific-results).
-
-<table>
-  <tr>
-    <th width="50%">CharLS Q3 repair</th>
-    <th width="50%">QPACK feedback study</th>
-  </tr>
-  <tr>
-    <td width="50%" valign="top"><a href="docs/research/charls-q3.md"><img src="docs/assets/readme-start-q3.svg" width="100%" alt="CharLS Q3: 24 of 24 protected tests passed, eight new passes, and no earlier passes lost."></a></td>
-    <td width="50%" valign="top"><a href="docs/research/gen3-qpack-experiment1.md"><img src="docs/assets/card-qpack.svg" width="100%" alt="QPACK: five of eight controlled faults found with feedback, versus two of eight without feedback."></a></td>
-  </tr>
-</table>
-
-| Test case | Recorded result | Evidence |
-| :--- | :--- | :--- |
-| **CharLS Q3 repair** | 16/24 → 24/24 protected passes, with earlier passes retained. | [Study and data](docs/research/charls-q3.md) |
-| **QPACK feedback study** | 5/8 controlled faults found with feedback, versus 2/8 without it in an exploratory campaign. | [Study and data](docs/research/gen3-qpack-experiment1.md) |
-
-<a id="research-sources"></a>
-<a id="attack-chain-coverage"></a>
-
-## MITRE ATT&CK chain library
-
-**424 modeled chains · 18 routing buckets · October 10, 2026 V16 registry snapshot**
-
-Predator's chain library connects steps, prerequisites, and source references into models of how weaknesses can combine. The map shows the [15 current MITRE ATT&CK Enterprise tactics](https://attack.mitre.org/tactics/) alongside Aether's AI injection, [MCP](https://owasp.org/www-project-mcp-top-10/), and memory-safety research areas. Predator's routing labels are maintained separately from MITRE's tactic names.
-
-<p align="center">
-  <img src="docs/assets/attack-buckets-v16.svg" width="960" alt="Predator research map: 424 modeled chains, 15 MITRE ATT&amp;CK Enterprise tactic labels, 18 routing buckets, and separate Aether areas for AI injection, MCP Top 10, and memory-safety primitives. GX Gemini CLI, GLX GitLab Duo, and AX Anthropic SDK are case-family labels only."><br>
-  <sub><a href="docs/assets/attack-buckets-v16.svg">Open the full-size research map</a> · GX, GLX, and AX are public case-family labels; no exploit steps are shown.</sub>
-</p>
-
-| What a chain contains | Why it helps |
-| :--- | :--- |
-| **Connected steps** | Show how a proposed path depends on earlier conditions. |
-| **Prerequisites and references** | Keep the model tied to stated assumptions and cited sources. |
-| **Routing category** | Organize the review around the relevant research surface. |
-
-<a id="research-mode-start-with-a-chain-follow-the-cves"></a>
-
-**Research mode** follows chain and CVE references to develop cited hypotheses, counterexamples, and proposed extensions. Source review and appropriate checks on the software must establish observed behavior before a modeled path becomes a finding.
-
-### AX · Anthropic SDK
-
-AX001, AX002, and AX003 mark conditional local research paths with **Collection**, **Credential Access**, and **Execution** tactic lenses. The paths share one underlying trust boundary and are shown separately in the [Anthropic research card](docs/assets/anthropic-sdk-crucible-private.svg). The public map does not claim a sequential exploit, a deployed integration, or a vendor-confirmed finding.
-
-<a id="cve-research-catalog"></a>
-
-## CVE catalog and database
-
-**Vulnerability source records linked to the chain library.**
-
-Predator maintains a separate catalog of CVE records, affected products, advisories, problem types, and scoring data. CVE IDs connect those records to chain anchors so an investigation can follow the underlying evidence.
-
-| Part of the catalog | What it contributes |
-| :--- | :--- |
-| **CVE source records** | [CVE JSON 5.x](https://github.com/CVEProject/cvelistV5) imports and affected-product information. |
-| **Separate enrichment** | NVD, CISA KEV, and FIRST EPSS data alongside the source records. |
-| **Research review** | Deep-cycle integration reads shortlisted full CVE cards before ranking and records what was reviewed. |
-
-<a id="cross-reference-in-research-mode-and-drive"></a>
-
-**Drive** uses the approved mission's pinned evidence for investigation and validation. Catalog coverage and freshness depend on completed imports and pinned snapshots.
-
 <a id="the-cli-crucible-and-the-research-loop"></a>
 <a id="crucible-adaptive-modeling-and-quantum-depth"></a>
 
@@ -239,7 +171,7 @@ Predator maintains a separate catalog of CVE records, affected products, advisor
 
 **Think of a lockpick. Hold tension, test one pin at a time, and keep every pin that sets.**
 
-Crucible is Predator's software research and repair loop. It starts with a pinned source revision, a defined question, and fixed acceptance checks. The easiest way to understand how it moves is the way a lock gets picked: one hand holds tension so nothing already gained can slip, the other hand tests pins until one clicks, and a pin that sets stays set while the next one is worked.
+Crucible is Predator's software research and repair loop. It starts with a pinned source revision, a defined question, and fixed acceptance checks. The easiest way to picture it is a lock being picked: one hand holds tension so nothing already gained can slip, the other tests pins until one clicks, and a pin that sets stays set while the next one is worked.
 
 <p align="center">
   <img src="docs/assets/crucible-lockpick.svg" width="960" alt="Crucible explained as a lockpick. A master checkpoint holds tension. It fans out into four small chains, each a pin: an AI proposal, a native check on the software, and a quantum-method selection. Three chains end in REJECT and one in HIT. JEV triage and a master Q selection choose the chain that advances. The winner's evidence and open obligations become the next checkpoint, a repair lane runs behind the HIT, and the loop continues to the next depth. Visual by Mythos 5.1."><br>
@@ -264,7 +196,7 @@ Crucible is Predator's software research and repair loop. It starts with a pinne
 | **Pin** | Freeze the source revision, scope, evidence, and acceptance checks. This is the tension. |
 | **Fan out** | Open several small candidate chains from the checkpoint. Each proposes a threat path or repair. |
 | **Model** | Compile each chain's choices and constraints into a **QUBO**, a binary optimization model with a cost to minimize. |
-| **Search** | Use the recorded solver to select a candidate, identifying simulation or quantum hardware and its classical comparison. |
+| **Search** | Sample the model with the recorded solver, on a simulator or on quantum hardware, next to its classical comparison, and pick a candidate. |
 | **Validate** | Check the software. Retain passes and failures. Chains end in HIT or REJECT. |
 | **Select and carry** | Choose the chain that advances, bank its evidence and open obligations as the next checkpoint, and start the repair lane behind any HIT. |
 
@@ -300,59 +232,68 @@ Gen3 seeks attributable quantum advantage over credible AI-only and classical al
 
 </details>
 
-<a id="what-the-public-research-found"></a>
+<a id="research-sources"></a>
+<a id="attack-chain-coverage"></a>
 
-## Banked scientific results
+<a id="mitre-attck-chain-library"></a>
 
-**Published outcomes with linked notes, data, and limits.** “Banked” means the result and its evidence are retained.
+### Where the pins come from: the ATT&CK chain library
 
-<table>
-  <tr>
-    <td width="50%" valign="top"><a href="docs/research/charls-q3.md"><img src="docs/assets/readme-start-q3.svg" width="100%" alt="CharLS Q3: 24 of 24 protected tests passed, eight new passes, and no earlier passes lost."></a></td>
-    <td width="50%" valign="top"><a href="docs/research/gen3-qpack-experiment1.md"><img src="docs/assets/card-qpack.svg" width="100%" alt="QPACK: five of eight controlled faults found with feedback, versus two of eight without feedback."></a></td>
-  </tr>
-</table>
+**424 modeled chains · 18 routing buckets · October 10, 2026 V16 registry snapshot**
 
-| Study | Recorded result | What it shows |
-| :--- | :--- | :--- |
-| **[CharLS Q3 repair](docs/research/charls-q3.md)** | **16/24 → 24/24** protected passes; eight gained, all earlier passes retained | A dependent repair closed the remaining obligation on real C++ source with deliberately introduced faults. |
-| **[QPACK feedback study](docs/research/gen3-qpack-experiment1.md)** | **5/8** controlled faults found with feedback, versus **2/8** without it | Feedback helped in this exploratory campaign. The adaptive classical comparison was incomplete; quantum-selector benefit was not isolated. |
+A pin is only as good as the model behind it. Every candidate chain Crucible fans out is built from this library, which connects steps, prerequisites, and source references into models of how weaknesses can combine. The map shows the [15 current MITRE ATT&CK Enterprise tactics](https://attack.mitre.org/tactics/) alongside Aether's AI injection, [MCP](https://owasp.org/www-project-mcp-top-10/), and memory-safety research areas. Predator's routing labels are maintained separately from MITRE's tactic names. When Crucible opens a chain, that chain's steps are the proposal a worker tests.
 
-The CharLS and QPACK studies used deliberately introduced faults. A newly discovered CVE finding has not been published. Discovery, matched comparisons, and quantum advantage remain active research objectives.
+<p align="center">
+  <img src="docs/assets/attack-buckets-v16.svg" width="960" alt="Predator research map: 424 modeled chains, 15 MITRE ATT&amp;CK Enterprise tactic labels, 18 routing buckets, and separate Aether areas for AI injection, MCP Top 10, and memory-safety primitives. GX Gemini CLI, GLX GitLab Duo, and AX Anthropic SDK are case-family labels only."><br>
+  <sub><a href="docs/assets/attack-buckets-v16.svg">Open the full-size research map</a> · GX, GLX, and AX are public case-family labels; no exploit steps are shown.</sub>
+</p>
 
-<a id="joint5-compiler-the-ibm-fez-hardware-result"></a>
-
-### joint5: IBM Fez compiler pilot
-
-The **AQRC joint5** pilot compared ordinary and joint5 compilation on IBM Fez: one six-variable fixture, two poles, four circuits, and 1,024 shots per circuit in one hardware job.
-
-| Measurement | Ordinary → joint5 | Change |
-| :--- | :--- | :--- |
-| Native two-qubit gates, each pole | **144 → 103** | **28.5% fewer** |
-| Distance from ideal output, vulnerable pole | **0.3952 → 0.3165** | **19.9% lower** |
-| Distance from ideal output, fixed pole | **0.4039 → 0.3080** | **23.7% lower** |
-
-Lower total-variation distance means closer agreement with the ideal output distribution. **Expected energy worsened on both poles.** The pilot records one acquisition without independent confirmation. Improved minimization and quantum advantage remain unestablished.
-
-[Measurements and uncertainty →](docs/research/ibm-fez-pilot.md) · [Full-precision data →](docs/research/ibm-pilot.json)
-
-<a id="the-operator-workspace"></a>
-
-## Predator features
-
-The private **Predator CLI** brings research, tools, and persistent evidence into one conversation. Choose an available Aether model, keep each run attached to its sources and approved scope, and continue from saved work.
-
-| Capability | What it does |
+| What a chain contains | Why it helps |
 | :--- | :--- |
-| **Research and Drive** | Cross-reference chains and CVEs, review candidates, and run approved investigation and validation stages. |
-| **CodePro fanout** | Give parallel workers relevant context and bring their analysis into one evidence trail. |
-| **Clean model worktrees** | Keep each model run in its own Git worktree, with pinned source and attributed artifacts. |
-| **Unlimited Context** | Retrieve sources, notes, counterexamples, and open questions across sessions and models. |
-| **Predator RC** | Follow browser and CLI activity through an encrypted relay, take over, and hand control back. |
-| **[P-BOX](#p-box)** | Spawn a disposable Linux pwnbox for a confirmed mission, with live viewing, operator control, and automatic cleanup. |
-| **Guest consoles** | Work through supported Pwnbox/noVNC sessions or an owned VM in an authorized training lab. |
+| **Connected steps** | Show how a proposed path depends on earlier conditions. |
+| **Prerequisites and references** | Keep the model tied to stated assumptions and cited sources. |
+| **Routing category** | Organize the review around the relevant research surface. |
 
-**Predator runs fanout through CodePro.** Context retrieval supplies relevant material to parallel workers. The **System-2 shared intermediate representation (IR)** gives their analysis a common structure for consolidation into the evidence trail, within the approved scope and budget.
+<a id="research-mode-start-with-a-chain-follow-the-cves"></a>
+
+**Research mode** follows chain and CVE references to develop cited hypotheses, counterexamples, and proposed extensions; it is the c-stage of a pin. Source review and appropriate checks on the software must establish observed behavior before a modeled path becomes a finding.
+
+#### AX · Anthropic SDK
+
+AX001, AX002, and AX003 mark conditional local research paths with **Collection**, **Credential Access**, and **Execution** tactic lenses. The paths share one underlying trust boundary and are shown separately in the [Anthropic research card](docs/assets/anthropic-sdk-crucible-private.svg). The public map does not claim a sequential exploit, a deployed integration, or a vendor-confirmed finding.
+
+<a id="cve-research-catalog"></a>
+
+### CVE catalog and database
+
+**The vulnerability records the chains anchor to.**
+
+Alongside the chain library, Predator maintains a catalog of CVE records, affected products, advisories, problem types, and scoring data. CVE IDs connect those records to chain anchors so an investigation can follow the underlying evidence.
+
+| Part of the catalog | What it contributes |
+| :--- | :--- |
+| **CVE source records** | [CVE JSON 5.x](https://github.com/CVEProject/cvelistV5) imports and affected-product information. |
+| **Separate enrichment** | NVD, CISA KEV, and FIRST EPSS data alongside the source records. |
+| **Research review** | Deep-cycle integration reads shortlisted full CVE cards before ranking and records what was reviewed. |
+
+<a id="cross-reference-in-research-mode-and-drive"></a>
+
+**Drive** uses the approved mission's pinned evidence for investigation and validation. Catalog coverage and freshness depend on completed imports and pinned snapshots.
+
+<a id="codepro-and-system-2"></a>
+<a id="the-operator-workspace"></a>
+<a id="predator-features"></a>
+
+## CodePro and System-2: how the fanout runs
+
+**Many workers, one evidence trail.** When Crucible fans out, it needs a way to give several workers the right context at once and to read their answers back as one record. That is CodePro.
+
+| Part | What it does, in plain terms |
+| :--- | :--- |
+| **CodePro fanout** | Starts parallel workers for one checkpoint, each with the slice of source, chains, and notes it needs, inside the approved scope and budget. |
+| **System-2 shared IR** | Every worker writes its analysis in the same intermediate representation, so claims, evidence references, and open questions from different workers line up and can be consolidated without rewriting them. |
+| **Clean model worktrees** | Each model run lives in its own Git worktree with pinned source, so an artifact can always be traced to the exact revision and model that produced it. |
+| **[Unlimited Context (UCL)](https://github.com/AetherAI3/Unlimited-Context-LLM)** | Keeps source-backed evidence in named memory pools across sessions and models. “Unlimited” describes retrieval reach: relevant slices enter the model’s normal attention window. |
 
 <details>
 <summary><strong>CodePro implementation links</strong></summary>
@@ -365,7 +306,16 @@ The private **Predator CLI** brings research, tools, and persistent evidence int
 
 <a id="clean-worktrees-and-unlimited-context"></a>
 
-**[Unlimited Context (UCL)](https://github.com/AetherAI3/Unlimited-Context-LLM)** keeps source-backed evidence in named memory pools across sessions. Each model branch retains its own notes. “Unlimited” describes retrieval reach: relevant slices enter the model’s normal attention window. Restart checks verify the task, worktree, and memory-pool identity.
+### The private CLI around it
+
+The private **Predator CLI** brings research, tools, and persistent evidence into one conversation. Choose an available Aether model, keep each run attached to its sources and approved scope, and continue from saved work. Restart checks verify the task, worktree, and memory-pool identity.
+
+| Capability | What it does |
+| :--- | :--- |
+| **Research and Drive** | Cross-reference chains and CVEs, review candidates, and run approved investigation and validation stages. |
+| **Predator RC** | Follow browser and CLI activity through an encrypted relay, take over, and hand control back. |
+| **[P-BOX](#p-box)** | Spawn a disposable Linux pwnbox for a confirmed mission, with live viewing, operator control, and automatic cleanup. |
+| **Guest consoles** | Work through supported Pwnbox/noVNC sessions or an owned VM in an authorized training lab. |
 
 <a id="predator-rc-browser-views-and-ctf-work"></a>
 
@@ -377,6 +327,50 @@ Supported Pwnbox/noVNC sessions have recorded attachment, observation, reviewed 
 RC is in controlled private preview. The production viewer and relay have been exercised in an owner validation; the complete sign-in, mission selection, and controller hand-back journey remains under validation. Browser and guest sessions require a fresh check after interruption.
 
 </details>
+
+<a id="joint5-compiler-the-ibm-fez-hardware-result"></a>
+
+## joint5 compiler and the IBM Fez result
+
+**What the compiler does.** A Q step in the loop is a QUBO: a set of yes/no choices with a cost to minimize. Before a quantum simulator or a real device can sample it, **AQRC** compiles that problem into a circuit. **joint5** is AQRC's alternative compilation path. A better compilation uses fewer native gates and gives output closer to the ideal distribution; it does not by itself find a better answer.
+
+**What was measured.** The joint5 pilot compared ordinary and joint5 compilation on IBM Fez: one six-variable fixture, its vulnerable and fixed poles, four circuits, and 1,024 shots per circuit in one hardware job (3 seconds of billed QPU time).
+
+| Measurement | Ordinary → joint5 | Change |
+| :--- | :--- | :--- |
+| Native two-qubit gates, each pole | **144 → 103** | **28.5% fewer** |
+| Distance from ideal output, vulnerable pole | **0.3952 → 0.3165** | **19.9% lower** |
+| Distance from ideal output, fixed pole | **0.4039 → 0.3080** | **23.7% lower** |
+
+Lower total-variation distance means closer agreement with the ideal output distribution. **Expected energy worsened on both poles.** The pilot records one acquisition without independent confirmation. Improved minimization and quantum advantage remain unestablished.
+
+[Measurements and uncertainty →](docs/research/ibm-fez-pilot.md) · [Full-precision data →](docs/research/ibm-pilot.json)
+
+<a id="gen3-oss"></a>
+<a id="what-the-public-research-found"></a>
+<a id="banked-scientific-results"></a>
+
+## Gen3 OSS: banked scientific results
+
+**Two open-source test cases, published with their data and their limits.** CharLS and QPACK carry deliberately introduced faults, so the loop can be scored against a known answer. “Banked” means the result and its evidence are retained and can be checked.
+
+<table>
+  <tr>
+    <th width="50%">CharLS Q3 repair</th>
+    <th width="50%">QPACK feedback study</th>
+  </tr>
+  <tr>
+    <td width="50%" valign="top"><a href="docs/research/charls-q3.md"><img src="docs/assets/readme-start-q3.svg" width="100%" alt="CharLS Q3: 24 of 24 protected tests passed, eight new passes, and no earlier passes lost."></a></td>
+    <td width="50%" valign="top"><a href="docs/research/gen3-qpack-experiment1.md"><img src="docs/assets/card-qpack.svg" width="100%" alt="QPACK: five of eight controlled faults found with feedback, versus two of eight without feedback."></a></td>
+  </tr>
+</table>
+
+| Study | Recorded result | What it shows |
+| :--- | :--- | :--- |
+| **[CharLS Q3 repair](docs/research/charls-q3.md)** | **16/24 → 24/24** protected passes; eight gained, all earlier passes retained | The ratchet working as described above: a dependent repair at depth 3 closed the obligation left by depth 2, on real C++ source, without dropping a single earlier pass. |
+| **[QPACK feedback study](docs/research/gen3-qpack-experiment1.md)** | **5/8** controlled faults found with feedback, versus **2/8** without it | A second pass at the pins, informed by the first pass's native checks, found more than one pass alone in this exploratory campaign. The adaptive classical comparison was incomplete, so the quantum selector's own contribution was not isolated. |
+
+Both studies used deliberately introduced faults. A newly discovered CVE finding has not been published. Discovery, matched comparisons, and quantum advantage remain active research objectives.
 
 ## Ways to work with Aether
 
@@ -425,7 +419,8 @@ Help build the CLI, repair chains, verification tools, or classical/quantum comp
 | :--- | :--- |
 | **[P-BOX feature showcase](#p-box)** | VM lifecycle, operator control, and recorded guest session |
 | **[HTB training evidence](docs/htb/README.md)** | Courses, tracks, machines, certificates, and replay index |
-| **[MITRE chains](#mitre-attck-chain-library) and [CVE catalog](#cve-research-catalog)** | Research models and linked vulnerability source records |
+| **[Crucible](#crucible-adaptive-quantum-threat-modeling)** | The loop explained as a lockpick, with [MITRE chains](#mitre-attck-chain-library) and the [CVE catalog](#cve-research-catalog) it draws on |
+| **[CodePro and System-2](#codepro-and-system-2)** | How the fanout runs, and the private CLI around it |
 | **[CharLS Q3](docs/research/charls-q3.md)** | [Public data](docs/research/charls-q3.json) and the completed dependent repair |
 | **[QPACK study](docs/research/gen3-qpack-experiment1.md)** | [Episode data](docs/research/gen3-qpack-experiment1.json), comparisons, and missing outcomes |
 | **[joint5 IBM Fez pilot](docs/research/ibm-fez-pilot.md)** | [Public data](docs/research/ibm-pilot.json), uncertainty, and the energy regression |
