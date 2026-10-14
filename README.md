@@ -237,48 +237,66 @@ Predator maintains a separate catalog of CVE records, affected products, advisor
 
 ## Crucible: adaptive quantum threat modeling
 
-**Model a threat path, test a candidate, and carry the evidence forward.**
+**Think of a lockpick. Hold tension, test one pin at a time, and keep every pin that sets.**
 
-Crucible is Predator's software research and repair loop. It starts with a pinned source revision, a defined question, and fixed acceptance checks. AI reasoning develops candidate threat paths and repairs; adaptive compilation expresses their choices and constraints for hybrid classical/quantum search. Checks on the software establish what each candidate actually does.
+Crucible is Predator's software research and repair loop. It starts with a pinned source revision, a defined question, and fixed acceptance checks. The easiest way to understand how it moves is the way a lock gets picked: one hand holds tension so nothing already gained can slip, the other hand tests pins until one clicks, and a pin that sets stays set while the next one is worked.
+
+<p align="center">
+  <img src="docs/assets/crucible-lockpick.svg" width="960" alt="Crucible explained as a lockpick. A master checkpoint holds tension. It fans out into four small chains, each a pin: an AI proposal, a native check on the software, and a quantum-method selection. Three chains end in REJECT and one in HIT. JEV triage and a master Q selection choose the chain that advances. The winner's evidence and open obligations become the next checkpoint, a repair lane runs behind the HIT, and the loop continues to the next depth. Visual by Mythos 5.1."><br>
+  <sub>One depth step of the loop, drawn as a lockpick. Visual by Mythos 5.1.</sub>
+</p>
+
+### The lock, part by part
+
+| In the lock | In Crucible | What it does |
+| :--- | :--- | :--- |
+| **Tension wrench** | **Master checkpoint (C)** | Holds everything already verified: signed evidence, the passes that must not be lost, and the obligations still open. Nothing below it can undo what it holds. |
+| **Pins** | **CFC chains** | From one checkpoint the loop fans out many small, cheap candidates. Each chain is its own little stack: an AI proposal (**c**), a check on the real software, and a quantum-method selection (**q**). |
+| **The click** | **Native check** | The software itself says whether a pin set. A chain with no native receipt did not click, whatever the model thought of it. |
+| **A set pin** | **HIT** | Banked with its evidence. A pin that drops is a **REJECT**; it stays in the record so nobody tests it the same way twice. |
+| **Choosing the next pin** | **JEV triage + master Q selection** | Which pin is binding right now is chosen from verified chain energies and native outcomes. When configured, [Jev](https://docs.typesafe.ai/introduction) gives structured, advisory triage; the master **Q** step makes the selection. |
+| **Working the set pin** | **Repair lane** | Behind every HIT a fix is proposed and checked the same way, while the loop keeps going deeper on the next pin. |
 
 ### What happens in one cycle
 
 | Step | What happens |
 | :--- | :--- |
-| **Pin** | Freeze the source revision, scope, evidence, and acceptance checks. |
-| **Model** | Compile candidate choices and constraints into a **QUBO**, a binary optimization model with a cost to minimize. |
+| **Pin** | Freeze the source revision, scope, evidence, and acceptance checks. This is the tension. |
+| **Fan out** | Open several small candidate chains from the checkpoint. Each proposes a threat path or repair. |
+| **Model** | Compile each chain's choices and constraints into a **QUBO**, a binary optimization model with a cost to minimize. |
 | **Search** | Use the recorded solver to select a candidate, identifying simulation or quantum hardware and its classical comparison. |
-| **Validate** | Check the software, retain passes and failures, and save the evidence for a separately approved continuation. |
+| **Validate** | Check the software. Retain passes and failures. Chains end in HIT or REJECT. |
+| **Select and carry** | Choose the chain that advances, bank its evidence and open obligations as the next checkpoint, and start the repair lane behind any HIT. |
 
 <a id="the-compounding-loop"></a>
 <a id="the-compounding-loop-quantum-depth-over-ratchet-cycles"></a>
 
 ### Quantum depth
 
-The compounding loop uses each checkpoint's evidence and unresolved work to shape the next intervention. A failed check can reveal a missing constraint or a remaining repair obligation.
+Each cycle leaves a checkpoint, and each checkpoint seeds the next intervention. A failed check is not wasted: it can reveal a missing constraint or a repair obligation that shapes the next pin.
 
 **C0 → Q1 → C1 → Q2 → C2 → Q3 → C3**
 
 | Label | Meaning |
 | :--- | :--- |
-| **C** | A saved evidence checkpoint. |
-| **Q** | A quantum-method intervention built from its parent evidence. |
-| **Quantum depth** | The number of dependent interventions in the chain; circuit depth measures the circuit within one intervention. |
+| **C** | A saved evidence checkpoint. The tension at that depth. |
+| **Q** | A quantum-method intervention built from its parent evidence. One pass at the pins. |
+| **Quantum depth** | How many dependent interventions have run in the chain. Circuit depth is a different number: the size of the circuit inside one intervention. |
 
-The **ratchet** preserves verified earlier results while checking the next candidate. Failed candidates stay in the record. In the [CharLS case](docs/research/charls-q3.md), Q3 used C2's remaining repair obligation to move from **16/24 to 24/24** protected test passes, retaining all 16 earlier passes.
+The **ratchet** is the rule that a set pin stays set. Verified earlier results are preserved while the next candidate is checked, and failed candidates stay in the record. In the [CharLS case](docs/research/charls-q3.md), Q3 used C2's remaining repair obligation to move from **16/24 to 24/24** protected test passes, retaining all 16 earlier passes.
 
 [Research roadmap →](docs/research/generations.md)
 
 <details>
 <summary><strong>Methods, evidence, and current limits</strong></summary>
 
-QUBO stands for quadratic unconstrained binary optimization. Its energy is the modeled cost to minimize; a candidate still needs checks on the software.
+QUBO stands for quadratic unconstrained binary optimization. Its energy is the modeled cost to minimize; a low energy is a reason to test a candidate, not proof that it works. Only the native check on the software sets a pin.
 
-The public CharLS and QPACK studies used quantum-circuit simulation. The [joint5 pilot](docs/research/ibm-fez-pilot.md) supplies a separate hardware record. When configured, [Jev](https://docs.typesafe.ai/introduction) provides structured triage; its use is recorded per run.
+The public CharLS and QPACK studies used quantum-circuit simulation. The [joint5 pilot](docs/research/ibm-fez-pilot.md) supplies a separate hardware record. When configured, [Jev](https://docs.typesafe.ai/introduction) provides structured triage; its use is recorded per run and it never terminates a chain on its own.
 
-Signed custody binds research stages to source and artifacts. Live signed acceptance and variable-depth custody remain under validation. Each continuation needs its own scope, budget, and admission.
+Signed custody binds research stages to source and artifacts. Live signed acceptance, server-side stage minting, and variable-depth custody remain under validation. Each continuation needs its own scope, budget, and admission.
 
-Gen3 seeks attributable quantum advantage over credible AI-only and classical alternatives, with matched resources and independent replication. Quantum advantage and a measured Jev contribution remain unestablished.
+Gen3 seeks attributable quantum advantage over credible AI-only and classical alternatives, with matched resources and independent replication. Quantum advantage and a measured Jev contribution remain unestablished. The lockpick figure illustrates the loop's control structure; it is not a measurement, a severity, or a claim of advantage.
 
 </details>
 
