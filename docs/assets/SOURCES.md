@@ -1,5 +1,9 @@
 # README visual sources
 
+## October 13 Crucible lockpick figure
+
+- **crucible-lockpick.svg** — self-contained editorial figure built by `build_crucible_lockpick.py` (standard library only; run from the repository root). It explains one depth step of the Crucible loop as a lockpick: a master checkpoint (tension), a CFC fanout of small c / check / q chains (pins), the native check (the click), HIT and REJECT terminals, JEV triage, master Q selection, the next checkpoint and the repair lane. The four chains and their outcomes are illustrative; the figure shows control structure, not a measured run, a severity, or a claim of quantum advantage. It contains no scripts, external images, embedded fonts, private identifiers, or research data. Credited on the figure as "Visual by Mythos 5.1".
+
 ## October 10 ATT&CK and Aether research-bucket map
 
 - **attack-buckets-v16.svg** is the current self-contained editorial catalog map built by `build_attack_buckets.py`. Its 15 tactic names and IDs follow the [MITRE ATT&CK Enterprise tactics](https://attack.mitre.org/tactics/) as checked October 10, 2026. The 424 modeled chains and 18 Predator routing buckets are from the pinned private V16 registry snapshot. The three Aether areas summarize its custom research selectors. GX Gemini CLI, GLX GitLab Duo, and AX Anthropic SDK are public case-family names only; the map contains no private chain transitions, payloads, report details, or credential material. Its cards do not imply a verified attack sequence, measured severity, or a one-to-one mapping between Predator selectors and MITRE tactics. The previous `attack-buckets-v15.svg` remains as a dated snapshot.
