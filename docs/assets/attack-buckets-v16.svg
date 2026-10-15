@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1080" viewBox="0 0 1600 1080" role="img" aria-labelledby="title desc">
 <title id="title">Predator ATT&amp;CK and Aether research buckets</title>
-<desc id="desc">A public catalog overview: 424 modeled chains in 18 Predator routing buckets; 15 MITRE ATT&amp;CK Enterprise tactic labels; three Aether research areas for AI injection, MCP Top 10, and memory-safety primitives. GX Gemini CLI, GLX GitLab Duo, and AX Anthropic SDK are named as case families only. No exploit details are shown.</desc>
+<desc id="desc">A public catalog overview: 424 source-bank chains in 18 Predator routing buckets; 15 MITRE ATT&amp;CK Enterprise tactic labels; three Aether research areas for AI injection, MCP Top 10, and memory-safety primitives. GX Gemini CLI, GLX GitLab Duo, and AX Anthropic SDK are named as case families only. No exploit details are shown.</desc>
 <defs>
 <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset=".56" stop-color="#0b1830"/><stop offset="1" stop-color="#100c22"/></linearGradient>
 <linearGradient id="topLine"><stop stop-color="#2dd4ef"/><stop offset=".52" stop-color="#8877f8"/><stop offset="1" stop-color="#58e6ba"/></linearGradient>
@@ -18,7 +18,7 @@
 <text x="56" y="177" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="#a9bbd0">MITRE Enterprise tactics and Aether research buckets, shown as separate catalog lenses.</text>
 <rect x="54" y="205" width="476" height="93" rx="16" fill="#102038" fill-opacity=".90" stroke="#80e7f5" stroke-opacity=".30"/>
 <text x="76" y="262" font-family="Arial,Helvetica,sans-serif" font-size="47" font-weight="800" fill="#80e7f5">424</text>
-<text x="179" y="258" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" letter-spacing="1.5" fill="#c7d4e7">MODELED CHAINS</text>
+<text x="179" y="258" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" letter-spacing="1.5" fill="#c7d4e7">BANKED CHAINS</text>
 <rect x="550" y="205" width="476" height="93" rx="16" fill="#102038" fill-opacity=".90" stroke="#b7a2ff" stroke-opacity=".30"/>
 <text x="572" y="262" font-family="Arial,Helvetica,sans-serif" font-size="47" font-weight="800" fill="#b7a2ff">15</text>
 <text x="675" y="258" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" letter-spacing="1.5" fill="#c7d4e7">MITRE ENTERPRISE TACTICS</text>

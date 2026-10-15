@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <a href="#attack-chain-coverage"><img src="docs/assets/badge-attack-chains.svg" height="32" alt="424 modeled Gen3 attack chains"></a>
+  <a href="#attack-chain-coverage"><img src="docs/assets/badge-attack-chains.svg" height="32" alt="424 source-bank Gen3 chains"></a>
   <a href="#live-predator-red-team"><img src="docs/assets/badge-scoped-work.svg" height="32" alt="Scope before testing"></a>
   <a href="#the-cli-crucible-and-the-research-loop"><img src="docs/assets/badge-gen3-research.svg" height="32" alt="Gen3 research is active"></a>
 </p>
@@ -17,7 +17,7 @@
 
 **AI security research, software repair, and authorized VM workflows.**
 
-Predator brings AI reasoning, persistent context, and reviewed tool use into security research and software repair. Its research engine, **Crucible**, works like a lockpick: it holds verified evidence steady, fans out many small candidate chains, tests each one against the real software, and keeps only what sets. Candidate choices are compiled into **hybrid classical/quantum search**; the software itself decides what counts.
+Predator brings AI reasoning, persistent context, and reviewed tool use into security research and software repair. Its research engine, **Crucible**, works like a lockpick: it holds verified evidence steady, proposes candidate chains, checks them against the real software, and banks only supported results. A QUBO can rank the next test; the recorded solver and native result determine what actually ran and what was established. Quantum simulation or hardware is identified only for runs that used it.
 
 This is the **public feature showcase and evidence collection**. The CLI and operator engines are private, with [reviewed research access](#developers-join-the-research-program).
 
@@ -178,16 +178,18 @@ Crucible is Predator's software research and repair loop. It starts with a pinne
   <sub>One depth step of the loop, drawn as a lockpick. Visual by Mythos 5.1.</sub>
 </p>
 
+The four pins illustrate a **research design**, not four measured workers or native checks in every run. The [execution and evidence guide](docs/research/crucible-evidence-contract.md) separates the CFC selector, an admitted exploit ratchet, and manual research. A model score, a worker proposal, and a native result are different records.
+
 ### The lock, part by part
 
 | In the lock | In Crucible | What it does |
 | :--- | :--- | :--- |
 | **Tension wrench** | **Master checkpoint (C)** | Holds everything already verified: signed evidence, the passes that must not be lost, and the obligations still open. Nothing below it can undo what it holds. |
-| **Pins** | **CFC chains** | From one checkpoint the loop fans out many small, cheap candidates. Each chain is its own little stack: an AI proposal (**c**), a check on the real software, and a quantum-method selection (**q**). |
+| **Pins** | **Candidate chains** | Fanout proposes alternatives from a checkpoint. A proposal and its QUBO ranking do not imply that a native check ran. |
 | **The click** | **Native check** | The software itself says whether a pin set. A chain with no native receipt did not click, whatever the model thought of it. |
-| **A set pin** | **HIT** | Banked with its evidence. A pin that drops is a **REJECT**; it stays in the record so nobody tests it the same way twice. |
-| **Choosing the next pin** | **JEV triage + master Q selection** | Which pin is binding right now is chosen from verified chain energies and native outcomes. When configured, [Jev](https://docs.typesafe.ai/introduction) gives structured, advisory triage; the master **Q** step makes the selection. |
-| **Working the set pin** | **Repair lane** | Behind every HIT a fix is proposed and checked the same way, while the loop keeps going deeper on the next pin. |
+| **A set pin** | **HIT** | Banked only with an appropriate native receipt. Misses, refutations, and inconclusive results stay in the record with their limits. |
+| **Choosing the next pin** | **QUBO selection and evidence gate** | A modeled energy can rank a test; native outcomes determine what is supported. Where admitted, JEV checks the evidence packet. Its decision is not an independent software result. |
+| **Working the set pin** | **Repair lane** | Pair a supported attack observation with a repair hypothesis and regression plan. A fix counts as validated only after its own check. |
 
 ### What happens in one cycle
 
@@ -195,10 +197,10 @@ Crucible is Predator's software research and repair loop. It starts with a pinne
 | :--- | :--- |
 | **Pin** | Freeze the source revision, scope, evidence, and acceptance checks. This is the tension. |
 | **Fan out** | Open several small candidate chains from the checkpoint. Each proposes a threat path or repair. |
-| **Model** | Compile each chain's choices and constraints into a **QUBO**, a binary optimization model with a cost to minimize. |
-| **Search** | Sample the model with the recorded solver, on a simulator or on quantum hardware, next to its classical comparison, and pick a candidate. |
-| **Validate** | Check the software. Retain passes and failures. Chains end in HIT or REJECT. |
-| **Select and carry** | Choose the chain that advances, bank its evidence and open obligations as the next checkpoint, and start the repair lane behind any HIT. |
+| **Model** | State the target facts, candidate choices, constraints, and provenance. A bounded QUBO can rank tests; not every library chain has a populated energy profile. |
+| **Search** | Record the solver actually used. A classical minimum is one valid selection method; a simulator or quantum device is a separate, explicitly evidenced run. |
+| **Validate** | Run the admitted native check and retain its receipt. A proposal without that check remains a hypothesis. Record HIT, miss, refutation, or inconclusive outcome accurately. |
+| **Select and carry** | Carry the supported evidence and open obligations into the next checkpoint. Pair an attack observation with a repair record; verify the repair separately. |
 
 <a id="the-compounding-loop"></a>
 <a id="the-compounding-loop-quantum-depth-over-ratchet-cycles"></a>
@@ -212,10 +214,10 @@ Each cycle leaves a checkpoint, and each checkpoint seeds the next intervention.
 | Label | Meaning |
 | :--- | :--- |
 | **C** | A saved evidence checkpoint. The tension at that depth. |
-| **Q** | A quantum-method intervention built from its parent evidence. One pass at the pins. |
-| **Quantum depth** | How many dependent interventions have run in the chain. Circuit depth is a different number: the size of the circuit inside one intervention. |
+| **Q** | A dependent quantum-method intervention when one actually ran. Manual C/Q shorthand can label research stages, but the label alone is not an execution receipt. |
+| **Quantum depth** | How many evidenced, dependent quantum-method interventions ran in one chain. Circuit depth is a different number: the size of the circuit inside one intervention. |
 
-The **ratchet** is the rule that a set pin stays set. Verified earlier results are preserved while the next candidate is checked, and failed candidates stay in the record. In the [CharLS case](docs/research/charls-q3.md), Q3 used C2's remaining repair obligation to move from **16/24 to 24/24** protected test passes, retaining all 16 earlier passes.
+The **ratchet** is the rule that verified earlier results and negative evidence remain visible while the next candidate is checked. It does not guarantee that a later candidate will pass. In the [CharLS case](docs/research/charls-q3.md), Q3 used C2's remaining repair obligation to move from **16/24 to 24/24** protected test passes, retaining all 16 earlier passes.
 
 [Research roadmap →](docs/research/generations.md)
 
@@ -239,12 +241,12 @@ Gen3 seeks attributable quantum advantage over credible AI-only and classical al
 
 ### Where the pins come from: the ATT&CK chain library
 
-**424 modeled chains · 18 routing buckets · October 10, 2026 V16 registry snapshot**
+**424 source-bank chains · 18 routing buckets · October 10, 2026 V16 registry snapshot**
 
-A pin is only as good as the model behind it. Every candidate chain Crucible fans out is built from this library, which connects steps, prerequisites, and source references into models of how weaknesses can combine. The map shows the [15 current MITRE ATT&CK Enterprise tactics](https://attack.mitre.org/tactics/) alongside Aether's AI injection, [MCP](https://owasp.org/www-project-mcp-top-10/), and memory-safety research areas. Predator's routing labels are maintained separately from MITRE's tactic names. When Crucible opens a chain, that chain's steps are the proposal a worker tests.
+A pin is only as good as its source and test. The library provides chain definitions, prerequisites, and references for candidate generation; a new source-grounded hypothesis can also be proposed. The 424 count is **catalog coverage**, not 424 tested exploits or 424 calibrated energy models. Most profile slots are explicitly unmodeled. The map shows the [15 current MITRE ATT&CK Enterprise tactics](https://attack.mitre.org/tactics/) alongside Aether's AI injection, [MCP](https://owasp.org/www-project-mcp-top-10/), and memory-safety research areas. Predator's routing labels are maintained separately from MITRE's tactic names.
 
 <p align="center">
-  <img src="docs/assets/attack-buckets-v16.svg" width="960" alt="Predator research map: 424 modeled chains, 15 MITRE ATT&amp;CK Enterprise tactic labels, 18 routing buckets, and separate Aether areas for AI injection, MCP Top 10, and memory-safety primitives. GX Gemini CLI, GLX GitLab Duo, and AX Anthropic SDK are case-family labels only."><br>
+  <img src="docs/assets/attack-buckets-v16.svg" width="960" alt="Predator research map: 424 source-bank chains, 15 MITRE ATT&amp;CK Enterprise tactic labels, 18 routing buckets, and separate Aether areas for AI injection, MCP Top 10, and memory-safety primitives. GX Gemini CLI, GLX GitLab Duo, and AX Anthropic SDK are case-family labels only."><br>
   <sub><a href="docs/assets/attack-buckets-v16.svg">Open the full-size research map</a> · GX, GLX, and AX are public case-family labels; no exploit steps are shown.</sub>
 </p>
 
@@ -290,9 +292,9 @@ Alongside the chain library, Predator maintains a catalog of CVE records, affect
 
 | Part | What it does, in plain terms |
 | :--- | :--- |
-| **CodePro fanout** | Starts parallel workers for one checkpoint, each with the slice of source, chains, and notes it needs, inside the approved scope and budget. |
-| **System-2 shared IR** | Every worker writes its analysis in the same intermediate representation, so claims, evidence references, and open questions from different workers line up and can be consolidated without rewriting them. |
-| **Clean model worktrees** | Each model run lives in its own Git worktree with pinned source, so an artifact can always be traced to the exact revision and model that produced it. |
+| **CodePro fanout** | In an admitted run, starts scoped workers and records each returned claim and provider receipt. A manual research turn or unavailable dispatch path is not a completed fanout. |
+| **System-2 shared IR** | Aligns claims, evidence references, and open questions from workers that use the same intermediate representation. |
+| **Clean model worktrees** | Source-backed runs can isolate model work in pinned Git worktrees. The run record identifies the actual checkout and revision rather than assuming isolation. |
 | **[Unlimited Context (UCL)](https://github.com/AetherAI3/Unlimited-Context-LLM)** | Keeps source-backed evidence in named memory pools across sessions and models. “Unlimited” describes retrieval reach: relevant slices enter the model’s normal attention window. |
 
 <details>

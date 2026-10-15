@@ -38,7 +38,7 @@ CUSTOM = [
 parts = [
     '<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1080" viewBox="0 0 1600 1080" role="img" aria-labelledby="title desc">',
     '<title id="title">Predator ATT&amp;CK and Aether research buckets</title>',
-    '<desc id="desc">A public catalog overview: 424 modeled chains in 18 Predator routing buckets; 15 MITRE ATT&amp;CK Enterprise tactic labels; three Aether research areas for AI injection, MCP Top 10, and memory-safety primitives. GX Gemini CLI, GLX GitLab Duo, and AX Anthropic SDK are named as case families only. No exploit details are shown.</desc>',
+    '<desc id="desc">A public catalog overview: 424 source-bank chains in 18 Predator routing buckets; 15 MITRE ATT&amp;CK Enterprise tactic labels; three Aether research areas for AI injection, MCP Top 10, and memory-safety primitives. GX Gemini CLI, GLX GitLab Duo, and AX Anthropic SDK are named as case families only. No exploit details are shown.</desc>',
     '<defs>',
     '<linearGradient id="bg" x2="1" y2="1"><stop stop-color="#07111f"/><stop offset=".56" stop-color="#0b1830"/><stop offset="1" stop-color="#100c22"/></linearGradient>',
     '<linearGradient id="topLine"><stop stop-color="#2dd4ef"/><stop offset=".52" stop-color="#8877f8"/><stop offset="1" stop-color="#58e6ba"/></linearGradient>',
@@ -57,7 +57,7 @@ parts = [
 ]
 
 for x, value, label, color in [
-    (54, "424", "MODELED CHAINS", "#80e7f5"),
+    (54, "424", "BANKED CHAINS", "#80e7f5"),
     (550, "15", "MITRE ENTERPRISE TACTICS", "#b7a2ff"),
     (1046, "18", "PREDATOR ROUTING BUCKETS", "#8cf0c9"),
 ]:
