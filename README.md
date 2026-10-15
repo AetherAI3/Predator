@@ -178,7 +178,7 @@ Crucible is Predator's software research and repair loop. It starts with a pinne
   <sub>One depth step of the loop, drawn as a lockpick. Visual by Mythos 5.1.</sub>
 </p>
 
-The four pins illustrate a **research design**, not four measured workers or native checks in every run. The [execution and evidence guide](docs/research/crucible-evidence-contract.md) separates the CFC selector, an admitted exploit ratchet, and manual research. A model score, a worker proposal, and a native result are different records.
+The four pins illustrate a **research design**, not four measured workers or native checks in every run. The [execution and evidence guide](docs/research/crucible-evidence-contract.md) separates the CFC selector, an admitted exploit ratchet, and manual research. It also defines the minimum candidate record and the native effect needed for a zero-click claim. A model score, a worker proposal, and a native result are different records.
 
 ### The lock, part by part
 
