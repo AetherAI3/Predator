@@ -174,7 +174,7 @@ The saved evidence does not establish a deployed lower-trust writer route, Claud
 Crucible is Predator's software research and repair loop. It starts with a pinned source revision, a defined question, and fixed acceptance checks. The easiest way to picture it is a lock being picked: one hand holds tension so nothing already gained can slip, the other tests pins until one clicks, and a pin that sets stays set while the next one is worked.
 
 <p align="center">
-  <img src="docs/assets/crucible-lockpick.svg" width="960" alt="Crucible explained as a lockpick. A master checkpoint holds tension. It fans out into four small chains, each a pin: an AI proposal, a native check on the software, and a quantum-method selection. Three chains end in REJECT and one in HIT. JEV triage and a master Q selection choose the chain that advances. The winner's evidence and open obligations become the next checkpoint, a repair lane runs behind the HIT, and the loop continues to the next depth. Visual by Mythos 5.1."><br>
+  <img src="docs/assets/crucible-lockpick.svg" width="960" alt="Illustrative Crucible lockpick diagram. A checkpoint holds verified evidence while candidate chains fan out. Modeled energy ranks tests; a native software receipt is required before a candidate can become a HIT. If configured, JEV gives advisory triage. Supported evidence and open obligations feed the next checkpoint, while the repair is validated separately. The four pins are schematic, not four executed workers. Visual by Mythos 5.1."><br>
   <sub>One depth step of the loop, drawn as a lockpick. Visual by Mythos 5.1.</sub>
 </p>
 
@@ -334,7 +334,7 @@ RC is in controlled private preview. The production viewer and relay have been e
 
 ## joint5 compiler and the IBM Fez result
 
-**What the compiler does.** A Q step in the loop is a QUBO: a set of yes/no choices with a cost to minimize. Before a quantum simulator or a real device can sample it, **AQRC** compiles that problem into a circuit. **joint5** is AQRC's alternative compilation path. A better compilation uses fewer native gates and gives output closer to the ideal distribution; it does not by itself find a better answer.
+**What the compiler does.** In an AQRC run, a QUBO represents yes/no choices with a cost to minimize. Before a quantum simulator or a real device can sample it, **AQRC** compiles that problem into a circuit. **joint5** is AQRC's alternative compilation path. A better compilation uses fewer native gates and gives output closer to the ideal distribution; it does not by itself find a better answer.
 
 **What was measured.** The joint5 pilot compared ordinary and joint5 compilation on IBM Fez: one six-variable fixture, its vulnerable and fixed poles, four circuits, and 1,024 shots per circuit in one hardware job (3 seconds of billed QPU time).
 
