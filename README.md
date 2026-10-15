@@ -184,7 +184,7 @@ The four pins illustrate a **research design**, not four measured workers or nat
 
 | In the lock | In Crucible | What it does |
 | :--- | :--- | :--- |
-| **Tension wrench** | **Master checkpoint (C)** | Holds everything already verified: signed evidence, the passes that must not be lost, and the obligations still open. Nothing below it can undo what it holds. |
+| **Tension wrench** | **Master checkpoint (C)** | Holds verified evidence with its provenance, signatures where present, the passes that must not be lost, and obligations still open. A manual checkpoint is not signed merely because it has a C label. |
 | **Pins** | **Candidate chains** | Fanout proposes alternatives from a checkpoint. A proposal and its QUBO ranking do not imply that a native check ran. |
 | **The click** | **Native check** | The software itself says whether a pin set. A chain with no native receipt did not click, whatever the model thought of it. |
 | **A set pin** | **HIT** | Banked only with an appropriate native receipt. Misses, refutations, and inconclusive results stay in the record with their limits. |
@@ -228,7 +228,7 @@ QUBO stands for quadratic unconstrained binary optimization. Its energy is the m
 
 The public CharLS and QPACK studies used quantum-circuit simulation. The [joint5 pilot](docs/research/ibm-fez-pilot.md) supplies a separate hardware record. When configured, [Jev](https://docs.typesafe.ai/introduction) provides structured triage; its use is recorded per run and it never terminates a chain on its own.
 
-Signed custody binds research stages to source and artifacts. Live signed acceptance, server-side stage minting, and variable-depth custody remain under validation. Each continuation needs its own scope, budget, and admission.
+Where issued, signed custody binds research stages to source and artifacts. Manual research notes and C/Q labels are not signed receipts. Live signed acceptance, server-side stage minting, and variable-depth custody remain under validation. Each continuation needs its own scope, budget, and admission.
 
 Gen3 seeks attributable quantum advantage over credible AI-only and classical alternatives, with matched resources and independent replication. Quantum advantage and a measured Jev contribution remain unestablished. The lockpick figure illustrates the loop's control structure; it is not a measurement, a severity, or a claim of advantage.
 
