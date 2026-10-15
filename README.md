@@ -144,13 +144,13 @@ The two views show **one caller-calibrated model checkpoint**, with private atta
 
 ### GitLab Duo: private Crucible research
 
-Predator began an owner-controlled GitLab Duo research sprint on **October 9, 2026** and extended its manual Crucible record across the **C1 → Q48 checkpoint span**; the final isolated validation was recorded on **October 10 UTC**. The local result maps at the [MITRE ATT&CK](https://attack.mitre.org/tactics/) tactic level to **Execution → Credential Access → Exfiltration**. This is a research map of an owned test, not a claim about an attack on another user.
+Predator began an owner-controlled GitLab Duo research sprint on **October 9, 2026**. Its manual evidence record continued through **C129 on October 15**; the graphic below is an earlier **C1 → Q48 snapshot from October 10**, not the current end of the record. These labels identify research checkpoints, not executed quantum interventions or a paid CFC run. The local result maps at the [MITRE ATT&CK](https://attack.mitre.org/tactics/) tactic level to **Execution → Credential Access → Exfiltration**. This is a research map of an owned test, not a claim about an attack on another user.
 
 **Private findings: technical details have not been disclosed and no vulnerability report has been filed.** No severity or bounty has been assigned. The saved evidence does not establish zero-click execution or a sandbox escape.
 
 <p align="center">
   <img src="docs/assets/gitlab-duo-crucible-private.svg" width="960" alt="Aether AI Predator GitLab Duo private Crucible research, begun October 9, 2026. Manual C1 to Q48 checkpoint span and owner-controlled lab tactic map: Execution, Credential Access, Exfiltration. Not reported or technically disclosed."><br>
-  <sub>Owner-controlled validation · tactic names only · no reproduction steps, secrets, or third-party data</sub>
+  <sub>October 10 snapshot · owner-controlled validation · tactic names only · no reproduction steps, secrets, or third-party data</sub>
 </p>
 
 ### Anthropic SDK: private Crucible research
