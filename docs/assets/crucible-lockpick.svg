@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1120" viewBox="0 0 1280 1120" role="img" aria-labelledby="title description">
 <title id="title">Crucible explained as a lockpick: hold tension, test pins, keep what sets</title>
-<desc id="description">One Crucible depth step. A master checkpoint holds the verified state like a tension wrench. It fans out into several small chains, each a candidate pin: an AI proposal, a native check on the software, and a quantum-method selection. Chains end in HIT or REJECT. JEV triage and the master Q selection choose the chain that advances. The winner's evidence and open obligations become the next checkpoint; a repair lane runs behind each HIT. Failed chains stay in the record. This figure shows control structure, not a measured result.</desc>
+<desc id="description">Illustrative admitted Crucible validation cycle. A master checkpoint holds verified evidence. Fanout proposes candidate chains and a modeled score ranks tests. Only a native software receipt can support a HIT; untested proposals remain open. If configured, JEV provides advisory triage. Supported evidence and open obligations become the next checkpoint, with a separate repair hypothesis and check. This figure is not a record of four executed workers or measured quantum advantage.</desc>
 <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#adbbce"/></marker><marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#67dcb4"/></marker><marker id="arrow-purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#a78bfa"/></marker></defs>
 <rect x="1" y="1" width="1278" height="1118" rx="18" fill="#070d17" stroke="#2a3b51" stroke-width="1.5"/>
 <text x="48" y="52" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="700" fill="#67dcb4" text-anchor="start" letter-spacing="1">CRUCIBLE, EXPLAINED AS A LOCKPICK</text>
 <text x="48" y="108" font-family="Helvetica,Arial,sans-serif" font-size="40" font-weight="700" fill="#f2f6ff" text-anchor="start" >Hold tension, test pins, keep what sets</text>
-<text x="48" y="145" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="400" fill="#adbbce" text-anchor="start" >One depth step of the C → Q → C loop. Every pin is tested by a native check; the loop, not a person, picks the pin that advances.</text>
+<text x="48" y="145" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="400" fill="#adbbce" text-anchor="start" >Illustrative admitted cycle: model scores rank tests; only native receipts can support a HIT.</text>
 <rect x="48" y="190" width="352" height="640" rx="14" fill="#0f1928" stroke="#2a3b51" stroke-width="1.5"/>
 <text x="72" y="230" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#5fd1ff" text-anchor="start" letter-spacing="1">THE ANALOGY</text>
 <rect x="72" y="252" width="4" height="78" rx="2" fill="#5fd1ff"/>
@@ -15,9 +15,9 @@
 <text x="90" y="327" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="start" >cannot slip while the next pin is tested.</text>
 <rect x="72" y="344" width="4" height="78" rx="2" fill="#a78bfa"/>
 <text x="90" y="360" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#f2f6ff" text-anchor="start" >Pins</text>
-<text x="90" y="382" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#a78bfa" text-anchor="start" >CFC chains</text>
-<text x="90" y="402" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="start" >Many small, cheap candidates fanned out from</text>
-<text x="90" y="419" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="start" >one checkpoint, each a c / check / q stack.</text>
+<text x="90" y="382" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#a78bfa" text-anchor="start" >Candidate chains</text>
+<text x="90" y="402" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="start" >Fanout proposes alternatives from one</text>
+<text x="90" y="419" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="start" >checkpoint; tests need separate admission.</text>
 <rect x="72" y="436" width="4" height="78" rx="2" fill="#f5c26b"/>
 <text x="90" y="452" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#f2f6ff" text-anchor="start" >The click</text>
 <text x="90" y="474" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#f5c26b" text-anchor="start" >Native check</text>
@@ -27,35 +27,35 @@
 <text x="90" y="544" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#f2f6ff" text-anchor="start" >A set pin</text>
 <text x="90" y="566" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#67dcb4" text-anchor="start" >HIT</text>
 <text x="90" y="586" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="start" >Banked with its evidence. A pin that drops</text>
-<text x="90" y="603" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="start" >is a REJECT and stays in the record.</text>
+<text x="90" y="603" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="start" >may be a miss; untested pins stay open.</text>
 <rect x="72" y="620" width="4" height="78" rx="2" fill="#a78bfa"/>
 <text x="90" y="636" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#f2f6ff" text-anchor="start" >Choosing the next pin</text>
-<text x="90" y="658" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#a78bfa" text-anchor="start" >JEV triage + master Q</text>
-<text x="90" y="678" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="start" >Which pin is binding now is chosen from</text>
-<text x="90" y="695" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="start" >verified chain energies and outcomes.</text>
+<text x="90" y="658" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#a78bfa" text-anchor="start" >Modeled rank + evidence gate</text>
+<text x="90" y="678" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="start" >Energy ranks a test; the software result</text>
+<text x="90" y="695" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="start" >determines what can advance.</text>
 <rect x="72" y="712" width="4" height="78" rx="2" fill="#67dcb4"/>
 <text x="90" y="728" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#f2f6ff" text-anchor="start" >Working the set pin</text>
 <text x="90" y="750" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#67dcb4" text-anchor="start" >Repair lane</text>
-<text x="90" y="770" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="start" >Behind every HIT a fix is proposed and</text>
-<text x="90" y="787" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="start" >checked the same way as the loop deepens.</text>
+<text x="90" y="770" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="start" >Pair a HIT with a repair hypothesis;</text>
+<text x="90" y="787" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="start" >validate the fix in a separate check.</text>
 <rect x="606" y="190" width="460" height="64" rx="12" fill="#0f1928" stroke="#5fd1ff" stroke-width="2"/>
 <text x="836" y="219" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#f2f6ff" text-anchor="middle" >Master checkpoint  C</text>
 <text x="836" y="241" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="middle" >signed evidence · verified passes · open obligations</text>
 <path d="M836 254V294" fill="none" stroke="#adbbce" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="440" y="294" width="792" height="392" rx="14" fill="none" stroke="#2a3b51" stroke-width="1.5" stroke-dasharray="8 6"/>
-<text x="460" y="324" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#adbbce" text-anchor="start" >CFC FANOUT  ·  N chains per checkpoint, each a small c / q stack</text>
+<text x="460" y="324" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#adbbce" text-anchor="start" >ILLUSTRATIVE FANOUT  ·  branch count and checks vary by admitted run</text>
 <text x="542" y="343" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#6f819a" text-anchor="middle" >pin 1</text>
 <rect x="458" y="352" width="168" height="50" rx="12" fill="#0f1928" stroke="#2a3b51" stroke-width="1.5"/>
 <text x="542" y="374" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" text-anchor="middle" >c · propose</text>
 <text x="542" y="392" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >AI candidate</text>
 <path d="M542 402V430" fill="none" stroke="#adbbce" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="458" y="430" width="168" height="50" rx="12" fill="#0f1928" stroke="#2a3b51" stroke-width="1.5"/>
-<text x="542" y="452" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" text-anchor="middle" >native check</text>
-<text x="542" y="470" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >the click: receipt or none</text>
+<text x="542" y="452" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" text-anchor="middle" >admitted check</text>
+<text x="542" y="470" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >native receipt required</text>
 <path d="M542 480V508" fill="none" stroke="#adbbce" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="458" y="508" width="168" height="50" rx="12" fill="#0f1928" stroke="#2a3b51" stroke-width="1.5"/>
-<text x="542" y="530" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" text-anchor="middle" >q · set one pin</text>
-<text x="542" y="548" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >QUBO over receipted pins</text>
+<text x="542" y="530" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" text-anchor="middle" >q · rank choice</text>
+<text x="542" y="548" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >modeled cost ≠ proof</text>
 <path d="M542 558V594" fill="none" stroke="#adbbce" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="488" y="594" width="108" height="38" rx="10" fill="#2a1216" stroke="#ff7a7a" stroke-width="2"/>
 <text x="542" y="619" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#ff7a7a" text-anchor="middle" >REJECT</text>
@@ -65,12 +65,12 @@
 <text x="738" y="392" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >AI candidate</text>
 <path d="M738 402V430" fill="none" stroke="#adbbce" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="654" y="430" width="168" height="50" rx="12" fill="#0f1928" stroke="#2a3b51" stroke-width="1.5"/>
-<text x="738" y="452" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" text-anchor="middle" >native check</text>
-<text x="738" y="470" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >the click: receipt or none</text>
+<text x="738" y="452" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" text-anchor="middle" >admitted check</text>
+<text x="738" y="470" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >native receipt required</text>
 <path d="M738 480V508" fill="none" stroke="#adbbce" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="654" y="508" width="168" height="50" rx="12" fill="#0f1928" stroke="#2a3b51" stroke-width="1.5"/>
-<text x="738" y="530" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" text-anchor="middle" >q · set one pin</text>
-<text x="738" y="548" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >QUBO over receipted pins</text>
+<text x="738" y="530" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" text-anchor="middle" >q · rank choice</text>
+<text x="738" y="548" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >modeled cost ≠ proof</text>
 <path d="M738 558V594" fill="none" stroke="#adbbce" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="684" y="594" width="108" height="38" rx="10" fill="#2a1216" stroke="#ff7a7a" stroke-width="2"/>
 <text x="738" y="619" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#ff7a7a" text-anchor="middle" >REJECT</text>
@@ -82,12 +82,12 @@
 <text x="934" y="392" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >AI candidate</text>
 <path d="M934 402V430" fill="none" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="850" y="430" width="168" height="50" rx="12" fill="#1a1533" stroke="#f5c26b" stroke-width="2.2"/>
-<text x="934" y="452" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" text-anchor="middle" >native check</text>
-<text x="934" y="470" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >the click: receipt or none</text>
+<text x="934" y="452" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" text-anchor="middle" >admitted check</text>
+<text x="934" y="470" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >native receipt required</text>
 <path d="M934 480V508" fill="none" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="850" y="508" width="168" height="50" rx="12" fill="#1a1533" stroke="#a78bfa" stroke-width="2.2"/>
-<text x="934" y="530" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" text-anchor="middle" >q · set one pin</text>
-<text x="934" y="548" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >QUBO over receipted pins</text>
+<text x="934" y="530" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" text-anchor="middle" >q · rank choice</text>
+<text x="934" y="548" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >modeled cost ≠ proof</text>
 <path d="M934 558V594" fill="none" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="880" y="594" width="108" height="38" rx="10" fill="#0f2a22" stroke="#67dcb4" stroke-width="2"/>
 <text x="934" y="619" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#67dcb4" text-anchor="middle" >HIT</text>
@@ -97,37 +97,37 @@
 <text x="1130" y="392" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >AI candidate</text>
 <path d="M1130 402V430" fill="none" stroke="#adbbce" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="1046" y="430" width="168" height="50" rx="12" fill="#0f1928" stroke="#2a3b51" stroke-width="1.5"/>
-<text x="1130" y="452" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" text-anchor="middle" >native check</text>
-<text x="1130" y="470" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >the click: receipt or none</text>
+<text x="1130" y="452" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" text-anchor="middle" >admitted check</text>
+<text x="1130" y="470" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >native receipt required</text>
 <path d="M1130 480V508" fill="none" stroke="#adbbce" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="1046" y="508" width="168" height="50" rx="12" fill="#0f1928" stroke="#2a3b51" stroke-width="1.5"/>
-<text x="1130" y="530" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" text-anchor="middle" >q · set one pin</text>
-<text x="1130" y="548" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >QUBO over receipted pins</text>
+<text x="1130" y="530" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" text-anchor="middle" >q · rank choice</text>
+<text x="1130" y="548" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >modeled cost ≠ proof</text>
 <path d="M1130 558V594" fill="none" stroke="#adbbce" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="1076" y="594" width="108" height="38" rx="10" fill="#2a1216" stroke="#ff7a7a" stroke-width="2"/>
 <text x="1130" y="619" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#ff7a7a" text-anchor="middle" >REJECT</text>
-<text x="1212" y="672" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#6f819a" text-anchor="end" >rejected pins stay in the record</text>
+<text x="1212" y="672" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#6f819a" text-anchor="end" >misses and untested candidates stay in the record</text>
 <path d="M836 686V722" fill="none" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrow)"/>
 <path d="M836 686V722" fill="none" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="440" y="722" width="792" height="56" rx="12" fill="#0c1522" stroke="#2a3b51" stroke-width="1.5"/>
 <text x="836" y="746" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#f2f6ff" text-anchor="middle" >JEV triage  ·  advisory only</text>
-<text x="836" y="765" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >typed model called by the loop, receipt logged per run; may reorder chains, never terminate one</text>
+<text x="836" y="765" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >if configured: record its triage; it is neither a native result nor a veto</text>
 <path d="M836 778V814" fill="none" stroke="#a78bfa" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="566" y="814" width="540" height="68" rx="12" fill="#1a1533" stroke="#a78bfa" stroke-width="2.2"/>
 <text x="836" y="842" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="700" fill="#f2f6ff" text-anchor="middle" >Master Q selection  ·  which pin is binding</text>
-<text x="836" y="864" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >lowest native-confirmed feasible energy wins; chosen from receipts, not from a reported outcome</text>
+<text x="836" y="864" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >modeled energy ranks tests; advance only what the evidence supports</text>
 <path d="M836 882V918" fill="none" stroke="#67dcb4" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="586" y="918" width="440" height="64" rx="12" fill="#0f1928" stroke="#5fd1ff" stroke-width="2"/>
 <text x="806" y="947" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#f2f6ff" text-anchor="middle" >Next checkpoint  C+1</text>
 <text x="806" y="969" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="middle" >winner's evidence + open obligations · no verified pass is lost</text>
 <rect x="1058" y="916" width="174" height="68" rx="12" fill="#0f2a22" stroke="#67dcb4" stroke-width="2"/>
 <text x="1145" y="944" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#f2f6ff" text-anchor="middle" >Repair lane</text>
-<text x="1145" y="964" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >runs behind each HIT</text>
+<text x="1145" y="964" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle" >validate separately</text>
 <path d="M1026 950H1058" fill="none" stroke="#67dcb4" stroke-width="2" marker-end="url(#arrow-green)"/>
 <path d="M586 950H424V222H606" fill="none" stroke="#67dcb4" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrow-green)"/>
 <text x="415" y="570" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#67dcb4" text-anchor="middle" transform="rotate(-90 415 570)">next depth · loop until HIT + repair, or REJECT</text>
 <path d="M48 1024H1232" stroke="#2a3b51" stroke-width="1"/>
-<text x="48" y="1050" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="start" >Depth = how many dependent C → Q steps have run. Circuit depth is a different number inside one Q.</text>
+<text x="48" y="1050" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="start" >Quantum depth counts evidenced dependent method runs, not labels. Circuit depth is a separate measure.</text>
 <text x="48" y="1072" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#6f819a" text-anchor="start" >This figure shows the loop's control structure. It is not a measurement, a severity, or a claim of quantum advantage.</text>
 <text x="1232" y="1072" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#a78bfa" text-anchor="end" >Visual by Mythos 5.1 · Aether AI Predator · October 2026</text>
 </svg>
