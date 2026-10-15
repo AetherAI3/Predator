@@ -14,6 +14,7 @@ This is the public documentation and evidence repository for Aether's AI securit
 | [QPACK feedback study](research/gen3-qpack-experiment1.md) | 5/8 controlled faults found with feedback, versus 2/8 without it; incomplete adaptive classical comparison | [Episode JSON](research/gen3-qpack-experiment1.json) |
 | [joint5 IBM Fez pilot](research/ibm-fez-pilot.md) | Fewer native two-qubit gates and closer output agreement; worse expected energy | [Measurement JSON](research/ibm-pilot.json) |
 | [Research roadmap](research/generations.md) | Quantum depth, matched comparisons, and the requirements for qualifying later profiles | — |
+| [Crucible execution and evidence](research/crucible-evidence-contract.md) | What fanout, QUBO selection, native checks, repair, and reporting each establish | — |
 
 The studies use controlled fixtures or deliberately introduced faults. Quantum advantage remains an active research objective. Each result page explains its evidence and reproduction limits.
 
