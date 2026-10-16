@@ -188,7 +188,7 @@ The four pins illustrate a **research design**, not four measured workers or nat
 | **Pins** | **Candidate chains** | Fanout proposes alternatives from a checkpoint. A proposal and its QUBO ranking do not imply that a native check ran. |
 | **The click** | **Native check** | The software itself says whether a pin set. A chain with no native receipt did not click, whatever the model thought of it. |
 | **A set pin** | **HIT** | Banked only with an appropriate native receipt. Misses, refutations, and inconclusive results stay in the record with their limits. |
-| **Choosing the next pin** | **QUBO selection and evidence gate** | A modeled energy can rank a test; native outcomes determine what is supported. Where admitted, JEV checks the evidence packet. Its decision is not an independent software result. |
+| **Choosing the next pin** | **QUBO selection and evidence gate** | A modeled energy can rank a test; native outcomes determine what is supported. JEV participates only when an admitted stage records a typed call and its usage. Its decision is advisory, not an independent software result. |
 | **Working the set pin** | **Repair lane** | Pair a supported attack observation with a repair hypothesis and regression plan. A fix counts as validated only after its own check. |
 
 ### What happens in one cycle
@@ -226,7 +226,7 @@ The **ratchet** is the rule that verified earlier results and negative evidence 
 
 QUBO stands for quadratic unconstrained binary optimization. Its energy is the modeled cost to minimize; a low energy is a reason to test a candidate, not proof that it works. Only the native check on the software sets a pin.
 
-The public CharLS and QPACK studies used quantum-circuit simulation. The [joint5 pilot](docs/research/ibm-fez-pilot.md) supplies a separate hardware record. When configured, [Jev](https://docs.typesafe.ai/introduction) provides structured triage; its use is recorded per run and it never terminates a chain on its own.
+The public CharLS and QPACK studies used quantum-circuit simulation. The [joint5 pilot](docs/research/ibm-fez-pilot.md) supplies a separate hardware record. [Jev](https://docs.typesafe.ai/introduction) can provide structured triage only after the stage path is enabled, qualified, and deployed. A `NOT_CONFIGURED` field, an adapter in source, or an offline preflight is not a provider call. A participating run must record its typed decision, call count, and spend; JEV never terminates a chain on its own.
 
 Where issued, signed custody binds research stages to source and artifacts. Manual research notes and C/Q labels are not signed receipts. Live signed acceptance, server-side stage minting, and variable-depth custody remain under validation. Each continuation needs its own scope, budget, and admission.
 
