@@ -21,7 +21,7 @@ Predator brings AI reasoning, persistent context, and reviewed tool use into sec
 
 This is the **public feature showcase and evidence collection**. The CLI and operator engines are private, with [reviewed research access](#developers-join-the-research-program).
 
-[P-BOX / HTB training](#p-box-htb-training) · [Gen3 Private Security](#gen3-private-security) · [Crucible](#crucible-adaptive-quantum-threat-modeling) · [MITRE chains](#mitre-attck-chain-library) · [CVE catalog](#cve-research-catalog) · [CodePro & System-2](#codepro-and-system-2) · [joint5 & IBM Fez](#joint5-compiler-the-ibm-fez-hardware-result) · [Results](#banked-scientific-results) · [Work with Aether](#ways-to-work-with-aether) · [Docs](docs/README.md)
+[P-BOX / HTB training](#p-box-htb-training) · [Gen3 Private Security](#gen3-private-security) · [Crucible](#crucible-adaptive-quantum-threat-modeling) · [MITRE chains](#mitre-attck-chain-library) · [CVE catalog](#cve-research-catalog) · [CodePro & System-2](#codepro-and-system-2) · [joint5 & IBM Fez](#joint5-compiler-the-ibm-fez-hardware-result) · [Results](#banked-scientific-results) · [Work with Aether](#ways-to-work-with-aether) · [Gen3 access](#predator-r3d-and-predator-blu3) · [Docs](docs/README.md)
 
 <a id="p-box-htb-training"></a>
 
@@ -408,12 +408,21 @@ Ask about the published studies, suggest a public demo, or share feedback in [Gi
 
 Help build the CLI, repair chains, verification tools, or classical/quantum comparisons. Tell us what you have built and where you want to contribute. Private research access is reviewed separately.
 
+[Apply to join →](https://aethersystems.net/contact?intent=general&product=site_wide&cta=footer_updates_contact)
+
+### Predator R3D and Predator BLU3
+
+<p align="center">
+  <img src="docs/assets/badge-predator-r3d.svg" height="32" alt="Predator R3D — Gen3 authorization gate">
+  <img src="docs/assets/badge-predator-blu3.svg" height="32" alt="Predator BLU3 — Gen3 authorization gate">
+</p>
+
+**Two authorization gates for Gen3 in the private Predator CLI.** Request access to **Predator R3D** or **Predator BLU3** from the CLI. Access requests are reviewed separately from developer-program applications.
+
 <p align="center">
   <img src="docs/assets/predator-cli-console-preview.png" width="800" alt="Predator CLI console preview with red Predator branding, a mission label, and context indicators."><br>
   <sub>Predator CLI console preview · illustrative layout and counters</sub>
 </p>
-
-[Apply to join →](https://aethersystems.net/contact?intent=general&product=site_wide&cta=footer_updates_contact)
 
 ## Read the evidence
 

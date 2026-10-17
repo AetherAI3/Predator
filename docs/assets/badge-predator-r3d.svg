@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="252" height="32" viewBox="0 0 252 32" role="img" aria-labelledby="title description">
+<title id="title">Predator R3D — Gen3 authorization gate</title><desc id="description">Request Predator R3D access in the private Predator CLI. Static program label; it does not indicate approval or current account access.</desc>
+<rect x="1" y="1" width="250" height="30" rx="16" fill="#070d17" stroke="#2a3b51"/>
+<circle cx="16" cy="16" r="4" fill="#ff6b7a"/>
+<text x="30" y="20" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" letter-spacing=".4" fill="#e5edf6">PREDATOR <tspan fill="#ff6b7a">R3D</tspan><tspan fill="#adbbce"> · GEN3 GATE</tspan></text>
+</svg>

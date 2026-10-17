@@ -1,5 +1,9 @@
 # README visual sources
 
+## October 17 Gen3 access badges
+
+- **badge-predator-r3d.svg** and **badge-predator-blu3.svg** — original, self-contained SVG badges matching the README's dark rounded labels, with red and cyan accents. Names and CLI access-request wording follow the owner's public-program update. They identify the two Gen3 authorization gates, not an account's approval status. Both include accessible title and description text, with no scripts, external media, embedded fonts, or private implementation details.
+
 ## October 13 Crucible lockpick figure
 
 - **crucible-lockpick.svg** — self-contained editorial figure built by `build_crucible_lockpick.py` (standard library only; run from the repository root). It explains one depth step of the Crucible loop as a lockpick: a master checkpoint (tension), a CFC fanout of small c / check / q chains (pins), the native check (the click), HIT and REJECT terminals, JEV triage, master Q selection, the next checkpoint and the repair lane. The four chains and their outcomes are illustrative; the figure shows control structure, not a measured run, a severity, or a claim of quantum advantage. It contains no scripts, external images, embedded fonts, private identifiers, or research data. Credited on the figure as "Visual by Mythos 5.1".
