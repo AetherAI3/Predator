@@ -17,11 +17,21 @@
 
 **AI security research, software repair, and authorized VM workflows.**
 
-Predator brings AI reasoning, persistent context, and reviewed tool use into security research and software repair. Its research engine, **Crucible**, works like a lockpick: it holds verified evidence steady, proposes candidate chains, checks them against the real software, and banks only supported results. A QUBO can rank the next test; the recorded solver and native result determine what actually ran and what was established. Quantum simulation or hardware is identified only for runs that used it.
+Predator brings AI reasoning, persistent context, and reviewed tool use into security research and software repair. Its research engine, **Crucible**, works like a lockpick: it holds verified evidence steady, proposes candidate chains, checks them against the real software, and banks only supported results.
 
 This is the **public feature showcase and evidence collection**. The CLI and operator engines are private, with [reviewed research access](#developers-join-the-research-program).
 
-[P-BOX / HTB training](#p-box-htb-training) · [Gen3 Private Security](#gen3-private-security) · [Crucible](#crucible-adaptive-quantum-threat-modeling) · [MITRE chains](#mitre-attck-chain-library) · [CVE catalog](#cve-research-catalog) · [CodePro & System-2](#codepro-and-system-2) · [joint5 & IBM Fez](#joint5-compiler-the-ibm-fez-hardware-result) · [Results](#banked-scientific-results) · [Work with Aether](#ways-to-work-with-aether) · [Gen3 access](#predator-r3d-and-predator-blu3) · [Docs](docs/README.md)
+[How search works](#how-predator-chooses-the-next-move) · [P-BOX / HTB training](#p-box-htb-training) · [Gen3 Private Security](#gen3-private-security) · [Crucible](#crucible-adaptive-quantum-threat-modeling) · [MITRE chains](#mitre-attck-chain-library) · [CVE catalog](#cve-research-catalog) · [CodePro & System-2](#codepro-and-system-2) · [joint5 & IBM Fez](#joint5-compiler-the-ibm-fez-hardware-result) · [Results](#banked-scientific-results) · [Work with Aether](#ways-to-work-with-aether) · [Gen3 access](#predator-r3d-and-predator-blu3) · [Docs](docs/README.md)
+
+## How Predator chooses the next move
+
+**Keep Predator’s ordinary computer search in charge, make quantum experiments cheaper, and require evidence before trusting them with decisions.** The [tests described here](docs/research/search-scaling.md) have not demonstrated a quantum advantage.
+
+Think of Predator choosing from a menu of possible next moves. Some moves work well together. Some require another move first. Others conflict. The goal is to pick the best allowed combination.
+
+A **QUBO** is the scorecard for those yes/no choices and how they interact. **Energy** is the score—lower is better. The score helps rank candidates; checks against the actual software establish whether a proposed result holds. Each run records the solver it used, including any quantum simulation or hardware.
+
+[See the joint5 charts and measured limits →](#joint5-compiler-the-ibm-fez-hardware-result)
 
 <a id="p-box-htb-training"></a>
 
@@ -334,7 +344,9 @@ RC is in controlled private preview. The production viewer and relay have been e
 
 ## joint5 compiler and the IBM Fez result
 
-**What the compiler does.** In an AQRC run, a QUBO represents yes/no choices with a cost to minimize. Before a quantum simulator or a real device can sample it, **AQRC** compiles that problem into a circuit. **joint5** is AQRC's alternative compilation path. A better compilation uses fewer native gates and gives output closer to the ideal distribution; it does not by itself find a better answer.
+**joint5 changes how a quantum circuit is built.** AQRC translates the QUBO scorecard into instructions that a simulator or device can run. joint5 is an alternative compilation path. Fewer native two-qubit gates mean fewer hardware instructions involving a pair of qubits. Answer quality is measured separately against the same scoring problem.
+
+### The IBM Fez hardware pilot
 
 **What was measured.** The joint5 pilot compared ordinary and joint5 compilation on IBM Fez: one six-variable fixture, its vulnerable and fixed poles, four circuits, and 1,024 shots per circuit in one hardware job (3 seconds of billed QPU time).
 
@@ -347,6 +359,19 @@ RC is in controlled private preview. The production viewer and relay have been e
 Lower total-variation distance means closer agreement with the ideal output distribution. **Expected energy worsened on both poles.** The pilot records one acquisition without independent confirmation. Improved minimization and quantum advantage remain unestablished.
 
 [Measurements and uncertainty →](docs/research/ibm-fez-pilot.md) · [Full-precision data →](docs/research/ibm-pilot.json)
+
+### How the search and compiler scale
+
+An **October 20, 2026 synthetic sweep** asked two separate questions: how close do the sampled answers get to the best score, and does joint5 save hardware instructions as the choices grow? These were simulator and compilation tests, separate from the IBM Fez acquisition above.
+
+<p align="center">
+  <a href="docs/research/search-scaling.md"><img src="docs/assets/search-scaling-2026-10-20.svg" width="960" alt="Two selected-size comparisons from the October 20 synthetic tests: untuned quantum-style search misses the best score by a larger margin at larger sizes; joint5 uses about 13% fewer routed two-qubit instructions at 12 choices and 7% fewer at 16, but about 4% more at 32 and 14% more at 40."></a><br>
+  <sub>Answer quality and circuit size are different measurements. Selected sizes shown; full tables, methods, and limits are linked below.</sub>
+</p>
+
+The proposed upgrade is simple: **compare both circuit layouts, keep the smaller one, and use a suitable local simulator for quantum experiments.** Ordinary computer search keeps choosing the next move until another method earns that role in a fair comparison. These are design recommendations; the sweep does not establish that the upgrades have shipped.
+
+[Scaling tests: plain-English guide and full tables →](docs/research/search-scaling.md) · [Chart data →](docs/research/search-scaling.json)
 
 <a id="gen3-oss"></a>
 <a id="what-the-public-research-found"></a>
@@ -440,3 +465,4 @@ Help build the CLI, repair chains, verification tools, or classical/quantum comp
 | **[Unlimited Context](https://github.com/AetherAI3/Unlimited-Context-LLM)** | [How it works](https://github.com/AetherAI3/Unlimited-Context-LLM#how-it-works) and [safety measures](https://github.com/AetherAI3/Unlimited-Context-LLM/blob/main/SAFETY.md) |
 
 <p align="center"><sub>Public overview and selected research notes · Private operator engines<br>© 2026 Aether AI LLC. All rights reserved. IBM is identified as a hardware provider; no affiliation or endorsement is implied. <a href="docs/assets/SOURCES.md">Visual sources</a>.</sub></p>
+

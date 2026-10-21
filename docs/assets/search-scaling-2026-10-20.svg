@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg role="img" aria-labelledby="search-title search-description" xmlns:xlink="http://www.w3.org/1999/xlink" width="777.6pt" height="619.2pt" viewBox="0 0 777.6 619.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<title id="search-title">Predator synthetic search quality and joint5 instruction counts</title>
+<desc id="search-description">Reported October 20, 2026 synthetic simulator and compilation tests, separate from the IBM Fez hardware pilot. The untuned circuit used one layer and 4,096 samples per run. Reported best-sample score gaps across three seeds: 6 candidates 0 to 11 percent, 8 candidates 6 to 15 percent, 16 candidates 28 to 41 percent, and 20 candidates 46 to 72 percent. Zero is best. joint5 routed instruction changes calculated from rounded mean counts: 12 candidates about 13 percent fewer, 16 about 7 percent fewer, 32 about 4 percent more, 40 about 14 percent more. There were three seeds at 12 and 16, two at 32, and one at 40. Ranges are observations, not confidence intervals. Selected sizes shown; full aggregates are in docs/research/search-scaling.json. These are synthetic scores and instruction counts, not mission success rates or run-time measurements. No quantum advantage or independent confirmation is established.</desc>
+ <title>Predator synthetic search quality and joint5 instruction counts</title>
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>Predator synthetic search quality and joint5 instruction counts</dc:title>
+    <dc:description>Reported October 20, 2026 synthetic simulator and compilation tests, separate from the IBM Fez hardware pilot. The untuned circuit used one layer and 4,096 samples per run. Reported best-sample score gaps across three seeds: 6 candidates 0 to 11 percent, 8 candidates 6 to 15 percent, 16 candidates 28 to 41 percent, and 20 candidates 46 to 72 percent. Zero is best. joint5 routed instruction changes calculated from rounded mean counts: 12 candidates about 13 percent fewer, 16 about 7 percent fewer, 32 about 4 percent more, 40 about 14 percent more. There were three seeds at 12 and 16, two at 32, and one at 40. Ranges are observations, not confidence intervals. Selected sizes shown; full aggregates are in docs/research/search-scaling.json. These are synthetic scores and instruction counts, not mission success rates or run-time measurements. No quantum advantage or independent confirmation is established.</dc:description>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Aether AI Predator / matplotlib</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 619.2 
+L 777.6 619.2 
+L 777.6 0 
+L 0 0 
+z
+" style="fill: #070d17"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 116.64 278.64 
+L 660.96 278.64 
+L 660.96 136.224 
+L 116.64 136.224 
+z
+" style="fill: #070d17"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 139.802553 278.64 
+L 139.802553 136.224 
+" clip-path="url(#pf58b5ecad2)" style="fill: none; stroke: #2a3b51; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #f2f6ff" x="139.802553" y="296.517969" transform="rotate(-0 139.802553 296.517969)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 255.615319 278.64 
+L 255.615319 136.224 
+" clip-path="url(#pf58b5ecad2)" style="fill: none; stroke: #2a3b51; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #f2f6ff" x="255.615319" y="296.517969" transform="rotate(-0 255.615319 296.517969)">20</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 371.428085 278.64 
+L 371.428085 136.224 
+" clip-path="url(#pf58b5ecad2)" style="fill: none; stroke: #2a3b51; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #f2f6ff" x="371.428085" y="296.517969" transform="rotate(-0 371.428085 296.517969)">40</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 487.240851 278.64 
+L 487.240851 136.224 
+" clip-path="url(#pf58b5ecad2)" style="fill: none; stroke: #2a3b51; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_4">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #f2f6ff" x="487.240851" y="296.517969" transform="rotate(-0 487.240851 296.517969)">60</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 603.053617 278.64 
+L 603.053617 136.224 
+" clip-path="url(#pf58b5ecad2)" style="fill: none; stroke: #2a3b51; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_5">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #f2f6ff" x="603.053617" y="296.517969" transform="rotate(-0 603.053617 296.517969)">80</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #f2f6ff" x="388.8" y="319.339687" transform="rotate(-0 388.8 319.339687)">Gap from best score (%) · 0% is best</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_11"/>
+     <g id="text_7">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #f2f6ff" x="108.64" y="158.964984" transform="rotate(-0 108.64 158.964984)">6</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_12"/>
+     <g id="text_8">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #f2f6ff" x="108.64" y="194.568984" transform="rotate(-0 108.64 194.568984)">8</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_13"/>
+     <g id="text_9">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #f2f6ff" x="108.64" y="230.172984" transform="rotate(-0 108.64 230.172984)">16</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_14"/>
+     <g id="text_10">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #f2f6ff" x="108.64" y="265.776984" transform="rotate(-0 108.64 265.776984)">20</text>
+     </g>
+    </g>
+    <g id="text_11">
+     <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #f2f6ff" x="76.601875" y="207.432" transform="rotate(-90 76.601875 207.432)">Candidate actions</text>
+    </g>
+   </g>
+   <g id="line2d_15">
+    <path d="M 139.802553 278.64 
+L 139.802553 136.224 
+" clip-path="url(#pf58b5ecad2)" style="fill: none; stroke: #adbbce; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_16">
+    <path d="M 139.802553 154.026 
+L 203.499574 154.026 
+" clip-path="url(#pf58b5ecad2)" style="fill: none; stroke: #32c7eb; stroke-width: 5; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_17">
+    <path d="M 174.546383 189.63 
+L 226.662128 189.63 
+" clip-path="url(#pf58b5ecad2)" style="fill: none; stroke: #32c7eb; stroke-width: 5; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_18">
+    <path d="M 301.940426 225.234 
+L 377.218723 225.234 
+" clip-path="url(#pf58b5ecad2)" style="fill: none; stroke: #32c7eb; stroke-width: 5; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_19">
+    <path d="M 406.171915 260.838 
+L 556.728511 260.838 
+" clip-path="url(#pf58b5ecad2)" style="fill: none; stroke: #32c7eb; stroke-width: 5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 116.64 278.64 
+L 660.96 278.64 
+" style="fill: none; stroke: #2a3b51; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="mb50a0f7eaf" d="M 0 2.915476 
+C 0.773193 2.915476 1.514823 2.608283 2.061553 2.061553 
+C 2.608283 1.514823 2.915476 0.773193 2.915476 0 
+C 2.915476 -0.773193 2.608283 -1.514823 2.061553 -2.061553 
+C 1.514823 -2.608283 0.773193 -2.915476 0 -2.915476 
+C -0.773193 -2.915476 -1.514823 -2.608283 -2.061553 -2.061553 
+C -2.608283 -1.514823 -2.915476 -0.773193 -2.915476 0 
+C -2.915476 0.773193 -2.608283 1.514823 -2.061553 2.061553 
+C -1.514823 2.608283 -0.773193 2.915476 0 2.915476 
+z
+" style="stroke: #32c7eb"/>
+    </defs>
+    <g clip-path="url(#pf58b5ecad2)">
+     <use xlink:href="#mb50a0f7eaf" x="139.802553" y="154.026" style="fill: #32c7eb; stroke: #32c7eb"/>
+     <use xlink:href="#mb50a0f7eaf" x="203.499574" y="154.026" style="fill: #32c7eb; stroke: #32c7eb"/>
+    </g>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 13.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #f2f6ff" x="215.080851" y="157.751156" transform="rotate(-0 215.080851 157.751156)">0–11%</text>
+   </g>
+   <g id="PathCollection_2">
+    <g clip-path="url(#pf58b5ecad2)">
+     <use xlink:href="#mb50a0f7eaf" x="174.546383" y="189.63" style="fill: #32c7eb; stroke: #32c7eb"/>
+     <use xlink:href="#mb50a0f7eaf" x="226.662128" y="189.63" style="fill: #32c7eb; stroke: #32c7eb"/>
+    </g>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 13.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #f2f6ff" x="238.243404" y="193.355156" transform="rotate(-0 238.243404 193.355156)">6–15%</text>
+   </g>
+   <g id="PathCollection_3">
+    <g clip-path="url(#pf58b5ecad2)">
+     <use xlink:href="#mb50a0f7eaf" x="301.940426" y="225.234" style="fill: #32c7eb; stroke: #32c7eb"/>
+     <use xlink:href="#mb50a0f7eaf" x="377.218723" y="225.234" style="fill: #32c7eb; stroke: #32c7eb"/>
+    </g>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 13.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #f2f6ff" x="388.8" y="228.959156" transform="rotate(-0 388.8 228.959156)">28–41%</text>
+   </g>
+   <g id="PathCollection_4">
+    <g clip-path="url(#pf58b5ecad2)">
+     <use xlink:href="#mb50a0f7eaf" x="406.171915" y="260.838" style="fill: #32c7eb; stroke: #32c7eb"/>
+     <use xlink:href="#mb50a0f7eaf" x="556.728511" y="260.838" style="fill: #32c7eb; stroke: #32c7eb"/>
+    </g>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 13.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #f2f6ff" x="568.309787" y="264.563156" transform="rotate(-0 568.309787 264.563156)">46–72%</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 13.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #f2f6ff" x="116.64" y="119.224" transform="rotate(-0 116.64 119.224)">1. How far did the sampled answers miss the best score?</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_4">
+    <path d="M 116.64 526.32 
+L 660.96 526.32 
+L 660.96 383.904 
+L 116.64 383.904 
+z
+" style="fill: #070d17"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_6">
+     <g id="line2d_20">
+      <path d="M 171.072 526.32 
+L 171.072 383.904 
+" clip-path="url(#pc39c869602)" style="fill: none; stroke: #2a3b51; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_21"/>
+     <g id="text_17">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #f2f6ff" x="171.072" y="544.197969" transform="rotate(-0 171.072 544.197969)">−20</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_22">
+      <path d="M 279.936 526.32 
+L 279.936 383.904 
+" clip-path="url(#pc39c869602)" style="fill: none; stroke: #2a3b51; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_23"/>
+     <g id="text_18">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #f2f6ff" x="279.936" y="544.197969" transform="rotate(-0 279.936 544.197969)">−10</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_24">
+      <path d="M 388.8 526.32 
+L 388.8 383.904 
+" clip-path="url(#pc39c869602)" style="fill: none; stroke: #2a3b51; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_25"/>
+     <g id="text_19">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #f2f6ff" x="388.8" y="544.197969" transform="rotate(-0 388.8 544.197969)">0</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_26">
+      <path d="M 497.664 526.32 
+L 497.664 383.904 
+" clip-path="url(#pc39c869602)" style="fill: none; stroke: #2a3b51; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_27"/>
+     <g id="text_20">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #f2f6ff" x="497.664" y="544.197969" transform="rotate(-0 497.664 544.197969)">+10</text>
+     </g>
+    </g>
+    <g id="xtick_10">
+     <g id="line2d_28">
+      <path d="M 606.528 526.32 
+L 606.528 383.904 
+" clip-path="url(#pc39c869602)" style="fill: none; stroke: #2a3b51; stroke-width: 0.7; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_29"/>
+     <g id="text_21">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #f2f6ff" x="606.528" y="544.197969" transform="rotate(-0 606.528 544.197969)">+20</text>
+     </g>
+    </g>
+    <g id="text_22">
+     <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #f2f6ff" x="388.8" y="567.019687" transform="rotate(-0 388.8 567.019687)">Change in routed two-qubit instructions (%)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_5">
+     <g id="line2d_30"/>
+     <g id="text_23">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #f2f6ff" x="108.64" y="415.338984" transform="rotate(-0 108.64 415.338984)">12</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_31"/>
+     <g id="text_24">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #f2f6ff" x="108.64" y="448.458984" transform="rotate(-0 108.64 448.458984)">16</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_32"/>
+     <g id="text_25">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #f2f6ff" x="108.64" y="481.578984" transform="rotate(-0 108.64 481.578984)">32</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_33"/>
+     <g id="text_26">
+      <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #f2f6ff" x="108.64" y="514.698984" transform="rotate(-0 108.64 514.698984)">40</text>
+     </g>
+    </g>
+    <g id="text_27">
+     <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #f2f6ff" x="76.601875" y="455.112" transform="rotate(-90 76.601875 455.112)">Candidate actions</text>
+    </g>
+   </g>
+   <g id="patch_5">
+    <path d="M 388.8 407.088 
+L 248.67802 407.088 
+L 248.67802 413.712 
+L 388.8 413.712 
+z
+" clip-path="url(#pc39c869602)" style="fill: #b48aff"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 388.8 440.208 
+L 317.178947 440.208 
+L 317.178947 446.832 
+L 388.8 446.832 
+z
+" clip-path="url(#pc39c869602)" style="fill: #b48aff"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 388.8 473.328 
+L 432.379122 473.328 
+L 432.379122 479.952 
+L 388.8 479.952 
+z
+" clip-path="url(#pc39c869602)" style="fill: #b48aff"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 388.8 506.448 
+L 539.752489 506.448 
+L 539.752489 513.072 
+L 388.8 513.072 
+z
+" clip-path="url(#pc39c869602)" style="fill: #b48aff"/>
+   </g>
+   <g id="line2d_34">
+    <path d="M 388.8 526.32 
+L 388.8 383.904 
+" clip-path="url(#pc39c869602)" style="fill: none; stroke: #adbbce; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 116.64 526.32 
+L 660.96 526.32 
+" style="fill: none; stroke: #2a3b51; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 13.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #f2f6ff" x="318.73901" y="405.845156" transform="rotate(-0 318.73901 405.845156)">13% fewer</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 13.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #f2f6ff" x="352.989474" y="438.965156" transform="rotate(-0 352.989474 438.965156)">7% fewer</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 13.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #f2f6ff" x="410.589561" y="472.085156" transform="rotate(-0 410.589561 472.085156)">4% more</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 13.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #f2f6ff" x="464.276245" y="505.205156" transform="rotate(-0 464.276245 505.205156)">14% more</text>
+   </g>
+   <g id="text_32">
+    <text style="font-weight: 700; font-size: 13.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #f2f6ff" x="116.64" y="366.904" transform="rotate(-0 116.64 366.904)">2. Does joint5 reduce hardware instructions?</text>
+   </g>
+  </g>
+  <g id="text_33">
+   <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #32c7eb" x="46.656" y="26.0064" transform="rotate(-0 46.656 26.0064)">AETHER AI / PREDATOR RESEARCH</text>
+  </g>
+  <g id="text_34">
+   <text style="font-weight: 700; font-size: 22px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #f2f6ff" x="46.656" y="56.9664" transform="rotate(-0 46.656 56.9664)">Answer quality and circuit size.</text>
+  </g>
+  <g id="text_35">
+   <text style="font-size: 11.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #adbbce" x="46.656" y="79.8768" transform="rotate(-0 46.656 79.8768)">October 20, 2026 · Synthetic simulation and compilation tests</text>
+  </g>
+  <g id="text_36">
+   <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #adbbce" x="116.64" y="331.272" transform="rotate(-0 116.64 331.272)">Untuned one-layer circuit · 4,096 samples per run · Observed ranges across 3 seeds</text>
+  </g>
+  <g id="text_37">
+   <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #adbbce" x="116.64" y="579.5712" transform="rotate(-0 116.64 579.5712)">Changes from rounded mean counts · 12/16 choices: 3 seeds · 32: 2 seeds · 40: 1 seed</text>
+  </g>
+  <g id="text_38">
+   <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #adbbce" x="46.656" y="606.1968" transform="rotate(-0 46.656 606.1968)">Reported synthetic tests · Selected sizes · No quantum advantage established</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pf58b5ecad2">
+   <rect x="116.64" y="136.224" width="544.32" height="142.416"/>
+  </clipPath>
+  <clipPath id="pc39c869602">
+   <rect x="116.64" y="383.904" width="544.32" height="142.416"/>
+  </clipPath>
+ </defs>
+</svg>
