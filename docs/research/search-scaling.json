@@ -1,0 +1,72 @@
+{
+  "schema": "predator.public-search-scaling.v1",
+  "title": "Synthetic search quality and joint5 compilation sweep",
+  "measurement_date": "2026-10-20",
+  "publication_date": "2026-10-21",
+  "source": {
+    "kind": "Owner-supplied aggregate research summary",
+    "title": "Part C. Math and scaling laws",
+    "summary_sha256": "2fb87bd080b3ca273575843c87ce78c1315cd519b3c15660b9c3255b27d1437f",
+    "independent_reproduction": false,
+    "raw_per_seed_records_included": false
+  },
+  "method": {
+    "problem_family": "Synthetic action-selection QUBOs",
+    "interaction_density": 0.35,
+    "prerequisites_and_exclusions": "n/4 each, as reported in the summary",
+    "penalty_rule": "P = sum(abs(u)) + sum(abs(s)) + 1",
+    "host": "12-core Windows host",
+    "python": "3.12",
+    "qiskit": "2.3.1",
+    "qiskit_aer": "0.17.2",
+    "qaoa_layers": 1,
+    "gamma": 0.4,
+    "beta": 0.4,
+    "parameter_training": "none",
+    "samples_per_run": 4096,
+    "variants": ["ordinary", "joint5 with greedy edge-disjoint triangles"],
+    "compilation": "Optimization level 3, seed 11, cz/rz/sx/x basis, heavy-hex coupling map",
+    "ideal_statevector_reference": "n <= 20",
+    "mps": "Reported sweep of bond dimensions up to 128; n = 32 and 40 used 4, 16, 64",
+    "new_hardware_jobs": 0,
+    "missing_mps_data_points_reported": 3
+  },
+  "metrics": {
+    "ordinary_native_2q_mean": "Rounded seed-averaged routed native two-qubit gate count",
+    "joint5_native_2q_mean": "Rounded seed-averaged routed native two-qubit gate count",
+    "derived_gate_change_percent": "100 * (joint5_native_2q_mean - ordinary_native_2q_mean) / ordinary_native_2q_mean; negative means fewer instructions",
+    "best_sample_gap_percent": "Reported min/max across seeds of 100 * (best_sample_energy - classical_minimum) / abs(classical_minimum); 0 is best",
+    "missing_gap": "null means that no scored gap was supplied for that size"
+  },
+  "rows": [
+    {"candidates": 4, "seeds": 3, "ordinary_native_2q_mean": 9, "joint5_native_2q_mean": 7, "best_sample_gap_percent": [0, 0]},
+    {"candidates": 6, "seeds": 3, "ordinary_native_2q_mean": 16, "joint5_native_2q_mean": 9, "best_sample_gap_percent": [0, 11]},
+    {"candidates": 8, "seeds": 3, "ordinary_native_2q_mean": 40, "joint5_native_2q_mean": 35, "best_sample_gap_percent": [6, 15]},
+    {"candidates": 10, "seeds": 3, "ordinary_native_2q_mean": 76, "joint5_native_2q_mean": 64, "best_sample_gap_percent": [0, 34]},
+    {"candidates": 12, "seeds": 3, "ordinary_native_2q_mean": 101, "joint5_native_2q_mean": 88, "best_sample_gap_percent": [10, 47]},
+    {"candidates": 14, "seeds": 3, "ordinary_native_2q_mean": 160, "joint5_native_2q_mean": 152, "best_sample_gap_percent": [37, 55]},
+    {"candidates": 16, "seeds": 3, "ordinary_native_2q_mean": 228, "joint5_native_2q_mean": 213, "best_sample_gap_percent": [28, 41]},
+    {"candidates": 20, "seeds": 3, "ordinary_native_2q_mean": 433, "joint5_native_2q_mean": 423, "best_sample_gap_percent": [46, 72]},
+    {"candidates": 24, "seeds": 3, "ordinary_native_2q_mean": 647, "joint5_native_2q_mean": 604, "best_sample_gap_percent": null},
+    {"candidates": 32, "seeds": 2, "ordinary_native_2q_mean": 1299, "joint5_native_2q_mean": 1351, "best_sample_gap_percent": null},
+    {"candidates": 40, "seeds": 1, "ordinary_native_2q_mean": 2077, "joint5_native_2q_mean": 2365, "best_sample_gap_percent": null}
+  ],
+  "figure": {
+    "quality_candidates": [6, 8, 16, 20],
+    "compilation_candidates": [12, 16, 32, 40],
+    "selection_reason": "Selected sizes simplify the README comparison; all reported sizes for these metrics remain in rows and the research note"
+  },
+  "limits": [
+    "Aggregated owner-reported results; raw records, circuits, and experiment implementation are not included.",
+    "Gate changes derived from rounded mean counts are not the mean of per-seed percentage changes.",
+    "Score-gap intervals are observed ranges across three seeds, not uncertainty or confidence intervals.",
+    "A gap in synthetic objective score is not a mission success rate, vulnerability severity, or bounty outcome.",
+    "No scored energy gap is supplied above 20 candidates; larger-size answer quality is not established here.",
+    "The 32-candidate case has two seeds and the 40-candidate case one; neither establishes a general scaling law.",
+    "This circuit used fixed, untuned parameters; the results do not apply to every QAOA configuration.",
+    "A lower native gate count does not by itself establish better answers, lower wall time, or lower monetary cost.",
+    "The October simulator sweep is separate from the September 6 IBM Fez hardware pilot.",
+    "Automatic backend routing and compiler selection are design recommendations, not deployment receipts.",
+    "No quantum computational advantage or independent confirmation is established."
+  ]
+}
