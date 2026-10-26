@@ -117,13 +117,14 @@ The [earlier Pwnbox console preview](docs/media/predator-pwnbox-ttl-preview.gif)
 
 **Gen3** is the name for Predator's current research workflow and the evidence it leaves behind. It describes a method, not a measured quantum advantage.
 
-Four scoped case studies from October 2026, each with its validation and disclosure status kept separate. Each one was run through the Crucible loop described in the next section:
+Five scoped research records from October 2026, each with its validation and disclosure status kept separate. The Crucible research workflow is described in the next section:
 
-| Target | Public evidence | Status |
+| Target | Public material | Status |
 | :--- | :--- | :--- |
 | **Vercel AI SDK** | [Redacted local P-BOX replay](docs/pbox-vercel-ai-sdk-showcase.md) | Verified local result with synthetic values; no production access. |
 | **Gemini CLI** | [Sanitized Crucible sprint graphic](docs/assets/gemini-cli-crucible-sprint.svg) | Three private Google Cloud VRP reports under triage; no assigned severity or reward. |
 | **GitLab Duo** | [Private-research tactic map](docs/assets/gitlab-duo-crucible-private.svg) | Owner-controlled local validation; no vulnerability report filed. |
+| **GitLab for VS Code** | [VPS3 Predator P-BOX research visual](docs/pbox-gitlab-extension-research-visual.md) | Private report filed; technical record remains private. |
 | **Anthropic SDK** | [Conditional AX research map](docs/assets/anthropic-sdk-crucible-private.svg) | Three owner-controlled local paths from one shared boundary; no vulnerability report filed. |
 
 ### Vercel AI SDK: redacted local P-BOX replay
@@ -161,6 +162,15 @@ Predator began an owner-controlled GitLab Duo research sprint on **October 9, 20
 <p align="center">
   <img src="docs/assets/gitlab-duo-crucible-private.svg" width="960" alt="Aether AI Predator GitLab Duo private Crucible research, begun October 9, 2026. Manual C1 to Q48 checkpoint span and owner-controlled lab tactic map: Execution, Credential Access, Exfiltration. Not reported or technically disclosed."><br>
   <sub>October 10 snapshot · owner-controlled validation · tactic names only · no reproduction steps, secrets, or third-party data</sub>
+</p>
+
+### GitLab for VS Code: private report filed
+
+Predator banked an owner-controlled GitLab for VS Code research record and filed a private report. Technical details and evidence remain private while disclosure is coordinated.
+
+<p align="center">
+  <a href="docs/pbox-gitlab-extension-research-visual.md"><img src="docs/media/predator-pbox-gitlab-extension-research-visual.gif" width="960" alt="Animated Predator VPS3 P-BOX research visual with the red guest desktop, GitLab for VS Code title, and private report status. No vulnerability details are shown."></a><br>
+  <sub>Five-second VPS3 P-BOX research visual · red guest desktop · <a href="docs/pbox-gitlab-extension-research-visual.md">provenance and limits</a></sub>
 </p>
 
 ### Anthropic SDK: private Crucible research

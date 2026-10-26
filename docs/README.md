@@ -4,6 +4,8 @@ Start with the [Predator overview](../README.md), browse the [HTB demo collectio
 
 The [redacted P-BOX replay](pbox-vercel-ai-sdk-showcase.md) shows the actual terminal during a local Vercel AI SDK security test while blurring private commands and finding details.
 
+The [GitLab for VS Code P-BOX research visual](pbox-gitlab-extension-research-visual.md) uses the red VPS3 guest desktop to mark a private report. It contains no finding details or reproduction footage.
+
 This is the public documentation and evidence repository for Aether's AI security research and software repair program. The CLI and operator engines have a separate reviewed access path.
 
 ## Research results

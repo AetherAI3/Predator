@@ -1,0 +1,14 @@
+{
+  "schema": "predator.public-media-provenance.v1",
+  "file": "predator-pbox-gitlab-extension-research-visual.gif",
+  "sha256": "ef15e9582aa2a2ee4fcf8b80f31c5332c2cc0d9eceeff98a26c7e14a4f8db5e2",
+  "bytes": 558419,
+  "width": 1280,
+  "height": 960,
+  "frames": 40,
+  "nominal_frames_per_second": 8,
+  "duration_seconds": 5.01,
+  "source": "icon-free crop of a live VPS3 Predator P-BOX guest desktop capture",
+  "visual_type": "animated research title card; no editor footage or finding demonstration",
+  "claim_limit": "a private report was filed; no vulnerability mechanism or impact is disclosed"
+}
