@@ -168,11 +168,6 @@ Predator began an owner-controlled GitLab Duo research sprint on **October 9, 20
 
 Predator banked an owner-controlled GitLab for VS Code research record and filed a private report. Technical details and evidence remain private while disclosure is coordinated.
 
-<p align="center">
-  <a href="docs/pbox-gitlab-extension-research-visual.md"><img src="docs/media/predator-pbox-gitlab-extension-research-visual.gif" width="960" alt="Animated Predator VPS3 P-BOX research visual with the red guest desktop, GitLab for VS Code title, and private report status. No vulnerability details are shown."></a><br>
-  <sub>Five-second VPS3 P-BOX research visual · red guest desktop · <a href="docs/pbox-gitlab-extension-research-visual.md">provenance and limits</a></sub>
-</p>
-
 ### Anthropic SDK: private Crucible research
 
 On **October 10, 2026**, Predator banked **AX001–AX003** as three conditional outcomes of one shared trust boundary in owner-controlled local fixtures. Their public [MITRE ATT&CK](https://attack.mitre.org/tactics/) tactic lenses are **Collection**, **Credential Access**, and **Execution**. These are parallel research paths, not one completed attack sequence or three independently confirmed vulnerabilities.
