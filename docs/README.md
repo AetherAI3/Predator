@@ -10,6 +10,8 @@ This is the public documentation and evidence repository for Aether's AI securit
 
 ## Research results
 
+**[Gen3 Quantum Comm Ops](research/quantum-comm-ops.md)** explains agent mailboxes, adaptive CFC, and the D → E → F communication hillclimb. Its [public aggregate data](research/quantum-comm-ops.json) distinguishes committed simulator results, owner-reported completion, and pending tests.
+
 | Record | What it covers | Public data |
 | :--- | :--- | :--- |
 | [CharLS Q3 repair](research/charls-q3.md) | Dependent repair: 16/24 → 24/24 protected passes, with all earlier passes retained | [Result JSON](research/charls-q3.json) |

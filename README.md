@@ -21,7 +21,7 @@ Predator brings AI reasoning, persistent context, and reviewed tool use into sec
 
 This is the **public feature showcase and evidence collection**. The CLI and operator engines are private, with [reviewed research access](#developers-join-the-research-program).
 
-[How search works](#how-predator-chooses-the-next-move) · [P-BOX / HTB training](#p-box-htb-training) · [Gen3 Private Security](#gen3-private-security) · [Crucible](#crucible-adaptive-quantum-threat-modeling) · [MITRE chains](#mitre-attck-chain-library) · [CVE catalog](#cve-research-catalog) · [CodePro & System-2](#codepro-and-system-2) · [joint5 & IBM Fez](#joint5-compiler-the-ibm-fez-hardware-result) · [Results](#banked-scientific-results) · [Work with Aether](#ways-to-work-with-aether) · [Gen3 access](#predator-r3d-and-predator-blu3) · [Docs](docs/README.md)
+[How search works](#how-predator-chooses-the-next-move) · [P-BOX / HTB training](#p-box-htb-training) · [Gen3 Private Security](#gen3-private-security) · [Crucible](#crucible-adaptive-quantum-threat-modeling) · [MITRE chains](#mitre-attck-chain-library) · [CVE catalog](#cve-research-catalog) · [CodePro & System-2](#codepro-and-system-2) · [Quantum Comm Ops](#gen3-quantum-comm-ops) · [joint5 & IBM Fez](#joint5-compiler-the-ibm-fez-hardware-result) · [Results](#banked-scientific-results) · [Work with Aether](#ways-to-work-with-aether) · [Gen3 access](#predator-r3d-and-predator-blu3) · [Docs](docs/README.md)
 
 ## How Predator chooses the next move
 
@@ -350,6 +350,46 @@ RC is in controlled private preview. The production viewer and relay have been e
 
 </details>
 
+## Gen3 Quantum Comm Ops
+
+**Give each agent the right piece of a mission. Spend more detail where it helps. Reuse work already done.**
+
+A large agent swarm needs more than workers: it needs a way to share instructions, deliver each worker's context, and bring useful answers back together. **Quantum Comm Ops**—Gen3 quantum communication operations—is Predator's research into that coordination layer, including communication between workers in separate sandboxes.
+
+Think of a mission coordinator with a set of mailboxes. The coordinator compiles one delivery plan, sends each agent a small message, and checks what came back before choosing the next round. The **D → E → F hillclimb** improves one part at a time: establish delivery, test its limits, then improve packing, sampling, and scheduling. The reviewed records cover October 26–27, 2026.
+
+### A mailbox agents can verify
+
+The sender encodes a message as the lowest-energy answer—the **ground state**—of a quantum-search job. Predator builds the job; the authenticated Nano service routes it through ATLAS; the receiver checks the result's receipt and its own key-based message tag, then reconstructs the message.
+
+This exercises the **IBM-compatible mailbox route with FakeFez**, a local simulator configured to model an IBM device. In D2, **192/192 jobs verified and decoded**, with zero transport refusals; all eight message/file comparison pairs produced identical model transcripts. The demonstrated receivers are separate processes. Deployment across independently isolated sandboxes remains a goal.
+
+### Adaptive CFC: start broad, then focus
+
+**The adaptive CFC controller works in the controlled benchmark.** CFC means **Custom Fanout Controls**: each round it decides how many agents continue, how many message bits each receives, and what score is enough to keep a candidate.
+
+<p align="center">
+  <a href="docs/research/quantum-comm-ops.md"><img src="docs/assets/quantum-comm-ops.svg" width="960" alt="Default adaptive CFC policy: up to 400 agents receive 4 bits each, then up to 40 receive 16 bits, then up to 4 receive 64 bits. Each round uses the previous results. These are policy caps; the best measured benchmark used 16 bits in its final stage."></a>
+</p>
+
+In a **400-agent synthetic test with scripted workers**, the best configuration found the same winners as the full-prompt baseline using **about 0.9% of the estimated transmitted tokens**. It identified the winners after two selection rounds, then confirmed them. Repeating the identical mission reused cached deliveries with **zero new samples**.
+
+That is a communication saving, not a measured reduction in LLM bills. One **40-agent test (seed 0)** reproduced its control through the real Nano → ATLAS simulator service. The production-code integration is **default off and advisory**; it records plans without changing selection, and full production dispatch remains blocked.
+
+### Better packing now; multiplexing under study
+
+| Improvement | Why it matters | What the record supports |
+| :--- | :--- | :--- |
+| **Compile once, resume safely** | Assign messages, pack jobs, and record content fingerprints before execution; reuse verified deliveries after interruption. | A 400-agent plan of unique synthetic chains; **97/97 completed agents verified** in the latest committed large-run log. |
+| **96× more useful bits per shot** | Share one tag across a larger message and repeat sampling fewer times. A *shot* is one sample. | **0.015625 → 1.5 bits/shot**, including tag overhead; the final rate is verified in a one-agent trial. A fresh 400-agent plan needs **3,200 jobs**, down from 9,600. |
+| **Superposition multiplexing** | Explore whether one job can carry several messages as equally valid lowest-energy answers. | The best tuned ideal simulations reached **90.5% / 97.4%** probability on the desired two-/four-frame answer sets. The completed circuit sweep with simulated device noise peaked near **33%**, below its 50% target. |
+
+The owner's later update reports **400/400 verified, with the resumed phase taking 3h33 across six parallel services**. Its completion record is not yet in the reviewed GitHub snapshot; the [evidence note](docs/research/quantum-comm-ops.md#the-400-agent-milestone) separates that update from the committed results and explains the resumed job count.
+
+**Research status:** all D/E/F results here are simulation or dry runs. No quantum hardware was used, no quantum advantage is established, and multiplexing did not produce the packing result above. Model capability, isolation, and message-security limits are documented in the guide.
+
+**[Plain-English guide, measurements, and open questions →](docs/research/quantum-comm-ops.md)** · [Public aggregate data](docs/research/quantum-comm-ops.json)
+
 <a id="joint5-compiler-the-ibm-fez-hardware-result"></a>
 
 ## joint5 compiler and the IBM Fez result
@@ -467,6 +507,7 @@ Help build the CLI, repair chains, verification tools, or classical/quantum comp
 | **[HTB training evidence](docs/htb/README.md)** | Courses, tracks, machines, certificates, and replay index |
 | **[Crucible](#crucible-adaptive-quantum-threat-modeling)** | The loop explained as a lockpick, with [MITRE chains](#mitre-attck-chain-library) and the [CVE catalog](#cve-research-catalog) it draws on |
 | **[CodePro and System-2](#codepro-and-system-2)** | How the fanout runs, and the private CLI around it |
+| **[Quantum Comm Ops](docs/research/quantum-comm-ops.md)** | Agent mailboxes, adaptive CFC, packing and multiplexing; [aggregate data and verification scope](docs/research/quantum-comm-ops.json) |
 | **[CharLS Q3](docs/research/charls-q3.md)** | [Public data](docs/research/charls-q3.json) and the completed dependent repair |
 | **[QPACK study](docs/research/gen3-qpack-experiment1.md)** | [Episode data](docs/research/gen3-qpack-experiment1.json), comparisons, and missing outcomes |
 | **[joint5 IBM Fez pilot](docs/research/ibm-fez-pilot.md)** | [Public data](docs/research/ibm-pilot.json), uncertainty, and the energy regression |

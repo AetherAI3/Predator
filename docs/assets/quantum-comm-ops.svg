@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="376" viewBox="0 0 960 376" role="img" aria-labelledby="title desc">
+  <title id="title">Quantum Comm Ops: start broad, then focus</title>
+  <desc id="desc">Illustration of the default adaptive Custom Fanout Controls policy. Up to 400 agents get 4 bits each, then up to 40 get 16 bits, then up to 4 get 64 bits. Previous results guide each round. These are policy caps, not measured worker counts. The best 0.9 percent transmission benchmark used 16 bits in its final stage. Cached identical deliveries need no new sampling.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0c1729"/>
+      <stop offset="1" stop-color="#151329"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10Z" fill="#8698b8"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="958" height="374" rx="22" fill="url(#bg)" stroke="#30415d"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="32" y="38" fill="#6be4f6" font-size="12" font-weight="700" letter-spacing="2">GEN3 / QUANTUM COMM OPS</text>
+    <text x="32" y="73" fill="#f3f7ff" font-size="27" font-weight="700">Start broad. Follow the signal. Send more detail.</text>
+    <text x="32" y="99" fill="#b6c4dc" font-size="14">One compiled mission • small messages per agent • a new plan after each round</text>
+
+    <rect x="32" y="123" width="272" height="153" rx="14" fill="#11283a" stroke="#31596e"/>
+    <text x="52" y="151" fill="#6be4f6" font-size="12" font-weight="700" letter-spacing="1.5">01 / EXPLORE</text>
+    <text x="52" y="201" fill="#f3f7ff" font-size="41" font-weight="700">400</text>
+    <text x="149" y="198" fill="#c4d7e8" font-size="16">agents max.</text>
+    <text x="52" y="234" fill="#6be4f6" font-size="21" font-weight="700">4 bits each</text>
+    <text x="52" y="256" fill="#b6c4dc" font-size="13">A small clue across many candidates</text>
+
+    <path d="M310 198H337" stroke="#8698b8" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="344" y="123" width="272" height="153" rx="14" fill="#191f3b" stroke="#494b7b"/>
+    <text x="364" y="151" fill="#b9adff" font-size="12" font-weight="700" letter-spacing="1.5">02 / NARROW</text>
+    <text x="364" y="201" fill="#f3f7ff" font-size="41" font-weight="700">40</text>
+    <text x="438" y="198" fill="#c4d0e8" font-size="16">agents max.</text>
+    <text x="364" y="234" fill="#b9adff" font-size="21" font-weight="700">16 bits each</text>
+    <text x="364" y="256" fill="#b6c4dc" font-size="13">More context for promising candidates</text>
+
+    <path d="M622 198H649" stroke="#8698b8" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="656" y="123" width="272" height="153" rx="14" fill="#15302e" stroke="#35685e"/>
+    <text x="676" y="151" fill="#7ce6bf" font-size="12" font-weight="700" letter-spacing="1.5">03 / FOCUS</text>
+    <text x="676" y="201" fill="#f3f7ff" font-size="41" font-weight="700">4</text>
+    <text x="726" y="198" fill="#c4dcd6" font-size="16">agents max.</text>
+    <text x="676" y="234" fill="#7ce6bf" font-size="21" font-weight="700">64 bits each</text>
+    <text x="676" y="256" fill="#b6c4dc" font-size="13">Concentrate detail on the final few</text>
+
+    <text x="32" y="305" fill="#d6e1f3" font-size="14" font-weight="700">Repeat an identical delivery? Use the cache. No new sampling shots.</text>
+    <path d="M32 323H928" stroke="#30415d"/>
+    <text x="32" y="346" fill="#b6c4dc" font-size="12">Default policy caps, illustrated. The best measured 0.9% transmission run used 4 / 16 / 16 bits.</text>
+    <text x="32" y="364" fill="#b6c4dc" font-size="12">Research in simulation • production integration default off and advisory • no quantum-advantage claim</text>
+  </g>
+</svg>
