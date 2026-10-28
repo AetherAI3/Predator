@@ -38,6 +38,40 @@
       "repo": "AetherAI3/AETHER-PREDATOR-M",
       "commit": "f75d00635c1c689b9dc05197a535f960eb7bb6e7",
       "path": "bench/qcomms/skt/f4_cfc"
+    },
+    "F2_completion": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "655a5edc8aed37b43b66b75b759d787a1320a8c2",
+      "path": "bench/qcomms/skt/f2_plan",
+      "pull_request": 391,
+      "pr_status_at_review": "open, mergeable; targets F2 branch",
+      "evidence": [
+        "REPORT_F2_cycle3.md",
+        "results/cycle3/ledger.json",
+        "results/cycle3/plan.json",
+        "results/cycle3/metrics.json",
+        "results/cycle3/run.json",
+        "results/cycle3/worker-{0..5}of6.log"
+      ]
+    },
+    "F3_followup": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "48ec000b75593e1226770a2dae3162e5f950cdae",
+      "path": "bench/qcomms/skt/f3_skt",
+      "evidence": [
+        "PREREGISTRATION_F3_cycle2.md",
+        "c2.py",
+        "run_c2_host.sh"
+      ]
+    },
+    "F1_followup": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "931c21b5039acaa79b5e5ff9f237d4d20acb2bb5",
+      "path": "bench/qcomms/skt/f1_width",
+      "evidence": [
+        "PREREGISTRATION_F1_cycle4.md",
+        "MISSION_LOG.md"
+      ]
     }
   },
   "delivery": {
@@ -186,7 +220,7 @@
       "useful_bits_per_shot": 1.5,
       "fresh_400_jobs": 3200,
       "fresh_400_shots": 25600,
-      "evidence_scope": "F2 one-agent cycle-3 launch smoke; full 400-agent completion not committed at reviewed head"
+      "evidence_scope": "F2 cycle-3 completion: 303 newly sampled agents, 2424 jobs, 19392 shots; 97 additional agents carried from cycle 2 at 256 shots"
     },
     "capacity_multiplier": 96,
     "shot_sweep": {
@@ -204,22 +238,44 @@
       "attempted_chunks_per_setting": 72
     },
     "large_plan": {
-      "source": "F2",
+      "source": "F2_completion",
       "planned_agents": 400,
-      "latest_committed_completed_agents": 97,
-      "latest_committed_verified_agents": 97,
+      "latest_committed_completed_agents": 400,
+      "latest_committed_verified_agents": 400,
       "completed_jobs_before_pause": 782,
       "carried_agents": 97,
       "new_agents_in_resumed_plan": 303,
       "resumed_jobs": 2424,
-      "preregistered_campaign_jobs": 3206,
-      "preregistered_campaign_shots": 219584,
-      "owner_reported_completed_agents": 400,
-      "owner_reported_verified_agents": 400,
-      "owner_reported_resumed_wall_seconds": 12780,
-      "owner_reported_parallel_services": 6,
-      "completion_status": "Owner-reported; reviewed head ends at launch. Completion report pending.",
-      "chains": "96-bit synthetic rule-machine priors; unique by construction"
+      "completion_status": "Completed; report, ledger, plan, metrics, run summaries and worker logs committed in PR #391. Source review, not independent receipt replay.",
+      "chains": "96-bit synthetic rule-machine priors; unique by construction",
+      "newly_sampled_verified_agents": 303,
+      "distinct_banked_chains": 400,
+      "assignment_matches": 400,
+      "duplicate_chains": 0,
+      "foreign_chains": 0,
+      "resumed_jobs_completed": 2424,
+      "resumed_shots": 19392,
+      "resumed_verified_bits": 29088,
+      "majority_frame_matches": 2424,
+      "jobs_not_run": 0,
+      "transport_refusals": 0,
+      "worker_exit_codes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "campaign_jobs": 3206,
+      "campaign_shots": 219584,
+      "campaign_verified_bits": 38400,
+      "campaign_useful_bits_per_shot": 0.17487612940833577,
+      "run_window_seconds": 12648.876,
+      "lock_to_finish_seconds": 12796,
+      "parallel_services": 6,
+      "run_finished_utc": "2026-10-27T20:17:47Z",
+      "report_date": "2026-10-28"
     },
     "wall": {
       "baseline_seconds_per_job": 22.7,
@@ -269,13 +325,36 @@
     "independent_payload_rule": "2^m frames carry m+1 independent payloads in the tested affine construction",
     "four_frame_independent_payloads": 3,
     "next_noisy_test": {
-      "source": "F3",
+      "source": "F3_followup",
       "layers": [
         6,
         8,
         10
       ],
-      "status": "preregistered; no committed result at reviewed head"
+      "status": "preregistered; sampling harness and host runner committed; staged according to owner; no committed scored result at reviewed head"
+    }
+  },
+  "followup_status": {
+    "as_of_date": "2026-10-28",
+    "shared_host_order": [
+      "F4",
+      "F3",
+      "F1"
+    ],
+    "queue_evidence": "F1_followup MISSION_LOG.md P3; F2_completion MISSION_LOG.md P11 records handoff to F4",
+    "F4": {
+      "status": "Additional seeds running according to owner; no new committed outcome",
+      "latest_committed_cycle8_seeds": [
+        0
+      ]
+    },
+    "F3": {
+      "status": "Sampling runner committed and staged; atomic lock-grab poller reported by owner",
+      "new_scored_result_committed": false
+    },
+    "F1": {
+      "status": "Cycle-4 preregistration frozen and pushed; waits behind F3",
+      "new_scored_result_committed": false
     }
   }
 }

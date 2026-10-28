@@ -375,11 +375,11 @@ That is a communication saving, not a measured reduction in LLM bills. One **40-
 
 | Improvement | Why it matters | What the record supports |
 | :--- | :--- | :--- |
-| **Compile once, resume safely** | Assign messages, pack jobs, and record content fingerprints before execution; reuse verified deliveries after interruption. | A 400-agent plan of unique synthetic chains; **97/97 completed agents verified** in the latest committed large-run log. |
-| **96× more useful bits per shot** | Share one tag across a larger message and repeat sampling fewer times. A *shot* is one sample. | **0.015625 → 1.5 bits/shot**, including tag overhead; the final rate is verified in a one-agent trial. A fresh 400-agent plan needs **3,200 jobs**, down from 9,600. |
+| **Compile once, resume safely** | Assign messages, pack jobs, and record content fingerprints before execution; reuse verified deliveries after interruption. | **400/400 agents verified**, each with a unique synthetic chain matching its assignment: 303 newly decoded, 97 carried forward. |
+| **96× more useful bits per shot** | Share one tag across a larger message and repeat sampling fewer times. A *shot* is one sample. | **0.015625 → 1.5 bits/shot**, including tag overhead; confirmed across **303 agents / 2,424 jobs at eight shots per job**. A fresh 400-agent plan needs **3,200 jobs**, down from 9,600. |
 | **Superposition multiplexing** | Explore whether one job can carry several messages as equally valid lowest-energy answers. | The best tuned ideal simulations reached **90.5% / 97.4%** probability on the desired two-/four-frame answer sets. The completed circuit sweep with simulated device noise peaked near **33%**, below its 50% target. |
 
-The owner's later update reports **400/400 verified, with the resumed phase taking 3h33 across six parallel services**. Its completion record is not yet in the reviewed GitHub snapshot; the [evidence note](docs/research/quantum-comm-ops.md#the-400-agent-milestone) separates that update from the committed results and explains the resumed job count.
+**The 400-agent milestone is now recorded in the repository.** The resumed phase finished in **about 3h33 across six parallel services**, with all 2,424 new jobs completed and no transport refusals. The [completion evidence](docs/research/quantum-comm-ops.md#the-400-agent-milestone) includes the report, assignment checks, and uniqueness ledger; it separates the 303 newly sampled agents from the 97 retained earlier results. Follow-up controller, multiplexing, and sampling tests continue; their pending outcomes are not counted as new results.
 
 **Research status:** all D/E/F results here are simulation or dry runs. No quantum hardware was used, no quantum advantage is established, and multiplexing did not produce the packing result above. Model capability, isolation, and message-security limits are documented in the guide.
 

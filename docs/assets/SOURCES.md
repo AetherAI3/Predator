@@ -2,7 +2,7 @@
 
 ## October 28 Quantum Comm Ops explanation
 
-- **quantum-comm-ops.svg** — original, self-contained vector illustration of the default adaptive CFC policy: fanout caps 400 → 40 → 4 with 4 → 16 → 64 bits per agent. It illustrates scheduling, not measured worker counts, a hardware run, or the exact best benchmark configuration. The best scripted transmission benchmark used 4 / 16 / 16 bits; that distinction is visible in the figure and its accessible description. The [public evidence note](../research/quantum-comm-ops.md) and [aggregate data](../research/quantum-comm-ops.json) identify the inspected private source revisions, measured scope, model-input distinction, and pending completion evidence. The SVG contains no scripts, external media, embedded fonts, private payloads, or service credentials.
+- **quantum-comm-ops.svg** — original, self-contained vector illustration of the default adaptive CFC policy: fanout caps 400 → 40 → 4 with 4 → 16 → 64 bits per agent. It illustrates scheduling, not measured worker counts, a hardware run, or the exact best benchmark configuration. The best scripted transmission benchmark used 4 / 16 / 16 bits; that distinction is visible in the figure and its accessible description. The [public evidence note](../research/quantum-comm-ops.md) and [aggregate data](../research/quantum-comm-ops.json) identify the inspected private source revisions, measured scope, model-input distinction, and committed 400-agent completion evidence. The SVG contains no scripts, external media, embedded fonts, private payloads, or service credentials.
 
 ## October 21 search and joint5 explanation
 
