@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="600" viewBox="0 0 720 600" role="img" aria-labelledby="title desc">
+  <title id="title">Quantum Comm Ops: small packets, checked handoffs</title>
+  <desc id="desc">Schematic delivery flow. A shared evidence bank supplies a compiler that prepares each worker's packet. The packet is delivered and its receipt and message tag are checked. Passing checks yields an accepted delivery. A failed check can trigger a retry within the configured budget, returning to delivery. The tested service route is Nano through ATLAS to the FakeFez simulator. Worker and model usefulness remains a separate qualification step.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0c1729"/>
+      <stop offset="1" stop-color="#151329"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10Z" fill="#9bacca"/>
+    </marker>
+    <marker id="retry-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10Z" fill="#b9adff"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="718" height="598" rx="22" fill="url(#bg)" stroke="#30415d"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="32" y="37" fill="#6be4f6" font-size="15" font-weight="700" letter-spacing="1.5">GEN3 / QUANTUM COMM OPS</text>
+    <text x="32" y="79" fill="#f3f7ff" font-size="31" font-weight="700">Small packets. Checked handoffs.</text>
+
+    <g fill="none" stroke="#9bacca" stroke-width="2.5" marker-end="url(#arrow)">
+      <path d="M336 160H375"/>
+      <path d="M536 204V238"/>
+      <path d="M384 286H345"/>
+      <path d="M184 330V395"/>
+    </g>
+    <g fill="none" stroke="#b9adff" stroke-width="2.5" marker-end="url(#retry-arrow)">
+      <path d="M184 350H536V395"/>
+      <path d="M688 444H704V286H691"/>
+    </g>
+
+    <rect x="32" y="116" width="304" height="88" rx="14" fill="#11283a" stroke="#31596e"/>
+    <text x="52" y="151" fill="#f3f7ff" font-size="22" font-weight="700">Shared evidence bank</text>
+    <text x="52" y="181" fill="#b6c4dc" font-size="18">Findings and source records</text>
+
+    <rect x="384" y="116" width="304" height="88" rx="14" fill="#191f3b" stroke="#494b7b"/>
+    <text x="404" y="151" fill="#f3f7ff" font-size="22" font-weight="700">Compile a worker packet</text>
+    <text x="404" y="181" fill="#b6c4dc" font-size="18">Select its small instruction</text>
+
+    <rect x="384" y="242" width="304" height="88" rx="14" fill="#191f3b" stroke="#494b7b"/>
+    <text x="404" y="277" fill="#f3f7ff" font-size="22" font-weight="700">Deliver</text>
+    <text x="404" y="307" fill="#b6c4dc" font-size="18">Fresh samples and a receipt</text>
+
+    <rect x="32" y="242" width="304" height="88" rx="14" fill="#11283a" stroke="#31596e"/>
+    <text x="52" y="277" fill="#f3f7ff" font-size="22" font-weight="700">Verify</text>
+    <text x="52" y="307" fill="#b6c4dc" font-size="18">Check receipt + message tag</text>
+
+    <text x="94" y="379" fill="#7ce6bf" font-size="18" font-weight="700">PASS</text>
+    <text x="376" y="379" fill="#b9adff" font-size="18" font-weight="700">CHECK FAILED</text>
+
+    <rect x="32" y="400" width="304" height="88" rx="14" fill="#15302e" stroke="#35685e"/>
+    <text x="52" y="435" fill="#7ce6bf" font-size="22" font-weight="700">Accept the handoff</text>
+    <text x="52" y="465" fill="#c4dcd6" font-size="18">Record verified delivery</text>
+
+    <rect x="384" y="400" width="304" height="88" rx="14" fill="#241e3c" stroke="#62548c"/>
+    <text x="404" y="435" fill="#b9adff" font-size="22" font-weight="700">Retry within budget</text>
+    <text x="404" y="465" fill="#c4d0e8" font-size="18">Stop if the limit is reached</text>
+
+    <path d="M32 516H688" stroke="#30415d"/>
+    <text x="32" y="546" fill="#d6e1f3" font-size="17">Schematic · tested route: Nano → ATLAS → FakeFez simulation</text>
+    <text x="32" y="577" fill="#b6c4dc" font-size="17">Worker / model usefulness is still being qualified.</text>
+  </g>
+</svg>
