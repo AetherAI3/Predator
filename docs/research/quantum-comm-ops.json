@@ -1,360 +1,747 @@
 {
-  "schema": "predator.public.quantum-comm-ops.v1",
-  "review_date": "2026-10-28",
-  "experiment_dates": [
-    "2026-10-26",
-    "2026-10-27"
-  ],
-  "verification": "Source, committed report/result inspection and arithmetic checks; no independent experimental rerun.",
+  "schema": "predator.public.quantum-comm-ops.v2",
+  "review_date": "2026-10-31",
+  "verification": "Source, committed report/result inspection and arithmetic checks; no independent experimental rerun or replay of private raw receipts.",
+  "publication_scope": "Owner-authorized public aggregate summary. Implementation, raw job/mailbox bodies and full run artifacts remain private; source links require repository access.",
   "hardware_used": false,
   "quantum_advantage_established": false,
   "sources": {
-    "D2": {
+    "I_summary": {
       "repo": "AetherAI3/AETHER-PREDATOR-M",
-      "commit": "592b235ac921797df1a5f0d23936378ecfbd795e",
-      "path": "bench/qcomms/skt/REPORT_D2.md"
+      "commit": "43f2f8d863113670920da51c019794e1cf2aed37",
+      "path": "bench/qcomms/skt/REPORT_I.md"
     },
-    "E": {
+    "I6": {
       "repo": "AetherAI3/AETHER-PREDATOR-M",
-      "commit": "4da32b6212ca1e5dd16cda7e7ec212ecebc7902a",
-      "path": "bench/qcomms/skt"
+      "commit": "c090ec666beb15552c73600d57b3d78ae9c060ef",
+      "path": "bench/qcomms/skt/i6_3shot/REPORT_I6.md",
+      "pull_request": 442
     },
-    "F1": {
+    "F2_cycle4": {
       "repo": "AetherAI3/AETHER-PREDATOR-M",
-      "commit": "8815696e7cd99e823d1d44da4756ef31a4d4dd03",
-      "path": "bench/qcomms/skt/f1_width"
+      "commit": "43f2f8d863113670920da51c019794e1cf2aed37",
+      "path": "bench/qcomms/skt/f2_plan/REPORT_F2_cycle4.md"
     },
-    "F2": {
+    "H_summary": {
       "repo": "AetherAI3/AETHER-PREDATOR-M",
-      "commit": "a5aa6db4077380f7b0532d5f7ff2f9a146b7fa4c",
-      "path": "bench/qcomms/skt/f2_plan"
+      "commit": "43f2f8d863113670920da51c019794e1cf2aed37",
+      "path": "bench/qcomms/skt/REPORT_H.md"
     },
-    "F3": {
+    "compiler_audit": {
       "repo": "AetherAI3/AETHER-PREDATOR-M",
-      "commit": "2087aeb01bec9e3f4f822e2d1045222003c20cbb",
-      "path": "bench/qcomms/skt/f3_skt"
+      "commit": "571c6e20183d3f926cd4ea144f7c813df7173f52",
+      "path": "bench/qcomms/skt/compiler_planning/REPORT.md",
+      "pull_request": 426
     },
-    "F4": {
+    "HC_B": {
       "repo": "AetherAI3/AETHER-PREDATOR-M",
-      "commit": "f75d00635c1c689b9dc05197a535f960eb7bb6e7",
-      "path": "bench/qcomms/skt/f4_cfc"
+      "commit": "30c80754a954ff844a80fdeafe4917a16a411356",
+      "path": "bench/qcomms/skt/compile_reuse/REPORT_HCB.md",
+      "pull_request": 431
     },
-    "F2_completion": {
-      "repo": "AetherAI3/AETHER-PREDATOR-M",
-      "commit": "655a5edc8aed37b43b66b75b759d787a1320a8c2",
-      "path": "bench/qcomms/skt/f2_plan",
-      "pull_request": 391,
-      "pr_status_at_review": "open, mergeable; targets F2 branch",
-      "evidence": [
-        "REPORT_F2_cycle3.md",
-        "results/cycle3/ledger.json",
-        "results/cycle3/plan.json",
-        "results/cycle3/metrics.json",
-        "results/cycle3/run.json",
-        "results/cycle3/worker-{0..5}of6.log"
-      ]
-    },
-    "F3_followup": {
-      "repo": "AetherAI3/AETHER-PREDATOR-M",
-      "commit": "48ec000b75593e1226770a2dae3162e5f950cdae",
-      "path": "bench/qcomms/skt/f3_skt",
-      "evidence": [
-        "PREREGISTRATION_F3_cycle2.md",
-        "c2.py",
-        "run_c2_host.sh"
-      ]
-    },
-    "F1_followup": {
-      "repo": "AetherAI3/AETHER-PREDATOR-M",
-      "commit": "931c21b5039acaa79b5e5ff9f237d4d20acb2bb5",
-      "path": "bench/qcomms/skt/f1_width",
-      "evidence": [
-        "PREREGISTRATION_F1_cycle4.md",
-        "MISSION_LOG.md"
-      ]
+    "System2_draft": {
+      "repo": "AetherAI3/AETHER-CLOUD",
+      "commit": "8a45f120e10f0ed8719a26b13b4954aeca3765af",
+      "pull_request": 2168,
+      "source_kind": "pull_request_report_and_pinned_implementation",
+      "status_at_review": "open draft, not merged"
     }
   },
-  "delivery": {
-    "source": "D2",
-    "jobs": 192,
-    "verified_jobs": 192,
-    "transport_refusals": 0,
-    "retries": 0,
-    "identical_transcript_pairs": 8,
-    "model_task_successes": 0,
-    "receiver_boundary": "separate Python process; not an OS sandbox",
-    "backend": "Nano IBM-compatible route; ATLAS FakeFez local dry run"
-  },
-  "adaptive": {
-    "default_policy": {
-      "fanout_caps": [
-        400,
-        40,
-        4
-      ],
-      "bits_per_agent": [
-        4,
-        16,
-        64
-      ]
+  "current": {
+    "scope": {
+      "backend": "FakeFez simulator through Nano and ATLAS",
+      "receivers": "scripted agent-addressed mailboxes; these are delivery tests, not 400 reasoning LLMs",
+      "corpus_generator": "prior96 synthetic rule-machine construction",
+      "fresh_datasets_at_three_shots": 3,
+      "same_generator_across_datasets": true,
+      "fresh_frames_keys_and_seeds": true,
+      "source_chains_may_overlap_across_datasets": true,
+      "generalization_to_other_corpus_constructions": "not established",
+      "independent_os_sandbox_deployment": "not established",
+      "qualified_llm_routes_in_report": 0,
+      "llm_cost_or_capability_improvement": "not established",
+      "provider_billing_savings": "not measured",
+      "production_rollout": "not established by these research runs"
     },
-    "best_scripted": {
-      "source": "F4",
-      "report": "REPORT_F4_cycle5.md",
-      "agents": 400,
-      "seeds": [
-        0,
-        1,
-        2
-      ],
-      "bits_per_agent": [
-        4,
-        16,
-        16
-      ],
-      "actual_fanouts": [
-        [
-          400,
-          29,
-          4
-        ],
-        [
-          400,
-          25,
-          4
-        ],
-        [
-          400,
-          19,
-          3
-        ]
-      ],
-      "baseline_estimated_transmitted_tokens": 199186,
-      "adaptive_estimated_transmitted_tokens": 1842,
-      "ratio": 0.00924763788619682,
-      "selection_rounds_to_winners": 2,
-      "final_confirmation": "C3",
-      "precision": [
-        1,
-        1,
-        1
-      ],
-      "recall": [
-        1,
-        1,
-        1
-      ],
-      "repeat_new_shots": 0,
-      "repeat_cache_hit_rate": 1,
-      "channel": "classical_mixture stand-in",
-      "workers": "scripted on synthetic corpus",
-      "selection": "classical exact",
-      "is_model_input_or_billing_metric": false
+    "baseline_adoption": {
+      "status": "adopted as the research mission baseline",
+      "date": "2026-10-31",
+      "branch": "feat/qcomms-i",
+      "pull_request": 442,
+      "merge_commit": "1459a6bd8550043e9b06cba6e2e737fba16d0788",
+      "first_pass_shots_per_job": 3,
+      "rescue_shots_per_job": 6,
+      "rescue_scope": "one capped whole-agent rescue round; at most 40 agents",
+      "layout": "h2-p-sym-32, admitted for this corpus construction"
     },
-    "real_service_transfer": {
-      "source": "F4",
-      "report": "REPORT_F4_cycle8.md",
-      "status": "partial; one of three seeds",
-      "agents": 40,
-      "seeds_run": [
-        0
-      ],
-      "seeds_not_run": [
-        1,
-        2
-      ],
-      "jobs": 52,
-      "verified_jobs": 52,
-      "baseline_estimated_transmitted_tokens": 6846,
-      "adaptive_estimated_transmitted_tokens": 154,
-      "ratio": 0.022494887525562373,
-      "token_target_ratio": 0.02,
-      "token_target_met": false,
-      "selection_rounds_to_winners": 2,
-      "repeat_new_shots": 0,
-      "control_matched": true,
-      "backend": "Nano + ATLAS FakeFez dry run"
-    },
-    "model_test": {
-      "source": "F4",
-      "report": "REPORT_F4_cycle7.md",
-      "model": "qwen2.5:0.5b",
-      "baseline_model_input_tokens": 352316,
-      "adaptive_model_input_tokens": 247986,
-      "ratio": 0.7038737951157483,
-      "precision": [
-        0,
-        0,
-        0
-      ],
-      "recall": [
-        0,
-        0,
-        0
-      ]
-    },
-    "production": {
-      "flag": "PREDATOR_CFC_ADAPTIVE",
-      "default_enabled": false,
-      "advisory_only": true,
-      "changes_selection": false,
-      "dispatch_blocker": "CFC_CODEPRO_SHARED_IR_UNWIRED"
-    }
-  },
-  "capacity": {
-    "baseline": {
-      "useful_chain_bits": 96,
-      "jobs_per_chain": 24,
-      "useful_bits_per_job": 4,
-      "shots_per_job": 256,
-      "useful_bits_per_shot": 0.015625,
-      "fresh_400_jobs": 9600
-    },
-    "block_at_8_shots": {
-      "useful_chain_bits": 96,
+    "framing": {
+      "logical_chain_bits_per_recipient": 96,
+      "variable_payload_bits_per_recipient": 12,
       "whole_chain_tag_bits": 32,
-      "frame_bits": 16,
-      "jobs_per_chain": 8,
-      "useful_bits_per_job": 12,
-      "shots_per_job": 8,
-      "useful_bits_per_shot": 1.5,
-      "fresh_400_jobs": 3200,
-      "fresh_400_shots": 25600,
-      "evidence_scope": "F2 cycle-3 completion: 303 newly sampled agents, 2424 jobs, 19392 shots; 97 additional agents carried from cycle 2 at 256 shots"
+      "padded_transmitted_frame_bits_per_recipient": 48,
+      "frame_bits_per_job": 16,
+      "jobs_per_recipient": 3,
+      "interpretation": "The shared bank/prior reconstructs a 96-bit logical chain from fixture-specific symbols. This is not arbitrary 96-bit knowledge compressed into 12 new bits.",
+      "bits_per_shot_definition": "96 times fully verified recipients divided by all shots spent, including rescue; a logical-reconstruction metric, not a general channel-capacity or entropy claim."
     },
-    "capacity_multiplier": 96,
-    "shot_sweep": {
-      "source": "F1",
-      "shots": [
-        8,
-        16,
-        32,
-        64,
-        128,
-        256
-      ],
-      "agents_per_setting": 3,
-      "verified_chunks_per_setting": 72,
-      "attempted_chunks_per_setting": 72
-    },
-    "large_plan": {
-      "source": "F2_completion",
-      "planned_agents": 400,
-      "latest_committed_completed_agents": 400,
-      "latest_committed_verified_agents": 400,
-      "completed_jobs_before_pause": 782,
-      "carried_agents": 97,
-      "new_agents_in_resumed_plan": 303,
-      "resumed_jobs": 2424,
-      "completion_status": "Completed; report, ledger, plan, metrics, run summaries and worker logs committed in PR #391. Source review, not independent receipt replay.",
-      "chains": "96-bit synthetic rule-machine priors; unique by construction",
-      "newly_sampled_verified_agents": 303,
-      "distinct_banked_chains": 400,
-      "assignment_matches": 400,
-      "duplicate_chains": 0,
-      "foreign_chains": 0,
-      "resumed_jobs_completed": 2424,
-      "resumed_shots": 19392,
-      "resumed_verified_bits": 29088,
-      "majority_frame_matches": 2424,
-      "jobs_not_run": 0,
-      "transport_refusals": 0,
-      "worker_exit_codes": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "campaign_jobs": 3206,
-      "campaign_shots": 219584,
-      "campaign_verified_bits": 38400,
-      "campaign_useful_bits_per_shot": 0.17487612940833577,
-      "run_window_seconds": 12648.876,
-      "lock_to_finish_seconds": 12796,
-      "parallel_services": 6,
-      "run_finished_utc": "2026-10-27T20:17:47Z",
-      "report_date": "2026-10-28"
-    },
-    "wall": {
-      "baseline_seconds_per_job": 22.7,
-      "baseline_400_projected_hours": 60.53333333333333,
-      "block_400_at_256_shots_single_service_projected_hours": 20.177777777777777,
-      "comparison_is_matched_speedup": false
-    }
-  },
-  "multiplexing": {
-    "ideal_best_single_seed": [
+    "runs": [
       {
-        "source": "F3",
-        "frames": 2,
-        "layers": 20,
-        "seed": 1,
-        "ground_set_probability": 0.904628,
-        "three_seed_mean": 0.8739
+        "corpus": "i2-oddshot-s9000",
+        "source": "I_summary",
+        "evidence_label": "measured_simulator",
+        "recipients": 400,
+        "carried_recipients": 0,
+        "first_pass": {
+          "verified_recipients": 400,
+          "jobs": 1200,
+          "shots": 3600,
+          "shots_per_job": 3
+        },
+        "rescue": {
+          "recipients": 0,
+          "jobs": 0,
+          "shots": 0,
+          "shots_per_job": 6,
+          "verified_recipients": 0
+        },
+        "all_in": {
+          "verified_recipients": 400,
+          "jobs": 1200,
+          "shots": 3600,
+          "verified_logical_chain_bits": 38400,
+          "verified_logical_bits_per_shot": 10.666666666666666
+        },
+        "mission_wall_seconds": 2828.1,
+        "timing_scope": "Reported mission window; smoke, separately scored drills and intervening queue time excluded."
       },
       {
-        "source": "F3",
-        "frames": 4,
-        "layers": 12,
-        "coupling_weight": 2,
-        "seed": 1,
-        "ground_set_probability": 0.974073
-      }
-    ],
-    "noisy_qaoa_best_means": [
-      {
-        "source": "E",
-        "frames": 2,
-        "layers": 6,
-        "mean_ground_mass": 0.328,
-        "seeds": 3
+        "corpus": "i6-rep1",
+        "source": "I6",
+        "evidence_label": "measured_simulator",
+        "recipients": 400,
+        "carried_recipients": 0,
+        "first_pass": {
+          "verified_recipients": 400,
+          "jobs": 1200,
+          "shots": 3600,
+          "shots_per_job": 3
+        },
+        "rescue": {
+          "recipients": 0,
+          "jobs": 0,
+          "shots": 0,
+          "shots_per_job": 6,
+          "verified_recipients": 0
+        },
+        "all_in": {
+          "verified_recipients": 400,
+          "jobs": 1200,
+          "shots": 3600,
+          "verified_logical_chain_bits": 38400,
+          "verified_logical_bits_per_shot": 10.666666666666666
+        },
+        "mission_wall_seconds": 2946.9,
+        "timing_scope": "Reported mission window; smoke, separately scored drills and intervening queue time excluded."
       },
       {
-        "source": "E",
-        "frames": 4,
-        "layers": 4,
-        "mean_ground_mass": 0.253,
-        "seeds": 3
+        "corpus": "i6-rep2",
+        "source": "I6",
+        "evidence_label": "measured_simulator",
+        "recipients": 400,
+        "carried_recipients": 0,
+        "first_pass": {
+          "verified_recipients": 399,
+          "jobs": 1200,
+          "shots": 3600,
+          "shots_per_job": 3
+        },
+        "rescue": {
+          "recipients": 1,
+          "jobs": 3,
+          "shots": 18,
+          "shots_per_job": 6,
+          "verified_recipients": 1
+        },
+        "all_in": {
+          "verified_recipients": 400,
+          "jobs": 1203,
+          "shots": 3618,
+          "verified_logical_chain_bits": 38400,
+          "verified_logical_bits_per_shot": 10.613598673300165
+        },
+        "mission_wall_seconds": 3061.0,
+        "timing_scope": "Reported mission window; smoke, separately scored drills and intervening queue time excluded."
       }
     ],
-    "noisy_ground_mass_target": 0.5,
-    "noisy_target_met": false,
-    "metric_is_delivery_success_rate": false,
-    "independent_payload_rule": "2^m frames carry m+1 independent payloads in the tested affine construction",
-    "four_frame_independent_payloads": 3,
-    "next_noisy_test": {
-      "source": "F3_followup",
-      "layers": [
-        6,
-        8,
-        10
+    "observed_totals": {
+      "missions": 3,
+      "recipient_deliveries": 1200,
+      "first_pass_verified": 1199,
+      "all_in_verified": 1200,
+      "natural_rescues": 1,
+      "interpretation": "Observed counts from three datasets under one generator; not a production reliability guarantee."
+    },
+    "latest_two_runs": {
+      "corpora": [
+        "i6-rep1",
+        "i6-rep2"
       ],
-      "status": "preregistered; sampling harness and host runner committed; staged according to owner; no committed scored result at reviewed head"
-    }
-  },
-  "followup_status": {
-    "as_of_date": "2026-10-28",
-    "shared_host_order": [
-      "F4",
-      "F3",
-      "F1"
-    ],
-    "queue_evidence": "F1_followup MISSION_LOG.md P3; F2_completion MISSION_LOG.md P11 records handoff to F4",
-    "F4": {
-      "status": "Additional seeds running according to owner; no new committed outcome",
-      "latest_committed_cycle8_seeds": [
-        0
+      "mission_wall_seconds": [
+        2946.9,
+        3061.0
+      ],
+      "all_in_jobs_range": [
+        1200,
+        1203
+      ],
+      "all_in_shots_range": [
+        3600,
+        3618
+      ],
+      "all_in_verified_per_run": [
+        400,
+        400
       ]
     },
-    "F3": {
-      "status": "Sampling runner committed and staged; atomic lock-grab poller reported by owner",
-      "new_scored_result_committed": false
+    "rescue_evidence": {
+      "natural": {
+        "source": "I6",
+        "initial_failure": "TAG_MISMATCH after one wrong chunk majority",
+        "wrong_chain_accepted": false,
+        "recipients_rescued": 1,
+        "rescue_jobs": 3,
+        "rescue_shots": 18,
+        "final_verified": 1
+      },
+      "forced_drill": {
+        "source": "I6",
+        "scored_as_replicate": false,
+        "fault": "corrupted sealed receipt",
+        "detected_as": "QSEARCH_SEAL_MISMATCH",
+        "rescued_recipients": 1,
+        "verified_recipients": 1,
+        "rescue_jobs": 3,
+        "rescue_shots": 18
+      },
+      "interpretation": "Detection and recovery were exercised on the simulator host; neither event establishes a general security or rescue reliability guarantee."
     },
-    "F1": {
-      "status": "Cycle-4 preregistration frozen and pushed; waits behind F3",
-      "new_scored_result_committed": false
+    "four_shot_comparison": {
+      "source": "I6",
+      "reference_configuration": "HM-1, same newer three-job-per-recipient layout",
+      "reference_first_pass_shots": 4800,
+      "reference_all_in_shots": 4800,
+      "three_shot_first_pass_shots": 3600,
+      "initial_shot_reduction_fraction": 0.25,
+      "rep2_all_in_shots": 3618,
+      "rep2_all_in_shot_reduction_fraction": 0.24625,
+      "interpretation": "Shot-count comparison; not a measured 25 percent reduction in runtime or billed cost."
+    },
+    "earlier_fresh_mission_baseline": {
+      "source": "F2_cycle4",
+      "corpus": "f2-cycle4",
+      "recipients": 400,
+      "carried_recipients": 0,
+      "first_pass": {
+        "verified_recipients": 396,
+        "jobs": 3200,
+        "shots": 12800,
+        "shots_per_job": 4
+      },
+      "rescue": {
+        "verified_recipients": 4,
+        "jobs": 32,
+        "shots": 256,
+        "shots_per_job": 8
+      },
+      "all_in": {
+        "verified_recipients": 400,
+        "jobs": 3232,
+        "shots": 13056,
+        "verified_logical_chain_bits": 38400,
+        "verified_logical_bits_per_shot": 2.9411764705882355
+      },
+      "timing": {
+        "first_pass_run_window_seconds": 11793,
+        "rescue_run_window_seconds": 362.8,
+        "windows_sum_seconds": 12155.8,
+        "scope": "Separate reported execution windows, excluding the intervening wait and smoke/lock overhead; first-pass window rounded to the second in the report."
+      },
+      "comparison_scope": "Different configurations, corpora and run times on the same research host. Count comparisons are not a matched timing A/B or hardware-billing comparison."
+    },
+    "timing_uncertainty": {
+      "source": "I6",
+      "study_kind": "descriptive across-run study; idle calibration added post hoc",
+      "post_HM1_slowdown_reported_fraction": [
+        0.08,
+        0.17
+      ],
+      "idle_calibration_max_to_min_duration_ratio": 1.4,
+      "cause_identified": false,
+      "interpretation": "Host throughput varied substantially. This does not prove the cause of every regression; small cross-run runtime differences need paired or interleaved comparisons."
+    }
+  },
+  "component_results": {
+    "structural_certificates": {
+      "source": "compiler_audit",
+      "evidence_label": "measured_local_component",
+      "product_jobs_certified": 3200,
+      "local_median_speed_ratios": [
+        87.00684509064438,
+        169.5376661966004
+      ],
+      "what_changed": "Exact coefficient-based product-QUBO proof replaces exhaustive assignment checks for its supported input class.",
+      "mission_validation": {
+        "source": "I6",
+        "every_job_certified": true,
+        "exhaustive_cross_checks_per_first_pass": 24,
+        "cross_checks_agree": [
+          24,
+          24
+        ]
+      },
+      "limit": "These are structural-check microbenchmarks, not mission-wide or QPU speedups. The 2 percent exhaustive audit does not replace certification of every job."
+    },
+    "pooled_simulator": {
+      "source": "HC_B",
+      "evidence_label": "measured_laptop_component",
+      "stock_warm_mean_seconds": 17.705,
+      "pooled_warm_mean_seconds": 12.071,
+      "warm_pairs": 29,
+      "reported_pooled_to_stock_ratio": 0.682,
+      "preregistered_ratio_target": 0.6,
+      "target_met": false,
+      "correctness_gates_passed": 8,
+      "what_is_reused": "Snapshot-keyed simulator backend setup; fresh sampling attempts and receipts remain per job.",
+      "limit": "Host mission attribution, per-service memory and billed-cost savings do not follow from this laptop ratio."
+    },
+    "superposition_multiplexing": {
+      "source": "H_summary",
+      "sampling_evidence": "measured FakeFez simulator samples",
+      "cost_evidence": "modelled QPU usage from priors; no hardware billing",
+      "matched_packing_sensitivity_points": 42,
+      "points_beating_ordinary_packed_circuits": 0,
+      "verdict": "H-6a and H-6b NOT MET",
+      "best_superposition_to_ordinary_useful_bits_per_modelled_usage_second_range": [
+        0.127,
+        0.997
+      ],
+      "limit": "Applies to the tested encoder/circuits and cost model; the successful recipient scale-up is not a superposition-multiplexing gain."
+    },
+    "compact_ir_v2": {
+      "source": "I_summary",
+      "evidence_label": "scripted_agents_with_prior_prices",
+      "verified_recipients": 40,
+      "attempted_recipients": 40,
+      "gate_tokens_per_recipient": [
+        17,
+        18
+      ],
+      "qwen25_bpe_tokens_per_recipient": [
+        54,
+        60
+      ],
+      "cost_per_verified_result_ratio_to_cached_table": 0.442,
+      "without_prefix_cache_qwen_token_cost_ratio": 1.064,
+      "depends_on_cached_legend": true,
+      "qualified_llm_reading_test": "NOT RUN",
+      "limit": "Illustrative accounting depends on tokenizer and caching; no measured LLM billing saving or model capability gain."
+    },
+    "multi_circuit_receipts": {
+      "source": "I_summary",
+      "evidence_label": "offline_tests_with_synthetic_counts",
+      "receipt_version": "predator.qsearch.receipt.v2",
+      "round_tripped_requests": 14,
+      "result_blocks": 8832,
+      "v1_regression_tests_passed": 75,
+      "serialized_3200_block_receipt_bytes": 1084683,
+      "legacy_v1_size_cap_bytes": 1048576,
+      "provider_packed_request_executed": false,
+      "limit": "Receipt validation is a component result. Provider admission, internal sub-job partitioning and billed savings remain unmeasured."
+    },
+    "system2_evidence_accounting": {
+      "source": "System2_draft",
+      "evidence_label": "producer_reported_tests",
+      "status": "tested draft, unmerged at review",
+      "system2_tests_reported_passed": 314,
+      "change": "Count distinct provenance sets instead of repeated occurrences; remove substring corroboration; support idempotent source revisions.",
+      "incremental_ledger": "Python workingFacts ledger tested against full rebuild; not wired into callers.",
+      "producer_revision_and_quote_metadata": "Not emitted by current producers.",
+      "remaining_limits": [
+        "Contradiction handling and expired-summary retention are not implemented by this change.",
+        "Python/native Unicode and non-string claim-item divergences remain documented."
+      ],
+      "production_deployment": false
+    }
+  },
+  "open_questions": [
+    "Do qualified LLM workers use the delivered evidence to improve verified task outcomes?",
+    "Does the layout generalize beyond this admitted corpus construction?",
+    "How does a small real IBM multi-PUB request partition work and bill usage?",
+    "How should receipt-size limits and production admission support packed requests?",
+    "How can validated source-accounting and semantic retention be integrated into System2 callers?",
+    "Can complete worker isolation and full production dispatch be demonstrated?"
+  ],
+  "historical_records_note": "The dated v1 record below is preserved in full as an October 28 snapshot. Its follow-up queues, PR states, capacity figures and deployment observations are historical, not current status.",
+  "history": {
+    "2026-10-28": {
+      "schema": "predator.public.quantum-comm-ops.v1",
+      "review_date": "2026-10-28",
+      "experiment_dates": [
+        "2026-10-26",
+        "2026-10-27"
+      ],
+      "verification": "Source, committed report/result inspection and arithmetic checks; no independent experimental rerun.",
+      "hardware_used": false,
+      "quantum_advantage_established": false,
+      "sources": {
+        "D2": {
+          "repo": "AetherAI3/AETHER-PREDATOR-M",
+          "commit": "592b235ac921797df1a5f0d23936378ecfbd795e",
+          "path": "bench/qcomms/skt/REPORT_D2.md"
+        },
+        "E": {
+          "repo": "AetherAI3/AETHER-PREDATOR-M",
+          "commit": "4da32b6212ca1e5dd16cda7e7ec212ecebc7902a",
+          "path": "bench/qcomms/skt"
+        },
+        "F1": {
+          "repo": "AetherAI3/AETHER-PREDATOR-M",
+          "commit": "8815696e7cd99e823d1d44da4756ef31a4d4dd03",
+          "path": "bench/qcomms/skt/f1_width"
+        },
+        "F2": {
+          "repo": "AetherAI3/AETHER-PREDATOR-M",
+          "commit": "a5aa6db4077380f7b0532d5f7ff2f9a146b7fa4c",
+          "path": "bench/qcomms/skt/f2_plan"
+        },
+        "F3": {
+          "repo": "AetherAI3/AETHER-PREDATOR-M",
+          "commit": "2087aeb01bec9e3f4f822e2d1045222003c20cbb",
+          "path": "bench/qcomms/skt/f3_skt"
+        },
+        "F4": {
+          "repo": "AetherAI3/AETHER-PREDATOR-M",
+          "commit": "f75d00635c1c689b9dc05197a535f960eb7bb6e7",
+          "path": "bench/qcomms/skt/f4_cfc"
+        },
+        "F2_completion": {
+          "repo": "AetherAI3/AETHER-PREDATOR-M",
+          "commit": "655a5edc8aed37b43b66b75b759d787a1320a8c2",
+          "path": "bench/qcomms/skt/f2_plan",
+          "pull_request": 391,
+          "pr_status_at_review": "open, mergeable; targets F2 branch",
+          "evidence": [
+            "REPORT_F2_cycle3.md",
+            "results/cycle3/ledger.json",
+            "results/cycle3/plan.json",
+            "results/cycle3/metrics.json",
+            "results/cycle3/run.json",
+            "results/cycle3/worker-{0..5}of6.log"
+          ]
+        },
+        "F3_followup": {
+          "repo": "AetherAI3/AETHER-PREDATOR-M",
+          "commit": "48ec000b75593e1226770a2dae3162e5f950cdae",
+          "path": "bench/qcomms/skt/f3_skt",
+          "evidence": [
+            "PREREGISTRATION_F3_cycle2.md",
+            "c2.py",
+            "run_c2_host.sh"
+          ]
+        },
+        "F1_followup": {
+          "repo": "AetherAI3/AETHER-PREDATOR-M",
+          "commit": "931c21b5039acaa79b5e5ff9f237d4d20acb2bb5",
+          "path": "bench/qcomms/skt/f1_width",
+          "evidence": [
+            "PREREGISTRATION_F1_cycle4.md",
+            "MISSION_LOG.md"
+          ]
+        }
+      },
+      "delivery": {
+        "source": "D2",
+        "jobs": 192,
+        "verified_jobs": 192,
+        "transport_refusals": 0,
+        "retries": 0,
+        "identical_transcript_pairs": 8,
+        "model_task_successes": 0,
+        "receiver_boundary": "separate Python process; not an OS sandbox",
+        "backend": "Nano IBM-compatible route; ATLAS FakeFez local dry run"
+      },
+      "adaptive": {
+        "default_policy": {
+          "fanout_caps": [
+            400,
+            40,
+            4
+          ],
+          "bits_per_agent": [
+            4,
+            16,
+            64
+          ]
+        },
+        "best_scripted": {
+          "source": "F4",
+          "report": "REPORT_F4_cycle5.md",
+          "agents": 400,
+          "seeds": [
+            0,
+            1,
+            2
+          ],
+          "bits_per_agent": [
+            4,
+            16,
+            16
+          ],
+          "actual_fanouts": [
+            [
+              400,
+              29,
+              4
+            ],
+            [
+              400,
+              25,
+              4
+            ],
+            [
+              400,
+              19,
+              3
+            ]
+          ],
+          "baseline_estimated_transmitted_tokens": 199186,
+          "adaptive_estimated_transmitted_tokens": 1842,
+          "ratio": 0.00924763788619682,
+          "selection_rounds_to_winners": 2,
+          "final_confirmation": "C3",
+          "precision": [
+            1,
+            1,
+            1
+          ],
+          "recall": [
+            1,
+            1,
+            1
+          ],
+          "repeat_new_shots": 0,
+          "repeat_cache_hit_rate": 1,
+          "channel": "classical_mixture stand-in",
+          "workers": "scripted on synthetic corpus",
+          "selection": "classical exact",
+          "is_model_input_or_billing_metric": false
+        },
+        "real_service_transfer": {
+          "source": "F4",
+          "report": "REPORT_F4_cycle8.md",
+          "status": "partial; one of three seeds",
+          "agents": 40,
+          "seeds_run": [
+            0
+          ],
+          "seeds_not_run": [
+            1,
+            2
+          ],
+          "jobs": 52,
+          "verified_jobs": 52,
+          "baseline_estimated_transmitted_tokens": 6846,
+          "adaptive_estimated_transmitted_tokens": 154,
+          "ratio": 0.022494887525562373,
+          "token_target_ratio": 0.02,
+          "token_target_met": false,
+          "selection_rounds_to_winners": 2,
+          "repeat_new_shots": 0,
+          "control_matched": true,
+          "backend": "Nano + ATLAS FakeFez dry run"
+        },
+        "model_test": {
+          "source": "F4",
+          "report": "REPORT_F4_cycle7.md",
+          "model": "qwen2.5:0.5b",
+          "baseline_model_input_tokens": 352316,
+          "adaptive_model_input_tokens": 247986,
+          "ratio": 0.7038737951157483,
+          "precision": [
+            0,
+            0,
+            0
+          ],
+          "recall": [
+            0,
+            0,
+            0
+          ]
+        },
+        "production": {
+          "flag": "PREDATOR_CFC_ADAPTIVE",
+          "default_enabled": false,
+          "advisory_only": true,
+          "changes_selection": false,
+          "dispatch_blocker": "CFC_CODEPRO_SHARED_IR_UNWIRED"
+        }
+      },
+      "capacity": {
+        "baseline": {
+          "useful_chain_bits": 96,
+          "jobs_per_chain": 24,
+          "useful_bits_per_job": 4,
+          "shots_per_job": 256,
+          "useful_bits_per_shot": 0.015625,
+          "fresh_400_jobs": 9600
+        },
+        "block_at_8_shots": {
+          "useful_chain_bits": 96,
+          "whole_chain_tag_bits": 32,
+          "frame_bits": 16,
+          "jobs_per_chain": 8,
+          "useful_bits_per_job": 12,
+          "shots_per_job": 8,
+          "useful_bits_per_shot": 1.5,
+          "fresh_400_jobs": 3200,
+          "fresh_400_shots": 25600,
+          "evidence_scope": "F2 cycle-3 completion: 303 newly sampled agents, 2424 jobs, 19392 shots; 97 additional agents carried from cycle 2 at 256 shots"
+        },
+        "capacity_multiplier": 96,
+        "shot_sweep": {
+          "source": "F1",
+          "shots": [
+            8,
+            16,
+            32,
+            64,
+            128,
+            256
+          ],
+          "agents_per_setting": 3,
+          "verified_chunks_per_setting": 72,
+          "attempted_chunks_per_setting": 72
+        },
+        "large_plan": {
+          "source": "F2_completion",
+          "planned_agents": 400,
+          "latest_committed_completed_agents": 400,
+          "latest_committed_verified_agents": 400,
+          "completed_jobs_before_pause": 782,
+          "carried_agents": 97,
+          "new_agents_in_resumed_plan": 303,
+          "resumed_jobs": 2424,
+          "completion_status": "Completed; report, ledger, plan, metrics, run summaries and worker logs committed in PR #391. Source review, not independent receipt replay.",
+          "chains": "96-bit synthetic rule-machine priors; unique by construction",
+          "newly_sampled_verified_agents": 303,
+          "distinct_banked_chains": 400,
+          "assignment_matches": 400,
+          "duplicate_chains": 0,
+          "foreign_chains": 0,
+          "resumed_jobs_completed": 2424,
+          "resumed_shots": 19392,
+          "resumed_verified_bits": 29088,
+          "majority_frame_matches": 2424,
+          "jobs_not_run": 0,
+          "transport_refusals": 0,
+          "worker_exit_codes": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "campaign_jobs": 3206,
+          "campaign_shots": 219584,
+          "campaign_verified_bits": 38400,
+          "campaign_useful_bits_per_shot": 0.17487612940833577,
+          "run_window_seconds": 12648.876,
+          "lock_to_finish_seconds": 12796,
+          "parallel_services": 6,
+          "run_finished_utc": "2026-10-27T20:17:47Z",
+          "report_date": "2026-10-28"
+        },
+        "wall": {
+          "baseline_seconds_per_job": 22.7,
+          "baseline_400_projected_hours": 60.53333333333333,
+          "block_400_at_256_shots_single_service_projected_hours": 20.177777777777777,
+          "comparison_is_matched_speedup": false
+        }
+      },
+      "multiplexing": {
+        "ideal_best_single_seed": [
+          {
+            "source": "F3",
+            "frames": 2,
+            "layers": 20,
+            "seed": 1,
+            "ground_set_probability": 0.904628,
+            "three_seed_mean": 0.8739
+          },
+          {
+            "source": "F3",
+            "frames": 4,
+            "layers": 12,
+            "coupling_weight": 2,
+            "seed": 1,
+            "ground_set_probability": 0.974073
+          }
+        ],
+        "noisy_qaoa_best_means": [
+          {
+            "source": "E",
+            "frames": 2,
+            "layers": 6,
+            "mean_ground_mass": 0.328,
+            "seeds": 3
+          },
+          {
+            "source": "E",
+            "frames": 4,
+            "layers": 4,
+            "mean_ground_mass": 0.253,
+            "seeds": 3
+          }
+        ],
+        "noisy_ground_mass_target": 0.5,
+        "noisy_target_met": false,
+        "metric_is_delivery_success_rate": false,
+        "independent_payload_rule": "2^m frames carry m+1 independent payloads in the tested affine construction",
+        "four_frame_independent_payloads": 3,
+        "next_noisy_test": {
+          "source": "F3_followup",
+          "layers": [
+            6,
+            8,
+            10
+          ],
+          "status": "preregistered; sampling harness and host runner committed; staged according to owner; no committed scored result at reviewed head"
+        }
+      },
+      "followup_status": {
+        "as_of_date": "2026-10-28",
+        "shared_host_order": [
+          "F4",
+          "F3",
+          "F1"
+        ],
+        "queue_evidence": "F1_followup MISSION_LOG.md P3; F2_completion MISSION_LOG.md P11 records handoff to F4",
+        "F4": {
+          "status": "Additional seeds running according to owner; no new committed outcome",
+          "latest_committed_cycle8_seeds": [
+            0
+          ]
+        },
+        "F3": {
+          "status": "Sampling runner committed and staged; atomic lock-grab poller reported by owner",
+          "new_scored_result_committed": false
+        },
+        "F1": {
+          "status": "Cycle-4 preregistration frozen and pushed; waits behind F3",
+          "new_scored_result_committed": false
+        }
+      }
     }
   }
 }

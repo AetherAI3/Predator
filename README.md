@@ -312,6 +312,8 @@ Alongside the chain library, Predator maintains a catalog of CVE records, affect
 | **Clean model worktrees** | Source-backed runs can isolate model work in pinned Git worktrees. The run record identifies the actual checkout and revision rather than assuming isolation. |
 | **[Unlimited Context (UCL)](https://github.com/AetherAI3/Unlimited-Context-LLM)** | Keeps source-backed evidence in named memory pools across sessions and models. “Unlimited” describes retrieval reach: relevant slices enter the model’s normal attention window. |
 
+**Evidence-accounting update:** a tested System-2 draft counts supporting sources rather than repeated statements; integration remains pending. [What was tested and what remains open →](docs/research/quantum-comm-ops.md#system2-evidence-accounting)
+
 <details>
 <summary><strong>CodePro implementation links</strong></summary>
 
@@ -347,43 +349,37 @@ RC is in controlled private preview. The production viewer and relay have been e
 
 ## Gen3 Quantum Comm Ops
 
-**Give each agent the right piece of a mission. Spend more detail where it helps. Reuse work already done.**
+**Give each worker useful context. Verify every handoff. Focus further work on promising results.**
 
-A large agent swarm needs more than workers: it needs a way to share instructions, deliver each worker's context, and bring useful answers back together. **Quantum Comm Ops**—Gen3 quantum communication operations—is Predator's research into that coordination layer, including communication between workers in separate sandboxes.
+Quantum Comm Ops is Predator's research into coordinating large agent workflows. A shared evidence bank holds the findings; a compiler prepares small, task-specific messages; receivers check those messages before using them. Adaptive **Custom Fanout Controls (CFC)** decide which branches need more attention next.
 
-Think of a mission coordinator with a set of mailboxes. The coordinator compiles one delivery plan, sends each agent a small message, and checks what came back before choosing the next round. The **D → E → F hillclimb** improves one part at a time: establish delivery, test its limits, then improve packing, sampling, and scheduling. The reviewed records cover October 26–27, 2026.
-
-### A mailbox agents can verify
-
-The sender encodes a message as the lowest-energy answer—the **ground state**—of a quantum-search job. Predator builds the job; the authenticated Nano service routes it through ATLAS; the receiver checks the result's receipt and its own key-based message tag, then reconstructs the message.
-
-This exercises the **IBM-compatible mailbox route with FakeFez**, a local simulator configured to model an IBM device. In D2, **192/192 jobs verified and decoded**, with zero transport refusals; all eight message/file comparison pairs produced identical model transcripts. The demonstrated receivers are separate processes. Deployment across independently isolated sandboxes remains a goal.
-
-### Adaptive CFC: start broad, then focus
-
-**The adaptive CFC controller works in the controlled benchmark.** CFC means **Custom Fanout Controls**: each round it decides how many agents continue, how many message bits each receives, and what score is enough to keep a candidate.
+The programme compares ordinary delivery with an experimental quantum-search route through **Nano → ATLAS → FakeFez**, a simulator configured to model an IBM device. Compact packets select or reconstruct records from the shared bank. Useful reasoning from those records is a separate model-qualification step.
 
 <p align="center">
-  <a href="docs/research/quantum-comm-ops.md"><img src="docs/assets/quantum-comm-ops.svg" width="960" alt="Default adaptive CFC policy: up to 400 agents receive 4 bits each, then up to 40 receive 16 bits, then up to 4 receive 64 bits. Each round uses the previous results. These are policy caps; the best measured benchmark used 16 bits in its final stage."></a>
+  <a href="docs/research/quantum-comm-ops.md"><img src="docs/assets/quantum-comm-ops-overview.svg" width="960" alt="Conceptual handoff: compile a packet from shared evidence, deliver it, and check its receipt and message tag. Accept a verified handoff or retry within the budget. The measured route uses FakeFez simulation; model continuation remains under qualification."></a>
 </p>
 
-In a **400-agent synthetic test with scripted workers**, the best configuration found the same winners as the full-prompt baseline using **about 0.9% of the estimated transmitted tokens**. It identified the winners after two selection rounds, then confirmed them. Repeating the identical mission reused cached deliveries with **zero new samples**.
+### Current milestone: repeated 400-recipient delivery
 
-That is a communication saving, not a measured reduction in LLM bills. One **40-agent test (seed 0)** reproduced its control through the real Nano → ATLAS simulator service. The production-code integration is **default off and advisory**; it records plans without changing selection, and full production dispatch remains blocked.
+**Three fresh datasets, 400 scripted recipients each.** All recipients verified after any required retry. These datasets come from the same generator; the tests measure message delivery.
 
-### Better packing now; multiplexing under study
+| Measurement | Recorded result |
+| :--- | :--- |
+| **First-pass verification** | **400/400, 400/400 and 399/400** across the three datasets |
+| **After verified retry** | **400/400 on every dataset** |
+| **Jobs, including retries** | **1,200–1,203**, compared with 3,232 in the earlier F2 configuration |
+| **Samples (“shots”), including retries** | **3,600–3,618**, compared with 13,056 in F2 |
+| **Latest two mission times** | **About 49–51 minutes** on the research host; timing varies with host performance |
 
-| Improvement | Why it matters | What the record supports |
-| :--- | :--- | :--- |
-| **Compile once, resume safely** | Assign messages, pack jobs, and record content fingerprints before execution; reuse verified deliveries after interruption. | **400/400 agents verified**, each with a unique synthetic chain matching its assignment: 303 newly decoded, 97 carried forward. |
-| **96× more useful bits per shot** | Share one tag across a larger message and repeat sampling fewer times. A *shot* is one sample. | **0.015625 → 1.5 bits/shot**, including tag overhead; confirmed across **303 agents / 2,424 jobs at eight shots per job**. A fresh 400-agent plan needs **3,200 jobs**, down from 9,600. |
-| **Superposition multiplexing** | Explore whether one job can carry several messages as equally valid lowest-energy answers. | The best tuned ideal simulations reached **90.5% / 97.4%** probability on the desired two-/four-frame answer sets. The completed circuit sweep with simulated device noise peaked near **33%**, below its 50% target. |
+Smaller dataset-specific frames, fewer samples, pooled simulator setup and exact compiler checks reduced the work. In one run, a wrong majority vote failed its message-tag check; a six-shot retry recovered that recipient. **Three shots plus capped six-shot rescue is now the adopted research baseline.**
 
-**The 400-agent milestone is now recorded in the repository.** The resumed phase finished in **about 3h33 across six parallel services**, with all 2,424 new jobs completed and no transport refusals. The [completion evidence](docs/research/quantum-comm-ops.md#the-400-agent-milestone) includes the report, assignment checks, and uniqueness ledger; it separates the 303 newly sampled agents from the 97 retained earlier results. Follow-up controller, multiplexing, and sampling tests continue; their pending outcomes are not counted as new results.
+### What comes next
 
-**Research status:** all D/E/F results here are simulation or dry runs. No quantum hardware was used, no quantum advantage is established, and multiplexing did not produce the packing result above. Model capability, isolation, and message-security limits are documented in the guide.
+Qualify models that use the delivered evidence, test other dataset constructions, measure a small packed request on IBM hardware, and validate production and independent-sandbox integration. The tested **superposition multiplexing** scheme did not beat ordinary packed circuits in the cost models.
 
-**[Plain-English guide, measurements, and open questions →](docs/research/quantum-comm-ops.md)** · [Public aggregate data](docs/research/quantum-comm-ops.json)
+**Status, October 31, 2026:** Comm Ops results are simulator benchmarks, with no demonstrated quantum advantage or IBM billing savings. The separate joint5 hardware pilot is described below.
+
+**[Plain-English guide, history and open questions →](docs/research/quantum-comm-ops.md)** · [Public aggregate data and source pins](docs/research/quantum-comm-ops.json)
 
 <a id="joint5-compiler-the-ibm-fez-hardware-result"></a>
 
@@ -511,4 +507,5 @@ Help build the CLI, repair chains, verification tools, or classical/quantum comp
 | **[Unlimited Context](https://github.com/AetherAI3/Unlimited-Context-LLM)** | [How it works](https://github.com/AetherAI3/Unlimited-Context-LLM#how-it-works) and [safety measures](https://github.com/AetherAI3/Unlimited-Context-LLM/blob/main/SAFETY.md) |
 
 <p align="center"><sub>Public overview and selected research notes · Private operator engines<br>© 2026 Aether AI LLC. All rights reserved. IBM is identified as a hardware provider; no affiliation or endorsement is implied. <a href="docs/assets/SOURCES.md">Visual sources</a>.</sub></p>
+
 

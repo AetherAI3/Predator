@@ -1,5 +1,10 @@
 # README visual sources
 
+## October 31 Quantum Comm Ops delivery overview
+
+- **quantum-comm-ops-overview.svg** — original, self-contained vector explanation of a verified handoff: shared evidence bank, per-worker packet compilation, delivery, receipt/message checks, and either an accepted delivery or a retry within budget. It is a schematic, not a run trace or evidence of model reasoning. The visible footer identifies the tested Nano → ATLAS → FakeFez simulator route and the separate model-qualification step. The [public guide](../research/quantum-comm-ops.md) and [aggregate data](../research/quantum-comm-ops.json) record the current measured results, source pins and research scope. Accessible title/description, no scripts, external resources, embedded fonts, private payloads or service credentials. Reviewed at full width and 360 pixels.
+- **quantum-comm-ops.svg** — the earlier adaptive CFC policy illustration is preserved unchanged and appears in the guide. Its 400 → 40 → 4 policy caps are separate from the repeated 400-recipient delivery benchmark.
+
 ## October 28 Quantum Comm Ops explanation
 
 - **quantum-comm-ops.svg** — original, self-contained vector illustration of the default adaptive CFC policy: fanout caps 400 → 40 → 4 with 4 → 16 → 64 bits per agent. It illustrates scheduling, not measured worker counts, a hardware run, or the exact best benchmark configuration. The best scripted transmission benchmark used 4 / 16 / 16 bits; that distinction is visible in the figure and its accessible description. The [public evidence note](../research/quantum-comm-ops.md) and [aggregate data](../research/quantum-comm-ops.json) identify the inspected private source revisions, measured scope, model-input distinction, and committed 400-agent completion evidence. The SVG contains no scripts, external media, embedded fonts, private payloads, or service credentials.
@@ -84,4 +89,5 @@ Both assets come from Predator M revision `b02492146d7f7cf5eb1ee3c8b27362dfedbab
 ## October 6 developer console preview
 
 - **predator-cli-console-preview.png** — owner-supplied Predator CLI console illustration, displayed beneath the research-program invitation. Preserved byte for byte at 976 × 676; SHA-256 `6307584a636f3e1e18195b3e0ecfdf2f6fbcdfc22a9ef3b59714e11f84c23d81`. The pictured counters, qubit label, and sample engagement are illustrative; the current registry snapshot and published scientific records remain the sources for measured claims.
+
 
