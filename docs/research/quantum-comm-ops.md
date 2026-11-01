@@ -2,20 +2,83 @@
 
 **Useful context for each worker. Verified handoffs. Less repeated work.** Quantum Comm Ops is Predator's research into coordinating large agent workflows through compact messages, a shared evidence bank, and controls that concentrate further work on promising branches.
 
-**Current review: October 31, 2026.** The latest configuration completed three fresh 400-recipient simulator missions with every recipient verified after any required retry. Three-shot sampling with capped six-shot rescue is now the adopted **research baseline** on `feat/qcomms-i`; this is not a production rollout. This public review checks committed reports and their arithmetic. It is not an independent experimental rerun. [Public aggregate data](quantum-comm-ops.json) carries the measurements; [current source records](#current-source-records) identify the private evidence inspected.
+**Current review: November 1, 2026.** The 400-recipient delivery mission has now run on **IBM quantum hardware**: one provider job per mission, billed **5.0 QPU seconds**, 400/400 recipients verified on the first pass in each of five missions across three datasets, two devices and two secret keys. The simulator configuration that preceded it (three shots with capped six-shot rescue) remains the adopted **research baseline** on `feat/qcomms-i`; neither is a production rollout. This public review checks committed reports and their arithmetic. It is not an independent experimental rerun. [Public aggregate data](quantum-comm-ops.json) carries the measurements; [current source records](#current-source-records) identify the private evidence inspected.
 
 ## Purpose and message path
 
 The goal is to give a worker the evidence needed for its next task without repeatedly sending the full mission history. A shared bank holds the records. A small packet identifies or reconstructs the relevant entries, and the receiver resolves them into structured context. Model usefulness is tested separately from delivery.
 
 1. **Compile assignments.** Choose each recipient's message, encoding and validation requirements before execution.
-2. **Deliver.** Compare ordinary delivery with the experimental Nano → ATLAS quantum-search route. In the latter, the message is encoded as a lowest-energy answer and sampled with **FakeFez**, a simulator configured to model an IBM device.
+2. **Deliver.** Compare ordinary delivery with the experimental Nano → ATLAS quantum-search route. In the latter, the message is encoded as a lowest-energy answer and sampled on an IBM backend: **FakeFez**, a simulator configured to model an IBM device, during the D–I hillclimb, and the real **ibm_fez** and **ibm_kingston** devices in the J missions below.
 3. **Check and recover.** Verify the receipt, reconstruct the message, and check its keyed tag. A refused message remains unaccepted; a bounded retry can deliver it again.
 4. **Continue from supported results.** The intended workflow resolves the accepted message against the evidence bank, runs the next worker task, and preserves evidence for the next planning round.
 
-The demonstrated benchmark uses scripted recipients and synthetic messages. It does not establish that 400 LLMs can reason successfully from the handoffs, transfer model weights or internal states, or operate across independently isolated sandboxes. Communication uses service requests and files. All Comm Ops results below are simulated or dry runs; the separate [joint5 IBM Fez pilot](ibm-fez-pilot.md) is the hardware experiment.
+The demonstrated benchmark uses scripted recipients and synthetic messages. It does not establish that 400 LLMs can reason successfully from the handoffs, transfer model weights or internal states, or operate across independently isolated sandboxes. Communication uses service requests and files. The hardware missions in the next section ran on IBM devices; every other Comm Ops result on this page is a simulator or dry-run result. The separate [joint5 IBM Fez pilot](ibm-fez-pilot.md) is a different hardware experiment about circuit compilation.
 
-## Current delivery result: three fresh datasets
+<a id="ibm-hardware-missions"></a>
+
+## IBM hardware missions: October 31 – November 1, 2026
+
+The owner authorized one research day on IBM's free open plan (600 QPU seconds) with a $50 model budget. Each hardware run was **preregistered** (gates pushed before the run), **rehearsed on FakeFez**, and submitted through the production **Predator → Nano → ATLAS → IBM** route with sealed receipts and a campaign ledger that holds every job's reserved seconds until IBM's accounting settles. The runs below use the same 400-recipient corpus construction as the simulator missions: three 16-bit chunk circuits per recipient, 1,200 circuits per mission, a 32-bit whole-chain tag, and the same compiler.
+
+### The ladder: from 81 jobs to one
+
+| Mission | Device | Provider jobs | Shots per circuit | First pass | After rescue | Billed QPU |
+| :--- | :--- | ---: | ---: | ---: | ---: | ---: |
+| J5, first full mission | ibm_fez | 81 (80 packed + 1 rescue) | 3 | 399/400 | 400/400 | **162 s** |
+| J6, whole first pass in one job, two compiler arms | ibm_kingston | 2 per arm | 3 | 395/400 and 392/400 | 400/400 both | 6 s per arm |
+| **J7, one job at five shots** | ibm_kingston | **1** | 5 | **400/400** | 400/400 | **5.0 s** |
+| J8, two more fresh datasets | ibm_kingston | 1 each | 5 | **400/400, 400/400** | 400/400 | 5.0 s each |
+| J9, run-time secret tag key | ibm_kingston | 1 | 5 | **400/400** | 400/400 | 5.0 s |
+| **J11, second device, new secret, dataset reused from J8** | ibm_fez | 1 | 5 | **400/400** | 400/400 | **5.0 s** |
+
+J5 packed 15 circuits per job and IBM billed about 2 s per job, so the mission cost 162 s. Putting all 1,200 circuits in one request (J6) cut the first pass to 4 s, but three shots left 5–8 wrong chunk majorities; the tag check caught every one and the rescue round fixed them, so J6 missed its first-pass gate (≥ 396) while meeting all-in. Raising to five shots (J7) added one billed second and removed every first-pass failure. J8, J9 and J11 then repeated that configuration on new datasets, with a secret key, and on a second device.
+
+Across the five one-job five-shot missions: **2,000/2,000 recipients verified on the first pass, 0 majority-decoded bit errors in 480,000 raw bit-shots**, raw per-bit error 0.41–0.52% before the five-shot majority. These are five missions from one synthetic generator on two devices over two days; they are not a production reliability measurement.
+
+### The packing control, same circuits, same device
+
+The 162 → 5 s comparison mixes shot counts, devices and calibration days. The matched measurement is small: the first recipient's three chunk circuits, compiled **once** against ibm_fez and reused byte for byte, were submitted as one three-circuit job and as three one-circuit jobs, in both orders (J11 part C). The packed job billed **2.0 s**; the three separate jobs billed **2.0 + 2.0 + 2.0 = 6.0 s**, each time. The first hardware message on October 31 (J0) had found the same 2.0 vs 6.0 s with freshly compiled circuits. This establishes the ratio at three circuits; it does not measure it at 1,200, and IBM's internal partitioning of a packed request is not exposed.
+
+### Secret-key delivery and controls
+
+J9 and J11 derived every tag key from a secret drawn on the research host at run time and never written to a report; only its commitment hash is recorded. Under the secret, 400/400 recipients verified; under the public key derivation, **0/400** verified (the intended refusal). A scan of the run's output files for the secret and its 800–1,600 derived values found **0 hits** in both missions. Tags authenticate; nothing is encrypted. A host-local secret file is not production key management.
+
+### Evidence that flows onward
+
+- **J1, superposed records on hardware (ibm_fez, direct Sampler submission):** a shallow circuit delivered two records across its samples with a coherence witness of 0.813 ± 0.013 (a classical mixture would give 0). Per-record delivery was about 0.43 versus 0.91 for one record per circuit, and a deeper ten-layer arm delivered only 0.19–0.21 per record, so this track **ran on hardware but did not beat ordinary packing**; the witness is not a full-state fidelity.
+- **J10, typed-message model qualification (no QPU):** with models emitting ordered typed path rows and deterministic code packing the 96-bit pin, a frontier model verified **12/12 held-out tasks** (two task families) with 0 serializer mismatches; controls: full table 12/12, no hint 0/12, wrong record 0/12. Cost $3.24. Repeated replies were identical, so repeats are not independent.
+- **J12, end to end from hardware record to checked task (no new QPU):** four hardware-delivered records (J0's recipient on ibm_fez; three J9 recipients on ibm_kingston under the secret key) were re-verified from their sealed receipts, decoded, tag-checked, resolved against the bank, compiled into J10's typed message, read by the model and scored by the deterministic checker: **4/4 verified**, including the pin that every earlier free-form model reply had missed. Cost $0.35.
+
+### Attempts that did not succeed
+
+| Attempt | What happened | Status |
+| :--- | :--- | :--- |
+| J6 first-pass gate | 395/400 and 392/400 at three shots, gate ≥ 396 | **Not met**; all-in 400/400; five shots adopted |
+| J2 calibration-ranked layout | A modelled success probability (ESP) of 0.951 versus 0.810 did not appear as lower hardware error: 0.604% vs 0.597% raw error, p ≈ 0.56 | **Rejected on hardware**; option stays default-off |
+| J11 on ibm_kingston after a recalibration | Job queued 11 h 21 min and was cancelled before running | **Not run**; claim pending; 30 s reserved |
+| J11 retry on ibm_marrakesh | Stopped by a 10 s provider execution limit that had been sized from billed seconds; the provider's limit is not the billed figure, and jobs billed 5 s had run 31–71 s of wall clock | **Error**; 10 s reserved; replaced by the ibm_fez run |
+| J6 on ibm_fez | Queue of 1,596–1,946 pending jobs for two hours | **Not run**; fell back to ibm_kingston |
+
+The two reserved amounts (40 s in total) stay counted against the programme until IBM reports their usage as final; at the time of this review both still read "pending" at the provider. A zero that has not been finalized is never treated as free.
+
+### Budget
+
+| Budget | Cap | Used |
+| :--- | ---: | ---: |
+| IBM free open plan | 600 s | **254 s** (J0 16, J1 8, J3 4, J5 162, J6 12, J7 11, J8 10, J9 5, J11 21, unattributed 5; J7's 11 s includes a separate seven-shot arm billed 6 s, and J6's 12 s covers both compiler arms) |
+| IBM pay-as-you-go instance | 0 | 0 |
+| Aether model calls | $50 | ≈ **$18.65** (model-hint arm $14.70, reviews $0.35, J10 $3.24, J12 $0.35) |
+
+The "unattributed 5 s" is an account-counter step that occurred around the ibm_marrakesh attempt while that job's own usage still read 0; it is reported as spent and not assigned to a mission.
+
+### What the hardware missions do not show
+
+A production reliability guarantee; confidentiality (tags authenticate, nothing is encrypted; J0–J8 used public tag keys); that IBM runs a packed request as a fixed number of internal sub-jobs; a packing ratio beyond three circuits; and **any quantum advantage**. The mission circuits prepare known classical frames with no two-qubit gates. The billed saving is IBM's accounting for batched circuits, and the device is used as a sampling backend for a verifiable delivery protocol, not as a faster computer.
+
+<a id="earlier-simulator-milestone"></a>
+
+## Earlier simulator milestone: three fresh datasets
 
 Each mission starts with 400 recipients and fresh frames, keys and sampling seeds. The datasets come from the **same synthetic generator**, so these repetitions test that configuration rather than generality across workloads. A job requests repeated samples; each sample is a **shot**.
 
@@ -60,7 +123,7 @@ A separate **tested draft** repairs how System2 counts support for claims: repea
 
 - **Model usefulness:** qualify models that use the delivered records and measure total inference, selection, verification and retry cost against cached ordinary delivery.
 - **Different data:** test a corpus from another construction and preserve the fallback when the compact layout cannot represent an input.
-- **Hardware economics:** the multi-circuit receipt has passed offline tests, but no packed IBM hardware request or billed saving is established. A small admitted request under an owner-written spend cap is the next measurement question.
+- **Hardware economics:** packed requests now run on IBM hardware with billed savings measured at three circuits (2.0 vs 6.0 s) and the whole mission at one job (5.0 s). The ratio at 1,200 circuits, IBM's internal partitioning, and the pending accounting for two reserved attempts remain open.
 - **Timing and memory:** the latest host runs stayed below one hour, but calibration showed substantial per-core variability. The slowdown's precise cause remains unidentified. Use paired comparisons and report memory headroom before attributing small runtime changes to code.
 - **Deployment and trust:** production dispatch and independent sandbox deployment need their own validation. Keyed receipt seals establish integrity under the configured shared-key trust model; they do not prove hardware execution or establish provenance against another key holder. A 32-bit tag is not a general security-strength guarantee.
 
@@ -70,6 +133,15 @@ The public numbers above are aggregate summaries. The following source links req
 
 | Record | Frozen source |
 | :--- | :--- |
+| Experiment J close-out: hardware ladder, budgets, rejected items | [`c99594c26804d8801d6aec8ac590e7d2fa23b760` · REPORT_J](https://github.com/AetherAI3/AETHER-PREDATOR-M/blob/c99594c26804d8801d6aec8ac590e7d2fa23b760/bench/qcomms/skt/REPORT_J.md), integration draft [PR #453](https://github.com/AetherAI3/AETHER-PREDATOR-M/pull/453) |
+| J0 first hardware message and packing (ibm_fez) | [`c99594c2…` · REPORT_HW0_LIVE](https://github.com/AetherAI3/AETHER-PREDATOR-M/blob/c99594c26804d8801d6aec8ac590e7d2fa23b760/bench/qcomms/hw0/REPORT_HW0_LIVE.md) |
+| J5 full mission in 81 jobs (ibm_fez) | [`c99594c2…` · REPORT_J5_LIVE](https://github.com/AetherAI3/AETHER-PREDATOR-M/blob/c99594c26804d8801d6aec8ac590e7d2fa23b760/bench/qcomms/hw0/REPORT_J5_LIVE.md) |
+| J6 one-job first pass, gate not met (ibm_kingston) | [`c99594c2…` · REPORT_J6_LIVE](https://github.com/AetherAI3/AETHER-PREDATOR-M/blob/c99594c26804d8801d6aec8ac590e7d2fa23b760/bench/qcomms/hw0/REPORT_J6_LIVE.md) |
+| J7 one job at five shots, J8 two more datasets, J9 secret key (ibm_kingston) | [`c99594c2…` · REPORT_J7_LIVE](https://github.com/AetherAI3/AETHER-PREDATOR-M/blob/c99594c26804d8801d6aec8ac590e7d2fa23b760/bench/qcomms/hw0/REPORT_J7_LIVE.md), [REPORT_J8_LIVE](https://github.com/AetherAI3/AETHER-PREDATOR-M/blob/c99594c26804d8801d6aec8ac590e7d2fa23b760/bench/qcomms/hw0/REPORT_J8_LIVE.md), [REPORT_J9_LIVE](https://github.com/AetherAI3/AETHER-PREDATOR-M/blob/c99594c26804d8801d6aec8ac590e7d2fa23b760/bench/qcomms/hw0/REPORT_J9_LIVE.md) |
+| J11 second device, new secret, packing control, failed attempts (ibm_fez) | [`c99594c2…` · REPORT_J11_LIVE](https://github.com/AetherAI3/AETHER-PREDATOR-M/blob/c99594c26804d8801d6aec8ac590e7d2fa23b760/bench/qcomms/hw0/REPORT_J11_LIVE.md) |
+| J1 superposed records on hardware | [`c99594c2…` · REPORT_J1_LIVE](https://github.com/AetherAI3/AETHER-PREDATOR-M/blob/c99594c26804d8801d6aec8ac590e7d2fa23b760/bench/qcomms/j1_multiplex/REPORT_J1_LIVE.md), [PR #451](https://github.com/AetherAI3/AETHER-PREDATOR-M/pull/451) |
+| J10 typed-message qualification, J12 end-to-end chain | [PR #455](https://github.com/AetherAI3/AETHER-PREDATOR-M/pull/455), [`c99594c2…` · REPORT_J12](https://github.com/AetherAI3/AETHER-PREDATOR-M/blob/c99594c26804d8801d6aec8ac590e7d2fa23b760/bench/qcomms/j12_e2e/REPORT_J12.md), [PR #456](https://github.com/AetherAI3/AETHER-PREDATOR-M/pull/456) |
+| Hardware route and accounting gate (drafts) | AETHER-ATLAS [#182](https://github.com/AetherAI3/AETHER-ATLAS/pull/182), [#184](https://github.com/AetherAI3/AETHER-ATLAS/pull/184), [#185](https://github.com/AetherAI3/AETHER-ATLAS/pull/185); Nano #49–#54; Predator [#450](https://github.com/AetherAI3/AETHER-PREDATOR-M/pull/450) |
 | Experiment I status, I1–I6 summaries and research-baseline adoption | [`43f2f8d863113670920da51c019794e1cf2aed37` · REPORT_I](https://github.com/AetherAI3/AETHER-PREDATOR-M/blob/43f2f8d863113670920da51c019794e1cf2aed37/bench/qcomms/skt/REPORT_I.md) |
 | I6 repetitions, rescue drill and timing study | [`c090ec666beb15552c73600d57b3d78ae9c060ef` · REPORT_I6](https://github.com/AetherAI3/AETHER-PREDATOR-M/blob/c090ec666beb15552c73600d57b3d78ae9c060ef/bench/qcomms/skt/i6_3shot/REPORT_I6.md) |
 | F2 fresh baseline, including rescue accounting | [`43f2f8d…` · REPORT_F2_cycle4](https://github.com/AetherAI3/AETHER-PREDATOR-M/blob/43f2f8d863113670920da51c019794e1cf2aed37/bench/qcomms/skt/f2_plan/REPORT_F2_cycle4.md) |

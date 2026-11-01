@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="720" height="600" viewBox="0 0 720 600" role="img" aria-labelledby="title desc">
   <title id="title">Quantum Comm Ops: small packets, checked handoffs</title>
-  <desc id="desc">Schematic delivery flow. A shared evidence bank supplies a compiler that prepares each worker's packet. The packet is delivered and its receipt and message tag are checked. Passing checks yields an accepted delivery. A failed check can trigger a retry within the configured budget, returning to delivery. The tested service route is Nano through ATLAS to the FakeFez simulator. Worker and model usefulness remains a separate qualification step.</desc>
+  <desc id="desc">Schematic delivery flow. A shared evidence bank supplies a compiler that prepares each worker's packet. The packet is delivered and its receipt and message tag are checked. Passing checks yields an accepted delivery. A failed check can trigger a retry within the configured budget, returning to delivery. The tested service route is Nano through ATLAS to an IBM backend: the FakeFez simulator, then the ibm_fez and ibm_kingston devices. Worker and model usefulness remains a separate qualification step.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0" stop-color="#0c1729"/>
@@ -57,7 +57,7 @@
     <text x="404" y="465" fill="#c4d0e8" font-size="18">Stop if the limit is reached</text>
 
     <path d="M32 516H688" stroke="#30415d"/>
-    <text x="32" y="546" fill="#d6e1f3" font-size="17">Schematic · tested route: Nano → ATLAS → FakeFez simulation</text>
+    <text x="32" y="546" fill="#d6e1f3" font-size="17">Schematic · tested route: Nano → ATLAS → FakeFez simulation, then IBM hardware</text>
     <text x="32" y="577" fill="#b6c4dc" font-size="17">Worker / model usefulness is still being qualified.</text>
   </g>
 </svg>
