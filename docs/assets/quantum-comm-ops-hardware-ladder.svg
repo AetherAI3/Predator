@@ -4,7 +4,7 @@
 <text x="48" y="48" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#67dcb4" >IBM HARDWARE / 400-RECIPIENT DELIVERY MISSION</text>
 <text x="1232" y="48" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#adbbce" text-anchor="end">31 OCT – 1 NOV 2026</text>
 <text x="48" y="112" font-family="Helvetica,Arial,sans-serif" font-size="44" font-weight="700" fill="#f2f6ff" >Same mission. 162 s → 5 s of billed QPU.</text>
-<text x="48" y="152" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="400" fill="#adbbce" >1,200 circuits per mission · billed seconds as reported by the provider · different devices, shot counts and days · linear scale</text>
+<text x="48" y="152" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="400" fill="#adbbce" >1,200 circuits per mission · provider-billed seconds · different devices, shot counts and days · linear scale</text>
 <text x="48" y="216" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#f2f6ff" >J5 · Oct 31</text>
 <text x="48" y="238" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#adbbce" >ibm_fez · 81 jobs · 3 shots · 399/400 first pass</text>
 <rect x="560" y="198" width="560.000" height="30" rx="5" fill="#32c7eb"/>

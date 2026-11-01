@@ -66,8 +66,8 @@ def hardware_ladder():
     a += [text(48, 48, "IBM HARDWARE / 400-RECIPIENT DELIVERY MISSION", 17, GREEN, 700),
           text(1232, 48, "31 OCT – 1 NOV 2026", 17, MUTED, 700, 'text-anchor="end"'),
           text(48, 112, "Same mission. 162 s → 5 s of billed QPU.", 44, FG, 700),
-          text(48, 152, "1,200 circuits per mission · billed seconds as reported by the provider · "
-               "different devices, shot counts and days · linear scale", 19, MUTED)]
+          text(48, 152, "1,200 circuits per mission · provider-billed seconds · different devices, shot counts and days · linear scale",
+               19, MUTED)]
     top, row_h, bar_x, bar_w, max_s = 190, 62, 560, 560, 162.0
     for i, (label, device, config, seconds, result, color) in enumerate(rows):
         y = top + i * row_h
