@@ -1,11 +1,84 @@
 {
-  "schema": "predator.public.quantum-comm-ops.v2",
-  "review_date": "2026-10-31",
-  "verification": "Source, committed report/result inspection and arithmetic checks; no independent experimental rerun or replay of private raw receipts.",
+  "schema": "predator.public.quantum-comm-ops.v3",
+  "review_date": "2026-11-01",
+  "verification": "Source, committed report/result inspection and arithmetic checks against the private live-run reports; no independent experimental rerun, no replay of private raw receipts, no independent provider-account audit.",
   "publication_scope": "Owner-authorized public aggregate summary. Implementation, raw job/mailbox bodies and full run artifacts remain private; source links require repository access.",
-  "hardware_used": false,
+  "hardware_used": true,
+  "hardware_scope": "IBM ibm_fez and ibm_kingston, free open plan, 2026-10-31 to 2026-11-01; see hardware_missions",
   "quantum_advantage_established": false,
   "sources": {
+    "J_summary": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "c99594c26804d8801d6aec8ac590e7d2fa23b760",
+      "path": "bench/qcomms/skt/REPORT_J.md",
+      "pull_request": 453,
+      "pr_status_at_review": "open draft into feat/qcomms-i"
+    },
+    "J0": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "c99594c26804d8801d6aec8ac590e7d2fa23b760",
+      "path": "bench/qcomms/hw0/REPORT_HW0_LIVE.md"
+    },
+    "J1": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "c99594c26804d8801d6aec8ac590e7d2fa23b760",
+      "path": "bench/qcomms/j1_multiplex/REPORT_J1_LIVE.md",
+      "pull_request": 451
+    },
+    "J5": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "c99594c26804d8801d6aec8ac590e7d2fa23b760",
+      "path": "bench/qcomms/hw0/REPORT_J5_LIVE.md"
+    },
+    "J6": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "c99594c26804d8801d6aec8ac590e7d2fa23b760",
+      "path": "bench/qcomms/hw0/REPORT_J6_LIVE.md"
+    },
+    "J7": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "c99594c26804d8801d6aec8ac590e7d2fa23b760",
+      "path": "bench/qcomms/hw0/REPORT_J7_LIVE.md"
+    },
+    "J8": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "c99594c26804d8801d6aec8ac590e7d2fa23b760",
+      "path": "bench/qcomms/hw0/REPORT_J8_LIVE.md"
+    },
+    "J9": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "c99594c26804d8801d6aec8ac590e7d2fa23b760",
+      "path": "bench/qcomms/hw0/REPORT_J9_LIVE.md"
+    },
+    "J10": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "pull_request": 455,
+      "path": "bench/qcomms/j10_typed_path",
+      "source_kind": "merged lane PR and results directory"
+    },
+    "J11": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "c99594c26804d8801d6aec8ac590e7d2fa23b760",
+      "path": "bench/qcomms/hw0/REPORT_J11_LIVE.md"
+    },
+    "J12": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "c99594c26804d8801d6aec8ac590e7d2fa23b760",
+      "path": "bench/qcomms/j12_e2e/REPORT_J12.md",
+      "pull_request": 456
+    },
+    "hardware_route_drafts": {
+      "AETHER-ATLAS": [
+        182,
+        184,
+        185
+      ],
+      "AETHER-PREDATOR-M": [
+        450
+      ],
+      "Nano": "49-54",
+      "status_at_review": "draft PRs into integration branches; nothing merged to main"
+    },
     "I_summary": {
       "repo": "AetherAI3/AETHER-PREDATOR-M",
       "commit": "43f2f8d863113670920da51c019794e1cf2aed37",
@@ -47,6 +120,360 @@
       "status_at_review": "open draft, not merged"
     }
   },
+  "hardware_missions": {
+    "scope": {
+      "provider": "IBM Quantum, free open plan (600 QPU seconds per period)",
+      "paid_instance_used": false,
+      "devices": [
+        "ibm_fez",
+        "ibm_kingston"
+      ],
+      "devices_attempted_without_a_run": [
+        "ibm_marrakesh"
+      ],
+      "dates": [
+        "2026-10-31",
+        "2026-11-01"
+      ],
+      "route": "Predator -> Nano -> ATLAS -> IBM SamplerV2; sealed receipts; campaign ledger holds reserved seconds until provider accounting settles",
+      "preregistered_and_rehearsed": "every live run: gates pushed before the run; FakeFez rehearsal of the exact path",
+      "corpus_generator": "prior96 synthetic rule-machine construction, same as the simulator baseline",
+      "receivers": "scripted agent-addressed mailboxes; delivery tests, not 400 reasoning LLMs",
+      "circuits_per_mission": 1200,
+      "circuit_content": "known classical frames, no two-qubit gates; the device is a sampling backend for a verifiable delivery protocol",
+      "quantum_advantage_established": false,
+      "saving_mechanism": "provider accounting for batched circuits, measured as billed QPU seconds",
+      "production_reliability": "not established: five one-job missions, one generator, two devices, one day each"
+    },
+    "ladder": [
+      {
+        "mission": "J5",
+        "device": "ibm_fez",
+        "corpus": "i6-rep1",
+        "evidence_label": "measured_hardware",
+        "recipients": 400,
+        "provider_jobs": 81,
+        "shots_per_circuit": 3,
+        "first_pass_verified": 399,
+        "all_in_verified": 400,
+        "billed_qpu_seconds": 162.0,
+        "raw_bit_error_rate": 0.0051,
+        "majority_bit_errors_first_pass": 1,
+        "raw_bit_shots_first_pass": 57600,
+        "source": "J5",
+        "packing": "15 circuits per job, 80 packed jobs + 1 whole-recipient rescue job at 6 shots",
+        "raw_bit_error_rate_scope": "297 of 57,888 bit-shots, including the 288 bit-shots of the one rescue job"
+      },
+      {
+        "mission": "J6-base",
+        "device": "ibm_kingston",
+        "corpus": "i6-rep1",
+        "evidence_label": "measured_hardware",
+        "recipients": 400,
+        "provider_jobs": 2,
+        "shots_per_circuit": 3,
+        "first_pass_verified": 395,
+        "all_in_verified": 400,
+        "billed_qpu_seconds": 6.0,
+        "raw_bit_error_rate": 0.00597,
+        "majority_bit_errors_first_pass": 5,
+        "raw_bit_shots_first_pass": 57600,
+        "source": "J6",
+        "first_pass_gate_396_met": false,
+        "first_pass_billed_qpu_seconds": 4.0
+      },
+      {
+        "mission": "J6-c2",
+        "device": "ibm_kingston",
+        "corpus": "i6-rep1",
+        "evidence_label": "measured_hardware",
+        "recipients": 400,
+        "provider_jobs": 2,
+        "shots_per_circuit": 3,
+        "first_pass_verified": 392,
+        "all_in_verified": 400,
+        "billed_qpu_seconds": 6.0,
+        "raw_bit_error_rate": 0.00604,
+        "majority_bit_errors_first_pass": 8,
+        "raw_bit_shots_first_pass": 57600,
+        "source": "J6",
+        "first_pass_gate_396_met": false,
+        "compiler_arm": "J2 calibration-ranked layout; rejected on hardware (p 0.56)"
+      },
+      {
+        "mission": "J7-s5",
+        "device": "ibm_kingston",
+        "corpus": "i6-rep1",
+        "evidence_label": "measured_hardware",
+        "recipients": 400,
+        "provider_jobs": 1,
+        "shots_per_circuit": 5,
+        "first_pass_verified": 400,
+        "all_in_verified": 400,
+        "billed_qpu_seconds": 5.0,
+        "raw_bit_error_rate": 0.00427,
+        "majority_bit_errors_first_pass": 0,
+        "raw_bit_shots_first_pass": 96000,
+        "source": "J7"
+      },
+      {
+        "mission": "J8",
+        "device": "ibm_kingston",
+        "corpus": "i6-rep2",
+        "evidence_label": "measured_hardware",
+        "recipients": 400,
+        "provider_jobs": 1,
+        "shots_per_circuit": 5,
+        "first_pass_verified": 400,
+        "all_in_verified": 400,
+        "billed_qpu_seconds": 5.0,
+        "raw_bit_error_rate": 0.00524,
+        "majority_bit_errors_first_pass": 0,
+        "raw_bit_shots_first_pass": 96000,
+        "source": "J8"
+      },
+      {
+        "mission": "J8",
+        "device": "ibm_kingston",
+        "corpus": "i1-rep1",
+        "evidence_label": "measured_hardware",
+        "recipients": 400,
+        "provider_jobs": 1,
+        "shots_per_circuit": 5,
+        "first_pass_verified": 400,
+        "all_in_verified": 400,
+        "billed_qpu_seconds": 5.0,
+        "raw_bit_error_rate": 0.00517,
+        "majority_bit_errors_first_pass": 0,
+        "raw_bit_shots_first_pass": 96000,
+        "source": "J8"
+      },
+      {
+        "mission": "J9",
+        "device": "ibm_kingston",
+        "corpus": "i6-rep1",
+        "evidence_label": "measured_hardware",
+        "recipients": 400,
+        "provider_jobs": 1,
+        "shots_per_circuit": 5,
+        "first_pass_verified": 400,
+        "all_in_verified": 400,
+        "billed_qpu_seconds": 5.0,
+        "raw_bit_error_rate": 0.00406,
+        "majority_bit_errors_first_pass": 0,
+        "raw_bit_shots_first_pass": 96000,
+        "source": "J9",
+        "tag_key": "run-time secret (commitment recorded, value never written)",
+        "public_key_control_verified": 0,
+        "leak_scan_hits": 0
+      },
+      {
+        "mission": "J11-R",
+        "device": "ibm_fez",
+        "corpus": "i6-rep2",
+        "evidence_label": "measured_hardware",
+        "recipients": 400,
+        "provider_jobs": 1,
+        "shots_per_circuit": 5,
+        "first_pass_verified": 400,
+        "all_in_verified": 400,
+        "billed_qpu_seconds": 5.0,
+        "raw_bit_error_rate": 0.00493,
+        "majority_bit_errors_first_pass": 0,
+        "raw_bit_shots_first_pass": 96000,
+        "source": "J11",
+        "tag_key": "new run-time secret",
+        "public_key_control_verified": 0,
+        "leak_scan_hits": 0,
+        "calibration_last_update_utc": "2026-11-01T13:07:54Z"
+      }
+    ],
+    "one_job_five_shot_totals": {
+      "missions": 5,
+      "recipient_deliveries": 2000,
+      "first_pass_verified": 2000,
+      "rescues_needed": 0,
+      "majority_bit_errors": 0,
+      "raw_bit_shots": 480000,
+      "raw_bit_error_rate_range": [
+        0.00406,
+        0.00524
+      ],
+      "billed_qpu_seconds_per_mission": 5.0,
+      "interpretation": "Observed counts across five missions from one generator on two devices; not a production reliability guarantee."
+    },
+    "cost_comparison": {
+      "first_full_mission_billed_seconds": 162.0,
+      "one_job_mission_billed_seconds": 5.0,
+      "descriptive_ratio": 32.4,
+      "same_device_pair": "J5 and J11-R both on ibm_fez (different shot counts and calibration days)",
+      "is_matched_comparison": false,
+      "matched_packing_control": {
+        "source": "J11",
+        "device": "ibm_fez",
+        "circuits": 3,
+        "compiled_once_and_reused": true,
+        "packed_job_billed_seconds": [
+          2.0,
+          2.0
+        ],
+        "separate_jobs_billed_seconds": [
+          [
+            2.0,
+            2.0,
+            2.0
+          ],
+          [
+            2.0,
+            2.0,
+            2.0
+          ]
+        ],
+        "orders": [
+          "packed then separate",
+          "separate then packed"
+        ],
+        "ratio": 3.0,
+        "earlier_measurement": {
+          "source": "J0",
+          "packed": 2.0,
+          "separate": 6.0,
+          "circuits_freshly_compiled": true
+        },
+        "limit": "Three-circuit comparison; the ratio at 1,200 circuits and IBM's internal partitioning are not measured."
+      }
+    },
+    "superposed_records_on_hardware": {
+      "source": "J1",
+      "device": "ibm_fez",
+      "submission": "direct Sampler, not the production receipt route",
+      "coherence_witness": 0.813,
+      "coherence_witness_uncertainty": 0.013,
+      "classical_mixture_witness": 0.0,
+      "per_record_delivery_superposed": 0.43,
+      "per_record_delivery_one_per_circuit": 0.91,
+      "billed_qpu_seconds": 8,
+      "verdict": "ran on hardware; does not beat ordinary packing",
+      "limit": "witness is not full-state fidelity",
+      "deeper_arm": {
+        "layers": 10,
+        "per_record_delivery": [
+          0.19,
+          0.21
+        ],
+        "verdict": "lost to the block mixture"
+      }
+    },
+    "model_path": {
+      "J10_typed_message_qualification": {
+        "source": "J10",
+        "evidence_label": "measured_api_no_qpu",
+        "held_out_tasks": 12,
+        "verified": 12,
+        "task_families": 2,
+        "ir_replies": 36,
+        "serializer_mismatches": 0,
+        "controls": {
+          "full_table": "12/12",
+          "no_hint": "0/12",
+          "wrong_record": "0/12"
+        },
+        "cost_usd": 3.24,
+        "limit": "repeated replies identical (possible caching); 12 tasks; full table performed equally"
+      },
+      "J12_end_to_end": {
+        "source": "J12",
+        "evidence_label": "measured_hardware_records_plus_api_no_new_qpu",
+        "records": 4,
+        "verified_end_to_end": 4,
+        "record_devices": {
+          "ibm_fez": 1,
+          "ibm_kingston": 3
+        },
+        "chain": "sealed receipt re-verified -> majority decode -> 32-bit tag (secret; public-key control refused) -> bank record -> typed IR -> frontier model -> typed-path compiler -> task checker",
+        "cost_usd": 0.35,
+        "limit": "classical twin prompts were byte-identical with identical replies; not independent evidence"
+      }
+    },
+    "not_met_or_not_run": [
+      {
+        "item": "J6 first-pass gate >= 396 at three shots in one job",
+        "outcome": "NOT MET",
+        "values": [
+          395,
+          392
+        ],
+        "all_in": 400
+      },
+      {
+        "item": "J2 calibration-ranked layout on hardware",
+        "outcome": "REJECTED",
+        "raw_error_c2_vs_base": [
+          0.00604,
+          0.00597
+        ],
+        "p_value": 0.56
+      },
+      {
+        "item": "J6 on ibm_fez",
+        "outcome": "NOT RUN",
+        "reason": "queue 1,596-1,946 pending for 2 h; ran on ibm_kingston"
+      },
+      {
+        "item": "J11 R on ibm_kingston after a recalibration",
+        "outcome": "NOT RUN",
+        "reason": "queued 11 h 21 min, cancelled before running",
+        "reserved_seconds_held": 30
+      },
+      {
+        "item": "J11 R on ibm_marrakesh at a 10 s provider limit",
+        "outcome": "ERROR",
+        "reason": "limit sized from billed seconds; the provider's limit is not the billed figure (jobs billed 5 s had run 31-71 s of wall clock)",
+        "reserved_seconds_held": 10
+      },
+      {
+        "item": "model emits the correct 96-bit pin free-form (J4)",
+        "outcome": "NOT MET",
+        "values": "0/81 pin_ok",
+        "addressed_by": "typed-path compiler (J10 12/12, J12 4/4)"
+      }
+    ],
+    "holds_pending_at_review": {
+      "reserved_seconds": 40,
+      "jobs": 2,
+      "provider_usage_status": "pending",
+      "rule": "zero or missing usage is never treated as free; released only on the provider's final accounting"
+    },
+    "budget": {
+      "ibm_open_plan_cap_seconds": 600,
+      "ibm_open_plan_used_seconds": 254,
+      "used_by_lane_seconds": {
+        "J0": 16,
+        "J1": 8,
+        "J3": 4,
+        "J5": 162,
+        "J6": 12,
+        "J7": 11,
+        "J8": 10,
+        "J9": 5,
+        "J11": 21,
+        "unattributed_step_near_J11_marrakesh_attempt": 5
+      },
+      "paid_instance_seconds": 0,
+      "model_spend_cap_usd": 50,
+      "model_spend_used_usd": 18.65,
+      "model_spend_by_item_usd": {
+        "J4_model_hint_arm": 14.7,
+        "reviews": 0.35,
+        "J10": 3.24,
+        "J12": 0.35
+      },
+      "used_by_lane_notes": {
+        "J7": "includes a separate seven-shot arm billed 6 s",
+        "J6": "both compiler arms, 6 s each"
+      }
+    }
+  },
   "current": {
     "scope": {
       "backend": "FakeFez simulator through Nano and ATLAS",
@@ -60,7 +487,7 @@
       "independent_os_sandbox_deployment": "not established",
       "qualified_llm_routes_in_report": 0,
       "llm_cost_or_capability_improvement": "not established",
-      "provider_billing_savings": "not measured",
+      "provider_billing_savings": "not measured in these simulator missions; billed hardware seconds are in hardware_missions",
       "production_rollout": "not established by these research runs"
     },
     "baseline_adoption": {
@@ -280,6 +707,7 @@
       "interpretation": "Host throughput varied substantially. This does not prove the cause of every regression; small cross-run runtime differences need paired or interleaved comparisons."
     }
   },
+  "current_label": "Simulator research baseline (three shots, capped six-shot rescue), unchanged from the October 31 review; the hardware missions above use the same corpus construction and compiler.",
   "component_results": {
     "structural_certificates": {
       "source": "compiler_audit",
@@ -317,7 +745,7 @@
     "superposition_multiplexing": {
       "source": "H_summary",
       "sampling_evidence": "measured FakeFez simulator samples",
-      "cost_evidence": "modelled QPU usage from priors; no hardware billing",
+      "cost_evidence": "modelled QPU usage from priors in this component study; no hardware billing here (the J1 hardware arm is in hardware_missions.superposed_records_on_hardware)",
       "matched_packing_sensitivity_points": 42,
       "points_beating_ordinary_packed_circuits": 0,
       "verdict": "H-6a and H-6b NOT MET",
@@ -374,15 +802,23 @@
     }
   },
   "open_questions": [
-    "Do qualified LLM workers use the delivered evidence to improve verified task outcomes?",
+    "Do qualified LLM workers use the delivered evidence to improve verified task outcomes on fresh tasks?",
     "Does the layout generalize beyond this admitted corpus construction?",
-    "How does a small real IBM multi-PUB request partition work and bill usage?",
-    "How should receipt-size limits and production admission support packed requests?",
+    "What is the packing ratio beyond three circuits, and how does IBM partition a 1,200-circuit request internally?",
+    "Does the one-job mission hold on ibm_kingston after a fresh calibration (the cancelled J11 attempt)?",
+    "How will IBM finalize the two pending reservations (40 s), and can the ledger release them with job-specific evidence?",
+    "How should receipt-size limits, key management and production admission support packed hardware requests?",
     "How can validated source-accounting and semantic retention be integrated into System2 callers?",
     "Can complete worker isolation and full production dispatch be demonstrated?"
   ],
-  "historical_records_note": "The dated v1 record below is preserved in full as an October 28 snapshot. Its follow-up queues, PR states, capacity figures and deployment observations are historical, not current status.",
+  "historical_records_note": "The October 31 v2 review is preserved in repository history at bba28b3b; its simulator block is carried forward unchanged as 'current'. The dated v1 record below is preserved in full as an October 28 snapshot. Follow-up queues, PR states, capacity figures and deployment observations in those records are historical, not current status.",
   "history": {
+    "2026-10-31": {
+      "schema": "predator.public.quantum-comm-ops.v2",
+      "review_date": "2026-10-31",
+      "preserved_at": "AetherAI3/Predator bba28b3b, docs/research/quantum-comm-ops.json",
+      "note": "Simulator-only review; hardware_used false; its 'current' block is unchanged in v3."
+    },
     "2026-10-28": {
       "schema": "predator.public.quantum-comm-ops.v1",
       "review_date": "2026-10-28",

@@ -10,7 +10,7 @@ This is the public documentation and evidence repository for Aether's AI securit
 
 ## Research results
 
-**[Gen3 Quantum Comm Ops](research/quantum-comm-ops.md)** explains agent mailboxes, adaptive CFC, and the D → E → F communication hillclimb. Its [public aggregate data](research/quantum-comm-ops.json) includes the committed **400/400-agent completion**, separates newly sampled from carried results, and tracks pending tests.
+**[Gen3 Quantum Comm Ops](research/quantum-comm-ops.md)** explains agent mailboxes, adaptive CFC, the D → E → F communication hillclimb, and the **400-recipient mission on IBM hardware in one five-second job**. Its [public aggregate data](research/quantum-comm-ops.json) carries the simulator baseline and the hardware missions with their billed QPU seconds, failed attempts and source pins.
 
 | Record | What it covers | Public data |
 | :--- | :--- | :--- |

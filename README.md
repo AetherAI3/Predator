@@ -353,33 +353,43 @@ RC is in controlled private preview. The production viewer and relay have been e
 
 Quantum Comm Ops is Predator's research into coordinating large agent workflows. A shared evidence bank holds the findings; a compiler prepares small, task-specific messages; receivers check those messages before using them. Adaptive **Custom Fanout Controls (CFC)** decide which branches need more attention next.
 
-The programme compares ordinary delivery with an experimental quantum-search route through **Nano → ATLAS → FakeFez**, a simulator configured to model an IBM device. Compact packets select or reconstruct records from the shared bank. Useful reasoning from those records is a separate model-qualification step.
+The programme compares ordinary delivery with an experimental quantum-search route through **Nano → ATLAS → an IBM backend**: first **FakeFez**, a simulator configured to model an IBM device, and since October 31 the real devices **ibm_fez** and **ibm_kingston** on IBM's free open plan. Compact packets select or reconstruct records from the shared bank. Useful reasoning from those records is a separate model-qualification step.
 
 <p align="center">
-  <a href="docs/research/quantum-comm-ops.md"><img src="docs/assets/quantum-comm-ops-overview.svg" width="960" alt="Conceptual handoff: compile a packet from shared evidence, deliver it, and check its receipt and message tag. Accept a verified handoff or retry within the budget. The measured route uses FakeFez simulation; model continuation remains under qualification."></a>
+  <a href="docs/research/quantum-comm-ops.md"><img src="docs/assets/quantum-comm-ops-overview.svg" width="960" alt="Conceptual handoff: compile a packet from shared evidence, deliver it, and check its receipt and message tag. Accept a verified handoff or retry within the budget. The route was measured on the FakeFez simulator and then on IBM hardware; model continuation remains under qualification."></a>
 </p>
 
-### Current milestone: repeated 400-recipient delivery
+### Current milestone: the 400-recipient mission on IBM hardware, in one five-second job
 
-**Three fresh datasets, 400 scripted recipients each.** All recipients verified after any required retry. These datasets come from the same generator; the tests measure message delivery.
+**October 31 – November 1, 2026.** The same 400-recipient delivery mission that previously ran on the simulator now runs on real IBM quantum hardware: every recipient's message is sampled on the device, its receipt sealed, its 32-bit tag checked, and the whole mission fits in **one provider job billed 5.0 QPU seconds**. Every run was preregistered and rehearsed on the simulator first; the gates that were not met, and the attempts that did not run, are listed below and in the [guide's table of attempts that did not succeed](docs/research/quantum-comm-ops.md#ibm-hardware-missions).
 
-| Measurement | Recorded result |
-| :--- | :--- |
-| **First-pass verification** | **400/400, 400/400 and 399/400** across the three datasets |
-| **After verified retry** | **400/400 on every dataset** |
-| **Jobs, including retries** | **1,200–1,203**, compared with 3,232 in the earlier F2 configuration |
-| **Samples (“shots”), including retries** | **3,600–3,618**, compared with 13,056 in F2 |
-| **Latest two mission times** | **About 49–51 minutes** on the research host; timing varies with host performance |
+| Measurement | Simulator (Oct 31) | IBM hardware (Oct 31 – Nov 1) |
+| :--- | :--- | :--- |
+| **First-pass verification, 400 recipients** | 400/400, 400/400, 399/400 | **400/400 on five missions**: three datasets on ibm_kingston, two with a run-time secret key (ibm_kingston, then ibm_fez) |
+| **After verified retry** | 400/400 on every dataset | 400/400 on every mission; no retry was needed in those five |
+| **Provider jobs per mission** | 1,200–1,203 | **1** (1,200 circuits packed in one request) |
+| **Billed QPU time per mission** | — (simulator) | **5.0 s**, down from **162 s in 81 jobs** when the same mission first ran on ibm_fez |
+| **Majority-decoded bit errors** | 1 in 3 missions | **0 in 480,000 raw bit-shots** across the five missions; raw per-bit error 0.41–0.52% before the five-shot majority |
+| **Secret-key control** | — | 0/400 verify under the public key derivation; 0 leak-scan hits for the secret and its derived values |
+| **Packing control, 3 circuits compiled once** | — | **2.0 s packed vs 6.0 s as three separate jobs**, in both orders (ibm_fez) |
 
-Smaller dataset-specific frames, fewer samples, pooled simulator setup and exact compiler checks reduced the work. In one run, a wrong majority vote failed its message-tag check; a six-shot retry recovered that recipient. **Three shots plus capped six-shot rescue is now the adopted research baseline.**
+The billed saving is **IBM's accounting for batched circuits**, not a quantum speed-up: the mission circuits prepare known classical frames. The 162 → 5 s comparison spans different shot counts, devices and calibration days; the matched same-device comparison is the three-circuit packing control. Not every attempt succeeded: a one-job three-shot run verified 395/400 and 392/400 first pass in its two arms (below the 396 gate; recovered on retry), a calibration-ranked compiler layout that modelled better was rejected on hardware (no lower error, p ≈ 0.56), one ibm_kingston job was cancelled after an eleven-hour queue, and one ibm_marrakesh job was stopped by a provider time limit that had been set too low. Their 40 s of reserved time stays counted until IBM finalizes the accounting.
+
+<p align="center">
+  <a href="docs/research/quantum-comm-ops.md#ibm-hardware-missions"><img src="docs/assets/quantum-comm-ops-hardware-ladder.svg" width="960" alt="Billed QPU seconds for the same 400-recipient mission on IBM hardware: 162 seconds in 81 jobs on October 31 (ibm_fez), 6 seconds in two jobs (ibm_kingston), then 5 seconds in one job, replicated on three datasets, with a secret key, and on ibm_fez on November 1. Inset: three circuits compiled once bill 2.0 seconds packed and 6.0 seconds separate."></a>
+</p>
+
+**Evidence flows onward.** Four hardware-delivered records (one from ibm_fez, three from ibm_kingston under the secret key) were re-verified from their sealed receipts, decoded, resolved against the evidence bank, compiled into a compact typed message, read by a frontier model and checked by a deterministic task checker: **4/4 verified end to end**. The typed-message route itself qualified at **12/12 held-out tasks** with zero serializer mismatches. The whole hardware programme used **254 of the free plan's 600 QPU seconds** and about **$18.65 of a $50 model budget**.
+
+The simulator milestone it builds on, **three fresh 400-recipient datasets at three shots with capped six-shot rescue** (1,199/1,200 first pass, 1,200/1,200 after rescue), remains the research baseline and is kept in full in the [guide](docs/research/quantum-comm-ops.md#earlier-simulator-milestone).
 
 ### What comes next
 
-Qualify models that use the delivered evidence, test other dataset constructions, measure a small packed request on IBM hardware, and validate production and independent-sandbox integration. The tested **superposition multiplexing** scheme did not beat ordinary packed circuits in the cost models.
+Measure the packing ratio beyond three circuits; repeat the mission on ibm_kingston after a fresh calibration; qualify models that use the delivered evidence on fresh tasks; test other dataset constructions; move secrets from the host-local file to real key management; and validate production dispatch and independent-sandbox integration. The tested **superposition multiplexing** scheme ran on hardware but did not beat ordinary packed circuits.
 
-**Status, October 31, 2026:** Comm Ops results are simulator benchmarks, with no demonstrated quantum advantage or IBM billing savings. The separate joint5 hardware pilot is described below.
+**Status, November 1, 2026:** the 400-recipient delivery mission is measured on IBM hardware, including its billed QPU time. No quantum advantage is claimed or demonstrated: the saving is batching accounting on circuits that carry known classical frames. Scripted recipients, one synthetic generator, two devices, one day each. The separate joint5 compiler pilot is described below.
 
-**[Plain-English guide, history and open questions →](docs/research/quantum-comm-ops.md)** · [Public aggregate data and source pins](docs/research/quantum-comm-ops.json)
+**[Plain-English guide, hardware missions and open questions →](docs/research/quantum-comm-ops.md)** · [Public aggregate data and source pins](docs/research/quantum-comm-ops.json)
 
 <a id="joint5-compiler-the-ibm-fez-hardware-result"></a>
 
@@ -498,7 +508,7 @@ Help build the CLI, repair chains, verification tools, or classical/quantum comp
 | **[HTB training evidence](docs/htb/README.md)** | Courses, tracks, machines, certificates, and replay index |
 | **[Crucible](#crucible-adaptive-quantum-threat-modeling)** | The loop explained as a lockpick, with [MITRE chains](#mitre-attck-chain-library) and the [CVE catalog](#cve-research-catalog) it draws on |
 | **[CodePro and System-2](#codepro-and-system-2)** | How the fanout runs, and the private CLI around it |
-| **[Quantum Comm Ops](docs/research/quantum-comm-ops.md)** | Agent mailboxes, adaptive CFC, packing and multiplexing; [aggregate data and verification scope](docs/research/quantum-comm-ops.json) |
+| **[Quantum Comm Ops](docs/research/quantum-comm-ops.md)** | Agent mailboxes, adaptive CFC, packing and multiplexing; [the 400-recipient mission on IBM hardware](docs/research/quantum-comm-ops.md#ibm-hardware-missions) and [aggregate data with source pins](docs/research/quantum-comm-ops.json) |
 | **[CharLS Q3](docs/research/charls-q3.md)** | [Public data](docs/research/charls-q3.json) and the completed dependent repair |
 | **[QPACK study](docs/research/gen3-qpack-experiment1.md)** | [Episode data](docs/research/gen3-qpack-experiment1.json), comparisons, and missing outcomes |
 | **[joint5 IBM Fez pilot](docs/research/ibm-fez-pilot.md)** | [Public data](docs/research/ibm-pilot.json), uncertainty, and the energy regression |

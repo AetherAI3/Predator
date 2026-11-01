@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title description">
+<title id="title">Quantum Comm Ops on IBM hardware: the same mission, from 81 jobs to one</title><desc id="description">Billed IBM QPU seconds for the same 400-recipient delivery mission. J5 · Oct 31 on ibm_fez: 162 seconds in 81 jobs · 3 shots, 399/400 first pass. J6 · Oct 31 on ibm_kingston: 6 seconds, 395/400 first pass · gate not met. J7 · Oct 31 on ibm_kingston: 5 seconds in one job, 400/400 first pass; repeated at 5 seconds on two more datasets, with a secret key, and on ibm_fez on November 1, each 400 of 400. Across the five one-job missions: 2000 of 2000 first pass, 0 majority bit errors in 480,000 raw bit-shots. Inset: three circuits compiled once bill 2 seconds as one job and 6 seconds as three jobs on ibm_fez. The saving is provider accounting for batched circuits; no quantum advantage is established.</desc>
+<rect x="1" y="1" width="1278" height="758" rx="18" fill="#070d17" stroke="#2a3b51"/>
+<text x="48" y="48" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#67dcb4" >IBM HARDWARE / 400-RECIPIENT DELIVERY MISSION</text>
+<text x="1232" y="48" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#adbbce" text-anchor="end">31 OCT – 1 NOV 2026</text>
+<text x="48" y="112" font-family="Helvetica,Arial,sans-serif" font-size="44" font-weight="700" fill="#f2f6ff" >Same mission. 162 s → 5 s of billed QPU.</text>
+<text x="48" y="152" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="400" fill="#adbbce" >1,200 circuits per mission · billed seconds as reported by the provider · different devices, shot counts and days · linear scale</text>
+<text x="48" y="216" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#f2f6ff" >J5 · Oct 31</text>
+<text x="48" y="238" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#adbbce" >ibm_fez · 81 jobs · 3 shots · 399/400 first pass</text>
+<rect x="560" y="198" width="560.000" height="30" rx="5" fill="#32c7eb"/>
+<text x="1134.0" y="221" font-family="Helvetica,Arial,sans-serif" font-size="22" font-weight="700" fill="#f2f6ff" >162 s</text>
+<text x="48" y="278" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#f2f6ff" >J6 · Oct 31</text>
+<text x="48" y="300" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#adbbce" >ibm_kingston · 2 jobs · 3 shots · 395/400 first pass · gate not met</text>
+<rect x="560" y="260" width="20.741" height="30" rx="5" fill="#efc479"/>
+<text x="594.7407407407408" y="283" font-family="Helvetica,Arial,sans-serif" font-size="22" font-weight="700" fill="#f2f6ff" >6 s</text>
+<text x="48" y="340" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#f2f6ff" >J7 · Oct 31</text>
+<text x="48" y="362" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#adbbce" >ibm_kingston · 1 job · 5 shots · 400/400 first pass</text>
+<rect x="560" y="322" width="17.284" height="30" rx="5" fill="#67dcb4"/>
+<text x="591.283950617284" y="345" font-family="Helvetica,Arial,sans-serif" font-size="22" font-weight="700" fill="#f2f6ff" >5 s</text>
+<text x="48" y="402" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#f2f6ff" >J8 · Oct 31</text>
+<text x="48" y="424" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#adbbce" >ibm_kingston · 1 job each · 2 more datasets · 400/400 and 400/400</text>
+<rect x="560" y="384" width="17.284" height="30" rx="5" fill="#67dcb4"/>
+<text x="591.283950617284" y="407" font-family="Helvetica,Arial,sans-serif" font-size="22" font-weight="700" fill="#f2f6ff" >5 s</text>
+<text x="48" y="464" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#f2f6ff" >J9 · Oct 31</text>
+<text x="48" y="486" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#adbbce" >ibm_kingston · 1 job · secret tag key · 400/400 · 0/400 under public key</text>
+<rect x="560" y="446" width="17.284" height="30" rx="5" fill="#67dcb4"/>
+<text x="591.283950617284" y="469" font-family="Helvetica,Arial,sans-serif" font-size="22" font-weight="700" fill="#f2f6ff" >5 s</text>
+<text x="48" y="526" font-family="Helvetica,Arial,sans-serif" font-size="21" font-weight="700" fill="#f2f6ff" >J11 · Nov 1</text>
+<text x="48" y="548" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#adbbce" >ibm_fez · 1 job · 2nd device · new secret · 400/400 first pass</text>
+<rect x="560" y="508" width="17.284" height="30" rx="5" fill="#67dcb4"/>
+<text x="591.283950617284" y="531" font-family="Helvetica,Arial,sans-serif" font-size="22" font-weight="700" fill="#f2f6ff" >5 s</text>
+<path d="M48 572H1232" stroke="#293b53"/>
+<rect x="48" y="590" width="560" height="130" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="70" y="622" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#67dcb4" >Matched packing control · ibm_fez · 3 circuits compiled once</text>
+<text x="70" y="660" font-family="Helvetica,Arial,sans-serif" font-size="36" font-weight="700" fill="#67dcb4" >2 s</text>
+<text x="150" y="660" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="400" fill="#f2f6ff" >as one packed job</text>
+<text x="360" y="660" font-family="Helvetica,Arial,sans-serif" font-size="36" font-weight="700" fill="#32c7eb" >6 s</text>
+<text x="440" y="660" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="400" fill="#f2f6ff" >as three jobs</text>
+<text x="70" y="700" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#adbbce" >Both orders (J11); fresh circuits (J0). Three circuits only.</text>
+<rect x="632" y="590" width="600" height="130" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="654" y="622" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#67dcb4" >Five one-job missions, five shots</text>
+<text x="654" y="660" font-family="Helvetica,Arial,sans-serif" font-size="36" font-weight="700" fill="#f2f6ff" >2,000 / 2,000</text>
+<text x="910" y="660" font-family="Helvetica,Arial,sans-serif" font-size="19" font-weight="400" fill="#f2f6ff" >recipients verified first pass</text>
+<text x="654" y="692" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#adbbce" >0 majority bit errors in 480,000 raw bit-shots</text>
+<text x="654" y="712" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#adbbce" >raw error 0.41–0.52% per bit before the five-shot majority</text>
+<text x="48" y="745" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#adbbce" >Saving = IBM accounting for batched circuits · known classical frames · scripted recipients · no quantum advantage established</text>
+</svg>
