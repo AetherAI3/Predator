@@ -395,9 +395,22 @@ In this research the 400 agents are **scripted stand-ins**, not 400 reasoning la
 
 The simulator milestone it builds on, **three fresh 400-agent runs at three shots with a capped six-shot re-send** (1,199 of 1,200 intact on the first try, 1,200 of 1,200 after re-send), remains the research baseline and is kept in full in the [guide](docs/research/quantum-comm-ops.md#earlier-simulator-milestone).
 
-### What comes next
+### What comes next: feel the pins, then set them
 
-Measure the packing saving beyond three circuits; repeat the mission on ibm_kingston after a fresh calibration; test whether models do better work with the delivered briefings on fresh tasks; try other message constructions; move the secret from a file on the research host to real key management; and validate production dispatch and independent-sandbox deployment. The tested **superposition multiplexing** idea (several messages in one circuit) ran on hardware but did not beat ordinary packing.
+The delivery channel is solved. The next work is on the **agents**, and it follows the same [lockpick](#crucible-adaptive-quantum-threat-modeling) that Crucible already uses. In plain words:
+
+| Lockpick | What the 400-agent mission does today | What the next version adds |
+| :--- | :--- | :--- |
+| **Hold tension** | The shared evidence bank holds every verified record with its receipt | A stronger **encoder** picks each agent's briefing from that bank, with "this was contradicted" labels kept on the record, so fewer agents chase dead ends |
+| **Feel many pins** | 400 cheap agents each take one briefing (one IBM job, 5 s) and report **HIT / MISS / REJECT** with a short reason | Cheap models do this round; in a first survey one mid-cost model verified **12 of 12** test tasks at about **63%** of the frontier model's price, and a free-tier model **7 of 12** at about **2%** |
+| **Keep the pins that bind** | The program's own check decides; a verdict is recorded only when it type-checks and its receipt matches | Agents that disagree are not averaged away: the split itself is recorded (a plain majority was right on 9 of 12 test tasks) and goes to a frontier reviewer |
+| **Set the binding pin** | Today the loop keeps narrowing: 400 → 40 → 4, same shallow effort each round | **Stop narrowing once the few real leads are known.** Each surviving lead gets a **deep cell**: a slow "think longer" model that can loop on the problem many times, plus a frontier model, working that one lead for as long as the budget allows |
+| **Only as many hands as we have** | — | Deep cells are opened only up to the machines we actually have (today: one at a time). Leads that cannot be deepened yet **wait with their evidence intact**; nothing is dropped for lack of a machine |
+| **Next cycle** | Each round's findings feed the next round's briefings | Deep cells add records *within* a lead, so the bank deepens where the lock is binding instead of only getting narrower |
+
+Why this matters for a real security mission: the current loop is good at finding easy bugs and good at *losing* hard ones, because a cheap agent that cannot tell a hard lead is real discards it. Deepening on survivors is where the hard, high-value findings get set. Modelled from the survey above, a 400-agent round of this design costs about **$4 of model calls plus 5 seconds of quantum-computer time**, against about **$18** with a frontier model on every agent; that is a projection, not a measured mission.
+
+Still open, in order: the encoder comparison on a frozen dataset; whether the "think longer" model verifies anything at all (so far it has not, and until it does the deep cells use frontier models only); the narrow-then-deepen comparison at matched budget; then the repeat on ibm_kingston after a fresh calibration, packing beyond three circuits, real key management, and production dispatch. The tested **superposition multiplexing** idea (several messages in one circuit) ran on hardware but did not beat ordinary packing as a way to *carry* messages; whether it helps *choose* between disagreeing agents is still to be tested against a plain vote.
 
 **Status, November 1, 2026:** the 400-agent delivery mission is measured on IBM hardware, including what IBM billed. No quantum advantage is claimed or demonstrated: the saving is IBM's billing for batched circuits that carry known bit patterns. Scripted agents, one synthetic message generator, two devices, one day each. The separate joint5 compiler pilot is described below.
 
