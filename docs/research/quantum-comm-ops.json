@@ -1184,7 +1184,7 @@
   },
   "agent_lanes": {
     "scope": "Experiment K, November 1, 2026: the agents on either side of the hardware channel. Fixture tasks with known answers; scripted or API model workers; no IBM job, no quantum-computer time, no new hardware claim.",
-    "evidence_label": "measured_api_no_qpu",
+    "evidence_label": "measured_no_qpu",
     "encoder_K1": {
       "question": "does a stronger encoder pick the right evidence for each agent's briefing?",
       "dataset_chains": 110,
@@ -1277,7 +1277,7 @@
       "cost_usd": 5.76
     },
     "compounding_K4": {
-      "design": "3 cycles x 40 agents; tier-0 worker -> mid-cost worker -> frontier captain; typesafe verdicts; bank with receipts; compiler filter",
+      "design": "3 cycles x 40 agents; tier-0 worker -> mid-cost worker -> frontier captain; typesafe verdicts; bank with receipts; compiler filter; the same 40 fixture chains every cycle, bank seeded by a scripted warm-up cycle on other chains",
       "run_3b": {
         "tier_0": "gpt54_mini (paid), paced 40 s",
         "first_try_verified_of_40": [
@@ -1309,13 +1309,15 @@
           23,
           39
         ],
-        "cost_ratio_cycle2_over_cycle1": "0.07-0.13",
+        "cost_ratio_cycle2_over_cycle1": "0.07-0.13 (7.6-14x cheaper)",
         "cycle_3": "stopped by the model gateway's hourly call quota (HTTP 429), refusals charged at reservation"
       },
       "lane_cost_usd": 13.77
     },
     "selection_vote_K5": {
-      "split_tasks": 12,
+      "tasks": 12,
+      "tasks_where_plain_majority_failed": 3,
+      "source_rows": "offline re-read of the K3 survey replies; no new model calls",
       "plain_majority": "9/12",
       "reliability_weighted_vote": "12/12",
       "one_hot_qubo_on_mps": "12/12",
@@ -1345,7 +1347,7 @@
       },
       "a_only": {
         "status": "INCOMPLETE (lane cap $5)",
-        "tier_0_dsv4_flash": "0/24 (20 refused records, 4 MISS)",
+        "tier_0_dsv4_flash": "0/24 verified (19 refused records, 4 MISS, 1 accepted wrong HIT flagged by the detector)",
         "tier_1_glm53": "9/9 on the agents reached",
         "agents_pending": 15
       },
@@ -1355,7 +1357,7 @@
         "K-6b": "NOT RUN"
       },
       "cost_usd": 4.33,
-      "note": "the cost model under-shot 2-5x: per-call rates had been measured on 12-row prompts, the hard family's prompts are 3x longer"
+      "note": "the cost model under-shot 2-5x: per-call rates had been measured on 12-row prompts, the hard family's prompts are 3x longer; the hard family is solvable by one shallow worker (glm53 9/9 reached), so the survivor set for deepening may be small"
     },
     "budget": {
       "model_spend_used_usd_experiment_k": 23.86,
@@ -1367,60 +1369,61 @@
     "sources": {
       "K_summary": {
         "repo": "AetherAI3/AETHER-PREDATOR-M",
-        "commit": "f2eb586cbb429be891c2b74636770258134e2cd0",
+        "commit": "bd07e0d20ba8309b3b6407aefe47a7d81cc190a7",
         "pull_request": 461,
         "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
         "path": "bench/qcomms/skt/REPORT_K.md"
       },
       "K1": {
         "repo": "AetherAI3/AETHER-PREDATOR-M",
-        "commit": "f2eb586cbb429be891c2b74636770258134e2cd0",
+        "commit": "bd07e0d20ba8309b3b6407aefe47a7d81cc190a7",
         "pull_request": 461,
         "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
         "path": "bench/qcomms/k1_encoder/REPORT_K1.md"
       },
       "K2": {
         "repo": "AetherAI3/AETHER-PREDATOR-M",
-        "commit": "f2eb586cbb429be891c2b74636770258134e2cd0",
+        "commit": "bd07e0d20ba8309b3b6407aefe47a7d81cc190a7",
         "pull_request": 461,
         "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
         "path": "bench/qcomms/k2_huginn/REPORT_K2.md"
       },
       "K3": {
         "repo": "AetherAI3/AETHER-PREDATOR-M",
-        "commit": "f2eb586cbb429be891c2b74636770258134e2cd0",
+        "commit": "bd07e0d20ba8309b3b6407aefe47a7d81cc190a7",
         "pull_request": 461,
         "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
         "path": "bench/qcomms/k3_fanout/REPORT_K3.md"
       },
       "K4": {
         "repo": "AetherAI3/AETHER-PREDATOR-M",
-        "commit": "f2eb586cbb429be891c2b74636770258134e2cd0",
+        "commit": "bd07e0d20ba8309b3b6407aefe47a7d81cc190a7",
         "pull_request": 461,
         "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
         "path": "bench/qcomms/k4_compound/REPORT_K4.md"
       },
       "K5": {
         "repo": "AetherAI3/AETHER-PREDATOR-M",
-        "commit": "f2eb586cbb429be891c2b74636770258134e2cd0",
+        "commit": "bd07e0d20ba8309b3b6407aefe47a7d81cc190a7",
         "pull_request": 461,
         "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
         "path": "bench/qcomms/k5_select/results/k5-summary.md"
       },
       "K6": {
         "repo": "AetherAI3/AETHER-PREDATOR-M",
-        "commit": "f2eb586cbb429be891c2b74636770258134e2cd0",
+        "commit": "bd07e0d20ba8309b3b6407aefe47a7d81cc190a7",
         "pull_request": 461,
         "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
         "path": "bench/qcomms/k6_deepen/REPORT_K6.md"
       },
       "design": {
         "repo": "AetherAI3/AETHER-PREDATOR-M",
-        "commit": "f2eb586cbb429be891c2b74636770258134e2cd0",
+        "commit": "bd07e0d20ba8309b3b6407aefe47a7d81cc190a7",
         "pull_request": 461,
         "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
         "path": "docs/specs/predator/PREDATOR_CRUCIBLE_HYBRID_DELIVERY_V1.md"
       }
-    }
+    },
+    "evidence_note": "API model calls (K3, K4, K6), a CPU research host (K2), a scripted agent (K1c), an offline classical MPS simulator (K5); K4's warm-up round is scripted"
   }
 }
