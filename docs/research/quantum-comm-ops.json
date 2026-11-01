@@ -802,7 +802,9 @@
     }
   },
   "open_questions": [
-    "Do qualified LLM workers use the delivered evidence to improve verified task outcomes on fresh tasks?",
+    "Do qualified LLM workers use the delivered evidence to improve verified task outcomes on fresh tasks? (Partly answered November 1: a bank of verified records raised first-try verification from 24 to 39 of 40 across three cycles on fixture tasks; the open part is fresh, non-fixture tasks.)",
+    "Does narrowing then deepening on surviving leads beat narrowing alone at matched budget? (The comparison stopped at its budget cap before any deep cell opened; a hard task family where the frontier model alone verifies 2 of 12 now exists for it.)",
+    "Can a recurrent-depth ('think longer') worker verify a typed path at all? (0 of 12 at depths 4, 8 and 16; deep cells stay frontier-only until it does.)",
     "Does the layout generalize beyond this admitted corpus construction?",
     "What is the packing ratio beyond three circuits, and how does IBM partition a 1,200-circuit request internally?",
     "Does the one-job mission hold on ibm_kingston after a fresh calibration (the cancelled J11 attempt)?",
@@ -1177,6 +1179,247 @@
           "status": "Cycle-4 preregistration frozen and pushed; waits behind F3",
           "new_scored_result_committed": false
         }
+      }
+    }
+  },
+  "agent_lanes": {
+    "scope": "Experiment K, November 1, 2026: the agents on either side of the hardware channel. Fixture tasks with known answers; scripted or API model workers; no IBM job, no quantum-computer time, no new hardware claim.",
+    "evidence_label": "measured_api_no_qpu",
+    "encoder_K1": {
+      "question": "does a stronger encoder pick the right evidence for each agent's briefing?",
+      "dataset_chains": 110,
+      "recall_at_8": {
+        "code_4_pool": 0.868,
+        "code_4_global": 0.573,
+        "bm25_pool": 0.383,
+        "bm25_global": 0.167,
+        "code_3_pool": 0.408,
+        "code_3_global": 0.073
+      },
+      "harmful_slot_rate": {
+        "code_4_pool": 0.206,
+        "code_4_global": 0.085,
+        "earlier_reranker": 0.29
+      },
+      "permutation_control": "at chance",
+      "gates": {
+        "K-1a": "MET",
+        "K-1b": "MET"
+      },
+      "cost_usd": 0.018,
+      "selection_to_agent_K1c": {
+        "scripted_agent_verified_unfiltered": "5/110",
+        "scripted_agent_verified_with_chain_and_status_filter": "99/110",
+        "bm25_with_same_filter": "0/110",
+        "gate": "NOT MET as registered; MET under amendment A1 (compiler filter)",
+        "note": "scripted agent, not a model"
+      }
+    },
+    "think_longer_worker_K2": {
+      "model": "Huginn-0125 recurrent-depth, CPU, bf16",
+      "depths": [
+        4,
+        8,
+        16
+      ],
+      "verified_out_of_12": {
+        "4": 0,
+        "8": 0,
+        "16": 0
+      },
+      "depth_32": "one task only; stopped by the host memory rule",
+      "schema_valid_records_at_16": 3,
+      "replies_at_192_token_cap": "all",
+      "gates": {
+        "K-2a": "NOT MET",
+        "K-2b": "NOT MET"
+      },
+      "cost_usd": 0,
+      "cycle_4_adaptive_exit": "running at review"
+    },
+    "worker_survey_K3": {
+      "reference": "gpt55 12/12",
+      "results": {
+        "glm53": {
+          "verified": "12/12",
+          "cost_ratio_to_reference": 0.625
+        },
+        "qwen38_max": {
+          "verified": "12/12",
+          "cost_ratio_to_reference": "1.7-2.0"
+        },
+        "gemini38_flash": {
+          "verified": "12/12",
+          "cost_ratio_to_reference": "1.7-2.0"
+        },
+        "dsv4_flash": {
+          "verified": "7/12",
+          "cost_ratio_to_reference": 0.023
+        },
+        "gpt54_mini": {
+          "verified": "7/12",
+          "cost_ratio_to_reference": 0.236
+        },
+        "haiku": {
+          "verified": "0/12",
+          "note": "strict-JSON envelope refusal"
+        },
+        "kimi_k26": {
+          "verified": "0/12",
+          "note": "strict-JSON envelope refusal"
+        }
+      },
+      "majority_equals_truth": "9/12",
+      "fleiss_kappa": 0.337,
+      "gate": {
+        "K-3a": "NOT MET (no worker at >= 11/12 and <= 0.25x)"
+      },
+      "cost_usd": 5.76
+    },
+    "compounding_K4": {
+      "design": "3 cycles x 40 agents; tier-0 worker -> mid-cost worker -> frontier captain; typesafe verdicts; bank with receipts; compiler filter",
+      "run_3b": {
+        "tier_0": "gpt54_mini (paid), paced 40 s",
+        "first_try_verified_of_40": [
+          24,
+          38,
+          39
+        ],
+        "escalations": [
+          16,
+          2,
+          1
+        ],
+        "cost_per_verified_uvt": [
+          1609,
+          722,
+          716
+        ],
+        "cycle3_over_cycle1": 0.445,
+        "errors": 0,
+        "cost_usd": 4.06,
+        "gates": {
+          "K-4a": "MET",
+          "K-4b": "MET"
+        }
+      },
+      "runs_1_2": {
+        "tier_0": "dsv4_flash (free tier)",
+        "first_try_verified_of_40_cycles_1_2": [
+          23,
+          39
+        ],
+        "cost_ratio_cycle2_over_cycle1": "0.07-0.13",
+        "cycle_3": "stopped by the model gateway's hourly call quota (HTTP 429), refusals charged at reservation"
+      },
+      "lane_cost_usd": 13.77
+    },
+    "selection_vote_K5": {
+      "split_tasks": 12,
+      "plain_majority": "9/12",
+      "reliability_weighted_vote": "12/12",
+      "one_hot_qubo_on_mps": "12/12",
+      "coherence_qubo_on_mps": "12/12",
+      "reading": "a weighted vote suffices; the quantum-style selectors matched it and did not beat it",
+      "gate": {
+        "K-5a": "MET on letter"
+      },
+      "hardware": "none (classical MPS simulator)"
+    },
+    "narrow_then_deepen_K6": {
+      "calibration": {
+        "rung_0": {
+          "path_length": 9,
+          "distractors": 14,
+          "evidence_rows": 23,
+          "frontier_verified": "9/12"
+        },
+        "rung_1": {
+          "path_length": 11,
+          "distractors": 22,
+          "evidence_rows": 33,
+          "frontier_verified": "2/12",
+          "chosen": true
+        },
+        "rung_2": "not run (first qualifying rung stops the ladder)"
+      },
+      "a_only": {
+        "status": "INCOMPLETE (lane cap $5)",
+        "tier_0_dsv4_flash": "0/24 (20 refused records, 4 MISS)",
+        "tier_1_glm53": "9/9 on the agents reached",
+        "agents_pending": 15
+      },
+      "deepen": "NOT RUN (no deep cell opened)",
+      "gates": {
+        "K-6a": "NOT RUN",
+        "K-6b": "NOT RUN"
+      },
+      "cost_usd": 4.33,
+      "note": "the cost model under-shot 2-5x: per-call rates had been measured on 12-row prompts, the hard family's prompts are 3x longer"
+    },
+    "budget": {
+      "model_spend_used_usd_experiment_k": 23.86,
+      "model_spend_ledger_total_usd": 42.5,
+      "model_spend_cap_usd": 50,
+      "ibm_seconds": 0,
+      "gpu_hours": 0
+    },
+    "sources": {
+      "K_summary": {
+        "repo": "AetherAI3/AETHER-PREDATOR-M",
+        "commit": "f2eb586cbb429be891c2b74636770258134e2cd0",
+        "pull_request": 461,
+        "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
+        "path": "bench/qcomms/skt/REPORT_K.md"
+      },
+      "K1": {
+        "repo": "AetherAI3/AETHER-PREDATOR-M",
+        "commit": "f2eb586cbb429be891c2b74636770258134e2cd0",
+        "pull_request": 461,
+        "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
+        "path": "bench/qcomms/k1_encoder/REPORT_K1.md"
+      },
+      "K2": {
+        "repo": "AetherAI3/AETHER-PREDATOR-M",
+        "commit": "f2eb586cbb429be891c2b74636770258134e2cd0",
+        "pull_request": 461,
+        "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
+        "path": "bench/qcomms/k2_huginn/REPORT_K2.md"
+      },
+      "K3": {
+        "repo": "AetherAI3/AETHER-PREDATOR-M",
+        "commit": "f2eb586cbb429be891c2b74636770258134e2cd0",
+        "pull_request": 461,
+        "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
+        "path": "bench/qcomms/k3_fanout/REPORT_K3.md"
+      },
+      "K4": {
+        "repo": "AetherAI3/AETHER-PREDATOR-M",
+        "commit": "f2eb586cbb429be891c2b74636770258134e2cd0",
+        "pull_request": 461,
+        "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
+        "path": "bench/qcomms/k4_compound/REPORT_K4.md"
+      },
+      "K5": {
+        "repo": "AetherAI3/AETHER-PREDATOR-M",
+        "commit": "f2eb586cbb429be891c2b74636770258134e2cd0",
+        "pull_request": 461,
+        "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
+        "path": "bench/qcomms/k5_select/results/k5-summary.md"
+      },
+      "K6": {
+        "repo": "AetherAI3/AETHER-PREDATOR-M",
+        "commit": "f2eb586cbb429be891c2b74636770258134e2cd0",
+        "pull_request": 461,
+        "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
+        "path": "bench/qcomms/k6_deepen/REPORT_K6.md"
+      },
+      "design": {
+        "repo": "AetherAI3/AETHER-PREDATOR-M",
+        "commit": "f2eb586cbb429be891c2b74636770258134e2cd0",
+        "pull_request": 461,
+        "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
+        "path": "docs/specs/predator/PREDATOR_CRUCIBLE_HYBRID_DELIVERY_V1.md"
       }
     }
   }
