@@ -136,9 +136,29 @@ H6 also compared superposition multiplexing with ordinary circuits packed under 
 
 A separate **tested draft** repairs how System2 counts support for claims: repeated statements from one source no longer create extra corroboration, and substring matching is removed. The producer reports **314 System2 tests passing** across the Python and native paths. The draft remains unmerged at this review. Its incremental ledger and new caller metadata are not integrated, and full contradiction handling and summary-window retention remain unfinished. This is progress toward trustworthy shared context, not evidence that a complete model handoff workflow has shipped.
 
+## Agent lanes: November 1, 2026 (evening)
+
+After the hardware missions, the programme turned to the agents on either side of the channel. Every number here is from
+fixture tasks with known answers, scored by a deterministic checker; the workers are API models or scripted stand-ins;
+**no IBM job and no quantum-computer time** were used. Six lanes, each preregistered before its first call:
+
+| lane | question | result |
+|---|---|---|
+| Encoder | does a stronger encoder pick the right evidence for each agent? | voyage-code-4 recall@8 **0.87** within the evidence pool (0.57 across the whole bank) vs keyword search 0.38 / 0.17; harmful records in the top eight 0.21 / 0.09 against the earlier reranker's 0.29; a permutation control at chance. **Met.** |
+| Selection → agent | does that top eight let an agent verify? | scripted agent **5 of 110** on the raw top eight; **99 of 110** once the briefing compiler drops other chains' records and contradicted records before the cut. Keyword search with the same filter 0 of 110. The lesson: status must be a *filter*, not a label. |
+| "Think longer" worker | does a recurrent-depth model verify a typed path when allowed more loops? | **0 of 12** at depths 4, 8 and 16 on a CPU host (depth 32 for one task only; stopped by the memory rule). Depth 16 produced three schema-valid records whose transitions were invented in state order. Every reply hit the 192-token cap. **Not met**; deep cells stay frontier-only. An adaptive-exit cycle was running at review. |
+| Worker survey | which cheaper worker verifies ≥ 11 of 12 at ≤ 25% of the frontier price? | none: the best mid-cost model verified **12 of 12 at 63%**; the free tier 7 of 12 at 2%; two models refused the strict JSON envelope (0 of 12). A plain majority of seven workers equalled the truth on 9 of 12. **Not met** at the 25% bar. |
+| Compounding | does one round's bank make the next round cheaper per verified record? | three rounds over the **same 40 fixture chains** (the bank seeded by a scripted warm-up round on other chains), paid first-tier worker paced at 40 s: first-try verified **24 → 38 → 39**, hand-offs **16 → 2 → 1**, cost per verified record **0.45×** round one, 0 errors, $4.06. **Met** on the rehearsal corpus; fresh, non-fixture tasks are open. Two earlier runs with a free-tier first model replicated rounds one and two (23 → 39; cost per verified down 7.6–14×) and were stopped in round three by the model gateway's per-hour call quota (about 100 accepted calls per hour; a refused call carries no usage and is charged its reservation). |
+| Selection vote | does a quantum-style selector beat a vote where agents disagree? | 12 tasks, 3 of them where a plain majority split or was wrong (9 of 12 overall); a reliability-weighted vote **12 of 12**; one-hot and coherence QUBO selectors on a classical MPS simulator also 12 of 12. An offline re-read of the survey's replies, no new model calls. A weighted vote suffices. |
+| Narrow, then deepen | does deepening on survivors beat narrowing alone at matched budget? | **Not run to the comparison.** The preregistered hardness ladder found a family where the frontier model alone verifies **2 of 12** (33 evidence rows; 9 of 12 at 23 rows). In the narrowing pass the free tier verified **0 of 24** (19 invalid records, 4 MISS, 1 flagged wrong answer) and the mid-cost model verified **9 of the 9** hard leads it reached before the lane's $5 cap halted the run with 15 leads pending and no deep cell opened — so the family is solvable by one shallow worker, and the set left for deepening may be small. The cost model had under-shot 2–5×: per-call rates had been measured on 12-row prompts and the hard family's prompts are three times longer. Resumable; the cap is an owner decision. |
+
+Model spend for the agent lanes: about **$24**; the programme's ledger stands at **$42.50 of $50**. Source pins for every
+lane are in the JSON under `agent_lanes`.
+
 ## Remaining validation work
 
-- **Model usefulness:** qualify models that use the delivered records and measure total inference, selection, verification and retry cost against cached ordinary delivery.
+- **Model usefulness:** a bank of verified records now measurably raises first-try verification across rounds on fixture tasks (above). Still to qualify: models that use delivered records on *fresh*, non-fixture tasks, and the total inference, selection, verification and retry cost against cached ordinary delivery.
+- **Deepening on survivors:** the narrow-then-deepen comparison at matched budget on the hard family found above, with the first-tier worker gated on evidence size.
 - **Different data:** test a corpus from another construction and preserve the fallback when the compact layout cannot represent an input.
 - **Hardware economics:** packed requests now run on IBM hardware with billed savings measured at three circuits (2.0 vs 6.0 s) and the whole mission at one job (5.0 s). The ratio at 1,200 circuits, IBM's internal partitioning, and the pending accounting for two reserved attempts remain open.
 - **Timing and memory:** the latest host runs stayed below one hour, but calibration showed substantial per-core variability. The slowdown's precise cause remains unidentified. Use paired comparisons and report memory headroom before attributing small runtime changes to code.
