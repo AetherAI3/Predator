@@ -359,35 +359,47 @@ The programme compares ordinary delivery with an experimental quantum-search rou
   <a href="docs/research/quantum-comm-ops.md"><img src="docs/assets/quantum-comm-ops-overview.svg" width="960" alt="Conceptual handoff: compile a packet from shared evidence, deliver it, and check its receipt and message tag. Accept a verified handoff or retry within the budget. The route was measured on the FakeFez simulator and then on IBM hardware; model continuation remains under qualification."></a>
 </p>
 
-### Current milestone: the 400-recipient mission on IBM hardware, in one five-second job
+### Current milestone: 400 agents, 400 messages, one IBM job, five seconds
 
-**October 31 – November 1, 2026.** The same 400-recipient delivery mission that previously ran on the simulator now runs on real IBM quantum hardware: every recipient's message is sampled on the device, its receipt sealed, its 32-bit tag checked, and the whole mission fits in **one provider job billed 5.0 QPU seconds**. Every run was preregistered and rehearsed on the simulator first; the gates that were not met, and the attempts that did not run, are listed below and in the [guide's table of attempts that did not succeed](docs/research/quantum-comm-ops.md#ibm-hardware-missions).
+**What the mission is, in plain words.** Picture a team of **400 AI worker agents**. Each one needs its own short briefing before it can start its task. Quantum Comm Ops writes those 400 briefings, sends each one through an IBM quantum computer, and checks that every agent received exactly the briefing meant for it.
 
-| Measurement | Simulator (Oct 31) | IBM hardware (Oct 31 – Nov 1) |
+- Each briefing is a **96-bit message**. It is cut into three small pieces and each piece becomes one tiny quantum circuit, so a mission is **1,200 circuits**.
+- The quantum computer runs each circuit a few times (**shots**) and reports the bits it read. A majority vote over those readings gives the bits of the message.
+- Each message carries a **check code** (a 32-bit tag), like a tamper seal. The receiving agent recomputes the code with its key; if it does not match, the message is refused and that agent's pieces are re-sent.
+- IBM also returns a **signed receipt** for the job. Predator stores it so the delivery can be re-checked later.
+- **"400/400 verified"** means all 400 agents got a message whose check code matched, so every briefing arrived intact. **"First try"** means no agent needed a re-send.
+
+In this research the 400 agents are **scripted stand-ins**, not 400 reasoning language models. The test measures message delivery. Whether a model can use the briefing well is tested separately (see "Evidence flows onward" below).
+
+**What happened, October 31 – November 1, 2026.** The mission that previously ran on a simulator now runs on real IBM quantum hardware, and the whole thing fits in **one IBM job billed 5.0 seconds of quantum-computer time**. Every run was preregistered and rehearsed on the simulator first; the attempts that missed their targets or did not run are listed below and in the [guide](docs/research/quantum-comm-ops.md#ibm-hardware-missions).
+
+| What we measured | Simulator (Oct 31) | IBM hardware (Oct 31 – Nov 1) |
 | :--- | :--- | :--- |
-| **First-pass verification, 400 recipients** | 400/400, 400/400, 399/400 | **400/400 on five missions**: three datasets on ibm_kingston, two with a run-time secret key (ibm_kingston, then ibm_fez) |
-| **After verified retry** | 400/400 on every dataset | 400/400 on every mission; no retry was needed in those five |
-| **Provider jobs per mission** | 1,200–1,203 | **1** (1,200 circuits packed in one request) |
-| **Billed QPU time per mission** | — (simulator) | **5.0 s**, down from **162 s in 81 jobs** when the same mission first ran on ibm_fez |
-| **Majority-decoded bit errors** | 1 in 3 missions | **0 in 480,000 raw bit-shots** across the five missions; raw per-bit error 0.41–0.52% before the five-shot majority |
-| **Secret-key control** | — | 0/400 verify under the public key derivation; 0 leak-scan hits for the secret and its derived values |
-| **Packing control, 3 circuits compiled once** | — | **2.0 s packed vs 6.0 s as three separate jobs**, in both orders (ibm_fez) |
+| **Agents whose message arrived intact on the first try** (out of 400) | 400, 400 and 399 on three runs | **400 on all five runs**: three different message sets on ibm_kingston, then two runs with a secret key (ibm_kingston, then ibm_fez) |
+| **After one re-send** | 400 on every run | 400 on every run; no re-send was needed |
+| **IBM jobs per mission** | 1,200–1,203 | **1** (all 1,200 circuits in one request) |
+| **Quantum-computer time IBM billed** | — (simulator) | **5.0 seconds**, down from **162 seconds in 81 jobs** when the same mission first ran on ibm_fez |
+| **Wrong bits after the majority vote** | 1 wrong piece in three runs | **0 wrong bits in 480,000 readings** across the five runs; before the vote, 0.41–0.52% of single readings were wrong |
+| **Secret key check** | — | With the wrong key, **0 of 400** messages pass the check (as intended); a scan of the run's files found the secret nowhere |
+| **Does packing save money? Three circuits, same device** | — | Sent as one job: **2.0 s**. Sent as three jobs: **6.0 s**. Same result in both orders (ibm_fez) |
 
-The billed saving is **IBM's accounting for batched circuits**, not a quantum speed-up: the mission circuits prepare known classical frames. The 162 → 5 s comparison spans different shot counts, devices and calibration days; the matched same-device comparison is the three-circuit packing control. Not every attempt succeeded: a one-job three-shot run verified 395/400 and 392/400 first pass in its two arms (below the 396 gate; recovered on retry), a calibration-ranked compiler layout that modelled better was rejected on hardware (no lower error, p ≈ 0.56), one ibm_kingston job was cancelled after an eleven-hour queue, and one ibm_marrakesh job was stopped by a provider time limit that had been set too low. Their 40 s of reserved time stays counted until IBM finalizes the accounting.
+**Why it got cheaper.** IBM bills by the second of quantum-computer time, and it charges much less for 1,200 small circuits in one job than for the same circuits spread over many jobs. The saving is **IBM's billing for batched circuits**, not a quantum speed-up: the circuits here carry ordinary, known bit patterns. The 162 → 5 s comparison also mixes different devices, days and shot counts; the clean like-for-like test is the three-circuit row above.
+
+**What did not work.** A one-job run at three shots had 395 and 392 of 400 messages arrive intact on the first try, below its target of 396 (a re-send fixed the rest; five shots fixed the problem for good). A compiler setting that looked better on paper did no better on the real device and was dropped. One ibm_kingston job waited eleven hours in the queue and was cancelled. One ibm_marrakesh job was stopped by a time limit we had set too low. The 40 seconds reserved for those two jobs stay counted against the budget until IBM finalizes their bill.
 
 <p align="center">
-  <a href="docs/research/quantum-comm-ops.md#ibm-hardware-missions"><img src="docs/assets/quantum-comm-ops-hardware-ladder.svg" width="960" alt="Billed QPU seconds for the same 400-recipient mission on IBM hardware: 162 seconds in 81 jobs on October 31 (ibm_fez), 6 seconds in two jobs (ibm_kingston), then 5 seconds in one job, replicated on three datasets, with a secret key, and on ibm_fez on November 1. Inset: three circuits compiled once bill 2.0 seconds packed and 6.0 seconds separate."></a>
+  <a href="docs/research/quantum-comm-ops.md#ibm-hardware-missions"><img src="docs/assets/quantum-comm-ops-hardware-ladder.svg" width="960" alt="Seconds of quantum-computer time IBM billed for the same 400-agent mission: 162 seconds in 81 jobs on October 31 (ibm_fez), 6 seconds in two jobs (ibm_kingston), then 5 seconds in one job, repeated on three message sets, with a secret key, and on ibm_fez on November 1. Inset: three circuits compiled once bill 2.0 seconds as one job and 6.0 seconds as three jobs."></a>
 </p>
 
-**Evidence flows onward.** Four hardware-delivered records (one from ibm_fez, three from ibm_kingston under the secret key) were re-verified from their sealed receipts, decoded, resolved against the evidence bank, compiled into a compact typed message, read by a frontier model and checked by a deterministic task checker: **4/4 verified end to end**. The typed-message route itself qualified at **12/12 held-out tasks** with zero serializer mismatches. The whole hardware programme used **254 of the free plan's 600 QPU seconds** and about **$18.65 of a $50 model budget**.
+**Evidence flows onward.** Four of the hardware-delivered briefings (one from ibm_fez, three from ibm_kingston under the secret key) were re-checked from their signed receipts, decoded, matched to the shared evidence bank, turned into a compact typed message, read by a frontier model, and the model's answer was scored by a deterministic checker: **4 of 4 correct end to end**. The typed-message format itself passed **12 of 12 held-out tasks** with zero formatting errors. The whole hardware programme used **254 of the 600 free seconds** on IBM's open plan and about **$18.65 of a $50 model budget**.
 
-The simulator milestone it builds on, **three fresh 400-recipient datasets at three shots with capped six-shot rescue** (1,199/1,200 first pass, 1,200/1,200 after rescue), remains the research baseline and is kept in full in the [guide](docs/research/quantum-comm-ops.md#earlier-simulator-milestone).
+The simulator milestone it builds on, **three fresh 400-agent runs at three shots with a capped six-shot re-send** (1,199 of 1,200 intact on the first try, 1,200 of 1,200 after re-send), remains the research baseline and is kept in full in the [guide](docs/research/quantum-comm-ops.md#earlier-simulator-milestone).
 
 ### What comes next
 
-Measure the packing ratio beyond three circuits; repeat the mission on ibm_kingston after a fresh calibration; qualify models that use the delivered evidence on fresh tasks; test other dataset constructions; move secrets from the host-local file to real key management; and validate production dispatch and independent-sandbox integration. The tested **superposition multiplexing** scheme ran on hardware but did not beat ordinary packed circuits.
+Measure the packing saving beyond three circuits; repeat the mission on ibm_kingston after a fresh calibration; test whether models do better work with the delivered briefings on fresh tasks; try other message constructions; move the secret from a file on the research host to real key management; and validate production dispatch and independent-sandbox deployment. The tested **superposition multiplexing** idea (several messages in one circuit) ran on hardware but did not beat ordinary packing.
 
-**Status, November 1, 2026:** the 400-recipient delivery mission is measured on IBM hardware, including its billed QPU time. No quantum advantage is claimed or demonstrated: the saving is batching accounting on circuits that carry known classical frames. Scripted recipients, one synthetic generator, two devices, one day each. The separate joint5 compiler pilot is described below.
+**Status, November 1, 2026:** the 400-agent delivery mission is measured on IBM hardware, including what IBM billed. No quantum advantage is claimed or demonstrated: the saving is IBM's billing for batched circuits that carry known bit patterns. Scripted agents, one synthetic message generator, two devices, one day each. The separate joint5 compiler pilot is described below.
 
 **[Plain-English guide, hardware missions and open questions →](docs/research/quantum-comm-ops.md)** · [Public aggregate data and source pins](docs/research/quantum-comm-ops.json)
 
@@ -508,7 +520,7 @@ Help build the CLI, repair chains, verification tools, or classical/quantum comp
 | **[HTB training evidence](docs/htb/README.md)** | Courses, tracks, machines, certificates, and replay index |
 | **[Crucible](#crucible-adaptive-quantum-threat-modeling)** | The loop explained as a lockpick, with [MITRE chains](#mitre-attck-chain-library) and the [CVE catalog](#cve-research-catalog) it draws on |
 | **[CodePro and System-2](#codepro-and-system-2)** | How the fanout runs, and the private CLI around it |
-| **[Quantum Comm Ops](docs/research/quantum-comm-ops.md)** | Agent mailboxes, adaptive CFC, packing and multiplexing; [the 400-recipient mission on IBM hardware](docs/research/quantum-comm-ops.md#ibm-hardware-missions) and [aggregate data with source pins](docs/research/quantum-comm-ops.json) |
+| **[Quantum Comm Ops](docs/research/quantum-comm-ops.md)** | Agent mailboxes, adaptive CFC, packing and multiplexing; [the 400-agent message mission on IBM hardware](docs/research/quantum-comm-ops.md#ibm-hardware-missions) and [aggregate data with source pins](docs/research/quantum-comm-ops.json) |
 | **[CharLS Q3](docs/research/charls-q3.md)** | [Public data](docs/research/charls-q3.json) and the completed dependent repair |
 | **[QPACK study](docs/research/gen3-qpack-experiment1.md)** | [Episode data](docs/research/gen3-qpack-experiment1.json), comparisons, and missing outcomes |
 | **[joint5 IBM Fez pilot](docs/research/ibm-fez-pilot.md)** | [Public data](docs/research/ibm-pilot.json), uncertainty, and the energy regression |

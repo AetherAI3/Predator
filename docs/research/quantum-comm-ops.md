@@ -2,7 +2,7 @@
 
 **Useful context for each worker. Verified handoffs. Less repeated work.** Quantum Comm Ops is Predator's research into coordinating large agent workflows through compact messages, a shared evidence bank, and controls that concentrate further work on promising branches.
 
-**Current review: November 1, 2026.** The 400-recipient delivery mission has now run on **IBM quantum hardware**: one provider job per mission, billed **5.0 QPU seconds**, 400/400 recipients verified on the first pass in each of five missions across three datasets, two devices and two secret keys. The simulator configuration that preceded it (three shots with capped six-shot rescue) remains the adopted **research baseline** on `feat/qcomms-i`; neither is a production rollout. This public review checks committed reports and their arithmetic. It is not an independent experimental rerun. [Public aggregate data](quantum-comm-ops.json) carries the measurements; [current source records](#current-source-records) identify the private evidence inspected.
+**Current review: November 1, 2026.** The 400-agent message delivery mission has now run on **IBM quantum hardware**: one IBM job per mission, billed **5.0 seconds**, and all 400 agents received their message intact on the first try in each of five missions across three message sets, two devices and two secret keys. The simulator configuration that preceded it (three shots with capped six-shot rescue) remains the adopted **research baseline** on `feat/qcomms-i`; neither is a production rollout. This public review checks committed reports and their arithmetic. It is not an independent experimental rerun. [Public aggregate data](quantum-comm-ops.json) carries the measurements; [current source records](#current-source-records) identify the private evidence inspected.
 
 ## Purpose and message path
 
@@ -13,42 +13,57 @@ The goal is to give a worker the evidence needed for its next task without repea
 3. **Check and recover.** Verify the receipt, reconstruct the message, and check its keyed tag. A refused message remains unaccepted; a bounded retry can deliver it again.
 4. **Continue from supported results.** The intended workflow resolves the accepted message against the evidence bank, runs the next worker task, and preserves evidence for the next planning round.
 
-The demonstrated benchmark uses scripted recipients and synthetic messages. It does not establish that 400 LLMs can reason successfully from the handoffs, transfer model weights or internal states, or operate across independently isolated sandboxes. Communication uses service requests and files. The hardware missions in the next section ran on IBM devices; every other Comm Ops result on this page is a simulator or dry-run result. The separate [joint5 IBM Fez pilot](ibm-fez-pilot.md) is a different hardware experiment about circuit compilation.
+The demonstrated benchmark uses scripted agents (called "recipients" in the earlier simulator sections below) and synthetic messages. It does not establish that 400 LLMs can reason successfully from the handoffs, transfer model weights or internal states, or operate across independently isolated sandboxes. Communication uses service requests and files. The hardware missions in the next section ran on IBM devices; every other Comm Ops result on this page is a simulator or dry-run result. The separate [joint5 IBM Fez pilot](ibm-fez-pilot.md) is a different hardware experiment about circuit compilation.
 
 <a id="ibm-hardware-missions"></a>
 
 ## IBM hardware missions: October 31 – November 1, 2026
 
-The owner authorized one research day on IBM's free open plan (600 QPU seconds) with a $50 model budget. Each hardware run was **preregistered** (gates pushed before the run), **rehearsed on FakeFez**, and submitted through the production **Predator → Nano → ATLAS → IBM** route with sealed receipts and a campaign ledger that holds every job's reserved seconds until IBM's accounting settles. The runs below use the same 400-recipient corpus construction as the simulator missions: three 16-bit chunk circuits per recipient, 1,200 circuits per mission, a 32-bit whole-chain tag, and the same compiler.
+### The mission in plain words
+
+Picture **400 AI worker agents** on one team. Before each agent can start its task it needs its own short **briefing**: which records in the shared evidence bank it should use. Quantum Comm Ops writes those 400 briefings, sends each one through an IBM quantum computer, and checks that every agent received exactly the briefing meant for it. The words used below:
+
+| Word | What it means here |
+| :--- | :--- |
+| **Agent** | One of the 400 workers. In this research the agents are **scripted stand-ins** that only check and record their briefing; they are not 400 reasoning language models. |
+| **Message / briefing** | A 96-bit code that names the agent's records in the shared bank. It is cut into three 16-bit pieces, each sent as one tiny quantum circuit, so one mission is 400 × 3 = **1,200 circuits**. |
+| **Shot** | One run of a circuit on the quantum computer, giving one reading of its bits. Running a circuit five times gives five readings; a **majority vote** across them decides each bit. |
+| **Check code (tag)** | A 32-bit code attached to every message, computed with a key, like a tamper seal. The agent recomputes it; a mismatch means the message is refused. |
+| **Receipt** | IBM's signed record of the job, kept by Predator so the delivery can be re-checked later. |
+| **Verified / intact** | The agent's three pieces were decoded, reassembled, and the check code matched. |
+| **First try** | No piece had to be re-sent. **After re-send**: the count after one bounded round of re-sending refused messages at six shots. |
+| **Billed seconds** | The seconds of quantum-computer time IBM charged for the job. IBM does not bill queue time. |
+
+The owner authorized one research day on IBM's free open plan (600 billed seconds) with a $50 model budget. Each hardware run was **preregistered** (its pass/fail targets were published before the run) and **rehearsed on the FakeFez simulator**, then submitted through the production **Predator → Nano → ATLAS → IBM** route. A ledger holds every job's reserved seconds until IBM's bill is final, so an unbilled job is never counted as free. The missions below use the same 400-agent message construction and compiler as the simulator missions.
 
 ### The ladder: from 81 jobs to one
 
-| Mission | Device | Provider jobs | Shots per circuit | First pass | After rescue | Billed QPU |
+| Mission | Device | IBM jobs | Shots per circuit | Intact on first try | After re-send | Billed seconds |
 | :--- | :--- | ---: | ---: | ---: | ---: | ---: |
-| J5, first full mission | ibm_fez | 81 (80 packed + 1 rescue) | 3 | 399/400 | 400/400 | **162 s** |
-| J6, whole first pass in one job, two compiler arms | ibm_kingston | 2 per arm | 3 | 395/400 and 392/400 | 400/400 both | 6 s per arm |
-| **J7, one job at five shots** | ibm_kingston | **1** | 5 | **400/400** | 400/400 | **5.0 s** |
-| J8, two more fresh datasets | ibm_kingston | 1 each | 5 | **400/400, 400/400** | 400/400 | 5.0 s each |
-| J9, run-time secret tag key | ibm_kingston | 1 | 5 | **400/400** | 400/400 | 5.0 s |
-| **J11, second device, new secret, dataset reused from J8** | ibm_fez | 1 | 5 | **400/400** | 400/400 | **5.0 s** |
+| J5, first full mission | ibm_fez | 81 (80 packed + 1 re-send) | 3 | 399 of 400 | 400 of 400 | **162 s** |
+| J6, whole first try in one job, two compiler settings | ibm_kingston | 2 per setting | 3 | 395 and 392 of 400 | 400 of 400 both | 6 s per setting |
+| **J7, one job at five shots** | ibm_kingston | **1** | 5 | **400 of 400** | 400 of 400 | **5.0 s** |
+| J8, two more fresh message sets | ibm_kingston | 1 each | 5 | **400 and 400** | 400 of 400 | 5.0 s each |
+| J9, secret key chosen at run time | ibm_kingston | 1 | 5 | **400 of 400** | 400 of 400 | 5.0 s |
+| **J11, second device, new secret, message set reused from J8** | ibm_fez | 1 | 5 | **400 of 400** | 400 of 400 | **5.0 s** |
 
-J5 packed 15 circuits per job and IBM billed about 2 s per job, so the mission cost 162 s. Putting all 1,200 circuits in one request (J6) cut the first pass to 4 s, but three shots left 5–8 wrong chunk majorities; the tag check caught every one and the rescue round fixed them, so J6 missed its first-pass gate (≥ 396) while meeting all-in. Raising to five shots (J7) added one billed second and removed every first-pass failure. J8, J9 and J11 then repeated that configuration on new datasets, with a secret key, and on a second device.
+**How the cost fell.** J5 put 15 circuits in each IBM job; IBM billed about 2 s per job, so 81 jobs cost 162 s. J6 put all 1,200 circuits in **one** job and the first try cost 4 s, but with only three readings per circuit, 5–8 of the 1,200 pieces had a wrong majority vote. The check code caught every one and the re-send round fixed them, so J6 met its "after re-send" target but missed its "first try" target of 396. J7 raised the readings to five per circuit: that cost one more billed second and **no piece came out wrong**. J8, J9 and J11 then repeated that exact setup on new message sets, with a secret key, and on a second device.
 
-Across the five one-job five-shot missions: **2,000/2,000 recipients verified on the first pass, 0 majority-decoded bit errors in 480,000 raw bit-shots**, raw per-bit error 0.41–0.52% before the five-shot majority. These are five missions from one synthetic generator on two devices over two days; they are not a production reliability measurement.
+Across the five one-job five-shot missions: **2,000 of 2,000 agents got their message intact on the first try, with 0 wrong bits after the vote in 480,000 single readings**; before the vote, 0.41–0.52% of single readings were wrong. These are five missions from one synthetic message generator on two devices over two days; they are not a production reliability measurement.
 
-### The packing control, same circuits, same device
+### The packing test: same circuits, same device
 
-The 162 → 5 s comparison mixes shot counts, devices and calibration days. The matched measurement is small: the first recipient's three chunk circuits, compiled **once** against ibm_fez and reused byte for byte, were submitted as one three-circuit job and as three one-circuit jobs, in both orders (J11 part C). The packed job billed **2.0 s**; the three separate jobs billed **2.0 + 2.0 + 2.0 = 6.0 s**, each time. The first hardware message on October 31 (J0) had found the same 2.0 vs 6.0 s with freshly compiled circuits. This establishes the ratio at three circuits; it does not measure it at 1,200, and IBM's internal partitioning of a packed request is not exposed.
+The 162 → 5 s comparison mixes different devices, days and shot counts. The clean test is small: the first agent's three circuits, compiled **once** for ibm_fez and reused byte for byte, were sent as one three-circuit job and as three one-circuit jobs, in both orders (J11 part C). The packed job was billed **2.0 s**; the three separate jobs were billed **2.0 + 2.0 + 2.0 = 6.0 s**, each time. The first hardware message on October 31 (J0) had found the same 2.0 vs 6.0 s with freshly compiled circuits. This establishes the saving at three circuits; it does not measure it at 1,200, and IBM does not reveal how it splits a packed request internally.
 
 ### Secret-key delivery and controls
 
-J9 and J11 derived every tag key from a secret drawn on the research host at run time and never written to a report; only its commitment hash is recorded. Under the secret, 400/400 recipients verified; under the public key derivation, **0/400** verified (the intended refusal). A scan of the run's output files for the secret and its 800–1,600 derived values found **0 hits** in both missions. Tags authenticate; nothing is encrypted. A host-local secret file is not production key management.
+In J9 and J11 every check code was computed from a secret chosen on the research host at run time and never written to any report; only a one-way fingerprint of it is recorded. With the secret, 400 of 400 messages passed the check. With the public (wrong) key, **0 of 400** passed, which is the intended refusal. A scan of the run's output files for the secret and its 800–1,600 derived values found **0 hits** in both missions. The check code proves a message was not altered; it does not hide the message (nothing is encrypted). A secret in a file on the research host is not production key management.
 
 ### Evidence that flows onward
 
 - **J1, superposed records on hardware (ibm_fez, direct Sampler submission):** a shallow circuit delivered two records across its samples with a coherence witness of 0.813 ± 0.013 (a classical mixture would give 0). Per-record delivery was about 0.43 versus 0.91 for one record per circuit, and a deeper ten-layer arm delivered only 0.19–0.21 per record, so this track **ran on hardware but did not beat ordinary packing**; the witness is not a full-state fidelity.
 - **J10, typed-message model qualification (no QPU):** with models emitting ordered typed path rows and deterministic code packing the 96-bit pin, a frontier model verified **12/12 held-out tasks** (two task families) with 0 serializer mismatches; controls: full table 12/12, no hint 0/12, wrong record 0/12. Cost $3.24. Repeated replies were identical, so repeats are not independent.
-- **J12, end to end from hardware record to checked task (no new QPU):** four hardware-delivered records (J0's recipient on ibm_fez; three J9 recipients on ibm_kingston under the secret key) were re-verified from their sealed receipts, decoded, tag-checked, resolved against the bank, compiled into J10's typed message, read by the model and scored by the deterministic checker: **4/4 verified**, including the pin that every earlier free-form model reply had missed. Cost $0.35.
+- **J12, end to end from hardware briefing to checked task (no new QPU):** four hardware-delivered briefings (J0's agent on ibm_fez; three J9 agents on ibm_kingston under the secret key) were re-checked from their signed receipts, decoded, check-code verified, matched to the bank, turned into J10's typed message, read by the model, and the model's answer was scored by the deterministic checker: **4 of 4 correct**, including the exact 96-bit pin that every earlier free-form model reply had missed. Cost $0.35.
 
 ### Attempts that did not succeed
 
@@ -79,6 +94,8 @@ A production reliability guarantee; confidentiality (tags authenticate, nothing 
 <a id="earlier-simulator-milestone"></a>
 
 ## Earlier simulator milestone: three fresh datasets
+
+*In this section and below, "recipient" means the same thing as "agent" above: one of the 400 scripted workers that receives and checks its own message.*
 
 Each mission starts with 400 recipients and fresh frames, keys and sampling seeds. The datasets come from the **same synthetic generator**, so these repetitions test that configuration rather than generality across workloads. A job requests repeated samples; each sample is a **shot**.
 
