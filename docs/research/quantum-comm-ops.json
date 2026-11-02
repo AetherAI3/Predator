@@ -442,7 +442,33 @@
       "reserved_seconds": 40,
       "jobs": 2,
       "provider_usage_status": "pending",
-      "rule": "zero or missing usage is never treated as free; released only on the provider's final accounting"
+      "rule": "zero or missing usage is never treated as free; released only on the provider's final accounting",
+      "settled": {
+        "date": "2026-11-02",
+        "method": "host watcher polled the provider's job usage every 15 minutes (44 polls); ledgers backed up before each change; no job submitted",
+        "ibm_kingston_attempt": {
+          "reserved_seconds": 30,
+          "provider_final_status": "complete",
+          "provider_final_seconds": 0,
+          "outcome": "released (job cancelled before running)"
+        },
+        "ibm_marrakesh_attempt": {
+          "reserved_seconds": 10,
+          "provider_final_status": "complete",
+          "provider_final_seconds": 5,
+          "outcome": "settled at 5 s (the provider billed the stopped job for the time it ran)"
+        },
+        "j11_line_charged_seconds_after": 26,
+        "j11_line_charged_seconds_at_review": 61,
+        "open_plan_used_seconds_after": 254,
+        "note": "the 5 s was already inside the 254 s account total as a previously unattributed step",
+        "source": {
+          "repo": "AETHER-PREDATOR-M",
+          "commit": "49c1fa39dc3d02d55a63a47ee866746fecd6e954",
+          "path": "bench/qcomms/hw0/REPORT_J11_LIVE.md",
+          "pr": 461
+        }
+      }
     },
     "budget": {
       "ibm_open_plan_cap_seconds": 600,
@@ -808,7 +834,7 @@
     "Does the layout generalize beyond this admitted corpus construction?",
     "What is the packing ratio beyond three circuits, and how does IBM partition a 1,200-circuit request internally?",
     "Does the one-job mission hold on ibm_kingston after a fresh calibration (the cancelled J11 attempt)?",
-    "How will IBM finalize the two pending reservations (40 s), and can the ledger release them with job-specific evidence?",
+    "Settled November 2: IBM finalized the two reserved attempts (0 s and 5 s of the 40 s reserved) about 13 hours after each job ended, and the ledger released or settled each row on that job-specific evidence. Open: how long provider accounting takes in general, and how to size reservations for stopped jobs.",
     "How should receipt-size limits, key management and production admission support packed hardware requests?",
     "How can validated source-accounting and semantic retention be integrated into System2 callers?",
     "Can complete worker isolation and full production dispatch be demonstrated?"
