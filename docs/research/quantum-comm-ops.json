@@ -1235,7 +1235,21 @@
         "K-2b": "NOT MET"
       },
       "cost_usd": 0,
-      "cycle_4_adaptive_exit": "running at review"
+      "cycle_4_adaptive_exit": {
+        "criterion": "latent-diff",
+        "threshold": 0.03,
+        "min_steps": 4,
+        "ceiling": 32,
+        "tasks_answered": 1,
+        "tasks_not_run": 11,
+        "stop": "host memory rule after the first task (12.9 GB peak)",
+        "verified": "0/1",
+        "mean_steps_per_token": 31.51,
+        "tokens_exited_early": "8/192",
+        "exit_value_range": "1.14-1.18 (never below the threshold)",
+        "seconds": 1452,
+        "result": "inert: the latent did not settle, so no early exit and no cost saving; the single reply was off-task"
+      }
     },
     "worker_survey_K3": {
       "reference": "gpt55 12/12",
@@ -1369,56 +1383,56 @@
     "sources": {
       "K_summary": {
         "repo": "AetherAI3/AETHER-PREDATOR-M",
-        "commit": "bd07e0d20ba8309b3b6407aefe47a7d81cc190a7",
+        "commit": "bfafa8c11483578c61749a87e6713236b27a9d03",
         "pull_request": 461,
         "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
         "path": "bench/qcomms/skt/REPORT_K.md"
       },
       "K1": {
         "repo": "AetherAI3/AETHER-PREDATOR-M",
-        "commit": "bd07e0d20ba8309b3b6407aefe47a7d81cc190a7",
+        "commit": "bfafa8c11483578c61749a87e6713236b27a9d03",
         "pull_request": 461,
         "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
         "path": "bench/qcomms/k1_encoder/REPORT_K1.md"
       },
       "K2": {
         "repo": "AetherAI3/AETHER-PREDATOR-M",
-        "commit": "bd07e0d20ba8309b3b6407aefe47a7d81cc190a7",
+        "commit": "bfafa8c11483578c61749a87e6713236b27a9d03",
         "pull_request": 461,
         "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
         "path": "bench/qcomms/k2_huginn/REPORT_K2.md"
       },
       "K3": {
         "repo": "AetherAI3/AETHER-PREDATOR-M",
-        "commit": "bd07e0d20ba8309b3b6407aefe47a7d81cc190a7",
+        "commit": "bfafa8c11483578c61749a87e6713236b27a9d03",
         "pull_request": 461,
         "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
         "path": "bench/qcomms/k3_fanout/REPORT_K3.md"
       },
       "K4": {
         "repo": "AetherAI3/AETHER-PREDATOR-M",
-        "commit": "bd07e0d20ba8309b3b6407aefe47a7d81cc190a7",
+        "commit": "bfafa8c11483578c61749a87e6713236b27a9d03",
         "pull_request": 461,
         "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
         "path": "bench/qcomms/k4_compound/REPORT_K4.md"
       },
       "K5": {
         "repo": "AetherAI3/AETHER-PREDATOR-M",
-        "commit": "bd07e0d20ba8309b3b6407aefe47a7d81cc190a7",
+        "commit": "bfafa8c11483578c61749a87e6713236b27a9d03",
         "pull_request": 461,
         "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
         "path": "bench/qcomms/k5_select/results/k5-summary.md"
       },
       "K6": {
         "repo": "AetherAI3/AETHER-PREDATOR-M",
-        "commit": "bd07e0d20ba8309b3b6407aefe47a7d81cc190a7",
+        "commit": "bfafa8c11483578c61749a87e6713236b27a9d03",
         "pull_request": 461,
         "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
         "path": "bench/qcomms/k6_deepen/REPORT_K6.md"
       },
       "design": {
         "repo": "AetherAI3/AETHER-PREDATOR-M",
-        "commit": "bd07e0d20ba8309b3b6407aefe47a7d81cc190a7",
+        "commit": "bfafa8c11483578c61749a87e6713236b27a9d03",
         "pull_request": 461,
         "pr_status_at_review": "open draft into claude/qcomms-hw0-pilot",
         "path": "docs/specs/predator/PREDATOR_CRUCIBLE_HYBRID_DELIVERY_V1.md"
