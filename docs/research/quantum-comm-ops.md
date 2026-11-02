@@ -71,11 +71,13 @@ In J9 and J11 every check code was computed from a secret chosen on the research
 | :--- | :--- | :--- |
 | J6 first-pass gate | 395/400 and 392/400 at three shots, gate ≥ 396 | **Not met**; all-in 400/400; five shots adopted |
 | J2 calibration-ranked layout | A modelled success probability (ESP) of 0.951 versus 0.810 did not appear as lower hardware error: 0.604% vs 0.597% raw error, p ≈ 0.56 | **Rejected on hardware**; option stays default-off |
-| J11 on ibm_kingston after a recalibration | Job queued 11 h 21 min and was cancelled before running | **Not run**; claim pending; 30 s reserved |
-| J11 retry on ibm_marrakesh | Stopped by a 10 s provider execution limit that had been sized from billed seconds; the provider's limit is not the billed figure, and jobs billed 5 s had run 31–71 s of wall clock | **Error**; 10 s reserved; replaced by the ibm_fez run |
+| J11 on ibm_kingston after a recalibration | Job queued 11 h 21 min and was cancelled before running | **Not run**; claim pending; 30 s reserved, released November 2 when IBM reported final usage 0 s |
+| J11 retry on ibm_marrakesh | Stopped by a 10 s provider execution limit that had been sized from billed seconds; the provider's limit is not the billed figure, and jobs billed 5 s had run 31–71 s of wall clock | **Error**; 10 s reserved, settled November 2 at IBM's final 5 s; replaced by the ibm_fez run |
 | J6 on ibm_fez | Queue of 1,596–1,946 pending jobs for two hours | **Not run**; fell back to ibm_kingston |
 
-The two reserved amounts (40 s in total) stay counted against the programme until IBM reports their usage as final; at the time of this review both still read "pending" at the provider. A zero that has not been finalized is never treated as free.
+The two reserved amounts (40 s in total) stayed counted against the programme until IBM reported their usage as final; at the time of the November 1 review both still read "pending" at the provider. A zero that has not been finalized is never treated as free.
+
+**Settled November 2, 2026.** A host watcher polled the provider's usage record every 15 minutes (44 polls, no job submitted, ledgers backed up before each change). About 13 hours after each job ended, IBM reported final usage: the cancelled ibm_kingston attempt at **0 s** (its 30 s reservation released) and the stopped ibm_marrakesh attempt at **5 s** (its 10 s reservation settled at 5 s; the provider billed the stopped job for the time it ran before the limit). That 5 s was already inside the 254 s account total as a previously unattributed step, so the programme total is unchanged; the J11 line fell from 61 s charged to **26 s**. The ibm_kingston-after-recalibration claim remains pending because that job never ran.
 
 ### Budget
 
@@ -160,7 +162,7 @@ lane are in the JSON under `agent_lanes`.
 - **Model usefulness:** a bank of verified records now measurably raises first-try verification across rounds on fixture tasks (above). Still to qualify: models that use delivered records on *fresh*, non-fixture tasks, and the total inference, selection, verification and retry cost against cached ordinary delivery.
 - **Deepening on survivors:** the narrow-then-deepen comparison at matched budget on the hard family found above, with the first-tier worker gated on evidence size.
 - **Different data:** test a corpus from another construction and preserve the fallback when the compact layout cannot represent an input.
-- **Hardware economics:** packed requests now run on IBM hardware with billed savings measured at three circuits (2.0 vs 6.0 s) and the whole mission at one job (5.0 s). The ratio at 1,200 circuits, IBM's internal partitioning, and the pending accounting for two reserved attempts remain open.
+- **Hardware economics:** packed requests now run on IBM hardware with billed savings measured at three circuits (2.0 vs 6.0 s) and the whole mission at one job (5.0 s). The ratio at 1,200 circuits and IBM's internal partitioning remain open; the two reserved attempts were finalized by IBM on November 2 (0 s and 5 s).
 - **Timing and memory:** the latest host runs stayed below one hour, but calibration showed substantial per-core variability. The slowdown's precise cause remains unidentified. Use paired comparisons and report memory headroom before attributing small runtime changes to code.
 - **Deployment and trust:** production dispatch and independent sandbox deployment need their own validation. Keyed receipt seals establish integrity under the configured shared-key trust model; they do not prove hardware execution or establish provenance against another key holder. A 32-bit tag is not a general security-strength guarantee.
 
