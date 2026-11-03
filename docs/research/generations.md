@@ -1,16 +1,89 @@
 # Predator generations
 
-### Live assurance → private depth research → gated profile replication
+<a id="plain-english"></a>
+## In plain English
+
+These generation labels are Aether's own. They describe how Aether's own work has evolved. They are not an industry standard, and other teams use the same words to mean other things.
+
+| Generation | What it means here |
+| :--- | :--- |
+| **Gen1** | Chat and copilot help. One model, one answer. |
+| **Gen2** | Agent loops. Tool use, multi-step tasks, self-checks. Most public agent work today sits here. |
+| **Gen3** (Aether now) | AI and quantum workflows run together across the Aether stack (Aether Agent, Aether Cloud, Nano, ATLAS, UCL, CodePro, AQRC, Predator). A shared, verified evidence bank with signed receipts. Swarm coordination of hundreds of small agents. Predator lanes for bounty, open-source (OSS), mission and training work. Predator is the public showcase. |
+| **Gen4** | Conditional. See [What ends Gen3](#what-ends-gen3) and [Gen4, as far as we can see](#gen4). |
+
+### What Gen3 means day to day
+
+Aether does not train models from scratch. It builds the systems around models.
+
+- **Weight adaptation.** A frontier model proposes an exact edit to at most 1 % of a small open-weight local model's weights. A separate judge, which the proposer never sees, scores the edit on hidden tasks. Only a clean gain with no collateral loss is promoted. Status on November 3, 2026: built and reviewed offline, not yet run on the real model.
+- **API model systems.** CodePro, AQRC and Predator are built on hosted models through their APIs.
+- **Local model modifications.** Small open-weight models run locally and would be adjusted through the weight-adaptation loop above (built, not yet run on a real model).
+- **Quantum cybersecurity research.** The measured evidence so far: 400 agent briefings delivered through IBM quantum hardware in one job billed 5.0 seconds, 400 of 400 intact, with scripted agents. No quantum advantage has been shown. Details are in the [Gen3 quantum comm-ops section of the overview](../../README.md#gen3-quantum-comm-ops).
+
+### Scale, stated plainly
+
+The Quantum Comm Ops hardware missions had used 254 of the 600 seconds per period on IBM's open plan as of November 2, 2026. Model spend was about $42.50; the cap was raised to $75 on November 3, 2026. This is a small budget. Every run was gated by a preregistered pass/fail criterion written before the run.
+
+<a id="what-ends-gen3"></a>
+## What ends Gen3
+
+No year is attached to Gen3. It is the default until one of three triggers fires. Each trigger is an observable, not a feeling.
+
+1. **Predator shows a quantum route beating the best classical route on a security task.** The comparison must be preregistered, run on a matched budget, and reproduced by someone outside Aether. This has not been shown. Nothing in this repository claims it.
+2. **Another team shows the same on a workload relevant to security research.** It will be cited here when it happens, not before.
+3. **A lab demonstrates models that improve themselves without human-written training runs**, and the result holds up under independent review.
+
+Another lab may reach Gen4 before Aether does. That is why this map is drawn now rather than inherited later. Aether's bet, stated as a hypothesis and not a result: hybrid AI + quantum workflows may matter before raw quantum hardware does. If that is right, the "date" cannot be read off quantum hardware roadmaps alone.
+
+<a id="why-now"></a>
+## Why now: the threat landscape
+
+Public reports from model labs, platform vendors and standards bodies describe the environment this work sits in. Each item below links to the primary source, with its publication month.
+
+- **Anthropic, "Disrupting the first reported AI-orchestrated cyber espionage campaign" (November 2025).** Reports a campaign detected in September 2025, attributed with high confidence to a state-sponsored group, in which Anthropic assesses the model carried out most of the operation with human involvement only at a few decision points. [anthropic.com/news/disrupting-AI-espionage](https://www.anthropic.com/news/disrupting-AI-espionage)
+- **Anthropic, "Detecting and countering misuse of AI: September 2026" (September 2026).** Covers activity disrupted between December 2025 and August 2026 across seven harm areas, including cyber operations, influence operations, surveillance, scams and fraud, and illicit model distillation, and describes the role of AI in cyber operations as increasingly autonomous. [anthropic.com/threat-intelligence-report-september-2026](https://anthropic.com/threat-intelligence-report-september-2026)
+- **OpenAI, "Disrupting malicious uses of AI" (February 2026).** Case studies of detected misuse in which threat actors typically combine AI with more traditional tools such as websites and social media accounts; the series hub lists further case studies through October 2026. [openai.com/index/disrupting-malicious-ai-uses](https://openai.com/index/disrupting-malicious-ai-uses/) · [series hub](https://openai.com/index/disrupting-malicious-uses-of-ai/)
+- **Google Threat Intelligence Group, "AI Threat Tracker: From Prompting to Autonomy" (September 2026).** Covers Q2 2026 and reports that forward-leaning adversaries have moved "from basic prompting to agentic AI workflows and AI-enabled automation" (GTIG), including multi-agent frameworks used for scanning and credential harvesting. [cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai](https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai)
+- **Microsoft, "Microsoft Digital Defense Report 2026" (2026).** Drawing on data from July 2025 to June 2026, it says AI is compressing attack timelines, lowering the cost of sophisticated capabilities and letting attackers operate with more speed, scale and autonomy, while the same capabilities help defenders. [microsoft.com/.../microsoft-digital-defense-report](https://www.microsoft.com/en-us/corporate-responsibility/topics/cybersecurity/reports/microsoft-digital-defense-report/)
+- **NIST, FIPS 203, 204 and 205 (August 2024).** The first three finalized post-quantum cryptography standards: ML-KEM for key establishment ([FIPS 203](https://csrc.nist.gov/pubs/fips/203/final)), ML-DSA for digital signatures ([FIPS 204](https://csrc.nist.gov/pubs/fips/204/final)) and SLH-DSA, a hash-based signature alternative ([FIPS 205](https://csrc.nist.gov/pubs/fips/205/final)). [nist.gov announcement](https://www.nist.gov/news-events/news/2024/08/announcing-approval-three-federal-information-processing-standards-fips)
+
+This is context for why Gen4 is being shaped early. It is not evidence about Predator.
+
+<a id="gen4"></a>
+## Gen4, as far as we can see
+
+Everything in this section is intent, not measurement. No date is predicted. Gen4 starts when a trigger above fires.
+
+**Defense first (near-term, real).**
+
+- Post-quantum migration of the evidence bank's signatures and receipts to the NIST standards: ML-KEM (FIPS 203) for key establishment, ML-DSA (FIPS 204) and SLH-DSA (FIPS 205) for signatures.
+- A "harvest now, decrypt later" exposure review: which stored or transmitted material would matter if recorded today and decrypted later.
+- Quantum-safe verification of research packages, so that a package verified today still verifies after the migration.
+
+**Authorized research.**
+
+- Resource estimation: tracking published estimates of when quantum hardware becomes cryptographically relevant, so migration timelines rest on numbers rather than guesses.
+- Testing post-quantum implementations for implementation flaws, within scoped, authorized engagements only.
+
+**Workflows.**
+
+- Carry the Gen3 loop (evidence bank, signed packets, swarm coordination, weight adaptation) onto whatever hardware or model generation exists at that time.
+- The formal transfer gate below still applies. A Gen3 finding crosses into Gen4 only through that gate.
+
+## The formal roadmap
+
+#### Live assurance → private depth research → gated profile replication
 
 Predator combines **adaptive compilation, advanced frontier-AI reasoning, and quantum-depth research** to advance **software analysis, vulnerability analysis, threat modeling, and resolution modeling**. The program investigates software failures, models possible consequences and evaluates changes against the behavior that must be preserved. Quantum depth refers to successive dependent quantum-method interventions; each campaign must identify whether those methods ran in simulation or on quantum hardware.
 
 [← Predator overview](../../README.md) · [Completed Q3 result](charls-q3.md) · [Aether Actions](https://aethersystems.net/actions) · [Separate hardware pilot](ibm-fez-pilot.md)
 
-> **Research posture:** Gen1–2 established the live assurance foundation. Gen3 explicitly pursues quantum advantage and investigates deeper AI–quantum reasoning chains. Gen4 is conditional: transfer qualifying findings into independently validated, locked Predator assurance profiles. No quantum-advantage result or Gen4 release is claimed by this roadmap.
+> **Research posture:** Gen1–2 established the live assurance foundation. Gen3 explicitly pursues quantum advantage and investigates deeper AI–quantum reasoning chains. Gen4 is conditional: transfer qualifying findings into independently validated, locked Predator assurance profiles. No quantum-advantage result or Gen4 release is claimed by this roadmap. For the same material in plain language, including what would end Gen3, see [In plain English](#plain-english) above.
 
 **Completed milestone, active program:** CharLS Q3 is Aether Predator’s first Gen3 dependent-repair win. The completed C0→Q1→C1→Q2→C2→Q3→C3 case reached **24/24 protected cases**, up from 16/24 at C2, with 16 prior passes preserved and eight gained. The producer reports native signature/lineage verification and durable C3 banking. This is a program milestone, not completion of Gen3 or a quantum-advantage result. The [public result note](charls-q3.md) distinguishes the recovered private replay from what readers can reproduce here.
 
-## 1. Preserve the foundation
+### 1. Preserve the foundation
 
 Gen1–2 encompass the frontier-AI and quantum-assisted Crucible lineage behind Predator’s locked assurance profiles, Cloud execution and replay through Predator CI / Aether Actions. The production product is not being reinvented as a quantum-computing service.
 
@@ -26,7 +99,7 @@ Connected repository → locked action → capability / eligibility precheck
 
 Research CLI access, arbitrary loops, model-panel configuration, circuit settings and hardware operations are not customer controls. Private research remains Aether-operator-controlled; engagements remain contract- and scope-bound.
 
-## 2. Gen3: study the mechanism and its limits
+### 2. Gen3: study the mechanism and its limits
 
 **Objective:** establish whether adaptive AI → quantum → AI recompilation can produce a verified advantage over competitive alternatives, and determine how useful progress changes with additional dependent interventions and resources.
 
@@ -44,7 +117,7 @@ The compiler should preserve relevant obligations, constraints and provenance wh
 
 Research targets include complex C++ systems, database/query processing and stateful binary-processing workloads. The owner-approved CharLS case summary publishes its identity, aggregate outcome, concise mechanism and selected fingerprints. Hidden inputs, patch bytes, private model configurations and campaign infrastructure remain private.
 
-### Three distinctions that stay explicit
+#### Three distinctions that stay explicit
 
 | Concept | What it establishes |
 | :--- | :--- |
@@ -54,7 +127,7 @@ Research targets include complex C++ systems, database/query processing and stat
 
 Physical circuit depth is separate from reasoning-chain depth. The compiler may produce a shallower circuit at a later stage. A plateau may reflect saturation, an unsuitable intervention, noise, budget limits or bridge defects; it is not automatically a compiler failure.
 
-### Keep the study simple
+#### Keep the study simple
 
 Reuse Predator’s existing progression, separation-peak, stopping and replay mechanisms where their contracts apply. Do not add a separate dashboard, utility system or orchestration layer just to describe the study.
 
@@ -69,7 +142,7 @@ These expressions do not replace a campaign’s sealed estimand. Fix utility, co
 
 Investigate sustained positive lift, accelerating lift, diminishing returns and falloff. Do not assume a scaling law from a short chain. Report where evidence ends rather than extrapolating an unobserved maximum depth.
 
-## 3. Ratchet the bridge without rewriting the result
+### 3. Ratchet the bridge without rewriting the result
 
 Use the existing breaker / builder loop on a frozen failed transition. First reproduce the defect: lost obligations, omitted evidence, invalid constraints, a misleading surrogate, a decoder mismatch or physical-compilation damage. Preserve a verified incumbent; do not overwrite it with an unverified candidate.
 
@@ -81,7 +154,7 @@ Keep native verdicts separate from model confidence and surrogate energy. In par
 
 **A compiler fix starts a new versioned development attempt.** Do not repair a confirmatory run after seeing its result, retry the same depth secretly or move its budget/holdout. A residual-directed continuation from an authenticated C2 is Q3, prospectively bound to that parent; it does not replace Q2. Preserve the original evidence, then qualify any revision prospectively. A continuation beyond a frozen depth or budget requires a new authorized protocol; it does not silently extend an old seal.
 
-## 4. What can cross from Gen3 into Gen4
+### 4. What can cross from Gen3 into Gen4
 
 Gen4’s advantage-transfer track opens only when Gen3 produces an independently reviewed result with a precise, defensible scope. A successful execution, positive development example or lower gate count does not open that gate by itself.
 
@@ -97,7 +170,7 @@ Qualifying Gen3 evidence
 
 No scientific priority, universal advantage, guaranteed scaling or completed-transfer claim follows from a roadmap. “First Gen3 repair win” identifies the completed milestone within Aether Predator’s program, not a first in the wider research field.
 
-## 5. Gen4: reproduce against the last locked profiles
+### 5. Gen4: reproduce against the last locked profiles
 
 Target the existing Cloud, Agent, Atlas, CLI and open-source assurance families. Freeze the last locked profile as the baseline and prepare a separately versioned candidate using the qualifying Gen3 path.
 
@@ -115,7 +188,7 @@ A research finding is not a blanket profile bump. Shared engineering improvement
 
 Hardware replication, where necessary and separately authorized, remains internal Aether research. It is not a user-selectable IBM backend or permission to submit arbitrary circuits.
 
-## 6. Deliver through the existing product
+### 6. Deliver through the existing product
 
 The release path is **reviewed profile candidate → exact-source CI → native replay → protected release → bounded rollout through Predator CI / Aether Actions**. Preserve eligibility prechecks, user-approved UVT usage, server-side containment, profile versioning, rollback and audit records.
 
@@ -125,7 +198,7 @@ Publish a concise old-versus-new account of the result and an appropriate public
 
 The public message after a successful transfer is an **upgrade to the existing assurance service**, not the launch of a general-purpose quantum tool.
 
-## 7. Public disclosure boundary
+### 7. Public disclosure boundary
 
 This repository contains overview material, selected research notes and visual assets. Publish generation goals, bounded results, relevant uncertainty and approved replay examples. The owner has approved publication of the completed CharLS Q3 case identity, aggregate outcomes, concise fragment-advance mechanism, recorded Q2 selection summary and checkpoint/durability fingerprints. The owner also approved the GEN3 QPACK experiment #1 summary, its controlled-fault corpus identity, aggregate and paired outcomes, and sanitized stage/check fingerprints. [That exploratory result](gen3-qpack-experiment1.md) records 2/8 → 5/8 for AI_Q with feedback, with incomplete classical comparison and optimizer attribution unresolved. Public arithmetic and figures are rebuildable; full independent campaign reproduction still requires retained private materials. This approval does not authorize publication of other benchmark identities, hidden corpora, patch bytes, raw signed receipts, trust material, private infrastructure, account identifiers or research execution controls.
 

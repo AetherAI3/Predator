@@ -1,7 +1,7 @@
 {
   "schema": "predator.public.quantum-comm-ops.v3",
   "review_date": "2026-11-01",
-  "updated": "2026-11-02",
+  "updated": "2026-11-03",
   "verification": "Source, committed report/result inspection and arithmetic checks against the private live-run reports; no independent experimental rerun, no replay of private raw receipts, no independent provider-account audit.",
   "publication_scope": "Owner-authorized public aggregate summary. Implementation, raw job/mailbox bodies and full run artifacts remain private; source links require repository access.",
   "hardware_used": true,
@@ -842,7 +842,10 @@
     "Settled November 2: IBM finalized the two reserved attempts (0 s and 5 s of the 40 s reserved) about 13 hours after each job ended, and the ledger released or settled each row on that job-specific evidence. Open: how long provider accounting takes in general, and how to size reservations for stopped jobs.",
     "How should receipt-size limits, key management and production admission support packed hardware requests?",
     "How can validated source-accounting and semantic retention be integrated into System2 callers?",
-    "Can complete worker isolation and full production dispatch be demonstrated?"
+    "Can complete worker isolation and full production dispatch be demonstrated?",
+    "Can a frontier weight-space programmer repair one reproducible failure of a 0.8-billion-parameter local model, judged on unseen tasks with no adjacent regression? (Harness built and reviewed November 3; an offline rehearsal with a fake model promoted one patch and rejected the repeat; NOT RUN on the real model.)",
+    "What does a self-hosted open model cost per verified record on a rented GPU? (Modelled only: the gateway mid-cost model is cheaper per verified at dated H100 rates, and the hosted options have no measured verified rate; one preregistered rental is the next step and has not run; 0 GPU hours.)",
+    "Does a full three-lane cycle run with hardware delivery inside it? (No cycle has yet run with the IBM step inside it; the 400-agent rung is modelled at 4 IBM jobs of about 20 s from the measured 5 s one-job mission, and the packets have only been exercised offline through the same codec.)"
   ],
   "historical_records_note": "The October 31 v2 review is preserved in repository history at bba28b3b; its simulator block is carried forward unchanged as 'current'. The dated v1 record below is preserved in full as an October 28 snapshot. Follow-up queues, PR states, capacity figures and deployment observations in those records are historical, not current status.",
   "history": {
@@ -1483,5 +1486,315 @@
       }
     },
     "evidence_note": "API model calls (K3, K4, K6), a CPU research host (K2), a scripted agent (K1c), an offline classical MPS simulator (K5); K4's warm-up round is scripted"
+  },
+  "experiments_l_m": {
+    "scope": "Experiments L and M, November 3, 2026: four lineages (attack, repair, model, communication) behind one authenticated control fabric, a sealed research package, a scale model, and the model-economics and model-switching layer on top. Everything was built, tested and independently reviewed offline at $0: no provider call, no IBM job, no GPU rental. Fixture tasks with known answers; scripted workers where a worker was needed; the frontier model planned as the programmer is unnamed here and was never called.",
+    "evidence_labels": {
+      "measured_no_qpu": "real code run offline over real prior records (K4 run 3b bank rows, the J11 hardware record, L1 fixture ids); no IBM job, no model call",
+      "scripted": "a dry run with scripted stand-ins for every model and the hardware step; proves the plumbing, not the science",
+      "modelled": "arithmetic on measured parts plus stated assumptions; every input labelled; not a measurement",
+      "built_not_run": "code and preregistration complete, rehearsed with a fake model; the real run has not happened",
+      "not_run": "nothing executed; the gate is open"
+    },
+    "pins": {
+      "experiment_l": {
+        "repo": "AetherAI3/AETHER-PREDATOR-M",
+        "commit": "b6d3ebb04d5d2fbaf054e6123bfcb614ca821e1b",
+        "branch": "feat/qcomms-l",
+        "pull_request": 462,
+        "pr_status_at_review": "open draft into feat/qcomms-k",
+        "paths": [
+          "docs/specs/predator/PREDATOR_QCOMMS_EXPERIMENT_L_MISSION_V1.md",
+          "bench/qcomms/l1_model_lane/PREREGISTRATION_L1.md",
+          "bench/qcomms/l2_control_packets/results/l2-gate-a.md",
+          "bench/qcomms/l3_research_package/results/l3-gate-a.md",
+          "bench/qcomms/l3_research_package/results/l3-gate-a-package/manifest.json",
+          "bench/qcomms/l4_scale/results/l4-ladder.md",
+          "bench/qcomms/l4_scale/results/orchestrate-summary.md"
+        ]
+      },
+      "experiment_m": {
+        "repo": "AetherAI3/AETHER-PREDATOR-M",
+        "commit": "b384c5a5b54d3da41fb473a3cc3a2eeafc40c5e0",
+        "branch": "feat/qcomms-m",
+        "pull_request": 463,
+        "pr_status_at_review": "open draft into feat/qcomms-l",
+        "paths": [
+          "docs/specs/predator/PREDATOR_QCOMMS_EXPERIMENT_M_MISSION_V1.md",
+          "bench/qcomms/m1_economics/results/m1-ladder.md",
+          "bench/qcomms/m3_registry/results/m3-gate-a.json",
+          "bench/qcomms/m3_registry/results/m3-gate-b.md",
+          "bench/qcomms/m3_registry/results/dry-run/orchestrate-summary.md"
+        ]
+      }
+    },
+    "l1_model_lane": {
+      "question": "can a frontier weight-space programmer repair one reproducible failure of a small local adjudicator, judged on unseen tasks with no adjacent regression?",
+      "evidence_label": "built_not_run",
+      "target_model": "a 0.8-billion-parameter open-weight model, CPU only; the recurring failure to repair is the practice-set class at or above 0.80 on 3 seeds",
+      "programmer": "a frontier model through the research gateway, capped at 150,000 UVT per month and 60,000 UVT per cycle (12 turns, 20 forward passes of at most 64 practice prompts); never called in this review",
+      "patch_format": "ModelPatch v1: exact deltas against the base with one stated intent; a patch touching more than 1 % of weights is rejected before evaluation",
+      "intents": {
+        "F1": "loop (reply hit the token cap)",
+        "F2": "invalid (schema or compile failure)",
+        "F3": "fabrication (compiles, transitions not supported by the evidence)"
+      },
+      "task_sets": {
+        "practice": 96,
+        "unseen": 36,
+        "adjacent": {
+          "compile_validity": 40,
+          "family_b_arithmetic": 40,
+          "format": 40
+        },
+        "note": "disjoint seed families; the programmer sees practice only"
+      },
+      "promotion_rule": "promote iff unseen verified count rises by >= 4 of 36 (mean over 3 seeds) AND no adjacent suite falls by more than 1 item AND the token-cap rate does not rise; otherwise reject and the previous checkpoint stays authoritative",
+      "evaluator": "a separate subprocess that holds the unseen set; the lane seals receipts with a key kept out of the repository; the proposer never sees either; any unseen id or content fingerprint in a programmer message voids the cycle",
+      "receipt": "PromotionReceipt v1, sealed with an HMAC-SHA256 lane key kept out of the repository; records both model digests, every per-item result, the seeds, the rule and the verdict",
+      "offline_rehearsal": {
+        "evidence_label": "scripted",
+        "result": "with a fake adjudicator and a scripted programmer: one patch promoted end to end, the repeat rejected, the harness halted cleanly"
+      },
+      "real_model": {
+        "status": "NOT RUN",
+        "note": "the baseline cycle on the real model was in progress on a CPU host at review; no programmer call, no candidate, no promotion claimed"
+      },
+      "gates": {
+        "L-1a": "NOT RUN (baseline in progress)",
+        "L-1b": "NOT RUN",
+        "L-1c": "NOT RUN (needs L-1b and an owner cap)"
+      },
+      "cost_usd": 0
+    },
+    "l2_control_packets": {
+      "question": "can one 96-bit authenticated packet carry a lane, an operation and an evidence reference that resolves in the shared bank, for every lane, over the measured delivery codec?",
+      "evidence_label": "measured_no_qpu",
+      "frame_96_bit": {
+        "version": "8 b, 0xA4 (the G3 resolver packet is 0xA3)",
+        "lane": "4 b: attack, repair, model, comm",
+        "op": "4 b: NOP, BRIEF, VERDICT, CHECKPOINT, PROMOTE, REJECT_PATCH, Q_SELECT, SEAL (Experiment M adds ROUTE = 8 and TRANSPORT = 9; 10-15 undefined)",
+        "cycle": "16 b",
+        "evidence_ref": "32 b: sha256 prefix of the referenced record id; a collision is a resolver REJECT, never a guess",
+        "tag": "32 b: HMAC-SHA256 over the first 64 bits with the mission key, truncated"
+      },
+      "rule": "a packet never carries content; a reference that does not resolve is REJECT; replay is refused by (lane, cycle, evidence_ref) uniqueness per mission",
+      "gate_L2a": {
+        "packets": 1200,
+        "per_lane": {
+          "attack": 400,
+          "repair": 400,
+          "model": 400
+        },
+        "compiled": "1,200/1,200",
+        "verified": "1,200/1,200",
+        "resolved": "1,200/1,200",
+        "wrong_key_verified": "0/1,200",
+        "one_flipped_bit_verified": "0/1,200",
+        "replay_repeat_admitted": "0/1,200",
+        "real_vs_synthetic": "378 packets reference real prior records (K4 run 3b rows, L1 fixture ids) and are measured offline; 822 reference ids minted by the gate itself, a codec round trip labelled scripted; 21 further comm packets reference the J11 hardware record ids",
+        "verdict": "MET"
+      },
+      "gate_L2b": "evidence from the L4 dry run: every op exercised, every reference resolved, 0 unexpected rejects",
+      "hardware": "NOT RUN: no IBM job; the delivery path is exercised offline through the same codec",
+      "cost_usd": 0
+    },
+    "l3_research_package": {
+      "question": "can the four lineages be sealed into one package that an independent verifier re-checks from receipts alone?",
+      "evidence_label": "measured_no_qpu",
+      "format": "LineageRecord v1 per node (one lineage each; cross-lineage links are parents, never merges); manifest with checkpoint list and model version per checkpoint; Merkle root over record digests; outer HMAC-SHA256 seal; a 15-check verifier that needs the key only for the outer seal",
+      "gate_L3a": {
+        "records": 147,
+        "per_lineage": {
+          "attack": 60,
+          "repair": 60,
+          "model": 15,
+          "comm": 12
+        },
+        "verify": "PASS under the run key",
+        "corruption_sweep": {
+          "positions_tested": 87304,
+          "basis": "one bit flipped at every byte of lineage.jsonl (86,237) and manifest.json (1,067)",
+          "fail": 87304,
+          "benign_pass": 0,
+          "escaped_pass": 0
+        },
+        "refuses_rejected_patch_as_parent": true,
+        "verdict": "MET"
+      },
+      "gate_L3b": "MET via the L4 dry run package (PASS)",
+      "caveat": "the gate's seal key was ephemeral, so a later re-verification without it reaches PASS_UNSEALED: everything but the outer seal is re-checked; the verifier checks structure, digests, receipt types and seals, not the artifacts the nodes stand for",
+      "cost_usd": 0
+    },
+    "l4_scale": {
+      "question": "what does a three-lane, N-agent mission cost and take, from measured parts, and does the orchestrator run end to end on fixtures?",
+      "cost_model": {
+        "evidence_label": "modelled",
+        "input_leaves": 50,
+        "input_labels": {
+          "measured": 36,
+          "modelled": 5,
+          "scripted": 1,
+          "design": 7,
+          "unmeasured": 1
+        },
+        "unmeasured_input": "IBM packing ratio beyond three circuits",
+        "rung_400_agents_depth_1": {
+          "calls": 960,
+          "model_usd_cold_cycle": 30.03,
+          "gateway_hours": 10.67,
+          "packets_per_agent_per_cycle": 3.183,
+          "packets": 1274,
+          "ibm_jobs": 4,
+          "ibm_seconds_modelled": "about 20 s (jobs-linear from the measured 5 s one-job mission); 15.9 s circuits-linear; hardware NOT RUN",
+          "binding_constraint_wall": "the model gateway's hourly call quota (90 calls per hour shared by all lanes)",
+          "budget_constraint_beside_it": "the frontier programmer's monthly gateway allowance: one cycle's 60,000 UVT is 0.4 of the 150,000 UVT month"
+        },
+        "gate_L4b": "MET"
+      },
+      "dry_run": {
+        "evidence_label": "scripted",
+        "design": "3 cycles x 40 agents x 3 lanes on rule-machine fixtures, scripted workers, the L2 packet layer between every stage, a scripted model lane emitting one promoted and one rejected patch per cycle, a scripted Q stage, the L3 packager at the end",
+        "packets_compiled": 382,
+        "packets_verified_and_resolved": 379,
+        "packets_admitted": 376,
+        "expected_rejects": "6 (one replay and one wrong key per cycle, all refused)",
+        "unexpected_rejects": 0,
+        "ops_exercised": "8/8",
+        "lineage_nodes": 258,
+        "package": "PASS",
+        "gate_L4a": "MET"
+      },
+      "ladder": "40 dry (done) -> 40 live on the real model (owner cap) -> 400 classical through the scripted receiver -> 400 with one IBM job carrying the comm lane's packets (owner hardware line) -> 1,200 -> 4,000",
+      "cost_usd": 0
+    },
+    "m1_economics": {
+      "question": "per verified record, what does a wide cycle cost on the gateway mid-cost model versus self-hosted open models, with and without the gateway quota?",
+      "evidence_label": "modelled",
+      "token_basis": "UVT as the token proxy; no measured token counts for any hosted option; prices are dated provider pages; throughput is a stated assumption",
+      "rung_400_agents": {
+        "gateway_mid_cost_model": {
+          "usd_per_verified": 0.0632,
+          "usd_per_cycle": 25.3,
+          "wall_hours": 6.22,
+          "wall_bound": "quota (90 calls per hour)"
+        },
+        "hosted_full_size_open_model": {
+          "gpus": "12 x H100-80GB (assumed 250 tokens/s aggregate)",
+          "usd_per_gpu_hour_mid_dated": 2.34,
+          "usd_per_verified_at_50pct_utilisation": 0.1184,
+          "flip_points_vs_gateway": "the hosted option wins only if the gateway's tier-0 cost rises above 2,492 UVT per call (in-situ projection 1,579) or the H100 rate falls below $1.25 per GPU-hour (dated range: low $1.00, mid $2.34)"
+        },
+        "hosted_9b_batched": {
+          "usd_per_cycle_at_50pct_utilisation": 1.72,
+          "verified_rate": "unmeasured",
+          "break_even_verified_rate": 0.068,
+          "note": "the cheapest $ per cycle buys nothing verified until the verified rate is measured (M-2a)"
+        },
+        "cheapest_computable_per_verified": "the gateway mid-cost model; conditional and near a flip"
+      },
+      "gate_M1a": "MET (modelled, conditional)",
+      "cost_usd": 0
+    },
+    "m2_gpu_rental": {
+      "question": "on one rented GPU, do the hosted open models verify >= 11/12 on the survey, and what is $ per verified over one compounding cycle?",
+      "evidence_label": "not_run",
+      "plan": "owner GPU line of about $25, one rental of at most 3 hours, preregistered before the rental",
+      "gates": {
+        "M-2a": "NOT RUN",
+        "M-2b": "NOT RUN"
+      },
+      "gpu_hours": 0,
+      "cost_usd": 0
+    },
+    "m3_registry": {
+      "question": "can a weight-group registry, a model-agnostic PatchSpec and the ROUTE / TRANSPORT packet ops carry a model switch and its specs through the fabric, and does Q selection over (lead, model, variant) beat a plain routing rule on fixtures?",
+      "evidence_label": "scripted",
+      "ops": {
+        "ROUTE": 8,
+        "TRANSPORT": 9,
+        "undefined": "10-15"
+      },
+      "rule_1": "weights never transfer: a PatchSpec carries no tensor values (allow-listed keys, caps, numeric-sequence and encoded-string heuristics; 14 bypass classes tested); the destination model re-derives the behaviour in its own sections under its own gate",
+      "gate_M3a": {
+        "design": "the L4 dry run with a model switch at cycle 3 for the 40 survivors",
+        "route_packets": 40,
+        "transport_packets": 40,
+        "frames_compiled": 462,
+        "frames_verified_and_resolved": 459,
+        "frames_admitted": 456,
+        "expected_rejects": 6,
+        "unexpected_rejects": 0,
+        "ops_exercised": "10/10",
+        "patchspecs_carried": 3,
+        "lineage_nodes": 338,
+        "package": "PASS",
+        "switch_off_byte_identical": true,
+        "verdict": "MET"
+      },
+      "gate_M3b": {
+        "cases": 12,
+        "budget_uvt": 19484,
+        "q_vs_plain_rule_agreement": "10/12",
+        "q_vs_argmin_knapsack_agreement": "12/12",
+        "uvt_per_verified_primary": {
+          "q": 2734.5,
+          "plain_rule": 2763.6,
+          "argmin_knapsack": 2734.5
+        },
+        "uvt_per_verified_gain_weighted_secondary": {
+          "q": 2418.7,
+          "plain_rule": 2430.4
+        },
+        "plain_rule_plus_rows_cutoff": "over budget (27,703.8 UVT), so not compared like for like",
+        "reading": "Q is about 1 % cheaper per verified than the plain rule under modelled prices and an assumed verify model; the whole difference comes from the evidence-rows factor the plain rule ignores, not from the solver: a classical argmin-plus-knapsack control that sees the same factor matches Q exactly",
+        "verdict": "MET (modelled comparison on fixtures; not a measured claim)"
+      },
+      "hardware": "none; the Q selection runs on a classical MPS simulator",
+      "cost_usd": 0
+    },
+    "review": {
+      "experiment_l": {
+        "date": "2026-11-03",
+        "type": "independent read-only review against the contract",
+        "findings": {
+          "critical": 0,
+          "high": 4,
+          "medium": 17,
+          "low": 8
+        },
+        "status": "all applied before any run",
+        "notable": "the programmer sandbox could reach the repository (and so the hidden tests and task tables); closed by running each block as an isolated subprocess on a copy of the runtime bundle with the repository off the import path, plus unseen-content fingerprints on every outbound message; also a full-byte corruption sweep, rejected-parent and checkpoint model-version checks, PASS_UNSEALED state, packet-derived IBM job counts"
+      },
+      "experiment_m": {
+        "date": "2026-11-03",
+        "type": "independent read-only review of the M diff",
+        "findings": {
+          "critical": 0,
+          "high": 3,
+          "medium": 7,
+          "low": 8
+        },
+        "status": "all applied",
+        "notable": "PatchSpec allow-list boundary; cost per verified on p_verify with two extra controls and a budget gate; conditional M-1a verdict with flip points; label and token-basis corrections"
+      }
+    },
+    "budget": {
+      "model_spend_used_usd_experiments_l_m": 0,
+      "model_spend_ledger_total_usd": 42.5,
+      "model_spend_cap_usd_before": 50,
+      "model_spend_cap_usd_after": 75,
+      "harness_stop_usd_before": 45,
+      "harness_stop_usd_after": 70,
+      "cap_raised": "2026-11-03 (owner decision; headroom under the new stop $27.49)",
+      "ibm_seconds": 0,
+      "gpu_hours": 0
+    },
+    "tests": {
+      "experiment_l_at_pin": 174,
+      "experiments_l_and_m_at_pin": 300,
+      "note": "pytest at the pinned commits for this review: 174 collected at the L pin (L1-L4); 300 collected and 300 passed at the M pin (L1-L4, M1, M3), offline, no network; the PR descriptions report 170 and 296 before amendment A2 added four tests"
+    },
+    "claims_boundary": "No quantum advantage is claimed. Nothing paid ran: no provider call, no IBM job, no GPU rental; 0 new IBM seconds and 0 GPU hours. The frontier model planned as the programmer is unnamed here and was never called. L2 and L3 are real code over real prior records, offline; the L4 dry run and all of M3 are scripted; the L4 ladder and all of M1 are modelled; L1 is built and rehearsed but NOT RUN on the real model; M2 is NOT RUN. Fixture tasks with known answers throughout; the Q selection result is a fixture comparison under an assumed verify model."
   }
 }
