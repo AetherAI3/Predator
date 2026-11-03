@@ -17,11 +17,28 @@
 
 **AI security research, software repair, and authorized VM workflows.**
 
+### Start here
+
+- **What Predator is.** A security research and software repair system that gives AI models persistent context and reviewed tool use, then banks only the results the software itself confirms.
+- **What is public.** This repository is the public showcase and evidence collection. The CLI and operator engines are private, with [reviewed research access](#developers-join-the-research-program).
+- **Two kinds of text.** This page mixes *measurements* (numbers from runs, each labelled with how it was measured) and *how we think about it* (method, plans, hypotheses). The legend below gives the labels; sections headed "Built, not yet run" or "as far as we can see" are the second kind.
+- **Where the evidence lives.** Each study has a plain-English guide in [`docs/research/`](docs/research/) and a JSON file of public aggregate data with source pins; the [Read the evidence](#read-the-evidence) table at the end lists them.
+
+### How to read our numbers
+
+| Label | Meaning |
+| :--- | :--- |
+| **MET** / **NOT MET** / **NOT RUN** | Every gate was preregistered before the run; the verdict is reported either way, including the misses. |
+| **measured on IBM hardware** | A run on a real IBM quantum device, with IBM's billed time and signed receipt. |
+| **measured on a simulator** | A run on a classical simulator of a quantum circuit (FakeFez models one IBM device). No hardware time. |
+| **measured on fixtures, no quantum-computer time** | A run on fixture tasks. A fixture is a task with a known answer scored by a deterministic checker. |
+| **modelled** | Arithmetic from measured per-unit costs; not a run. |
+| **built, not yet run** | Code exists and passed offline tests; nothing paid has executed. |
+| **scripted agents** | Stand-ins that follow a fixed script; not reasoning models. |
+
 Predator brings AI reasoning, persistent context, and reviewed tool use into security research and software repair. Its research engine, **Crucible**, works like a lockpick: it holds verified evidence steady, proposes candidate chains, checks them against the real software, and banks only supported results.
 
-This is the **public feature showcase and evidence collection**. The CLI and operator engines are private, with [reviewed research access](#developers-join-the-research-program).
-
-[How search works](#how-predator-chooses-the-next-move) · [P-BOX / HTB training](#p-box-htb-training) · [Gen3 Private Security](#gen3-private-security) · [Crucible](#crucible-adaptive-quantum-threat-modeling) · [MITRE chains](#mitre-attck-chain-library) · [CVE catalog](#cve-research-catalog) · [CodePro & System-2](#codepro-and-system-2) · [Quantum Comm Ops](#gen3-quantum-comm-ops) · [joint5 & IBM Fez](#joint5-compiler-the-ibm-fez-hardware-result) · [Results](#banked-scientific-results) · [Work with Aether](#ways-to-work-with-aether) · [Gen3 access](#predator-r3d-and-predator-blu3) · [Docs](docs/README.md)
+[How search works](#how-predator-chooses-the-next-move) · [P-BOX / HTB training](#p-box-htb-training) · [Gen3 Private Security](#gen3-private-security) · [Crucible](#crucible-adaptive-quantum-threat-modeling) · [MITRE chains](#mitre-attck-chain-library) · [CVE catalog](#cve-research-catalog) · [CodePro & System-2](#codepro-and-system-2) · [Generations](#generations-in-plain-english) · [Quantum Comm Ops](#gen3-quantum-comm-ops) · [joint5 & IBM Fez](#joint5-compiler-the-ibm-fez-hardware-result) · [Results](#banked-scientific-results) · [Work with Aether](#ways-to-work-with-aether) · [Gen3 access](#predator-r3d-and-predator-blu3) · [Glossary](#glossary) · [Docs](docs/README.md)
 
 ## How Predator chooses the next move
 
@@ -195,6 +212,9 @@ Crucible is Predator's software research and repair loop. It starts with a pinne
 
 The four pins illustrate a **research design**, not four measured workers or native checks in every run. The [execution and evidence guide](docs/research/crucible-evidence-contract.md) separates the CFC selector, an admitted exploit ratchet, and manual research. It also defines the minimum candidate record and the native effect needed for a zero-click claim. A model score, a worker proposal, and a native result are different records.
 
+<details>
+<summary><strong>The lock, part by part</strong></summary>
+
 ### The lock, part by part
 
 | In the lock | In Crucible | What it does |
@@ -205,6 +225,11 @@ The four pins illustrate a **research design**, not four measured workers or nat
 | **A set pin** | **HIT** | Banked only with an appropriate native receipt. Misses, refutations, and inconclusive results stay in the record with their limits. |
 | **Choosing the next pin** | **QUBO selection and evidence gate** | A modeled energy can rank a test; native outcomes determine what is supported. JEV participates only when an admitted stage records a typed call and its usage. Its decision is advisory, not an independent software result. |
 | **Working the set pin** | **Repair lane** | Pair a supported attack observation with a repair hypothesis and regression plan. A fix counts as validated only after its own check. |
+
+</details>
+
+<details>
+<summary><strong>What happens in one cycle</strong></summary>
 
 ### What happens in one cycle
 
@@ -217,8 +242,13 @@ The four pins illustrate a **research design**, not four measured workers or nat
 | **Validate** | Run the admitted native check and retain its receipt. A proposal without that check remains a hypothesis. Record HIT, miss, refutation, or inconclusive outcome accurately. |
 | **Select and carry** | Carry the supported evidence and open obligations into the next checkpoint. Pair an attack observation with a repair record; verify the repair separately. |
 
+</details>
+
 <a id="the-compounding-loop"></a>
 <a id="the-compounding-loop-quantum-depth-over-ratchet-cycles"></a>
+
+<details>
+<summary><strong>Quantum depth: how cycles chain together</strong></summary>
 
 ### Quantum depth
 
@@ -234,7 +264,9 @@ Each cycle leaves a checkpoint, and each checkpoint seeds the next intervention.
 
 The **ratchet** is the rule that verified earlier results and negative evidence remain visible while the next candidate is checked. It does not guarantee that a later candidate will pass. In the [CharLS case](docs/research/charls-q3.md), Q3 used C2's remaining repair obligation to move from **16/24 to 24/24** protected test passes, retaining all 16 earlier passes.
 
-[Research roadmap →](docs/research/generations.md)
+[Generations in plain English, triggers for Gen4, sources →](docs/research/generations.md)
+
+</details>
 
 <details>
 <summary><strong>Methods, evidence, and current limits</strong></summary>
@@ -324,6 +356,10 @@ Alongside the chain library, Predator maintains a catalog of CVE records, affect
 </details>
 
 <a id="clean-worktrees-and-unlimited-context"></a>
+<a id="predator-rc-browser-views-and-ctf-work"></a>
+
+<details>
+<summary><strong>The private CLI around it</strong></summary>
 
 ### The private CLI around it
 
@@ -336,8 +372,6 @@ The private **Predator CLI** brings research, tools, and persistent evidence int
 | **[P-BOX](#p-box)** | Spawn a disposable Linux pwnbox for a confirmed mission, with live viewing, operator control, and automatic cleanup. |
 | **Guest consoles** | Work through supported Pwnbox/noVNC sessions or an owned VM in an authorized training lab. |
 
-<a id="predator-rc-browser-views-and-ctf-work"></a>
-
 <details>
 <summary><strong>Browser, RC, and guest-session status</strong></summary>
 
@@ -347,19 +381,58 @@ RC is in controlled private preview. The production viewer and relay have been e
 
 </details>
 
+</details>
+
+<a id="generations-in-plain-english"></a>
+
+## Generations in plain English
+
+These are Aether's own labels for how its own work has evolved. They are not an industry standard, and they do not rank anyone else's work.
+
+| Generation | What it means |
+| :--- | :--- |
+| **Gen1** | Chat and copilot style help: one model, one answer. |
+| **Gen2** | Agent loops: models that use tools, run multi-step tasks and check their own work. Most public agent work today is here. |
+| **Gen3** | **Where Aether works now.** AI and quantum workflows run together across the whole Aether stack (Aether Agent, Aether Cloud, Nano, ATLAS, UCL, CodePro, AQRC, Predator) with a shared verified evidence bank, signed receipts, swarm coordination of hundreds of small agents, and Predator lanes for bounty, open-source (OSS), mission and training work. Predator is the public showcase. |
+| **Gen4** | Conditional. It starts when one of the triggers below fires; no date is predicted. |
+
+**What Gen3 is, concretely.** Aether does not train models from scratch. It builds systems around models:
+
+- **Weight adaptation.** A frontier model proposes an edit to at most 1 % of a small local model's weights; a separate judge it cannot see scores the result on hidden tasks; only a clean gain is promoted. *Built, not yet run* on the real model.
+- **API model systems** (CodePro, AQRC, Predator). Fanout, compilation and evidence accounting around models called through an API. *Measured on IBM hardware* (the joint5 pilot and the 400-agent delivery below), *measured on a simulator* (CharLS, QPACK, search scaling) and *measured on fixtures, no quantum-computer time* (the agent lanes).
+- **Local model modifications.** Patch and model-switch plumbing for small open-weight models that run locally. The packet and package plumbing is *measured on fixtures, no quantum-computer time*; the patch itself is *built, not yet run*.
+- **Quantum cybersecurity research.** Crucible, the chain library, and matched comparisons of classical and quantum selection on security tasks. *Measured on a simulator* and *measured on IBM hardware*; the comparisons so far show no quantum route beating the classical one.
+
+**What ends Gen3.** Any one of these observable events, whoever causes it:
+
+- Predator shows a quantum route beating the best classical route on a security task, preregistered, at matched budget, reproduced independently. Not shown so far; nothing in this repository claims quantum advantage.
+- Another team shows the same on a relevant workload.
+- A lab demonstrates models that improve themselves without human-written training runs, and the result holds up under review.
+
+Another lab may reach Gen4 first; that is why the map is drawn now. For context, model labs now publish threat-intelligence reports on AI-assisted operations and the security field is reacting; sources are collected in [why now](docs/research/generations.md#why-now).
+
+**Gen4, as far as we can see.** This is a direction, not a measurement:
+
+- Quantum-safe and post-quantum defense for the evidence bank and receipts, using the NIST post-quantum standards (FIPS 203, 204 and 205, finalized August 2024).
+- Authorized research into when quantum hardware becomes relevant to cryptography: resource estimation and testing post-quantum implementations.
+- The central hypothesis: hybrid AI/quantum workflows may matter before raw quantum hardware does.
+- No date is predicted. Gen4 starts when a trigger above fires.
+
+[The long version: generations, triggers and sources →](docs/research/generations.md#plain-english)
+
 ## Gen3 Quantum Comm Ops
 
-**Give each worker useful context. Verify every handoff. Focus further work on promising results.**
+**It sends each agent's briefing through a quantum computer and checks that it arrived intact.**
 
-Quantum Comm Ops is Predator's research into coordinating large agent workflows. A shared evidence bank holds the findings; a compiler prepares small, task-specific messages; receivers check those messages before using them. Adaptive **Custom Fanout Controls (CFC)** decide which branches need more attention next.
+**What it is.** Quantum Comm Ops is Predator's research into coordinating hundreds of small AI agents at once: a shared evidence bank holds the verified findings, a compiler turns them into a short briefing for each agent, and each agent checks a tamper seal on its briefing before using it. Adaptive Custom Fanout Controls (CFC) then decide which leads get more attention next. The delivery route runs through **Nano → ATLAS → an IBM backend**: first **FakeFez** (*measured on a simulator* configured to model an IBM device), and since October 31 the real devices **ibm_fez** and **ibm_kingston** on IBM's free open plan (*measured on IBM hardware*).
 
-The programme compares ordinary delivery with an experimental quantum-search route through **Nano → ATLAS → an IBM backend**: first **FakeFez**, a simulator configured to model an IBM device, and since October 31 the real devices **ibm_fez** and **ibm_kingston** on IBM's free open plan. Compact packets select or reconstruct records from the shared bank. Useful reasoning from those records is a separate model-qualification step.
+A briefing is a compact packet that selects or reconstructs a record from the shared bank; whether a model can reason well from that record is a separate step, measured on fixtures.
 
 <p align="center">
   <a href="docs/research/quantum-comm-ops.md"><img src="docs/assets/quantum-comm-ops-overview.svg" width="960" alt="Conceptual handoff: compile a packet from shared evidence, deliver it, and check its receipt and message tag. Accept a verified handoff or retry within the budget. The route was measured on the FakeFez simulator and then on IBM hardware; model continuation remains under qualification."></a>
 </p>
 
-### Current milestone: 400 agents, 400 messages, one IBM job, five seconds
+### Measured on IBM hardware: 400 agents, 400 messages, one IBM job, five seconds
 
 **What the mission is, in plain words.** Picture a team of **400 AI worker agents**. Each one needs its own short briefing before it can start its task. Quantum Comm Ops writes those 400 briefings, sends each one through an IBM quantum computer, and checks that every agent received exactly the briefing meant for it.
 
@@ -369,11 +442,11 @@ The programme compares ordinary delivery with an experimental quantum-search rou
 - IBM also returns a **signed receipt** for the job. Predator stores it so the delivery can be re-checked later.
 - **"400/400 verified"** means all 400 agents got a message whose check code matched, so every briefing arrived intact. **"First try"** means no agent needed a re-send.
 
-In this research the 400 agents are **scripted stand-ins**, not 400 reasoning language models. The test measures message delivery. Whether a model can use the briefing well is tested separately (see "Evidence flows onward" below).
+In this research the 400 agents are **scripted agents** (stand-ins, not 400 reasoning language models). The test measures message delivery. Whether a model can use the briefing well is tested separately (see "Evidence flows onward" below).
 
 **What happened, October 31 – November 1, 2026.** The mission that previously ran on a simulator now runs on real IBM quantum hardware, and the whole thing fits in **one IBM job billed 5.0 seconds of quantum-computer time**. Every run was preregistered and rehearsed on the simulator first; the attempts that missed their targets or did not run are listed below and in the [guide](docs/research/quantum-comm-ops.md#ibm-hardware-missions).
 
-| What we measured | Simulator (Oct 31) | IBM hardware (Oct 31 – Nov 1) |
+| What we measured | Measured on a simulator (Oct 31) | Measured on IBM hardware (Oct 31 – Nov 1) |
 | :--- | :--- | :--- |
 | **Agents whose message arrived intact on the first try** (out of 400) | 400, 400 and 399 on three runs | **400 on all five runs**: three different message sets on ibm_kingston, then two runs with a secret key (ibm_kingston, then ibm_fez) |
 | **After one re-send** | 400 on every run | 400 on every run; no re-send was needed |
@@ -395,36 +468,56 @@ In this research the 400 agents are **scripted stand-ins**, not 400 reasoning la
 
 The simulator milestone it builds on, **three fresh 400-agent runs at three shots with a capped six-shot re-send** (1,199 of 1,200 intact on the first try, 1,200 of 1,200 after re-send), remains the research baseline and is kept in full in the [guide](docs/research/quantum-comm-ops.md#earlier-simulator-milestone).
 
-### Feel the pins, then set them: what the agents measured
+### Measured on fixtures, no quantum-computer time: what the agents measured
 
-The delivery step is measured on hardware (five one-job missions, 400 of 400 each). On November 1 the programme measured the **agents** on either side of it, on fixture tasks with known answers scored by a deterministic checker, with **no quantum-computer time**. The work follows the same [lockpick](#crucible-adaptive-quantum-threat-modeling) that Crucible already uses. In plain words:
+The delivery step is measured on IBM hardware (five one-job missions, 400 of 400 each). On November 1 the programme measured the **agents** on either side of it. Everything in this table is *measured on fixtures, no quantum-computer time*: fixture tasks with known answers, scored by a deterministic checker. The work follows the same [lockpick](#crucible-adaptive-quantum-threat-modeling) that Crucible already uses. In plain words:
 
-| Lockpick | What it means for the 400-agent loop | Measured November 1 (fixtures, no QPU) |
+| Lockpick | What it means for the 400-agent loop | Measured November 1 (fixtures, no quantum-computer time) |
 | :--- | :--- | :--- |
-| **Hold tension** | The shared evidence bank holds every verified record with its receipt; a stronger **encoder** picks each agent's briefing from it, and the **compiler** filters what reaches the agent | **MET for the encoder; the selection-to-agent gate was met only with the compiler filter, not as first registered.** The encoder put about **87%** of an agent's relevant records in its top eight within the agent's evidence pool (57% across the whole bank), where keyword search managed 38% (17%). But a scripted agent verified only **5 of 110** briefings until the compiler *dropped* other chains' records and contradicted records; then **99 of 110**. Keyword search with the same filter: 0 of 110. The filter matters more than the label |
-| **Feel many pins** | 400 cheap agents each take one briefing (one IBM job, 5 s) and report **HIT / MISS / REJECT** with a short reason | **NOT MET on price.** No cheap model verified at least 11 of 12 test tasks at a quarter of the frontier model's price or less. The best mid-cost model verified **12 of 12** at about **63%** of that price; a free-tier model **7 of 12** at about **2%**. Two models failed the strict output format; re-parsed leniently after the fact they would have verified 6 and 10 of 12 |
-| **Keep the pins that bind** | The program's own check decides; a verdict is recorded only when it type-checks and its receipt matches, and agents that disagree are recorded as a split rather than averaged away | **MET.** A plain majority was right on 9 of 12 test tasks; a reliability-weighted vote reached **12 of 12** across the same 12 tasks (3 where the majority split or was wrong). Quantum-style selectors run on a classical simulator matched it and added nothing |
-| **Set the binding pin** | Stop narrowing once the few real leads are known; each survivor gets a **deep cell**: a "think longer" model plus a frontier model working that one lead | **NOT MET for the "think longer" model.** It verified **0 of 12** at depths 4, 8 and 16; depth 32 was stopped by the memory limit. Deeper runs produced well-formed records whose steps were invented, and its adaptive early exit fired on only 8 of 192 tokens because the state never settled below its threshold. Deep cells stay frontier-only. A preregistered ladder found a **harder task family** where the frontier model alone verifies **2 of 12**, so deep cells have a calibration target |
-| **Only as many hands as we have** | Deep cells open only up to the machines we actually have; leads that cannot be deepened yet wait with their evidence intact | **NOT RUN.** The narrow-then-deepen comparison stopped at its **$5** cap before any deep cell opened. On the hard family the free-tier first model verified **0 of 24** (on the long briefings 19 of its 24 replies were not valid records, 4 missed, 1 was wrong), the mid-cost model verified **9 of the 9** leads it reached, and 15 leads are waiting |
-| **Next cycle** | Each cycle's verified records feed the next cycle's briefings, so the bank deepens where the lock is binding | **MET on fixtures.** Three cycles over the same 40 fixture chains with one shared bank: first-try verified **24 → 38 → 39 of 40**, hand-offs to the mid-cost model **16 → 2 → 1**, cost per verified record **0.45×** of cycle one. Two earlier runs with a free-tier first model showed the same shape (23 → 39; cost per verified down 7.6–14×) until a per-hour quota at the model gateway stopped their third cycle. Fresh, non-fixture tasks are still open |
+| **Hold tension** | The shared evidence bank holds every verified record with its receipt; a stronger **encoder** picks each agent's briefing from it, and the **compiler** filters what reaches the agent | **MET for the encoder; the selection-to-agent gate was met only with the compiler filter, not as first registered.** The encoder put about **87%** of an agent's relevant records in its top eight within the agent's evidence pool (keyword search: 38%). A scripted agent verified **5 of 110** briefings without the compiler filter and **99 of 110** with it. [Details in the guide](docs/research/quantum-comm-ops.md#agent-lanes-november-1-2026-evening) |
+| **Feel many pins** | 400 cheap agents each take one briefing (one IBM job, 5 s) and report **HIT / MISS / REJECT** with a short reason | **NOT MET on price.** The best mid-cost model verified **12 of 12** test tasks at about **63%** of the frontier model's price; a free-tier model **7 of 12** at about **2%**. The target was 11 of 12 at a quarter of the price or less. [Details in the guide](docs/research/quantum-comm-ops.md#agent-lanes-november-1-2026-evening) |
+| **Keep the pins that bind** | The program's own check decides; a verdict is recorded only when it type-checks and its receipt matches, and agents that disagree are recorded as a split rather than averaged away | **MET.** A plain majority was right on **9 of 12** test tasks; a reliability-weighted vote reached **12 of 12**. [Details in the guide](docs/research/quantum-comm-ops.md#agent-lanes-november-1-2026-evening) |
+| **Set the binding pin** | Stop narrowing once the few real leads are known; each survivor gets a **deep cell**: a "think longer" model plus a frontier model working that one lead | **NOT MET for the "think longer" model.** It verified **0 of 12** at every depth tried, so deep cells stay frontier-only. A harder task family was found where the frontier model alone verifies **2 of 12**. [Details in the guide](docs/research/quantum-comm-ops.md#agent-lanes-november-1-2026-evening) |
+| **Only as many hands as we have** | Deep cells open only up to the machines we actually have; leads that cannot be deepened yet wait with their evidence intact | **NOT RUN.** The narrow-then-deepen comparison stopped at its **$5** cap before any deep cell opened; the mid-cost model verified **9 of the 9** leads it reached and 15 are waiting. [Details in the guide](docs/research/quantum-comm-ops.md#agent-lanes-november-1-2026-evening) |
+| **Next cycle** | Each cycle's verified records feed the next cycle's briefings, so the bank deepens where the lock is binding | **MET on fixtures.** Three cycles over the same 40 fixture chains: first-try verified **24 → 38 → 39 of 40**, cost per verified record **0.45×** of cycle one. Fresh, non-fixture tasks are still open. [Details in the guide](docs/research/quantum-comm-ops.md#agent-lanes-november-1-2026-evening) |
 
 <p align="center">
   <a href="docs/research/quantum-comm-ops.md#agent-lanes-november-1-2026-evening"><img src="docs/assets/quantum-comm-ops-compounding.svg" width="960" alt="Compounding measured on fixture tasks with no quantum-computer time: across three cycles over the same 40 chains, agents verified first try 24, then 38, then 39 of 40; hand-offs to the mid-cost model fell from 16 to 2 to 1; and the cost per verified record fell to 0.45 times cycle one."></a>
 </p>
 
-**What one cycle looks like now.** The shared bank feeds the encoder; the compiler filters what each agent sees; the 400 briefings go out in one IBM job; verified records come back into the bank with their receipts; disagreements go to a weighted vote; and the next cycle starts from a deeper bank. The delivery step is measured on hardware; the encoder, filter, vote and compounding steps are measured on fixtures; the deep cells on surviving leads are not yet run. The stages were measured separately; no cycle has yet run with the hardware delivery step inside it.
+**What one cycle looks like now.** The shared bank feeds the encoder; the compiler filters what each agent sees; the 400 briefings go out in one IBM job; verified records come back into the bank with their receipts; disagreements go to a weighted vote; and the next cycle starts from a deeper bank. The delivery step is *measured on IBM hardware*; the encoder, filter, vote and compounding steps are *measured on fixtures, no quantum-computer time*; the deep cells on surviving leads are **NOT RUN**. The stages were measured separately; no cycle has yet run with the hardware delivery step inside it.
 
 <p align="center">
   <a href="docs/research/quantum-comm-ops.md"><img src="docs/assets/quantum-comm-ops-agent-loop.svg" width="960" alt="One cycle of the agent loop: the shared evidence bank feeds the encoder, which picks each agent's records (measured on fixtures: about 87 percent of relevant records in the top eight); the compiler drops other chains' and contradicted records (fixtures: 99 of 110 verified with the filter, 5 of 110 without); 400 briefings go out in one IBM job (hardware: 400 of 400 intact, 5 seconds billed); verified records are banked with their receipts; disagreements go to a reliability-weighted vote (fixtures: 12 of 12); deep cells on surviving leads are not run; and the bank feeds the next cycle (fixtures: first-try 24, 38, 39 of 40)."></a>
 </p>
 
-Why this matters for a real security mission: a cheap agent that cannot tell a hard lead is real discards it, so a loop that only narrows would find the easy findings and lose the hard ones; deepening on survivors is the untested hypothesis for setting those. For scale, the worker survey projects about **$4 of model calls plus 5 seconds of quantum-computer time** for a 400-agent round with the first-tier worker alone (one call per agent, no escalation), against about **$18** with a frontier model on every agent; the measured third cycle above implies roughly **$9–10** per 400 verified records with escalation. These are projections from measured per-call costs, not a measured 400-agent mission.
+Why this matters for a real security mission: a cheap agent that cannot tell a hard lead is real discards it, so a loop that only narrows would find the easy findings and lose the hard ones; deepening on survivors is the untested hypothesis for setting those. For scale, the worker survey projects about **$4 of model calls plus 5 seconds of quantum-computer time** for a 400-agent round with the first-tier worker alone (one call per agent, no escalation), against about **$18** with a frontier model on every agent; the measured third cycle above implies roughly **$9–10** per 400 verified records with escalation. These figures are *modelled* from measured per-call costs, not a measured 400-agent mission.
 
-The agent lanes cost about **$24** of model calls; **$42.50 of the $50 model budget** has been used in total.
+The agent lanes cost about **$24** of model calls; **$42.50** of the model budget has been used in total (the cap was $50 at the time; see the November 3 raise below).
 
-Still open, in order: the narrow-then-deepen comparison at matched budget (it needs a higher cap than the $5 it ran under); the stronger encoder *inside* a live compounding loop; gating or replacing the cheap first-tier worker above about 20 evidence rows; then the repeat on ibm_kingston after a fresh calibration, packing beyond three circuits, real key management, and production dispatch. The tested **superposition multiplexing** idea (several messages in one circuit) ran on hardware but did not beat ordinary packing as a way to *carry* messages; whether it helps *choose* between disagreeing agents is still to be tested against a plain vote on hardware (on a classical simulator a quantum-style selector only matched the weighted vote).
+### Built and reviewed, not yet run: Experiments L and M (November 3, 2026)
 
-**Status, November 2, 2026:** the 400-agent delivery mission is measured on IBM hardware, including what IBM billed, and the two reserved hardware attempts are now finalized by IBM. No quantum advantage is claimed or demonstrated: the saving is IBM's billing for batched circuits that carry known bit patterns. Scripted agents, one synthetic message generator, two devices, one day each; the agent lanes are measured on fixture tasks with no quantum-computer time. The separate joint5 compiler pilot is described below.
+Two experiments were built and reviewed offline on November 3. Nothing paid has run: **0 new IBM seconds, 0 GPU hours**. Each item below carries its legend label.
+
+**Experiment L: four parts** (they carry the attack, repair, model and communication lineages).
+
+- **Model lane** (*built, not yet run*). A frontier model is allowed to propose an exact edit to at most 1 % of the weights of a 0.8-billion-parameter open-weight local model that keeps failing the same way (looping, invalid output, invented steps). A separate judge process, which the proposer never sees, scores the patched model on hidden tasks (36 unseen, 3×40 adjacent). Promotion needs at least 4 more unseen tasks solved, at most 1 adjacent task lost, and no rise in the output-length cap rate. An offline rehearsal with a stand-in model promoted one patch and rejected a repeat. **Built, not yet run on the real model**; the baseline measurement of how the small model fails before any edit is in progress as of November 3. The promotion receipt is sealed with a key kept out of the repository. An independent review found that the proposer's sandbox could reach the repository and the hidden tests; that was closed before any run.
+- **Control packets** (*measured on fixtures, no quantum-computer time*). 96-bit signed messages carrying a lane, an operation, a cycle number, a 32-bit fingerprint of the evidence record, and a 32-bit tag. A packet carries a reference, never a payload. **1,200 of 1,200 accepted; wrong key, 0 accepted; any flipped bit, 0 accepted; replays, 0 accepted** (gate L-2a **MET**). Of those, 378 packets point at real earlier records and 822 at ids minted for the test (*scripted*).
+- **Sealed research package** (*measured on fixtures, no quantum-computer time*). Every patch, evaluation and message is chained by hashes under one root; a 15-check verifier refuses a package in which a rejected patch was used as a parent. **147 records PASS; corrupting any one of the 87,304 bytes of its lineage and manifest files fails it** (gate L-3a **MET**).
+- **Scale model** (*modelled*, plus one fixture dry run). A 400-agent, three-lane round costs about **$30 of model calls (modelled)**; the limits are the model gateway's hourly call quota (about 90 calls an hour, so about 10.7 hours per round) and the frontier model's monthly allowance (one round uses about 0.4 of a month), not IBM time. The IBM part is about **4 jobs, about 20 seconds (modelled from the measured 5-second job)**. A 40-agent, three-lane dry run passed: 379 packets, 8 of 8 operations, package verified (gate L-4a **MET**, *measured on fixtures, no quantum-computer time*).
+
+**Experiment M: economics and the model switch.**
+
+- **Economics** (*modelled, not measured*). No measured token counts exist yet, so internal cost proxies are used. Calling a mid-cost model through the gateway costs about **$0.063 per verified result**. That is cheaper than renting GPUs for a full-size open-weight model (about **$0.118 per verified result** on twelve rented GPUs) unless GPU rent falls to about **$1.25 per GPU-hour** or the gateway's per-call cost rises about threefold above its calibration (about 1.6× above the projected in-situ cost). The gateway's rate limit (about 90 calls an hour) makes a single-lane 400-agent round take about **6 hours** (three lanes: about 10.7 hours, as above). A batched 9-billion-parameter model would cost about **$1.72 per round**, but its verified rate is unmeasured. The one-GPU rental that would measure this (M2) is **NOT RUN**: 0 GPU hours.
+- **Model switch plumbing** (*measured on fixtures, no quantum-computer time*). A registry names sections of a model's weights. Two new packet operations: "switch model" and "carry this patch's intent to another model". Weights never move between models; knowledge moves as a patch specification that is re-derived in the destination model. A Q-step (a small QUBO selection, the scorecard described at the top of this page) picks the model and section. **40 + 40 packets, 462 frames, 0 unexpected rejects, 10 of 10 operations, package verified** (M-3a **MET**). The Q-step agreed with the plain rule on 10 of 12 cases, matched a classical control that sees the same evidence-size factor (lowest cost per expected gain plus a knapsack fill) on 12 of 12, and modelled about 1 % lower cost per expected verified result (M-3b **MET**). Honest reading: it wins only because it sees evidence size, which the plain rule ignores.
+
+**Tests and budget.** 300 tests across L and M, all passing offline at the M pin. **$42.50** of model spend used; the cap was raised from $50 to $75 on November 3 to fund the first real model-lane cycle. 0 new IBM seconds, 0 GPU hours.
+
+[Details and source pins →](docs/research/quantum-comm-ops.md#experiments-l-m)
+
+**Still open, in order:** run the model lane on the real model; measure a GPU rental (M2); the narrow-then-deepen comparison at matched budget (it needs a higher cap than the $5 it ran under); the stronger encoder *inside* a live compounding loop; gating or replacing the cheap first-tier worker above about 20 evidence rows; then the repeat on ibm_kingston after a fresh calibration, packing beyond three circuits, real key management, and production dispatch. The tested **superposition multiplexing** idea (several messages in one circuit) ran on hardware but did not beat ordinary packing as a way to *carry* messages; whether it helps *choose* between disagreeing agents is still to be tested against a plain vote on hardware (on a classical simulator a quantum-style selector only matched the weighted vote).
+
+**Status, November 3, 2026:** the 400-agent delivery mission is measured on IBM hardware, including what IBM billed, and the two reserved hardware attempts are finalized by IBM. No quantum advantage is claimed or demonstrated: the saving is IBM's billing for batched circuits that carry known bit patterns. Scripted agents, one synthetic message generator, two devices, one day each; the agent lanes are measured on fixtures, no quantum-computer time. Experiments L and M are built and reviewed offline; nothing paid has run. The separate joint5 compiler pilot is described below.
 
 **[Plain-English guide, hardware missions and open questions →](docs/research/quantum-comm-ops.md)** · [Public aggregate data and source pins](docs/research/quantum-comm-ops.json)
 
@@ -448,6 +541,9 @@ Lower total-variation distance means closer agreement with the ideal output dist
 
 [Measurements and uncertainty →](docs/research/ibm-fez-pilot.md) · [Full-precision data →](docs/research/ibm-pilot.json)
 
+<details>
+<summary><strong>How the search and compiler scale (measured on a simulator)</strong></summary>
+
 ### How the search and compiler scale
 
 An **October 20, 2026 synthetic sweep** asked two separate questions: how close do the sampled answers get to the best score, and does joint5 save hardware instructions as the choices grow? These were simulator and compilation tests, separate from the IBM Fez acquisition above.
@@ -460,6 +556,8 @@ An **October 20, 2026 synthetic sweep** asked two separate questions: how close 
 The proposed upgrade is simple: **compare both circuit layouts, keep the smaller one, and use a suitable local simulator for quantum experiments.** Ordinary computer search keeps choosing the next move until another method earns that role in a fair comparison. These are design recommendations; the sweep does not establish that the upgrades have shipped.
 
 [Scaling tests: plain-English guide and full tables →](docs/research/search-scaling.md) · [Chart data →](docs/research/search-scaling.json)
+
+</details>
 
 <a id="gen3-oss"></a>
 <a id="what-the-public-research-found"></a>
@@ -537,6 +635,24 @@ Help build the CLI, repair chains, verification tools, or classical/quantum comp
   <sub>Predator CLI console preview · illustrative layout and counters</sub>
 </p>
 
+## Glossary
+
+| Term | Plain English |
+| :--- | :--- |
+| **shots** | How many times one quantum circuit is run and read out; a majority vote over the readings gives the answer. |
+| **receipt** | A signed record that a step happened (an IBM job, a verdict, a message), kept so it can be re-checked later. |
+| **fixture** | A task with a known answer, scored by a deterministic checker; used to measure agents without paying for quantum-computer time. |
+| **scripted agent** | A stand-in that follows a fixed script; it is not a reasoning model. |
+| **frontier model** | One of the strongest commercial models available; this page never names the product. |
+| **mid-cost / free-tier model** | Cheaper models called through a model gateway; mid-cost is priced well below the frontier model, free-tier costs almost nothing. |
+| **CFC** | Custom Fanout Controls: the settings that decide how many candidates to open, how long to look, and when to stop. |
+| **QUBO / energy** | A scorecard for yes/no choices that interact; energy is the score, and lower is better. |
+| **packet** | A short signed message (96 bits) that tells an agent which record to use; it carries a reference, never the record itself. |
+| **lane** | One stream of Predator work: bounty, open-source (OSS), mission or training. |
+| **evidence bank** | The shared store of verified records, each with its receipt, that briefings are built from. |
+| **promotion** | Accepting a change, such as a weight patch, because it passed the judge's preregistered gates. |
+| **modelled** | Arithmetic from measured per-unit costs; not a run. |
+
 ## Read the evidence
 
 | Start with | Then explore |
@@ -545,11 +661,11 @@ Help build the CLI, repair chains, verification tools, or classical/quantum comp
 | **[HTB training evidence](docs/htb/README.md)** | Courses, tracks, machines, certificates, and replay index |
 | **[Crucible](#crucible-adaptive-quantum-threat-modeling)** | The loop explained as a lockpick, with [MITRE chains](#mitre-attck-chain-library) and the [CVE catalog](#cve-research-catalog) it draws on |
 | **[CodePro and System-2](#codepro-and-system-2)** | How the fanout runs, and the private CLI around it |
-| **[Quantum Comm Ops](docs/research/quantum-comm-ops.md)** | Agent mailboxes, adaptive CFC, packing and multiplexing; [the 400-agent message mission on IBM hardware](docs/research/quantum-comm-ops.md#ibm-hardware-missions) and [aggregate data with source pins](docs/research/quantum-comm-ops.json) |
+| **[Quantum Comm Ops](docs/research/quantum-comm-ops.md)** | Agent mailboxes, adaptive CFC, packing and multiplexing; [the 400-agent message mission on IBM hardware](docs/research/quantum-comm-ops.md#ibm-hardware-missions), [Experiments L and M, built and not yet run](docs/research/quantum-comm-ops.md#experiments-l-m), and [aggregate data with source pins](docs/research/quantum-comm-ops.json) |
 | **[CharLS Q3](docs/research/charls-q3.md)** | [Public data](docs/research/charls-q3.json) and the completed dependent repair |
 | **[QPACK study](docs/research/gen3-qpack-experiment1.md)** | [Episode data](docs/research/gen3-qpack-experiment1.json), comparisons, and missing outcomes |
 | **[joint5 IBM Fez pilot](docs/research/ibm-fez-pilot.md)** | [Public data](docs/research/ibm-pilot.json), uncertainty, and the energy regression |
-| **[Research roadmap](docs/research/generations.md)** | Generation goals and the requirements for promoting research into qualified profiles |
+| **[Generations](docs/research/generations.md)** | [Generations in plain English](#generations-in-plain-english), the triggers for Gen4, sources, and the requirements for promoting research into qualified profiles |
 | **[Predator safety model](SAFETY.md)** | Required boundaries and the status of implemented controls |
 | **[Unlimited Context](https://github.com/AetherAI3/Unlimited-Context-LLM)** | [How it works](https://github.com/AetherAI3/Unlimited-Context-LLM#how-it-works) and [safety measures](https://github.com/AetherAI3/Unlimited-Context-LLM/blob/main/SAFETY.md) |
 
