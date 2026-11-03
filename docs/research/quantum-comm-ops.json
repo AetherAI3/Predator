@@ -1,6 +1,7 @@
 {
   "schema": "predator.public.quantum-comm-ops.v3",
   "review_date": "2026-11-01",
+  "updated": "2026-11-02",
   "verification": "Source, committed report/result inspection and arithmetic checks against the private live-run reports; no independent experimental rerun, no replay of private raw receipts, no independent provider-account audit.",
   "publication_scope": "Owner-authorized public aggregate summary. Implementation, raw job/mailbox bodies and full run artifacts remain private; source links require repository access.",
   "hardware_used": true,
@@ -423,13 +424,17 @@
         "item": "J11 R on ibm_kingston after a recalibration",
         "outcome": "NOT RUN",
         "reason": "queued 11 h 21 min, cancelled before running",
-        "reserved_seconds_held": 30
+        "reserved_seconds_held": 30,
+        "provider_final_seconds": 0,
+        "finalized": "2026-11-02"
       },
       {
         "item": "J11 R on ibm_marrakesh at a 10 s provider limit",
         "outcome": "ERROR",
         "reason": "limit sized from billed seconds; the provider's limit is not the billed figure (jobs billed 5 s had run 31-71 s of wall clock)",
-        "reserved_seconds_held": 10
+        "reserved_seconds_held": 10,
+        "provider_final_seconds": 5,
+        "finalized": "2026-11-02"
       },
       {
         "item": "model emits the correct 96-bit pin free-form (J4)",
@@ -441,7 +446,7 @@
     "holds_pending_at_review": {
       "reserved_seconds": 40,
       "jobs": 2,
-      "provider_usage_status": "pending",
+      "provider_usage_status": "pending at the November 1 review; settled 2026-11-02 (see settled)",
       "rule": "zero or missing usage is never treated as free; released only on the provider's final accounting",
       "settled": {
         "date": "2026-11-02",
@@ -482,8 +487,8 @@
         "J7": 11,
         "J8": 10,
         "J9": 5,
-        "J11": 21,
-        "unattributed_step_near_J11_marrakesh_attempt": 5
+        "J11": 26,
+        "J11_note": "R 5 + C 16 + the marrakesh attempt 5 (an account step that was unattributed until IBM finalized it on 2026-11-02)"
       },
       "paid_instance_seconds": 0,
       "model_spend_cap_usd": 50,
@@ -1279,6 +1284,13 @@
     },
     "worker_survey_K3": {
       "reference": "gpt55 12/12",
+      "modelled_400_agent_cycle_usd": {
+        "basis": "400 x mean UVT per call x $33.33 per million UVT; one call per agent, no retries, no escalation, no captain; a projection, not a measured mission",
+        "gpt54_mini": 4.22,
+        "dsv4_flash": 0.4,
+        "glm53": 11.16,
+        "gpt55_reference": 17.85
+      },
       "results": {
         "glm53": {
           "verified": "12/12",
@@ -1336,6 +1348,12 @@
           716
         ],
         "cycle3_over_cycle1": 0.445,
+        "captain_calls": 0,
+        "implied_usd_per_400_verified": {
+          "basis": "cost per verified record x 400 x $33.33 per million UVT; arithmetic on the measured run, not a measured 400-agent mission",
+          "cycle_1": 21.45,
+          "cycle_3": 9.55
+        },
         "errors": 0,
         "cost_usd": 4.06,
         "gates": {

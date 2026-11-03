@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="452" viewBox="0 0 960 452" role="img" aria-labelledby="title description">
+<title id="title">Quantum Comm Ops agent loop: one cycle from the shared evidence bank to the reliability-weighted vote</title><desc id="description">Schematic of one cycle of the agent loop. A shared evidence bank holds verified records with receipts. The encoder picks the top eight records per agent: recall at eight was 86.8% for the code-4 encoder against 38.3% for BM25 on the pool of 110 fixture chains, measured on fixture tasks. The briefing compiler keeps only records from the same chain and drops contradicted ones, lifting scripted-agent verification from 5/110 to 99/110 chains, measured on fixtures. Delivery to 400 agents ran as 1 IBM job on ibm_fez billed 5.0 seconds, 400 of 400 verified on the first try, measured on IBM hardware on 1 Nov 2026. Agents report HIT, MISS or REJECT and verified records are banked with a receipt: in the compounding rehearsal 24, then 38, then 39 of forty agents verified first try across three cycles, measured on fixtures. Disagreements go to a reliability-weighted vote, which matched the answer on 12/12 tasks where a plain majority managed 9/12, measured offline on fixtures. A greyed side box shows the deep cell: the think-longer worker verified 0 of 12 tasks at depths 4, 8, 16 and stays advisory; narrow-then-deepen was not run under a five-dollar lane cap. A return arrow labelled next cycle leads back to the bank. Numbers come from preregistered runs on fixture tasks with known answers except the delivery stage, which ran on IBM hardware; no quantum advantage is claimed.</desc>
+<rect x="1" y="1" width="958" height="450" rx="18" fill="#070d17" stroke="#2a3b51"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5f7a99"/></marker></defs>
+<text x="48" y="36" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#67dcb4" >EXPERIMENT K · ONE CYCLE · AGENT LANES: NO NEW QPU TIME · DELIVERY: 1 NOV HARDWARE</text>
+<text x="912" y="36" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#adbbce" text-anchor="end">1 NOV 2026</text>
+<text x="48" y="72" font-family="Helvetica,Arial,sans-serif" font-size="28" font-weight="700" fill="#f2f6ff" >One cycle of the agent loop</text>
+<text x="48" y="98" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#adbbce" >Bank → encoder → compiler → 400 agents on one IBM job → verdicts → weighted vote → bank</text>
+<rect x="48" y="112" width="250" height="100" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="64" y="136" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#f2f6ff" >Shared evidence bank</text>
+<text x="64" y="155" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >verified records with receipts,</text>
+<text x="64" y="171" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >read by every agent</text>
+<text x="64" y="190" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#32c7eb" >seeded by a scripted warm-up</text>
+<text x="64" y="205" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#adbbce" >measured (fixtures) · known answers</text>
+<rect x="355" y="112" width="250" height="100" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="371" y="136" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#f2f6ff" >Encoder picks top-8 records</text>
+<text x="371" y="155" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >per agent, from the bank&#x27;s pool</text>
+<text x="371" y="171" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >code-4 encoder vs BM25</text>
+<text x="371" y="190" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#32c7eb" >recall@8: 86.8% vs BM25 38.3%</text>
+<text x="371" y="205" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#adbbce" >measured (fixtures) · 110 chains</text>
+<rect x="662" y="112" width="250" height="100" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="678" y="136" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#f2f6ff" >Briefing compiler filters</text>
+<text x="678" y="155" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >same chain only;</text>
+<text x="678" y="171" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >drop contradicted records</text>
+<text x="678" y="190" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#32c7eb" >verified 5/110 → 99/110</text>
+<text x="678" y="205" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#adbbce" >measured (fixtures) · scripted agent</text>
+<rect x="662" y="290" width="250" height="100" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="678" y="314" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#f2f6ff" >400 agents, 1 IBM job</text>
+<text x="678" y="333" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >5.0 s billed on ibm_fez, 5 shots</text>
+<text x="678" y="349" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >known frames, majority-vote bits</text>
+<text x="678" y="368" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#67dcb4" >400 / 400 first try · 5.0 s</text>
+<text x="678" y="383" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#67dcb4" >measured (IBM hardware, 1 Nov 2026)</text>
+<rect x="355" y="290" width="250" height="100" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="371" y="314" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#f2f6ff" >Agents report verdicts</text>
+<text x="371" y="333" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >HIT / MISS / REJECT; verified</text>
+<text x="371" y="349" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >records banked with a receipt</text>
+<text x="371" y="368" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#32c7eb" >24 → 38 → 39 of 40 first try</text>
+<text x="371" y="383" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#adbbce" >measured (fixtures) · 3 cycles × 40</text>
+<rect x="48" y="290" width="250" height="100" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="64" y="314" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#f2f6ff" >Disagreements: weighted vote</text>
+<text x="64" y="333" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >reliability-weighted vote</text>
+<text x="64" y="349" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >over worker replies</text>
+<text x="64" y="368" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#32c7eb" >12/12 vs plain majority 9/12</text>
+<text x="64" y="383" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#adbbce" >measured (fixtures) · offline</text>
+<path d="M298 162L351 162" stroke="#5f7a99" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M605 162L658 162" stroke="#5f7a99" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M787 212L787 286" stroke="#5f7a99" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M355 340L302 340" stroke="#5f7a99" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M662 340L609 340" stroke="#5f7a99" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M173 290L173 216" stroke="#5f7a99" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="163" y="255" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#67dcb4" text-anchor="end">next cycle</text>
+<rect x="250" y="224" width="460" height="54" rx="12" fill="#0c1420" stroke="#2a3b51" stroke-dasharray="5 4"/>
+<text x="264" y="242" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#8696ad" >Deep cell · side box, not in the loop</text>
+<text x="264" y="258" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#8696ad" >think-longer worker: 0/12 verified at depths 4, 8, 16 · stays advisory</text>
+<text x="264" y="272" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#efc479" >narrow-then-deepen: NOT RUN · a-only INCOMPLETE (lane cap $5)</text>
+<path d="M48 404H912" stroke="#293b53"/>
+<text x="48" y="424" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >Schematic · stages measured separately (fixtures; delivery on IBM hardware) · no full cycle has run with the hardware step inside</text>
+<text x="48" y="442" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >Scripted or API model workers · model spend $23.86 of a $50 cap · 0 IBM seconds · 0 GPU hours · no quantum advantage claimed</text>
+</svg>

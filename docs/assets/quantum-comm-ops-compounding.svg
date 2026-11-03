@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="516" viewBox="0 0 960 516" role="img" aria-labelledby="title description">
+<title id="title">Compounding on fixture tasks: 40 agents, one shared evidence bank, three cycles</title><desc id="description">Measured compounding rehearsal on fixture tasks with known answers: forty agents, one shared evidence bank, three cycles, run 3b with a paid first-tier worker paced at 40 seconds, escalating to a mid-cost worker; a frontier captain was available and not called. Agents verified on the first try per cycle: 24, then 38, then 39 of forty. Escalations per cycle: 16, then 2, then 1. Cost per verified record in UVT per cycle: 1,609, then 722, then 716; cycle three cost 0.445 times cycle one. Gates K-4a MET, K-4b MET; 0 errors; run 3b model spend 4.06 dollars. Earlier free-tier runs one and two (a free first-tier worker) reached 23 then 39 of forty in cycles one and two, with cycle-two cost per verified record 0.07-0.13 (7.6-14x cheaper) of cycle one; their cycle three was stopped by the model gateway&#x27;s hourly call quota (HTTP 429), refusals charged at reservation. A scripted warm-up cycle on other chains seeded the bank. No quantum-computer time was used; these are measured model calls, not a projection; no quantum advantage is claimed.</desc>
+<rect x="1" y="1" width="958" height="514" rx="18" fill="#070d17" stroke="#2a3b51"/>
+<text x="48" y="40" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#67dcb4" >AGENT LANES / EXPERIMENT K · COMPOUNDING (K4) · MEASURED, NO QUANTUM-COMPUTER TIME</text>
+<text x="912" y="40" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#adbbce" text-anchor="end">1 NOV 2026</text>
+<text x="48" y="84" font-family="Helvetica,Arial,sans-serif" font-size="30" font-weight="700" fill="#f2f6ff" >Compounding on fixture tasks:</text>
+<text x="48" y="118" font-family="Helvetica,Arial,sans-serif" font-size="30" font-weight="700" fill="#f2f6ff" >40 agents, one shared evidence bank, three cycles</text>
+<text x="48" y="144" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#adbbce" >Run 3b · paid first-tier worker, paced 40 s → mid-cost worker; captain not called · same 40 chains each cycle</text>
+<rect x="48" y="160" width="420" height="240" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="70" y="190" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#67dcb4" >Agents verified first try, of 40</text>
+<path d="M70 350H446" stroke="#293b53"/>
+<rect x="70" y="200" width="12" height="12" rx="2" fill="#32c7eb"/>
+<text x="88" y="210" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#adbbce" >run 3b · paid tier-0, paced</text>
+<rect x="267" y="200" width="12" height="12" rx="2" fill="#3b4f68"/>
+<text x="285" y="210" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#8696ad" >runs 1–2 · free tier</text>
+<rect x="76" y="284.0" width="56" height="66.0" rx="4" fill="#32c7eb"/>
+<text x="104" y="276.0" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#f2f6ff" text-anchor="middle">24</text>
+<text x="128" y="370" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#f2f6ff" text-anchor="middle">Cycle 1</text>
+<text x="128" y="388" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle">16 escalated</text>
+<rect x="140" y="286.8" width="32" height="63.2" rx="4" fill="#3b4f68"/>
+<text x="156" y="280.8" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#8696ad" text-anchor="middle">23</text>
+<rect x="206" y="245.5" width="56" height="104.5" rx="4" fill="#32c7eb"/>
+<text x="234" y="237.5" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#f2f6ff" text-anchor="middle">38</text>
+<text x="258" y="370" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#f2f6ff" text-anchor="middle">Cycle 2</text>
+<text x="258" y="388" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle">2 escalated</text>
+<rect x="270" y="242.8" width="32" height="107.2" rx="4" fill="#3b4f68"/>
+<text x="286" y="236.8" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#8696ad" text-anchor="middle">39</text>
+<rect x="336" y="242.8" width="56" height="107.2" rx="4" fill="#32c7eb"/>
+<text x="364" y="234.8" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#f2f6ff" text-anchor="middle">39</text>
+<text x="388" y="370" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#f2f6ff" text-anchor="middle">Cycle 3</text>
+<text x="388" y="388" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle">1 escalated</text>
+<rect x="400" y="328" width="32" height="22" rx="4" fill="none" stroke="#3b4f68" stroke-dasharray="3 3"/>
+<text x="416" y="322" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#8696ad" text-anchor="middle">quota</text>
+<rect x="492" y="160" width="420" height="240" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="514" y="190" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#67dcb4" >Cost per verified record, UVT</text>
+<text x="514" y="210" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >UVT = internal unit of model spend · lower is better</text>
+<path d="M514 350H890" stroke="#293b53"/>
+<rect x="536" y="240.0" width="72" height="110.0" rx="4" fill="#b48aff"/>
+<text x="572" y="232.0" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#f2f6ff" text-anchor="middle">1,609</text>
+<text x="572" y="370" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#f2f6ff" text-anchor="middle">Cycle 1</text>
+<text x="572" y="388" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle">baseline</text>
+<rect x="666" y="300.6" width="72" height="49.4" rx="4" fill="#b48aff"/>
+<text x="702" y="292.6" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#f2f6ff" text-anchor="middle">722</text>
+<text x="702" y="370" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#f2f6ff" text-anchor="middle">Cycle 2</text>
+<rect x="796" y="301.1" width="72" height="48.9" rx="4" fill="#b48aff"/>
+<text x="832" y="293.1" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#f2f6ff" text-anchor="middle">716</text>
+<text x="832" y="370" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#f2f6ff" text-anchor="middle">Cycle 3</text>
+<text x="832" y="388" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#67dcb4" text-anchor="middle">0.445× cycle 1</text>
+<text x="48" y="424" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >Grey bars: free-tier runs 1–2: 23 → 39 first try in cycles 1–2; cycle-2 cost per verified vs cycle 1: 0.07-0.13 (7.6-14x cheaper).</text>
+<text x="48" y="442" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >Free first-tier worker · cycle 3 stopped by the model gateway&#x27;s hourly call quota · run 3b is the run of record</text>
+<path d="M48 458H912" stroke="#293b53"/>
+<text x="48" y="480" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >Fixture tasks with known answers · a scripted warm-up cycle on other chains seeded the bank · no quantum-computer time</text>
+<text x="48" y="498" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >Measured model calls, not a projection · K-4a MET, K-4b MET, 0 errors · run 3b $4.06, lane $13.77 · no quantum advantage claimed</text>
+</svg>
