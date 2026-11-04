@@ -1,7 +1,7 @@
 {
   "schema": "predator.public.quantum-comm-ops.v3",
   "review_date": "2026-11-01",
-  "updated": "2026-11-03",
+  "updated": "2026-11-04",
   "verification": "Source, committed report/result inspection and arithmetic checks against the private live-run reports; no independent experimental rerun, no replay of private raw receipts, no independent provider-account audit.",
   "publication_scope": "Owner-authorized public aggregate summary. Implementation, raw job/mailbox bodies and full run artifacts remain private; source links require repository access.",
   "hardware_used": true,
@@ -1489,6 +1489,7 @@
   },
   "experiments_l_m": {
     "scope": "Experiments L and M, November 3, 2026: four lineages (attack, repair, model, communication) behind one authenticated control fabric, a sealed research package, a scale model, and the model-economics and model-switching layer on top. Everything was built, tested and independently reviewed offline at $0: no provider call, no IBM job, no GPU rental. Fixture tasks with known answers; scripted workers where a worker was needed; the frontier model planned as the programmer is unnamed here and was never called.",
+    "status_update": "2026-11-04: parts of L and M have now run (see first_compounding_mission): L1 cycle 0 and two programmer cycles (L-1a MET, L-1b NOT MET), M2 on one H100 (M-2a NOT MET), and a 40-agent, three-cycle mission sealed with the L3 packager and carried over IBM ibm_fez. The figures in this block are the November 3 offline review and are unchanged.",
     "evidence_labels": {
       "measured_no_qpu": "real code run offline over real prior records (K4 run 3b bank rows, the J11 hardware record, L1 fixture ids); no IBM job, no model call",
       "scripted": "a dry run with scripted stand-ins for every model and the hardware step; proves the plumbing, not the science",
@@ -1796,5 +1797,317 @@
       "note": "pytest at the pinned commits for this review: 174 collected at the L pin (L1-L4); 300 collected and 300 passed at the M pin (L1-L4, M1, M3), offline, no network; the PR descriptions report 170 and 296 before amendment A2 added four tests"
     },
     "claims_boundary": "No quantum advantage is claimed. Nothing paid ran: no provider call, no IBM job, no GPU rental; 0 new IBM seconds and 0 GPU hours. The frontier model planned as the programmer is unnamed here and was never called. L2 and L3 are real code over real prior records, offline; the L4 dry run and all of M3 are scripted; the L4 ladder and all of M1 are modelled; L1 is built and rehearsed but NOT RUN on the real model; M2 is NOT RUN. Fixture tasks with known answers throughout; the Q selection result is a fixture comparison under an assumed verify model."
+  },
+  "first_compounding_mission": {
+    "scope": "The first end-to-end compounding mission, November 3-4, 2026 (about 22:39Z to 01:38Z): one 40-agent, three-cycle mission whose four lineages (attack, repair, model, communication) were sealed into one research package. The attack lane ran a hosted open-weight model on one rented H100; the repair lane is a deterministic transform; the model lane let a frontier programmer try to edit a small model's weights (no patch was proposed, so no model was changed); the communication lane sent the mission's control frames over IBM ibm_fez. Each lineage carries its own evidence label.",
+    "mission_id": "m-qwen35-27b-s1-a40-c3",
+    "evidence_labels": {
+      "measured": "a real run with real model calls, with ledger rows written before results",
+      "measured_on_ibm_hardware": "real IBM jobs on ibm_fez, with settled QPU seconds from IBM's accounting",
+      "measured_offline": "real code over the mission's real records; no network, no model, no hardware",
+      "scripted": "a deterministic program stands in; no model is involved",
+      "modelled": "arithmetic on measured parts; not a run",
+      "not_run": "nothing executed"
+    },
+    "package": {
+      "evidence_label": "measured_offline",
+      "records": 249,
+      "lineages": {
+        "attack": {
+          "nodes": 133,
+          "verified": 100,
+          "pending": 33,
+          "label": "measured"
+        },
+        "repair": {
+          "nodes": 100,
+          "verified": 100,
+          "label": "scripted"
+        },
+        "model": {
+          "nodes": 12,
+          "verified": 3,
+          "pending": 9,
+          "labels": [
+            "measured",
+            "scripted"
+          ],
+          "note": "the pending nodes record the attempted programmer cycles (the package format has no 'attempted' status); no promotion node exists"
+        },
+        "comm": {
+          "nodes": 4,
+          "verified": 1,
+          "pending": 3,
+          "labels": [
+            "measured_offline",
+            "measured_on_ibm_hardware"
+          ],
+          "note": "three per-cycle batches checked by an offline receiver, and one IBM-leg node, marked verified only because its decoded frames re-verify under the mission key"
+        }
+      },
+      "checkpoints": 3,
+      "promotions": 0,
+      "merkle_root": "sha256:63468836ef1a5c95c72b505af13cb6087d263a2cd7b9759574eca03105b69319",
+      "verdict_with_mission_key": "PASS",
+      "verdict_without_key": "PASS_UNSEALED",
+      "verifier_checks": "15 structural checks plus the seal",
+      "verify_command_with_key": "python -m bench.qcomms.l3_research_package.verify <mission>/package --key-env PREDATOR_MISSION_KEY",
+      "verify_command_without_key": "python -m bench.qcomms.l3_research_package.verify <mission>/package",
+      "verify_command_note": "the verifier and the package live in the private repository (research access); with --key-env set to an unset variable the verifier stops with an error, so the keyless check omits the flag; re-run without the key for this review: PASS_UNSEALED, 249 records",
+      "checkable_without_key": "the Merkle root, every record digest, the manifest digest and every structural rule (lineage order, unique ids, checkpoint model versions, no rejected patch used as a parent, receipt types)",
+      "not_checkable_without_key": "the outer seal, which shows that the package is the one the mission-key holder sealed; the key is held off-repo and is never written to any file",
+      "assembler_gates": "all MET: package PASS, 0 unexpected packet rejects, admitted equals compiled minus expected rejects, task digest matches the freeze, every reply re-scored identically, every briefing recompiled identically, bank file consistent with the call rows",
+      "created_at_note": "the manifest's created_at is a fixed packager timestamp, not the run time"
+    },
+    "attack": {
+      "evidence_label": "measured",
+      "model": "Qwen3.5-27B, bf16, served with vLLM on one rented H100 80 GB; the same model on every tier (first try, escalation, captain)",
+      "design": "K4 compounding over the same 40 rule-machine fixture chains: 3 mission cycles after a scripted warm-up cycle whose 40 records seed the bank and are not in the package",
+      "first_try_verified_of_40": [
+        27,
+        33,
+        34
+      ],
+      "agents_verified_of_40": [
+        32,
+        34,
+        34
+      ],
+      "escalations": [
+        13,
+        7,
+        6
+      ],
+      "cumulative_distinct_chains_verified_of_40": [
+        32,
+        34,
+        34
+      ],
+      "verified_records_total": 100,
+      "accepted_records_total": 133,
+      "refused_replies": 22,
+      "call_errors": 0,
+      "calls": 195,
+      "cost_per_verified_uvt_gpu_time_equivalent": [
+        652.44,
+        489.85,
+        467.41
+      ],
+      "cost_unit_note": "UVT here is each call's GPU wall time at $4.41 per GPU-hour, expressed in the gateway's unit ($33.33 per million UVT) so that it compares with gateway runs; it is not a separate charge",
+      "cycle_3_over_cycle_1": 0.7164,
+      "gates": {
+        "K-4a": "NOT MET (needs cumulative verified rising every cycle and cycle-3 cost per verified <= 0.5 x cycle 1; the ratio is 0.716)",
+        "K-4b": "MET (35 escalation rows: 26 escalated agents plus 9 captain calls, none missing evidence)"
+      },
+      "offline_recheck": "195 replies re-scored, 0 mismatches; 155 of 155 briefings recompiled identically; task digest matches the freeze",
+      "gpu_usd_est": 1.85,
+      "comparison": "the gateway run of November 1 (K4 run 3b, different models) went 24 -> 38 -> 39 first try and 0.445 x; this run starts higher (27) and flattens sooner",
+      "caveat": "synthetic rule-machine fixtures, not real software; verified means the deterministic checker confirmed the path on the fixture"
+    },
+    "repair": {
+      "evidence_label": "scripted",
+      "records": 100,
+      "counterfactual_pairs": 100,
+      "method": "for each verified attack record, a deterministic re-route of the path's last transition so that the goal is unreachable; no model is involved",
+      "shows": "every verified path has a mechanical counterfactual in the package; it is not a model-written fix"
+    },
+    "model": {
+      "evidence_label": "measured",
+      "programmer": "the frontier model through the research gateway",
+      "target": "Qwen3.5-0.8B, float32, 752,393,024 weights",
+      "cycle_0_baseline": {
+        "cpu": "an 8-vCPU CPU host, November 3 (about 5.4 h): 756 of 756 generations (252 items x 3 seeds) ran to the 512-token cap in a repeating string; 0 verified on every suite",
+        "gpu": "re-measured on the rented H100 with the same weights digest: the same result, 756 of 756 at the cap, failure class F1 (loop) at 1.000 on every seed",
+        "gate_L-1a": "MET: the failure is reproducible, the precondition for a repair attempt",
+        "caveat": "the evaluator feeds the raw prompt with no chat template, as preregistered; part of the loop may come from the prompt format rather than the weights"
+      },
+      "cycles": [
+        {
+          "cycle": 1,
+          "programmer_calls": 2,
+          "uvt_charged": 49815,
+          "cycle_cap_uvt": 60000,
+          "halt": "cap: charged plus the next call's reservation would pass 60,000",
+          "candidate_patches": 0
+        },
+        {
+          "cycle": 2,
+          "programmer_calls": 3,
+          "uvt_charged": 62063,
+          "cycle_cap_uvt": 60000,
+          "halt": "cap: charged plus the next call's reservation would pass 60,000 (the third call took the cycle about 2,000 over)",
+          "candidate_patches": 0
+        }
+      ],
+      "what_the_programmer_did": "diagnosis only: sampled the model's replies on practice tasks, tested whether the loop depends on the prompt boundary, printed a weight inventory (per-tensor shape and size statistics), and read last-layer attention traces; it proposed no patch",
+      "killed_call": "one call in cycle 1 was killed in flight by the operator (a credential formatting fault); its usage is unknown, so it is charged at its 13,430 UVT reservation, never free",
+      "uvt_total": 125308,
+      "usd_est": 4.18,
+      "gates": {
+        "L-1a": "MET",
+        "L-1b": "NOT MET (no candidate promoted in 2 cycles)",
+        "L-1c": "NOT RUN (needs L-1b)"
+      },
+      "model_changed": false,
+      "authoritative_model": "the unchanged base at every checkpoint; no promotion receipt exists"
+    },
+    "communication": {
+      "evidence_label": "measured_on_ibm_hardware",
+      "frames": {
+        "compiled": 404,
+        "admitted_by_offline_receiver": 398,
+        "expected_rejects": 6,
+        "expected_rejects_note": "one replay and one wrong-key frame per cycle, all refused as designed",
+        "unexpected_rejects": 0,
+        "distinct_wire_frames": 397,
+        "by_operation": {
+          "BRIEF": 155,
+          "VERDICT": 233,
+          "CHECKPOINT": 3,
+          "Q_SELECT": 3,
+          "NOP": 3
+        },
+        "carries": "a lane, an operation, a cycle and a 32-bit reference to an evidence record, plus a 32-bit tag; never a payload, record body, patch, weight or key"
+      },
+      "ibm_leg": {
+        "backend": "ibm_fez",
+        "plan": "IBM's free open plan",
+        "line_seconds": 60,
+        "jobs": 6,
+        "jobs_breakdown": "3 first-pass jobs of at most 150 frames each, then 3 re-send jobs",
+        "circuits_per_frame": 8,
+        "circuits_total": 3384,
+        "first_pass_bit_exact": "371/397 at 5 shots",
+        "first_pass_failures": "26, all TAG_MISMATCH (HMAC tag check failed; caught, never accepted)",
+        "rescued": 26,
+        "per_batch_first_pass": "b00 141/150, b01 139/150, b02 91/97; settled 8.0 / 8.0 / 7.0 s",
+        "resent": "26 frames at 10 shots, all recovered",
+        "all_in_decoded_bit_exact": "397/397",
+        "all_in_hmac_verified": "397/397",
+        "all_in_resolved": "397/397",
+        "transport_control": "0 of 397 verify under a public control key",
+        "secret_scan": "0 hits across 28 files",
+        "qpu_seconds_settled": 23.0,
+        "programme_total_seconds_after": "277 of 600 (254 before, plus 23)",
+        "gate_M-IBM-a": "MET"
+      },
+      "reading": "the hardware moved references, not payloads; the same frames could go over any classical link, so this is a transport and accounting test, not a speed or advantage claim"
+    },
+    "economics_m2": {
+      "evidence_label": "measured",
+      "gpu": "1 x H100 80 GB, on-demand, $4.41 per GPU-hour",
+      "amendment_M2-A2": "the preregistered L40S (and the same-price RTX 6000 Ada) had no capacity on November 3, so before any phase ran the rental moved to one H100; the 27B ran in bf16 and a GLM-family arm was added",
+      "models": {
+        "qwen35_9b": {
+          "model": "Qwen3.5-9B, bf16",
+          "survey_verified": "6/12",
+          "cycle_verified": "18/40",
+          "cycle_gpu_usd_per_verified": 0.0118
+        },
+        "qwen35_27b": {
+          "model": "Qwen3.5-27B, bf16",
+          "survey_verified": "6/12",
+          "cycle_verified": "32/40",
+          "cycle_gpu_usd_per_verified": 0.0217
+        },
+        "glm4_9b": {
+          "model": "GLM-4-9B-0414, bf16",
+          "survey_verified": "4/12",
+          "cycle_verified": "8/40",
+          "cycle_gpu_usd_per_verified": 0.0235
+        },
+        "qwen35_27b_thinking_on": {
+          "survey_verified": "12/12",
+          "survey_gpu_usd_per_verified": 0.0735,
+          "median_latency_s": 58.0,
+          "note": "an optional arm, reported but not deciding"
+        }
+      },
+      "gateway_reference": {
+        "survey": "GLM-5.3 through the gateway, 12/12 at $0.0279 per verified (November 1)",
+        "cycle": "K4 run 3b cycle 1 through the gateway (a mini first-tier model with GLM-5.3 on escalation), 40/40 at $0.0536 per verified (November 1)"
+      },
+      "gates": {
+        "M-2a": "NOT MET as preregistered: the thinking-off arm decides, and no hosted model reached 11/12 on the survey",
+        "M-2b": "NOT APPLICABLE (read only for a model that meets M-2a)"
+      },
+      "not_run": "GLM-5.3-Flash: does not fit one 80 GB GPU",
+      "reading": "per verified agent the hosted cycles used less GPU money than the gateway cycle, but they verified fewer agents (at best 32 of 40 against 40 of 40); the hosted figures count only each phase's GPU time, and setup, model loading and idle time (about $5 of the estimated $9.08 rental) are left out, so this is not a full cost comparison; the $0.0536 reference is a mixed gateway team, not GLM-5.3 alone",
+      "rental": {
+        "phase_attributed_usd_est": 4.01,
+        "phase_attributed_wall_s": 3273,
+        "whole_rental": "about 2 h 03 min (7,410 s), about $9.08 estimated at the list rate; beyond the $4.01 of phase time the rest is setup, model loading and idle time",
+        "invoice": "not yet in"
+      }
+    },
+    "spend": {
+      "model_api_ledger_total_usd": 46.68,
+      "model_api_harness_stop_usd": 70,
+      "model_api_cap_usd": 75,
+      "mission_programmer_usd": 4.18,
+      "mission_programmer_note": "the frontier model, including one call killed in flight and charged at its reservation",
+      "gpu_usd_est": "about 9.08 for the whole rental (estimated; $4.01 attributed to phases; invoice not yet in)",
+      "hosted_model_meter_note": "the hosted-model ledger ($3.84 estimated) meters the same GPU time in gateway units; it is not additional money",
+      "qpu_seconds": 23.0,
+      "model_api_ledger_scope": "across the whole programme; $4.18 of it in this mission"
+    },
+    "does_not_show": [
+      "No model was improved: the programmer proposed no patch, so the model lane changed nothing.",
+      "Repair is a deterministic transform, not a model-written fix.",
+      "One model family on one GPU, one seed, synthetic fixture chains; not real software.",
+      "The IBM leg moved 96-bit references, not payloads; it is not a speed, cost or advantage claim.",
+      "40-agent scale; the 400-agent rung is still modelled.",
+      "No speed-up or other advantage over classical delivery is claimed or shown."
+    ],
+    "next": {
+      "deep_cell_lane": {
+        "status": "NOT RUN (entry condition not met)",
+        "design": "recurrent-depth deep cells on the deepest open pins of one deep chain, run only on a model already patched for that chain",
+        "entry_condition": "(a) a chain made deep on a test mission: carried through >= 3 consecutive cycles of a preregistered, measured mission and still open, with >= 6 verified, receipted records for that chain in the bank, plus hardness (>= 23 evidence rows) and cell-count (>= 12 open pins) clauses; AND (b) a model already patched for that chain and promoted under the L1 gate, inside a sealed package that verifies PASS",
+        "why_not_run": "no patch was promoted in this mission, so the second clause is false",
+        "checker": "will be checked by code (the checker is designed, not yet built)"
+      },
+      "other": [
+        "a model-lane cycle whose budget leaves room for a patch after diagnosis",
+        "the 400-agent rung with the communication lane on hardware",
+        "the GPU invoice, to replace the estimate"
+      ]
+    },
+    "pins": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "0260bc95c6303f5c5cbc029e2b4ad13bd0b39179",
+      "branch": "feat/qcomms-m",
+      "pull_requests": [
+        462,
+        463
+      ],
+      "pr_status_at_review": "both open drafts (#462 feat/qcomms-l into feat/qcomms-k; #463 feat/qcomms-m into feat/qcomms-l)",
+      "paths": [
+        "bench/qcomms/l4_scale/results/mission-qwen35-27b/MISSION_RECEIPT.md",
+        "bench/qcomms/l4_scale/results/mission-qwen35-27b/mission-summary.json",
+        "bench/qcomms/l4_scale/results/mission-qwen35-27b/package/manifest.json",
+        "bench/qcomms/m2_gpu/PREREGISTRATION_M2.md",
+        "bench/qcomms/m2_gpu/results/m2-summary.md",
+        "bench/qcomms/m2_gpu/results/m2-summary.json",
+        "bench/qcomms/m2_gpu/results/qwen35_27b_h100/k4-c3/k4-summary.md",
+        "bench/qcomms/l1_model_lane/results/h100-gpu/results/l1-summary.md",
+        "bench/qcomms/l1_model_lane/results/h100-gpu/results/l1-baseline.md",
+        "bench/qcomms/l1_model_lane/results/h100-gpu/results/l1-cycles.jsonl",
+        "bench/qcomms/m_ibm_leg/PREREGISTRATION_IBM_LEG.md",
+        "bench/qcomms/m_ibm_leg/results/live-ibm-fez-2026-11-04/mleg-receipt.json",
+        "docs/specs/predator/PREDATOR_QCOMMS_RDT_DEEP_CELL_V1.md",
+        "bench/qcomms/j/model_spend.jsonl",
+        "bench/qcomms/m_ibm_leg/results/live-ibm-fez-2026-11-04/README.md",
+        "bench/qcomms/m2_gpu/results/RENTAL_NOTE.md",
+        "bench/qcomms/l1_model_lane/results/h100-gpu/results/l1-killed-call.json"
+      ],
+      "cpu_cycle_0": {
+        "commit": "d58def6eaef8595852819b12c8331f816cf1ccfc",
+        "branch": "feat/qcomms-l",
+        "pull_request": 462,
+        "path": "bench/qcomms/l1_model_lane/REPORT_L1.md"
+      }
+    },
+    "claims_boundary": "One sealed package, four lineages, each with its own label: attack measured (hosted model, fixture chains), repair scripted, model measured (attempted; no patch, nothing changed), communication measured on IBM hardware (references only). No speed-up or other advantage over classical delivery is claimed. GPU dollars are estimates until the invoice arrives."
   }
 }
