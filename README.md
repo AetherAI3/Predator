@@ -17,6 +17,22 @@
 
 **AI security research, software repair, and authorized VM workflows.**
 
+### Where Predator is today (November 2026)
+
+| When | What happened | What it showed |
+| :--- | :--- | :--- |
+| **March 2026** | Predator starts as a [Gen2](#generations-in-plain-english) project: AI- and quantum-assisted vulnerability analysis. | The idea. |
+| **October 2026** | A one-week sprint. Predator Drive ran end to end through MCP for the first time, across several private security sprints and Predator's first bounty missions outside open-source research. | Predator can run a full mission and turn up findings within days. |
+| **Late October – November** | Gen3 [quantum comm ops](#gen3-quantum-comm-ops): the briefings for a 400-agent mission went out in one IBM job billed at 5 seconds, and 400 of 400 arrived intact, repeated on three message sets (*measured on IBM hardware*). | Many agents can be coordinated cheaply through IBM hardware, with every message checked. No quantum advantage is claimed: the saving is IBM's billing for batched circuits. |
+| **November 2026** | Training our own small models, round by round, on results the software has verified (Experiments K–O). | A 2-billion-parameter model trained on 138 replies from a 9-billion-parameter model went from 5 to 62 correct on 108 new fixture tasks, above the larger model's own 39.8 % (*measured on fixtures*). It learned the expected answer format, not a general new skill. |
+
+**Not there yet.**
+- **No bounty has paid.** The October reports were closed as informational because they did not show impact inside each program's rules. Next: a written authorization boundary for every program, and a stricter evidence check before anything is submitted.
+- **The trained model is not stable.** It ran to the length limit more often (3.8 % → 12.2 % of prompts), so its preregistered check failed (**NOT MET**). A version trained to stop at the goal is *built, not yet run*.
+- **Comm ops is not yet inside the everyday mission path.** Bringing it in is designed but *built, not yet run*.
+
+Source pins: the model result is `bench/qcomms/o_frame/REPORT_O.md` at private AETHER-PREDATOR-M commit `58ecf3db412feef68022cc4e88372567dd588f11`; the IBM numbers are in [Gen3 Quantum Comm Ops](#gen3-quantum-comm-ops).
+
 ### Start here
 
 - **What Predator is.** A security research and software repair system that gives AI models persistent context and reviewed tool use, then banks only the results the software itself confirms.
