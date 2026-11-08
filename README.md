@@ -28,10 +28,10 @@
 
 **Not there yet.**
 - **No bounty has paid.** The October reports were closed as informational because they did not show impact inside each program's rules. Next: a written authorization boundary for every program, and a stricter evidence check before anything is submitted.
-- **The trained model is not stable.** It ran to the length limit more often (3.8 % → 12.2 % of prompts), so its preregistered check failed (**NOT MET**). A version trained to stop at the goal is *built, not yet run*.
-- **Comm ops is not yet inside the everyday mission path.** Bringing it in is designed but *built, not yet run*.
+- **The trained model is not stable.** It ran to the length limit more often (3.8 % → 12.2 % of prompts), so its preregistered check failed (**NOT MET**). Two more rounds have since run (*measured on fixtures*): a dose study found no training dose that removes the looping, and a version trained to stop at the goal (November 8) raised correct answers from **2 to 42–46 of 96** but also raised length-cap cut-offs from **6 to 16–19**, so no version was promoted. A repair attempt by the frontier model is *built, not yet run*.
+- **Comm ops is not yet inside the everyday mission path.** The message bus that would carry it is built and was tested in shadow mode on replayed missions (three of four gates **MET**, one **NOT RUN**); it is not switched on. See [Status, November 8](#status-november-8-2026).
 
-Source pins: the model result is `bench/qcomms/o_frame/REPORT_O.md` at private AETHER-PREDATOR-M commit `58ecf3db412feef68022cc4e88372567dd588f11`; the IBM numbers are in [Gen3 Quantum Comm Ops](#gen3-quantum-comm-ops).
+Source pins: the model result is `bench/qcomms/o_frame/REPORT_O.md` at private AETHER-PREDATOR-M commit `58ecf3db412feef68022cc4e88372567dd588f11`; the later rounds and the bus are pinned in the comm-ops [JSON](docs/research/quantum-comm-ops.json) (block `status_2026_11_08`); the IBM numbers are in [Gen3 Quantum Comm Ops](#gen3-quantum-comm-ops).
 
 ### Start here
 
@@ -448,6 +448,23 @@ A briefing is a compact packet that selects or reconstructs a record from the sh
   <a href="docs/research/quantum-comm-ops.md"><img src="docs/assets/quantum-comm-ops-overview.svg" width="960" alt="Conceptual handoff: compile a packet from shared evidence, deliver it, and check its receipt and message tag. Accept a verified handoff or retry within the budget. The route was measured on the FakeFez simulator and then on IBM hardware; model continuation remains under qualification."></a>
 </p>
 
+<a id="status-november-8-2026"></a>
+
+### Status, November 8, 2026
+
+One table for where comm ops stands. Each row carries its [legend](#how-to-read-our-numbers) label; the detail sections below are kept in full, folded, and the [guide](docs/research/quantum-comm-ops.md#november-5-8-2026) and [JSON](docs/research/quantum-comm-ops.json) (block `status_2026_11_08`) carry the source pins.
+
+| Part | Where it stands | Label |
+| :--- | :--- | :--- |
+| **Delivery:** 400 briefings to 400 agents | **400 of 400 intact on the first try in all five missions, one IBM job each, 5.0 s billed** (October 31 – November 1). Unchanged since; [details](#measured-on-ibm-hardware-400-agents-400-messages-one-ibm-job-five-seconds). | measured on IBM hardware |
+| **The agents either side:** encoder, filter, vote, compounding | Encoder **MET**, weighted vote **MET**, compounding **MET** on fixtures (24 → 38 → 39 of 40 across three cycles); cheap-worker price **NOT MET**; "think longer" model **NOT MET**; deep cells **NOT RUN**; [details](#measured-on-fixtures-no-quantum-computer-time-what-the-agents-measured). | measured on fixtures, no quantum-computer time |
+| **One mission, all four lanes** (November 3–4) | 40 agents × 3 cycles sealed into one package. The IBM leg carried 397 control frames: **371 of 397** on the first pass, the other 26 caught by their tag check and re-sent, **397 of 397** after rescue, 23.0 s. **No model was changed**; [details](#first-compounding-mission). | measured on fixtures + measured on IBM hardware |
+| **Training our own small model** | Round 1 (November 4): learned the answer format but hit the length cap more often, **NOT MET**. Round 2, a dose study (November 5): **no training dose removed the looping** (NO_DOSE: no dose qualified, so its judging gates were **NOT RUN**; round 1's NOT MET stands). Round 3, trained to stop at the goal (November 8, one H100 for 24 minutes): correct answers **2 → 42–46 of 96**, but replies cut at the length cap **6 → 16–19 of 96**, so the preregistered rule failed for every version and the held-out judging never ran (**NOT RUN**, nothing promoted). Round 4, the frontier model proposes a small weight patch to round 3's best version: *built, not yet run* (its preregistration refuses to create a GPU without H100 capacity, and none was offered when the operator tried; on hold). | measured on fixtures, no quantum-computer time |
+| **Comm ops inside the mission path** | The message bus that would carry it is built and was tested in *shadow mode* (it watches and records, never decides) on replayed missions, at $0: frames recompiled bit-identical **379 of 379**; briefings reproduced from cache, with a shuffled-reference control passing; a simulator mirror matched **394 of 394** frames at **+0.006 s** on a 90 s stage. The hand-off cost gate was **NOT RUN** (80 hand-offs, 100 needed). The bus is **not switched on**. | measured on fixtures / measured on a simulator |
+| **Spend to date** | Model calls **$62.72 of the $70 stop** (818 ledger rows). IBM **277 of 600** free seconds. GPU rentals about **$122 estimated** across four rentals, invoices pending; **about $106 of that was one GPU left idle for a day awaiting a sign-in** (19 minutes of work) against a $10 line. | accounting |
+
+No quantum advantage is claimed or demonstrated anywhere on this page. The hardware saving is IBM's billing for batched circuits that carry known bit patterns.
+
 ### Measured on IBM hardware: 400 agents, 400 messages, one IBM job, five seconds
 
 **What the mission is, in plain words.** Picture a team of **400 AI worker agents**. Each one needs its own short briefing before it can start its task. Quantum Comm Ops writes those 400 briefings, sends each one through an IBM quantum computer, and checks that every agent received exactly the briefing meant for it.
@@ -484,6 +501,11 @@ In this research the 400 agents are **scripted agents** (stand-ins, not 400 reas
 
 The simulator milestone it builds on, **three fresh 400-agent runs at three shots with a capped six-shot re-send** (1,199 of 1,200 intact on the first try, 1,200 of 1,200 after re-send), remains the research baseline and is kept in full in the [guide](docs/research/quantum-comm-ops.md#earlier-simulator-milestone).
 
+<a id="measured-on-fixtures-no-quantum-computer-time-what-the-agents-measured"></a>
+
+<details>
+<summary><strong>Measured on fixtures, no quantum-computer time: what the agents measured (November 1)</strong></summary>
+
 ### Measured on fixtures, no quantum-computer time: what the agents measured
 
 The delivery step is measured on IBM hardware (five one-job missions, 400 of 400 each). On November 1 the programme measured the **agents** on either side of it. Everything in this table is *measured on fixtures, no quantum-computer time*: fixture tasks with known answers, scored by a deterministic checker. The work follows the same [lockpick](#crucible-adaptive-quantum-threat-modeling) that Crucible already uses. In plain words:
@@ -509,9 +531,14 @@ The delivery step is measured on IBM hardware (five one-job missions, 400 of 400
 
 Why this matters for a real security mission: a cheap agent that cannot tell a hard lead is real discards it, so a loop that only narrows would find the easy findings and lose the hard ones; deepening on survivors is the untested hypothesis for setting those. For scale, the worker survey projects about **$4 of model calls plus 5 seconds of quantum-computer time** for a 400-agent round with the first-tier worker alone (one call per agent, no escalation), against about **$18** with a frontier model on every agent; the measured third cycle above implies roughly **$9–10** per 400 verified records with escalation. These figures are *modelled* from measured per-call costs, not a measured 400-agent mission.
 
-The agent lanes cost about **$24** of model calls; **$42.50** of the model budget has been used in total (the cap was $50 at the time; see the November 3 raise below).
+The agent lanes cost about **$24** of model calls; **$42.50** of the model budget had been used at that point (the cap was $50 at the time; it was raised to $75 on November 3, and the [status table](#status-november-8-2026) carries the current total).
+
+</details>
 
 <a id="first-compounding-mission"></a>
+
+<details>
+<summary><strong>First compounding mission (November 3–4, 2026): one 40-agent mission, all four lanes, sealed</strong></summary>
 
 ### First compounding mission (November 3–4, 2026)
 
@@ -525,6 +552,11 @@ The agent lanes cost about **$24** of model calls; **$42.50** of the model budge
 - **Spend**: model API ledger **$46.68** across the whole programme ($4.18 of it in this mission) against the $70 stop; GPU about **$9.08** estimated (invoice pending); **23.0 s** of quantum-computer time.
 
 [What ran, how to check the package, and what it does not show →](docs/research/quantum-comm-ops.md#first-compounding-mission)
+
+</details>
+
+<details>
+<summary><strong>Experiments L and M (November 3, 2026): the model lane, control packets, sealed package, economics and the model switch</strong></summary>
 
 ### Built and reviewed offline: Experiments L and M (November 3, 2026)
 
@@ -546,12 +578,11 @@ Two experiments were built and reviewed offline on November 3, before anything p
 
 [Details and source pins →](docs/research/quantum-comm-ops.md#experiments-l-m)
 
-**Still open, in order:** a model-lane cycle that reaches a patch the evaluator can judge (it is also the entry condition for the deep-cell lane); the 400-agent rung with the communication lane on hardware; the narrow-then-deepen comparison at matched budget (it needs a higher cap than the $5 it ran under); the stronger encoder *inside* a live compounding loop; gating or replacing the cheap first-tier worker above about 20 evidence rows; then the repeat on ibm_kingston after a fresh calibration, packing beyond three circuits, real key management, and production dispatch. The tested **superposition multiplexing** idea (several messages in one circuit) ran on hardware but did not beat ordinary packing as a way to *carry* messages; whether it helps *choose* between disagreeing agents is still to be tested against a plain vote on hardware (on a classical simulator a quantum-style selector only matched the weighted vote).
+</details>
 
-As of November 3:
-**Status, November 3, 2026:** the 400-agent delivery mission is measured on IBM hardware, including what IBM billed, and the two reserved hardware attempts are finalized by IBM. No quantum advantage is claimed or demonstrated: the saving is IBM's billing for batched circuits that carry known bit patterns. Scripted agents, one synthetic message generator, two devices, one day each; the agent lanes are measured on fixtures, no quantum-computer time. Experiments L and M are built and reviewed offline; nothing paid has run. The separate joint5 compiler pilot is described below.
+**Still open, in order:** a model-lane cycle that reaches a patch the judge can score (the round-4 repair in the [status table](#status-november-8-2026) is the next attempt, and a promoted patch is also the entry condition for the deep-cell lane); the message bus's hand-off cost gate at 100 or more hand-offs (80 today), then its two owner-gated stages (a model line, and switching it on after the shared-IR fence lifts); the 400-agent rung with the communication lane on hardware (about 9 IBM jobs, *modelled*); the narrow-then-deepen comparison at matched budget (it needs a higher cap than the $5 it ran under); a wider briefing circuit, the "width" lever (*built* behind a flag, *not yet run*: it needs a simulator sampling change and a rebuilt host); the stronger encoder *inside* a live compounding loop; gating or replacing the cheap first-tier worker above about 20 evidence rows; then the repeat on ibm_kingston after a fresh calibration, packing beyond three circuits, real key management, and production dispatch. The tested **superposition multiplexing** idea (several messages in one circuit) ran on hardware but did not beat ordinary packing as a way to *carry* messages; whether it helps *choose* between disagreeing agents is still to be tested against a plain vote on hardware (on a classical simulator a quantum-style selector only matched the weighted vote).
 
-**Update, November 4, 2026:** parts of L and M have now run in the [first compounding mission](#first-compounding-mission): one sealed 40-agent, three-cycle package, with the communication lane's 397 frames carried over ibm_fez in 23.0 s (371 on the first pass; the other 26 failed their tag check and were rescued by a re-send; 397 of 397 after rescue). No model was changed, and the deep-cell lane is NOT RUN.
+**What this section does not show.** Scripted agents and one synthetic message generator on the hardware missions; two devices, one day each. The agent lanes, the compounding mission's attack and model lanes, and every training round are measured on fixtures, not real software. No model has been improved. The bus has not carried a live mission. The separate joint5 compiler pilot is described below.
 
 **[Plain-English guide, hardware missions and open questions →](docs/research/quantum-comm-ops.md)** · [Public aggregate data and source pins](docs/research/quantum-comm-ops.json)
 
@@ -695,7 +726,7 @@ Help build the CLI, repair chains, verification tools, or classical/quantum comp
 | **[HTB training evidence](docs/htb/README.md)** | Courses, tracks, machines, certificates, and replay index |
 | **[Crucible](#crucible-adaptive-quantum-threat-modeling)** | The loop explained as a lockpick, with [MITRE chains](#mitre-attck-chain-library) and the [CVE catalog](#cve-research-catalog) it draws on |
 | **[CodePro and System-2](#codepro-and-system-2)** | How the fanout runs, and the private CLI around it |
-| **[Quantum Comm Ops](docs/research/quantum-comm-ops.md)** | Agent mailboxes, adaptive CFC, packing and multiplexing; [the 400-agent message mission on IBM hardware](docs/research/quantum-comm-ops.md#ibm-hardware-missions), [Experiments L and M, built and not yet run](docs/research/quantum-comm-ops.md#experiments-l-m), and [aggregate data with source pins](docs/research/quantum-comm-ops.json) |
+| **[Quantum Comm Ops](docs/research/quantum-comm-ops.md)** | [Status, November 8](#status-november-8-2026); [the 400-agent message mission on IBM hardware](docs/research/quantum-comm-ops.md#ibm-hardware-missions); [the first compounding mission](docs/research/quantum-comm-ops.md#first-compounding-mission); [the November 5–8 training rounds and the message bus](docs/research/quantum-comm-ops.md#november-5-8-2026); and [aggregate data with source pins](docs/research/quantum-comm-ops.json) |
 | **[CharLS Q3](docs/research/charls-q3.md)** | [Public data](docs/research/charls-q3.json) and the completed dependent repair |
 | **[QPACK study](docs/research/gen3-qpack-experiment1.md)** | [Episode data](docs/research/gen3-qpack-experiment1.json), comparisons, and missing outcomes |
 | **[joint5 IBM Fez pilot](docs/research/ibm-fez-pilot.md)** | [Public data](docs/research/ibm-pilot.json), uncertainty, and the energy regression |

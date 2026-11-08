@@ -1,7 +1,7 @@
 {
   "schema": "predator.public.quantum-comm-ops.v3",
   "review_date": "2026-11-01",
-  "updated": "2026-11-04",
+  "updated": "2026-11-08",
   "verification": "Source, committed report/result inspection and arithmetic checks against the private live-run reports; no independent experimental rerun, no replay of private raw receipts, no independent provider-account audit.",
   "publication_scope": "Owner-authorized public aggregate summary. Implementation, raw job/mailbox bodies and full run artifacts remain private; source links require repository access.",
   "hardware_used": true,
@@ -119,6 +119,57 @@
       "pull_request": 2168,
       "source_kind": "pull_request_report_and_pinned_implementation",
       "status_at_review": "open draft, not merged"
+    },
+    "O6_report": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "863faf728e16fe1dad567c4cf131cb8e8e2e8c69",
+      "path": "bench/qcomms/o_frame/REPORT_O6.md"
+    },
+    "O7_summary": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "70f844e53e3ea64a71177c96ffae4f90800be315",
+      "path": "bench/qcomms/o_frame/results/o7-h100-nyc2/o7-summary.md",
+      "pull_request": 468,
+      "pr_status_at_review": "open draft into feat/qcomms-m"
+    },
+    "O8_preregistration": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "bd00786f464c78d8c293f861858665b82ee2a03c",
+      "path": "bench/qcomms/o_frame/",
+      "pull_request": 470,
+      "pr_status_at_review": "open draft into feat/qcomms-m",
+      "note": "preregistration file under this directory; status built, not run"
+    },
+    "model_call_ledger": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "bd00786f464c78d8c293f861858665b82ee2a03c",
+      "path": "bench/qcomms/j/model_spend.jsonl",
+      "rows": 818,
+      "usd_est_total": 62.72
+    },
+    "SB_report": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "65044d67aef52efa6adc41d707f851e8ac82e493",
+      "path": "bench/qcomms/commops_sb/REPORT_SB.md",
+      "pull_request": 484,
+      "pr_status_at_review": "open draft into claude/commops-b2 (never to main)"
+    },
+    "F_report_consolidated": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "80dc6987f6164e5c33d4cbeb0b23e455abb6e3d0",
+      "path": "bench/qcomms/skt/REPORT_F.md",
+      "pull_request": 485,
+      "pr_status_at_review": "open draft into feat/qcomms-f"
+    },
+    "F_width_lever": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "pull_request": 486,
+      "pr_status_at_review": "open draft into feat/qcomms-f",
+      "paths": [
+        "predator_gen3/discovery/compiler.py",
+        "predator_gen3/discovery/qsearch_bridge.py"
+      ],
+      "note": "flag-gated, default off, byte-identical when off; built, not run"
     }
   },
   "hardware_missions": {
@@ -845,7 +896,9 @@
     "Can complete worker isolation and full production dispatch be demonstrated?",
     "Can a frontier weight-space programmer repair one reproducible failure of a 0.8-billion-parameter local model, judged on unseen tasks with no adjacent regression? (Harness built and reviewed November 3; an offline rehearsal with a fake model promoted one patch and rejected the repeat; NOT RUN on the real model.)",
     "What does a self-hosted open model cost per verified record on a rented GPU? (Modelled only: the gateway mid-cost model is cheaper per verified at dated H100 rates, and the hosted options have no measured verified rate; one preregistered rental is the next step and has not run; 0 GPU hours.)",
-    "Does a full three-lane cycle run with hardware delivery inside it? (No cycle has yet run with the IBM step inside it; the 400-agent rung is modelled at 4 IBM jobs of about 20 s from the measured 5 s one-job mission, and the packets have only been exercised offline through the same codec.)"
+    "Does a full three-lane cycle run with hardware delivery inside it? (No cycle has yet run with the IBM step inside it; the 400-agent rung is modelled at 4 IBM jobs of about 20 s from the measured 5 s one-job mission, and the packets have only been exercised offline through the same codec.)",
+    "Does the comm-ops bus carry a mission's hand-offs at lower token cost without changing outcomes? (SB-3 NOT RUN: 80 qualifying hand-offs where the rule needs 100; the other three shadow-mode gates MET.)",
+    "Can a frontier model's small weight patch lower the stop-at-goal student's length-cap rate while keeping its correct answers? (O8 built, not run: no GPU capacity on November 8; three rounds so far taught the answer convention but every version looped more than the base.)"
   ],
   "historical_records_note": "The October 31 v2 review is preserved in repository history at bba28b3b; its simulator block is carried forward unchanged as 'current'. The dated v1 record below is preserved in full as an October 28 snapshot. Follow-up queues, PR states, capacity figures and deployment observations in those records are historical, not current status.",
   "history": {
@@ -2109,5 +2162,196 @@
       }
     },
     "claims_boundary": "One sealed package, four lineages, each with its own label: attack measured (hosted model, fixture chains), repair scripted, model measured (attempted; no patch, nothing changed), communication measured on IBM hardware (references only). No speed-up or other advantage over classical delivery is claimed. GPU dollars are estimates until the invoice arrives."
+  },
+  "status_2026_11_08": {
+    "scope": "Where comm ops stands on November 8, 2026: delivery unchanged since November 1 (hardware_missions); three more training rounds on the small model (O6, O7 ran; O8 built, not run); the comm-ops stage bus built and tested in shadow mode (Experiment SB); the capacity hillclimb consolidated (F) and its width lever built behind a flag. No IBM hardware time in this period.",
+    "evidence_labels": {
+      "measured_on_fixtures": "a run on fixture tasks scored by a deterministic checker; no quantum-computer time",
+      "measured_offline": "real code over the missions' real records; no network, no model, no hardware",
+      "simulated": "a classical simulator of a quantum circuit (FakeFez models one IBM device); no hardware time",
+      "built_not_run": "code exists and passed offline tests; nothing paid has executed",
+      "not_run": "nothing executed",
+      "accounting": "ledger rows and provider estimates; invoices pending where stated"
+    },
+    "delivery": {
+      "status": "unchanged since 2026-11-01; see hardware_missions",
+      "qpu_seconds_programme_total": "277 of 600 (no change in this period)"
+    },
+    "model_training_rounds": {
+      "student": "the 2-billion-parameter open-weight model used in Experiment O",
+      "validation_set": "96 prompts: 72 held-out practice prompts plus 24 from a fresh task family",
+      "selection_rule": "an adapter qualifies only if cut <= base cut (6) and F3 <= base F3 + 2; only a qualifying adapter is judged on the held-out set",
+      "base_ok_cut_f3": [
+        2,
+        6,
+        8
+      ],
+      "O6_dose_study": {
+        "date": "2026-11-05",
+        "evidence_label": "measured_on_fixtures",
+        "design": "103 of round 1's 138 training pairs (those not on the validation tasks) at four doses: 13 or 39 training steps, merged at half or full strength",
+        "arms_ok_cut_f3": {
+          "D1_13steps_half": [
+            35,
+            19,
+            19
+          ],
+          "D2_13steps_full": [
+            40,
+            21,
+            15
+          ],
+          "D3_39steps_half": [
+            41,
+            25,
+            16
+          ],
+          "D4_39steps_full": [
+            42,
+            33,
+            9
+          ]
+        },
+        "verdict": "NO_DOSE: no dose qualified; the judging set was never generated and the judging gates were not computed; round 1's NOT MET verdict is unchanged",
+        "gpu": {
+          "work_minutes": 19,
+          "rental_hours": 24.1,
+          "usd_est": 106.2,
+          "owner_line_usd": 10,
+          "note": "the GPU was created, left idle for about 24 hours awaiting a sign-in, then destroyed; disclosed as a spend miss; invoice pending"
+        }
+      },
+      "O7_stop_at_goal": {
+        "date": "2026-11-08",
+        "evidence_label": "measured_on_fixtures",
+        "design": "81 training steps on the 216 known answer paths of the practice set (108 per task family); three epoch snapshots E1-E3, each merged at full strength",
+        "arms_ok_cut_f3": {
+          "E1": [
+            42,
+            18,
+            11
+          ],
+          "E2": [
+            46,
+            16,
+            14
+          ],
+          "E3": [
+            44,
+            19,
+            14
+          ]
+        },
+        "verdict": "NO_ARM: every version cut more often than the base, so no arm was selected, the judging set was never generated and the judging gates were NOT RUN; nothing promoted",
+        "gpu": {
+          "wall_s": 1460,
+          "usd_est": 1.79,
+          "owner_line": "2 h wall",
+          "note": "one H100; destroyed automatically after the results were copied back"
+        },
+        "never_claimed": "a pass would show one output convention transferring to a 2B model on one task family by training on known answers; nothing about reasoning, other tasks or other models; no quantum, cost or speed claim"
+      },
+      "O8_frontier_repair": {
+        "preregistered": "2026-11-06", "mechanism_built": "2026-11-08",
+        "evidence_label": "built_not_run",
+        "design": "the frontier model may propose one small weight patch to O7's E2 that lowers the length-cap rate while keeping the correct answers; a separate judge the proposer never sees scores it",
+        "owner_approval": {
+          "gpu": "one H100, up to 4 h, at most $18",
+          "frontier_model_cap_uvt": 210000,
+          "frontier_model_cap_usd_approx": 7,
+          "inside_ledger_stop_usd": 70
+        },
+        "why_not_run": "nothing had been created at the time of this review: the preregistration refuses to create a GPU without H100 capacity, and none was offered when the operator tried; nothing spent; on hold"
+      },
+      "reading": "training on known paths teaches the answer convention almost at once (OK 2 -> 35 after 13 steps; 2 -> 42-46 in O7) but every version loops to the length cap more often (cut 6 -> 16-33); lowering the dose never returns to the base"
+    },
+    "commops_bus_experiment_sb": {
+      "evidence_label": "measured_offline / simulated",
+      "what": "a stage bus that, at each mission stage boundary, can compile a briefing, send and receive control frames and record what happened; built in eight phases (B0-B7) on one private branch",
+      "mode": "shadow only: watches and records at the boundary, never changes a decision; 'active' refused until the SB gates pass and the shared-IR fence lifts",
+      "preregistration": {
+        "filed": "0a6dd3e7",
+        "amendment_before_data": "d6796ff3"
+      },
+      "gates": {
+        "SB-1_equivalence": {
+          "verdict": "MET",
+          "frames_bit_identical": "379/379 under both codecs",
+          "nov4_mission_headers_and_fields": "397/397",
+          "wrong_key_accepted": "0/397",
+          "replays_refused": "397/397",
+          "label": "measured_offline"
+        },
+        "SB-2_briefing": {
+          "verdict": "MET (cited from the build phase; reproduced from cache, 0 provider calls)",
+          "encoder_recall_at_8": 0.868,
+          "verified_with_compiler_filter": "99/110",
+          "shuffled_reference_control_recall_at_8": 0.0015,
+          "control": "PASS (<= 0.02)",
+          "label": "measured; scripted agent"
+        },
+        "SB-3_handoff_cost": {
+          "verdict": "NOT RUN",
+          "qualifying_handoffs": 80,
+          "required": 100,
+          "why": "every cycle-1 briefing is empty because the compiler filter drops the warm-up chain; disclosed before the run; the unit was not changed"
+        },
+        "SB-4_mirror": {
+          "verdict": "MET",
+          "simulator": "FakeFez",
+          "runs": 3,
+          "boundary_requests_matched": "9/9 each",
+          "frames_matched": "394/394 each",
+          "wall_delta_s": 0.0056,
+          "stage_wall_s": 90.03,
+          "wall_limit_s": 0.9003,
+          "faulty_mirror_control": "PASS: mismatches reported, no decision changed",
+          "ibm_fez_mirror": "NOT RUN (owner-gated)",
+          "label": "simulated; wall time measured"
+        }
+      },
+      "tests": "252 passed, 2 skipped",
+      "review_fixes": [
+        "a mirror shutdown that could block",
+        "embedding-service inputs now secret-screened",
+        "wider secret-shape detection"
+      ],
+      "spend_usd": 0,
+      "not_claimed": "no hardware benefit; nothing about bounty outcomes; no live mission has used the bus; the two remaining stages (model line; switching on) are owner-gated"
+    },
+    "experiment_f_consolidation": {
+      "evidence_label": "simulated (MPS and FakeFez); no hardware",
+      "what": "the capacity hillclimb that preceded the hardware missions, consolidated on 2026-11-08: ladder, report and next-cycle preregistration",
+      "goal_g": "MET on a simulator: 400 agents briefed from one compiled plan, 400 of 400 verified",
+      "width_lever": {
+        "status": "built behind a flag, not run",
+        "what": "a product-state briefing compiles to a QUBO with no coupling terms, whose exact minimum is read per bit in linear time; the compiler's classical audit and the bridge's job admission now take that path when the flag is set (default off, byte-identical off)",
+        "tests": 15,
+        "needs": "a simulator sampling change in a separate repository and a rebuilt host (the host every F cycle ran on was destroyed on 2026-11-07)"
+      }
+    },
+    "spend": {
+      "model_api_ledger_total_usd": 62.72,
+      "model_api_ledger_rows": 818,
+      "model_api_harness_stop_usd": 70,
+      "model_api_cap_usd": 75,
+      "model_api_headroom_usd": 7.28,
+      "model_api_ledger_note": "the ledger now includes rows from a side experiment (compression) that had not been carried over at the November 4 review ($46.68 then)",
+      "qpu_seconds_programme_total": "277 of 600 (no change)",
+      "gpu_rentals_usd_est": {
+        "M2_first_compounding_mission": 9.08,
+        "O_round_1": 5.37,
+        "O6_dose_study": 106.2,
+        "O7_stop_at_goal": 1.79,
+        "total_approx": 122.44,
+        "note": "provider estimates at list rates; invoices pending; O6's figure is mostly idle time and is disclosed as a spend miss"
+      }
+    },
+    "merge_state_at_review": {
+      "AETHER-PREDATOR-M": "every experiment lane (D-O, SB, T) lives on private feature branches as open drafts; none is merged to main by owner rule; main carries the q-search transport and drive infrastructure merged October 25-29",
+      "Nano": "#47 (October 26), #49, #82, #83 (November 1), #98, #102 (November 8) merged to main; #50-#52 closed unmerged; #53-#54 merged to a side branch",
+      "AETHER-ATLAS": "#180 merged to main (October 26); #182 open; #183-#188 merged to a side branch; #189 open"
+    },
+    "claims_boundary": "Two training rounds on fixtures (a third built, not run), none promoted; a bus tested in shadow mode on replayed records at $0, not switched on; a width lever built, not run. No IBM hardware time, no live mission, no model improved, no quantum advantage claimed or demonstrated."
   }
 }
