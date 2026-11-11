@@ -1,7 +1,7 @@
 {
   "schema": "predator.public.quantum-comm-ops.v3",
   "review_date": "2026-11-01",
-  "updated": "2026-11-08",
+  "updated": "2026-11-11",
   "verification": "Source, committed report/result inspection and arithmetic checks against the private live-run reports; no independent experimental rerun, no replay of private raw receipts, no independent provider-account audit.",
   "publication_scope": "Owner-authorized public aggregate summary. Implementation, raw job/mailbox bodies and full run artifacts remain private; source links require repository access.",
   "hardware_used": true,
@@ -170,6 +170,21 @@
         "predator_gen3/discovery/qsearch_bridge.py"
       ],
       "note": "flag-gated, default off, byte-identical when off; built, not run"
+    },
+    "PM1_frozen_read_preregistration": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "83b40d4581e6042fe4302cb72ce1fc505f95fdc2",
+      "path": "model/pm1/experiments/PM1-9B-FROZEN-E001_PREREG.md",
+      "pull_request": 492,
+      "branch": "feat/pm1-train-prep",
+      "pr_status_at_review": "open draft, stacked on draft PR 490"
+    },
+    "PM1_phase_a_results": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "pull_request": 492,
+      "pilot_comment_url": "https://github.com/AetherAI3/AETHER-PREDATOR-M/pull/492#issuecomment-6785780967",
+      "frozen_read_comment_url": "https://github.com/AetherAI3/AETHER-PREDATOR-M/pull/492#issuecomment-6787424740",
+      "note": "results recorded as PR comments; no result file committed at review time"
     }
   },
   "hardware_missions": {
@@ -898,7 +913,8 @@
     "What does a self-hosted open model cost per verified record on a rented GPU? (Modelled only: the gateway mid-cost model is cheaper per verified at dated H100 rates, and the hosted options have no measured verified rate; one preregistered rental is the next step and has not run; 0 GPU hours.)",
     "Does a full three-lane cycle run with hardware delivery inside it? (No cycle has yet run with the IBM step inside it; the 400-agent rung is modelled at 4 IBM jobs of about 20 s from the measured 5 s one-job mission, and the packets have only been exercised offline through the same codec.)",
     "Does the comm-ops bus carry a mission's hand-offs at lower token cost without changing outcomes? (SB-3 NOT RUN: 80 qualifying hand-offs where the rule needs 100; the other three shadow-mode gates MET.)",
-    "Can a frontier model's small weight patch lower the stop-at-goal student's length-cap rate while keeping its correct answers? (O8 built, not run: no GPU capacity on November 8; three rounds so far taught the answer convention but every version looped more than the base.)"
+    "Can a frontier model's small weight patch lower the stop-at-goal student's length-cap rate while keeping its correct answers? (O8 built, not run: no GPU capacity on November 8; three rounds so far taught the answer convention but every version looped more than the base.)",
+    "Does the Model-1 adapter's held-out gain survive a few-shot baseline and a random-adapter control, a second seed, and real code? (One preregistered read TRANSFERS on seed 300000: 0.91 on 400 synthetic cases, 0 trailing text; controls preregistered, not run; no result file committed yet.)"
   ],
   "historical_records_note": "The October 31 v2 review is preserved in repository history at bba28b3b; its simulator block is carried forward unchanged as 'current'. The dated v1 record below is preserved in full as an October 28 snapshot. Follow-up queues, PR states, capacity figures and deployment observations in those records are historical, not current status.",
   "history": {
@@ -2252,7 +2268,8 @@
         "never_claimed": "a pass would show one output convention transferring to a 2B model on one task family by training on known answers; nothing about reasoning, other tasks or other models; no quantum, cost or speed claim"
       },
       "O8_frontier_repair": {
-        "preregistered": "2026-11-06", "mechanism_built": "2026-11-08",
+        "preregistered": "2026-11-06",
+        "mechanism_built": "2026-11-08",
         "evidence_label": "built_not_run",
         "design": "the frontier model may propose one small weight patch to O7's E2 that lowers the length-cap rate while keeping the correct answers; a separate judge the proposer never sees scores it",
         "owner_approval": {
@@ -2353,5 +2370,134 @@
       "AETHER-ATLAS": "#180 merged to main (October 26); #182 open; #183-#188 merged to a side branch; #189 open"
     },
     "claims_boundary": "Two training rounds on fixtures (a third built, not run), none promoted; a bus tested in shadow mode on replayed records at $0, not switched on; a width lever built, not run. No IBM hardware time, no live mission, no model improved, no quantum advantage claimed or demonstrated."
+  },
+  "model1_phase_a_2026_11_11": {
+    "scope": "Model-1 Phase A, November 10-11, 2026: the first 9-billion-parameter adapter, trained on a rented CPU cluster (no GPU), and one preregistered read of the frozen held-out split. Everything measured on fixtures (synthetic code from Predator's own generator, deterministic scorer); no quantum-computer time.",
+    "evidence_label": "measured_on_fixtures",
+    "base_model": {
+      "name": "Qwen/Qwen3.5-9B",
+      "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a"
+    },
+    "adapter": {
+      "method": "LoRA",
+      "rank": 8,
+      "modules": "MLP projections only (96 matrices)",
+      "train_rows": 1000,
+      "passes": 1,
+      "seed": 1,
+      "precision": "float32 on CPU",
+      "snapshot_sha256": "62b17ffb363a6441f4f0c6490e0bad2973d4c8e10b2be8450d9b3841e06250f0",
+      "merged_sha256": "febff4b28ffee3cacb9f8301f0c79af82348581abf0bc099b0ae241aa11e9131"
+    },
+    "task": "read a synthetic code pin; reply with a decision (HIT / MISS / REJECT), the sink line, and nothing else",
+    "sealed_split": {
+      "manifest_sha256": "14f3964961aad67268bf222ceba03ca4281c03ebb9becfa7fabb7da8689042ab",
+      "train": 60000,
+      "rotating_eval": 4000,
+      "frozen_eval": 6000,
+      "frozen_eval_seeds": 15,
+      "frozen_held_out_pattern": "raw_query (never in TRAIN)"
+    },
+    "pilot_rotating_eval": {
+      "label": "reported, not a verdict",
+      "rows": 400,
+      "seed": 200000,
+      "prompt": "pm1.decide.v2",
+      "majority_baseline_outcome": 0.4475,
+      "untrained": {
+        "valid": 0.9975,
+        "trailing": 0.0,
+        "sink": 0.9,
+        "outcome": 0.4225,
+        "both": 0.3275,
+        "answered_hit_of_400": 382
+      },
+      "trained": {
+        "valid": 1.0,
+        "trailing": 0.0,
+        "sink": 1.0,
+        "outcome": 1.0,
+        "both": 1.0
+      },
+      "caveat": "3,207 of the 4,000 ROTATING-EVAL examples share a code structure with TRAIN (same two patterns, chains up to 4 hops, different identifiers): the selection split is saturated for a 9B model after 1,000 rows and can no longer rank adapters"
+    },
+    "frozen_read_PM1_9B_FROZEN_E001": {
+      "preregistered_before_any_row_rendered": true,
+      "preregistration_commit": "83b40d4581e6042fe4302cb72ce1fc505f95fdc2",
+      "date": "2026-11-11",
+      "run_utc": "03:44-04:53",
+      "seed": 300000,
+      "rows": 400,
+      "design": "pattern raw_query (never in TRAIN); chains up to 8 hops where TRAIN stops at 4; 0 overlap with TRAIN by the manifest's pattern-keyed count (2,846 of 6,000 FROZEN-EVAL rows share a pattern-blind code shape with TRAIN); both arms scored on the same rows by the unchanged scorer; greedy decoding, 48 new tokens, thinking off",
+      "untrained": {
+        "valid_no_trailing": 1.0,
+        "sink": 0.9375,
+        "outcome": 0.4925,
+        "both": 0.43,
+        "answered_hit_of_400": 400,
+        "note": "outcome equals the majority (always-HIT) baseline"
+      },
+      "trained": {
+        "valid_no_trailing": 1.0,
+        "sink": 0.995,
+        "outcome": 0.91,
+        "both": 0.9075,
+        "outcome_5_to_8_hops": 0.952,
+        "n_5_to_8_hops": 189
+      },
+      "gain_over_untrained_outcome": 0.4175,
+      "rule": {
+        "outcome_all_rows_min": 0.8,
+        "outcome_5_to_8_hops_min": 0.7,
+        "trailing_max": 0.02,
+        "gain_min": 0.25,
+        "all_hold": true
+      },
+      "verdict": "TRANSFERS (as preregistered)",
+      "predictions_in_range": "5 of 5 (untrained outcome 0.4925 in 0.30-0.55; trained valid 1.00, sink 0.995, outcome 0.91, 5-8 hops 0.952)",
+      "errors_trained": {
+        "total": 36,
+        "safe_code_called_hit": 32,
+        "decoy": "19 of 95",
+        "guarded": "13 of 108",
+        "planted_missed": "1 of 197",
+        "miss_reject_mixups": 3,
+        "false_alarms_by_hops": "13 of 49 at 0-1; 12 of 66 at 2-4; 7 of 88 at 5-8",
+        "direction_note": "the preregistered reasoning expected long chains to be the weak spot; wrong in direction, number still in range; cause not investigated",
+        "by_hardness": {
+          "ambiguous": 0.983,
+          "deceptive": 0.911,
+          "easy": 0.789,
+          "easy_n": 38
+        }
+      },
+      "limits": [
+        "one training seed, one adapter: this adapter transferred, not the method",
+        "near transfer only: same generator, same languages, synthetic code; nothing about real code",
+        "no few-shot baseline and no random-adapter control: training shown sufficient here, not necessary",
+        "per-group counts small (about 45 rows per hop count)",
+        "seeds 300001-300014 unread",
+        "float32 on CPU, not the bfloat16 a GPU run would use"
+      ]
+    },
+    "cost": {
+      "frozen_read_usd_est": 1.85,
+      "frozen_read_note": "work node about 1.4 h at 1.301 USD/h; estimate was ~1",
+      "phase_a_total_usd_est": 5.8,
+      "phase_a_line_usd": 25,
+      "gpu_usd": 0,
+      "qpu_seconds": 0,
+      "model_api_usd": 0
+    },
+    "not_on_this_path": "recurrent-depth ('think longer') reasoning: tested earlier and rejected (0 of 12 at depths 4, 8 and 16; see agent_lanes)",
+    "next_in_order": [
+      "few-shot baseline and random-adapter control (preregistered as PM1-9B-CONTROLS-E001 at ce23d2b4, not run)",
+      "second training seed",
+      "the short-chain false alarms",
+      "independent evaluation on real code",
+      "closed loop: evaluate -> find weak spots -> allocate training -> retrain -> verify -> repeat"
+    ],
+    "bookkeeping": "no result file is committed; results exist as PR 492 comments and on the cluster volume; committing the result rows is the next bookkeeping step",
+    "claims_boundary": "One preregistered held-out read passed on one seed of synthetic code. Near transfer within one generator; not a general skill, not real code, not necessity of training. The earlier stopping failure did not appear (0 of 400 replies ran on). No quantum-computer time; no quantum advantage claimed."
   }
 }
