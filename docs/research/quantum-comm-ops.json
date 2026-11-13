@@ -1,7 +1,7 @@
 {
   "schema": "predator.public.quantum-comm-ops.v3",
   "review_date": "2026-11-01",
-  "updated": "2026-11-11",
+  "updated": "2026-11-13",
   "verification": "Source, committed report/result inspection and arithmetic checks against the private live-run reports; no independent experimental rerun, no replay of private raw receipts, no independent provider-account audit.",
   "publication_scope": "Owner-authorized public aggregate summary. Implementation, raw job/mailbox bodies and full run artifacts remain private; source links require repository access.",
   "hardware_used": true,
@@ -185,6 +185,31 @@
       "pilot_comment_url": "https://github.com/AetherAI3/AETHER-PREDATOR-M/pull/492#issuecomment-6785780967",
       "frozen_read_comment_url": "https://github.com/AetherAI3/AETHER-PREDATOR-M/pull/492#issuecomment-6787424740",
       "note": "results recorded as PR comments; no result file committed at review time"
+    },
+    "PM1_lane_run_R1_preregistration": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "3139642c6db4380b3a3a02dae42c8f0b5f756bc9",
+      "path": "model/pm1/experiments/PM1-9B-LANE-E001_PREREG.md",
+      "pull_request": 492,
+      "branch": "feat/pm1-train-prep",
+      "comment_url": "https://github.com/AetherAI3/AETHER-PREDATOR-M/pull/492#issuecomment-6824757735",
+      "note": "committed and pushed before the job existed"
+    },
+    "PM1_lane_run_R1_result": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "b68d812fedf90478de5cee1db9c2f79830fc72c0",
+      "path": "model/pm1/experiments/PM1-9B-LANE-E001_RESULT.md",
+      "pull_request": 492,
+      "comment_url": "https://github.com/AetherAI3/AETHER-PREDATOR-M/pull/492#issuecomment-6834578835",
+      "note": "result record committed; run-file sha256 digests inside"
+    },
+    "PM1_lane_E002_plan_draft": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "9e0e97b73c049ce45dd9f5ab96477595af9fe6cc",
+      "path": "model/pm1/experiments/PM1-9B-LANE-E002_PLAN_DRAFT.md",
+      "pull_request": 492,
+      "comment_url": "https://github.com/AetherAI3/AETHER-PREDATOR-M/pull/492#issuecomment-6840842060",
+      "note": "draft only: not a preregistration, nothing built, no spend"
     }
   },
   "hardware_missions": {
@@ -914,7 +939,8 @@
     "Does a full three-lane cycle run with hardware delivery inside it? (No cycle has yet run with the IBM step inside it; the 400-agent rung is modelled at 4 IBM jobs of about 20 s from the measured 5 s one-job mission, and the packets have only been exercised offline through the same codec.)",
     "Does the comm-ops bus carry a mission's hand-offs at lower token cost without changing outcomes? (SB-3 NOT RUN: 80 qualifying hand-offs where the rule needs 100; the other three shadow-mode gates MET.)",
     "Can a frontier model's small weight patch lower the stop-at-goal student's length-cap rate while keeping its correct answers? (O8 built, not run: no GPU capacity on November 8; three rounds so far taught the answer convention but every version looped more than the base.)",
-    "Does the Model-1 adapter's held-out gain survive a few-shot baseline and a random-adapter control, a second seed, and real code? (One preregistered read TRANSFERS on seed 300000: 0.91 on 400 synthetic cases, 0 trailing text; controls preregistered, not run; no result file committed yet.)"
+    "Does the Model-1 adapter's held-out gain survive a few-shot baseline and a random-adapter control, a second seed, and real code? (One preregistered read TRANSFERS on seed 300000: 0.91 on 400 synthetic cases, 0 trailing text; controls preregistered, not run; no result file committed yet.)",
+    "Does the lane-run gain over the scripted rule survive a mission without the two-sink fixture shortcut, where a finding needs a trace the model made itself before the verifier answers? (R1 BEATS THE RULE on one synthetic seed: 172 of 178 at 3 false alarms vs 156; a one-line text rule also picks the true sink 54 of 54; harder mission drafted, not preregistered, nothing built.)"
   ],
   "historical_records_note": "The October 31 v2 review is preserved in repository history at bba28b3b; its simulator block is carried forward unchanged as 'current'. The dated v1 record below is preserved in full as an October 28 snapshot. Follow-up queues, PR states, capacity figures and deployment observations in those records are historical, not current status.",
   "history": {
@@ -2499,5 +2525,221 @@
     ],
     "bookkeeping": "no result file is committed; results exist as PR 492 comments and on the cluster volume; committing the result rows is the next bookkeeping step",
     "claims_boundary": "One preregistered held-out read passed on one seed of synthetic code. Near transfer within one generator; not a general skill, not real code, not necessity of training. The earlier stopping failure did not appear (0 of 400 replies ran on). No quantum-computer time; no quantum advantage claimed."
+  },
+  "model1_lane_run_r1_2026_11_12": {
+    "scope": "Model-1 lane run R1 (PM1-9B-LANE-E001), November 12, 2026: the 9-billion-parameter model, with a new adapter trained on 804 teacher stage rows, takes the operator's seat of Predator's pin lane for one whole 400-pin synthetic mission (C1, C2, C3, selection, Q1, Q2, Q3) on a rented CPU cluster. Measured on fixtures (synthetic code from Predator's own generator, planted truth); no quantum-computer time.",
+    "evidence_label": "measured_on_fixtures",
+    "preregistered_before_job_existed": true,
+    "preregistration_commit": "3139642c6db4380b3a3a02dae42c8f0b5f756bc9",
+    "result_commit": "b68d812fedf90478de5cee1db9c2f79830fc72c0",
+    "adapter": {
+      "name": "lane-bc-1",
+      "base": "Qwen/Qwen3.5-9B",
+      "start_checkpoint": "uniform-300-s375 (a later hillclimb merge of the Phase A adapter; not covered on the public page)",
+      "method": "LoRA rank 8, one pass, merged at full strength",
+      "train_rows": 804,
+      "train_rows_source": "the scripted oracle's own proposals for 134 TRAIN pins x 6 stages (seed 100020, every third pin)",
+      "train_rows_sha256": "4b7c1359571e154eaab169c13c2091dc40d4643e4f85fcf9bbe68b46a8826a7d",
+      "train_mix": "67 planted findings (19 two-sink), 35 guarded, 32 decoy",
+      "train_steps": 804,
+      "train_seconds": 7094,
+      "loss_first_50": 0.0875,
+      "loss_last_50": 5e-05
+    },
+    "mission": {
+      "seed": 300005,
+      "split": "FROZEN-EVAL (sealed; now spent)",
+      "pins": 400,
+      "planted_findings": 178,
+      "two_sink_findings": 54,
+      "safe_pins": 222,
+      "held_out_pattern": "raw_query",
+      "truth_sha256": "bb07e5285ee4e20559bf38028192fdf3b7fe74fc7287eda22e7737517763877f",
+      "stages": [
+        "C1_PIN",
+        "C2_ANALYZE",
+        "C3_SEARCH",
+        "selection",
+        "Q1_OPTIMIZE",
+        "Q2_REFINE",
+        "Q3_DECIDE"
+      ],
+      "prompt": "pm1.stage.v1",
+      "reply_cap_tokens": 96,
+      "decoding": "greedy",
+      "verifier": "DataflowVerifier (C3 and Q1 checks follow each sink's own data flow; agreed with planted truth on 1,351 of 1,351 sinks in a 1,200-function check; the old text rule disagreed on 500)",
+      "selection": "before Q1; per block of 16 pins keep 10 (0.6) plus a random 10 % audit of the rest; seed 1; values are verifier-set energy, confidence and novelty; solved exactly on CPU; not the quantum search path, no quantum-computer time; the model has no influence on selection"
+    },
+    "operators_on_the_same_mission": {
+      "oracle_no_selection_ceiling": {
+        "found_of_178": 178,
+        "false_alarms_of_222": 0,
+        "two_sink_found_of_54": 54,
+        "parked_planted": 0,
+        "parked_safe": 0
+      },
+      "oracle_with_selection": {
+        "found_of_178": 176,
+        "false_alarms_of_222": 0,
+        "two_sink_found_of_54": 53,
+        "parked_planted": 2,
+        "parked_safe": 133
+      },
+      "trained_model_lane_bc_1_with_selection": {
+        "found_of_178": 172,
+        "false_alarms_of_222": 3,
+        "two_sink_found_of_54": 49,
+        "parked_planted": 2,
+        "parked_safe": 133
+      },
+      "scripted_rule_with_selection_floor": {
+        "found_of_178": 156,
+        "false_alarms_of_222": 0,
+        "two_sink_found_of_54": 33,
+        "parked_planted": 9,
+        "parked_safe": 126
+      },
+      "scripted_rule_no_selection": {
+        "found_of_178": 157,
+        "false_alarms_of_222": 0,
+        "two_sink_found_of_54": 33
+      }
+    },
+    "model_proposals": {
+      "total": 1995,
+      "valid": 1995,
+      "refused": 0,
+      "per_stage_asked": {
+        "C1_PIN": 400,
+        "C2_ANALYZE": 400,
+        "C3_SEARCH": 400,
+        "Q1_OPTIMIZE": 265,
+        "Q2_REFINE": 265,
+        "Q3_DECIDE": 265
+      },
+      "energy_prediction_agreed": {
+        "C1_PIN": 400,
+        "C2_ANALYZE": 400,
+        "C3_SEARCH": 384,
+        "Q1_OPTIMIZE": 265,
+        "Q2_REFINE": 265,
+        "Q3_DECIDE": 262
+      },
+      "pins_run_to_end": 265,
+      "right_endings_of_265": 255
+    },
+    "rules": {
+      "R1_a_drives_the_lane": {
+        "needed": "valid share >= 0.98 at every stage; <= 8 pins refused",
+        "measured": "1.00 at all six stages; 0 refused",
+        "verdict": "MET"
+      },
+      "R1_b_beats_the_rule": {
+        "needed": "R1-a; findings found >= 160 of 178; false alarms <= 3",
+        "measured": "172 found; 3 false alarms",
+        "verdict": "MET at its edge (one more false alarm would have left DRIVES THE LANE)"
+      },
+      "R1_c_scorer_holds": {
+        "needed": "nothing above the oracle's no-selection report; real-port replay reproduces the report with transport 1.0",
+        "measured": "nothing above; same report; transport 1.0 at every stage; replay 3 min 43 s on the laptop through the real compiler and comm-ops bus",
+        "verdict": "HOLDS"
+      },
+      "verdict": "BEATS THE RULE (as preregistered)"
+    },
+    "predictions": {
+      "held": 7,
+      "of": 8,
+      "inside_range": 6,
+      "held_no_range": 1,
+      "missed": 1,
+      "missed_which": "floor arm valid C1 proposals: guessed 120 (0-380), measured 396 of 400",
+      "chances_given": {
+        "R1_a": 0.8,
+        "R1_b": 0.5,
+        "R1_c_holds": 0.95
+      },
+      "all_three_happened": true,
+      "expected_miss_that_did_not_happen": "the model keeping the first-sink habit and landing near 156"
+    },
+    "where_it_was_wrong": {
+      "findings_not_found": 6,
+      "parked_by_selection": 2,
+      "parked_pins_same_as_oracle": true,
+      "lost_at_final_decision": "4 (true sink targeted, verifier evidence NO_GUARD, closed MISS x3 / REJECT x1; all two-sink functions)",
+      "false_alarms": "3 decoys claimed HIT; the verifier closed all three REJECT, so none became a verified finding",
+      "other_wrong_endings": "3 decoys closed MISS where REJECT was right",
+      "c3_predictions_wrong_of_400": 16,
+      "gain_vs_rule": "found 21 findings the rule missed (record); the rule found 5 the model did not (derived: 172 - 21 = 151 shared, 156 - 151 = 5); net +16"
+    },
+    "floor_arm_reported_no_rule": {
+      "checkpoint": "uniform-300-s375, the starting checkpoint, never trained on stage prompts; C1 only",
+      "valid_of_400": 396,
+      "refused": 4,
+      "energy_agreement": 400,
+      "wrong_early_abandon": 11,
+      "would_advance": 385,
+      "note": "wrote reasons in its own words"
+    },
+    "why_text_after_training": {
+      "teacher_phrase_copies_of_1995": 1824,
+      "note": "reasoning in words was neither trained nor scored; the floor arm's free reasoning is gone after training"
+    },
+    "post_run_read_2026_11_13_usd_0": {
+      "fixture_shortcut": "in all 54 two-sink functions the true sink is the one whose argument is a bare parameter with no guard on that name; a one-line text rule picks it 54 of 54 (first-sink rule 33); so the model's gain over the rule cannot be told apart from this shortcut",
+      "within_function_tracing": "model C3 guard prediction agreed with the verifier on 363 of 377 single-sink targets, against 231 (guard on the sink's own variable) and 280 (any guard visible) for two alias-blind rules; 146 of those pins are protected only through an alias chain; every function holds one chain, at most 17 lines, whole in the prompt",
+      "source": "9e0e97b73c049ce45dd9f5ab96477595af9fe6cc"
+    },
+    "limits": [
+      "one synthetic mission, one seed, no replicate",
+      "no real code",
+      "the final decision is mostly a read-back: from C3 on the verifier's reply says whether the targeted sink is protected",
+      "the model has no part in selection",
+      "reasoning in words not trained, not scored, not shown",
+      "not comparable with the earlier one-shot reads, Phase A and its follow-ups (those had no verifier evidence)",
+      "the mission is at its ceiling (172 of 176 reachable after selection); repeating it shows little",
+      "the two-sink gain is confounded by a fixture shortcut found after the run"
+    ],
+    "cost": {
+      "usd_from_node_time": 8.67,
+      "usd_if_whole_hours": 9.11,
+      "node_hours": 6.67,
+      "usd_per_hour": 1.301,
+      "node": "one 32-core CPU work node",
+      "line_usd": 15,
+      "estimate_usd": 10.6,
+      "mission_wall": "3 h 22 min for 1,995 replies, 6.1 s per reply",
+      "gpu_usd": 0,
+      "qpu_seconds": 0,
+      "model_api_usd": 0,
+      "excludes": "the standing system node and storage volume, which bill regardless of this run"
+    },
+    "next_drafted_not_preregistered": {
+      "plan_commit": "9e0e97b73c049ce45dd9f5ab96477595af9fe6cc",
+      "status": "draft for the owner; nothing built; no spend released",
+      "design": [
+        "value chains across 2-4 functions in up to 3 files, generated as twins (same text, protection applicability flipped)",
+        "three budgeted read-only tools: resolve a function name (40 lines), list call sites (8, with a completeness flag), read a span (40 lines); no shell, search, execution or web",
+        "the model's claim, trace and confidence are recorded before the verifier answers (CONFIRMED / NOT_CONFIRMED / INSUFFICIENT); a finding needs a confirmed trace",
+        "model-stated confidence runs as shadow selection first",
+        "new sealed split for the family; the two-sink shortcut removed"
+      ],
+      "gates_at_usd_0_before_any_line": [
+        "G1 ceiling and floor",
+        "G2 no shortcut (proposed line: no probe above 60 % per family, chance on twins; exact numbers fixed in the preregistration)",
+        "G3 tools suffice",
+        "G4 text form lossless + real-port replay",
+        "G5 verifier equals planted truth"
+      ],
+      "paid_run_estimate_usd": "about 16-21 for 200 pins, CPU only (design estimate)",
+      "real_code": "real-code missions stay behind this mission; the plan's only real-code step is a $0 measurement of the read-only tools on open-source trees already on disk (no model, no verdicts, no training rows); the kernel source has not been downloaded"
+    },
+    "ladder_in_words_intent_not_results": [
+      "teacher evidence -> model decision (R1, done)",
+      "model traces code and gathers evidence -> decides (next mission, drafted)",
+      "model chooses what to investigate -> verifier scores it",
+      "failures feed targeted training; repeat",
+      "source: the result record's own proposals 1-3; intent, not results"
+    ],
+    "claims_boundary": "A trained 9B model operated one whole synthetic Predator mission end to end with no malformed reply and found more planted findings than the scripted rule at the preregistered false-alarm limit. Its gain over the rule sits on two-sink functions where a fixture shortcut also works, so tracing skill is not yet shown. One seed, synthetic code, verifier-supplied evidence, no real code, no model-chosen selection. No quantum-computer time; no quantum advantage claimed. Predator does not find vulnerabilities autonomously on real code."
   }
 }
