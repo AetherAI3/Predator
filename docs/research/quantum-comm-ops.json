@@ -3107,7 +3107,7 @@
     },
     "reading": "Replay works as plumbing: steps taken from the record need no model reply and play back exactly. It does not make the model decide better: partial replays left the count at 13 to 14 of 32, only the full path, which holds the deciding call, reached 27, and false alarms stayed at 20 to 22 of 28 at every start.",
     "circuit_means": "In Model 1's bridge, a circuit is what the ATLAS compiler builds from the graph of a run (which call led to which, and which lines back the claim): a measured description of the run's shape. It is not a reading of the model's weights, and it says nothing about whether the claim is right. Built; nothing in it has run on quantum hardware.",
-    "claims_boundary": "Replay of a proven path into Model 1's pins is measured. Replay of Model 1's own runs, and AQRC compiling a step of Model 1's, are not. One model, one seed, dev pins, synthetic code. No quantum-computer time.",
+    "claims_boundary": "Replay of the teacher's proven path into the same pin, and exact playback of Model 1's own recorded runs, are measured. Using Model 1's own runs as stored steps on other pins, and AQRC compiling a step of Model 1's, are not. One model, one seed, dev pins, synthetic code. No quantum-computer time.",
     "records_sha256": {
       "zero": "b71bf72c825d87e97927c4cac30612741bb804da41b65f58a12614e1dfeeb3f0",
       "p25": "0532289d2715777c9d7b3542abaeeddfa2cd333fa7e30747759d2d810d32ef10",
@@ -3248,7 +3248,7 @@
         "like": "a recipe card",
         "name": "AQRC (Adaptive Quantum Reconstruction Compiler, in ATLAS) + replay",
         "status": "partly measured",
-        "today": "replaying a proven path into Model 1's pins is measured; AQRC has not compiled a step of Model 1's"
+        "today": "a teacher's path replayed into the same pin as a head start is measured; AQRC has not compiled a step of Model 1's"
       },
       {
         "does": "teaches the model the decisions it got wrong",
@@ -3421,18 +3421,18 @@
       "label": "PLAIN-WORDS DESCRIPTION OF THE THREE ENGINES, WITH STATUS",
       "adaptive_energy_tokenizer": {
         "part_of": "Nano",
-        "does": "writes the point where Model 1 got stuck as a small search: a handful of choices (here, which tool calls to add to the pin) and one number for each, the energy, a guess at how close that choice is, made without seeing the answer",
+        "does": "writes the point where Model 1 got stuck as a small search: a handful of choices (here, which tool calls the pin should hold) and one number for each, the energy, a guess at how close that choice is, made without seeing the answer",
         "adaptive": "after every try it narrows where to look next from a one-word answer: miss, colder, warmer or hit",
         "first_version": "the lockpick",
-        "measured_with_a_scripted_reader": "L0, a scripted reader in Model 1's place, 260 constructed stuck points that lack a call; tries to a verified claim, a miss counted as 32: lockpick 2.07, random search 22.64, the Gen2 sweep 21.37, one seat holding every call the state can name 2.43",
+        "measured_with_a_scripted_reader": "L0, a scripted reader in Model 1's place, 260 constructed stuck points that lack a call; tries to a verified claim, a miss counted as 32: lockpick 2.07, random search 22.64, one seat holding every call the state can name 2.43",
         "measured_with_model_1_reading": "PL1: 15 of 50 verified from the lockpick's seat, against random search 11 to 19 over five seeds and a placebo 9; not above the noise floor of 8",
         "limits": "the blind score and the energy are hand-written for this lane; the search runs to its end before the model reads once",
         "status": "measured",
         "source": "PM1_PL1_preregistration_sealed (L0 numbers measured by the Nano session and replayed by the parent session)"
       },
       "brute_force_engine": {
-        "does": "runs the search Nano wrote, one candidate at a time, and asks a plain evaluator what happened: the candidate's tool calls are replayed into the pin and a blind score answers miss, colder or warmer; a hit means the verifier confirmed a claim made from it; there is no model and no judge inside it; it stops at a hit or after 32 tries",
-        "exact_mode": "the same brute-force idea, exact: on a small problem it checks every option; the 400-pin mission's selection step cut the pins into blocks of at most 16 and checked all 65,536 keep-or-park states of each block, then checked the winner a second way; the record names the solver exact enumeration",
+        "does": "runs the search Nano wrote, one candidate at a time, and asks a plain evaluator what happened: the candidate's tool calls are replayed into the pin and a blind score answers miss, colder or warmer; no model sits inside it; for a hit, a scripted reader makes a claim from the candidate and the verifier must confirm it; it stops at a hit or after 32 tries",
+        "exact_mode": "the same brute-force idea, exact, in a separate piece of code: on a small problem it checks every option; the 400-pin mission's selection step cut the pins into blocks of at most 16 and checked all 65,536 keep-or-park states of each block, then checked the winner a second way; the record names the solver exact enumeration",
         "quantum_place": "a quantum sampler could later be one more source of candidates (the quantum oracle); not used in this loop",
         "status": "measured",
         "source": "PM1_lane_run_R1_result (selection) and PM1_PL1_preregistration_sealed (the search runs, 32-try cap)"
@@ -3441,12 +3441,12 @@
         "name": "Adaptive Quantum Reconstruction Compiler",
         "part_of": "ATLAS",
         "does": "watches a trained network work, finds the steps inside it, keeps only steps that pass three checks (they come back when the network is trained again, they do the same job, and breaking them breaks the output), and rebuilds each kept step as a small part, kept only if it behaves like the original",
-        "adaptive": "for each part it picks how to run it: pass straight through, a small ordinary network, a compressed tensor network or a 3-qubit quantum circuit, judged against a classical version of the same size; the classical options often win",
-        "also": "translates a QUBO scorecard into a circuit a simulator or an IBM device can run; on the IBM Fez pilot the alternative joint5 path used 28.5 percent fewer two-qubit gates (144 to 103)",
-        "measured": "toy networks only (parity, addition with carry, a small 3-SAT stub), on a classical simulator, with many negative results: parity's stages did not come back across retraining, and a classical baseline beat its quantum bond channel",
+        "adaptive": "for each part it picks how to run it: pass straight through, a dense linear map, a low-rank version of that map or a 3-qubit quantum circuit, judged against a classical version of the same size; the classical options often win",
+        "also": "the quantum compiler AQRC builds on (ATLAS's qcompiler) translates a QUBO scorecard into a circuit a simulator or an IBM device can run; on the IBM Fez pilot its joint5 path used 28.5 percent fewer two-qubit gates (144 to 103), though not at every size in simulation",
+        "measured": "toy networks only (parity, addition with carry, a small 3-SAT stub), on a classical simulator (by its own record nothing in the AQRC subpackage has run on real hardware), with many negative results: parity's stages did not come back across retraining, and a classical baseline beat its quantum bond channel",
         "not_yet": "it has never compiled a step of Model 1's; in the loop its job is design",
         "status": "partly measured",
-        "source": "ATLAS_AQRC_README"
+        "source": "ATLAS_AQRC_README; the Fez pilot is the public README's joint5 section"
       },
       "observatory": {
         "does": "a dashboard that shows the AQRC library: which parts get reused, and for what",
