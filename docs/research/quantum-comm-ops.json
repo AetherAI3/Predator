@@ -314,6 +314,42 @@
       "commit": "f121e626b4c8e73cfb9adcb61a8fd31c4d1ab10c",
       "path": "model/pm1/experiments/PM1-FRONTIER-DYNAMICS_NEXT_RUN_PREREG_DRAFT.md",
       "note": "sealed in place before it was applied; not run at review time"
+    },
+    "PM1_lane_selection_solver": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "b68d812fedf90478de5cee1db9c2f79830fc72c0",
+      "path": "model/pm1/lane/selection.py",
+      "note": "the selection step's solver: exact enumeration of all 2^n states, blocks of at most 16"
+    },
+    "PM1_bridge_package": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "3314a18ef2e1ce4381a737b7922020e7da6b9932",
+      "path": "model/pm1/aqrc_bi_model_trainer_bridge/__init__.py",
+      "note": "design: what a circuit of a run is and is not"
+    },
+    "PM1_owner_note_4": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "500bda86379ca36b130cf2e41ff5842c9a81d162",
+      "path": "model/pm1/experiments/PM1-FRONTIER_OWNER_NOTE_4_NANO_ENERGY_TOKENIZER.md",
+      "note": "design input: the adaptive energy tokenizer"
+    },
+    "PM1_owner_note_7": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "9b8c3f7d362b1a43bb82e95bf6268a5b70be9fae",
+      "path": "model/pm1/experiments/PM1-FRONTIER_OWNER_NOTE_7_NANO_BRUTE_FORCE_STAGE.md",
+      "note": "design input: the brute-force stage"
+    },
+    "PM1_owner_note_8": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "cec48bcca30ab6c1cdcadc8124df8496a7712355",
+      "path": "model/pm1/experiments/PM1-FRONTIER_OWNER_NOTE_8_NANO_LOCKPICK.md",
+      "note": "design input: the lockpick"
+    },
+    "ATLAS_AQRC_README": {
+      "repo": "AetherAI3/AETHER-ATLAS",
+      "commit": "5d8c19b2f29f02e8d2d285226ef94a5e6414a0fd",
+      "path": "aether-atlas/aether_atlas/aqrc/README.md",
+      "note": "the Adaptive Quantum Reconstruction Compiler: modules and its measured findings on toy networks"
     }
   },
   "hardware_missions": {
@@ -2937,6 +2973,154 @@
       "commit": "f121e626b4c8e73cfb9adcb61a8fd31c4d1ab10c"
     }
   },
+  "model1_replay_path_2026_11_15": {
+    "scope": "Model 1's replay path as it runs today, read from the depth ladder (T3 stage A, November 15): the first steps of a proven path are replayed into the pin from the record, so the model writes nothing for them, and the trained 9B carries on from there. The same model as run T2, no training; 60 dev pins with 32 planted findings and 28 without one. Synthetic code with planted truth, CPU only.",
+    "evidence_label": "measured_on_fixtures",
+    "what_replayed_means": "a replayed step is a recorded tool call of the proven path, run again into the pin before the model's first turn; the model writes no reply for it",
+    "whose_path": "the scripted teacher's (the walker's) proven path, not Model 1's own",
+    "dev_pins": 60,
+    "findings_planted": 32,
+    "pins_without_a_finding": 28,
+    "ladder": [
+      {
+        "start": "zero",
+        "label": "from scratch",
+        "replayed_calls": 0,
+        "model_replies": 490,
+        "verified_of_32": 13,
+        "false_alarms_of_28": 22
+      },
+      {
+        "start": "p25",
+        "label": "a quarter of the way",
+        "replayed_calls": 66,
+        "model_replies": 420,
+        "verified_of_32": 13,
+        "false_alarms_of_28": 21
+      },
+      {
+        "start": "half",
+        "label": "halfway",
+        "replayed_calls": 157,
+        "model_replies": 347,
+        "verified_of_32": 13,
+        "false_alarms_of_28": 20
+      },
+      {
+        "start": "p75",
+        "label": "three quarters",
+        "replayed_calls": 239,
+        "model_replies": 271,
+        "verified_of_32": 14,
+        "false_alarms_of_28": 20
+      },
+      {
+        "start": "last",
+        "label": "the end of the path",
+        "replayed_calls": 344,
+        "model_replies": 134,
+        "verified_of_32": 27,
+        "false_alarms_of_28": 20
+      }
+    ],
+    "same_answer_fewer_replies": {
+      "findings": 12,
+      "what": "findings verified from all five starts",
+      "model_replies_from_scratch": 80,
+      "model_replies_from_the_end": 12
+    },
+    "verified_only_from_the_end": 12,
+    "nesting": "every finding verified from scratch is also verified from the end; below the end the verified sets do not nest (one finding verified from scratch is not verified from any partial start)",
+    "replay_is_exact": "all five starts replayed on a laptop to the same records and report, byte for byte (rule T3A-d)",
+    "example_pin": {
+      "pin": "fn_23965",
+      "code": "synthetic",
+      "right_claim": "finding",
+      "proven_path_calls": 4,
+      "tools": {
+        "resolve": "find a function by its name",
+        "callers": "list the places that call it"
+      },
+      "strips": [
+        {
+          "start": "zero",
+          "replayed": 0,
+          "model_calls": [
+            "resolve",
+            "callers",
+            "resolve",
+            "resolve",
+            "resolve",
+            "callers",
+            "resolve"
+          ],
+          "claim": "protected",
+          "verifier": "NOT_CONFIRMED"
+        },
+        {
+          "start": "p25",
+          "replayed": 1,
+          "model_calls": [
+            "callers",
+            "resolve",
+            "resolve",
+            "resolve",
+            "callers",
+            "resolve"
+          ],
+          "claim": "protected",
+          "verifier": "NOT_CONFIRMED"
+        },
+        {
+          "start": "half",
+          "replayed": 2,
+          "model_calls": [
+            "resolve",
+            "resolve",
+            "resolve",
+            "callers",
+            "resolve"
+          ],
+          "claim": "protected",
+          "verifier": "NOT_CONFIRMED"
+        },
+        {
+          "start": "p75",
+          "replayed": 3,
+          "model_calls": [
+            "resolve",
+            "resolve",
+            "callers",
+            "resolve"
+          ],
+          "claim": "protected",
+          "verifier": "NOT_CONFIRMED"
+        },
+        {
+          "start": "last",
+          "replayed": 4,
+          "model_calls": [],
+          "claim": "finding",
+          "verifier": "CONFIRMED"
+        }
+      ]
+    },
+    "reading": "Replay works as plumbing: steps taken from the record need no model reply and play back exactly. It does not make the model decide better: partial replays left the count at 13 to 14 of 32, only the full path, which holds the deciding call, reached 27, and false alarms stayed at 20 to 22 of 28 at every start.",
+    "circuit_means": "In Model 1's bridge, a circuit is what the ATLAS compiler builds from the graph of a run (which call led to which, and which lines back the claim): a measured description of the run's shape. It is not a reading of the model's weights, and it says nothing about whether the claim is right. Built; nothing in it has run on quantum hardware.",
+    "claims_boundary": "Replay of a proven path into Model 1's pins is measured. Replay of Model 1's own runs, and AQRC compiling a step of Model 1's, are not. One model, one seed, dev pins, synthetic code. No quantum-computer time.",
+    "records_sha256": {
+      "zero": "b71bf72c825d87e97927c4cac30612741bb804da41b65f58a12614e1dfeeb3f0",
+      "p25": "0532289d2715777c9d7b3542abaeeddfa2cd333fa7e30747759d2d810d32ef10",
+      "half": "ff9ce45c94c7bd441278d7c92cf31d3970ec7cd554a9dc55702cc1d967ca9a44",
+      "p75": "313c238586db5923b065b4ea271e923e41df3ec632b86d3f64946b74e88e94d9",
+      "last": "1c148ca3ff74980901faa83c817947e17e19717a53933b84772739a9805eb9fb",
+      "ladder": "778b3a2c9f8626e129e5538fcfded56777e1efd5cc9fa5d77470b56b1bad1f33"
+    },
+    "pins": {
+      "t3a_result": "4e7e229056941abbd25d3f50c3b4545258e3af9d",
+      "bridge_package": "3314a18ef2e1ce4381a737b7922020e7da6b9932"
+    }
+  },
   "model1_pl1_2026_11_16": {
     "scope": "PL1, the first pin-level test of the self-improvement loop: Model 1 halts; a seat (a hint state) is made at the halt; Model 1 reads from the seat once; a verifier says whether it now gets the pin right. Synthetic code, planted truth, CPU only, no training.",
     "evidence_label": "measured_on_fixtures",
@@ -3032,18 +3216,18 @@
         "today": "164 halts in 240 pins: 102 with the evidence on screen, 62 missing it"
       },
       {
-        "does": "squeezes that stuck point into a small search, scoring how promising each candidate is",
+        "does": "turns the stuck point into a small search: a few choices to try and a score for each",
         "like": "the assistant's map",
         "name": "adaptive energy tokenizer (Nano)",
         "status": "measured",
-        "today": "first version (the lockpick) tested once: not better than a random hint"
+        "today": "first version (the lockpick) tested once with Model 1 reading: not better than a random hint"
       },
       {
-        "does": "tries candidates fast and answers miss, colder, warmer or hit",
+        "does": "tries candidates one after another and answers miss, colder, warmer or hit; on small problems it checks every option",
         "like": "the assistant's hands",
-        "name": "search engine; optional quantum oracle",
+        "name": "brute-force engine (classical); optional quantum oracle",
         "status": "measured",
-        "today": "classical engine in use; quantum oracle optional, not in the loop"
+        "today": "ran PL1's searches (a 32-try cap, on a laptop); the same brute-force idea solved the 400-pin mission's selection exactly, 65,536 combinations per block of 16 pins; the quantum oracle is optional and not in the loop"
       },
       {
         "does": "proves a result is really right, apart from whoever found it",
@@ -3060,11 +3244,11 @@
         "today": "a bank and a promotion gate exist; nothing from the loop promoted yet"
       },
       {
-        "does": "turns a proven step into something the system runs again without asking the model",
+        "does": "rebuilds a proven step as a small part the system can run again without the model",
         "like": "a recipe card",
-        "name": "AQRC step + replay",
+        "name": "AQRC (Adaptive Quantum Reconstruction Compiler, in ATLAS) + replay",
         "status": "partly measured",
-        "today": "hand-written replay works on home ground; templates from the walker's traces: 0 %; not yet tried on the model's own"
+        "today": "replaying a proven path into Model 1's pins is measured; AQRC has not compiled a step of Model 1's"
       },
       {
         "does": "teaches the model the decisions it got wrong",
@@ -3107,7 +3291,9 @@
         "templates compiled from 400 verified traces of the hand-written walker (stand-ins for model traces; no model ran) answered 0 % of unseen pins",
         "replaying a proven path paid only when it handed over the decision itself: 27 of 32 findings against 13 to 14"
       ],
-      "status": "nothing yet compiles the model's own behavior into a replayable step"
+      "status": "nothing yet compiles the model's own behavior into a replayable step",
+      "circuit_means": "In Model 1's bridge, a circuit is what the ATLAS compiler builds from the graph of a run (which call led to which, and which lines back the claim): a measured description of the run's shape. It is not a reading of the model's weights, and it says nothing about whether the claim is right. Built; nothing in it has run on quantum hardware.",
+      "measured_path": "see model1_replay_path_2026_11_15"
     },
     "adaptive_backend_routes": [
       {
@@ -3230,6 +3416,42 @@
       "pl1_result": "cdca165c1dc88823a327da83bfc264ae12707dd8",
       "owner_note_10": "4886047fab36a68c978c23573523727f9b4eeae3",
       "d1_seal": "f121e626b4c8e73cfb9adcb61a8fd31c4d1ab10c"
+    },
+    "engines": {
+      "label": "PLAIN-WORDS DESCRIPTION OF THE THREE ENGINES, WITH STATUS",
+      "adaptive_energy_tokenizer": {
+        "part_of": "Nano",
+        "does": "writes the point where Model 1 got stuck as a small search: a handful of choices (here, which tool calls to add to the pin) and one number for each, the energy, a guess at how close that choice is, made without seeing the answer",
+        "adaptive": "after every try it narrows where to look next from a one-word answer: miss, colder, warmer or hit",
+        "first_version": "the lockpick",
+        "measured_with_a_scripted_reader": "L0, a scripted reader in Model 1's place, 260 constructed stuck points that lack a call; tries to a verified claim, a miss counted as 32: lockpick 2.07, random search 22.64, the Gen2 sweep 21.37, one seat holding every call the state can name 2.43",
+        "measured_with_model_1_reading": "PL1: 15 of 50 verified from the lockpick's seat, against random search 11 to 19 over five seeds and a placebo 9; not above the noise floor of 8",
+        "limits": "the blind score and the energy are hand-written for this lane; the search runs to its end before the model reads once",
+        "status": "measured",
+        "source": "PM1_PL1_preregistration_sealed (L0 numbers measured by the Nano session and replayed by the parent session)"
+      },
+      "brute_force_engine": {
+        "does": "runs the search Nano wrote, one candidate at a time, and asks a plain evaluator what happened: the candidate's tool calls are replayed into the pin and a blind score answers miss, colder or warmer; a hit means the verifier confirmed a claim made from it; there is no model and no judge inside it; it stops at a hit or after 32 tries",
+        "exact_mode": "the same brute-force idea, exact: on a small problem it checks every option; the 400-pin mission's selection step cut the pins into blocks of at most 16 and checked all 65,536 keep-or-park states of each block, then checked the winner a second way; the record names the solver exact enumeration",
+        "quantum_place": "a quantum sampler could later be one more source of candidates (the quantum oracle); not used in this loop",
+        "status": "measured",
+        "source": "PM1_lane_run_R1_result (selection) and PM1_PL1_preregistration_sealed (the search runs, 32-try cap)"
+      },
+      "aqrc": {
+        "name": "Adaptive Quantum Reconstruction Compiler",
+        "part_of": "ATLAS",
+        "does": "watches a trained network work, finds the steps inside it, keeps only steps that pass three checks (they come back when the network is trained again, they do the same job, and breaking them breaks the output), and rebuilds each kept step as a small part, kept only if it behaves like the original",
+        "adaptive": "for each part it picks how to run it: pass straight through, a small ordinary network, a compressed tensor network or a 3-qubit quantum circuit, judged against a classical version of the same size; the classical options often win",
+        "also": "translates a QUBO scorecard into a circuit a simulator or an IBM device can run; on the IBM Fez pilot the alternative joint5 path used 28.5 percent fewer two-qubit gates (144 to 103)",
+        "measured": "toy networks only (parity, addition with carry, a small 3-SAT stub), on a classical simulator, with many negative results: parity's stages did not come back across retraining, and a classical baseline beat its quantum bond channel",
+        "not_yet": "it has never compiled a step of Model 1's; in the loop its job is design",
+        "status": "partly measured",
+        "source": "ATLAS_AQRC_README"
+      },
+      "observatory": {
+        "does": "a dashboard that shows the AQRC library: which parts get reused, and for what",
+        "status": "built; its library view runs on synthetic design data today and has never shown Model 1's steps, so no screenshot of it is used as evidence here"
+      }
     }
   }
 }

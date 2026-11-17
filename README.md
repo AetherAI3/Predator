@@ -454,13 +454,32 @@ Another lab may reach Gen4 first; that is why the map is drawn now. Model labs n
 | :--- | :--- | :--- | :--- |
 | Reasons and acts on each step of a mission | the student | **Model 1**: a 9-billion-parameter open model (Qwen3.5-9B) with a small trained adapter | *measured*: drove a whole 400-pin mission, 172 of 178 findings |
 | Saves the exact point where the model got stuck | a bookmark | **halt** | *measured*: 164 halts in 240 pins |
-| Squeezes that stuck point into a small search, scoring how promising each candidate is | the assistant's map | **adaptive energy tokenizer**, part of **Nano** | *measured once*: its first version, the lockpick, did no better than a random hint |
-| Tries candidates fast and answers miss, colder, warmer or hit | the assistant's hands | **search engine**; optionally a **quantum oracle** | classical engine in use; the quantum oracle is optional and not in the loop |
+| Turns the stuck point into a small search: a few choices to try, each with a score | the assistant's map | **adaptive energy tokenizer**, part of **Nano** ([in plain words](#three-engines)) | *measured once*: its first version, the lockpick, did no better than a random hint |
+| Tries the choices one after another and answers miss, colder, warmer or hit | the assistant's hands | **brute-force engine** (classical); optionally a **quantum oracle** | *measured*: ran PL1's searches; the quantum oracle is not in the loop |
 | Proves a result is really right, apart from whoever found it | the teacher grading the work | **verifier** | *measured*: holds on its checks; tightened after our attack; still blind to indirect calls |
 | Keeps every proven step and where it came from | the notebook | **Atlas** bank | **built**: a bank and a promotion gate exist; nothing from the loop promoted yet |
-| Turns a proven step into something the system runs again without asking the model | a recipe card | **AQRC** step and **replay** | *partly measured*: see replay below |
+| Rebuilds a proven step as a small part the system runs again without the model | a recipe card | **AQRC** (Adaptive Quantum Reconstruction Compiler, in ATLAS) and **replay** | *partly measured*: replaying a proven path is [measured](#replay-path); AQRC has not compiled a step of Model 1's |
 | Teaches the model the decisions it got wrong | studying | **training**; first run **D1** | **preregistered**: go given, not yet run |
 | Chooses what to search or train next | the planner | **controller** | today people and a frontier model write each plan; the owner approves each run |
+
+<a id="three-engines"></a>
+
+### The three engines, in plain words
+
+**1. Adaptive energy tokenizer (Nano): turns "stuck" into a small search.**
+- *What it does.* It writes the point where Model 1 got stuck as a handful of choices: here, which tool calls to add to the pin. Each choice gets one number, the energy: a guess at how close it is, made without seeing the answer.
+- *Why "adaptive".* After every try it narrows where to look next, from a one-word answer: miss, colder, warmer or hit. Its first version is called the lockpick.
+- *Where it stands.* With a scripted reader in Model 1's place, on 260 test stuck points, the lockpick reached a verified claim in about 2 tries, where random search needed about 23. Adding every possible call at once, the brute-force way, also took about 2. With Model 1 reading its hint (PL1, below), it did no better than a random hint: 15 against 11 to 19. Its score is hand-written for this one lane.
+
+**2. Brute-force engine: tries candidates, does not think.**
+- *What it does.* It runs the search Nano wrote, one candidate at a time. A plain evaluator replays the candidate's tool calls into the pin and answers miss, colder or warmer. A hit means the verifier confirmed a claim made from it. No model and no judge sit inside it. It stops at a hit or after 32 tries.
+- *The same idea, exact.* When a problem is small, brute force checks every option. The 400-pin mission's selection step (R1) cut the pins into blocks of 16, checked all 65,536 keep-or-park combinations of each block, then checked the winner a second way. All on an ordinary CPU.
+- *Where quantum could fit.* A quantum sampler could become one more source of candidates (the quantum oracle). It is not in this loop, and nothing here is a quantum result.
+
+**3. AQRC, the Adaptive Quantum Reconstruction Compiler (ATLAS): rebuilds proven work as small parts that run on their own.**
+- *What it does.* It watches a trained network work and finds the steps inside it. It keeps only steps that pass three checks: they come back when the network is trained again, they do the same job, and breaking them breaks the output. Each kept step is rebuilt as a small part, kept only if it behaves like the original.
+- *Why "adaptive" and "quantum".* For each part it picks how to run it: pass straight through, a small ordinary network, a compressed tensor network, or a 3-qubit quantum circuit. Each is judged against a classical version of the same size, and the classical options often win. It also turns a QUBO scorecard into a circuit an IBM device can run; on the [Fez pilot](#joint5-compiler-the-ibm-fez-hardware-result) the joint5 path used 28.5 % fewer two-qubit gates.
+- *Where it stands.* Toy networks only (parity, addition, a small 3-SAT puzzle), on a classical simulator, with many negative results. It has never compiled a step of Model 1's. In the loop its job is design: turn a step Model 1 proved into a part the system can replay.
 
 ### Two doors when Model 1 fails
 
@@ -478,17 +497,32 @@ The first test of the loop (PL1, below) found that 102 of Model 1's 164 stuck po
 </p>
 
 - **First time (design):** Model 1 reasons, a search finds the way, the verifier proves it, AQRC turns it into a replayable step, Atlas stores it.
-- **Next time (design):** the system matches the situation to a stored step and replays it. Model inference needed: about zero. Today this works only for hand-written steps.
+- **Next time (design):** the system matches the situation to a stored step and replays it. Model inference needed: about zero. Today this runs for hand-written steps, and for a proven path replayed into Model 1's pins ([below](#replay-path)).
 - **Not retrieval.** Retrieval (RAG) hands the model notes to read and reason about again. Replay runs the proven step itself.
 - **Why it could matter for a small model (hypothesis).** The bank of runnable steps could grow far larger than the model; the model would only decide when a stored step applies, and when to make a new one.
-- **Where it stands.** A hand-written replay step answered 8,400 of 8,400 pins on its home ground with no model, but asserted false things on 5 of 11 unfamiliar code shapes; a check on what the tools showed stops that, except for hidden calls. Templates compiled from 400 verified traces of the hand-written walker (stand-ins for model traces; no model ran) answered 0 % of unseen pins. Replaying part of a proven path paid only when it handed over the decision itself (27 of 32 findings against 13 to 14). Nothing yet turns the model's own behavior into a replayable step.
+- **What "circuit" means here.** A run's steps form a graph: which call led to which, and which lines back the claim. In Model 1's bridge to ATLAS, the compiler turns that graph into a circuit, a description of the run's shape. It is not a reading of the model's weights, and it does not say whether the claim is right. Built; nothing in it has run on quantum hardware.
+
+<a id="replay-path"></a>
+
+#### Model 1's replay path, measured
+
+Model 1 already has a replay path. The first steps of a proven path are replayed into the pin straight from the record, so the model writes nothing for them; then Model 1 takes over. The depth ladder (T3 stage A, November 15) started the same trained model at five points along the teacher's proven path, on 60 synthetic pins.
+
+<p align="center">
+  <a href="docs/research/quantum-comm-ops.md#self-improvement-loop"><img src="docs/assets/model1-replay-path.svg" width="960" alt="Model 1's replay path, measured on fixtures with no quantum-computer time: the depth ladder, T3 stage A, 60 synthetic pins with 32 planted findings. Five starts along the teacher's proven path. From scratch: 0 calls replayed, 490 model replies, 13 findings verified, 22 false alarms of 28. A quarter of the way: 66 replayed, 420 replies, 13 verified, 21 false alarms. Halfway: 157, 347, 13, 20. Three quarters: 239, 271, 14, 20. The end of the path: 344, 134, 27, 20. One pin, fn_23965: from scratch Model 1 made 7 calls and a wrong claim; each later start replays one more call of the proven path; only from the end, with all 4 calls replayed, does a single model reply make a confirmed claim. On 12 findings verified from every start, model replies fell from 80 to 12. Replay is exact; the replayed path is the teacher's, not Model 1's own."></a>
+</p>
+
+- **Free steps.** Replayed calls need no model reply. On the 12 findings Model 1 verified from every start, its replies fell from 80 to 12.
+- **Depth pays only at the decision.** Partial replays verified 13 to 14 of 32 findings. Only the whole path, which holds the deciding call, reached 27.
+- **Exact.** Every start played back on a laptop to the same records and report, byte for byte.
+- **Not shown yet.** The replayed path is the teacher's, not Model 1's own, and replay did not cut false alarms (20 to 22 of 28 at every start). Hand-written replay steps answered 8,400 of 8,400 pins at home but asserted false things on 5 of 11 new code shapes; a check on what the tools showed stops that, except for hidden calls. Templates compiled from 400 walker traces answered 0 % of unseen pins. Nothing yet turns Model 1's own runs into replayable steps.
 
 ### Three ways the system learns
 
 | Level | What learns | Where it stands |
 | :--- | :--- | :--- |
 | **Neural** | Model 1's weights | *measured*: adapters trained on teacher rows (Phase A, R1, T2); synthetic code only |
-| **Procedural** | the bank of replayable steps | *partly measured*: hand-written steps replay on home ground; templates from the walker's traces answered 0 %; not yet tried on the model's own |
+| **Procedural** | the bank of replayable steps | *partly measured*: hand-written steps replay at home; a proven path replays exactly into Model 1's pins; templates from the walker's traces answered 0 %; not yet tried on the model's own runs |
 | **Discovery** | the search backend finds what neither knows | *measured once*: no better than a random hint on Model 1's own stuck points |
 
 ### What would count as self-improvement
@@ -535,8 +569,8 @@ A bigger bank alone is not the signal. All four have to move together.
 
 | ATLAS piece | Job in the loop | Where it stands |
 | :--- | :--- | :--- |
-| **AQRC** | turn a proven step into a checkable, runnable unit | its joint5 compilation path was measured on IBM hardware in the joint5 pilot; nothing compiles a model reasoning step today |
-| **Observatory** | notice which steps keep solving which kinds of problem | toy networks only (parity, addition, 3-SAT); never a language model |
+| **AQRC** (Adaptive Quantum Reconstruction Compiler) | rebuild a proven step as a checked part that runs on its own | toy networks only, on a classical simulator; its QUBO-to-circuit path ran on IBM hardware in the joint5 pilot; it has never compiled a step of Model 1's |
+| **Observatory** | a dashboard of the AQRC library: which parts get reused, and for what | built; its library view runs on synthetic design data today, never on Model 1's steps |
 | **QOTC** | quantum-assisted choice among steps | a 3-qubit, depth-4 simulation on toy tasks (parity no gain, p = 0.70; a composed task 0.85 vs 0.40) |
 | **Real code** | the target | 4,118 real vulnerable/fixed function pairs held as a test set only; none used for training; no result yet |
 
@@ -916,8 +950,12 @@ Help build the CLI, repair chains, verification tools, or classical/quantum comp
 | **pathway / replayable step** | A proven procedure the system can run again on a known kind of problem without the model; see replay. |
 | **halt** | The exact point where Model 1 got stuck on a pin, saved so the system can work from it. |
 | **seat** | A hint state built at a halt for Model 1 to read from once; PL1 compared four kinds. |
-| **adaptive energy tokenizer** | Squeezes a stuck point into a small search and scores each candidate; part of Nano. |
-| **replay (~0 inference)** | Running a proven, stored step again without asking the model to reason it out. |
+| **adaptive energy tokenizer** | Part of Nano: writes a stuck point as a small search, a few choices each with an energy score, and narrows it after every try. |
+| **lockpick** | The tokenizer's first version: tries a choice, hears miss, colder, warmer or hit, and narrows where to look next. |
+| **brute-force engine** | The classical worker that tries candidates one after another, or checks every option when the problem is small; it does not reason. |
+| **AQRC** | Adaptive Quantum Reconstruction Compiler, part of ATLAS: rebuilds watched work as small checked parts and picks how each part runs, classical or quantum. |
+| **replay (~0 inference)** | Running proven steps again from the record, so the model writes nothing for them; Model 1 then carries on from there. |
+| **circuit (of a run)** | What the ATLAS compiler builds from the graph of a run's steps: the run's shape, not a reading of the model's weights. |
 | **absorption** | Training the model on decisions it got wrong while the evidence was on screen. |
 | **noise floor** | The smallest difference a comparison must beat to count; in PL1, 8 stuck points. |
 | **quantum oracle** | An optional instrument: a bounded search encoded for a quantum computer, read back as ordinary numbers; design, not used in the loop. |
