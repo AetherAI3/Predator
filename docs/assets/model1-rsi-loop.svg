@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1000" viewBox="0 0 960 1000" role="img" aria-labelledby="title description">
+<title id="title">Gen3 to Gen4: the self-improvement loop, by what each part does</title><desc id="description">Design figure with what each step has measured, November 17, 2026. A machine that turns failure into verified capability, and verified capability into a stronger model. The loop: Model 1 gets stuck; the system works out what was missing; searches for it; a verifier proves the answer; the bank stores the step; the step is replayed with almost no new model work; Model 1 trains on it; next time Model 1 crosses that point on its own. When Model 1 is stuck there are two doors. Door 1, search: search (discovery): the tokenizer makes a small search, the engine tries candidates, the verifier checks a hit. Door 2, absorb: absorb (training): the model saw what it needed and still decided wrong; train the decision itself (run D1). Both lead to an independent verifier, then the Atlas bank, then replay at about zero model inference (procedural learning) and training into Model 1 (neural learning). Where each step stands: Model 1 works the pin: measured, R1: 172 of 178 findings, 3 false alarms; harder mission T2: 18 of 46, below a coin-guessing operator; Stuck points (halts): measured, 164 halts in 240 pins: 102 with the evidence on screen, 62 missing it; Search door: tokenizer + engine: measured, lockpick 15 of 50 against a random hint&#x27;s 11 to 19: not shown better; Absorb door: train the decision: preregistered, D1 sealed, go given, not yet run; cap $24; Verifier: measured, holds on its checks; replays byte for byte; tight rule after an attack; blind to indirect calls; Atlas bank: built, bank and promotion gate built; nothing from the loop promoted yet; Replay at ~0 inference: partly measured, hand-written steps only; templates from the walker&#x27;s traces 0 %; Fewer rescues next generation: not measured, needs two trained generations. What would count as self-improvement, not measured yet: rescues needed: fewer each generation; replayable steps in the bank: more each generation; the model alone, without rescue: stronger each generation; verified frontier: keeps moving forward. Design and hypothesis. No self-improvement has been shown: no generation has been trained on its own rescues yet. No frontier-level capability is claimed. Synthetic code only; no real-code result. No quantum-computer time; no quantum advantage.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5f7a99"/></marker></defs>
+<rect x="1" y="1" width="958" height="998" rx="18" fill="#070d17" stroke="#2a3b51"/>
+<text x="48" y="40" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#efc479" >GEN3 → GEN4 · THE SELF-IMPROVEMENT LOOP · DESIGN, WITH WHAT EACH STEP HAS MEASURED</text>
+<text x="912" y="40" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#adbbce" text-anchor="end">17 NOV 2026</text>
+<text x="48" y="82" font-family="Helvetica,Arial,sans-serif" font-size="30" font-weight="700" fill="#f2f6ff" >Turn failure into verified capability,</text>
+<text x="48" y="116" font-family="Helvetica,Arial,sans-serif" font-size="30" font-weight="700" fill="#f2f6ff" >and verified capability into a stronger model</text>
+<text x="48" y="142" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#adbbce" >Stuck → find what was missing → prove it → remember it → replay it → train it in → go farther alone</text>
+<rect x="48" y="166" width="528" height="670" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="70" y="196" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#b48aff" >The loop (design)</text>
+<text x="70" y="216" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#adbbce" >what each part does first; its name in small print</text>
+<rect x="202.0" y="236" width="220" height="46" rx="12" fill="#0f1e2c" stroke="#32c7eb"/>
+<text x="312.0" y="256.0" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#32c7eb" text-anchor="middle">Model 1 works the pin</text>
+<text x="312.0" y="272.0" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" text-anchor="middle">reasons and acts · the student</text>
+<path d="M312.0 282L312.0 309" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<rect x="202.0" y="311" width="220" height="46" rx="12" fill="#101b2b" stroke="#f2f6ff"/>
+<text x="312.0" y="331.0" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#f2f6ff" text-anchor="middle">Stuck: what is missing?</text>
+<text x="312.0" y="347.0" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#adbbce" text-anchor="middle">the exact stuck point is saved (a halt)</text>
+<path d="M272.0 357L182.0 384" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<path d="M352.0 357L442.0 384" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<text x="168.0" y="376" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#67dcb4" text-anchor="end">evidence missing</text>
+<text x="456.0" y="376" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#b48aff" >evidence on screen</text>
+<rect x="72" y="386" width="220" height="46" rx="12" fill="#0f2320" stroke="#67dcb4"/>
+<text x="182.0" y="406.0" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#67dcb4" text-anchor="middle">Door 1 · SEARCH</text>
+<text x="182.0" y="422.0" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" text-anchor="middle">find the missing piece</text>
+<rect x="332" y="386" width="220" height="46" rx="12" fill="#1a1630" stroke="#b48aff"/>
+<text x="442.0" y="406.0" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#b48aff" text-anchor="middle">Door 2 · ABSORB</text>
+<text x="442.0" y="422.0" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" text-anchor="middle">use what is already there</text>
+<path d="M182.0 432L182.0 459" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<path d="M442.0 432L442.0 459" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<rect x="72" y="461" width="220" height="46" rx="12" fill="#101b2b" stroke="#67dcb4"/>
+<text x="182.0" y="481.0" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#67dcb4" text-anchor="middle">Make a small search</text>
+<text x="182.0" y="497.0" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" text-anchor="middle">adaptive energy tokenizer (Nano)</text>
+<rect x="332" y="461" width="220" height="46" rx="12" fill="#101b2b" stroke="#b48aff"/>
+<text x="442.0" y="481.0" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#b48aff" text-anchor="middle">Train the decision</text>
+<text x="442.0" y="497.0" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" text-anchor="middle">first run: D1</text>
+<path d="M182.0 507L182.0 534" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<rect x="72" y="536" width="220" height="46" rx="12" fill="#101b2b" stroke="#67dcb4"/>
+<text x="182.0" y="556.0" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#67dcb4" text-anchor="middle">Try candidates fast</text>
+<text x="182.0" y="572.0" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" text-anchor="middle">miss · colder · warmer · hit</text>
+<text x="72" y="596" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#8696ad" >classical engine · quantum oracle optional</text>
+<text x="72" y="608" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#67dcb4" >level 3 · discovery</text>
+<path d="M242.0 582L282.0 609" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<path d="M442.0 507L342.0 609" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<rect x="202.0" y="611" width="220" height="46" rx="12" fill="#101b2b" stroke="#efc479"/>
+<text x="312.0" y="631.0" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#efc479" text-anchor="middle">Prove it is right</text>
+<text x="312.0" y="647.0" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" text-anchor="middle">independent verifier</text>
+<path d="M312.0 657L312.0 684" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<rect x="202.0" y="686" width="220" height="46" rx="12" fill="#0f2320" stroke="#67dcb4"/>
+<text x="312.0" y="706.0" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#67dcb4" text-anchor="middle">Remember it</text>
+<text x="312.0" y="722.0" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" text-anchor="middle">Atlas bank · the notebook</text>
+<path d="M272.0 732L182.0 759" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<path d="M352.0 732L442.0 759" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<rect x="72" y="761" width="220" height="46" rx="12" fill="#0f1e2c" stroke="#32c7eb"/>
+<text x="182.0" y="781.0" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#32c7eb" text-anchor="middle">Replay it · ~0 inference</text>
+<text x="182.0" y="797.0" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" text-anchor="middle">AQRC: a step the system runs</text>
+<rect x="332" y="761" width="220" height="46" rx="12" fill="#1a1630" stroke="#b48aff"/>
+<text x="442.0" y="781.0" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#b48aff" text-anchor="middle">Train it in</text>
+<text x="442.0" y="797.0" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" text-anchor="middle">the next Model 1 learns it</text>
+<text x="72" y="821" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#32c7eb" >level 2 · procedural</text>
+<text x="552" y="821" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#b48aff" text-anchor="end">level 1 · neural</text>
+<path d="M72 784.0H58V259.0H198.0" stroke="#5f7a99" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+<path d="M552 784.0H566V259.0H426.0" stroke="#5f7a99" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+<text x="64" y="228" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#8696ad" >goes farther now</text>
+<text x="560" y="228" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#8696ad" text-anchor="end">goes farther next generation</text>
+<rect x="600" y="166" width="312" height="670" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="620" y="196" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#67dcb4" >Where each step stands</text>
+<text x="620" y="216" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" >measured on fixtures unless marked</text>
+<circle cx="626" cy="241" r="5" fill="#67dcb4"/>
+<text x="638" y="246" font-family="Helvetica,Arial,sans-serif" font-size="12.5" font-weight="700" fill="#f2f6ff" >Model 1 works the pin</text>
+<text x="638" y="260" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#67dcb4" >MEASURED</text>
+<text x="638" y="274" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >R1: 172 of 178 findings, 3 false alarms;</text>
+<text x="638" y="286" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >harder mission T2: 18 of 46, below a</text>
+<text x="638" y="298" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >coin-guessing operator</text>
+<circle cx="626" cy="317" r="5" fill="#67dcb4"/>
+<text x="638" y="322" font-family="Helvetica,Arial,sans-serif" font-size="12.5" font-weight="700" fill="#f2f6ff" >Stuck points (halts)</text>
+<text x="638" y="336" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#67dcb4" >MEASURED</text>
+<text x="638" y="350" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >164 halts in 240 pins: 102 with the evidence</text>
+<text x="638" y="362" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >on screen, 62 missing it</text>
+<circle cx="626" cy="381" r="5" fill="#67dcb4"/>
+<text x="638" y="386" font-family="Helvetica,Arial,sans-serif" font-size="12.5" font-weight="700" fill="#f2f6ff" >Search door: tokenizer + engine</text>
+<text x="638" y="400" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#67dcb4" >MEASURED</text>
+<text x="638" y="414" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >lockpick 15 of 50 against a random hint&#x27;s 11</text>
+<text x="638" y="426" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >to 19: not shown better</text>
+<circle cx="626" cy="445" r="5" fill="#b48aff"/>
+<text x="638" y="450" font-family="Helvetica,Arial,sans-serif" font-size="12.5" font-weight="700" fill="#f2f6ff" >Absorb door: train the decision</text>
+<text x="638" y="464" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#b48aff" >PREREGISTERED</text>
+<text x="638" y="478" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >D1 sealed, go given, not yet run; cap $24</text>
+<circle cx="626" cy="497" r="5" fill="#67dcb4"/>
+<text x="638" y="502" font-family="Helvetica,Arial,sans-serif" font-size="12.5" font-weight="700" fill="#f2f6ff" >Verifier</text>
+<text x="638" y="516" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#67dcb4" >MEASURED</text>
+<text x="638" y="530" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >holds on its checks; replays byte for byte;</text>
+<text x="638" y="542" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >tight rule after an attack; blind to indirect</text>
+<text x="638" y="554" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >calls</text>
+<circle cx="626" cy="573" r="5" fill="#32c7eb"/>
+<text x="638" y="578" font-family="Helvetica,Arial,sans-serif" font-size="12.5" font-weight="700" fill="#f2f6ff" >Atlas bank</text>
+<text x="638" y="592" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#32c7eb" >BUILT</text>
+<text x="638" y="606" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >bank and promotion gate built; nothing from</text>
+<text x="638" y="618" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >the loop promoted yet</text>
+<circle cx="626" cy="637" r="5" fill="#32c7eb"/>
+<text x="638" y="642" font-family="Helvetica,Arial,sans-serif" font-size="12.5" font-weight="700" fill="#f2f6ff" >Replay at ~0 inference</text>
+<text x="638" y="656" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#32c7eb" >PARTLY MEASURED</text>
+<text x="638" y="670" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >hand-written steps only; templates from the</text>
+<text x="638" y="682" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >walker&#x27;s traces 0 %</text>
+<circle cx="626" cy="701" r="5" fill="#8696ad"/>
+<text x="638" y="706" font-family="Helvetica,Arial,sans-serif" font-size="12.5" font-weight="700" fill="#f2f6ff" >Fewer rescues next generation</text>
+<text x="638" y="720" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#8696ad" >NOT MEASURED</text>
+<text x="638" y="734" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >needs two trained generations</text>
+<rect x="48" y="852" width="864" height="92" rx="12" fill="#0d1420" stroke="#3b4f68"/>
+<text x="68" y="876" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#efc479" >What would count as self-improvement · not measured yet</text>
+<text x="68.0" y="898" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" >Rescues needed</text>
+<text x="68.0" y="914" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" >fewer each generation</text>
+<text x="274.0" y="898" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" >Replayable steps in the bank</text>
+<text x="274.0" y="914" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" >more each generation</text>
+<text x="480.0" y="898" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#f2f6ff" >The model alone, without rescue</text>
+<text x="480.0" y="914" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" >stronger each generation</text>
+<text x="686.0" y="898" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" >Verified frontier</text>
+<text x="686.0" y="914" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" >keeps moving forward</text>
+<text x="68" y="934" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#8696ad" >All four at once, across trained generations; a bigger bank alone is not the signal.</text>
+<path d="M48 958H912" stroke="#293b53"/>
+<text x="48" y="980" font-family="Helvetica,Arial,sans-serif" font-size="9" font-weight="400" fill="#adbbce" >Design and hypothesis · no generation trained on its own rescues yet · classical loop, quantum oracle optional · no frontier-level capability claimed · no quantum advantage</text>
+</svg>
