@@ -216,8 +216,8 @@ On **October 10, 2026** Predator banked **AX001–AX003**: three conditional out
 **Think of a lockpick. Hold tension, test one pin at a time, keep every pin that sets.** Crucible starts from a pinned source revision, a defined question and fixed acceptance checks; nothing already verified can slip while the next candidate is tested.
 
 <p align="center">
-  <img src="docs/assets/crucible-lockpick.svg" width="960" alt="Illustrative Crucible lockpick diagram. A checkpoint holds verified evidence while candidate chains fan out. Modeled energy ranks tests; a native software receipt is required before a candidate can become a HIT. If configured, JEV gives advisory triage. Supported evidence and open obligations feed the next checkpoint, while the repair is validated separately. The four pins are schematic, not four executed workers. Visual by Mythos 5.1."><br>
-  <sub>One depth step of the loop, drawn as a lockpick. Visual by Mythos 5.1.</sub>
+  <img src="docs/assets/crucible-lockpick.svg" width="960" alt="Illustrative Crucible lockpick diagram. A checkpoint holds verified evidence while candidate chains fan out. Modeled energy ranks tests; a native software receipt is required before a candidate can become a HIT. If configured, JEV gives advisory triage. Supported evidence and open obligations feed the next checkpoint, while the repair is validated separately. The four pins are schematic, not four executed workers."><br>
+  <sub>One depth step of the loop, drawn as a lockpick.</sub>
 </p>
 
 The four pins show a **research design**, not four measured workers or native checks in every run. The [execution and evidence guide](docs/research/crucible-evidence-contract.md) separates the CFC selector, an admitted exploit ratchet and manual research, and defines the minimum candidate record and the native effect a zero-click claim needs. A model score, a worker proposal and a native result are different records.

@@ -193,7 +193,7 @@ FOOT = H - 70
 out.append(f'<path d="M48 {FOOT - 26}H{W - 48}" stroke="{EDGE}" stroke-width="1"/>')
 t(48, FOOT, "Depth = how many dependent C → Q steps have run. Circuit depth is a different number inside one Q.", 13, MUTED)
 t(48, FOOT + 22, "This figure shows the loop's control structure. It is not a measurement, a severity, or a claim of quantum advantage.", 13, QUIET)
-t(W - 48, FOOT + 22, "Visual by Mythos 5.1 · Aether AI Predator · October 2026", 13, PURPLE, 700, "end")
+t(W - 48, FOOT + 22, "Aether AI Predator · October 2026", 13, PURPLE, 700, "end")
 
 out.append("</svg>")
 

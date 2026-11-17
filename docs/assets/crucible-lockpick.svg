@@ -129,5 +129,5 @@
 <path d="M48 1024H1232" stroke="#2a3b51" stroke-width="1"/>
 <text x="48" y="1050" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#adbbce" text-anchor="start" >Quantum depth counts evidenced dependent method runs, not labels. Circuit depth is a separate measure.</text>
 <text x="48" y="1072" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#6f819a" text-anchor="start" >This figure shows the loop's control structure. It is not a measurement, a severity, or a claim of quantum advantage.</text>
-<text x="1232" y="1072" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#a78bfa" text-anchor="end" >Visual by Mythos 5.1 · Aether AI Predator · October 2026</text>
+<text x="1232" y="1072" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#a78bfa" text-anchor="end" >Aether AI Predator · October 2026</text>
 </svg>
