@@ -18,7 +18,7 @@ BG, FG, MUTED = "#070d17", "#f2f6ff", "#adbbce"
 BLUE, PURPLE, GREEN, AMBER = "#32c7eb", "#b48aff", "#67dcb4", "#efc479"
 DIM, DIM_TEXT, LINE = "#3b4f68", "#8696ad", "#293b53"
 CHAR_W = 0.55
-WIDTH, HEIGHT, MARGIN = 960, 724, 48
+WIDTH, HEIGHT, MARGIN = 960, 748, 48
 CONTENT_W = WIDTH - 2 * MARGIN
 
 
@@ -67,15 +67,20 @@ def description():
     arms = "; ".join(f"{a['arm']} {round(a['share'] * 200)} of 200" for a in scan["dev_round_targets_reached"])
     curve = "; ".join(f"{p['explore']} percent exploring {p['mechanisms_found']}" for p in ratio["dev_curve"])
     final = scan["final_gate"]
+    p18 = rec["replay_p18"]["counted_mission"]
     return (f"{DATA['title']}. Lesson: {DATA['lesson']} Panel 1, recorded Gen3 outcomes, not blind: {rec['checks']} checks over "
             f"{rec['mechanisms']} anonymised mechanisms; the mechanism alone predicts {rec['predicted_by_mechanism']} of {rec['checks']}; "
             f"{mech}. Panel 2, scripted test targets, development round: targets reached, {arms}. On 200 fresh targets the scan reached "
             f"{round(final['scan'] * 200)} of 200 against {round(final['no_sweep'] * 200)} with no sweep, with {final['hits_ratio']:.1f} "
             f"times the hits. Panel 3, scripted: mechanisms found per target by share of turns spent exploring, {curve}; best at "
             f"{best['explore']} percent, and it held when the share of working variants changed. One IBM hardware run on "
-            f"{hw['backend']}: narrowing found {hw['good_candidates_per_billed_second_vs_random']['drive_length_7']:.1f} and "
+            f"{hw['backend']}, where the hardware only carried the probes: narrowing found "
+            f"{hw['good_candidates_per_billed_second_vs_random']['drive_length_7']:.1f} and "
             f"{hw['good_candidates_per_billed_second_vs_random']['drive_length_8']:.1f} times as many good candidates per billed "
-            f"second as random order, {hw['billed_qpu_seconds']} billed seconds. {DATA['claims_boundary']}")
+            f"second as random order, {hw['billed_qpu_seconds']} billed seconds. A replay of recorded Gen3 missions (P18) then "
+            f"favoured the rule: {p18['mechanism_first_found']} of {p18['mechanisms_with_a_hit']} mechanisms against "
+            f"{p18['current_rule_found']} for Gen3's current next-test rule on the one counted mission; the win rests on one "
+            f"mechanism. {DATA['claims_boundary']}")
 
 
 def mechanism_panel(x, y, w, h):
@@ -128,7 +133,7 @@ def scan_panel(x, y, w, h):
     a += [text(x + 18, y + h - 50, f"Fresh targets: {round(final['scan'] * 200)} of 200, against", 11, FG, 700, max_w=w - 36),
           text(x + 18, y + h - 34, f"{round(final['no_sweep'] * 200)} with no sweep; {final['hits_ratio']:.1f} times the hits",
                11, FG, 700, max_w=w - 36),
-          text(x + 18, y + h - 18, "scripted test targets", 9.5, DIM_TEXT, max_w=w - 36)]
+          text(x + 18, y + h - 18, "scripted targets, at the old 15 % explore rate", 9.5, DIM_TEXT, max_w=w - 36)]
     require(ty <= y + h - 60, "scan panel overflows")
     return a
 
@@ -168,12 +173,15 @@ def ratio_panel(x, y, w, h):
 def takeaways(x, y, w, h):
     hw = DATA["hardware_p7"]
     ratio = hw["good_candidates_per_billed_second_vs_random"]
-    lines = [(GREEN, "Lesson: organise search by mechanism, not by position. Recorded outcomes, the lockpick and these tests agree.", 400),
-             (BLUE, "Shipped to the Gen2 swarm on a draft, not main: every technique once, then explore 90 %; one setting "
-                    "undoes each change.", 400),
-             (AMBER, f"Narrowing on IBM hardware, one run ({hw['backend']}): {ratio['drive_length_7']:.1f} to "
-                     f"{ratio['drive_length_8']:.1f} times random order's good finds per billed second; "
-                     f"{hw['billed_qpu_seconds']} s.", 400),
+    p18 = DATA["recorded_outcomes"]["replay_p18"]["counted_mission"]
+    lines = [(GREEN, "Lesson: organise search by mechanism, not by position. Recorded outcomes point this way; the scripted tests "
+                     "measure its value.", 400),
+             (BLUE, "Now the Gen2 swarm's default, on a draft (not main): every technique once (P15), then explore 90 % (P16); "
+                    "settings revert.", 400),
+             (AMBER, f"IBM hardware only carried the probes ({hw['backend']}, one run): narrowing got {ratio['drive_length_7']:.1f} "
+                     f"to {ratio['drive_length_8']:.1f} times random's finds per billed second.", 400),
+             (PURPLE, f"P18, replaying recorded Gen3 missions: {p18['mechanism_first_found']} of {p18['mechanisms_with_a_hit']} "
+                      f"mechanisms against {p18['current_rule_found']} for Gen3's current rule; the win rests on one.", 400),
              (FG, "Gen2 work: scripted targets, no real target, nothing replayed or trained into Model 1.", 700)]
     a = [panel(x, y, w, h, fill="#0d1420", stroke=DIM)]
     for i, (color, line, weight) in enumerate(lines):
@@ -191,7 +199,7 @@ def figure():
          'role="img" aria-labelledby="title description">',
          f'<title id="title">{escape(title)}</title><desc id="description">{escape(description())}</desc>',
          f'<rect x="1" y="1" width="{WIDTH - 2}" height="{HEIGHT - 2}" rx="18" fill="{BG}" stroke="#2a3b51"/>',
-         text(MARGIN, 40, "SEARCH ORDER · GEN2 SWARM, STEPS P1 TO P17 · SCRIPTED TARGETS UNLESS MARKED", 15, BLUE, 700,
+         text(MARGIN, 40, "SEARCH ORDER · STEPS P1 TO P18 · SCRIPTED TARGETS UNLESS MARKED", 15, BLUE, 700,
               max_w=CONTENT_W - 150),
          text(WIDTH - MARGIN, 40, "9–17 NOV 2026", 15, MUTED, 700, 'text-anchor="end"'),
          text(MARGIN, 82, "Search by mechanism, not by position", 30, FG, 700, max_w=CONTENT_W),
@@ -200,9 +208,9 @@ def figure():
     a += mechanism_panel(MARGIN, py, pw, ph)
     a += scan_panel(MARGIN + pw + gap, py, pw, ph)
     a += ratio_panel(MARGIN + 2 * (pw + gap), py, pw, ph)
-    a += takeaways(MARGIN, 548, CONTENT_W, 116)
-    a += [f'<path d="M{MARGIN} 682H{WIDTH - MARGIN}" stroke="{LINE}"/>',
-          text(MARGIN, 704, "Preregistered steps · recorded outcomes anonymised · the original sweep method stays private · "
+    a += takeaways(MARGIN, 548, CONTENT_W, 141)
+    a += [f'<path d="M{MARGIN} 706H{WIDTH - MARGIN}" stroke="{LINE}"/>',
+          text(MARGIN, 728,"Preregistered steps · recorded outcomes anonymised · the original sweep method stays private · "
                             "no quantum advantage claimed", 11, MUTED, max_w=CONTENT_W)]
     return "\n".join(a + ["</svg>"])
 
