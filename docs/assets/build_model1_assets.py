@@ -5,6 +5,7 @@ Figures:
   model1-rsi-loop.svg          the self-improvement loop (design, with what each step has measured)
   model1-replay.svg            replay at ~0 inference (design, with its first measurements)
   model1-pl1.svg               the first test of the loop, PL1 (measured on fixtures)
+  model1-replay-path.svg       Model 1's replay path, the depth ladder T3 stage A (measured on fixtures)
 
 Run from the repository root: python docs/assets/build_model1_assets.py [--check]
 --check rebuilds in memory and exits non-zero if any published SVG differs from the rebuild.
@@ -19,6 +20,8 @@ DATA = json.loads((HERE.parent / "research/quantum-comm-ops.json").read_text(enc
 R1 = DATA["model1_lane_run_r1_2026_11_12"]
 PL1 = DATA["model1_pl1_2026_11_16"]
 LOOP = DATA["model1_rsi_loop_2026_11_17"]
+RP = DATA["model1_replay_path_2026_11_15"]
+TRACE = DATA["model1_trace_runs_2026_11_14_15"]
 BG, FG, MUTED = "#070d17", "#f2f6ff", "#adbbce"
 BLUE, PURPLE, GREEN, AMBER = "#32c7eb", "#b48aff", "#67dcb4", "#efc479"
 DIM, DIM_TEXT, ARROW, LINE = "#3b4f68", "#8696ad", "#5f7a99", "#293b53"
@@ -32,7 +35,7 @@ STATUS_COLOR = {"measured": GREEN, "partly measured": BLUE, "built": BLUE, "prer
 def fit(value, size, max_w):
     """Shrink the font size until the value fits; never below 9px."""
     while len(str(value)) * size * CHAR_W > max_w and size > 9:
-        size -= 1
+        size = max(size - 1, 9)
     return size
 
 
@@ -271,7 +274,7 @@ def loop_panel(x, y, w, h):
     a += box(rx, r[3], bw, bh, "Train the decision", "first run: D1", PURPLE)
     a.append(arrow(lcx, r[3] + bh, lcx, r[4] - 2))
     a += box(lx, r[4], bw, bh, "Try candidates fast", "miss · colder · warmer · hit", GREEN)
-    a += [text(lx, r[4] + bh + 14, "classical engine · quantum oracle optional", 9.5, DIM_TEXT, 400, max_w=bw),
+    a += [text(lx, r[4] + bh + 14, "brute force · quantum oracle optional", 9.5, DIM_TEXT, 400, max_w=bw),
           text(lx, r[4] + bh + 26, "level 3 · discovery", 9.5, GREEN, 700, max_w=bw)]
     a += [arrow(lcx + 60, r[4] + bh, cx - 30, r[5] - 2), arrow(rcx, r[3] + bh, cx + 30, r[5] - 2)]
     a += box(cx - bw / 2, r[5], bw, bh, "Prove it is right", "independent verifier", AMBER)
@@ -499,8 +502,178 @@ def pl1_figure():
     return "\n".join(a + ["</svg>"])
 
 
+# ---------------------------------------------------------------- figure 5: Model 1's replay path (T3 stage A, measured)
+
+STARTS = ("zero", "p25", "half", "p75", "last")
+
+
+def cap(value):
+    return value[0].upper() + value[1:]
+
+
+def replay_path_numbers():
+    require(RP["evidence_label"] == "measured_on_fixtures", "replay-path evidence label changed; review the figure wording")
+    ladder, same, pin = RP["ladder"], RP["same_answer_fewer_replies"], RP["example_pin"]
+    require(tuple(r["start"] for r in ladder) == STARTS, "ladder starts changed; review the figure")
+    published = TRACE["T3_stage_A_depth_ladder"]["findings_verified_of_32"]
+    require({r["start"]: r["verified_of_32"] for r in ladder} == published, "ladder disagrees with the published T3 stage A block")
+    replayed = [r["replayed_calls"] for r in ladder]
+    require(replayed[0] == 0 and replayed == sorted(replayed), "replayed calls must start at zero and grow")
+    require(max(r["verified_of_32"] for r in ladder[:-1]) < ladder[-1]["verified_of_32"], "wording assumes only the end steps up")
+    require(same["model_replies_from_the_end"] < same["model_replies_from_scratch"], "wording assumes fewer replies from the end")
+    strips = pin["strips"]
+    require(tuple(s["start"] for s in strips) == STARTS, "example strips changed; review the figure")
+    require([s["replayed"] for s in strips] == list(range(len(strips))) and strips[-1]["replayed"] == pin["proven_path_calls"],
+            "example strips assume one more replayed call per start, ending at the whole path")
+    require(all(s["verifier"] == "NOT_CONFIRMED" for s in strips[:-1]) and strips[-1]["verifier"] == "CONFIRMED"
+            and not strips[-1]["model_calls"], "example wording assumes only the end is confirmed, with no model call")
+    return ladder, same, pin
+
+
+def replay_path_description():
+    ladder, same, pin = replay_path_numbers()
+    labels = {r["start"]: r["label"] for r in ladder}
+    rows = "; ".join(f"{r['label']}: {r['replayed_calls']} calls replayed, {r['model_replies']} model replies, "
+                     f"{r['verified_of_32']} of 32 findings verified, {r['false_alarms_of_28']} false alarms of 28" for r in ladder)
+    strips = "; ".join(f"{labels[s['start']]}: {s['replayed']} replayed, {len(s['model_calls'])} model calls, claims {s['claim']}, "
+                       f"{'confirmed' if s['verifier'] == 'CONFIRMED' else 'not confirmed'}" for s in pin["strips"])
+    return (f"Model 1's replay path, measured on fixtures with no quantum-computer time, November 15, 2026 (the depth ladder, T3 stage A). "
+            f"{cap(RP['what_replayed_means'])}. The same trained 9B started at five points of the scripted teacher's proven path on "
+            f"{RP['dev_pins']} synthetic pins with {RP['findings_planted']} planted findings. {rows}. On the {same['findings']} findings "
+            f"verified from every start, model replies fell from {same['model_replies_from_scratch']} to "
+            f"{same['model_replies_from_the_end']}. One pin, {pin['pin']}, synthetic: {strips}. {RP['reading']} {RP['claims_boundary']}")
+
+
+def ladder_panel(x, y, w, h):
+    ladder, _, _ = replay_path_numbers()
+    a = [panel(x, y, w, h),
+         text(x + 22, y + 30, "Five starts along the proven path", 16, GREEN, 700, max_w=w - 44),
+         text(x + 22, y + 48, f"all {RP['dev_pins']} pins at each start · a bar is every step taken: replayed from the record, "
+                              "or written by Model 1", 10.5, MUTED, max_w=w - 44)]
+    lx, bx, bw = x + 22, x + 196, 392
+    vx, fx = x + w - 252, x + w - 112
+    top = y + 86
+    a += [text(bx, top - 12, "replayed · no model reply", 10, BLUE, 700, max_w=180),
+          text(bx + bw, top - 12, "written by Model 1", 10, PURPLE, 700, 'text-anchor="end"', 160),
+          text(vx, top - 12, "verified, of 32", 10, GREEN, 700, max_w=126),
+          text(fx, top - 12, "false alarms, of 28", 10, AMBER, 700, max_w=100)]
+    scale = bw / max(r["replayed_calls"] + r["model_replies"] for r in ladder)
+    for i, r in enumerate(ladder):
+        ry = top + i * 32
+        rw, mw = r["replayed_calls"] * scale, r["model_replies"] * scale
+        end = r is ladder[-1]
+        a.append(text(lx, ry + 14, cap(r["label"]), 12, FG, 700, max_w=bx - lx - 14))
+        if rw:
+            a += [f'<rect x="{bx}" y="{ry}" width="{rw:.1f}" height="20" rx="3" fill="#0e2733" stroke="{BLUE}"/>',
+                  text(f"{bx + rw / 2:.1f}", ry + 14.5, r["replayed_calls"], 11, BLUE, 700, 'text-anchor="middle"')]
+        a += [f'<rect x="{bx + rw:.1f}" y="{ry}" width="{mw:.1f}" height="20" rx="3" fill="{PURPLE}"/>',
+              text(f"{bx + rw + mw / 2:.1f}", ry + 14.5, r["model_replies"], 11, BG, 700, 'text-anchor="middle"'),
+              text(vx, ry + 15, r["verified_of_32"], 16 if end else 14, GREEN if end else FG, 700),
+              f'<rect x="{vx + 30}" y="{ry + 5}" width="{88 * r["verified_of_32"] / 32:.1f}" height="10" rx="2" '
+              f'fill="{GREEN if end else DIM}"/>',
+              text(fx, ry + 15, r["false_alarms_of_28"], 14, AMBER, 700)]
+    ty = top + len(ladder) * 32 + 8
+    a.append(text(x + 22, ty, "Replies fall as more of the path is replayed; verified findings stay flat until the whole path, "
+                              "deciding call included, is handed over.", 11, FG, 400, max_w=w - 44))
+    require(ty + 10 <= y + h, f"ladder panel overflows ({ty + 10 - y} > {h})")
+    return a
+
+
+def claim_node(cx, cy, confirmed):
+    color = GREEN if confirmed else AMBER
+    mark = (f"M{cx - 4} {cy}L{cx - 1} {cy + 3.5}L{cx + 4.5} {cy - 3.5}" if confirmed
+            else f"M{cx - 3.5} {cy - 3.5}L{cx + 3.5} {cy + 3.5}M{cx + 3.5} {cy - 3.5}L{cx - 3.5} {cy + 3.5}")
+    return [f'<path d="M{cx} {cy - 12}L{cx + 12} {cy}L{cx} {cy + 12}L{cx - 12} {cy}Z" fill="{color}"/>',
+            f'<path d="{mark}" stroke="{BG}" stroke-width="2.2" fill="none" stroke-linecap="round"/>']
+
+
+def strip_row(nx, cy, step, strip):
+    nodes = ["replayed"] * strip["replayed"] + list(strip["model_calls"]) + ["claim"]
+    a = [f'<path d="M{nx} {cy}H{nx + (len(nodes) - 1) * step}" stroke="{DIM}" stroke-width="2"/>']
+    for j, node in enumerate(nodes):
+        cx = nx + j * step
+        if node == "replayed":
+            a.append(f'<circle cx="{cx}" cy="{cy}" r="9" fill="{BG}" stroke="{BLUE}" stroke-width="2"/>')
+        elif node == "claim":
+            ok = strip["verifier"] == "CONFIRMED"
+            a += claim_node(cx, cy, ok)
+            a.append(text(cx + 22, cy + 4, f"claims {strip['claim']} · {'confirmed' if ok else 'not confirmed'}", 11.5,
+                          GREEN if ok else AMBER, 700, max_w=230))
+        else:
+            a += [f'<circle cx="{cx}" cy="{cy}" r="9" fill="{PURPLE}"/>',
+                  text(cx, cy + 3.5, node[0], 10, BG, 700, 'text-anchor="middle"')]
+    return a
+
+
+def pin_panel(x, y, w, h):
+    ladder, _, pin = replay_path_numbers()
+    labels = {r["start"]: r["label"] for r in ladder}
+    a = [panel(x, y, w, h),
+         text(x + 22, y + 30, f"One pin, five starts · {pin['pin']}, synthetic code", 16, BLUE, 700, max_w=w - 44),
+         text(x + 22, y + 48, f"the planted answer is a finding · the proven path is {pin['proven_path_calls']} tool calls · "
+                              "each mark is one step", 10.5, MUTED, max_w=w - 44)]
+    lx, nx, step = x + 22, x + 196, 30
+    top = y + 84
+    for i, s in enumerate(pin["strips"]):
+        cy = top + i * 34
+        replies = len(s["model_calls"]) + 1
+        a.append(text(lx, cy + 4, cap(labels[s["start"]]), 12, FG, 700, max_w=nx - lx - 14))
+        a += strip_row(nx, cy, step, s)
+        a.append(text(x + w - 22, cy + 4, f"{replies} model {'reply' if replies == 1 else 'replies'}", 11.5,
+                      GREEN if replies == 1 else MUTED, 700 if replies == 1 else 400, 'text-anchor="end"'))
+    ly = top + len(pin["strips"]) * 34 + 4
+    lx2 = x + 30
+    a += [f'<circle cx="{lx2}" cy="{ly - 4}" r="6" fill="{BG}" stroke="{BLUE}" stroke-width="2"/>',
+          text(lx2 + 12, ly, "replayed: no model reply", 10, MUTED, max_w=140)]
+    lx2 += 170
+    a += [f'<circle cx="{lx2}" cy="{ly - 4}" r="6" fill="{PURPLE}"/>',
+          text(lx2 + 12, ly, "Model 1's own call: r finds a function, c lists its callers", 10, MUTED, max_w=330)]
+    lx2 += 360
+    a += [f'<path d="M{lx2} {ly - 12}L{lx2 + 8} {ly - 4}L{lx2} {ly + 4}L{lx2 - 8} {ly - 4}Z" fill="{GREEN}"/>',
+          text(lx2 + 14, ly, "Model 1's claim, judged by the verifier", 10, MUTED, max_w=240)]
+    require(ly + 14 <= y + h, f"pin panel overflows ({ly + 14 - y} > {h})")
+    return a
+
+
+def replay_path_takeaways(x, y, w, h):
+    ladder, same, _ = replay_path_numbers()
+    partial = sorted({r["verified_of_32"] for r in ladder[:-1]})
+    alarms = sorted(r["false_alarms_of_28"] for r in ladder)
+    lines = [(GREEN, f"Free steps: replayed calls need no model reply. On {same['findings']} findings verified from every start, "
+                     f"replies fell from {same['model_replies_from_scratch']} to {same['model_replies_from_the_end']}.", 400),
+             (AMBER, f"Depth pays only at the decision: partial replays verified {partial[0]} to {partial[-1]} of 32; the whole path, "
+                     f"deciding call included, {ladder[-1]['verified_of_32']}.", 400),
+             (FG, f"Replay is exact, byte for byte at every start. It does not fix the decision: false alarms stayed at "
+                  f"{alarms[0]} to {alarms[-1]} of 28.", 700)]
+    a = [panel(x, y, w, h, fill="#0d1420", stroke=DIM)]
+    for i, (color, line, weight) in enumerate(lines):
+        require(len(line) * 12 * CHAR_W <= w - 60, f"takeaway line would shrink below 12px: {line!r}")
+        a += [f'<circle cx="{x + 24}" cy="{y + 26 + i * 26}" r="4" fill="{color}"/>',
+              text(x + 38, y + 30 + i * 26, line, 12, FG, weight, max_w=w - 60)]
+    require(y + 30 + (len(lines) - 1) * 26 + 10 <= y + h, "takeaway panel overflows")
+    return a
+
+
+def replay_path_figure():
+    replay_path_numbers()
+    title = "Model 1's replay path: replay a proven path, then Model 1 takes over"
+    a = start(WIDTH, 862, title, replay_path_description())
+    hdr, _ = header("MODEL 1'S REPLAY PATH · MEASURED ON FIXTURES, NO QUANTUM-COMPUTER TIME", GREEN, "15 NOV 2026",
+                    ["Replay a proven path, then Model 1 takes over"],
+                    f"The depth ladder (T3 stage A) · one trained 9B · five starts on the teacher's proven path · {RP['dev_pins']} "
+                    "synthetic pins")
+    a += hdr
+    a += ladder_panel(MARGIN, 128, CONTENT_W, 272)
+    a += pin_panel(MARGIN, 416, CONTENT_W, 286)
+    a += replay_path_takeaways(MARGIN, 718, CONTENT_W, 92)
+    a += [f'<path d="M{MARGIN} 826H{WIDTH - MARGIN}" stroke="{LINE}"/>',
+          text(MARGIN, 848, "Preregistered · the replayed path is the scripted teacher's, not Model 1's own · one model, one seed, "
+                            "dev pins · synthetic code · no quantum advantage claimed", 11, MUTED, max_w=CONTENT_W)]
+    return "\n".join(a + ["</svg>"])
+
+
 OUTPUTS = {"model1-training-mission.svg": mission_figure, "model1-rsi-loop.svg": loop_figure,
-           "model1-replay.svg": replay_figure, "model1-pl1.svg": pl1_figure}
+           "model1-replay.svg": replay_figure, "model1-pl1.svg": pl1_figure, "model1-replay-path.svg": replay_path_figure}
 
 
 def main(argv):

@@ -39,7 +39,7 @@
 <rect x="72" y="536" width="220" height="46" rx="12" fill="#101b2b" stroke="#67dcb4"/>
 <text x="182.0" y="556.0" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#67dcb4" text-anchor="middle">Try candidates fast</text>
 <text x="182.0" y="572.0" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" text-anchor="middle">miss · colder · warmer · hit</text>
-<text x="72" y="596" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#8696ad" >classical engine · quantum oracle optional</text>
+<text x="72" y="596" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#8696ad" >brute force · quantum oracle optional</text>
 <text x="72" y="608" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#67dcb4" >level 3 · discovery</text>
 <path d="M242.0 582L282.0 609" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
 <path d="M442.0 507L342.0 609" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>

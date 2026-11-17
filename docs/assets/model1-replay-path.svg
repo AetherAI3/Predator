@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="862" viewBox="0 0 960 862" role="img" aria-labelledby="title description">
+<title id="title">Model 1&#x27;s replay path: replay a proven path, then Model 1 takes over</title><desc id="description">Model 1&#x27;s replay path, measured on fixtures with no quantum-computer time, November 15, 2026 (the depth ladder, T3 stage A). A replayed step is a recorded tool call of the proven path, run again into the pin before the model&#x27;s first turn; the model writes no reply for it. The same trained 9B started at five points of the scripted teacher&#x27;s proven path on 60 synthetic pins with 32 planted findings. from scratch: 0 calls replayed, 490 model replies, 13 of 32 findings verified, 22 false alarms of 28; a quarter of the way: 66 calls replayed, 420 model replies, 13 of 32 findings verified, 21 false alarms of 28; halfway: 157 calls replayed, 347 model replies, 13 of 32 findings verified, 20 false alarms of 28; three quarters: 239 calls replayed, 271 model replies, 14 of 32 findings verified, 20 false alarms of 28; the end of the path: 344 calls replayed, 134 model replies, 27 of 32 findings verified, 20 false alarms of 28. On the 12 findings verified from every start, model replies fell from 80 to 12. One pin, fn_23965, synthetic: from scratch: 0 replayed, 7 model calls, claims protected, not confirmed; a quarter of the way: 1 replayed, 6 model calls, claims protected, not confirmed; halfway: 2 replayed, 5 model calls, claims protected, not confirmed; three quarters: 3 replayed, 4 model calls, claims protected, not confirmed; the end of the path: 4 replayed, 0 model calls, claims finding, confirmed. Replay works as plumbing: steps taken from the record need no model reply and play back exactly. It does not make the model decide better: partial replays left the count at 13 to 14 of 32, only the full path, which holds the deciding call, reached 27, and false alarms stayed at 20 to 22 of 28 at every start. Replay of the teacher&#x27;s proven path into the same pin, and exact playback of Model 1&#x27;s own recorded runs, are measured. Using Model 1&#x27;s own runs as stored steps on other pins, and AQRC compiling a step of Model 1&#x27;s, are not. One model, one seed, dev pins, synthetic code. No quantum-computer time.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5f7a99"/></marker></defs>
+<rect x="1" y="1" width="958" height="860" rx="18" fill="#070d17" stroke="#2a3b51"/>
+<text x="48" y="40" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#67dcb4" >MODEL 1&#x27;S REPLAY PATH · MEASURED ON FIXTURES, NO QUANTUM-COMPUTER TIME</text>
+<text x="912" y="40" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#adbbce" text-anchor="end">15 NOV 2026</text>
+<text x="48" y="82" font-family="Helvetica,Arial,sans-serif" font-size="30" font-weight="700" fill="#f2f6ff" >Replay a proven path, then Model 1 takes over</text>
+<text x="48" y="108" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#adbbce" >The depth ladder (T3 stage A) · one trained 9B · five starts on the teacher&#x27;s proven path · 60 synthetic pins</text>
+<rect x="48" y="128" width="864" height="272" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="70" y="158" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#67dcb4" >Five starts along the proven path</text>
+<text x="70" y="176" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" >all 60 pins at each start · a bar is every step taken: replayed from the record, or written by Model 1</text>
+<text x="244" y="202" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#32c7eb" >replayed · no model reply</text>
+<text x="636" y="202" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#b48aff" text-anchor="end">written by Model 1</text>
+<text x="660" y="202" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#67dcb4" >verified, of 32</text>
+<text x="800" y="202" font-family="Helvetica,Arial,sans-serif" font-size="9" font-weight="700" fill="#efc479" >false alarms, of 28</text>
+<text x="70" y="228" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" >From scratch</text>
+<rect x="244.0" y="214" width="376.6" height="20" rx="3" fill="#b48aff"/>
+<text x="432.3" y="228.5" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#070d17" text-anchor="middle">490</text>
+<text x="660" y="229" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#f2f6ff" >13</text>
+<rect x="690" y="219" width="35.8" height="10" rx="2" fill="#3b4f68"/>
+<text x="800" y="229" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#efc479" >22</text>
+<text x="70" y="260" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" >A quarter of the way</text>
+<rect x="244" y="246" width="50.7" height="20" rx="3" fill="#0e2733" stroke="#32c7eb"/>
+<text x="269.4" y="260.5" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#32c7eb" text-anchor="middle">66</text>
+<rect x="294.7" y="246" width="322.8" height="20" rx="3" fill="#b48aff"/>
+<text x="456.1" y="260.5" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#070d17" text-anchor="middle">420</text>
+<text x="660" y="261" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#f2f6ff" >13</text>
+<rect x="690" y="251" width="35.8" height="10" rx="2" fill="#3b4f68"/>
+<text x="800" y="261" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#efc479" >21</text>
+<text x="70" y="292" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" >Halfway</text>
+<rect x="244" y="278" width="120.7" height="20" rx="3" fill="#0e2733" stroke="#32c7eb"/>
+<text x="304.3" y="292.5" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#32c7eb" text-anchor="middle">157</text>
+<rect x="364.7" y="278" width="266.7" height="20" rx="3" fill="#b48aff"/>
+<text x="498.0" y="292.5" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#070d17" text-anchor="middle">347</text>
+<text x="660" y="293" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#f2f6ff" >13</text>
+<rect x="690" y="283" width="35.8" height="10" rx="2" fill="#3b4f68"/>
+<text x="800" y="293" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#efc479" >20</text>
+<text x="70" y="324" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" >Three quarters</text>
+<rect x="244" y="310" width="183.7" height="20" rx="3" fill="#0e2733" stroke="#32c7eb"/>
+<text x="335.9" y="324.5" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#32c7eb" text-anchor="middle">239</text>
+<rect x="427.7" y="310" width="208.3" height="20" rx="3" fill="#b48aff"/>
+<text x="531.9" y="324.5" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#070d17" text-anchor="middle">271</text>
+<text x="660" y="325" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#f2f6ff" >14</text>
+<rect x="690" y="315" width="38.5" height="10" rx="2" fill="#3b4f68"/>
+<text x="800" y="325" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#efc479" >20</text>
+<text x="70" y="356" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" >The end of the path</text>
+<rect x="244" y="342" width="264.4" height="20" rx="3" fill="#0e2733" stroke="#32c7eb"/>
+<text x="376.2" y="356.5" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#32c7eb" text-anchor="middle">344</text>
+<rect x="508.4" y="342" width="103.0" height="20" rx="3" fill="#b48aff"/>
+<text x="559.9" y="356.5" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#070d17" text-anchor="middle">134</text>
+<text x="660" y="357" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#67dcb4" >27</text>
+<rect x="690" y="347" width="74.2" height="10" rx="2" fill="#67dcb4"/>
+<text x="800" y="357" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="700" fill="#efc479" >20</text>
+<text x="70" y="382" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#f2f6ff" >Replies fall as more of the path is replayed; verified findings stay flat until the whole path, deciding call included, is handed over.</text>
+<rect x="48" y="416" width="864" height="286" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="70" y="446" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#32c7eb" >One pin, five starts · fn_23965, synthetic code</text>
+<text x="70" y="464" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" >the planted answer is a finding · the proven path is 4 tool calls · each mark is one step</text>
+<text x="70" y="504" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" >From scratch</text>
+<path d="M244 500H454" stroke="#3b4f68" stroke-width="2"/>
+<circle cx="244" cy="500" r="9" fill="#b48aff"/>
+<text x="244" y="503.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">r</text>
+<circle cx="274" cy="500" r="9" fill="#b48aff"/>
+<text x="274" y="503.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">c</text>
+<circle cx="304" cy="500" r="9" fill="#b48aff"/>
+<text x="304" y="503.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">r</text>
+<circle cx="334" cy="500" r="9" fill="#b48aff"/>
+<text x="334" y="503.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">r</text>
+<circle cx="364" cy="500" r="9" fill="#b48aff"/>
+<text x="364" y="503.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">r</text>
+<circle cx="394" cy="500" r="9" fill="#b48aff"/>
+<text x="394" y="503.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">c</text>
+<circle cx="424" cy="500" r="9" fill="#b48aff"/>
+<text x="424" y="503.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">r</text>
+<path d="M454 488L466 500L454 512L442 500Z" fill="#efc479"/>
+<path d="M450.5 496.5L457.5 503.5M457.5 496.5L450.5 503.5" stroke="#070d17" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<text x="476" y="504" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="700" fill="#efc479" >claims protected · not confirmed</text>
+<text x="890" y="504" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#adbbce" text-anchor="end">8 model replies</text>
+<text x="70" y="538" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" >A quarter of the way</text>
+<path d="M244 534H454" stroke="#3b4f68" stroke-width="2"/>
+<circle cx="244" cy="534" r="9" fill="#070d17" stroke="#32c7eb" stroke-width="2"/>
+<circle cx="274" cy="534" r="9" fill="#b48aff"/>
+<text x="274" y="537.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">c</text>
+<circle cx="304" cy="534" r="9" fill="#b48aff"/>
+<text x="304" y="537.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">r</text>
+<circle cx="334" cy="534" r="9" fill="#b48aff"/>
+<text x="334" y="537.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">r</text>
+<circle cx="364" cy="534" r="9" fill="#b48aff"/>
+<text x="364" y="537.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">r</text>
+<circle cx="394" cy="534" r="9" fill="#b48aff"/>
+<text x="394" y="537.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">c</text>
+<circle cx="424" cy="534" r="9" fill="#b48aff"/>
+<text x="424" y="537.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">r</text>
+<path d="M454 522L466 534L454 546L442 534Z" fill="#efc479"/>
+<path d="M450.5 530.5L457.5 537.5M457.5 530.5L450.5 537.5" stroke="#070d17" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<text x="476" y="538" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="700" fill="#efc479" >claims protected · not confirmed</text>
+<text x="890" y="538" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#adbbce" text-anchor="end">7 model replies</text>
+<text x="70" y="572" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" >Halfway</text>
+<path d="M244 568H454" stroke="#3b4f68" stroke-width="2"/>
+<circle cx="244" cy="568" r="9" fill="#070d17" stroke="#32c7eb" stroke-width="2"/>
+<circle cx="274" cy="568" r="9" fill="#070d17" stroke="#32c7eb" stroke-width="2"/>
+<circle cx="304" cy="568" r="9" fill="#b48aff"/>
+<text x="304" y="571.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">r</text>
+<circle cx="334" cy="568" r="9" fill="#b48aff"/>
+<text x="334" y="571.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">r</text>
+<circle cx="364" cy="568" r="9" fill="#b48aff"/>
+<text x="364" y="571.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">r</text>
+<circle cx="394" cy="568" r="9" fill="#b48aff"/>
+<text x="394" y="571.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">c</text>
+<circle cx="424" cy="568" r="9" fill="#b48aff"/>
+<text x="424" y="571.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">r</text>
+<path d="M454 556L466 568L454 580L442 568Z" fill="#efc479"/>
+<path d="M450.5 564.5L457.5 571.5M457.5 564.5L450.5 571.5" stroke="#070d17" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<text x="476" y="572" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="700" fill="#efc479" >claims protected · not confirmed</text>
+<text x="890" y="572" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#adbbce" text-anchor="end">6 model replies</text>
+<text x="70" y="606" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" >Three quarters</text>
+<path d="M244 602H454" stroke="#3b4f68" stroke-width="2"/>
+<circle cx="244" cy="602" r="9" fill="#070d17" stroke="#32c7eb" stroke-width="2"/>
+<circle cx="274" cy="602" r="9" fill="#070d17" stroke="#32c7eb" stroke-width="2"/>
+<circle cx="304" cy="602" r="9" fill="#070d17" stroke="#32c7eb" stroke-width="2"/>
+<circle cx="334" cy="602" r="9" fill="#b48aff"/>
+<text x="334" y="605.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">r</text>
+<circle cx="364" cy="602" r="9" fill="#b48aff"/>
+<text x="364" y="605.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">r</text>
+<circle cx="394" cy="602" r="9" fill="#b48aff"/>
+<text x="394" y="605.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">c</text>
+<circle cx="424" cy="602" r="9" fill="#b48aff"/>
+<text x="424" y="605.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="700" fill="#070d17" text-anchor="middle">r</text>
+<path d="M454 590L466 602L454 614L442 602Z" fill="#efc479"/>
+<path d="M450.5 598.5L457.5 605.5M457.5 598.5L450.5 605.5" stroke="#070d17" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<text x="476" y="606" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="700" fill="#efc479" >claims protected · not confirmed</text>
+<text x="890" y="606" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#adbbce" text-anchor="end">5 model replies</text>
+<text x="70" y="640" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" >The end of the path</text>
+<path d="M244 636H364" stroke="#3b4f68" stroke-width="2"/>
+<circle cx="244" cy="636" r="9" fill="#070d17" stroke="#32c7eb" stroke-width="2"/>
+<circle cx="274" cy="636" r="9" fill="#070d17" stroke="#32c7eb" stroke-width="2"/>
+<circle cx="304" cy="636" r="9" fill="#070d17" stroke="#32c7eb" stroke-width="2"/>
+<circle cx="334" cy="636" r="9" fill="#070d17" stroke="#32c7eb" stroke-width="2"/>
+<path d="M364 624L376 636L364 648L352 636Z" fill="#67dcb4"/>
+<path d="M360 636L363 639.5L368.5 632.5" stroke="#070d17" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+<text x="386" y="640" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="700" fill="#67dcb4" >claims finding · confirmed</text>
+<text x="890" y="640" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="700" fill="#67dcb4" text-anchor="end">1 model reply</text>
+<circle cx="78" cy="670" r="6" fill="#070d17" stroke="#32c7eb" stroke-width="2"/>
+<text x="90" y="674" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >replayed: no model reply</text>
+<circle cx="248" cy="670" r="6" fill="#b48aff"/>
+<text x="260" y="674" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >Model 1&#x27;s own call: r finds a function, c lists its callers</text>
+<path d="M608 662L616 670L608 678L600 670Z" fill="#67dcb4"/>
+<text x="622" y="674" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >Model 1&#x27;s claim, judged by the verifier</text>
+<rect x="48" y="718" width="864" height="92" rx="12" fill="#0d1420" stroke="#3b4f68"/>
+<circle cx="72" cy="744" r="4" fill="#67dcb4"/>
+<text x="86" y="748" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#f2f6ff" >Free steps: replayed calls need no model reply. On 12 findings verified from every start, replies fell from 80 to 12.</text>
+<circle cx="72" cy="770" r="4" fill="#efc479"/>
+<text x="86" y="774" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#f2f6ff" >Depth pays only at the decision: partial replays verified 13 to 14 of 32; the whole path, deciding call included, 27.</text>
+<circle cx="72" cy="796" r="4" fill="#f2f6ff"/>
+<text x="86" y="800" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" >Replay is exact, byte for byte at every start. It does not fix the decision: false alarms stayed at 20 to 22 of 28.</text>
+<path d="M48 826H912" stroke="#293b53"/>
+<text x="48" y="848" font-family="Helvetica,Arial,sans-serif" font-size="9" font-weight="400" fill="#adbbce" >Preregistered · the replayed path is the scripted teacher&#x27;s, not Model 1&#x27;s own · one model, one seed, dev pins · synthetic code · no quantum advantage claimed</text>
+</svg>

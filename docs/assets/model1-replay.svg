@@ -47,7 +47,7 @@
 <text x="401.0" y="245.0" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#8696ad" >the stored step is found again</text>
 <rect x="48" y="386" width="864" height="194" rx="12" fill="#101b2b" stroke="#293e57"/>
 <text x="70" y="416" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#67dcb4" >Where it stands · measured on fixtures</text>
-<text x="70" y="434" font-family="Helvetica,Arial,sans-serif" font-size="8.5" font-weight="400" fill="#adbbce" >The bank of runnable steps could grow far larger than the model; the model would only decide when a stored step applies, or when to make a new one (hypothesis).</text>
+<text x="70" y="434" font-family="Helvetica,Arial,sans-serif" font-size="9" font-weight="400" fill="#adbbce" >The bank of runnable steps could grow far larger than the model; the model would only decide when a stored step applies, or when to make a new one (hypothesis).</text>
 <circle cx="76" cy="458" r="4" fill="#32c7eb"/>
 <text x="90" y="462" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#f2f6ff" >A hand-written replay skill answered 8,400 of 8,400 pins on its home ground with no model, but asserted false things on 5 of</text>
 <text x="90" y="477" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#f2f6ff" >11 unfamiliar code shapes; a check on what the tools showed stops that, except for hidden calls.</text>
