@@ -1,7 +1,7 @@
 {
   "schema": "predator.public.quantum-comm-ops.v3",
   "review_date": "2026-11-01",
-  "updated": "2026-11-13",
+  "updated": "2026-11-17",
   "verification": "Source, committed report/result inspection and arithmetic checks against the private live-run reports; no independent experimental rerun, no replay of private raw receipts, no independent provider-account audit.",
   "publication_scope": "Owner-authorized public aggregate summary. Implementation, raw job/mailbox bodies and full run artifacts remain private; source links require repository access.",
   "hardware_used": true,
@@ -210,6 +210,110 @@
       "pull_request": 492,
       "comment_url": "https://github.com/AetherAI3/AETHER-PREDATOR-M/pull/492#issuecomment-6840842060",
       "note": "draft only: not a preregistration, nothing built, no spend"
+    },
+    "PM1_compiled_C001_preregistration": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "d5fef7723aa77bc1d46f9dff4cd4010d80ea45d9",
+      "path": "model/pm1/experiments/PM1-COMPILED-C001_PREREG.md",
+      "pull_request": 493
+    },
+    "PM1_compiled_C001_result": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "fbaa09c70eb7a6a9f204135cf7498fca6a2cc7ee",
+      "path": "model/pm1/experiments/PM1-COMPILED-C001_RESULT.md",
+      "pull_request": 493,
+      "note": "draft PR into feat/pm1-train-prep; $0 laptop read; no model"
+    },
+    "PM1_harder_mission_build_notes": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "014b5fcaf1f1708fff2bffaf08e7ed1f3e3cbfce",
+      "path": "model/pm1/experiments/PM1-9B-LANE-E002_BUILD_NOTES.md",
+      "pull_request": 492,
+      "note": "gate reads on dev seeds, not preregistered"
+    },
+    "PM1_ATLAS_survey": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "014b5fcaf1f1708fff2bffaf08e7ed1f3e3cbfce",
+      "path": "model/pm1/experiments/PM1-ATLAS-SURVEY_2026-11-13.md",
+      "pull_request": 492,
+      "note": "read-only survey of what ATLAS holds for Model-1"
+    },
+    "PM1_trace_run_T1_preregistration": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "a3fea34788dcece6c32899d42516d992ef3aec72",
+      "path": "model/pm1/experiments/PM1-9B-TRACE-E001_PREREG.md",
+      "pull_request": 492,
+      "note": "preregistered; no result in the committed record at review time"
+    },
+    "PM1_trace_run_T1_hold": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "bf379683a300515eb5271adf90829985f79fa390",
+      "path": "model/pm1/experiments/PM1-9B-TRACE-E001_HOLD.md",
+      "pull_request": 492,
+      "note": "first attempt killed for lack of memory in its first probe step; no seed read; no result; on hold"
+    },
+    "PM1_trace_run_T2_preregistration": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "6994e1e959eaf0260cfaf6f9d9600fa372ac2fc9",
+      "path": "model/pm1/experiments/PM1-9B-TRACE-E002_CHECKPOINT_START_PREREG.md",
+      "pull_request": 492
+    },
+    "PM1_trace_run_T2_result": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "b53a24649a03275210948ec29f7e6a128e2b0e44",
+      "path": "model/pm1/experiments/PM1-9B-TRACE-E002_RESULT.md",
+      "pull_request": 492
+    },
+    "PM1_depth_ladder_T3_stage_A_result": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "4e7e229056941abbd25d3f50c3b4545258e3af9d",
+      "path": "model/pm1/experiments/PM1-9B-TRACE-E003_STAGE_A_RESULT.md",
+      "pull_request": 492
+    },
+    "PM1_scorer_attacks": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "f121e626b4c8e73cfb9adcb61a8fd31c4d1ab10c",
+      "path": "model/pm1/experiments/PM1-FRONTIER-DYNAMICS_ATTACKS.md",
+      "note": "pushed branch, no pull request"
+    },
+    "PM1_owner_note_9": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "ebfae763b68b41985a2c32c53133ec836b445e29",
+      "path": "model/pm1/experiments/PM1-FRONTIER_OWNER_NOTE_9_PIN_LEVEL_EXPERIMENT.md",
+      "pull_request": 492,
+      "note": "owner design input, recorded word for word; not a measurement"
+    },
+    "PM1_PL1_preregistration_sealed": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "d537e40ed8d0874aadf8a17c6fc7779658a4f1b4",
+      "path": "model/pm1/experiments/PM1-FRONTIER-PL1_PREREG_DRAFT.md",
+      "pull_request": 492
+    },
+    "PM1_PL1_stage1_result": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "d537e40ed8d0874aadf8a17c6fc7779658a4f1b4",
+      "path": "model/pm1/experiments/PM1-FRONTIER-PL1_STAGE1_RESULT.md",
+      "pull_request": 492
+    },
+    "PM1_PL1_stage2_result": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "cdca165c1dc88823a327da83bfc264ae12707dd8",
+      "path": "model/pm1/experiments/PM1-FRONTIER-PL1_STAGE2_RESULT.md",
+      "pull_request": 492,
+      "note": "first committed at 598a776e200f4279e9ccae9ddf325aaaeab69971; a separate re-run of the analysis produced the same verdict file byte for byte"
+    },
+    "PM1_owner_note_10": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "4886047fab36a68c978c23573523727f9b4eeae3",
+      "path": "model/pm1/experiments/PM1-FRONTIER_OWNER_NOTE_10_D1_EVIDENCE_PRESENT.md",
+      "pull_request": 492,
+      "note": "owner design input and go for run D1; not a measurement"
+    },
+    "PM1_run_D1_preregistration_sealed": {
+      "repo": "AetherAI3/AETHER-PREDATOR-M",
+      "commit": "f121e626b4c8e73cfb9adcb61a8fd31c4d1ab10c",
+      "path": "model/pm1/experiments/PM1-FRONTIER-DYNAMICS_NEXT_RUN_PREREG_DRAFT.md",
+      "note": "sealed in place before it was applied; not run at review time"
     }
   },
   "hardware_missions": {
@@ -940,7 +1044,9 @@
     "Does the comm-ops bus carry a mission's hand-offs at lower token cost without changing outcomes? (SB-3 NOT RUN: 80 qualifying hand-offs where the rule needs 100; the other three shadow-mode gates MET.)",
     "Can a frontier model's small weight patch lower the stop-at-goal student's length-cap rate while keeping its correct answers? (O8 built, not run: no GPU capacity on November 8; three rounds so far taught the answer convention but every version looped more than the base.)",
     "Does the Model-1 adapter's held-out gain survive a few-shot baseline and a random-adapter control, a second seed, and real code? (One preregistered read TRANSFERS on seed 300000: 0.91 on 400 synthetic cases, 0 trailing text; controls preregistered, not run; no result file committed yet.)",
-    "Does the lane-run gain over the scripted rule survive a mission without the two-sink fixture shortcut, where a finding needs a trace the model made itself before the verifier answers? (R1 BEATS THE RULE on one synthetic seed: 172 of 178 at 3 false alarms vs 156; a one-line text rule also picks the true sink 54 of 54; harder mission drafted, not preregistered, nothing built.)"
+    "Does the lane-run gain over the scripted rule survive a mission without the two-sink fixture shortcut, where a finding needs a trace the model made itself before the verifier answers? (R1 BEATS THE RULE on one synthetic seed: 172 of 178 at 3 false alarms vs 156; a one-line text rule also picks the true sink 54 of 54; on the harder mission, run T2 verified 18 of 46 findings and sat below a coin-guessing operator.)",
+    "Does training on the decision (run D1) make Model 1 right when the evidence is already on screen, without losing findings or raising false alarms? (PL1: every hint verified 0 or 1 of 50 such halts; D1 sealed, the owner's go given, not yet run.)",
+    "Does each trained generation need fewer rescues than the one before, while its verified frontier moves forward? (The self-improvement signal; design only, nothing measured: it needs at least two trained generations.)"
   ],
   "historical_records_note": "The October 31 v2 review is preserved in repository history at bba28b3b; its simulator block is carried forward unchanged as 'current'. The dated v1 record below is preserved in full as an October 28 snapshot. Follow-up queues, PR states, capacity figures and deployment observations in those records are historical, not current status.",
   "history": {
@@ -2741,5 +2847,389 @@
       "source: the result record's own proposals 1-3; intent, not results"
     ],
     "claims_boundary": "A trained 9B model operated one whole synthetic Predator mission end to end with no malformed reply and found more planted findings than the scripted rule at the preregistered false-alarm limit. Its gain over the rule sits on two-sink functions where a fixture shortcut also works, so tracing skill is not yet shown. One seed, synthetic code, verifier-supplied evidence, no real code, no model-chosen selection. No quantum-computer time; no quantum advantage claimed. Predator does not find vulnerabilities autonomously on real code."
+  },
+  "model1_compiled_c001_2026_11_13": {
+    "scope": "PM1-COMPILED-C001, November 13, 2026, $0 on a laptop, no model: how far a promoted compiled skill (a hand-written tool-only walker that traces a sink back to its entry, promoted after 8,400 of 8,400 right answers on its own generator) can be trusted off its own ground, and whether pathway templates compiled from verified traces can answer unseen pins with zero inference. Synthetic code with planted truth; measured on fixtures.",
+    "evidence_label": "measured_on_fixtures",
+    "preregistered_before_read": true,
+    "preregistration_commit": "d5fef7723aa77bc1d46f9dff4cd4010d80ea45d9",
+    "result_commit": "fbaa09c70eb7a6a9f204135cf7498fca6a2cc7ee",
+    "q1_promoted_skill_off_its_generator": {
+      "held_out_structures": 11,
+      "structures_with_false_assertions": 5,
+      "wrong_share_by_structure": {
+        "parameter_names_swapped": 1.0,
+        "hidden_call": 0.535,
+        "helper_signature": 0.416,
+        "helper_body": 0.416,
+        "guard_flipped": 0.191
+      },
+      "pins_per_structure": 2000,
+      "verdict": "does not fail safely off its own ground"
+    },
+    "q2_precondition_on_tool_log": {
+      "false_assertions_after": "0 on every structure except hidden_call (0.535 unchanged)",
+      "cost_on_home_generator": 0,
+      "cost_on_harmless_change_guard_value": "threw away 0.47 of right answers"
+    },
+    "q3_templates_from_traces": {
+      "verified_traces": 400,
+      "exact_templates": 400,
+      "merged_templates": 362,
+      "reached_verified": 0,
+      "promoted": 0,
+      "unseen_pins_answered_by_promoted_templates": 0.0,
+      "guard_free_skeletons_without_ladder": {
+        "answered": 0.98,
+        "wrong": 0.36
+      },
+      "ladder_refused_all": true,
+      "verdict": "compiling pathways from traces, as built here, was safe and of no use (0 % zero-inference answers)"
+    },
+    "preregistered_lines": {
+      "L1": "not met (as predicted)",
+      "L2": "met apart from hidden_call (as predicted)",
+      "L3": "not met on (i) and (iii), (ii) vacuous (as predicted)",
+      "L4": "met (as predicted)"
+    },
+    "reading": "replay is safe only inside a declared scope with a precondition, and not by replaying traces; next idea is to compile the rule (which code forms protect a value), not the run",
+    "cost_usd": 0,
+    "gpu_usd": 0,
+    "qpu_seconds": 0,
+    "model_api_usd": 0
+  },
+  "model1_trace_runs_2026_11_14_15": {
+    "scope": "The harder mission's first trained runs: trace run T2 (November 13-14) and the depth ladder, T3 stage A (November 15), plus an attack on Predator's own scoring. Synthetic code with planted truth, CPU only.",
+    "evidence_label": "measured_on_fixtures",
+    "T2": {
+      "what": "the 9B (Qwen3.5-9B) trained on 1,200 teacher rows from the scripted walker's paths on 400 pins (each pin's claim row plus two tool-call rows drawn at random), then read 100 sealed held-out pins from scratch",
+      "pins": 100,
+      "findings_planted": 46,
+      "replies_in_form_from_zero": "901 of 901",
+      "findings_verified_from_zero": 18,
+      "false_alarms_from_zero": 44,
+      "findings_verified_from_half_of_the_teacher_path": 18,
+      "walker_ceiling": "46 of 46",
+      "verdict": "USES THE FORM (T2-a and T2-d MET; T2-b and T2-c NOT MET)",
+      "cost_usd_est": 16.1,
+      "preregistration_commit": "6994e1e959eaf0260cfaf6f9d9600fa372ac2fc9",
+      "result_commit": "b53a24649a03275210948ec29f7e6a128e2b0e44",
+      "t1_note": "trace run T1's first attempt was killed for lack of memory in its first probe step, before training, and holds no result",
+      "t1_hold_commit": "bf379683a300515eb5271adf90829985f79fa390"
+    },
+    "T3_stage_A_depth_ladder": {
+      "what": "the same trained model started at five depths of the scripted teacher's path on 60 dev pins (32 findings); no training",
+      "findings_verified_of_32": {
+        "zero": 13,
+        "p25": 13,
+        "half": 13,
+        "p75": 14,
+        "last": 27
+      },
+      "verdict": "DEPTH PAYS (T3A-a, T3A-b, T3A-d MET)",
+      "shape": "flat until the decision itself is handed over: replaying part of the path bought nothing; replaying all of it doubled what was verified",
+      "cost_usd_est": 3.1,
+      "result_commit": "4e7e229056941abbd25d3f50c3b4545258e3af9d"
+    },
+    "attack_on_the_scorer": {
+      "judge_gap": "the lane's judge confirmed 190 of 190 verified claims changed by adding one false statement; a tight rule (one path a finding, no call site the tool did not list) now gates every count",
+      "guessing_floor": "read on both kinds of pin, the trained model was below a coin-guessing operator on T2's pins (balanced share 0.074 against 0.239) and level with it on stage A's (0.214 against 0.219)",
+      "commit": "f121e626b4c8e73cfb9adcb61a8fd31c4d1ab10c"
+    }
+  },
+  "model1_pl1_2026_11_16": {
+    "scope": "PL1, the first pin-level test of the self-improvement loop: Model 1 halts; a seat (a hint state) is made at the halt; Model 1 reads from the seat once; a verifier says whether it now gets the pin right. Synthetic code, planted truth, CPU only, no training.",
+    "evidence_label": "measured_on_fixtures",
+    "stage_1": {
+      "what": "the 9B with run T2's adapter read 240 fresh training pins from scratch to find its own halts",
+      "halts": 164,
+      "evidence_on_screen": 102,
+      "evidence_missing": 62,
+      "verdict": "STATES BOUGHT (S1-a, S1-b, S1-c MET)",
+      "cost_usd_est": 8.3,
+      "note": "the first job was cut by its deadline (a pricing error); a second job finished the read from kept replies",
+      "commit": "d537e40ed8d0874aadf8a17c6fc7779658a4f1b4"
+    },
+    "stage_2": {
+      "states": 100,
+      "evidence_missing": 50,
+      "evidence_on_screen": 50,
+      "arms": {
+        "P": "placebo: the model's own halt with its last call made once more",
+        "B": "Nano lockpick seat",
+        "C": "random-search seat, five seeds",
+        "T": "the scripted teacher's shortest continuation"
+      },
+      "verified_of_50_evidence_missing": {
+        "P": 9,
+        "B": 15,
+        "C_seeds": [
+          17,
+          19,
+          15,
+          11,
+          15
+        ],
+        "T": 18
+      },
+      "verified_of_50_evidence_on_screen": {
+        "P": 0,
+        "B": 0,
+        "C": 1,
+        "T": 1
+      },
+      "false_alarms_of_50_evidence_on_screen": {
+        "P": 41,
+        "B": 38,
+        "C": 39,
+        "T": 41
+      },
+      "noise_floor_states": 8,
+      "noise_floor_note": "the largest gap between two random-search seeds (19 against 11); the model's own replicate moved 0 states",
+      "comparisons": {
+        "B_vs_C": "NO DIFFERENCE at every seed",
+        "B_vs_P": "net 6 (6 states only under B, none only under P), not more than the floor: NO DIFFERENCE",
+        "T_vs_P": "net 9 (11 states only under T, 2 only under P), p 0.022: IMPROVED"
+      },
+      "rules": {
+        "PL1-a harness holds": "MET",
+        "PL1-b search matters": "NOT MET",
+        "PL1-c more than a prompt change": "NOT MET",
+        "PL1-d as good as the teacher": "MET",
+        "PL1-e both kinds of pin and no listing": "NOT MET (not worse on no-finding pins; 5 loose confirmations)",
+        "PL1-f above guessing (qualifier)": "NOT MET (balanced share 0.0492 against a floor of about 0.2051)"
+      },
+      "verdict": "ONLY THE TEACHER'S SEAT ADVANCES MODEL 1, NOT ABOVE GUESSING ON BOTH KINDS OF PIN",
+      "reproduced": "a separate re-run of the analysis, from rebuilt inputs, produced the same verdict file byte for byte",
+      "guesses": "both written guesses, made before the read, expected the lockpick to win; both missed",
+      "cost": "first job about $12.6; second job capped at about $8.1 (it re-read the rules runs and was still reading two reference arms that cannot change the verdict)",
+      "result_commit": "cdca165c1dc88823a327da83bfc264ae12707dd8",
+      "first_result_commit": "598a776e200f4279e9ccae9ddf325aaaeab69971",
+      "seal_commit": "d537e40ed8d0874aadf8a17c6fc7779658a4f1b4",
+      "seat_kinds_made": "six (B, B2, C, P, T, X); the rules read four (B, C, P, T); B2 and X are reference arms that cannot change the verdict"
+    },
+    "reading": "a reading, not a rule: the loop's harness held; on Model 1's own halts the lockpick was not shown to beat a random hint; where the evidence was already on screen no hint helped, so the decision, not the search, is the bottleneck"
+  },
+  "model1_rsi_loop_2026_11_17": {
+    "label": "DESIGN, WITH WHAT EACH STEP HAS MEASURED; NOT A RESULT",
+    "one_line": "A machine that turns failure into verified capability, and verified capability into a stronger model.",
+    "loop_line": "Model 1 gets stuck; the system works out what was missing; searches for it; a verifier proves the answer; the bank stores the step; the step is replayed with almost no new model work; Model 1 trains on it; next time Model 1 crosses that point on its own.",
+    "gen3_is": "not a smarter model: the system being built around the model, meant to watch where it fails, finds what was missing, proves the fix, remembers it, replays it without the model, and trains the next model on it",
+    "why_gen3_to_gen4": "On Aether's own map, Gen4 starts when such a loop improves the model with no person writing the training runs (one of three triggers that end Gen3). Not reached: today people preregister every run and the owner approves its spend.",
+    "parts": [
+      {
+        "does": "reasons and acts on each mission step",
+        "like": "the student",
+        "name": "Model 1 (Qwen3.5-9B with a small trained adapter)",
+        "status": "measured",
+        "today": "drove a whole 400-pin mission: 172 of 178 findings at 3 false alarms"
+      },
+      {
+        "does": "marks the exact point where the model got stuck",
+        "like": "a bookmark",
+        "name": "halt",
+        "status": "measured",
+        "today": "164 halts in 240 pins: 102 with the evidence on screen, 62 missing it"
+      },
+      {
+        "does": "squeezes that stuck point into a small search, scoring how promising each candidate is",
+        "like": "the assistant's map",
+        "name": "adaptive energy tokenizer (Nano)",
+        "status": "measured",
+        "today": "first version (the lockpick) tested once: not better than a random hint"
+      },
+      {
+        "does": "tries candidates fast and answers miss, colder, warmer or hit",
+        "like": "the assistant's hands",
+        "name": "search engine; optional quantum oracle",
+        "status": "measured",
+        "today": "classical engine in use; quantum oracle optional, not in the loop"
+      },
+      {
+        "does": "proves a result is really right, apart from whoever found it",
+        "like": "the teacher grading the work",
+        "name": "verifier",
+        "status": "measured",
+        "today": "holds on its checks; tightened after an attack (190 of 190 padded claims had passed); still blind to indirect calls"
+      },
+      {
+        "does": "keeps every proven step and where it came from",
+        "like": "the notebook",
+        "name": "Atlas bank",
+        "status": "built",
+        "today": "a bank and a promotion gate exist; nothing from the loop promoted yet"
+      },
+      {
+        "does": "turns a proven step into something the system runs again without asking the model",
+        "like": "a recipe card",
+        "name": "AQRC step + replay",
+        "status": "partly measured",
+        "today": "hand-written replay works on home ground; templates from the walker's traces: 0 %; not yet tried on the model's own"
+      },
+      {
+        "does": "teaches the model the decisions it got wrong",
+        "like": "studying",
+        "name": "training (first run: D1)",
+        "status": "preregistered",
+        "today": "sealed, go given, not yet run; CPU, cap $24"
+      },
+      {
+        "does": "chooses what to search or train next",
+        "like": "the planner",
+        "name": "controller",
+        "status": "people today",
+        "today": "people and a frontier model write each plan; the owner approves each run"
+      }
+    ],
+    "two_doors": {
+      "evidence_missing": "search (discovery): the tokenizer makes a small search, the engine tries candidates, the verifier checks a hit",
+      "evidence_on_screen": "absorb (training): the model saw what it needed and still decided wrong; train the decision itself (run D1)",
+      "measured_split": "PL1: of Model 1's 164 halts, 102 had the evidence on screen; on the 50 of those tested, every hint verified 0 or 1"
+    },
+    "replay": {
+      "first_time": [
+        "Model 1 reasons",
+        "search and tools find the way",
+        "the verifier proves it",
+        "AQRC compiles a replayable step",
+        "Atlas stores it"
+      ],
+      "next_time": [
+        "a new pin arrives",
+        "it matches a stored step",
+        "it replays the step",
+        "the result comes back"
+      ],
+      "not_rag": "Retrieval hands the model notes to read and reason about again. Replay runs the proven step itself.",
+      "why_small_model": "the bank of runnable steps could grow far larger than the model; the model would only decide when a stored step applies, or when to make a new one (hypothesis)",
+      "measured": [
+        "a hand-written replay skill answered 8,400 of 8,400 pins on its home ground with no model, but asserted false things on 5 of 11 unfamiliar code shapes; a check on what the tools showed stops that, except for hidden calls",
+        "templates compiled from 400 verified traces of the hand-written walker (stand-ins for model traces; no model ran) answered 0 % of unseen pins",
+        "replaying a proven path paid only when it handed over the decision itself: 27 of 32 findings against 13 to 14"
+      ],
+      "status": "nothing yet compiles the model's own behavior into a replayable step"
+    },
+    "adaptive_backend_routes": [
+      {
+        "situation": "known step",
+        "route": "replay",
+        "status": "hand-written steps only"
+      },
+      {
+        "situation": "slightly different step",
+        "route": "adapt a stored step",
+        "status": "not built"
+      },
+      {
+        "situation": "unknown frontier",
+        "route": "search (tokenizer + engine)",
+        "status": "first test: not better than random"
+      },
+      {
+        "situation": "hard, bounded search",
+        "route": "optional quantum oracle",
+        "status": "not in the loop; toy simulations only"
+      },
+      {
+        "situation": "verified discovery",
+        "route": "compile and store",
+        "status": "not built for model behavior"
+      },
+      {
+        "situation": "step needed again and again",
+        "route": "train it into Model 1",
+        "status": "first run, D1, not yet run"
+      }
+    ],
+    "three_levels": [
+      {
+        "level": "neural",
+        "what_learns": "Model 1's weights",
+        "status": "measured: adapters trained on teacher rows (Phase A, R1, T2); synthetic only"
+      },
+      {
+        "level": "procedural",
+        "what_learns": "the bank of replayable steps",
+        "status": "partly measured: hand-written replay works on home ground; templates from the walker's traces 0 %; not yet tried on the model's own"
+      },
+      {
+        "level": "discovery",
+        "what_learns": "the search backend finds what neither knows",
+        "status": "measured once: the lockpick was not better than a random hint"
+      }
+    ],
+    "quantum_oracle": {
+      "what": "an instrument, not a mind: a small bounded piece of a search problem is encoded so a quantum computer can sample or score it; the measurements come back as ordinary numbers (scores, candidate states, rankings) that can guide the search, hint Nano, or become training evidence",
+      "never": "it never holds Model 1's reasoning",
+      "status": "optional and not used in this loop: owner note 9 froze the loop as classical while the basics are tested; ATLAS's QOTC is a toy simulation, and its QAOA runs (simulation and IBM hardware) never beat the classical solver; Predator's other IBM hardware runs carry messages or test circuit compilation (joint5), and none is this oracle"
+    },
+    "rsi_signal_not_measured": {
+      "all_four_at_once": [
+        "rescues needed: fewer each generation",
+        "replayable steps in the bank: more each generation",
+        "the model alone, without rescue: stronger each generation",
+        "verified frontier: keeps moving forward"
+      ],
+      "not_the_signal": "a bigger bank alone",
+      "status": "no generation has been trained on its own rescues yet; at least two trained generations are needed"
+    },
+    "steps_for_the_figure": [
+      {
+        "step": "Model 1 works the pin",
+        "status": "measured",
+        "today": "R1: 172 of 178 findings, 3 false alarms; harder mission T2: 18 of 46, below a coin-guessing operator"
+      },
+      {
+        "step": "Stuck points (halts)",
+        "status": "measured",
+        "today": "164 halts in 240 pins: 102 with the evidence on screen, 62 missing it"
+      },
+      {
+        "step": "Search door: tokenizer + engine",
+        "status": "measured",
+        "today": "lockpick 15 of 50 against a random hint's 11 to 19: not shown better"
+      },
+      {
+        "step": "Absorb door: train the decision",
+        "status": "preregistered",
+        "today": "D1 sealed, go given, not yet run; cap $24"
+      },
+      {
+        "step": "Verifier",
+        "status": "measured",
+        "today": "holds on its checks; replays byte for byte; tight rule after an attack; blind to indirect calls"
+      },
+      {
+        "step": "Atlas bank",
+        "status": "built",
+        "today": "bank and promotion gate built; nothing from the loop promoted yet"
+      },
+      {
+        "step": "Replay at ~0 inference",
+        "status": "partly measured",
+        "today": "hand-written steps only; templates from the walker's traces 0 %"
+      },
+      {
+        "step": "Fewer rescues next generation",
+        "status": "not measured",
+        "today": "needs two trained generations"
+      }
+    ],
+    "classical": "owner note 9 froze the loop without a quantum step, a second model or an elaborate tokenizer; it runs on ordinary computers",
+    "claims_boundary": "Design and hypothesis. No self-improvement has been shown: no generation has been trained on its own rescues yet. No frontier-level capability is claimed. Synthetic code only; no real-code result. No quantum-computer time; no quantum advantage.",
+    "pins": {
+      "phase_a": "83b40d4581e6042fe4302cb72ce1fc505f95fdc2",
+      "r1_result": "b68d812fedf90478de5cee1db9c2f79830fc72c0",
+      "t2_result": "b53a24649a03275210948ec29f7e6a128e2b0e44",
+      "t3a_result": "4e7e229056941abbd25d3f50c3b4545258e3af9d",
+      "scorer_attacks": "f121e626b4c8e73cfb9adcb61a8fd31c4d1ab10c",
+      "c001_result": "fbaa09c70eb7a6a9f204135cf7498fca6a2cc7ee",
+      "atlas_survey": "014b5fcaf1f1708fff2bffaf08e7ed1f3e3cbfce",
+      "owner_note_9": "ebfae763b68b41985a2c32c53133ec836b445e29",
+      "pl1_seal": "d537e40ed8d0874aadf8a17c6fc7779658a4f1b4",
+      "pl1_result": "cdca165c1dc88823a327da83bfc264ae12707dd8",
+      "owner_note_10": "4886047fab36a68c978c23573523727f9b4eeae3",
+      "d1_seal": "f121e626b4c8e73cfb9adcb61a8fd31c4d1ab10c"
+    }
   }
 }

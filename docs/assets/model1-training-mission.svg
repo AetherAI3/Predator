@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="604" viewBox="0 0 960 604" role="img" aria-labelledby="title description">
+<title id="title">Model-1 lane run R1: one 9B model drives a 400-pin mission end to end</title><desc id="description">Lane run R1, November 12, 2026, measured on fixtures with no quantum-computer time. A 9-billion-parameter model with an adapter trained on 804 teacher rows drove one whole 400-pin synthetic mission: 400 proposals at each of C1, C2 and C3, a selection step solved exactly on CPU that let 265 pins go on and parked 135, then 265 proposals at each of Q1, Q2 and Q3; 1995 of 1995 proposals valid, none refused. Findings found of 178: Oracle, no selection (ceiling) 178 with 0 false alarms; Oracle with selection 176 with 0 false alarms; Trained 9B model with selection 172 with 3 false alarms; Scripted rule with selection (floor) 156 with 0 false alarms. Preregistered verdict BEATS THE RULE. Caveats on the figure: a fixture shortcut picks the true sink in all 54 two-sink functions, the final decision is mostly a read-back of verifier evidence, and the model had no part in selection. Cost about 8.67 dollars of a 15 dollar line on CPU. No quantum advantage is claimed.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5f7a99"/></marker></defs>
+<rect x="1" y="1" width="958" height="602" rx="18" fill="#070d17" stroke="#2a3b51"/>
+<text x="48" y="40" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#67dcb4" >MODEL-1 · LANE RUN R1 · MEASURED ON FIXTURES, NO QUANTUM-COMPUTER TIME</text>
+<text x="912" y="40" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#adbbce" text-anchor="end">12 NOV 2026</text>
+<text x="48" y="82" font-family="Helvetica,Arial,sans-serif" font-size="30" font-weight="700" fill="#f2f6ff" >One 9B model drives a 400-pin mission end to end</text>
+<text x="48" y="108" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#adbbce" >400 synthetic pins · 178 planted findings · six stages · every proposal verified before the next stage</text>
+<rect x="48" y="130" width="98" height="92" rx="12" fill="#101b2b" stroke="#32c7eb"/>
+<text x="97.0" y="156" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#32c7eb" text-anchor="middle">C1</text>
+<text x="97.0" y="174" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle">pin</text>
+<text x="97.0" y="194" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" text-anchor="middle">400/400 valid</text>
+<text x="97.0" y="210" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#adbbce" text-anchor="middle">400 agreed</text>
+<path d="M148 176L162 176" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<rect x="164" y="130" width="98" height="92" rx="12" fill="#101b2b" stroke="#32c7eb"/>
+<text x="213.0" y="156" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#32c7eb" text-anchor="middle">C2</text>
+<text x="213.0" y="174" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle">analyse</text>
+<text x="213.0" y="194" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" text-anchor="middle">400/400 valid</text>
+<text x="213.0" y="210" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#adbbce" text-anchor="middle">400 agreed</text>
+<path d="M264 176L278 176" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<rect x="280" y="130" width="98" height="92" rx="12" fill="#101b2b" stroke="#32c7eb"/>
+<text x="329.0" y="156" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#32c7eb" text-anchor="middle">C3</text>
+<text x="329.0" y="174" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle">search</text>
+<text x="329.0" y="194" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" text-anchor="middle">400/400 valid</text>
+<text x="329.0" y="210" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#adbbce" text-anchor="middle">384 agreed</text>
+<path d="M380 176L394 176" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<rect x="396" y="130" width="138" height="92" rx="12" fill="#1a1630" stroke="#b48aff"/>
+<text x="465.0" y="154" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#b48aff" text-anchor="middle">SELECT</text>
+<text x="465.0" y="174" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#f2f6ff" text-anchor="middle">265 go on · 135 parked</text>
+<text x="465.0" y="191" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" text-anchor="middle">verifier scores, exact</text>
+<text x="465.0" y="206" font-family="Helvetica,Arial,sans-serif" font-size="9" font-weight="400" fill="#adbbce" text-anchor="middle">CPU solve · not the model</text>
+<path d="M536 176L550 176" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<rect x="552" y="130" width="98" height="92" rx="12" fill="#101b2b" stroke="#67dcb4"/>
+<text x="601.0" y="156" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#67dcb4" text-anchor="middle">Q1</text>
+<text x="601.0" y="174" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle">optimise</text>
+<text x="601.0" y="194" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" text-anchor="middle">265/265 valid</text>
+<text x="601.0" y="210" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#adbbce" text-anchor="middle">265 agreed</text>
+<path d="M652 176L666 176" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<rect x="668" y="130" width="98" height="92" rx="12" fill="#101b2b" stroke="#67dcb4"/>
+<text x="717.0" y="156" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#67dcb4" text-anchor="middle">Q2</text>
+<text x="717.0" y="174" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle">refine</text>
+<text x="717.0" y="194" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" text-anchor="middle">265/265 valid</text>
+<text x="717.0" y="210" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#adbbce" text-anchor="middle">265 agreed</text>
+<path d="M768 176L782 176" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<rect x="784" y="130" width="98" height="92" rx="12" fill="#101b2b" stroke="#67dcb4"/>
+<text x="833.0" y="156" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#67dcb4" text-anchor="middle">Q3</text>
+<text x="833.0" y="174" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" text-anchor="middle">decide</text>
+<text x="833.0" y="194" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" text-anchor="middle">265/265 valid</text>
+<text x="833.0" y="210" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#adbbce" text-anchor="middle">262 agreed</text>
+<rect x="48" y="246" width="430" height="300" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="70" y="276" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#67dcb4" >Findings found, of 178 planted</text>
+<text x="70" y="296" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >same 400-pin mission · false alarms of 222 safe pins · two-sink of 54</text>
+<text x="70" y="328" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >Oracle, no selection (ceiling)</text>
+<rect x="70" y="334" width="236.0" height="14" rx="4" fill="#0c1522"/>
+<rect x="70" y="334" width="236.0" height="14" rx="4" fill="#3b4f68"/>
+<text x="314.0" y="346" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" >178</text>
+<text x="456" y="346" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#adbbce" text-anchor="end">0 false · 54 two-sink</text>
+<text x="70" y="372" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >Oracle with selection</text>
+<rect x="70" y="378" width="236.0" height="14" rx="4" fill="#0c1522"/>
+<rect x="70" y="378" width="233.3" height="14" rx="4" fill="#3b4f68"/>
+<text x="311.3483146067416" y="390" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" >176</text>
+<text x="456" y="390" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#adbbce" text-anchor="end">0 false · 53 two-sink</text>
+<text x="70" y="416" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" >Trained 9B model with selection</text>
+<rect x="70" y="422" width="236.0" height="14" rx="4" fill="#0c1522"/>
+<rect x="70" y="422" width="228.0" height="14" rx="4" fill="#32c7eb"/>
+<text x="306.0449438202247" y="434" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" >172</text>
+<text x="456" y="434" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#adbbce" text-anchor="end">3 false · 49 two-sink</text>
+<text x="70" y="460" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="400" fill="#adbbce" >Scripted rule with selection (floor)</text>
+<rect x="70" y="466" width="236.0" height="14" rx="4" fill="#0c1522"/>
+<rect x="70" y="466" width="206.8" height="14" rx="4" fill="#efc479"/>
+<text x="284.8314606741573" y="478" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#f2f6ff" >156</text>
+<text x="456" y="478" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#adbbce" text-anchor="end">0 false · 33 two-sink</text>
+<rect x="502" y="246" width="410" height="300" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="524" y="276" font-family="Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#efc479" >What it shows, and what it does not</text>
+<circle cx="530" cy="300" r="4" fill="#67dcb4"/>
+<text x="542" y="304" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#f2f6ff" >1,995 of 1,995 proposals valid, 0 refused: the model</text>
+<text x="542" y="318" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#f2f6ff" >drives every stage.</text>
+<circle cx="530" cy="338" r="4" fill="#67dcb4"/>
+<text x="542" y="342" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#f2f6ff" >Rule: at least 160 found, at most 3 false alarms. Got 172</text>
+<text x="542" y="356" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#f2f6ff" >and 3. BEATS THE RULE, at its edge.</text>
+<circle cx="530" cy="376" r="4" fill="#67dcb4"/>
+<text x="542" y="380" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#f2f6ff" >804 teacher rows, one pass; about $8.67 of $15 on CPU.</text>
+<circle cx="530" cy="400" r="4" fill="#efc479"/>
+<text x="542" y="404" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#f2f6ff" >A fixture shortcut also picks the true sink 54 of 54</text>
+<text x="542" y="418" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#f2f6ff" >times: the gain over the rule is not yet tracing skill.</text>
+<circle cx="530" cy="438" r="4" fill="#efc479"/>
+<text x="542" y="442" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#f2f6ff" >From C3 on the verifier hands over the evidence; the</text>
+<text x="542" y="456" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#f2f6ff" >final decision is mostly a read-back.</text>
+<circle cx="530" cy="476" r="4" fill="#efc479"/>
+<text x="542" y="480" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#f2f6ff" >Selection was the verifier&#x27;s, not the model&#x27;s. One seed,</text>
+<text x="542" y="494" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#f2f6ff" >synthetic code, no real code.</text>
+<path d="M48 562H912" stroke="#293b53"/>
+<text x="48" y="584" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >Preregistered before the job existed · verdict BEATS THE RULE · oracle = the scripted teacher with planted truth · no quantum advantage claimed</text>
+</svg>

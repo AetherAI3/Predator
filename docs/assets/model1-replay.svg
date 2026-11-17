@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="642" viewBox="0 0 960 642" role="img" aria-labelledby="title description">
+<title id="title">Replay at about zero model inference: solve it once, run it again without the model</title><desc id="description">Design figure with first measurements, November 17, 2026. Solve it once, run it again without the model. First time: Model 1 reasons; search and tools find the way; the verifier proves it; AQRC compiles a replayable step; Atlas stores it. Next time: a new pin arrives; it matches a stored step; it replays the step; the result comes back. Retrieval hands the model notes to read and reason about again. Replay runs the proven step itself. Why it matters for a small model: the bank of runnable steps could grow far larger than the model; the model would only decide when a stored step applies, or when to make a new one (hypothesis). Measured on fixtures: a hand-written replay skill answered 8,400 of 8,400 pins on its home ground with no model, but asserted false things on 5 of 11 unfamiliar code shapes; a check on what the tools showed stops that, except for hidden calls; templates compiled from 400 verified traces of the hand-written walker (stand-ins for model traces; no model ran) answered 0 % of unseen pins; replaying a proven path paid only when it handed over the decision itself: 27 of 32 findings against 13 to 14. Status: nothing yet compiles the model&#x27;s own behavior into a replayable step. Synthetic code; no quantum-computer time.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5f7a99"/></marker></defs>
+<rect x="1" y="1" width="958" height="640" rx="18" fill="#070d17" stroke="#2a3b51"/>
+<text x="48" y="40" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#32c7eb" >REPLAY AT ~0 INFERENCE · DESIGN, WITH ITS FIRST MEASUREMENTS</text>
+<text x="912" y="40" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#adbbce" text-anchor="end">17 NOV 2026</text>
+<text x="48" y="82" font-family="Helvetica,Arial,sans-serif" font-size="30" font-weight="700" fill="#f2f6ff" >Solve it once. Run it again without the model.</text>
+<text x="48" y="108" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#adbbce" >Retrieval hands the model notes to read and reason about again. Replay runs the proven step itself.</text>
+<text x="48" y="187.0" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#b48aff" >FIRST TIME</text>
+<rect x="170" y="150" width="134" height="64" rx="12" fill="#101b2b" stroke="#32c7eb"/>
+<text x="237.0" y="186.0" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#32c7eb" text-anchor="middle">Model 1 reasons</text>
+<path d="M306 182.0L320 182.0" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<rect x="322" y="150" width="134" height="64" rx="12" fill="#101b2b" stroke="#67dcb4"/>
+<text x="389.0" y="178.0" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#67dcb4" text-anchor="middle">Search and tools</text>
+<text x="389.0" y="194.0" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#67dcb4" text-anchor="middle">find the way</text>
+<path d="M458 182.0L472 182.0" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<rect x="474" y="150" width="134" height="64" rx="12" fill="#101b2b" stroke="#efc479"/>
+<text x="541.0" y="178.0" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#efc479" text-anchor="middle">The verifier</text>
+<text x="541.0" y="194.0" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#efc479" text-anchor="middle">proves it</text>
+<path d="M610 182.0L624 182.0" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<rect x="626" y="150" width="134" height="64" rx="12" fill="#101b2b" stroke="#32c7eb"/>
+<text x="693.0" y="178.0" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#32c7eb" text-anchor="middle">AQRC compiles a</text>
+<text x="693.0" y="194.0" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#32c7eb" text-anchor="middle">replayable step</text>
+<path d="M762 182.0L776 182.0" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<rect x="778" y="150" width="134" height="64" rx="12" fill="#101b2b" stroke="#67dcb4"/>
+<text x="845.0" y="186.0" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#67dcb4" text-anchor="middle">Atlas stores it</text>
+<text x="48" y="327.0" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="700" fill="#67dcb4" >NEXT TIME</text>
+<rect x="170" y="290" width="134" height="64" rx="12" fill="#101b2b" stroke="#f2f6ff"/>
+<text x="237.0" y="326.0" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" text-anchor="middle">A new pin arrives</text>
+<path d="M306 322.0L320 322.0" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<rect x="322" y="290" width="134" height="64" rx="12" fill="#101b2b" stroke="#67dcb4"/>
+<text x="389.0" y="318.0" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#67dcb4" text-anchor="middle">It matches a</text>
+<text x="389.0" y="334.0" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#67dcb4" text-anchor="middle">stored step</text>
+<path d="M458 322.0L472 322.0" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<rect x="474" y="290" width="134" height="64" rx="12" fill="#101b2b" stroke="#32c7eb"/>
+<text x="541.0" y="318.0" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#32c7eb" text-anchor="middle">It replays the</text>
+<text x="541.0" y="334.0" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#32c7eb" text-anchor="middle">step</text>
+<path d="M610 322.0L624 322.0" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<rect x="626" y="290" width="134" height="64" rx="12" fill="#101b2b" stroke="#f2f6ff"/>
+<text x="693.0" y="318.0" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" text-anchor="middle">The result comes</text>
+<text x="693.0" y="334.0" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#f2f6ff" text-anchor="middle">back</text>
+<rect x="778" y="290" width="134" height="64" rx="12" fill="#0f2320" stroke="#67dcb4"/>
+<text x="845.0" y="318" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#67dcb4" text-anchor="middle">model inference</text>
+<text x="845.0" y="340" font-family="Helvetica,Arial,sans-serif" font-size="20" font-weight="700" fill="#67dcb4" text-anchor="middle">≈ 0</text>
+<path d="M762 322.0L776 322.0" stroke="#5f7a99" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+<path d="M845.0 214V252.0H389.0V288" stroke="#67dcb4" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+<text x="401.0" y="245.0" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#8696ad" >the stored step is found again</text>
+<rect x="48" y="386" width="864" height="194" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="70" y="416" font-family="Helvetica,Arial,sans-serif" font-size="16" font-weight="700" fill="#67dcb4" >Where it stands · measured on fixtures</text>
+<text x="70" y="434" font-family="Helvetica,Arial,sans-serif" font-size="8.5" font-weight="400" fill="#adbbce" >The bank of runnable steps could grow far larger than the model; the model would only decide when a stored step applies, or when to make a new one (hypothesis).</text>
+<circle cx="76" cy="458" r="4" fill="#32c7eb"/>
+<text x="90" y="462" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#f2f6ff" >A hand-written replay skill answered 8,400 of 8,400 pins on its home ground with no model, but asserted false things on 5 of</text>
+<text x="90" y="477" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#f2f6ff" >11 unfamiliar code shapes; a check on what the tools showed stops that, except for hidden calls.</text>
+<circle cx="76" cy="500" r="4" fill="#efc479"/>
+<text x="90" y="504" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#f2f6ff" >Templates compiled from 400 verified traces of the hand-written walker (stand-ins for model traces; no model ran) answered 0 %</text>
+<text x="90" y="519" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#f2f6ff" >of unseen pins.</text>
+<circle cx="76" cy="542" r="4" fill="#32c7eb"/>
+<text x="90" y="546" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#f2f6ff" >Replaying a proven path paid only when it handed over the decision itself: 27 of 32 findings against 13 to 14.</text>
+<path d="M48 598H912" stroke="#293b53"/>
+<text x="48" y="620" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#adbbce" >Design · nothing yet compiles the model&#x27;s own behavior into a replayable step · synthetic code · no quantum-computer time</text>
+</svg>
