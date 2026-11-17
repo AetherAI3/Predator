@@ -40,7 +40,7 @@
 
 ## October 13 Crucible lockpick figure
 
-- **crucible-lockpick.svg** — self-contained editorial figure built by `build_crucible_lockpick.py` (standard library only; run from the repository root). It explains one depth step of the Crucible loop as a lockpick: a master checkpoint (tension), a CFC fanout of small c / check / q chains (pins), the native check (the click), HIT and REJECT terminals, JEV triage, master Q selection, the next checkpoint and the repair lane. The four chains and their outcomes are illustrative; the figure shows control structure, not a measured run, a severity, or a claim of quantum advantage. It contains no scripts, external images, embedded fonts, private identifiers, or research data. Credited on the figure as "Visual by Mythos 5.1".
+- **crucible-lockpick.svg** — self-contained editorial figure built by `build_crucible_lockpick.py` (standard library only; run from the repository root). It explains one depth step of the Crucible loop as a lockpick: a master checkpoint (tension), a CFC fanout of small c / check / q chains (pins), the native check (the click), HIT and REJECT terminals, JEV triage, master Q selection, the next checkpoint and the repair lane. The four chains and their outcomes are illustrative; the figure shows control structure, not a measured run, a severity, or a claim of quantum advantage. It contains no scripts, external images, embedded fonts, private identifiers, or research data.
 
 ## October 10 ATT&CK and Aether research-bucket map
 
