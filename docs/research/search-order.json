@@ -1,0 +1,401 @@
+{
+  "schema": "predator.public.search_order.v1",
+  "updated": "2026-11-17",
+  "title": "Search order: organise by mechanism, not by position (P1 to P18, November 9 to 17, 2026)",
+  "scope": "Seventeen small preregistered steps on the older Gen2 swarm's search order (P1 to P17), reads of recorded Gen3 outcomes, and one follow-up replay in Gen3's next-test step (P18). Aggregate counts and ratios only. The swarm's original sweep method, the recorded mission data and the mission's name stay private; mechanisms are anonymised.",
+  "generation": "Gen2 work (the legacy swarm); its lesson is carried forward to Gen3",
+  "quantum_advantage_established": false,
+  "evidence_labels": {
+    "scripted": "measured on fixtures, no quantum-computer time: scripted test targets with a known answer, scored by code; no model, no real target",
+    "measured_on_ibm_hardware": "one run on a real IBM device (P7), billed seconds from IBM's usage record",
+    "measured_recorded": "a read of recorded Gen3 outcomes (P14 not blind; the P15 replay blind; P18 an off-policy replay of recorded verdicts)"
+  },
+  "lesson": "Organise search by mechanism (the kind of attack), not by where a candidate sits in a list.",
+  "evidence_for_the_lesson": [
+    "recorded Gen3 outcomes point this way: the mechanism predicts 111 of 125 recorded checks (not blind)",
+    "the Nano lockpick's scripted-reader result (L0) agrees: it searches by the features of a stuck state",
+    "the scripted steps (P13 to P17) assume outcomes follow the mechanism and measure what searching by it is worth"
+  ],
+  "steps": [
+    {
+      "id": "P1",
+      "date": "2026-11-09",
+      "label": "scripted",
+      "question": "does the swarm's original sweep order home in on the good areas of a test field?",
+      "result": "no: its final focus zone held fewer good items than random at every size; narrowing's zone also fell short (it met the line at 1 of 3 sizes; the gate needed 2)",
+      "verdict": "NOT MET (three gates)"
+    },
+    {
+      "id": "P2",
+      "date": "2026-11-09",
+      "label": "scripted",
+      "question": "narrowing against random order where good items sit together",
+      "result": "narrowing found 15.9, 15.4 and 14.9 times as many good items as random order at three sizes; the original order 3.6 to 4.8 times",
+      "verdict": "MET"
+    },
+    {
+      "id": "P3",
+      "date": "2026-11-09",
+      "label": "scripted",
+      "question": "the same on messier fields (off-grid, jittered)",
+      "result": "13.5 to 14.5 times random on the messiest fields; 18.7 to 20.6 on aligned ones",
+      "verdict": "MET"
+    },
+    {
+      "id": "P4",
+      "date": "2026-11-10",
+      "label": "scripted",
+      "question": "fields built from banked Gen3 task evidence (80 tasks)",
+      "result": "7.5, 4.5 and 9.6 times random at drive lengths 6, 7 and 8 (above 1.5 at all three lengths; length 7 failed only the significance check)",
+      "verdict": "MET"
+    },
+    {
+      "id": "P5",
+      "date": "2026-11-10",
+      "label": "scripted",
+      "question": "200 fresh tasks, with read noise and dropouts",
+      "result": "10.2 and 9.4 times random clean; 8.5 to 10.1 with noise; 7.9 to 8.7 with dropouts",
+      "verdict": "MET (three gates)"
+    },
+    {
+      "id": "P6",
+      "date": "2026-11-10",
+      "label": "scripted",
+      "question": "narrowing as a hint inside a scripted solver: fewer solver steps?",
+      "result": "no: 1.10 and 1.06 against the solver's own search, and the hint cost more to make than it saved",
+      "verdict": "NOT MET (three gates)"
+    },
+    {
+      "id": "P7",
+      "date": "2026-11-11",
+      "label": "measured_on_ibm_hardware",
+      "question": "narrowing on IBM hardware: good candidates per billed second against random order",
+      "result": "1.7 and 3.4 times as many good candidates per billed second as random order, at two sizes; 27.0 billed seconds over six jobs; 85 percent of probe indices delivered exactly (one unstable qubit); the hardware only carried the probe indices, with no quantum computation in the search, and at drive length 7 the line was passed by one billed second per job",
+      "verdict": "MET, label shown (one run)"
+    },
+    {
+      "id": "P8",
+      "date": "2026-11-11",
+      "label": "scripted",
+      "question": "a hardware repeat with a bad-qubit screen",
+      "result": "the offline gate passed; the live repeat was never released or run",
+      "verdict": "offline gate MET; live cells NOT RUN"
+    },
+    {
+      "id": "P9",
+      "date": "2026-11-12",
+      "label": "scripted",
+      "question": "does aligning the sweep make it a solver?",
+      "result": "no: an aligned sweep solved 4.8 and 4.0 times as many tasks as the unaligned order, but only 0.48 and 0.24 of them against a 0.50 line",
+      "verdict": "NOT MET (two gates)"
+    },
+    {
+      "id": "P10",
+      "date": "2026-11-12",
+      "label": "built",
+      "question": "wire narrowing into the swarm behind a setting",
+      "result": "built; off by default at the time",
+      "verdict": "built, no scored cell"
+    },
+    {
+      "id": "P11",
+      "date": "2026-11-12",
+      "label": "built",
+      "question": "a Gen3 probe-mission driver that can use narrowing",
+      "result": "built and tested; nothing calls it yet",
+      "verdict": "built, no caller"
+    },
+    {
+      "id": "P12",
+      "date": "2026-11-13",
+      "label": "scripted",
+      "question": "inside the real swarm loop: narrowing against the original order",
+      "result": "6.6 times as many good items (2.2 times from the order alone, the rest from sweeping the list's real length); the original order only ever moved on when its time ran out (200 of 200 sessions) and in 9 of 200 sessions sent 3 of 5 agents past the end of the list",
+      "verdict": "MET (two gates)"
+    },
+    {
+      "id": "P13",
+      "date": "2026-11-15",
+      "label": "scripted",
+      "question": "on the swarm's real list order, with outcomes driven by technique",
+      "result": "no difference from the original order (0.95) and below no sweep at all (0.77): the list spreads each technique's variants evenly through its category, so position carries little; narrowing became the default under the preregistered rule",
+      "verdict": "no difference; below"
+    },
+    {
+      "id": "P14",
+      "date": "2026-11-15",
+      "label": "measured_recorded",
+      "question": "what decides success in recorded Gen3 outcomes?",
+      "result": "the mechanism: it predicts 111 of 125 recorded checks (permutation p 0.00001); the best 3 of 17 mechanisms hold 65 percent of the hits on 34 percent of the checks; a technique-grouped list won big on some targets and lost on most, so it was not shipped",
+      "verdict": "Part R MET (not blind); the grouped list only above, not shipped"
+    },
+    {
+      "id": "P15",
+      "date": "2026-11-16",
+      "label": "scripted",
+      "question": "try every technique once, then focus",
+      "result": "200 of 200 test targets reached against 68 percent with no sweep, and 5.4 times the hits; narrowing by position reached fewer targets than no sweep (0.535 to 0.620 against 0.710); run at the old 15 percent explore rate",
+      "verdict": "MET; shipped as the swarm default"
+    },
+    {
+      "id": "P16",
+      "date": "2026-11-16",
+      "label": "scripted",
+      "question": "how much to explore against how much to dig",
+      "result": "exploring 90 percent of the time found the most mechanisms per target: 0.660 against 0.600 for pure exploring and 0.392 for pure digging; the old setting explored 15 percent; total hits fall as exploring rises (1,723 at 90/10 against 2,896 all digging), so the mix trades repeat finds for coverage",
+      "verdict": "MET (two gates); shipped"
+    },
+    {
+      "id": "P17",
+      "date": "2026-11-17",
+      "label": "scripted",
+      "question": "does 90/10 hold when the share of working variants changes?",
+      "result": "yes: its worst loss against the best rate was 0.012 across shares from 5 to 100 percent",
+      "verdict": "0.90 STANDS"
+    },
+    {
+      "id": "P18",
+      "date": "2026-11-17",
+      "label": "measured_recorded",
+      "question": "the mechanism-first rule against Gen3's current next-test rule, replayed on recorded missions",
+      "result": "on the one mission large enough to count, it reached all 12 mechanisms that hit in the record, against 11 for the current rule; the win rests on one mechanism that missed first and hit later, which the current rule drops after one miss; two smaller missions were not counted (one more win, one tie)",
+      "verdict": "SHIP by the preregistered rule; not wired into Gen3 yet"
+    }
+  ],
+  "recorded_outcomes": {
+    "label": "measured_recorded",
+    "source": "one Gen3 private security mission; local reproductions; no live target; mechanisms anonymised as M01 to M17",
+    "checks": 125,
+    "mechanisms": 17,
+    "hits": 46,
+    "predicted_by_mechanism": 111,
+    "permutation_p": 1e-05,
+    "best_three_share_of_hits": 0.65,
+    "best_three_share_of_checks": 0.34,
+    "blind": false,
+    "caveat": "the counts were seen before the preregistration, and promising mechanisms were tested more often",
+    "by_mechanism": [
+      {
+        "mechanism": "M01",
+        "checks": 45,
+        "hits": 0
+      },
+      {
+        "mechanism": "M02",
+        "checks": 20,
+        "hits": 8
+      },
+      {
+        "mechanism": "M03",
+        "checks": 18,
+        "hits": 17
+      },
+      {
+        "mechanism": "M04",
+        "checks": 13,
+        "hits": 3
+      },
+      {
+        "mechanism": "M05",
+        "checks": 5,
+        "hits": 5
+      },
+      {
+        "mechanism": "M06",
+        "checks": 5,
+        "hits": 1
+      },
+      {
+        "mechanism": "M07 to M17",
+        "checks": 19,
+        "hits": 12
+      }
+    ],
+    "blind_replay_p15": {
+      "what": "the same recorded verdicts read in two orders (reported, not gated)",
+      "mission_order": {
+        "mechanisms_hit_in_first_17_tests": 6,
+        "hits_in_first_34_tests": 29
+      },
+      "one_test_per_mechanism_in_turn": {
+        "mechanisms_hit_in_first_17_tests": 11,
+        "hits_in_first_34_tests": 20
+      },
+      "reading": "trying every mechanism in turn reaches almost twice as many mechanisms early; the mission's own order finds more hits early because it kept digging where it had already found something"
+    },
+    "replay_p18": {
+      "label": "measured_recorded",
+      "what": "an off-policy replay: each rule may take only tests the mission recorded; budget three tests per mechanism",
+      "counted_mission": {
+        "mechanisms_with_a_hit": 12,
+        "mechanism_first_found": 12,
+        "current_rule_found": 11,
+        "budget_tests": 51
+      },
+      "why": "one late finder: a mechanism whose first recorded test missed and which hit later; the current rule drops a candidate after one miss",
+      "hits_not_comparable": "the current rule ran out of recorded tests after 23 of 51, so only the mechanism count is a fair comparison",
+      "uncounted": "two smaller missions: one more win, one tie",
+      "current_rule_properties_exposed": [
+        "every hit scores the same, so ties are broken by candidate id",
+        "it scores only a candidate's latest test, with no memory of its record"
+      ],
+      "not_wired": "Gen3's next-test step works in cycles with a shrinking fanout, while the tested rule is test by test; the cycle form must be built and replayed first"
+    }
+  },
+  "technique_scan_p15": {
+    "label": "scripted",
+    "dev_round_targets_reached": [
+      {
+        "arm": "every technique once, then focus",
+        "share": 1.0,
+        "hits": 6586
+      },
+      {
+        "arm": "no sweep",
+        "share": 0.71,
+        "hits": 1134
+      },
+      {
+        "arm": "narrowing by position, 1 level",
+        "share": 0.62,
+        "hits": 1295
+      },
+      {
+        "arm": "narrowing by position, 2 levels",
+        "share": 0.555,
+        "hits": 1858
+      },
+      {
+        "arm": "narrowing by position, 3 levels",
+        "share": 0.535,
+        "hits": 2554
+      }
+    ],
+    "dev_round": "seeds 201 to 400, 200 targets",
+    "final_gate": {
+      "targets": 200,
+      "scan": 1.0,
+      "no_sweep": 0.68,
+      "hits_ratio": 5.377,
+      "targets_only_one_arm_hits": "64 to 0",
+      "p": 5.4e-20,
+      "verdict": "MET"
+    }
+  },
+  "explore_ratio_p16_p17": {
+    "label": "scripted",
+    "dev_curve": [
+      {
+        "explore": 100,
+        "mechanisms_found": 0.566,
+        "targets_hit": 0.915,
+        "repeat_hits_per_target": 0.2
+      },
+      {
+        "explore": 90,
+        "mechanisms_found": 0.646,
+        "targets_hit": 1.0,
+        "repeat_hits_per_target": 6.9
+      },
+      {
+        "explore": 75,
+        "mechanisms_found": 0.622,
+        "targets_hit": 1.0,
+        "repeat_hits_per_target": 21.4
+      },
+      {
+        "explore": 50,
+        "mechanisms_found": 0.583,
+        "targets_hit": 1.0,
+        "repeat_hits_per_target": 43.0
+      },
+      {
+        "explore": 25,
+        "mechanisms_found": 0.501,
+        "targets_hit": 1.0,
+        "repeat_hits_per_target": 70.7
+      },
+      {
+        "explore": 10,
+        "mechanisms_found": 0.435,
+        "targets_hit": 1.0,
+        "repeat_hits_per_target": 87.0
+      },
+      {
+        "explore": 0,
+        "mechanisms_found": 0.371,
+        "targets_hit": 1.0,
+        "repeat_hits_per_target": 96.6
+      }
+    ],
+    "final_gate": {
+      "pick": "90/10",
+      "pick_mechanisms_found": 0.66,
+      "pure_explore": 0.6,
+      "pure_dig": 0.392,
+      "verdict": "MET (both gates)"
+    },
+    "robustness_p17": {
+      "working_share_range": "0.05 to 1.00",
+      "worst_regret_of_0_90": 0.012,
+      "verdict": "0.90 STANDS"
+    },
+    "caveat": "the test targets use invented numbers (open techniques per target, share of working variants); P17 varied the working share"
+  },
+  "hardware_p7": {
+    "label": "measured_on_ibm_hardware",
+    "backend": "ibm_marrakesh",
+    "date": "2026-11-11",
+    "jobs": 6,
+    "billed_qpu_seconds": 27.0,
+    "experiment_cap_qpu_seconds": 120,
+    "good_candidates_per_billed_second_vs_random": {
+      "drive_length_7": 1.688,
+      "drive_length_8": 3.376
+    },
+    "exact_delivery_share": 0.851,
+    "route": "direct IBM runtime from a laptop, not Predator's production route",
+    "limits": "one run, one device, one calibration window, no repeat; scripted fields; no solver gain; no quantum advantage"
+  },
+  "shipped": {
+    "where": "draft pull request #489 in the private repository, into a feature branch, not main",
+    "defaults": [
+      "the swarm's list is grouped by technique",
+      "the swarm tries every technique once, then focuses (P15, run at the old 15 percent explore rate)",
+      "the swarm explores 90 percent of the time (P16; was 15 percent)"
+    ],
+    "switch_back": "settings switch each change back; the list order and the sweep must be switched back together"
+  },
+  "kept_private_for_the_loop": [
+    "a held-out set of 17 recorded mechanisms, to score a future Model 1 choice of which mechanism to test next",
+    "879 narrowing steps logged on the scripted test fields (P14), which could become replayable steps in Atlas"
+  ],
+  "what_it_does_not_do": [
+    "it is Gen2 work on the legacy swarm",
+    "the test targets were scripted: no real judge and no real target",
+    "nothing was replayed or trained into Model 1",
+    "it does not touch the Gen4 test (each Model 1 generation reaching further with fewer outside rescues)"
+  ],
+  "still_open": [
+    "a smaller swarm defect wastes 2.7 percent of turns at the old 15 percent explore rate (about 0.3 percent at the shipped 90 percent) when a focus zone is smaller than the number of agents",
+    "the live hardware repeat (P8) was never run",
+    "the Gen3 probe-mission driver (P11) has no caller",
+    "the P18 rule has no caller: Gen3's next-test step works in cycles, so a cycle form must be built and replayed first"
+  ],
+  "claims_boundary": "Scripted test targets except P7 (one IBM hardware run) and the reads and replay of recorded Gen3 outcomes. No real target was contacted. No quantum advantage. Nothing here is a Model 1 result.",
+  "pins": {
+    "repository": "AetherAI3/AETHER-PREDATOR-M",
+    "pull_request": 489,
+    "reports_commit": "a66d8f223892bdd17f3debb46083486c863828b0",
+    "reports_path": "bench/qcomms/r_gen2_field/REPORT_P1.md to REPORT_P17.md (REPORT_P8_0.md for P8)",
+    "p7_result": "a57364d6db38f772ff4a7ca87613152d989d74f7",
+    "p13_default_flip": "c77d20e2d7589b9166d2c6b1ffde7d0cf09e7776",
+    "p15_ship": "c84a6c0ec8293ea97b224855f1ab79a44254c7da",
+    "p16_ship": "722dc603218a64620a7a8c3cf2151056e750d516",
+    "p18_preregistration": "aeee5af202293774d745b185f11eeb4c7bc4ef6b",
+    "p18_build": "3aa21a57f9758138511575fc9b8398e129e50ceb",
+    "p18_result": "1c3d9b2150265d64bdd8fb3e76c6fdc463850e32",
+    "p18_report_path": "bench/qcomms/r_gen2_field/REPORT_P18.md"
+  },
+  "next": "P18 ran the proposed step as a replay and passed its preregistered ship rule on one mission. Next: build the rule's cycle form as an opt-in Gen3 rule, replay it on the same frozen missions, and only then offer it."
+}

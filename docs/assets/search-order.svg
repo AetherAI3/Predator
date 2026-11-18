@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="748" viewBox="0 0 960 748" role="img" aria-labelledby="title description">
+<title id="title">Search order: organise search by mechanism, not by position</title><desc id="description">Search order: organise by mechanism, not by position (P1 to P18, November 9 to 17, 2026). Lesson: Organise search by mechanism (the kind of attack), not by where a candidate sits in a list. Panel 1, recorded Gen3 outcomes, not blind: 125 checks over 17 anonymised mechanisms; the mechanism alone predicts 111 of 125; M01 0 hits of 45; M02 8 hits of 20; M03 17 hits of 18; M04 3 hits of 13; M05 5 hits of 5; M06 1 hits of 5; M07 to M17 12 hits of 19. Panel 2, scripted test targets, development round: targets reached, every technique once, then focus 200 of 200; no sweep 142 of 200; narrowing by position, 1 level 124 of 200; narrowing by position, 2 levels 111 of 200; narrowing by position, 3 levels 107 of 200. On 200 fresh targets the scan reached 200 of 200 against 136 with no sweep, with 5.4 times the hits. Panel 3, scripted: mechanisms found per target by share of turns spent exploring, 100 percent exploring 0.566; 90 percent exploring 0.646; 75 percent exploring 0.622; 50 percent exploring 0.583; 25 percent exploring 0.501; 10 percent exploring 0.435; 0 percent exploring 0.371; best at 90 percent, and it held when the share of working variants changed. One IBM hardware run on ibm_marrakesh, where the hardware only carried the probes: narrowing found 1.7 and 3.4 times as many good candidates per billed second as random order, 27.0 billed seconds. A replay of recorded Gen3 missions (P18) then favoured the rule: 12 of 12 mechanisms against 11 for Gen3&#x27;s current next-test rule on the one counted mission; the win rests on one mechanism. Scripted test targets except P7 (one IBM hardware run) and the reads and replay of recorded Gen3 outcomes. No real target was contacted. No quantum advantage. Nothing here is a Model 1 result.</desc>
+<rect x="1" y="1" width="958" height="746" rx="18" fill="#070d17" stroke="#2a3b51"/>
+<text x="48" y="40" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#32c7eb" >SEARCH ORDER · STEPS P1 TO P18 · SCRIPTED TARGETS UNLESS MARKED</text>
+<text x="912" y="40" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#adbbce" text-anchor="end">9–17 NOV 2026</text>
+<text x="48" y="82" font-family="Helvetica,Arial,sans-serif" font-size="30" font-weight="700" fill="#f2f6ff" >Search by mechanism, not by position</text>
+<text x="48" y="108" font-family="Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#adbbce" >What decides success · how to reach every target · how much to dig</text>
+<rect x="48" y="128" width="276" height="404" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="66" y="156" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#67dcb4" >1 · What decides success</text>
+<text x="66" y="173" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" >125 recorded Gen3 checks · 17 mechanisms</text>
+<text x="66" y="212" font-family="Helvetica,Arial,sans-serif" font-size="28" font-weight="700" fill="#f2f6ff" >111 of 125</text>
+<text x="66" y="230" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" >outcomes predicted by the mechanism alone</text>
+<text x="66" y="269" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#f2f6ff" >M01</text>
+<rect x="130" y="260" width="124.0" height="11" rx="2" fill="#1d2b3e" stroke="#3b4f68"/>
+<text x="260.0" y="269.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >0 of 45</text>
+<text x="66" y="291" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#f2f6ff" >M02</text>
+<rect x="130" y="282" width="55.1" height="11" rx="2" fill="#1d2b3e" stroke="#3b4f68"/>
+<rect x="130" y="282" width="22.0" height="11" rx="2" fill="#67dcb4"/>
+<text x="191.1" y="291.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >8 of 20</text>
+<text x="66" y="313" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#f2f6ff" >M03</text>
+<rect x="130" y="304" width="49.6" height="11" rx="2" fill="#1d2b3e" stroke="#3b4f68"/>
+<rect x="130" y="304" width="46.8" height="11" rx="2" fill="#67dcb4"/>
+<text x="185.6" y="313.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >17 of 18</text>
+<text x="66" y="335" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#f2f6ff" >M04</text>
+<rect x="130" y="326" width="35.8" height="11" rx="2" fill="#1d2b3e" stroke="#3b4f68"/>
+<rect x="130" y="326" width="8.3" height="11" rx="2" fill="#67dcb4"/>
+<text x="171.8" y="335.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >3 of 13</text>
+<text x="66" y="357" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#f2f6ff" >M05</text>
+<rect x="130" y="348" width="13.8" height="11" rx="2" fill="#1d2b3e" stroke="#3b4f68"/>
+<rect x="130" y="348" width="13.8" height="11" rx="2" fill="#67dcb4"/>
+<text x="149.8" y="357.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >5 of 5</text>
+<text x="66" y="379" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#f2f6ff" >M06</text>
+<rect x="130" y="370" width="13.8" height="11" rx="2" fill="#1d2b3e" stroke="#3b4f68"/>
+<rect x="130" y="370" width="2.8" height="11" rx="2" fill="#67dcb4"/>
+<text x="149.8" y="379.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >1 of 5</text>
+<text x="66" y="401" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#f2f6ff" >11 others</text>
+<rect x="130" y="392" width="52.4" height="11" rx="2" fill="#1d2b3e" stroke="#3b4f68"/>
+<rect x="130" y="392" width="33.1" height="11" rx="2" fill="#67dcb4"/>
+<text x="188.4" y="401.5" font-family="Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#adbbce" >12 of 19</text>
+<rect x="66" y="418" width="10" height="9" rx="2" fill="#67dcb4"/>
+<text x="81" y="426" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#adbbce" >hits</text>
+<rect x="112" y="418" width="10" height="9" rx="2" fill="#1d2b3e" stroke="#3b4f68"/>
+<text x="127" y="426" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#adbbce" >checks</text>
+<text x="66" y="482" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#f2f6ff" >Best 3 mechanisms: 65 % of the hits</text>
+<text x="66" y="498" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#f2f6ff" >on 34 % of the checks</text>
+<text x="66" y="514" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#8696ad" >recorded data, not blind · anonymised</text>
+<rect x="342" y="128" width="276" height="404" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="360" y="156" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#32c7eb" >2 · Try every technique once</text>
+<text x="360" y="173" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" >targets reached of 200, development round</text>
+<text x="360" y="202" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#f2f6ff" >every technique once, then focus</text>
+<rect x="360" y="208" width="196.0" height="14" rx="3" fill="#67dcb4"/>
+<text x="562.0" y="220" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#67dcb4" >200</text>
+<text x="360" y="248" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#f2f6ff" >no sweep</text>
+<rect x="360" y="254" width="139.2" height="14" rx="3" fill="#adbbce"/>
+<text x="505.2" y="266" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#adbbce" >142</text>
+<text x="360" y="294" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#f2f6ff" >narrowing by position, 1 level</text>
+<rect x="360" y="300" width="121.5" height="14" rx="3" fill="#efc479"/>
+<text x="487.5" y="312" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#efc479" >124</text>
+<text x="360" y="340" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#f2f6ff" >narrowing by position, 2 levels</text>
+<rect x="360" y="346" width="108.8" height="14" rx="3" fill="#efc479"/>
+<text x="474.8" y="358" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#efc479" >111</text>
+<text x="360" y="386" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="700" fill="#f2f6ff" >narrowing by position, 3 levels</text>
+<rect x="360" y="392" width="104.9" height="14" rx="3" fill="#efc479"/>
+<text x="470.9" y="404" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="700" fill="#efc479" >107</text>
+<text x="360" y="482" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#f2f6ff" >Fresh targets: 200 of 200, against</text>
+<text x="360" y="498" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#f2f6ff" >136 with no sweep; 5.4 times the hits</text>
+<text x="360" y="514" font-family="Helvetica,Arial,sans-serif" font-size="9" font-weight="400" fill="#8696ad" >scripted targets, at the old 15 % explore rate</text>
+<rect x="636" y="128" width="276" height="404" rx="12" fill="#101b2b" stroke="#293e57"/>
+<text x="654" y="156" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#b48aff" >3 · Explore 90 %, dig 10 %</text>
+<text x="654" y="173" font-family="Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#adbbce" >mechanisms found per target</text>
+<path d="M682 386.0H892" stroke="#1b2a3d"/>
+<text x="676" y="389.5" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#8696ad" text-anchor="end">0.3</text>
+<path d="M682 339.5H892" stroke="#1b2a3d"/>
+<text x="676" y="343.0" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#8696ad" text-anchor="end">0.4</text>
+<path d="M682 293.0H892" stroke="#1b2a3d"/>
+<text x="676" y="296.5" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#8696ad" text-anchor="end">0.5</text>
+<path d="M682 246.5H892" stroke="#1b2a3d"/>
+<text x="676" y="250.0" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#8696ad" text-anchor="end">0.6</text>
+<path d="M682 200.0H892" stroke="#1b2a3d"/>
+<text x="676" y="203.5" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#8696ad" text-anchor="end">0.7</text>
+<path d="M682.0 353.0 L703.0 323.2 L734.5 292.5 L787.0 254.4 L839.5 236.3 L871.0 225.1 L892.0 262.3" stroke="#b48aff" stroke-width="2" fill="none"/>
+<circle cx="682.0" cy="353.0" r="4" fill="#b48aff"/>
+<text x="682.0" y="402" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#8696ad" text-anchor="middle">0</text>
+<circle cx="703.0" cy="323.2" r="4" fill="#b48aff"/>
+<text x="703.0" y="402" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#8696ad" text-anchor="middle">10</text>
+<circle cx="734.5" cy="292.5" r="4" fill="#b48aff"/>
+<text x="734.5" y="402" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#8696ad" text-anchor="middle">25</text>
+<circle cx="787.0" cy="254.4" r="4" fill="#b48aff"/>
+<text x="787.0" y="402" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#8696ad" text-anchor="middle">50</text>
+<circle cx="839.5" cy="236.3" r="4" fill="#b48aff"/>
+<text x="839.5" y="402" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#8696ad" text-anchor="middle">75</text>
+<circle cx="871.0" cy="225.1" r="6" fill="#67dcb4"/>
+<text x="871.0" y="402" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="700" fill="#67dcb4" text-anchor="middle">90</text>
+<text x="863.0" y="213.1" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#67dcb4" text-anchor="end">0.646</text>
+<circle cx="892.0" cy="262.3" r="4" fill="#b48aff"/>
+<text x="892.0" y="402" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#8696ad" text-anchor="middle">100</text>
+<text x="787.0" y="416" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#8696ad" text-anchor="middle">percent of turns spent exploring</text>
+<text x="654" y="482" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#f2f6ff" >Fresh targets: 0.660 against 0.600</text>
+<text x="654" y="498" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="700" fill="#f2f6ff" >(all explore) and 0.392 (all dig)</text>
+<text x="654" y="514" font-family="Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#8696ad" >worst loss 0.012 as the working share moved</text>
+<rect x="48" y="548" width="864" height="141" rx="12" fill="#0d1420" stroke="#3b4f68"/>
+<circle cx="72" cy="572" r="4" fill="#67dcb4"/>
+<text x="86" y="576" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#f2f6ff" >Lesson: organise search by mechanism, not by position. Recorded outcomes point this way; the scripted tests measure its value.</text>
+<circle cx="72" cy="597" r="4" fill="#32c7eb"/>
+<text x="86" y="601" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#f2f6ff" >Now the Gen2 swarm&#x27;s default, on a draft (not main): every technique once (P15), then explore 90 % (P16); settings revert.</text>
+<circle cx="72" cy="622" r="4" fill="#efc479"/>
+<text x="86" y="626" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#f2f6ff" >IBM hardware only carried the probes (ibm_marrakesh, one run): narrowing got 1.7 to 3.4 times random&#x27;s finds per billed second.</text>
+<circle cx="72" cy="647" r="4" fill="#b48aff"/>
+<text x="86" y="651" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="400" fill="#f2f6ff" >P18, replaying recorded Gen3 missions: 12 of 12 mechanisms against 11 for Gen3&#x27;s current rule; the win rests on one.</text>
+<circle cx="72" cy="672" r="4" fill="#f2f6ff"/>
+<text x="86" y="676" font-family="Helvetica,Arial,sans-serif" font-size="11.5" font-weight="700" fill="#f2f6ff" >Gen2 work: scripted targets, no real target, nothing replayed or trained into Model 1.</text>
+<path d="M48 706H912" stroke="#293b53"/>
+<text x="48" y="728" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="400" fill="#adbbce" >Preregistered steps · recorded outcomes anonymised · the original sweep method stays private · no quantum advantage claimed</text>
+</svg>
