@@ -50,6 +50,8 @@ flowchart LR
 - [P-BOX and HTB training](#p-box-htb-training)
 - [Gen3 research and verified examples](#banked-scientific-results)
 - [Gen4 self-improvement research](#self-improvement-loop)
+- [Nano language and its search mechanics](#nano-language-and-its-search-mechanics)
+- [Defensive swarm and watchdog](#defensive-swarm-and-watchdog)
 - [Ways to work with Aether](#ways-to-work-with-aether)
 - [Read the evidence and source data](#read-the-evidence)
 
@@ -435,6 +437,33 @@ AX001, AX002 and AX003 mark conditional local research paths with **Collection**
 
 </details>
 
+## Defensive swarm and watchdog
+
+**Proposed architecture.** The swarm fans out evidence work across scoped workers. A local watchdog can pause or observe and fail closed; the receiving owner's policy gate controls any response.
+
+```mermaid
+flowchart TD
+    T["Host, network, and identity telemetry"] --> W["Nano watchdog<br/>pause / observe; fail closed"]
+    W --> F["Incident fanout<br/>AgentPool / CFC"]
+    F --> E["Evidence worker<br/>process / file / packet / auth"]
+    F --> S["Scope worker<br/>affected assets / identities"]
+    F --> B["Behavior worker<br/>TTP / chain / confidence"]
+    F --> C["Containment worker<br/>suggest lowest-risk step"]
+    E --> X["Correlated incident state<br/>confidence / contradictions / missing evidence"]
+    S --> X
+    B --> X
+    X --> G["Receiver policy gate<br/>local authority"]
+    C --> G
+    G -->|pre-authorized| A["Contain / revoke / isolate / alert"]
+    G -->|uncertain or outside policy| H["Observe / preserve / request review"]
+```
+
+The workers return evidence and scoped recommendations; fanout does not multiply authority. Correlation keeps confidence, contradictions, and missing evidence visible across identity, endpoint, network, application/source, and known-technique signals. No single telemetry stream defines the attacker.
+
+Attribute only as far as defense requires: **anomaly → compromised session or host → activity cluster → probable campaign or TTP → human actor**. A high-confidence local compromise can justify containment before campaign attribution is known. Automatic action must fit the receiver's pre-authorized local policy; otherwise the gate observes, preserves evidence, or asks for review.
+
+The watchdog and response flow are design direction. [SAFETY.md](SAFETY.md) distinguishes required policy from controls demonstrated in code; this section does not claim a deployed autonomous response feature.
+
 <a id="clean-worktrees-and-unlimited-context"></a>
 <a id="predator-rc-browser-views-and-ctf-work"></a>
 
@@ -555,6 +584,26 @@ Another lab may reach Gen4 first; that is why the map is drawn now. Model labs n
 - *What it does.* It watches a trained network work and finds the steps inside it. It keeps only steps that pass three checks: they come back when the network is trained again, they do the same job, and breaking them breaks the output. Each kept step is rebuilt as a small part, kept only if it behaves like the original.
 - *Why "adaptive" and "quantum".* For each part it picks how to run it: pass straight through, a plain linear map, a compressed (low-rank) version of that map, or a 3-qubit quantum circuit. Each is judged against a classical version of the same size, and the classical options often win. The quantum compiler it builds on turns a QUBO scorecard into a circuit a device can run; on the IBM [Fez pilot](#joint5-compiler-the-ibm-fez-hardware-result) its joint5 path used 28.5 % fewer two-qubit gates, though not at every size in simulation.
 - *Where it stands.* Toy networks only (parity, addition, a small 3-SAT puzzle), on a classical simulator, with many negative results. By its own record, nothing in AQRC itself has run on quantum hardware. It has never compiled a step of Model 1's. In the loop its job is design: turn a step Model 1 proved into a part the system can replay.
+
+### Nano language and its search mechanics
+
+Nano is the deterministic language/runtime layer in this architecture. Its compiler turns `.nano` source into validated intermediate code; a deterministic runtime runs that code with host-provided inputs. The host gate keeps final execution authority local.
+
+```mermaid
+flowchart LR
+    S[".nano source"] --> C["Compiler<br/>lexer → parser → type checks"]
+    C --> IR["Validated IR"]
+    IR --> R["Deterministic runtime<br/>host-injected inputs"]
+    R --> G["Host gate<br/>scope + local authority"]
+    G --> L["Ordered run log + receipt"]
+    L --> V["Independent verifier"]
+    V -->|supported| B["Evidence / replay candidate"]
+    V -->|unknown or refuted| H["Record, halt, or review"]
+```
+
+**Keep two tokenizers distinct.** The compiler lexer tokenizes Nano source syntax. The adaptive energy tokenizer described above is a search mechanic: it maps a stuck state to a small set of scored choices. A separate classical brute-force engine tries those choices, or exhaustively checks a small finite space. Search can propose and rank candidates; native checks and the independent verifier decide whether a result holds. See [the three engines](#three-engines) for the measured limits.
+
+This diagram describes an execution boundary, not a claim that every component is shipped as a public product. Optional quantum search can supply candidates, but it does not decide truth or grant execution authority.
 
 ### Two doors when Model 1 fails
 
