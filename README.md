@@ -52,6 +52,7 @@ flowchart LR
 - [Gen4 self-improvement research](#self-improvement-loop)
 - [Nano language and its search mechanics](#nano-language-and-its-search-mechanics)
 - [Defensive swarm and watchdog](#defensive-swarm-and-watchdog)
+- [AgentPool, CircuitPool, and Protocol 1](#agentpool-circuitpool-and-protocol-1)
 - [Ways to work with Aether](#ways-to-work-with-aether)
 - [Read the evidence and source data](#read-the-evidence)
 
@@ -436,6 +437,31 @@ AX001, AX002 and AX003 mark conditional local research paths with **Collection**
 *Implementation links require repository access.*
 
 </details>
+
+## AgentPool, CircuitPool, and Protocol 1
+
+**Design view:** these are separate jobs in one evidence path—parallel investigation, reusable procedures, and an optional decision signal.
+
+```mermaid
+flowchart LR
+    O["Owner mission + capability envelope"] --> A["Admission / scheduler"]
+    A --> AP["AgentPool<br/>scoped worker proposals"]
+    AP --> IR["Shared evidence / System-2 IR<br/>claims + provenance + open questions"]
+    IR --> CP["CircuitPool / replay<br/>match preconditions or search"]
+    CP --> P1["Protocol 1<br/>JEV decision stage"]
+    P1 -->|enabled, qualified, deployed| JEV["Typed JEV triage<br/>advisory; call + spend recorded"]
+    P1 -->|not configured| NC["Record no JEV call"]
+    JEV --> NV["Native verifier + receipt"]
+    NC --> NV
+    NV -->|supported| BANK["Evidence bank"]
+    NV -->|miss / refuted / inconclusive| KEEP["Retain outcome + open obligation"]
+```
+
+- **AgentPool** admits workers under an owner-approved mission and capability envelope. Workers return scoped proposals and evidence to shared IR; that shared record does not give workers permission to execute, sign, or verify one another's work.
+- **CircuitPool** is the shelf for executable solved procedures and replay. Each procedure keeps its preconditions and provenance; replay is considered only when those preconditions match and the receiver admits it. This is separate from an optional QPU search backend, which can provide candidates but cannot establish truth.
+- **Protocol 1 (JEV decision integration)** is a proposed, optional typed handoff for structured triage. JEV may guide which candidate to inspect next; it cannot issue the native verdict, authorize an action, bank a result, or terminate the chain. A participating call must come from an enabled, qualified, deployed stage and record its typed decision, call count, and spend. `NOT_CONFIGURED` means no JEV call.
+
+The native software check and its receipt remain the evidence gate. The public record has not established a measured JEV contribution; an adapter in source or an offline preflight is not a provider call. See the [Crucible evidence contract](docs/research/crucible-evidence-contract.md).
 
 ## Defensive swarm and watchdog
 
