@@ -17,61 +17,6 @@
 
 **AI security research, software repair, and authorized VM workflows.**
 
-Predator helps teams scope software-security questions, test candidate findings and repairs against authorized target software, and preserve only results that software verifies. This public repository is a research showcase and evidence collection; the CLI and operator engines remain private, with access reviewed separately.
-
-### Status at a glance (November 2026)
-
-| Area | Status |
-| :--- | :--- |
-| **Current work** | Gen3 research, scoped demonstrations, and selected open-source studies. |
-| **Evidence rule** | Candidate rankings and model suggestions guide investigation; only supported results are banked. |
-| **Gen4** | Proposed research direction: cost-aware compute, verified replay, receiver-controlled admission, and gated learning. It is not a current product capability. |
-| **Not shown** | No bounty has paid, no self-improvement has been demonstrated, and no quantum advantage has been established. |
-
-### How a mission becomes reusable evidence
-
-The solid path summarizes the current research loop. The dashed path is a proposed Gen4 direction; it does not imply that broad repair distribution is live today.
-
-```mermaid
-flowchart LR
-    S["Set authorized scope<br/>and acceptance checks"] --> C["Generate candidate<br/>finding or repair"]
-    C --> V["Run native checks<br/>and independent verification"]
-    V -->|Supported| E["Bank evidence<br/>and issue receipt"]
-    V -->|Unknown or refuted| H["Halt, refute,<br/>or request review"]
-    E -. "Proposed Gen4 path" .-> R["Package replay candidate<br/>with preconditions"]
-    R -.-> O["Receiver verifies and<br/>decides local admission"]
-    classDef future stroke-dasharray:5 5;
-    class R,O future;
-```
-
-### Start here
-
-- [How Predator chooses the next move](#how-predator-chooses-the-next-move)
-- [P-BOX and HTB training](#p-box-htb-training)
-- [Gen3 research and verified examples](#banked-scientific-results)
-- [Gen4 self-improvement research](#self-improvement-loop)
-- [Ways to work with Aether](#ways-to-work-with-aether)
-- [Read the evidence and source data](#read-the-evidence)
-
-### How to read our numbers
-
-| Label | Meaning |
-| :--- | :--- |
-| **MET** / **NOT MET** / **NOT RUN** | Every gate was preregistered before the run; the verdict is reported either way, misses included. |
-| **measured on IBM hardware** | A run on a real IBM quantum device, with IBM's billed time and signed receipt. |
-| **measured on a simulator** | A classical simulation of a quantum circuit (FakeFez models one IBM device). No hardware time. |
-| **measured on fixtures, no quantum-computer time** | A run on fixture tasks: tasks with a known answer, scored by a deterministic checker. |
-| **modelled** | Arithmetic from measured per-unit costs; not a run. |
-| **built, not yet run** | Code exists and passed offline tests; nothing paid has executed. |
-| **scripted agents** | Stand-ins that follow a fixed script; not reasoning models. |
-
-Predator's research engine, **Crucible**, works like a lockpick: hold verified evidence steady, test candidate chains against the real software, and bank only what holds.
-
-[Search method](#how-predator-chooses-the-next-move) · [Generations](#generations-in-plain-english) · [Gen3 → Gen4 research](#self-improvement-loop) · [Safety model](SAFETY.md) · [Documentation index](docs/README.md)
-
-<details>
-<summary><strong>Recent research timeline and open status (November 2026)</strong></summary>
-
 ### Where Predator is today (November 2026)
 
 | When | What happened | What it showed |
@@ -90,7 +35,28 @@ Predator's research engine, **Crucible**, works like a lockpick: hold verified e
 
 Source pins: the model result is `bench/qcomms/o_frame/REPORT_O.md` at private AETHER-PREDATOR-M commit `58ecf3db412feef68022cc4e88372567dd588f11`; the later rounds and the bus are pinned in the comm-ops [JSON](docs/research/quantum-comm-ops.json) (block `status_2026_11_08`); the IBM numbers are in [Gen3 Quantum Comm Ops](#gen3-quantum-comm-ops); Model-1 pins are in [its section](#gen3-adaptive-training).
 
-</details>
+### Start here
+
+- **What Predator is.** A security research and repair system: AI models get persistent context and reviewed tool use, and only results the software itself confirms are banked.
+- **What is public.** This repository is the showcase and evidence collection. The CLI and operator engines are private, with [reviewed research access](#developers-join-the-research-program).
+- **Two kinds of text.** *Measurements* (numbers from runs, each labelled) and *how we think about it* (method, plans, hypotheses). Sections marked "built, not yet run", "design" or "as far as we can see" are the second kind.
+- **Where the evidence lives.** Each study has a plain-English guide in [`docs/research/`](docs/research/) and a JSON file of aggregate data with source pins; see [Read the evidence](#read-the-evidence).
+
+### How to read our numbers
+
+| Label | Meaning |
+| :--- | :--- |
+| **MET** / **NOT MET** / **NOT RUN** | Every gate was preregistered before the run; the verdict is reported either way, misses included. |
+| **measured on IBM hardware** | A run on a real IBM quantum device, with IBM's billed time and signed receipt. |
+| **measured on a simulator** | A classical simulation of a quantum circuit (FakeFez models one IBM device). No hardware time. |
+| **measured on fixtures, no quantum-computer time** | A run on fixture tasks: tasks with a known answer, scored by a deterministic checker. |
+| **modelled** | Arithmetic from measured per-unit costs; not a run. |
+| **built, not yet run** | Code exists and passed offline tests; nothing paid has executed. |
+| **scripted agents** | Stand-ins that follow a fixed script; not reasoning models. |
+
+Predator's research engine, **Crucible**, works like a lockpick: hold verified evidence steady, test candidate chains against the real software, and bank only what holds.
+
+[How search works](#how-predator-chooses-the-next-move) · [P-BOX / HTB training](#p-box-htb-training) · [Gen3 Private Security](#gen3-private-security) · [Crucible](#crucible-adaptive-quantum-threat-modeling) · [MITRE chains](#mitre-attck-chain-library) · [CVE catalog](#cve-research-catalog) · [CodePro & System-2](#codepro-and-system-2) · [Generations](#generations-in-plain-english) · [Self-improvement loop](#self-improvement-loop) · [Quantum Comm Ops](#gen3-quantum-comm-ops) · [joint5 & IBM Fez](#joint5-compiler-the-ibm-fez-hardware-result) · [Results](#banked-scientific-results) · [Work with Aether](#ways-to-work-with-aether) · [Gen3 access](#predator-r3d-and-predator-blu3) · [Glossary](#glossary) · [Docs](docs/README.md)
 
 ## How Predator chooses the next move
 
@@ -475,10 +441,6 @@ RC is in controlled private preview: the production viewer and relay have been e
 | **Gen2** | Agent loops: models that use tools, run multi-step tasks and check their own work. Most public agent work is here. |
 | **Gen3** | **Where Aether works now.** The system around the models, built to turn failures into verified, reusable capability. AI and quantum workflows run together across the Aether stack (Aether Agent, Aether Cloud, Nano, ATLAS, UCL, CodePro, AQRC, Predator) with a shared verified evidence bank, signed receipts, swarm coordination of hundreds of small agents, and Predator lanes for bounty, open-source (OSS), mission and training work. Predator is the public showcase. |
 | **Gen4** | Conditional. It starts when a trigger below fires; no date is predicted. Predator's route toward it is the [self-improvement loop](#self-improvement-loop); not shown yet. |
-
-### Gen4 direction (proposed, not a current capability)
-
-The research direction is to route each task to the least costly qualified compute, turn independently verified repairs into preconditioned replay candidates, and connect relevant results to customer-owned CI and observability. Any learning or scheduler change would pass isolated, held-out promotion gates. Receivers retain local admission, rollout, and rollback authority. The full RSI and replay loop has not been demonstrated.
 
 **What Gen3 is, concretely.** Aether does not train models from scratch; it builds systems around models:
 
